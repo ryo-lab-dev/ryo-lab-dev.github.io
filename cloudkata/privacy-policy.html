@@ -104,7 +104,48 @@
     .reveal { opacity: 0; transform: translateY(20px); transition: opacity 0.6s ease, transform 0.6s ease; }
     .reveal.visible { opacity: 1; transform: translateY(0); }
 
-    @media (max-width: 768px) { .nav-links { display: none; } }
+    .nav-hamburger {
+      display: none;
+      flex-direction: column;
+      justify-content: center;
+      gap: 5px;
+      cursor: pointer;
+      padding: 8px;
+      background: none;
+      border: none;
+      flex-shrink: 0;
+    }
+    .nav-hamburger span {
+      display: block;
+      width: 22px;
+      height: 2px;
+      background: #64748b;
+      border-radius: 2px;
+      transition: transform 0.25s, opacity 0.25s;
+    }
+    nav.open .nav-hamburger span:nth-child(1) { transform: translateY(7px) rotate(45deg); }
+    nav.open .nav-hamburger span:nth-child(2) { opacity: 0; }
+    nav.open .nav-hamburger span:nth-child(3) { transform: translateY(-7px) rotate(-45deg); }
+
+    @media (max-width: 768px) {
+      .nav-links { display: none; }
+      .nav-hamburger { display: flex; }
+      nav.open .nav-links {
+        display: flex;
+        flex-direction: column;
+        position: absolute;
+        top: 60px;
+        left: 0; right: 0;
+        background: rgba(7,8,15,0.97);
+        backdrop-filter: blur(20px);
+        -webkit-backdrop-filter: blur(20px);
+        border-bottom: 1px solid var(--glass-border);
+        padding: 1rem 1.5rem;
+        gap: 0.5rem;
+        z-index: 99;
+      }
+      nav.open .nav-links a { padding: 0.6rem 0.5rem; font-size: 0.9rem; }
+    }
   </style>
 </head>
 <body>
@@ -124,6 +165,9 @@
     <div class="nav-back">
       <a href="../index.html">← Portfolio</a>
     </div>
+    <button class="nav-hamburger" id="navToggle" aria-label="メニューを開く">
+      <span></span><span></span><span></span>
+    </button>
   </div>
 </nav>
 
@@ -199,6 +243,21 @@
     });
   }, { threshold: 0.1 });
   document.querySelectorAll('.reveal').forEach(el => observer.observe(el));
+</script>
+<script>
+  (function() {
+    var btn = document.getElementById('navToggle');
+    var navEl = btn && btn.closest('nav');
+    if (btn && navEl) {
+      btn.addEventListener('click', function() {
+        navEl.classList.toggle('open');
+        btn.setAttribute('aria-label', navEl.classList.contains('open') ? 'メニューを閉じる' : 'メニューを開く');
+      });
+      document.addEventListener('click', function(e) {
+        if (!navEl.contains(e.target)) navEl.classList.remove('open');
+      });
+    }
+  })();
 </script>
 </body>
 </html>

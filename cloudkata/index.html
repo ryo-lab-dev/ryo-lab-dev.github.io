@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="ja">
+
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
@@ -7,18 +8,29 @@
   <script src="https://cdn.tailwindcss.com"></script>
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-  <link href="https://fonts.googleapis.com/css2?family=Syne:wght@400;600;700;800&family=Noto+Sans+JP:wght@300;400;500;700&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet" />
+  <link
+    href="https://fonts.googleapis.com/css2?family=Syne:wght@400;600;700;800&family=Noto+Sans+JP:wght@300;400;500;700&family=JetBrains+Mono:wght@400;500&display=swap"
+    rel="stylesheet" />
   <style>
     :root {
       --bg: #07080f;
       --primary: #38bdf8;
       --primary-light: #7dd3fc;
-      --glow: rgba(56,189,248,0.2);
-      --glass-bg: rgba(255,255,255,0.04);
-      --glass-border: rgba(255,255,255,0.08);
+      --glow: rgba(56, 189, 248, 0.2);
+      --glass-bg: rgba(255, 255, 255, 0.04);
+      --glass-border: rgba(255, 255, 255, 0.08);
     }
-    * { box-sizing: border-box; margin: 0; padding: 0; }
-    html { scroll-behavior: smooth; }
+
+    * {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+    }
+
+    html {
+      scroll-behavior: smooth;
+    }
+
     body {
       background-color: var(--bg);
       color: #e2e8f0;
@@ -26,323 +38,601 @@
       min-height: 100vh;
       overflow-x: hidden;
     }
-    h1, h2, h3, h4, .font-syne { font-family: 'Syne', sans-serif; }
-    .font-mono { font-family: 'JetBrains Mono', monospace; }
+
+    h1,
+    h2,
+    h3,
+    h4,
+    .font-syne {
+      font-family: 'Syne', sans-serif;
+    }
+
+    .font-mono {
+      font-family: 'JetBrains Mono', monospace;
+    }
 
     /* Nav */
     nav {
-      position: sticky; top: 0; z-index: 100;
-      background: rgba(7,8,15,0.85);
-      backdrop-filter: blur(20px); -webkit-backdrop-filter: blur(20px);
+      position: sticky;
+      top: 0;
+      z-index: 100;
+      background: rgba(7, 8, 15, 0.85);
+      backdrop-filter: blur(20px);
+      -webkit-backdrop-filter: blur(20px);
       border-bottom: 1px solid var(--glass-border);
     }
+
     .nav-inner {
-      max-width: 1200px; margin: 0 auto; padding: 0 1.5rem;
-      height: 60px; display: flex; align-items: center;
-      justify-content: space-between; gap: 1rem;
+      max-width: 1200px;
+      margin: 0 auto;
+      padding: 0 1.5rem;
+      height: 60px;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 1rem;
     }
-    .nav-logo { display: flex; align-items: center; gap: 0.5rem; text-decoration: none; flex-shrink: 0; }
+
+    .nav-logo {
+      display: flex;
+      align-items: center;
+      gap: 0.5rem;
+      text-decoration: none;
+      flex-shrink: 0;
+    }
+
     .nav-logo-dot {
-      width: 10px; height: 10px; border-radius: 50%;
+      width: 10px;
+      height: 10px;
+      border-radius: 50%;
       background: linear-gradient(135deg, var(--primary), var(--primary-light));
       box-shadow: 0 0 8px var(--glow);
     }
+
     .nav-logo-text {
-      font-family: 'Syne', sans-serif; font-weight: 700; font-size: 1.1rem;
+      font-family: 'Syne', sans-serif;
+      font-weight: 700;
+      font-size: 1.1rem;
       background: linear-gradient(135deg, var(--primary), var(--primary-light));
-      -webkit-background-clip: text; -webkit-text-fill-color: transparent; background-clip: text;
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+      background-clip: text;
     }
-    .nav-links { display: flex; align-items: center; gap: 0.25rem; flex-wrap: wrap; justify-content: center; }
+
+    .nav-links {
+      display: flex;
+      align-items: center;
+      gap: 0.25rem;
+      flex-wrap: wrap;
+      justify-content: center;
+    }
+
     .nav-links a {
-      color: #94a3b8; text-decoration: none; font-size: 0.82rem;
-      padding: 0.35rem 0.65rem; border-radius: 6px;
-      transition: color 0.2s, background 0.2s; white-space: nowrap;
+      color: #94a3b8;
+      text-decoration: none;
+      font-size: 0.82rem;
+      padding: 0.35rem 0.65rem;
+      border-radius: 6px;
+      transition: color 0.2s, background 0.2s;
+      white-space: nowrap;
     }
-    .nav-links a:hover, .nav-links a.active { color: var(--primary-light); background: var(--glass-bg); }
-    .nav-back a { color: #64748b; text-decoration: none; font-size: 0.82rem; white-space: nowrap; transition: color 0.2s; }
-    .nav-back a:hover { color: #94a3b8; }
+
+    .nav-links a:hover,
+    .nav-links a.active {
+      color: var(--primary-light);
+      background: var(--glass-bg);
+    }
+
+    .nav-back a {
+      color: #64748b;
+      text-decoration: none;
+      font-size: 0.82rem;
+      white-space: nowrap;
+      transition: color 0.2s;
+    }
+
+    .nav-back a:hover {
+      color: #94a3b8;
+    }
 
     /* Glass */
     .glass {
-      background: var(--glass-bg); border: 1px solid var(--glass-border);
-      backdrop-filter: blur(20px); -webkit-backdrop-filter: blur(20px); border-radius: 16px;
+      background: var(--glass-bg);
+      border: 1px solid var(--glass-border);
+      backdrop-filter: blur(20px);
+      -webkit-backdrop-filter: blur(20px);
+      border-radius: 16px;
     }
 
     /* Gradient text */
     .gradient-text {
       background: linear-gradient(135deg, var(--primary), var(--primary-light));
-      -webkit-background-clip: text; -webkit-text-fill-color: transparent; background-clip: text;
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+      background-clip: text;
     }
 
-    .glow-line { height: 1px; background: linear-gradient(90deg, transparent, var(--primary), transparent); opacity: 0.35; }
+    .glow-line {
+      height: 1px;
+      background: linear-gradient(90deg, transparent, var(--primary), transparent);
+      opacity: 0.35;
+    }
 
     /* Badge */
     .status-badge {
-      display: inline-flex; align-items: center; gap: 0.5rem;
-      background: rgba(56,189,248,0.1); border: 1px solid rgba(56,189,248,0.3);
-      border-radius: 999px; padding: 0.4rem 1rem;
-      font-family: 'JetBrains Mono', monospace; font-size: 0.78rem; color: var(--primary-light);
+      display: inline-flex;
+      align-items: center;
+      gap: 0.5rem;
+      background: rgba(56, 189, 248, 0.1);
+      border: 1px solid rgba(56, 189, 248, 0.3);
+      border-radius: 999px;
+      padding: 0.4rem 1rem;
+      font-family: 'JetBrains Mono', monospace;
+      font-size: 0.78rem;
+      color: var(--primary-light);
     }
+
     .pulse-dot {
-      width: 8px; height: 8px; border-radius: 50%; background: var(--primary);
+      width: 8px;
+      height: 8px;
+      border-radius: 50%;
+      background: var(--primary);
       animation: pulse 2s infinite;
     }
+
     @keyframes pulse {
-      0%, 100% { opacity: 1; box-shadow: 0 0 0 0 rgba(56,189,248,0.5); }
-      50% { opacity: 0.8; box-shadow: 0 0 0 6px rgba(56,189,248,0); }
+
+      0%,
+      100% {
+        opacity: 1;
+        box-shadow: 0 0 0 0 rgba(56, 189, 248, 0.5);
+      }
+
+      50% {
+        opacity: 0.8;
+        box-shadow: 0 0 0 6px rgba(56, 189, 248, 0);
+      }
     }
 
     /* Hero */
     .hero {
-      min-height: 80vh; display: flex; flex-direction: column;
-      align-items: center; justify-content: center;
-      text-align: center; padding: 6rem 1.5rem 4rem; position: relative; overflow: hidden;
+      min-height: 80vh;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      text-align: center;
+      padding: 6rem 1.5rem 4rem;
+      position: relative;
+      overflow: hidden;
     }
+
     .hero::before {
       content: '';
-      position: absolute; top: -20%; left: 50%; transform: translateX(-50%);
-      width: 600px; height: 600px;
-      background: radial-gradient(circle, rgba(56,189,248,0.1) 0%, transparent 70%);
+      position: absolute;
+      top: -20%;
+      left: 50%;
+      transform: translateX(-50%);
+      width: 600px;
+      height: 600px;
+      background: radial-gradient(circle, rgba(56, 189, 248, 0.1) 0%, transparent 70%);
       pointer-events: none;
     }
+
     .hero-title {
       font-family: 'Syne', sans-serif;
-      font-size: clamp(3.5rem, 10vw, 7rem);
-      font-weight: 800; line-height: 1; margin-bottom: 1.5rem;
+      font-size: clamp(1.8rem, 10vw, 7rem);
+      font-weight: 800;
+      line-height: 1;
+      margin-bottom: 1.5rem;
     }
+
     .hero-sub {
       font-size: clamp(0.95rem, 2.5vw, 1.15rem);
-      color: #94a3b8; margin-bottom: 0.75rem; font-weight: 500;
+      color: #94a3b8;
+      margin-bottom: 0.75rem;
+      font-weight: 500;
       max-width: 600px;
     }
+
     .hero-origin {
-      font-size: 0.85rem; color: #475569;
-      font-style: italic; margin-bottom: 1.5rem; max-width: 520px;
+      font-size: 0.85rem;
+      color: #475569;
+      font-style: italic;
+      margin-bottom: 1.5rem;
+      max-width: 520px;
     }
 
     /* Screenshots */
     .screenshot-strip {
-      display: flex; gap: 1rem; overflow-x: auto; padding: 1rem 0.5rem 1.5rem;
-      scroll-snap-type: x mandatory; -webkit-overflow-scrolling: touch;
-      scrollbar-width: thin; scrollbar-color: rgba(56,189,248,0.3) transparent;
+      display: flex;
+      gap: 1rem;
+      overflow-x: auto;
+      padding: 1rem 0.5rem 1.5rem;
+      scroll-snap-type: x mandatory;
+      -webkit-overflow-scrolling: touch;
+      scrollbar-width: thin;
+      scrollbar-color: rgba(56, 189, 248, 0.3) transparent;
     }
-    .screenshot-strip::-webkit-scrollbar { height: 4px; }
-    .screenshot-strip::-webkit-scrollbar-track { background: transparent; }
-    .screenshot-strip::-webkit-scrollbar-thumb { background: rgba(56,189,248,0.3); border-radius: 4px; }
+
+    .screenshot-strip::-webkit-scrollbar {
+      height: 4px;
+    }
+
+    .screenshot-strip::-webkit-scrollbar-track {
+      background: transparent;
+    }
+
+    .screenshot-strip::-webkit-scrollbar-thumb {
+      background: rgba(56, 189, 248, 0.3);
+      border-radius: 4px;
+    }
+
     .screenshot-strip img {
-      height: 480px; max-height: 480px; width: auto; border-radius: 12px;
-      scroll-snap-align: start; object-fit: contain;
-      border: 1px solid var(--glass-border); flex-shrink: 0;
+      height: 480px;
+      max-height: 480px;
+      width: auto;
+      border-radius: 12px;
+      scroll-snap-align: start;
+      object-fit: contain;
+      border: 1px solid var(--glass-border);
+      flex-shrink: 0;
       transition: transform 0.3s, box-shadow 0.3s;
     }
-    .screenshot-strip img:hover { transform: translateY(-4px); box-shadow: 0 16px 40px rgba(56,189,248,0.15); }
+
+    .screenshot-strip img:hover {
+      transform: translateY(-4px);
+      box-shadow: 0 16px 40px rgba(56, 189, 248, 0.15);
+    }
 
     /* Feature cards */
     .feature-card {
-      background: var(--glass-bg); border: 1px solid var(--glass-border); border-radius: 16px;
-      padding: 2rem; transition: border-color 0.3s, box-shadow 0.3s, transform 0.3s;
+      background: var(--glass-bg);
+      border: 1px solid var(--glass-border);
+      border-radius: 16px;
+      padding: 2rem;
+      transition: border-color 0.3s, box-shadow 0.3s, transform 0.3s;
     }
-    .feature-card:hover { border-color: rgba(56,189,248,0.3); box-shadow: 0 8px 32px rgba(56,189,248,0.1); transform: translateY(-4px); }
-    .feature-icon { font-size: 2rem; margin-bottom: 1rem; }
+
+    .feature-card:hover {
+      border-color: rgba(56, 189, 248, 0.3);
+      box-shadow: 0 8px 32px rgba(56, 189, 248, 0.1);
+      transform: translateY(-4px);
+    }
+
+    .feature-icon {
+      font-size: 2rem;
+      margin-bottom: 1rem;
+    }
 
     /* CTA */
     .btn-primary {
-      display: inline-flex; align-items: center; gap: 0.5rem;
+      display: inline-flex;
+      align-items: center;
+      gap: 0.5rem;
       background: linear-gradient(135deg, var(--primary), #0284c7);
-      color: #fff; font-weight: 600; padding: 0.75rem 1.75rem; border-radius: 10px;
-      text-decoration: none; font-size: 0.95rem;
+      color: #fff;
+      font-weight: 600;
+      padding: 0.75rem 1.75rem;
+      border-radius: 10px;
+      text-decoration: none;
+      font-size: 0.95rem;
       transition: opacity 0.2s, transform 0.2s, box-shadow 0.2s;
-      box-shadow: 0 4px 16px rgba(56,189,248,0.3);
+      box-shadow: 0 4px 16px rgba(56, 189, 248, 0.3);
     }
-    .btn-primary:hover { opacity: 0.9; transform: translateY(-2px); box-shadow: 0 8px 24px rgba(56,189,248,0.4); }
+
+    .btn-primary:hover {
+      opacity: 0.9;
+      transform: translateY(-2px);
+      box-shadow: 0 8px 24px rgba(56, 189, 248, 0.4);
+    }
 
     /* FAQ mini */
     .mini-faq-item {
-      border-bottom: 1px solid var(--glass-border); padding: 1.1rem 0;
-      display: grid; grid-template-columns: 1fr 2fr; gap: 1rem;
+      border-bottom: 1px solid var(--glass-border);
+      padding: 1.1rem 0;
+      display: grid;
+      grid-template-columns: 1fr 2fr;
+      gap: 1rem;
     }
-    .mini-faq-item:last-child { border-bottom: none; }
-    .mini-faq-q { color: #f1f5f9; font-weight: 600; font-size: 0.93rem; }
-    .mini-faq-a { color: #94a3b8; font-size: 0.93rem; line-height: 1.6; }
+
+    .mini-faq-item:last-child {
+      border-bottom: none;
+    }
+
+    .mini-faq-q {
+      color: #f1f5f9;
+      font-weight: 600;
+      font-size: 0.93rem;
+    }
+
+    .mini-faq-a {
+      color: #94a3b8;
+      font-size: 0.93rem;
+      line-height: 1.6;
+    }
 
     /* Sections */
-    section { padding: 5rem 1.5rem; }
-    .section-inner { max-width: 1100px; margin: 0 auto; }
-    .section-label {
-      font-family: 'JetBrains Mono', monospace; font-size: 0.75rem; color: var(--primary);
-      letter-spacing: 0.15em; text-transform: uppercase; margin-bottom: 0.75rem;
+    section {
+      padding: 5rem 1.5rem;
     }
+
+    .section-inner {
+      max-width: 1100px;
+      margin: 0 auto;
+    }
+
+    .section-label {
+      font-family: 'JetBrains Mono', monospace;
+      font-size: 0.75rem;
+      color: var(--primary);
+      letter-spacing: 0.15em;
+      text-transform: uppercase;
+      margin-bottom: 0.75rem;
+    }
+
     .section-title {
       font-family: 'Syne', sans-serif;
-      font-size: clamp(1.8rem, 4vw, 2.5rem); font-weight: 700; margin-bottom: 1rem;
+      font-size: clamp(1.8rem, 4vw, 2.5rem);
+      font-weight: 700;
+      margin-bottom: 1rem;
     }
 
     /* Scroll reveal */
-    .reveal { opacity: 0; transform: translateY(30px); transition: opacity 0.6s ease, transform 0.6s ease; }
-    .reveal.visible { opacity: 1; transform: translateY(0); }
+    .reveal {
+      opacity: 0;
+      transform: translateY(30px);
+      transition: opacity 0.6s ease, transform 0.6s ease;
+    }
 
-    footer { border-top: 1px solid var(--glass-border); padding: 2rem 1.5rem; text-align: center; color: #475569; font-size: 0.82rem; }
-    footer p + p { margin-top: 0.4rem; color: #334155; font-size: 0.78rem; }
+    .reveal.visible {
+      opacity: 1;
+      transform: translateY(0);
+    }
+
+    footer {
+      border-top: 1px solid var(--glass-border);
+      padding: 2rem 1.5rem;
+      text-align: center;
+      color: #475569;
+      font-size: 0.82rem;
+    }
+
+    footer p+p {
+      margin-top: 0.4rem;
+      color: #334155;
+      font-size: 0.78rem;
+    }
+
+    .nav-hamburger {
+      display: none;
+      flex-direction: column;
+      justify-content: center;
+      gap: 5px;
+      cursor: pointer;
+      padding: 8px;
+      background: none;
+      border: none;
+      flex-shrink: 0;
+    }
+    .nav-hamburger span {
+      display: block;
+      width: 22px;
+      height: 2px;
+      background: #64748b;
+      border-radius: 2px;
+      transition: transform 0.25s, opacity 0.25s;
+    }
+    nav.open .nav-hamburger span:nth-child(1) { transform: translateY(7px) rotate(45deg); }
+    nav.open .nav-hamburger span:nth-child(2) { opacity: 0; }
+    nav.open .nav-hamburger span:nth-child(3) { transform: translateY(-7px) rotate(-45deg); }
 
     @media (max-width: 768px) {
-      .nav-links { display: none; }
-      .screenshot-strip img { height: 340px; }
-      .mini-faq-item { grid-template-columns: 1fr; }
+      .nav-links {
+        display: none;
+      }
+      .nav-hamburger { display: flex; }
+      nav.open .nav-links {
+        display: flex;
+        flex-direction: column;
+        position: absolute;
+        top: 60px;
+        left: 0; right: 0;
+        background: rgba(7,8,15,0.97);
+        backdrop-filter: blur(20px);
+        -webkit-backdrop-filter: blur(20px);
+        border-bottom: 1px solid var(--glass-border);
+        padding: 1rem 1.5rem;
+        gap: 0.5rem;
+        z-index: 99;
+      }
+      nav.open .nav-links a { padding: 0.6rem 0.5rem; font-size: 0.9rem; }
+
+      .screenshot-strip img {
+        height: 340px;
+      }
+
+      .mini-faq-item {
+        grid-template-columns: 1fr;
+      }
     }
   </style>
 </head>
+
 <body>
 
-<!-- Navigation -->
-<nav>
-  <div class="nav-inner">
-    <a href="./index.html" class="nav-logo">
-      <div class="nav-logo-dot"></div>
-      <span class="nav-logo-text">CloudKata</span>
-    </a>
-    <div class="nav-links">
-      <a href="./index.html" class="active">Home</a>
-      <a href="./privacy-policy.html">Privacy Policy</a>
-      <a href="./disclaimer.html">免責事項</a>
-      <a href="./terms.html">利用規約</a>
-    </div>
-    <div class="nav-back">
-      <a href="../index.html">← Portfolio</a>
-    </div>
-  </div>
-</nav>
-
-<!-- Hero -->
-<section class="hero">
-  <div style="margin-bottom:1.5rem;">
-    <span class="status-badge">
-      <span class="pulse-dot"></span>
-      クローズドテスト中 · 3月末一般公開予定
-    </span>
-  </div>
-  <h1 class="hero-title gradient-text">CloudKata</h1>
-  <p class="hero-sub">GCP ACE（Associate Cloud Engineer）認定試験の学習を支援するモバイルアプリ</p>
-  <p class="hero-origin">「型」（武道の基本型）に由来。暗記ではなく実践的に使えるスキルとしてクラウド知識を習得。</p>
-  <div style="display:flex;gap:1rem;flex-wrap:wrap;justify-content:center;">
-    <a href="https://groups.google.com/g/ryo-lab-project-group" target="_blank" rel="noopener" class="btn-primary">
-      Googleグループでベータ参加
-    </a>
-  </div>
-  <p style="margin-top:1rem;font-size:0.8rem;color:#475569;">
-    ベータ参加: Google Group へ参加後、Google Play のテストプログラムから入手できます。
-  </p>
-</section>
-
-<div class="glow-line" style="max-width:800px;margin:0 auto;"></div>
-
-<!-- Features -->
-<section>
-  <div class="section-inner">
-    <div class="reveal" style="margin-bottom:3rem;">
-      <p class="section-label">Features</p>
-      <h2 class="section-title">クラウドを、自分のものにする。</h2>
-    </div>
-    <div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(280px,1fr));gap:1.5rem;">
-      <div class="feature-card reveal">
-        <div class="feature-icon">📚</div>
-        <h3 style="font-family:'Syne',sans-serif;font-size:1.15rem;font-weight:700;margin-bottom:0.75rem;color:#f1f5f9;">
-          効率的な問題演習
-        </h3>
-        <p style="color:#94a3b8;line-height:1.7;font-size:0.92rem;">
-          Compute Engine / VPC / IAM 等のカテゴリ別問題。難易度設定・弱点克服モードを搭載。
-        </p>
+  <!-- Navigation -->
+  <nav>
+    <div class="nav-inner">
+      <a href="./index.html" class="nav-logo">
+        <div class="nav-logo-dot"></div>
+        <span class="nav-logo-text">CloudKata</span>
+      </a>
+      <div class="nav-links">
+        <a href="./index.html" class="active">Home</a>
+        <a href="./privacy-policy.html">Privacy Policy</a>
+        <a href="./disclaimer.html">免責事項</a>
+        <a href="./terms.html">利用規約</a>
       </div>
-      <div class="feature-card reveal" style="transition-delay:0.1s;">
-        <div class="feature-icon">📊</div>
-        <h3 style="font-family:'Syne',sans-serif;font-size:1.15rem;font-weight:700;margin-bottom:0.75rem;color:#f1f5f9;">
-          学習分析
-        </h3>
-        <p style="color:#94a3b8;line-height:1.7;font-size:0.92rem;">
-          レーダーチャート・グラフによるビジュアルダッシュボードで自分の強み・弱点を可視化。
-        </p>
+      <div class="nav-back">
+        <a href="../index.html">← Portfolio</a>
       </div>
-      <div class="feature-card reveal" style="transition-delay:0.2s;">
-        <div class="feature-icon">🏆</div>
-        <h3 style="font-family:'Syne',sans-serif;font-size:1.15rem;font-weight:700;margin-bottom:0.75rem;color:#f1f5f9;">
-          モチベーション維持
-        </h3>
-        <p style="color:#94a3b8;line-height:1.7;font-size:0.92rem;">
-          連続学習ストリーク・バッジ獲得・公式ドキュメントへのリンクと実践的なTipsを提供。
-        </p>
-      </div>
+      <button class="nav-hamburger" id="navToggle" aria-label="メニューを開く">
+        <span></span><span></span><span></span>
+      </button>
     </div>
-  </div>
-</section>
+  </nav>
 
-<div class="glow-line" style="max-width:800px;margin:0 auto;"></div>
-
-<!-- Screenshots -->
-<section>
-  <div class="section-inner">
-    <div class="reveal" style="margin-bottom:2rem;">
-      <p class="section-label">Screenshots</p>
-      <h2 class="section-title">アプリの世界を覗いてみる</h2>
-      <p style="color:#64748b;font-size:0.85rem;margin-top:0.5rem;">← スワイプまたはスクロールで確認できます</p>
+  <!-- Hero -->
+  <section class="hero">
+    <div style="margin-bottom:1.5rem;">
+      <span class="status-badge">
+        <span class="pulse-dot"></span>
+        クローズドテスト中 · 3月末一般公開予定
+      </span>
     </div>
-    <div class="screenshot-strip reveal">
-      <img src="../assets/cloudkata/screenshots/1.jpg" alt="CloudKata Screenshot 1" loading="lazy" />
-      <img src="../assets/cloudkata/screenshots/2.jpg" alt="CloudKata Screenshot 2" loading="lazy" />
-      <img src="../assets/cloudkata/screenshots/3.jpg" alt="CloudKata Screenshot 3" loading="lazy" />
-      <img src="../assets/cloudkata/screenshots/4.jpg" alt="CloudKata Screenshot 4" loading="lazy" />
-      <img src="../assets/cloudkata/screenshots/5.jpg" alt="CloudKata Screenshot 5" loading="lazy" />
-      <img src="../assets/cloudkata/screenshots/6.jpg" alt="CloudKata Screenshot 6" loading="lazy" />
-      <img src="../assets/cloudkata/screenshots/7.jpg" alt="CloudKata Screenshot 7" loading="lazy" />
+    <h1 class="hero-title gradient-text">CloudKata</h1>
+    <p class="hero-sub">GCP ACE（Associate Cloud Engineer）認定試験の学習を支援するモバイルアプリ</p>
+    <p class="hero-origin">「型」（武道の基本型）に由来。暗記ではなく実践的に使えるスキルとしてクラウド知識を習得。</p>
+    <div style="display:flex;gap:1rem;flex-wrap:wrap;justify-content:center;">
+      <a href="https://groups.google.com/g/ryo-lab-project-group" target="_blank" rel="noopener" class="btn-primary">
+        Googleグループでベータ参加
+      </a>
     </div>
-  </div>
-</section>
+    <p style="margin-top:1rem;font-size:0.8rem;color:#475569;">
+      ベータ参加: Google Group へ参加後、Google Play のテストプログラムから入手できます。
+    </p>
+  </section>
 
-<div class="glow-line" style="max-width:800px;margin:0 auto;"></div>
+  <div class="glow-line" style="max-width:800px;margin:0 auto;"></div>
 
-<!-- Mini FAQ -->
-<section>
-  <div class="section-inner">
-    <div class="reveal" style="margin-bottom:2.5rem;">
-      <p class="section-label">FAQ</p>
-      <h2 class="section-title">よくある質問</h2>
-    </div>
-    <div class="reveal glass" style="padding:1.5rem 2rem;">
-      <div class="mini-faq-item">
-        <span class="mini-faq-q">費用</span>
-        <span class="mini-faq-a">無料でご利用いただけます。</span>
+  <!-- Features -->
+  <section>
+    <div class="section-inner">
+      <div class="reveal" style="margin-bottom:3rem;">
+        <p class="section-label">Features</p>
+        <h2 class="section-title">クラウドを、自分のものにする。</h2>
       </div>
-      <div class="mini-faq-item">
-        <span class="mini-faq-q">オフライン対応</span>
-        <span class="mini-faq-a">ローカルキャッシュにより、オフライン環境でも学習できます。</span>
-      </div>
-      <div class="mini-faq-item">
-        <span class="mini-faq-q">Google公式アプリ？</span>
-        <span class="mini-faq-a">いいえ。個人開発による非公式の学習支援ツールです。Google LLC とは関係ありません。</span>
-      </div>
-      <div class="mini-faq-item">
-        <span class="mini-faq-q">問題の出典</span>
-        <span class="mini-faq-a">公式 Google Cloud ドキュメントおよび試験ガイドに基づきAI生成した独自問題です。実際の試験問題の再現（ブレインダンプ）ではありません。</span>
-      </div>
-      <div class="mini-faq-item">
-        <span class="mini-faq-q">品質保証</span>
-        <span class="mini-faq-a">AIによる検証と人的チェックを含む多段階レビューを実施しています。</span>
+      <div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(280px,1fr));gap:1.5rem;">
+        <div class="feature-card reveal">
+          <div class="feature-icon">📚</div>
+          <h3
+            style="font-family:'Syne',sans-serif;font-size:1.15rem;font-weight:700;margin-bottom:0.75rem;color:#f1f5f9;">
+            効率的な問題演習
+          </h3>
+          <p style="color:#94a3b8;line-height:1.7;font-size:0.92rem;">
+            Compute Engine / VPC / IAM 等のカテゴリ別問題。難易度設定・弱点克服モードを搭載。
+          </p>
+        </div>
+        <div class="feature-card reveal" style="transition-delay:0.1s;">
+          <div class="feature-icon">📊</div>
+          <h3
+            style="font-family:'Syne',sans-serif;font-size:1.15rem;font-weight:700;margin-bottom:0.75rem;color:#f1f5f9;">
+            学習分析
+          </h3>
+          <p style="color:#94a3b8;line-height:1.7;font-size:0.92rem;">
+            レーダーチャート・グラフによるビジュアルダッシュボードで自分の強み・弱点を可視化。
+          </p>
+        </div>
+        <div class="feature-card reveal" style="transition-delay:0.2s;">
+          <div class="feature-icon">🏆</div>
+          <h3
+            style="font-family:'Syne',sans-serif;font-size:1.15rem;font-weight:700;margin-bottom:0.75rem;color:#f1f5f9;">
+            モチベーション維持
+          </h3>
+          <p style="color:#94a3b8;line-height:1.7;font-size:0.92rem;">
+            連続学習ストリーク・バッジ獲得・公式ドキュメントへのリンクと実践的なTipsを提供。
+          </p>
+        </div>
       </div>
     </div>
-  </div>
-</section>
+  </section>
 
-<!-- Footer -->
-<footer>
-  <p>© 2026 Ryo-Lab. CloudKata 開発チーム</p>
-  <p>Google Cloud, GCP は Google LLC の商標です。本アプリは Google LLC の公式認定品ではありません。</p>
-</footer>
+  <div class="glow-line" style="max-width:800px;margin:0 auto;"></div>
 
+  <!-- Screenshots -->
+  <section>
+    <div class="section-inner">
+      <div class="reveal" style="margin-bottom:2rem;">
+        <p class="section-label">Screenshots</p>
+        <h2 class="section-title">アプリの世界を覗いてみる</h2>
+        <p style="color:#64748b;font-size:0.85rem;margin-top:0.5rem;">← スワイプまたはスクロールで確認できます</p>
+      </div>
+      <div class="screenshot-strip reveal">
+        <img src="../assets/cloudkata/screenshots/1.jpg" alt="CloudKata Screenshot 1" loading="lazy" />
+        <img src="../assets/cloudkata/screenshots/2.jpg" alt="CloudKata Screenshot 2" loading="lazy" />
+        <img src="../assets/cloudkata/screenshots/3.jpg" alt="CloudKata Screenshot 3" loading="lazy" />
+        <img src="../assets/cloudkata/screenshots/4.jpg" alt="CloudKata Screenshot 4" loading="lazy" />
+        <img src="../assets/cloudkata/screenshots/5.jpg" alt="CloudKata Screenshot 5" loading="lazy" />
+        <img src="../assets/cloudkata/screenshots/6.jpg" alt="CloudKata Screenshot 6" loading="lazy" />
+        <img src="../assets/cloudkata/screenshots/7.jpg" alt="CloudKata Screenshot 7" loading="lazy" />
+      </div>
+    </div>
+  </section>
+
+  <div class="glow-line" style="max-width:800px;margin:0 auto;"></div>
+
+  <!-- Mini FAQ -->
+  <section>
+    <div class="section-inner">
+      <div class="reveal" style="margin-bottom:2.5rem;">
+        <p class="section-label">FAQ</p>
+        <h2 class="section-title">よくある質問</h2>
+      </div>
+      <div class="reveal glass" style="padding:1.5rem 2rem;">
+        <div class="mini-faq-item">
+          <span class="mini-faq-q">費用</span>
+          <span class="mini-faq-a">無料でご利用いただけます。</span>
+        </div>
+        <div class="mini-faq-item">
+          <span class="mini-faq-q">オフライン対応</span>
+          <span class="mini-faq-a">ローカルキャッシュにより、オフライン環境でも学習できます。</span>
+        </div>
+        <div class="mini-faq-item">
+          <span class="mini-faq-q">Google公式アプリ？</span>
+          <span class="mini-faq-a">いいえ。個人開発による非公式の学習支援ツールです。Google LLC とは関係ありません。</span>
+        </div>
+        <div class="mini-faq-item">
+          <span class="mini-faq-q">問題の出典</span>
+          <span class="mini-faq-a">公式 Google Cloud ドキュメントおよび試験ガイドに基づきAI生成した独自問題です。実際の試験問題の再現（ブレインダンプ）ではありません。</span>
+        </div>
+        <div class="mini-faq-item">
+          <span class="mini-faq-q">品質保証</span>
+          <span class="mini-faq-a">AIによる検証と人的チェックを含む多段階レビューを実施しています。</span>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Footer -->
+  <footer>
+    <p>© 2026 Ryo-Lab. CloudKata 開発チーム</p>
+    <p>Google Cloud, GCP は Google LLC の商標です。本アプリは Google LLC の公式認定品ではありません。</p>
+  </footer>
+
+  <script>
+    const observer = new IntersectionObserver((entries) => {
+      entries.forEach(entry => {
+        if (entry.isIntersecting) entry.target.classList.add('visible');
+      });
+    }, { threshold: 0.1, rootMargin: '0px 0px -40px 0px' });
+    document.querySelectorAll('.reveal').forEach(el => observer.observe(el));
+  </script>
 <script>
-  const observer = new IntersectionObserver((entries) => {
-    entries.forEach(entry => {
-      if (entry.isIntersecting) entry.target.classList.add('visible');
-    });
-  }, { threshold: 0.1, rootMargin: '0px 0px -40px 0px' });
-  document.querySelectorAll('.reveal').forEach(el => observer.observe(el));
+  (function() {
+    var btn = document.getElementById('navToggle');
+    var navEl = btn && btn.closest('nav');
+    if (btn && navEl) {
+      btn.addEventListener('click', function() {
+        navEl.classList.toggle('open');
+        btn.setAttribute('aria-label', navEl.classList.contains('open') ? 'メニューを閉じる' : 'メニューを開く');
+      });
+      document.addEventListener('click', function(e) {
+        if (!navEl.contains(e.target)) navEl.classList.remove('open');
+      });
+    }
+  })();
 </script>
 </body>
+
 </html>
