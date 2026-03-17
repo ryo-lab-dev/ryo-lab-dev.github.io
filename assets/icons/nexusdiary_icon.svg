@@ -1,0 +1,35 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1024 1024">
+  <rect width="1024" height="1024" rx="120" fill="#F7F5EE"/>
+
+  <!-- Grid pattern -->
+  <defs>
+    <pattern id="grid" x="0" y="0" width="40" height="40" patternUnits="userSpaceOnUse">
+      <path d="M 40 0 L 0 0 0 40" fill="none" stroke="#DEDCD4" stroke-width="1"/>
+    </pattern>
+  </defs>
+  <rect width="1024" height="1024" fill="url(#grid)" rx="120"/>
+
+  <!-- Left margin line (red) -->
+  <line x1="200" y1="0" x2="200" y2="1024" stroke="#E8B4B0" stroke-width="2.5"/>
+
+  <!-- Ink strokes (handwritten journal entry simulation) -->
+  <g stroke="#1A1A1A" stroke-linecap="round" fill="none">
+    <!-- Line 1 -->
+    <path d="M 240 300 Q 400 292 620 305 Q 750 310 840 298"
+          stroke-width="22" opacity="0.88"/>
+    <!-- Line 2 -->
+    <path d="M 240 380 Q 350 372 560 382 Q 700 386 820 375"
+          stroke-width="22" opacity="0.88"/>
+    <!-- Line 3 (shorter, like end of paragraph) -->
+    <path d="M 240 460 Q 390 452 580 462"
+          stroke-width="22" opacity="0.88"/>
+  </g>
+
+  <!-- Diagonal pen in lower-right -->
+  <g transform="translate(790, 760) rotate(-45)">
+    <rect x="-28" y="-120" width="56" height="16" rx="4" fill="#888888"/>
+    <rect x="-28" y="-104" width="56" height="190" fill="#D4C8A0"/>
+    <polygon points="-28,86 28,86 0,140" fill="#B8AC88"/>
+    <polygon points="-12,128 12,128 0,158" fill="#777777"/>
+  </g>
+</svg>

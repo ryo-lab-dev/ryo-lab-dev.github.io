@@ -456,6 +456,38 @@
         }
         .store-btn-apple:hover .tip { opacity: 1; }
 
+        /* App icon */
+        .app-icon {
+            width: 52px; height: 52px;
+            border-radius: 14px;
+            background: rgba(255,255,255,0.05);
+            border: 1px solid rgba(255,255,255,0.09);
+            display: flex; align-items: center; justify-content: center;
+            overflow: hidden;
+            margin-bottom: 1rem;
+            flex-shrink: 0;
+        }
+        .app-icon img {
+            width: 36px; height: 36px;
+            object-fit: contain;
+        }
+        .app-icon-lg {
+            width: 64px; height: 64px;
+            border-radius: 16px;
+            margin-bottom: 1.25rem;
+        }
+        .app-icon-lg img {
+            width: 46px; height: 46px;
+        }
+        .app-icon-sm {
+            width: 40px; height: 40px;
+            border-radius: 10px;
+            margin-bottom: 0.75rem;
+        }
+        .app-icon-sm img {
+            width: 28px; height: 28px;
+        }
+
         /* Decorative radar graphic inside ScoreVault */
         .deco-radar {
             position: absolute; bottom: -10px; right: -10px;
@@ -607,6 +639,9 @@
                             </div>
                             <span class="card-num">01</span>
                         </div>
+                        <div class="app-icon app-icon-lg">
+                            <img src="assets/icons/scorevault_icon.svg" alt="ScoreVault icon">
+                        </div>
                         <h3 class="ctitle ctitle-xl">ScoreVault</h3>
                         <p class="cdesc">
                             自分だけの正直なゲーム感想を蓄積できる「非公開型」ゲームプレイ記録アプリ。Steam/IGDB連携、統計ダッシュボード、端末間同期を搭載。
@@ -635,9 +670,7 @@
                             <span class="stag">Flutter</span>
                             <span class="stag">Firebase</span>
                             <span class="stag">Isar</span>
-                            <span class="stag">AdMob</span>
                             <span class="stag">Riverpod</span>
-                            <span class="stag">go_router</span>
                             <span class="stag">Clean Architecture</span>
                         </div>
                     </div>
@@ -659,6 +692,9 @@
                                 <span class="badge b-dev">クローズドテスト中</span>
                             </div>
                             <span class="card-num">02</span>
+                        </div>
+                        <div class="app-icon app-icon-sm">
+                            <img src="assets/icons/cloudkata_icon.svg" alt="CloudKata icon">
                         </div>
                         <h3 class="ctitle ctitle-md">CloudKata</h3>
                         <p class="cdesc cdesc-sm">GCP ACE資格学習アプリ。苦手分野を分析し、ゲーミフィケーションで継続学習をサポート。</p>
@@ -689,6 +725,9 @@
                             </div>
                             <span class="card-num">06</span>
                         </div>
+                        <div class="app-icon app-icon-sm">
+                            <img src="assets/icons/nexusdiary_icon.svg" alt="NexusDiary icon">
+                        </div>
                         <h3 class="ctitle ctitle-md">NexusDiary</h3>
                         <p class="cdesc cdesc-sm">AIが思考を分析・タグ付けし、開発アイデアを提案する日記アプリ。5種のテーマ切り替え搭載。</p>
                         <div class="store-btns">
@@ -702,9 +741,9 @@
                             </a>
                         </div>
                         <div class="stags">
+                            <span class="stag">Flutter</span>
                             <span class="stag">Firebase</span>
                             <span class="stag">Gemini AI</span>
-                            <span class="stag">AdMob</span>
                         </div>
                     </div>
                 </div>
@@ -717,6 +756,9 @@
                                 <span class="badge b-live">Released on Chrome Web Store</span>
                             </div>
                             <span class="card-num">03</span>
+                        </div>
+                        <div class="app-icon app-icon-sm">
+                            <img src="assets/icons/autofill_icon.png" alt="AutoFill Customize icon">
                         </div>
                         <h3 class="ctitle ctitle-md">AutoFill<br>Customize</h3>
                         <p class="cdesc cdesc-sm">URLパターンに基づいてフォーム入力を自動化するChrome拡張機能。</p>
@@ -787,6 +829,7 @@
                         <h3 class="ctitle ctitle-sm">はぐ育</h3>
                         <p class="cdesc cdesc-sm">AIと育児相談 & Notion連携で夫婦間の情報共有を統合した育児コンシェルジュ。</p>
                         <div class="stags">
+                            <span class="stag">Flutter</span>
                             <span class="stag">Gemini AI</span>
                             <span class="stag">Notion API</span>
                             <span class="stag">Riverpod</span>

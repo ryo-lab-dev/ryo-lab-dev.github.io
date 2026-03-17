@@ -1,0 +1,19 @@
+<svg viewBox="0 0 150 150" xmlns="http://www.w3.org/2000/svg">
+  <!-- 
+    元が 0 0 100 100 だったので、
+    viewBox を 0 0 150 150 に拡大し、
+    ロゴを (25, 25) のオフセットで配置することで、
+    上下左右に 25% (計50%) の余白を確保しました。
+    これで中央の 100x100 領域がセーフティゾーンに収まります。
+  -->
+  <defs>
+    <linearGradient id="g1" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" style="stop-color:#4285F4"/>
+      <stop offset="100%" style="stop-color:#1565C0"/>
+    </linearGradient>
+  </defs>
+  <g transform="translate(25, 25)">
+    <circle cx="50" cy="50" r="45" fill="none" stroke="url(#g1)" stroke-width="8" stroke-dasharray="240 40"/>
+    <path d="M30 60 Q40 45 50 60 T70 60" stroke="#4285F4" stroke-width="6" fill="none" stroke-linecap="round"/>
+  </g>
+</svg>
