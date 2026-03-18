@@ -1,922 +1,910 @@
 <!DOCTYPE html>
 <html lang="ja">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Ryo-Lab — Product Showcase</title>
-    <link rel="icon" href="assets/logo_light.png" type="image/png">
-    <meta name="google-site-verification" content="kbYhm2iiGfFNOT9dd12nDTCx62bCiumEVF55YxdoHr8" />
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link href="https://fonts.googleapis.com/css2?family=Syne:wght@400;600;700;800&family=Noto+Sans+JP:wght@300;400;500&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
-    <style>
-        /* ── Variables ── */
-        :root {
-            --bg:          #06080f;
-            --bg-card:     rgba(255,255,255,0.035);
-            --bg-card-h:   rgba(255,255,255,0.065);
-            --border:      rgba(255,255,255,0.07);
-            --border-h:    rgba(255,255,255,0.14);
-            --blue:        #3b82f6;
-            --violet:      #8b5cf6;
-            --emerald:     #10b981;
-            --amber:       #f59e0b;
-            --text-1:      #f1f5f9;
-            --text-2:      #94a3b8;
-            --text-3:      #475569;
-            --font-d:      'Syne', sans-serif;
-            --font-b:      'Noto Sans JP', sans-serif;
-            --font-m:      'JetBrains Mono', monospace;
-        }
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Ryo-Lab — Product Showcase</title>
+  <link rel="icon" href="assets/logo_light.png" type="image/png">
+  <meta name="google-site-verification" content="kbYhm2iiGfFNOT9dd12nDTCx62bCiumEVF55YxdoHr8" />
+  <link href="https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@300;400;500;700&family=Syne:wght@700;800&display=swap" rel="stylesheet">
+  <style>
+    *, *::before, *::after {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+    }
 
-        /* ── Reset ── */
-        *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
-        html { scroll-behavior: smooth; }
-        body {
-            background: var(--bg);
-            color: var(--text-1);
-            font-family: var(--font-b);
-            line-height: 1.6;
-            overflow-x: hidden;
-        }
+    :root {
+      --bg-primary: #050505;
+      --bg-secondary: #0a0a0a;
+      --bg-card: #0d0d0d;
+      --green: #00ff88;
+      --cyan: #00ffff;
+      --text-primary: #e2e8f0;
+      --text-muted: #a0aec0;
+      --border: rgba(0, 255, 136, 0.2);
+      --border-hover: rgba(0, 255, 136, 0.6);
+      --glow-green: 0 0 10px rgba(0, 255, 136, 0.4), 0 0 30px rgba(0, 255, 136, 0.1);
+      --glow-cyan: 0 0 10px rgba(0, 255, 255, 0.4), 0 0 30px rgba(0, 255, 255, 0.1);
+    }
 
-        /* ── Background ── */
-        .bg {
-            position: fixed; inset: 0; z-index: 0;
-            pointer-events: none; overflow: hidden;
-        }
-        .bg-grid {
-            position: absolute; inset: 0;
-            background-image:
-                linear-gradient(rgba(255,255,255,0.018) 1px, transparent 1px),
-                linear-gradient(90deg, rgba(255,255,255,0.018) 1px, transparent 1px);
-            background-size: 56px 56px;
-        }
-        .orb {
-            position: absolute; border-radius: 50%;
-            filter: blur(90px); opacity: 0.13;
-        }
-        .orb-a {
-            width: 640px; height: 640px;
-            background: radial-gradient(circle, #3b82f6 0%, transparent 70%);
-            top: -220px; left: -180px;
-            animation: drift-a 22s ease-in-out infinite;
-        }
-        .orb-b {
-            width: 520px; height: 520px;
-            background: radial-gradient(circle, #8b5cf6 0%, transparent 70%);
-            top: 28%; right: -140px;
-            animation: drift-b 28s ease-in-out infinite;
-        }
-        .orb-c {
-            width: 420px; height: 420px;
-            background: radial-gradient(circle, #10b981 0%, transparent 70%);
-            bottom: 8%; left: 18%;
-            animation: drift-c 19s ease-in-out infinite;
-        }
-        @keyframes drift-a {
-            0%,100% { transform: translate(0,0) scale(1); }
-            33%      { transform: translate(70px,50px) scale(1.08); }
-            66%      { transform: translate(-30px,90px) scale(0.94); }
-        }
-        @keyframes drift-b {
-            0%,100% { transform: translate(0,0) scale(1); }
-            40%      { transform: translate(-50px,70px) scale(1.06); }
-            70%      { transform: translate(35px,-50px) scale(0.92); }
-        }
-        @keyframes drift-c {
-            0%,100% { transform: translate(0,0) scale(1); }
-            50%      { transform: translate(55px,-70px) scale(1.12); }
-        }
-        /* SVG noise overlay */
-        .bg-noise {
-            position: absolute; inset: 0;
-            background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.85' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)' opacity='0.035'/%3E%3C/svg%3E");
-            background-size: 220px 220px;
-        }
+    html {
+      scroll-behavior: smooth;
+    }
 
-        /* ── Nav ── */
-        nav {
-            position: fixed; top: 0; left: 0; right: 0; z-index: 100;
-            padding: 1.125rem 2.5rem;
-            display: flex; align-items: center; justify-content: space-between;
-            background: rgba(6,8,15,0.55);
-            backdrop-filter: blur(24px);
-            border-bottom: 1px solid var(--border);
-        }
-        .nav-logo {
-            font-family: var(--font-d); font-size: 1.1875rem; font-weight: 800;
-            letter-spacing: -0.03em;
-            background: linear-gradient(135deg, var(--blue), var(--violet));
-            -webkit-background-clip: text; -webkit-text-fill-color: transparent;
-            background-clip: text;
-        }
-        .nav-links { list-style: none; display: flex; gap: 2.25rem; }
-        .nav-links a {
-            font-family: var(--font-m); font-size: 0.6875rem;
-            color: var(--text-3); text-decoration: none;
-            letter-spacing: 0.08em; text-transform: uppercase;
-            transition: color 0.2s;
-        }
-        .nav-links a:hover { color: var(--text-1); }
+    body {
+      background-color: var(--bg-primary);
+      color: var(--text-primary);
+      font-family: 'JetBrains Mono', monospace;
+      line-height: 1.6;
+      overflow-x: hidden;
+      position: relative;
+    }
 
-        /* ── Layout ── */
-        .wrap {
-            position: relative; z-index: 1;
-            max-width: 1120px; margin: 0 auto; padding: 0 1.75rem;
-        }
+    /* スキャンライン効果 */
+    body::before {
+      content: '';
+      position: fixed;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      background: repeating-linear-gradient(
+        0deg,
+        transparent,
+        transparent 2px,
+        rgba(0, 0, 0, 0.03) 2px,
+        rgba(0, 0, 0, 0.03) 4px
+      );
+      pointer-events: none;
+      z-index: 9999;
+    }
 
-        /* ── Hero ── */
-        .hero {
-            min-height: 100vh; display: flex; align-items: center;
-            padding-top: 80px;
-        }
-        .hero-inner { padding: 5rem 0 3rem; }
+    /* ======== NAV ======== */
+    nav {
+      position: fixed;
+      top: 0;
+      left: 0;
+      right: 0;
+      z-index: 1000;
+      background: rgba(5, 5, 5, 0.9);
+      backdrop-filter: blur(12px);
+      -webkit-backdrop-filter: blur(12px);
+      border-bottom: 1px solid var(--border);
+      padding: 0 2rem;
+      height: 60px;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+    }
 
-        .eyebrow {
-            font-family: var(--font-m); font-size: 0.6875rem;
-            color: var(--blue); letter-spacing: 0.18em; text-transform: uppercase;
-            margin-bottom: 1.75rem;
-            display: flex; align-items: center; gap: 0.875rem;
-        }
-        .eyebrow::before {
-            content: ''; display: inline-block;
-            width: 2.25rem; height: 1px; background: var(--blue);
-        }
+    .nav-logo {
+      font-family: 'JetBrains Mono', monospace;
+      font-weight: 700;
+      font-size: 1.1rem;
+      color: var(--green);
+      text-shadow: var(--glow-green);
+      text-decoration: none;
+      letter-spacing: 0.05em;
+    }
 
-        .hero-title {
-            font-family: var(--font-d);
-            font-size: clamp(5rem, 12vw, 9.5rem);
-            font-weight: 800;
-            line-height: 0.9; letter-spacing: -0.05em;
-            margin-bottom: 2.25rem;
-        }
-        .title-white {
-            display: block;
-            background: linear-gradient(160deg, #fff 20%, rgba(255,255,255,0.45) 100%);
-            -webkit-background-clip: text; -webkit-text-fill-color: transparent;
-            background-clip: text;
-        }
-        .title-grad {
-            display: block;
-            background: linear-gradient(135deg, var(--blue) 0%, var(--violet) 100%);
-            -webkit-background-clip: text; -webkit-text-fill-color: transparent;
-            background-clip: text;
-        }
+    .nav-logo:hover {
+      color: var(--cyan);
+      text-shadow: var(--glow-cyan);
+      transition: all 0.2s;
+    }
 
-        .hero-desc {
-            font-size: 1rem; color: var(--text-2);
-            max-width: 500px; line-height: 1.85;
-            margin-bottom: 2.75rem;
-            font-weight: 300;
-        }
+    .nav-links {
+      display: flex;
+      gap: 1.5rem;
+      list-style: none;
+    }
 
-        .stat-row { display: flex; flex-wrap: wrap; gap: 0.625rem; }
-        .pill {
-            display: flex; align-items: center; gap: 0.5rem;
-            padding: 0.4375rem 0.9375rem;
-            background: rgba(255,255,255,0.04);
-            border: 1px solid var(--border); border-radius: 100px;
-            font-family: var(--font-m); font-size: 0.6875rem; color: var(--text-2);
-            transition: all 0.2s;
-        }
-        .pill:hover { background: rgba(255,255,255,0.07); border-color: var(--border-h); color: var(--text-1); }
-        .dot {
-            width: 5px; height: 5px; border-radius: 50%; flex-shrink: 0;
-        }
-        .d-blue   { background: var(--blue); }
-        .d-emerald {
-            background: var(--emerald);
-            box-shadow: 0 0 5px var(--emerald);
-            animation: pulse-e 2.2s ease-in-out infinite;
-        }
-        .d-violet { background: var(--violet); }
-        @keyframes pulse-e {
-            0%,100% { opacity:1; transform:scale(1); }
-            50%      { opacity:.6; transform:scale(1.4); }
-        }
+    .nav-links a {
+      color: var(--text-muted);
+      text-decoration: none;
+      font-size: 0.85rem;
+      font-weight: 500;
+      letter-spacing: 0.05em;
+      transition: color 0.2s, text-shadow 0.2s;
+      cursor: pointer;
+    }
 
-        .scroll-cue {
-            margin-top: 4.5rem;
-            font-family: var(--font-m); font-size: 0.625rem;
-            color: var(--text-3); letter-spacing: 0.12em;
-            display: flex; align-items: center; gap: 0.75rem;
-        }
-        .scan-line {
-            width: 38px; height: 1px; background: var(--text-3);
-            position: relative; overflow: hidden;
-        }
-        .scan-line::after {
-            content: ''; position: absolute; top: 0; left: -100%; width: 100%; height: 100%;
-            background: var(--blue);
-            animation: scan 2.4s ease-in-out infinite;
-        }
-        @keyframes scan { 0%{left:-100%} 100%{left:100%} }
+    .nav-links a:hover {
+      color: var(--green);
+      text-shadow: var(--glow-green);
+    }
 
-        /* ── Section Header ── */
-        .sec-head { margin-bottom: 2.75rem; }
-        .sec-label {
-            font-family: var(--font-m); font-size: 0.625rem;
-            color: var(--blue); letter-spacing: 0.18em; text-transform: uppercase;
-            margin-bottom: 0.625rem;
-            display: flex; align-items: center; gap: 0.5rem;
-        }
-        .sec-label::before { content: '//'; color: var(--text-3); }
-        .sec-title {
-            font-family: var(--font-d); font-size: clamp(2rem, 4vw, 2.875rem);
-            font-weight: 700; letter-spacing: -0.03em; color: var(--text-1);
-        }
+    /* ======== HERO ======== */
+    .hero {
+      min-height: 100vh;
+      display: flex;
+      align-items: center;
+      padding: 80px 2rem 4rem;
+      background: radial-gradient(ellipse at 20% 50%, rgba(0, 255, 136, 0.04) 0%, transparent 60%),
+                  radial-gradient(ellipse at 80% 20%, rgba(0, 255, 255, 0.03) 0%, transparent 50%),
+                  var(--bg-primary);
+    }
 
-        /* ── Products ── */
-        #products { padding: 6rem 0; }
+    .hero-inner {
+      max-width: 900px;
+      margin: 0 auto;
+      width: 100%;
+    }
 
-        /* Group sections */
-        .group-section { margin-bottom: 2.5rem; }
-        .group-section:last-child { margin-bottom: 0; }
-        .group-header {
-            display: flex; align-items: center; gap: 0.875rem;
-            margin-bottom: 1.125rem;
-        }
-        .group-label {
-            font-family: var(--font-m); font-size: 0.5625rem;
-            color: var(--text-3); letter-spacing: 0.14em; text-transform: uppercase;
-            padding: 0.25rem 0.6875rem;
-            background: rgba(255,255,255,0.03);
-            border: 1px solid var(--border); border-radius: 100px;
-            white-space: nowrap;
-        }
-        .group-divider { flex: 1; height: 1px; background: var(--border); }
+    .hero-eyebrow {
+      font-size: 0.8rem;
+      font-weight: 500;
+      color: var(--green);
+      letter-spacing: 0.15em;
+      margin-bottom: 1.5rem;
+      opacity: 0;
+      animation: fadeInUp 0.6s ease forwards 0.2s;
+    }
 
-        .bento {
-            display: grid;
-            grid-template-columns: repeat(6, 1fr);
-            gap: 0.875rem;
-        }
-        /* Published group */
-        .bento-pub .c-sv { grid-column: 1 / 5; grid-row: 1 / 4; }
-        .bento-pub .c-ck { grid-column: 5 / 7; grid-row: 1 / 2; }
-        .bento-pub .c-nd { grid-column: 5 / 7; grid-row: 2 / 3; }
-        .bento-pub .c-af { grid-column: 5 / 7; grid-row: 3 / 4; }
-        /* Dev group */
-        .bento-dev .c-mg { grid-column: 1 / 4; }
-        .bento-dev .c-nd { grid-column: 4 / 7; }
-        /* Private group */
-        .bento-prv .c-hg { grid-column: 1 / 4; }
-        .bento-prv .c-de { grid-column: 4 / 7; }
+    .hero-title {
+      font-family: 'Syne', sans-serif;
+      font-size: clamp(5rem, 18vw, 14rem);
+      font-weight: 800;
+      line-height: 0.88;
+      letter-spacing: -0.02em;
+      margin-bottom: 2rem;
+      opacity: 0;
+      animation: fadeInUp 0.6s ease forwards 0.4s;
+    }
 
-        /* ── Card ── */
-        .card {
-            position: relative; border-radius: 1.125rem;
-            background: var(--bg-card);
-            border: 1px solid var(--border);
-            overflow: hidden;
-            transition: transform 0.32s ease, background 0.3s, border-color 0.3s;
-        }
-        .card:hover {
-            transform: translateY(-4px);
-            background: var(--bg-card-h);
-            border-color: var(--border-h);
-        }
+    .hero-title .line1 {
+      display: block;
+      color: var(--text-primary);
+    }
 
-        /* Featured gradient border */
-        .card.featured {
-            background: linear-gradient(var(--bg), var(--bg)) padding-box,
-                        linear-gradient(135deg, rgba(59,130,246,0.8), rgba(139,92,246,0.8)) border-box;
-            border: 1px solid transparent;
-        }
-        .card.featured::after {
-            content: '';
-            position: absolute; inset: 0; border-radius: inherit;
-            background: linear-gradient(140deg, rgba(59,130,246,0.06) 0%, rgba(139,92,246,0.04) 100%);
-            pointer-events: none;
-        }
+    .hero-title .line2 {
+      display: block;
+      color: var(--green);
+      text-shadow: 0 0 60px rgba(0, 255, 136, 0.3);
+    }
 
-        .ci { /* card inner */
-            padding: 1.625rem; height: 100%;
-            display: flex; flex-direction: column;
-        }
-        .ci-lg { padding: 2.125rem; }
+    .hero-subtitle-wrap {
+      display: flex;
+      align-items: center;
+      gap: 0.5rem;
+      margin-bottom: 2.5rem;
+      min-height: 2rem;
+      opacity: 0;
+      animation: fadeInUp 0.6s ease forwards 0.8s;
+    }
 
-        .ct { /* card top row */
-            display: flex; align-items: flex-start;
-            justify-content: space-between; gap: 0.75rem;
-            margin-bottom: 1.375rem;
-        }
-        .badges { display: flex; flex-wrap: wrap; gap: 0.3125rem; }
+    .hero-prompt {
+      color: var(--green);
+      font-size: 1rem;
+      flex-shrink: 0;
+    }
 
-        /* Badges */
-        .badge {
-            display: inline-flex; align-items: center; gap: 0.3125rem;
-            padding: 0.2rem 0.5625rem; border-radius: 100px;
-            font-family: var(--font-m); font-size: 0.625rem;
-            font-weight: 500; letter-spacing: 0.02em;
-        }
-        .b-live {
-            color: var(--emerald);
-            background: rgba(16,185,129,0.07);
-            border: 1px solid rgba(16,185,129,0.28);
-            animation: live-glow 3.5s ease-in-out infinite;
-        }
-        @keyframes live-glow {
-            0%,100% { box-shadow: 0 0 10px rgba(16,185,129,0.08); }
-            50%      { box-shadow: 0 0 22px rgba(16,185,129,0.22); }
-        }
-        .b-live::before {
-            content: ''; width: 4px; height: 4px; border-radius: 50%;
-            background: var(--emerald); box-shadow: 0 0 5px var(--emerald);
-            animation: pulse-e 2.2s ease-in-out infinite;
-        }
-        .b-dev {
-            color: var(--amber);
-            background: rgba(245,158,11,0.07);
-            border: 1px solid rgba(245,158,11,0.25);
-        }
-        .b-tag {
-            color: var(--text-3);
-            background: transparent;
-            border: 1px solid rgba(255,255,255,0.07);
-            font-size: 0.5625rem;
-        }
+    .hero-subtitle {
+      color: var(--text-muted);
+      font-size: 0.95rem;
+      font-weight: 400;
+    }
 
-        .card-num {
-            font-family: var(--font-m); font-size: 0.625rem; color: var(--text-3);
-            padding: 0.3125rem 0.5625rem;
-            background: rgba(255,255,255,0.025);
-            border: 1px solid var(--border); border-radius: 5px;
-            flex-shrink: 0;
-        }
+    .hero-cursor {
+      display: inline-block;
+      width: 2px;
+      height: 1.1em;
+      background: var(--green);
+      vertical-align: middle;
+      animation: blink 1s step-end infinite;
+      flex-shrink: 0;
+    }
 
-        /* Titles */
-        .ctitle {
-            font-family: var(--font-d); font-weight: 700;
-            letter-spacing: -0.025em; color: var(--text-1);
-            margin-bottom: 0.6875rem;
-        }
-        .ctitle-xl { font-size: clamp(2rem, 3.5vw, 2.875rem); margin-bottom: 1rem; }
-        .ctitle-md { font-size: 1.3125rem; }
-        .ctitle-sm { font-size: 1rem; }
+    @keyframes blink {
+      0%, 100% { opacity: 1; }
+      50% { opacity: 0; }
+    }
 
-        .cdesc {
-            font-size: 0.9375rem; color: var(--text-2); line-height: 1.75;
-            margin-bottom: 1.375rem;
-        }
-        .cdesc-sm { font-size: 0.8125rem; line-height: 1.65; }
+    .hero-stats {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 0.75rem;
+      opacity: 0;
+      animation: fadeInUp 0.6s ease forwards 1.2s;
+    }
 
-        /* Feature list */
-        .flist { list-style: none; display: flex; flex-direction: column; gap: 0.5625rem; margin-bottom: 1.625rem; }
-        .flist li {
-            display: flex; align-items: flex-start; gap: 0.5625rem;
-            font-size: 0.875rem; color: var(--text-2);
-        }
-        .flist li::before {
-            content: '→'; color: var(--blue);
-            font-family: var(--font-m); font-size: 0.6875rem;
-            flex-shrink: 0; margin-top: 0.125rem;
-        }
+    .stat-pill {
+      background: transparent;
+      border: 1px solid var(--border);
+      color: var(--text-muted);
+      padding: 0.4rem 1rem;
+      font-size: 0.78rem;
+      font-family: 'JetBrains Mono', monospace;
+      letter-spacing: 0.05em;
+      transition: border-color 0.2s, color 0.2s, box-shadow 0.2s;
+    }
 
-        /* Stack tags */
-        .stags { display: flex; flex-wrap: wrap; gap: 0.3125rem; margin-top: auto; }
-        .stag {
-            font-family: var(--font-m); font-size: 0.5625rem;
-            color: var(--text-3); padding: 0.1875rem 0.4375rem;
-            background: rgba(255,255,255,0.025);
-            border: 1px solid rgba(255,255,255,0.055);
-            border-radius: 3px;
-            transition: all 0.2s;
-        }
-        .card:hover .stag { color: var(--text-2); background: rgba(255,255,255,0.045); }
+    .stat-pill:hover {
+      border-color: var(--green);
+      color: var(--green);
+      box-shadow: var(--glow-green);
+    }
 
-        /* Chrome Web Store button */
-        .store-btn-chrome {
-            color: #fbbf24;
-            background: rgba(251,191,36,0.07);
-            border-color: rgba(251,191,36,0.25);
-        }
-        .store-btn-chrome:hover {
-            background: rgba(251,191,36,0.14);
-            border-color: rgba(251,191,36,0.5);
-            transform: translateY(-1px);
-            box-shadow: 0 4px 16px rgba(251,191,36,0.15);
-        }
+    .stat-pill .pill-label {
+      color: var(--cyan);
+      margin-right: 0.4em;
+    }
 
-        /* Private badge */
-        .b-private {
-            color: var(--text-3);
-            background: rgba(255,255,255,0.025);
-            border: 1px solid rgba(255,255,255,0.07);
-            gap: 0.25rem;
-        }
+    /* ======== SECTION COMMON ======== */
+    section {
+      padding: 6rem 2rem;
+      max-width: 1200px;
+      margin: 0 auto;
+    }
 
-        /* Store buttons */
-        .store-btns {
-            display: flex; gap: 0.5rem;
-            margin-bottom: 1.375rem;
-            flex-wrap: wrap;
-        }
-        .store-btn {
-            display: inline-flex; align-items: center; gap: 0.4375rem;
-            padding: 0.4375rem 0.875rem;
-            border-radius: 0.5rem;
-            font-family: var(--font-m); font-size: 0.6875rem; font-weight: 500;
-            border: 1px solid; text-decoration: none;
-            transition: all 0.22s; white-space: nowrap; line-height: 1;
-        }
-        .store-btn svg { flex-shrink: 0; }
-        .store-btn-gplay {
-            color: var(--emerald);
-            background: rgba(16,185,129,0.07);
-            border-color: rgba(16,185,129,0.25);
-        }
-        .store-btn-gplay:hover {
-            background: rgba(16,185,129,0.14);
-            border-color: rgba(16,185,129,0.5);
-            transform: translateY(-1px);
-            box-shadow: 0 4px 16px rgba(16,185,129,0.15);
-        }
-        .store-btn-apple {
-            color: #e5e7eb;
-            background: rgba(255,255,255,0.05);
-            border-color: rgba(255,255,255,0.2);
-        }
-        .store-btn-apple:hover {
-            background: rgba(255,255,255,0.1);
-            border-color: rgba(255,255,255,0.4);
-            transform: translateY(-1px);
-            box-shadow: 0 4px 16px rgba(255,255,255,0.08);
-        }
+    .section-header {
+      margin-bottom: 3rem;
+    }
 
-        /* App icon */
-        .app-icon {
-            width: 52px; height: 52px;
-            border-radius: 14px;
-            background: rgba(255,255,255,0.05);
-            border: 1px solid rgba(255,255,255,0.09);
-            display: flex; align-items: center; justify-content: center;
-            overflow: hidden;
-            margin-bottom: 1rem;
-            flex-shrink: 0;
-        }
-        .app-icon img {
-            width: 36px; height: 36px;
-            object-fit: contain;
-        }
-        .app-icon-lg {
-            width: 64px; height: 64px;
-            border-radius: 16px;
-            margin-bottom: 1.25rem;
-        }
-        .app-icon-lg img {
-            width: 46px; height: 46px;
-        }
-        .app-icon-sm {
-            width: 40px; height: 40px;
-            border-radius: 10px;
-            margin-bottom: 0.75rem;
-        }
-        .app-icon-sm img {
-            width: 28px; height: 28px;
-        }
+    .section-cmd {
+      font-size: 0.8rem;
+      color: var(--green);
+      margin-bottom: 0.5rem;
+      letter-spacing: 0.1em;
+    }
 
-        /* Decorative radar graphic inside ScoreVault */
-        .deco-radar {
-            position: absolute; bottom: -10px; right: -10px;
-            width: 160px; height: 160px; opacity: 0.04;
-            pointer-events: none;
-        }
+    .section-title {
+      font-size: clamp(1.5rem, 4vw, 2.2rem);
+      font-weight: 700;
+      color: var(--text-primary);
+      letter-spacing: -0.01em;
+    }
 
-        /* ── Responsive bento ── */
-        @media (max-width: 860px) {
-            .bento { grid-template-columns: repeat(2, 1fr); }
-            .bento-pub .c-sv,.bento-pub .c-ck,.bento-pub .c-nd,.bento-pub .c-af,
-            .bento-dev .c-mg,.bento-dev .c-nd,
-            .bento-prv .c-hg,.bento-prv .c-de { grid-column: auto; grid-row: auto; }
-            .bento-pub .c-sv { grid-column: 1 / 3; }
-        }
-        @media (max-width: 520px) {
-            .bento { grid-template-columns: 1fr; }
-            .bento-pub .c-sv,.bento-pub .c-ck,.bento-pub .c-nd,.bento-pub .c-af,
-            .bento-dev .c-mg,.bento-dev .c-nd,
-            .bento-prv .c-hg,.bento-prv .c-de { grid-column: 1 / 2; grid-row: auto; }
-            nav { padding: 1rem 1.25rem; }
-            .nav-links { display: none; }
-        }
+    .section-title span {
+      color: var(--green);
+    }
 
-        /* ── Tech Stack ── */
-        #stack {
-            padding: 5rem 0;
-            border-top: 1px solid var(--border);
-        }
-        .sgrid { display: flex; flex-wrap: wrap; gap: 0.6875rem; margin-top: 2rem; }
-        .sitem {
-            display: flex; align-items: center; gap: 0.5625rem;
-            padding: 0.6875rem 1.125rem;
-            background: rgba(255,255,255,0.025);
-            border: 1px solid var(--border); border-radius: 0.625rem;
-            font-family: var(--font-m); font-size: 0.75rem; color: var(--text-2);
-            transition: all 0.2s;
-        }
-        .sitem:hover {
-            background: rgba(255,255,255,0.055);
-            border-color: var(--border-h);
-            color: var(--text-1);
-            transform: translateY(-2px);
-        }
-        .sicon {
-            width: 22px; height: 22px; border-radius: 4px;
-            display: flex; align-items: center; justify-content: center;
-            font-size: 0.5rem; font-weight: 700; flex-shrink: 0;
-        }
+    /* ======== PRODUCTS ======== */
+    .products-grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 1.25rem;
+    }
 
-        /* ── Footer ── */
-        footer {
-            padding: 3.5rem 0;
-            border-top: 1px solid var(--border);
-            text-align: center;
-        }
-        .footer-logo {
-            font-family: var(--font-d); font-size: 1.625rem; font-weight: 800;
-            letter-spacing: -0.03em;
-            background: linear-gradient(135deg, var(--blue), var(--violet));
-            -webkit-background-clip: text; -webkit-text-fill-color: transparent;
-            background-clip: text;
-            margin-bottom: 0.625rem;
-        }
-        .footer-copy {
-            font-family: var(--font-m); font-size: 0.6875rem; color: var(--text-3);
-        }
+    /* カード */
+    .card {
+      background: var(--bg-card);
+      border: 1px solid var(--border);
+      padding: 1.5rem;
+      position: relative;
+      cursor: pointer;
+      transition: border-color 0.3s, box-shadow 0.3s;
+      overflow: hidden;
+    }
 
-        /* ── Scroll reveal ── */
-        .rev {
-            opacity: 0; transform: translateY(22px);
-            transition: opacity 0.72s ease, transform 0.72s ease;
-        }
-        .rev.vis { opacity: 1; transform: translateY(0); }
-        .d1 { transition-delay: 0.08s; }
-        .d2 { transition-delay: 0.16s; }
-        .d3 { transition-delay: 0.24s; }
-        .d4 { transition-delay: 0.32s; }
-    </style>
+    /* 角の装飾 */
+    .card::before,
+    .card::after {
+      content: '';
+      position: absolute;
+      width: 10px;
+      height: 10px;
+    }
+    .card::before {
+      top: -1px;
+      left: -1px;
+      border-top: 2px solid var(--green);
+      border-left: 2px solid var(--green);
+    }
+    .card::after {
+      bottom: -1px;
+      right: -1px;
+      border-bottom: 2px solid var(--green);
+      border-right: 2px solid var(--green);
+    }
+
+    .card:hover {
+      border-color: var(--border-hover);
+      box-shadow: 0 0 20px rgba(0, 255, 136, 0.08), 0 0 40px rgba(0, 255, 136, 0.04);
+    }
+
+    /* グリッチエフェクト */
+    .card:hover .card-title {
+      animation: glitch 0.3s ease-in-out;
+    }
+
+    @keyframes glitch {
+      0%   { transform: none; }
+      20%  { transform: skewX(-1.5deg) translateX(1px); color: var(--cyan); }
+      40%  { transform: skewX(1deg) translateX(-1px); color: var(--green); }
+      60%  { transform: skewX(-0.5deg) translateX(0.5px); }
+      80%  { transform: skewX(0.5deg); }
+      100% { transform: none; }
+    }
+
+    .card-number {
+      font-size: 0.7rem;
+      color: var(--text-muted);
+      letter-spacing: 0.1em;
+      margin-bottom: 1rem;
+      opacity: 0.6;
+    }
+
+    .card-header {
+      display: flex;
+      align-items: center;
+      gap: 0.75rem;
+      margin-bottom: 0.75rem;
+    }
+
+    .card-icon {
+      width: 40px;
+      height: 40px;
+      border-radius: 8px;
+      object-fit: contain;
+      background: rgba(0, 255, 136, 0.05);
+      border: 1px solid var(--border);
+      flex-shrink: 0;
+    }
+
+    .card-icon-placeholder {
+      width: 40px;
+      height: 40px;
+      border-radius: 8px;
+      background: rgba(0, 255, 136, 0.08);
+      border: 1px solid var(--border);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 1.2rem;
+      flex-shrink: 0;
+    }
+
+    .card-title {
+      font-size: 1rem;
+      font-weight: 700;
+      color: var(--text-primary);
+      letter-spacing: 0.02em;
+    }
+
+    .card-status {
+      display: inline-flex;
+      align-items: center;
+      gap: 0.4rem;
+      font-size: 0.7rem;
+      color: var(--text-muted);
+      margin-bottom: 0.75rem;
+      letter-spacing: 0.05em;
+    }
+
+    .status-dot {
+      width: 6px;
+      height: 6px;
+      border-radius: 50%;
+      background: var(--text-muted);
+    }
+
+    .status-dot.released { background: var(--green); box-shadow: 0 0 6px var(--green); }
+    .status-dot.beta     { background: var(--cyan);  box-shadow: 0 0 6px var(--cyan); }
+    .status-dot.dev      { background: #f6c90e;       box-shadow: 0 0 6px #f6c90e; }
+    .status-dot.personal { background: #a0aec0; }
+
+    .card-desc {
+      font-size: 0.78rem;
+      color: var(--text-muted);
+      line-height: 1.65;
+      margin-bottom: 1rem;
+      font-weight: 300;
+    }
+
+    .card-tags {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 0.4rem;
+      margin-bottom: 1rem;
+    }
+
+    .tag {
+      font-size: 0.65rem;
+      color: rgba(0, 255, 136, 0.7);
+      border: 1px solid rgba(0, 255, 136, 0.2);
+      padding: 0.15rem 0.5rem;
+      letter-spacing: 0.05em;
+      transition: color 0.2s, border-color 0.2s;
+    }
+
+    .card:hover .tag {
+      color: var(--green);
+      border-color: rgba(0, 255, 136, 0.5);
+    }
+
+    .card-links {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 0.5rem;
+    }
+
+    .btn-link {
+      font-family: 'JetBrains Mono', monospace;
+      font-size: 0.65rem;
+      color: var(--text-muted);
+      border: 1px solid rgba(160, 174, 192, 0.3);
+      padding: 0.3rem 0.6rem;
+      text-decoration: none;
+      letter-spacing: 0.03em;
+      transition: color 0.2s, border-color 0.2s, box-shadow 0.2s;
+      cursor: pointer;
+      display: inline-block;
+      background: transparent;
+    }
+
+    .btn-link:hover {
+      color: var(--green);
+      border-color: var(--green);
+      box-shadow: 0 0 8px rgba(0, 255, 136, 0.25);
+    }
+
+    .btn-link.primary {
+      color: rgba(0, 255, 136, 0.8);
+      border-color: rgba(0, 255, 136, 0.4);
+    }
+
+    .btn-link.primary:hover {
+      color: var(--green);
+      border-color: var(--green);
+      box-shadow: var(--glow-green);
+    }
+
+    /* ======== STACK ======== */
+    #stack {
+      background: var(--bg-secondary);
+      border-top: 1px solid var(--border);
+      border-bottom: 1px solid var(--border);
+      max-width: 100%;
+      padding: 6rem 2rem;
+    }
+
+    #stack > * {
+      max-width: 1200px;
+      margin-left: auto;
+      margin-right: auto;
+    }
+
+    .stack-terminal {
+      background: var(--bg-primary);
+      border: 1px solid var(--border);
+      padding: 0;
+      position: relative;
+      max-width: 1200px;
+      margin: 0 auto;
+    }
+
+    .terminal-titlebar {
+      background: rgba(0, 255, 136, 0.05);
+      border-bottom: 1px solid var(--border);
+      padding: 0.5rem 1rem;
+      display: flex;
+      align-items: center;
+      gap: 0.5rem;
+    }
+
+    .terminal-dot {
+      width: 10px;
+      height: 10px;
+      border-radius: 50%;
+    }
+
+    .terminal-dot.red    { background: #ff5f56; }
+    .terminal-dot.yellow { background: #ffbd2e; }
+    .terminal-dot.green  { background: #27c93f; }
+
+    .terminal-title-text {
+      font-size: 0.75rem;
+      color: var(--text-muted);
+      margin-left: 0.5rem;
+    }
+
+    .terminal-body {
+      padding: 1.5rem;
+    }
+
+    .terminal-line {
+      margin-bottom: 0.25rem;
+      font-size: 0.85rem;
+      line-height: 1.8;
+    }
+
+    .t-prompt  { color: var(--green); }
+    .t-cmd     { color: var(--cyan); }
+    .t-comment { color: #4a5568; }
+
+    .stack-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fill, minmax(180px, 1fr));
+      gap: 0.75rem;
+      margin-top: 1rem;
+    }
+
+    .stack-item {
+      border: 1px solid var(--border);
+      padding: 0.75rem 1rem;
+      font-size: 0.8rem;
+      color: var(--text-muted);
+      display: flex;
+      align-items: center;
+      gap: 0.5rem;
+      transition: border-color 0.2s, color 0.2s, background 0.2s;
+      cursor: default;
+    }
+
+    .stack-item:hover {
+      border-color: var(--green);
+      color: var(--green);
+      background: rgba(0, 255, 136, 0.04);
+    }
+
+    .stack-item .item-prefix {
+      color: var(--green);
+      opacity: 0.6;
+    }
+
+    /* ======== FOOTER ======== */
+    footer {
+      padding: 2.5rem 2rem;
+      text-align: center;
+      border-top: 1px solid var(--border);
+      background: var(--bg-primary);
+    }
+
+    .footer-text {
+      font-size: 0.78rem;
+      color: var(--text-muted);
+      letter-spacing: 0.05em;
+    }
+
+    .footer-text .accent {
+      color: var(--green);
+    }
+
+    /* ======== フェードインアニメーション ======== */
+    @keyframes fadeInUp {
+      from {
+        opacity: 0;
+        transform: translateY(20px);
+      }
+      to {
+        opacity: 1;
+        transform: translateY(0);
+      }
+    }
+
+    .fade-in {
+      opacity: 0;
+      transform: translateY(24px);
+      transition: opacity 0.6s ease, transform 0.6s ease;
+    }
+
+    .fade-in.visible {
+      opacity: 1;
+      transform: translateY(0);
+    }
+
+    /* ======== レスポンシブ ======== */
+    @media (max-width: 900px) {
+      .products-grid {
+        grid-template-columns: repeat(2, 1fr);
+      }
+    }
+
+    @media (max-width: 600px) {
+      .products-grid {
+        grid-template-columns: 1fr;
+      }
+
+      nav {
+        padding: 0 1rem;
+      }
+
+      .nav-links {
+        gap: 1rem;
+      }
+
+      section {
+        padding: 4rem 1rem;
+      }
+
+      .hero {
+        padding: 80px 1rem 3rem;
+      }
+    }
+
+    /* ======== カード フェードイン遅延 ======== */
+    .card:nth-child(1) { transition-delay: 0s; }
+    .card:nth-child(2) { transition-delay: 0.08s; }
+    .card:nth-child(3) { transition-delay: 0.16s; }
+    .card:nth-child(4) { transition-delay: 0.24s; }
+    .card:nth-child(5) { transition-delay: 0.32s; }
+    .card:nth-child(6) { transition-delay: 0.40s; }
+    .card:nth-child(7) { transition-delay: 0.48s; }
+  </style>
 </head>
 <body>
 
-<!-- Background -->
-<div class="bg">
-    <div class="bg-grid"></div>
-    <div class="orb orb-a"></div>
-    <div class="orb orb-b"></div>
-    <div class="orb orb-c"></div>
-    <div class="bg-noise"></div>
-</div>
-
-<!-- Nav -->
-<nav>
-    <div class="nav-logo">Ryo-Lab</div>
+  <!-- ======== NAV ======== -->
+  <nav>
+    <a href="#" class="nav-logo">[Ryo-Lab]</a>
     <ul class="nav-links">
-        <li><a href="#products">Products</a></li>
-        <li><a href="#stack">Tech Stack</a></li>
+      <li><a href="#products">&gt;_ Products</a></li>
+      <li><a href="#stack">&gt;_ Stack</a></li>
     </ul>
-</nav>
+  </nav>
 
-<!-- Hero -->
-<section class="hero">
-    <div class="wrap">
-        <div class="hero-inner">
-            <div class="eyebrow">Solo Developer Portfolio</div>
-            <h1 class="hero-title">
-                <span class="title-white">Ryo</span>
-                <span class="title-grad">Lab.</span>
-            </h1>
-            <p class="hero-desc">
-                FlutterとPythonを核に、実用性と美しさを両立したプロダクトを開発。<br>
-                Clean Architectureに基づいた堅牢な設計と、<br>Glassmorphismによる洗練されたUIを追求しています。
-            </p>
-            <div class="stat-row">
-                <div class="pill"><span class="dot d-blue"></span>7 Projects</div>
-                <div class="pill"><span class="dot d-emerald"></span>Google Play 公開中</div>
-                <div class="pill"><span class="dot d-violet"></span>Flutter / Python</div>
-            </div>
-            <div class="scroll-cue">
-                <div class="scan-line"></div>SCROLL TO EXPLORE
-            </div>
-        </div>
+  <!-- ======== HERO ======== -->
+  <div class="hero">
+    <div class="hero-inner">
+      <p class="hero-eyebrow">// SOLO DEVELOPER</p>
+      <h1 class="hero-title">
+        <span class="line1">Ryo</span>
+        <span class="line2">Lab.</span>
+      </h1>
+      <div class="hero-subtitle-wrap">
+        <span class="hero-prompt">&gt;&nbsp;</span>
+        <span class="hero-subtitle" id="typewriter"></span>
+        <span class="hero-cursor"></span>
+      </div>
+      <div class="hero-stats">
+        <div class="stat-pill"><span class="pill-label">total</span>7 Projects</div>
+<div class="stat-pill"><span class="pill-label">stack</span>Flutter · Python</div>
+      </div>
     </div>
-</section>
+  </div>
 
-<!-- Products -->
-<section id="products">
-    <div class="wrap">
-        <div class="sec-head rev">
-            <div class="sec-label">Products</div>
-            <h2 class="sec-title">7 Crafted Apps</h2>
-        </div>
-
-        <!-- ── Group 1: 公開中／公開準備中 ── -->
-        <div class="group-section">
-            <div class="group-header rev">
-                <span class="group-label">公開中 / 公開準備中</span>
-                <div class="group-divider"></div>
-            </div>
-            <div class="bento bento-pub">
-
-                <!-- 01 ScoreVault — Featured -->
-                <div class="card featured c-sv rev">
-                    <div class="ci ci-lg">
-                        <div class="ct">
-                            <div class="badges">
-                                <span class="badge b-live">Released on Google Play</span>
-                                <span class="badge b-tag">Flutter · Android · Windows</span>
-                            </div>
-                            <span class="card-num">01</span>
-                        </div>
-                        <div class="app-icon app-icon-lg">
-                            <img src="assets/icons/scorevault_icon.svg" alt="ScoreVault icon">
-                        </div>
-                        <h3 class="ctitle ctitle-xl">ScoreVault</h3>
-                        <p class="cdesc">
-                            自分だけの正直なゲーム感想を蓄積できる「非公開型」ゲームプレイ記録アプリ。Steam/IGDB連携、統計ダッシュボード、端末間同期を搭載。
-                        </p>
-                        <ul class="flist">
-                            <li>Steam/IGDB連携でゲーム情報を自動取得</li>
-                            <li>レーダーチャートで多角的スコア分析</li>
-                            <li>Firebase同期 + Isarオフラインファースト</li>
-                        </ul>
-                        <div class="store-btns">
-                            <a href="https://play.google.com/store/apps/details?id=com.scorevault.score_vault" target="_blank" rel="noopener" class="store-btn store-btn-gplay">
-                                <svg width="13" height="13" viewBox="0 0 24 24" fill="currentColor"><path d="M3.18 23.76c.3.17.64.24.99.2L15.34 12 3.18 1.54v22.22zm15.4-13.04l-2.72-1.56L13.6 12l2.26 2.84 2.72-1.56c.78-.44.78-1.52 0-1.96zM4.38.28l10.8 6.2L12.52 9.3 4.38.28zm0 23.44l8.14-9.02 2.66 2.82L4.38 23.72z"/></svg>
-                                Google Play
-                            </a>
-                            <a href="https://apps.apple.com/us/app/scorevault/id6760386306" target="_blank" rel="noopener" class="store-btn store-btn-apple">
-                                <svg width="13" height="13" viewBox="0 0 24 24" fill="currentColor"><path d="M18.71 19.5c-.83 1.24-1.71 2.45-3.05 2.47-1.34.03-1.77-.79-3.29-.79-1.53 0-2 .77-3.27.82-1.31.05-2.3-1.32-3.14-2.53C4.25 17 2.94 12.45 4.7 9.39c.87-1.52 2.43-2.48 4.12-2.51 1.28-.02 2.5.87 3.29.87.78 0 2.26-1.07 3.8-.91.65.03 2.47.26 3.64 1.98-.09.06-2.17 1.28-2.15 3.81.03 3.02 2.65 4.03 2.68 4.04-.03.07-.42 1.44-1.38 2.83M13 3.5c.73-.83 1.94-1.46 2.94-1.5.13 1.17-.34 2.35-1.04 3.19-.69.85-1.83 1.51-2.95 1.42-.15-1.15.41-2.35 1.05-3.11z"/></svg>
-                                App Store
-                            </a>
-                            <a href="./scorevault/index.html" class="store-btn" style="background:rgba(16,185,129,0.12);border-color:rgba(16,185,129,0.3);color:#34d399;">
-                                <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="10"/><path d="M12 8v4l3 3"/></svg>
-                                詳細ページ
-                            </a>
-                        </div>
-                        <div class="stags">
-                            <span class="stag">Flutter</span>
-                            <span class="stag">Firebase</span>
-                            <span class="stag">Isar</span>
-                            <span class="stag">Riverpod</span>
-                            <span class="stag">Clean Architecture</span>
-                        </div>
-                    </div>
-                    <svg class="deco-radar" viewBox="0 0 160 160" fill="none" xmlns="http://www.w3.org/2000/svg">
-                        <polygon points="80,10 150,55 150,105 80,150 10,105 10,55" stroke="white" stroke-width="1.5" fill="none"/>
-                        <polygon points="80,30 130,57.5 130,102.5 80,130 30,102.5 30,57.5" stroke="white" stroke-width="1" fill="none"/>
-                        <polygon points="80,50 110,65 110,95 80,110 50,95 50,65" stroke="white" stroke-width="0.75" fill="none"/>
-                        <line x1="80" y1="10" x2="80" y2="150" stroke="white" stroke-width="0.5"/>
-                        <line x1="10" y1="55" x2="150" y2="105" stroke="white" stroke-width="0.5"/>
-                        <line x1="10" y1="105" x2="150" y2="55" stroke="white" stroke-width="0.5"/>
-                    </svg>
-                </div>
-
-                <!-- 02 CloudKata -->
-                <div class="card c-ck rev d1">
-                    <div class="ci">
-                        <div class="ct">
-                            <div class="badges">
-                                <span class="badge b-dev">クローズドテスト中</span>
-                            </div>
-                            <span class="card-num">02</span>
-                        </div>
-                        <div class="app-icon app-icon-sm">
-                            <img src="assets/icons/cloudkata_icon.svg" alt="CloudKata icon">
-                        </div>
-                        <h3 class="ctitle ctitle-md">CloudKata</h3>
-                        <p class="cdesc cdesc-sm">GCP ACE資格学習アプリ。苦手分野を分析し、ゲーミフィケーションで継続学習をサポート。</p>
-                        <div class="store-btns">
-                            <a href="https://play.google.com/store/apps/details?id=com.originalapp.cloud_kata" target="_blank" rel="noopener" class="store-btn store-btn-gplay">
-                                <svg width="13" height="13" viewBox="0 0 24 24" fill="currentColor"><path d="M3.18 23.76c.3.17.64.24.99.2L15.34 12 3.18 1.54v22.22zm15.4-13.04l-2.72-1.56L13.6 12l2.26 2.84 2.72-1.56c.78-.44.78-1.52 0-1.96zM4.38.28l10.8 6.2L12.52 9.3 4.38.28zm0 23.44l8.14-9.02 2.66 2.82L4.38 23.72z"/></svg>
-                                Google Play
-                            </a>
-                            <a href="./cloudkata/index.html" class="store-btn" style="background:rgba(56,189,248,0.12);border-color:rgba(56,189,248,0.3);color:#7dd3fc;">
-                                <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="10"/><path d="M12 8v4l3 3"/></svg>
-                                詳細ページ
-                            </a>
-                        </div>
-                        <div class="stags">
-                            <span class="stag">Flutter</span>
-                            <span class="stag">Firestore</span>
-                            <span class="stag">Isar</span>
-                        </div>
-                    </div>
-                </div>
-
-                <!-- 06 NexusDiary -->
-                <div class="card c-nd rev d2">
-                    <div class="ci">
-                        <div class="ct">
-                            <div class="badges">
-                                <span class="badge b-dev">クローズドテスト中</span>
-                            </div>
-                            <span class="card-num">06</span>
-                        </div>
-                        <div class="app-icon app-icon-sm">
-                            <img src="assets/icons/nexusdiary_icon.svg" alt="NexusDiary icon">
-                        </div>
-                        <h3 class="ctitle ctitle-md">NexusDiary</h3>
-                        <p class="cdesc cdesc-sm">AIが思考を分析・タグ付けし、開発アイデアを提案する日記アプリ。5種のテーマ切り替え搭載。</p>
-                        <div class="store-btns">
-                            <a href="https://play.google.com/store/apps/details?id=com.nexusdiary.nexus_diary" target="_blank" rel="noopener" class="store-btn store-btn-gplay">
-                                <svg width="13" height="13" viewBox="0 0 24 24" fill="currentColor"><path d="M3.18 23.76c.3.17.64.24.99.2L15.34 12 3.18 1.54v22.22zm15.4-13.04l-2.72-1.56L13.6 12l2.26 2.84 2.72-1.56c.78-.44.78-1.52 0-1.96zM4.38.28l10.8 6.2L12.52 9.3 4.38.28zm0 23.44l8.14-9.02 2.66 2.82L4.38 23.72z"/></svg>
-                                Google Play
-                            </a>
-                            <a href=".\nexusdiary\index.html" class="store-btn" style="background:rgba(167,139,250,0.1);border-color:rgba(167,139,250,0.3);color:#c4b5fd;">
-                                <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="10"/><path d="M12 8v4l3 3"/></svg>
-                                詳細ページ
-                            </a>
-                        </div>
-                        <div class="stags">
-                            <span class="stag">Flutter</span>
-                            <span class="stag">Firebase</span>
-                            <span class="stag">Gemini AI</span>
-                        </div>
-                    </div>
-                </div>
-
-                <!-- 03 AutoFill Customize -->
-                <div class="card c-af rev d2">
-                    <div class="ci">
-                        <div class="ct">
-                            <div class="badges">
-                                <span class="badge b-live">Released on Chrome Web Store</span>
-                            </div>
-                            <span class="card-num">03</span>
-                        </div>
-                        <div class="app-icon app-icon-sm">
-                            <img src="assets/icons/autofill_icon.png" alt="AutoFill Customize icon">
-                        </div>
-                        <h3 class="ctitle ctitle-md">AutoFill<br>Customize</h3>
-                        <p class="cdesc cdesc-sm">URLパターンに基づいてフォーム入力を自動化するChrome拡張機能。</p>
-                        <div class="store-btns">
-                            <a href="https://chromewebstore.google.com/detail/autofillcustomize/afciocenjmchpdpifjbkfabnklflglno" target="_blank" rel="noopener" class="store-btn store-btn-chrome">
-                                <svg width="13" height="13" viewBox="0 0 24 24" fill="currentColor"><path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm-2.4 14.5l-1.1-1.9L6 12l2.5-2.6 1.1-1.9H12c0 0 0 0 0 0v9H9.6zM12 13.5c-.83 0-1.5-.67-1.5-1.5S11.17 10.5 12 10.5s1.5.67 1.5 1.5-.67 1.5-1.5 1.5zm2.4 3l-1-1.7V8.5H14l2.5 2.6 1.1 1.9-2.5 2.6-1 1.7-.7.2z"/></svg>
-                                Chrome Web Store
-                            </a>
-                        </div>
-                        <div class="stags">
-                            <span class="stag">JavaScript</span>
-                            <span class="stag">MV3</span>
-                        </div>
-                    </div>
-                </div>
-
-            </div>
-        </div>
-
-        <!-- ── Group 2: 開発中 ── -->
-        <div class="group-section">
-            <div class="group-header rev">
-                <span class="group-label">開発中</span>
-                <div class="group-divider"></div>
-            </div>
-            <div class="bento bento-dev">
-
-                <!-- 04 Megully -->
-                <div class="card c-mg rev">
-                    <div class="ci">
-                        <div class="ct">
-                            <div class="badges">
-                                <span class="badge b-dev">In Development</span>
-                            </div>
-                            <span class="card-num">04</span>
-                        </div>
-                        <h3 class="ctitle ctitle-md">Megully</h3>
-                        <p class="cdesc cdesc-sm">ロケーション連携旅行プランナー。地図と連動したスマートな旅行計画を実現。</p>
-                        <div class="stags">
-                            <span class="stag">Flutter</span>
-                            <span class="stag">Firebase</span>
-                        </div>
-                    </div>
-                </div>
-
-
-            </div>
-        </div>
-
-        <!-- ── Group 3: 個人用 非公開 ── -->
-        <div class="group-section">
-            <div class="group-header rev">
-                <span class="group-label">個人用 非公開</span>
-                <div class="group-divider"></div>
-            </div>
-            <div class="bento bento-prv">
-
-                <!-- 05 はぐ育 -->
-                <div class="card c-hg rev">
-                    <div class="ci">
-                        <div class="ct">
-                            <div class="badges">
-                                <span class="badge b-tag">Flutter</span>
-                                <span class="badge b-private"><svg width="7" height="7" viewBox="0 0 24 24" fill="currentColor"><path d="M18 8h-1V6c0-2.76-2.24-5-5-5S7 3.24 7 6v2H6c-1.1 0-2 .9-2 2v10c0 1.1.9 2 2 2h12c1.1 0 2-.9 2-2V10c0-1.1-.9-2-2-2zm-6 9c-1.1 0-2-.9-2-2s.9-2 2-2 2 .9 2 2-.9 2-2 2zm3.1-9H8.9V6c0-1.71 1.39-3.1 3.1-3.1 1.71 0 3.1 1.39 3.1 3.1v2z"/></svg>Personal Use</span>
-                            </div>
-                            <span class="card-num">05</span>
-                        </div>
-                        <h3 class="ctitle ctitle-sm">はぐ育</h3>
-                        <p class="cdesc cdesc-sm">AIと育児相談 & Notion連携で夫婦間の情報共有を統合した育児コンシェルジュ。</p>
-                        <div class="stags">
-                            <span class="stag">Flutter</span>
-                            <span class="stag">Gemini AI</span>
-                            <span class="stag">Notion API</span>
-                            <span class="stag">Riverpod</span>
-                        </div>
-                    </div>
-                </div>
-
-                <!-- 07 DupElim -->
-                <div class="card c-de rev d2">
-                    <div class="ci">
-                        <div class="ct">
-                            <div class="badges">
-                                <span class="badge b-tag">Python</span>
-                                <span class="badge b-private"><svg width="7" height="7" viewBox="0 0 24 24" fill="currentColor"><path d="M18 8h-1V6c0-2.76-2.24-5-5-5S7 3.24 7 6v2H6c-1.1 0-2 .9-2 2v10c0 1.1.9 2 2 2h12c1.1 0 2-.9 2-2V10c0-1.1-.9-2-2-2zm-6 9c-1.1 0-2-.9-2-2s.9-2 2-2 2 .9 2 2-.9 2-2 2zm3.1-9H8.9V6c0-1.71 1.39-3.1 3.1-3.1 1.71 0 3.1 1.39 3.1 3.1v2z"/></svg>Personal Use</span>
-                            </div>
-                            <span class="card-num">07</span>
-                        </div>
-                        <h3 class="ctitle ctitle-sm">DupElim</h3>
-                        <p class="cdesc cdesc-sm">パーセプチュアルハッシュによる高精度な重複画像検出・削除ツール。</p>
-                        <div class="stags">
-                            <span class="stag">Python</span>
-                            <span class="stag">pHash</span>
-                        </div>
-                    </div>
-                </div>
-
-            </div>
-        </div>
+  <!-- ======== PRODUCTS ======== -->
+  <section id="products">
+    <div class="section-header fade-in">
+      <p class="section-cmd">$ ls ./products/</p>
+      <h2 class="section-title">All <span>Products</span></h2>
     </div>
-</section>
 
-<!-- Tech Stack -->
-<section id="stack">
-    <div class="wrap">
-        <div class="sec-head rev">
-            <div class="sec-label">Technologies</div>
-            <h2 class="sec-title">Tech Stack</h2>
+    <div class="products-grid">
+
+      <!-- 01 ScoreVault -->
+      <div class="card fade-in">
+        <div class="card-number">// 05</div>
+        <div class="card-header">
+          <img src="assets/icons/scorevault_icon.svg" alt="ScoreVault" class="card-icon" onerror="this.style.display='none';this.nextElementSibling.style.display='flex'">
+          <div class="card-icon-placeholder" style="display:none;">🎮</div>
+          <div class="card-title">ScoreVault</div>
         </div>
-        <div class="sgrid">
-            <div class="sitem rev">
-                <div class="sicon" style="background:rgba(2,132,199,.18);color:#38bdf8">Fl</div>
-                Flutter / Dart
-            </div>
-            <div class="sitem rev d1">
-                <div class="sicon" style="background:rgba(251,146,60,.18);color:#fb923c">Fb</div>
-                Firebase
-            </div>
-            <div class="sitem rev d2">
-                <div class="sicon" style="background:rgba(250,204,21,.18);color:#fbbf24">Py</div>
-                Python
-            </div>
-            <div class="sitem rev d3">
-                <div class="sicon" style="background:rgba(52,211,153,.18);color:#34d399">Is</div>
-                Isar
-            </div>
-            <div class="sitem rev">
-                <div class="sicon" style="background:rgba(139,92,246,.18);color:#a78bfa">Rv</div>
-                Riverpod
-            </div>
-            <div class="sitem rev d1">
-                <div class="sicon" style="background:rgba(59,130,246,.18);color:#60a5fa">Gm</div>
-                Gemini AI
-            </div>
-            <div class="sitem rev d2">
-                <div class="sicon" style="background:rgba(200,200,200,.08);color:#e2e8f0">Nt</div>
-                Notion API
-            </div>
-            <div class="sitem rev d3">
-                <div class="sicon" style="background:rgba(234,88,12,.18);color:#fb923c">Cr</div>
-                Chrome Extension
-            </div>
-            <div class="sitem rev">
-                <div class="sicon" style="background:rgba(100,116,139,.18);color:#94a3b8">CA</div>
-                Clean Architecture
-            </div>
+        <div class="card-status">
+          <span class="status-dot released"></span>Released — Google Play + App Store
         </div>
+        <p class="card-desc">自分だけのゲームプレイ記録。Steam/IGDB連携・レーダーチャート・端末間同期。</p>
+        <div class="card-tags">
+          <span class="tag">Flutter</span>
+          <span class="tag">Firebase</span>
+          <span class="tag">Isar</span>
+          <span class="tag">Riverpod</span>
+          <span class="tag">Clean Architecture</span>
+        </div>
+        <div class="card-links">
+          <a href="https://play.google.com/store/apps/details?id=com.scorevault.score_vault" target="_blank" rel="noopener" class="btn-link primary">[ Google Play ]</a>
+          <a href="https://apps.apple.com/us/app/scorevault/id6760386306" target="_blank" rel="noopener" class="btn-link primary">[ App Store ]</a>
+          <a href="./scorevault/index.html" class="btn-link">[ Detail ]</a>
+        </div>
+      </div>
+
+      <!-- 02 CloudKata -->
+      <div class="card fade-in">
+        <div class="card-number">// 06</div>
+        <div class="card-header">
+          <img src="assets/icons/cloudkata_icon.svg" alt="CloudKata" class="card-icon" onerror="this.style.display='none';this.nextElementSibling.style.display='flex'">
+          <div class="card-icon-placeholder" style="display:none;">☁️</div>
+          <div class="card-title">CloudKata</div>
+        </div>
+        <div class="card-status">
+          <span class="status-dot beta"></span>Closed Beta
+        </div>
+        <p class="card-desc">GCP ACE資格学習。苦手分野を分析、ゲーミフィケーションで継続学習。</p>
+        <div class="card-tags">
+          <span class="tag">Flutter</span>
+          <span class="tag">Firestore</span>
+          <span class="tag">Isar</span>
+        </div>
+        <div class="card-links">
+          <a href="https://play.google.com/store/apps/details?id=com.originalapp.cloud_kata" target="_blank" rel="noopener" class="btn-link primary">[ Google Play ]</a>
+          <a href="./cloudkata/index.html" class="btn-link">[ Detail ]</a>
+        </div>
+      </div>
+
+      <!-- 06 NexusDiary -->
+      <div class="card fade-in">
+        <div class="card-number">// 03</div>
+        <div class="card-header">
+          <img src="assets/icons/nexusdiary_icon.svg" alt="NexusDiary" class="card-icon" onerror="this.style.display='none';this.nextElementSibling.style.display='flex'">
+          <div class="card-icon-placeholder" style="display:none;">📔</div>
+          <div class="card-title">NexusDiary</div>
+        </div>
+        <div class="card-status">
+          <span class="status-dot beta"></span>Closed Beta
+        </div>
+        <p class="card-desc">AIが思考を分析・タグ付け。開発アイデアを提案する日記アプリ。</p>
+        <div class="card-tags">
+          <span class="tag">Flutter</span>
+          <span class="tag">Firebase</span>
+          <span class="tag">Gemini AI</span>
+        </div>
+        <div class="card-links">
+          <a href="https://play.google.com/store/apps/details?id=com.nexusdiary.nexus_diary" target="_blank" rel="noopener" class="btn-link primary">[ Google Play ]</a>
+          <a href="./nexusdiary/index.html" class="btn-link">[ Detail ]</a>
+        </div>
+      </div>
+
+      <!-- 03 AutoFill Customize -->
+      <div class="card fade-in">
+        <div class="card-number">// 01</div>
+        <div class="card-header">
+          <img src="assets/icons/autofill_icon.png" alt="AutoFill Customize" class="card-icon" onerror="this.style.display='none';this.nextElementSibling.style.display='flex'">
+          <div class="card-icon-placeholder" style="display:none;">⚡</div>
+          <div class="card-title">AutoFill Customize</div>
+        </div>
+        <div class="card-status">
+          <span class="status-dot released"></span>Released — Chrome Web Store
+        </div>
+        <p class="card-desc">URLパターンに基づいてフォーム入力を自動化するChrome拡張機能。</p>
+        <div class="card-tags">
+          <span class="tag">JavaScript</span>
+          <span class="tag">MV3</span>
+        </div>
+        <div class="card-links">
+          <a href="https://chromewebstore.google.com/detail/autofillcustomize/afciocenjmchpdpifjbkfabnklflglno" target="_blank" rel="noopener" class="btn-link primary">[ Chrome Web Store ]</a>
+        </div>
+      </div>
+
+      <!-- 04 Megully -->
+      <div class="card fade-in">
+        <div class="card-number">// 07</div>
+        <div class="card-header">
+          <div class="card-icon-placeholder">🗺️</div>
+          <div class="card-title">Megully</div>
+        </div>
+        <div class="card-status">
+          <span class="status-dot dev"></span>In Development
+        </div>
+        <p class="card-desc">ロケーション連携旅行プランナー。地図と連動したスマートな旅行計画。</p>
+        <div class="card-tags">
+          <span class="tag">Flutter</span>
+          <span class="tag">Firebase</span>
+        </div>
+      </div>
+
+      <!-- 05 はぐ育 -->
+      <div class="card fade-in">
+        <div class="card-number">// 04</div>
+        <div class="card-header">
+          <div class="card-icon-placeholder">👶</div>
+          <div class="card-title">はぐ育</div>
+        </div>
+        <div class="card-status">
+          <span class="status-dot personal"></span>Personal Use
+        </div>
+        <p class="card-desc">AIと育児相談 &amp; Notion連携の育児コンシェルジュ。</p>
+        <div class="card-tags">
+          <span class="tag">Flutter</span>
+          <span class="tag">Gemini AI</span>
+          <span class="tag">Notion API</span>
+        </div>
+      </div>
+
+      <!-- 07 DupElim -->
+      <div class="card fade-in">
+        <div class="card-number">// 02</div>
+        <div class="card-header">
+          <div class="card-icon-placeholder">🔍</div>
+          <div class="card-title">DupElim</div>
+        </div>
+        <div class="card-status">
+          <span class="status-dot personal"></span>Personal Use
+        </div>
+        <p class="card-desc">pHashによる高精度な重複画像検出・削除ツール。</p>
+        <div class="card-tags">
+          <span class="tag">Python</span>
+          <span class="tag">pHash</span>
+        </div>
+      </div>
+
     </div>
-</section>
+  </section>
 
-<!-- Footer -->
-<footer>
-    <div class="wrap">
-        <div class="footer-logo">Ryo-Lab</div>
-        <p class="footer-copy">© 2026 Ryo-Lab. Built with Passion & Clean Code.</p>
+  <!-- ======== STACK ======== -->
+  <section id="stack" style="max-width:100%; padding:6rem 2rem;">
+    <div style="max-width:1200px; margin:0 auto;">
+      <div class="section-header fade-in">
+        <p class="section-cmd">$ cat ./stack.txt</p>
+        <h2 class="section-title">Tech <span>Stack</span></h2>
+      </div>
+
+      <div class="stack-terminal fade-in">
+        <div class="terminal-titlebar">
+          <span class="terminal-dot red"></span>
+          <span class="terminal-dot yellow"></span>
+          <span class="terminal-dot green"></span>
+          <span class="terminal-title-text">ryo@lab ~ tech-stack</span>
+        </div>
+        <div class="terminal-body">
+          <div class="terminal-line">
+            <span class="t-prompt">ryo@lab:~$</span>
+            <span class="t-cmd"> ls -la ./stack/</span>
+          </div>
+          <div class="terminal-line t-comment">
+            # total 9 items — primary technologies
+          </div>
+          <div class="stack-grid" id="stackGrid">
+            <!-- JS で挿入 -->
+          </div>
+          <div class="terminal-line" style="margin-top:1rem;">
+            <span class="t-prompt">ryo@lab:~$</span>
+            <span class="hero-cursor"></span>
+          </div>
+        </div>
+      </div>
     </div>
-</footer>
+  </section>
 
-<script>
-    // Scroll reveal via IntersectionObserver
-    const els = document.querySelectorAll('.rev');
-    const io = new IntersectionObserver((entries) => {
-        entries.forEach(e => {
-            if (e.isIntersecting) {
-                e.target.classList.add('vis');
-                io.unobserve(e.target);
-            }
-        });
-    }, { threshold: 0.08, rootMargin: '0px 0px -32px 0px' });
-    els.forEach(el => io.observe(el));
-</script>
+  <!-- ======== FOOTER ======== -->
+  <footer>
+    <p class="footer-text">
+      <span class="accent">©</span> 2026 <span class="accent">Ryo-Lab.</span>
+      Built with Passion &amp; Clean Code.
+    </p>
+  </footer>
 
+  <!-- ======== JS ======== -->
+  <script>
+    // --- タイプライター ---
+    const typewriterEl = document.getElementById('typewriter');
+    const text = '個人開発者として、アイデアをプロダクトに変え続けています。実用性と美しさを両立させたアプリを、FlutterとPythonで作り続けています。';
+    let i = 0;
+
+    function typeNext() {
+      if (i <= text.length) {
+        typewriterEl.textContent = text.slice(0, i);
+        i++;
+        setTimeout(typeNext, i < text.length ? 55 : 800);
+      }
+    }
+
+    // Heroフェードイン後にタイプライター開始
+    setTimeout(typeNext, 1000);
+
+    // --- スタックグリッド挿入 ---
+    const stacks = [
+      'Flutter / Dart',
+      'Firebase',
+      'Python',
+      'Isar',
+      'Riverpod',
+      'Gemini AI',
+      'Notion API',
+      'Chrome Extension',
+      'Clean Architecture',
+    ];
+
+    const grid = document.getElementById('stackGrid');
+    stacks.forEach(s => {
+      const el = document.createElement('div');
+      el.className = 'stack-item';
+      el.innerHTML = `<span class="item-prefix">&gt;</span>${s}`;
+      grid.appendChild(el);
+    });
+
+    // --- スクロール フェードイン ---
+    const observer = new IntersectionObserver((entries) => {
+      entries.forEach(entry => {
+        if (entry.isIntersecting) {
+          entry.target.classList.add('visible');
+          observer.unobserve(entry.target);
+        }
+      });
+    }, { threshold: 0.1, rootMargin: '0px 0px -40px 0px' });
+
+    document.querySelectorAll('.fade-in').forEach(el => observer.observe(el));
+  </script>
 </body>
 </html>
