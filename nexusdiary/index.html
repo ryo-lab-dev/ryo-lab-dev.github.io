@@ -756,308 +756,208 @@
     })();
   </script>
 
-  <!-- ── Crack Gimmick ── -->
+  <!-- ── Theme Swipe Gauge ── -->
+  <style>
+    #tsg {
+      position: fixed; bottom: 1.1rem; left: 50%; transform: translateX(-50%);
+      z-index: 290; display: flex; flex-direction: column; align-items: center;
+      gap: .32rem; pointer-events: none;
+    }
+    #tsg-hint {
+      font-family: 'JetBrains Mono', monospace; font-size: .58rem;
+      color: var(--text-3); letter-spacing: .1em; white-space: nowrap;
+      transition: color .4s, opacity .3s;
+    }
+    #tsg-bar {
+      display: flex; align-items: center;
+      background: var(--nav-bg); backdrop-filter: blur(20px); -webkit-backdrop-filter: blur(20px);
+      border: 1px solid var(--border); border-radius: 999px;
+      padding: .48rem 1.1rem; pointer-events: all; touch-action: none; cursor: ew-resize;
+      position: relative; overflow: hidden;
+      transition: border-color .4s, background .4s;
+    }
+    #tsg-fill {
+      position: absolute; inset: 0; transform: scaleX(0); transform-origin: left;
+      background: rgba(var(--accent-r), var(--accent-g), var(--accent-b), .12);
+      pointer-events: none; transition: none;
+    }
+    .tsg-item { display: flex; align-items: center; position: relative; z-index: 1; }
+    .tsg-dot {
+      width: 8px; height: 8px; border-radius: 50%;
+      border: 1.5px solid var(--border-mid);
+      background: var(--tsg-dc, transparent);
+      flex-shrink: 0;
+      transition: transform .25s, background .25s, border-color .25s, box-shadow .25s;
+    }
+    .tsg-dot.on {
+      background: var(--accent); border-color: var(--accent); transform: scale(1.4);
+      box-shadow: 0 0 0 3px rgba(var(--accent-r), var(--accent-g), var(--accent-b), .2);
+    }
+    .tsg-lbl {
+      font-family: 'JetBrains Mono', monospace; font-size: .6rem;
+      color: var(--text-3); white-space: nowrap; margin-left: .28rem;
+      transition: color .25s;
+    }
+    .tsg-lbl.on { color: var(--text-1); }
+    .tsg-conn { width: 12px; height: 1px; background: var(--border); flex-shrink: 0; transition: background .4s; }
+    @media (max-width: 400px) {
+      .tsg-lbl { font-size: .5rem; } .tsg-conn { width: 7px; }
+    }
+  </style>
+
+  <div id="tsg">
+    <div id="tsg-hint">← DRAG → THEME</div>
+    <div id="tsg-bar"><div id="tsg-fill"></div></div>
+  </div>
+
   <script>
   (function() {
-    var THEMES = ['katsujii', 'sumi', 'koushi', 'terminal', 'hakushi'];
-    var THEME_ACCENTS = {
-      katsujii: {r:10,  g:10,  b:10},
-      sumi:     {r:255, g:255, b:255},
-      koushi:   {r:26,  g:26,  b:26},
-      hakushi:  {r:17,  g:17,  b:17},
-      terminal: {r:57,  g:211, b:83}
-    };
-    var THEME_FLASH = {
-      katsujii: '#F8F6F1',
-      sumi:     '#0C0C0C',
-      koushi:   '#FFFFFF',
-      hakushi:  '#FFFFFF',
-      terminal: '#0D0D0D'
+    var TH = ['katsujii','sumi','koushi','terminal','hakushi'];
+    var TN = {katsujii:'活字', sumi:'墨', koushi:'格子', terminal:'Terminal', hakushi:'白紙'};
+    var DC = {katsujii:'#C4B8AE', sumi:'#555', koushi:'#C8C8C8', terminal:'#39D353', hakushi:'#D5D5D5'};
+
+    // CSS変数補間用カラーデータ [bg, surface, border, border-mid, text1, text2, text3, accent, nav-bg-rgb, nav-bg-alpha, surface-bar]
+    var TC = {
+      katsujii: {bg:[248,246,241], sf:[253,252,249], bd:[224,221,218], bm:[191,188,184], t1:[10,10,10],   t2:[85,85,85],   t3:[153,153,153], ac:[10,10,10],  nb:[248,246,241], na:.92, sb:[242,240,235]},
+      sumi:     {bg:[12,12,12],   sf:[20,20,20],   bd:[30,30,30],   bm:[46,46,46],   t1:[224,224,224], t2:[136,136,136], t3:[68,68,68],   ac:[255,255,255], nb:[12,12,12],   na:.92, sb:[16,16,16]},
+      koushi:   {bg:[255,255,255], sf:[250,250,250], bd:[220,220,220], bm:[204,204,204], t1:[26,26,26],  t2:[85,85,85],   t3:[170,170,170], ac:[26,26,26],  nb:[255,255,255], na:.92, sb:[245,245,245]},
+      terminal: {bg:[13,13,13],   sf:[17,17,17],   bd:[30,30,30],   bm:[46,74,46],   t1:[200,200,200], t2:[102,102,102], t3:[51,51,51],   ac:[57,211,83], nb:[13,13,13],   na:.94, sb:[10,10,10]},
+      hakushi:  {bg:[255,255,255], sf:[255,255,255], bd:[238,238,238], bm:[204,204,204], t1:[17,17,17],  t2:[102,102,102], t3:[187,187,187], ac:[17,17,17],  nb:[255,255,255], na:.96, sb:[249,249,249]}
     };
 
-    var phase = 0;      // 0=idle 1=ひびあり 2=ひびひどい 3=切り替え中
-    var origin = {x:0, y:0};
-    var allCracks = [];
+    // ── ゲージDOM構築 ──
+    var bar  = document.getElementById('tsg-bar');
+    var fill = document.getElementById('tsg-fill');
+    var hint = document.getElementById('tsg-hint');
 
-    // ── シェイク用 keyframes ──
-    var shakeStyle = document.createElement('style');
-    shakeStyle.textContent =
-      '@keyframes cShake1{' +
-        '0%,100%{transform:translate(0,0) rotate(0deg)}' +
-        '15%{transform:translate(-8px,4px) rotate(-0.4deg)}' +
-        '35%{transform:translate(7px,-5px) rotate(0.3deg)}' +
-        '55%{transform:translate(-5px,6px) rotate(-0.3deg)}' +
-        '75%{transform:translate(6px,-3px) rotate(0.2deg)}' +
-        '90%{transform:translate(-2px,2px) rotate(-0.1deg)}' +
-      '}' +
-      '@keyframes cShake2{' +
-        '0%,100%{transform:translate(0,0) rotate(0deg)}' +
-        '10%{transform:translate(-14px,7px) rotate(-0.6deg)}' +
-        '22%{transform:translate(12px,-9px) rotate(0.5deg)}' +
-        '35%{transform:translate(-11px,11px) rotate(-0.5deg)}' +
-        '48%{transform:translate(13px,-7px) rotate(0.6deg)}' +
-        '62%{transform:translate(-9px,8px) rotate(-0.4deg)}' +
-        '77%{transform:translate(7px,-5px) rotate(0.3deg)}' +
-        '90%{transform:translate(-3px,3px) rotate(-0.1deg)}' +
-      '}' +
-      '@keyframes cShake3{' +
-        '0%,100%{transform:translate(0,0) rotate(0deg)}' +
-        '6%{transform:translate(-22px,11px) rotate(-1.1deg)}' +
-        '12%{transform:translate(20px,-14px) rotate(1deg)}' +
-        '18%{transform:translate(-18px,16px) rotate(-0.9deg)}' +
-        '24%{transform:translate(22px,-12px) rotate(1.1deg)}' +
-        '34%{transform:translate(-15px,13px) rotate(-0.6deg)}' +
-        '48%{transform:translate(13px,-10px) rotate(0.5deg)}' +
-        '62%{transform:translate(-9px,7px) rotate(-0.3deg)}' +
-        '78%{transform:translate(5px,-4px) rotate(0.2deg)}' +
-        '90%{transform:translate(-2px,2px) rotate(-0.1deg)}' +
-      '}';
-    document.head.appendChild(shakeStyle);
-
-    // ── Canvas ──
-    var cvs = document.createElement('canvas');
-    Object.assign(cvs.style, {
-      position:'fixed', top:'0', left:'0',
-      width:'100%', height:'100%',
-      pointerEvents:'none', zIndex:'9999'
+    TH.forEach(function(t, i) {
+      if (i > 0) { var c = document.createElement('div'); c.className = 'tsg-conn'; bar.appendChild(c); }
+      var item = document.createElement('div'); item.className = 'tsg-item'; item.dataset.i = i;
+      var dot  = document.createElement('div'); dot.className = 'tsg-dot'; dot.style.setProperty('--tsg-dc', DC[t]);
+      var lbl  = document.createElement('div'); lbl.className = 'tsg-lbl'; lbl.textContent = TN[t];
+      item.appendChild(dot); item.appendChild(lbl); bar.appendChild(item);
     });
-    document.body.appendChild(cvs);
 
-    function resizeCvs() {
-      cvs.width  = window.innerWidth;
-      cvs.height = window.innerHeight;
-      if (phase > 0) drawAll();
-    }
-    window.addEventListener('resize', resizeCvs);
-    resizeCvs();
+    var ci = Math.max(0, TH.indexOf(document.documentElement.getAttribute('data-theme') || 'katsujii'));
 
-    // ── ひびパス生成 ──
-    var HOLE_R = 8; // 弾痕の半径
-
-    // 放射状のジグザグひび
-    function genPath(x, y, angle, totalLen) {
-      var pts = [{x:x, y:y}];
-      var cx = x, cy = y, a = angle;
-      var seg = 10 + Math.random() * 7;
-      var steps = Math.ceil(totalLen / seg);
-      for (var i = 0; i < steps; i++) {
-        a += (Math.random() - 0.5) * 0.55;
-        cx += Math.cos(a) * seg;
-        cy += Math.sin(a) * seg;
-        pts.push({x:cx, y:cy});
-      }
-      return pts;
-    }
-
-    // 同心円状のリングひび（弧）
-    function genArcPath(cx, cy, radius, a1, a2, jitter) {
-      var pts = [];
-      var diff = a2 - a1;
-      // 短い方向の弧
-      if (diff > Math.PI)  diff -= Math.PI * 2;
-      if (diff < -Math.PI) diff += Math.PI * 2;
-      var steps = Math.max(3, Math.ceil(Math.abs(diff) * radius / 12));
-      for (var i = 0; i <= steps; i++) {
-        var t = i / steps;
-        var a = a1 + diff * t;
-        var r = radius + (Math.random() - 0.5) * jitter;
-        pts.push({x: cx + Math.cos(a) * r, y: cy + Math.sin(a) * r});
-      }
-      return pts;
-    }
-
-    // 銃弾エフェクト：放射状ひび＋同心円ひびの組み合わせ
-    function genBulletCracks(cx, cy, maxR, numRadial, numRings) {
-      var cracks = [];
-      var angles = [];
-      for (var i = 0; i < numRadial; i++) {
-        var a = (Math.PI * 2 / numRadial) * i + (Math.random() - 0.5) * 0.3;
-        angles.push(a);
-        var len = maxR * (0.55 + Math.random() * 0.45);
-        // 穴の縁から開始
-        var sx = cx + Math.cos(a) * HOLE_R;
-        var sy = cy + Math.sin(a) * HOLE_R;
-        cracks.push(genPath(sx, sy, a, len));
-      }
-      // 同心円弧（隣接する放射ひびをつなぐ）
-      for (var r = 0; r < numRings; r++) {
-        var ringR = maxR * (0.3 + r * 0.32);
-        for (var i = 0; i < angles.length; i++) {
-          if (Math.random() > 0.22) { // 約78%の確率で弧を描く
-            var a1 = angles[i];
-            var a2 = angles[(i + 1) % angles.length];
-            cracks.push(genArcPath(cx, cy, ringR, a1, a2, 5));
-          }
-        }
-      }
-      return cracks;
-    }
-
-    // ── テーマ取得 ──
-    function currentTheme() {
-      return document.documentElement.getAttribute('data-theme') || 'katsujii';
-    }
-    function nextTheme() {
-      var idx = THEMES.indexOf(currentTheme());
-      return THEMES[(idx + 1) % THEMES.length];
-    }
-
-    // ── 描画 ──
-    function strokePath(ctx, pts, lw, color, glow, blur) {
-      if (pts.length < 2) return;
-      ctx.beginPath();
-      ctx.moveTo(pts[0].x, pts[0].y);
-      for (var i = 1; i < pts.length; i++) ctx.lineTo(pts[i].x, pts[i].y);
-      ctx.lineWidth = lw;
-      ctx.strokeStyle = color;
-      if (glow) { ctx.shadowColor = glow; ctx.shadowBlur = blur; }
-      ctx.stroke();
-      ctx.shadowBlur = 0;
-      ctx.shadowColor = 'transparent';
-    }
-
-    function drawAll() {
-      var ctx = cvs.getContext('2d');
-      ctx.clearRect(0, 0, cvs.width, cvs.height);
-      ctx.lineCap = 'round';
-      ctx.lineJoin = 'round';
-
-      var nt = nextTheme();
-      var ac = THEME_ACCENTS[nt];
-      var glowStr = 'rgba(' + ac.r + ',' + ac.g + ',' + ac.b + ',';
-
-      allCracks.forEach(function(pts) {
-        if (phase >= 2) {
-          // 次テーマの光が漏れる
-          strokePath(ctx, pts, 10, glowStr + '0.08)', glowStr + '1)', 22);
-          strokePath(ctx, pts, 5,  glowStr + '0.25)', glowStr + '1)', 12);
-        }
-        // ガラスひびのダーク輪郭
-        strokePath(ctx, pts, phase >= 2 ? 3.5 : 2.5, 'rgba(0,0,0,0.55)', null, 0);
-        // 光沢ハイライト
-        strokePath(ctx, pts, phase >= 2 ? 1.6 : 1.2, 'rgba(255,255,255,0.88)', null, 0);
+    function setOn(idx) {
+      bar.querySelectorAll('.tsg-item').forEach(function(el, i) {
+        el.querySelector('.tsg-dot').classList.toggle('on', i === idx);
+        el.querySelector('.tsg-lbl').classList.toggle('on', i === idx);
       });
+    }
+    setOn(ci);
 
-      // 弾痕の穴
-      if (phase > 0) {
-        // 外縁のガラス粉砕リング
-        ctx.beginPath();
-        ctx.arc(origin.x, origin.y, HOLE_R + 3, 0, Math.PI * 2);
-        ctx.lineWidth = 1.5;
-        if (phase >= 2) {
-          ctx.strokeStyle = glowStr + '0.6)';
-          ctx.shadowColor = glowStr + '1)';
-          ctx.shadowBlur  = 14;
-        } else {
-          ctx.strokeStyle = 'rgba(255,255,255,0.65)';
-          ctx.shadowBlur  = 0;
-        }
-        ctx.stroke();
-        ctx.shadowBlur = 0;
+    // ── 色補間ヘルパー ──
+    function L(a, b, t) { return a + (b - a) * t; }
+    function LC(a, b, t) { return [Math.round(L(a[0],b[0],t)), Math.round(L(a[1],b[1],t)), Math.round(L(a[2],b[2],t))]; }
+    function rgb(c)      { return 'rgb('  + c[0] + ',' + c[1] + ',' + c[2] + ')'; }
+    function rgba(c, a)  { return 'rgba(' + c[0] + ',' + c[1] + ',' + c[2] + ',' + a + ')'; }
 
-        // 穴本体（暗い円）
-        ctx.beginPath();
-        ctx.arc(origin.x, origin.y, HOLE_R, 0, Math.PI * 2);
-        var holeGrad = ctx.createRadialGradient(
-          origin.x - HOLE_R * 0.3, origin.y - HOLE_R * 0.3, 1,
-          origin.x, origin.y, HOLE_R
-        );
-        if (phase >= 2) {
-          holeGrad.addColorStop(0, glowStr + '0.5)');
-          holeGrad.addColorStop(1, 'rgba(0,0,0,0.9)');
-        } else {
-          holeGrad.addColorStop(0, 'rgba(60,60,60,0.85)');
-          holeGrad.addColorStop(1, 'rgba(0,0,0,0.95)');
-        }
-        ctx.fillStyle = holeGrad;
-        ctx.fill();
-
-        // 穴の縁のハイライト（ガラスの断面光沢）
-        ctx.beginPath();
-        ctx.arc(origin.x, origin.y, HOLE_R, 0, Math.PI * 2);
-        ctx.lineWidth = 1;
-        ctx.strokeStyle = 'rgba(255,255,255,0.45)';
-        ctx.stroke();
-      }
+    function morph(fi, ti, t) {
+      var f = TC[TH[fi]], g = TC[TH[ti]], r = document.documentElement;
+      var ac = LC(f.ac, g.ac, t);
+      r.style.setProperty('--bg',          rgb(LC(f.bg, g.bg, t)));
+      r.style.setProperty('--surface',     rgb(LC(f.sf, g.sf, t)));
+      r.style.setProperty('--border',      rgb(LC(f.bd, g.bd, t)));
+      r.style.setProperty('--border-mid',  rgb(LC(f.bm, g.bm, t)));
+      r.style.setProperty('--text-1',      rgb(LC(f.t1, g.t1, t)));
+      r.style.setProperty('--text-2',      rgb(LC(f.t2, g.t2, t)));
+      r.style.setProperty('--text-3',      rgb(LC(f.t3, g.t3, t)));
+      r.style.setProperty('--accent',      rgb(ac));
+      r.style.setProperty('--accent-r',    ac[0]);
+      r.style.setProperty('--accent-g',    ac[1]);
+      r.style.setProperty('--accent-b',    ac[2]);
+      r.style.setProperty('--nav-bg',      rgba(LC(f.nb, g.nb, t), L(f.na, g.na, t)));
+      r.style.setProperty('--surface-bar', rgb(LC(f.sb, g.sb, t)));
     }
 
-    // ── シェイク ──
-    function shake(level) {
-      var dur = level === 3 ? '0.65s' : '0.42s';
-      document.body.style.animation = 'none';
-      requestAnimationFrame(function() {
-        requestAnimationFrame(function() {
-          document.body.style.animation = 'cShake' + level + ' ' + dur + ' ease';
+    function clearMorph() {
+      ['--bg','--surface','--border','--border-mid','--text-1','--text-2','--text-3',
+       '--accent','--accent-r','--accent-g','--accent-b','--nav-bg','--surface-bar'
+      ].forEach(function(p) { document.documentElement.style.removeProperty(p); });
+    }
+
+    // ── ドラッグ処理 ──
+    var drag = false, sx = 0, p = 0, dir = 0, raf = null;
+
+    function cx(e) { return e.touches ? e.touches[0].clientX : e.clientX; }
+
+    function onDown(e) {
+      drag = true; sx = cx(e); p = 0; dir = 0;
+      if (raf) { cancelAnimationFrame(raf); raf = null; }
+      e.preventDefault();
+    }
+
+    function onMove(e) {
+      if (!drag) return;
+      var dx = cx(e) - sx;
+      dir = dx >= 0 ? 1 : -1;
+      p = Math.min(1, Math.abs(dx) / 100);
+      if (p < 0.01) return;
+      var ti = (ci + dir + TH.length) % TH.length;
+      morph(ci, ti, p);
+      fill.style.transformOrigin = dir > 0 ? 'left' : 'right';
+      fill.style.transform = 'scaleX(' + p + ')';
+      hint.textContent = (dir < 0 ? '← ' : '') + TN[TH[ti]] + (dir > 0 ? ' →' : '');
+      // 50%でドット先行ハイライト
+      bar.querySelectorAll('.tsg-item').forEach(function(el, i) {
+        var on = (i === ci) || (i === ti && p >= .5);
+        el.querySelector('.tsg-dot').classList.toggle('on', on);
+        el.querySelector('.tsg-lbl').classList.toggle('on', on);
+      });
+    }
+
+    function onUp() {
+      if (!drag) return;
+      drag = false;
+      var fi = ci, ti = (ci + dir + TH.length) % TH.length;
+      if (p > .45 && dir !== 0) {
+        // スナップ完了 → テーマ確定
+        snap(fi, ti, p, 1, function() {
+          window._tsgSw = true;
+          switchTheme(TH[ti]);
+          window._tsgSw = false;
+          clearMorph(); ci = ti; setOn(ci);
+          fill.style.transform = 'scaleX(0)';
+          hint.textContent = '← DRAG → THEME';
         });
-      });
-      document.body.addEventListener('animationend', function() {
-        document.body.style.animation = '';
-      }, {once: true});
+      } else {
+        // 戻す
+        snap(fi, (p > 0 && dir !== 0) ? ti : fi, p, 0, function() {
+          clearMorph(); setOn(ci);
+          fill.style.transform = 'scaleX(0)';
+          hint.textContent = '← DRAG → THEME';
+        });
+      }
     }
 
-    // ── フラッシュ→テーマ切り替え ──
-    function doFlashSwitch() {
-      phase = 3;
-      var nt = nextTheme();
-      var flash = document.createElement('div');
-      Object.assign(flash.style, {
-        position:'fixed', inset:'0',
-        background: THEME_FLASH[nt],
-        zIndex:'9998', pointerEvents:'none',
-        opacity:'0', transition:'opacity 0.18s ease'
-      });
-      document.body.appendChild(flash);
-
-      requestAnimationFrame(function() {
-        flash.style.opacity = '1';
-        setTimeout(function() {
-          switchTheme(nt);
-          var ctx = cvs.getContext('2d');
-          ctx.clearRect(0, 0, cvs.width, cvs.height);
-          allCracks = [];
-          phase = 0;
-          flash.style.transition = 'opacity 0.28s ease';
-          flash.style.opacity = '0';
-          setTimeout(function() { flash.remove(); }, 350);
-        }, 200);
-      });
+    function snap(fi, ti, from, to, cb) {
+      var s = null, dur = 260;
+      function step(ts) {
+        if (!s) s = ts;
+        var e = 1 - Math.pow(1 - Math.min(1, (ts - s) / dur), 3); // ease-out cubic
+        var v = from + (to - from) * e;
+        morph(fi, ti, v);
+        fill.style.transform = 'scaleX(' + Math.abs(v) + ')';
+        if ((ts - s) < dur) { raf = requestAnimationFrame(step); } else { cb(); }
+      }
+      raf = requestAnimationFrame(step);
     }
 
-    // ── クリックハンドラ ──
-    document.addEventListener('click', function(e) {
-      if (phase === 3) return;
+    bar.addEventListener('mousedown',  onDown);
+    bar.addEventListener('touchstart', onDown, {passive: false});
+    window.addEventListener('mousemove',  onMove);
+    window.addEventListener('touchmove',  onMove, {passive: false});
+    window.addEventListener('mouseup',  onUp);
+    window.addEventListener('touchend', onUp);
 
-      // インタラクティブ要素・UIバーはスキップ
-      var tag = e.target.tagName.toLowerCase();
-      if (['a','button','input','select','textarea'].indexOf(tag) !== -1) return;
-      if (e.target.closest) {
-        if (e.target.closest('.theme-bar') || e.target.closest('nav')) return;
-      }
-
-      var x = e.clientX, y = e.clientY;
-      var shortSide = Math.min(cvs.width, cvs.height);
-
-      if (phase === 0) {
-        // 1回目：弾痕＋放射ひび（小）
-        origin = {x:x, y:y};
-        allCracks = genBulletCracks(x, y, shortSide * 0.18, 11, 1);
-        phase = 1;
-        shake(1);
-        drawAll();
-
-      } else if (phase === 1) {
-        // 2回目：ひびが広がり次テーマの光が滲む（同じ弾痕から拡大）
-        allCracks = genBulletCracks(origin.x, origin.y, shortSide * 0.32, 13, 2);
-        phase = 2;
-        shake(2);
-        drawAll();
-
-      } else if (phase === 2) {
-        // 3回目：粉砕→テーマ切り替え
-        shake(3);
-        setTimeout(doFlashSwitch, 120);
-      }
-    });
+    // ── 外部からのswitchTheme（テーマバー・ひびわれギミック）と同期 ──
+    var _sw = window.switchTheme;
+    window.switchTheme = function(t) {
+      _sw(t);
+      if (!window._tsgSw) { var i = TH.indexOf(t); if (i >= 0) { ci = i; setOn(ci); } }
+    };
   })();
   </script>
 </body>
