@@ -832,13 +832,16 @@
     resizeCvs();
 
     // ── ひびパス生成 ──
+    var HOLE_R = 8; // 弾痕の半径
+
+    // 放射状のジグザグひび
     function genPath(x, y, angle, totalLen) {
       var pts = [{x:x, y:y}];
       var cx = x, cy = y, a = angle;
-      var seg = 13 + Math.random() * 8;
+      var seg = 10 + Math.random() * 7;
       var steps = Math.ceil(totalLen / seg);
       for (var i = 0; i < steps; i++) {
-        a += (Math.random() - 0.5) * 0.65;
+        a += (Math.random() - 0.5) * 0.55;
         cx += Math.cos(a) * seg;
         cy += Math.sin(a) * seg;
         pts.push({x:cx, y:cy});
@@ -846,21 +849,48 @@
       return pts;
     }
 
-    function genCrackSet(x, y, count, len) {
-      var set = [];
-      for (var i = 0; i < count; i++) {
-        var baseAngle = (Math.PI * 2 / count) * i + (Math.random() - 0.5) * 0.75;
-        var main = genPath(x, y, baseAngle, len);
-        set.push(main);
-        // 枝ひび
-        if (main.length > 3) {
-          var bi = 1 + Math.floor(Math.random() * (main.length - 2));
-          var bp = main[bi];
-          var ba = baseAngle + (Math.random() > 0.5 ? 1 : -1) * (0.45 + Math.random() * 0.5);
-          set.push(genPath(bp.x, bp.y, ba, len * (0.28 + Math.random() * 0.28)));
+    // 同心円状のリングひび（弧）
+    function genArcPath(cx, cy, radius, a1, a2, jitter) {
+      var pts = [];
+      var diff = a2 - a1;
+      // 短い方向の弧
+      if (diff > Math.PI)  diff -= Math.PI * 2;
+      if (diff < -Math.PI) diff += Math.PI * 2;
+      var steps = Math.max(3, Math.ceil(Math.abs(diff) * radius / 12));
+      for (var i = 0; i <= steps; i++) {
+        var t = i / steps;
+        var a = a1 + diff * t;
+        var r = radius + (Math.random() - 0.5) * jitter;
+        pts.push({x: cx + Math.cos(a) * r, y: cy + Math.sin(a) * r});
+      }
+      return pts;
+    }
+
+    // 銃弾エフェクト：放射状ひび＋同心円ひびの組み合わせ
+    function genBulletCracks(cx, cy, maxR, numRadial, numRings) {
+      var cracks = [];
+      var angles = [];
+      for (var i = 0; i < numRadial; i++) {
+        var a = (Math.PI * 2 / numRadial) * i + (Math.random() - 0.5) * 0.3;
+        angles.push(a);
+        var len = maxR * (0.55 + Math.random() * 0.45);
+        // 穴の縁から開始
+        var sx = cx + Math.cos(a) * HOLE_R;
+        var sy = cy + Math.sin(a) * HOLE_R;
+        cracks.push(genPath(sx, sy, a, len));
+      }
+      // 同心円弧（隣接する放射ひびをつなぐ）
+      for (var r = 0; r < numRings; r++) {
+        var ringR = maxR * (0.3 + r * 0.32);
+        for (var i = 0; i < angles.length; i++) {
+          if (Math.random() > 0.22) { // 約78%の確率で弧を描く
+            var a1 = angles[i];
+            var a2 = angles[(i + 1) % angles.length];
+            cracks.push(genArcPath(cx, cy, ringR, a1, a2, 5));
+          }
         }
       }
-      return set;
+      return cracks;
     }
 
     // ── テーマ取得 ──
@@ -908,18 +938,46 @@
         strokePath(ctx, pts, phase >= 2 ? 1.6 : 1.2, 'rgba(255,255,255,0.88)', null, 0);
       });
 
-      // 衝撃点
+      // 弾痕の穴
       if (phase > 0) {
-        var r = phase >= 2 ? 6 : 3.5;
+        // 外縁のガラス粉砕リング
         ctx.beginPath();
-        ctx.arc(origin.x, origin.y, r, 0, Math.PI * 2);
-        ctx.fillStyle = phase >= 2
-          ? glowStr + '0.7)'
-          : 'rgba(255,255,255,0.7)';
-        ctx.shadowColor = phase >= 2 ? glowStr + '1)' : 'transparent';
-        ctx.shadowBlur  = phase >= 2 ? 14 : 0;
-        ctx.fill();
+        ctx.arc(origin.x, origin.y, HOLE_R + 3, 0, Math.PI * 2);
+        ctx.lineWidth = 1.5;
+        if (phase >= 2) {
+          ctx.strokeStyle = glowStr + '0.6)';
+          ctx.shadowColor = glowStr + '1)';
+          ctx.shadowBlur  = 14;
+        } else {
+          ctx.strokeStyle = 'rgba(255,255,255,0.65)';
+          ctx.shadowBlur  = 0;
+        }
+        ctx.stroke();
         ctx.shadowBlur = 0;
+
+        // 穴本体（暗い円）
+        ctx.beginPath();
+        ctx.arc(origin.x, origin.y, HOLE_R, 0, Math.PI * 2);
+        var holeGrad = ctx.createRadialGradient(
+          origin.x - HOLE_R * 0.3, origin.y - HOLE_R * 0.3, 1,
+          origin.x, origin.y, HOLE_R
+        );
+        if (phase >= 2) {
+          holeGrad.addColorStop(0, glowStr + '0.5)');
+          holeGrad.addColorStop(1, 'rgba(0,0,0,0.9)');
+        } else {
+          holeGrad.addColorStop(0, 'rgba(60,60,60,0.85)');
+          holeGrad.addColorStop(1, 'rgba(0,0,0,0.95)');
+        }
+        ctx.fillStyle = holeGrad;
+        ctx.fill();
+
+        // 穴の縁のハイライト（ガラスの断面光沢）
+        ctx.beginPath();
+        ctx.arc(origin.x, origin.y, HOLE_R, 0, Math.PI * 2);
+        ctx.lineWidth = 1;
+        ctx.strokeStyle = 'rgba(255,255,255,0.45)';
+        ctx.stroke();
       }
     }
 
@@ -980,18 +1038,16 @@
       var shortSide = Math.min(cvs.width, cvs.height);
 
       if (phase === 0) {
-        // 1回目：軽いひび
+        // 1回目：弾痕＋放射ひび（小）
         origin = {x:x, y:y};
-        allCracks = genCrackSet(x, y, 7, shortSide * 0.38);
+        allCracks = genBulletCracks(x, y, shortSide * 0.18, 11, 1);
         phase = 1;
         shake(1);
         drawAll();
 
       } else if (phase === 1) {
-        // 2回目：ひびが広がり次テーマが滲む
-        allCracks = allCracks
-          .concat(genCrackSet(origin.x, origin.y, 6, shortSide * 0.58))
-          .concat(genCrackSet(x, y, 4, shortSide * 0.22));
+        // 2回目：ひびが広がり次テーマの光が滲む（同じ弾痕から拡大）
+        allCracks = genBulletCracks(origin.x, origin.y, shortSide * 0.32, 13, 2);
         phase = 2;
         shake(2);
         drawAll();
