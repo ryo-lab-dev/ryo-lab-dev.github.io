@@ -3,68 +3,68 @@
 
   <!-- Portfolio Top -->
   <url>
-    <loc>https://ryo-lab-dev.github.io/</loc>
+    <loc>https://ryo-lab.dev/</loc>
     <changefreq>monthly</changefreq>
     <priority>1.0</priority>
   </url>
 
   <!-- ScoreVault -->
   <url>
-    <loc>https://ryo-lab-dev.github.io/scorevault/</loc>
+    <loc>https://ryo-lab.dev/scorevault/</loc>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
   </url>
   <url>
-    <loc>https://ryo-lab-dev.github.io/scorevault/privacy-policy.html</loc>
+    <loc>https://ryo-lab.dev/scorevault/privacy-policy.html</loc>
     <changefreq>yearly</changefreq>
     <priority>0.4</priority>
   </url>
   <url>
-    <loc>https://ryo-lab-dev.github.io/scorevault/privacy-policy-en.html</loc>
+    <loc>https://ryo-lab.dev/scorevault/privacy-policy-en.html</loc>
     <changefreq>yearly</changefreq>
     <priority>0.4</priority>
   </url>
   <url>
-    <loc>https://ryo-lab-dev.github.io/scorevault/faq.html</loc>
+    <loc>https://ryo-lab.dev/scorevault/faq.html</loc>
     <changefreq>monthly</changefreq>
     <priority>0.6</priority>
   </url>
   <url>
-    <loc>https://ryo-lab-dev.github.io/scorevault/update-history.html</loc>
+    <loc>https://ryo-lab.dev/scorevault/update-history.html</loc>
     <changefreq>monthly</changefreq>
     <priority>0.5</priority>
   </url>
 
   <!-- CloudKata -->
   <url>
-    <loc>https://ryo-lab-dev.github.io/cloudkata/</loc>
+    <loc>https://ryo-lab.dev/cloudkata/</loc>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
   </url>
   <url>
-    <loc>https://ryo-lab-dev.github.io/cloudkata/privacy-policy.html</loc>
+    <loc>https://ryo-lab.dev/cloudkata/privacy-policy.html</loc>
     <changefreq>yearly</changefreq>
     <priority>0.4</priority>
   </url>
   <url>
-    <loc>https://ryo-lab-dev.github.io/cloudkata/disclaimer.html</loc>
+    <loc>https://ryo-lab.dev/cloudkata/disclaimer.html</loc>
     <changefreq>yearly</changefreq>
     <priority>0.4</priority>
   </url>
   <url>
-    <loc>https://ryo-lab-dev.github.io/cloudkata/terms.html</loc>
+    <loc>https://ryo-lab.dev/cloudkata/terms.html</loc>
     <changefreq>yearly</changefreq>
     <priority>0.4</priority>
   </url>
 
   <!-- NexusDiary -->
   <url>
-    <loc>https://ryo-lab-dev.github.io/nexusdiary/</loc>
+    <loc>https://ryo-lab.dev/nexusdiary/</loc>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
   </url>
   <url>
-    <loc>https://ryo-lab-dev.github.io/nexusdiary/privacy-policy.html</loc>
+    <loc>https://ryo-lab.dev/nexusdiary/privacy-policy.html</loc>
     <changefreq>yearly</changefreq>
     <priority>0.4</priority>
   </url>
