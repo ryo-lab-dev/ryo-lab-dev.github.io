@@ -755,5 +755,254 @@
       }
     })();
   </script>
+
+  <!-- ── Crack Gimmick ── -->
+  <script>
+  (function() {
+    var THEMES = ['katsujii', 'sumi', 'koushi', 'hakushi', 'terminal'];
+    var THEME_ACCENTS = {
+      katsujii: {r:10,  g:10,  b:10},
+      sumi:     {r:255, g:255, b:255},
+      koushi:   {r:26,  g:26,  b:26},
+      hakushi:  {r:17,  g:17,  b:17},
+      terminal: {r:57,  g:211, b:83}
+    };
+    var THEME_FLASH = {
+      katsujii: '#F8F6F1',
+      sumi:     '#0C0C0C',
+      koushi:   '#FFFFFF',
+      hakushi:  '#FFFFFF',
+      terminal: '#0D0D0D'
+    };
+
+    var phase = 0;      // 0=idle 1=ひびあり 2=ひびひどい 3=切り替え中
+    var origin = {x:0, y:0};
+    var allCracks = [];
+
+    // ── シェイク用 keyframes ──
+    var shakeStyle = document.createElement('style');
+    shakeStyle.textContent =
+      '@keyframes cShake1{' +
+        '0%,100%{transform:translate(0,0) rotate(0deg)}' +
+        '15%{transform:translate(-8px,4px) rotate(-0.4deg)}' +
+        '35%{transform:translate(7px,-5px) rotate(0.3deg)}' +
+        '55%{transform:translate(-5px,6px) rotate(-0.3deg)}' +
+        '75%{transform:translate(6px,-3px) rotate(0.2deg)}' +
+        '90%{transform:translate(-2px,2px) rotate(-0.1deg)}' +
+      '}' +
+      '@keyframes cShake2{' +
+        '0%,100%{transform:translate(0,0) rotate(0deg)}' +
+        '10%{transform:translate(-14px,7px) rotate(-0.6deg)}' +
+        '22%{transform:translate(12px,-9px) rotate(0.5deg)}' +
+        '35%{transform:translate(-11px,11px) rotate(-0.5deg)}' +
+        '48%{transform:translate(13px,-7px) rotate(0.6deg)}' +
+        '62%{transform:translate(-9px,8px) rotate(-0.4deg)}' +
+        '77%{transform:translate(7px,-5px) rotate(0.3deg)}' +
+        '90%{transform:translate(-3px,3px) rotate(-0.1deg)}' +
+      '}' +
+      '@keyframes cShake3{' +
+        '0%,100%{transform:translate(0,0) rotate(0deg)}' +
+        '6%{transform:translate(-22px,11px) rotate(-1.1deg)}' +
+        '12%{transform:translate(20px,-14px) rotate(1deg)}' +
+        '18%{transform:translate(-18px,16px) rotate(-0.9deg)}' +
+        '24%{transform:translate(22px,-12px) rotate(1.1deg)}' +
+        '34%{transform:translate(-15px,13px) rotate(-0.6deg)}' +
+        '48%{transform:translate(13px,-10px) rotate(0.5deg)}' +
+        '62%{transform:translate(-9px,7px) rotate(-0.3deg)}' +
+        '78%{transform:translate(5px,-4px) rotate(0.2deg)}' +
+        '90%{transform:translate(-2px,2px) rotate(-0.1deg)}' +
+      '}';
+    document.head.appendChild(shakeStyle);
+
+    // ── Canvas ──
+    var cvs = document.createElement('canvas');
+    Object.assign(cvs.style, {
+      position:'fixed', top:'0', left:'0',
+      width:'100%', height:'100%',
+      pointerEvents:'none', zIndex:'9999'
+    });
+    document.body.appendChild(cvs);
+
+    function resizeCvs() {
+      cvs.width  = window.innerWidth;
+      cvs.height = window.innerHeight;
+      if (phase > 0) drawAll();
+    }
+    window.addEventListener('resize', resizeCvs);
+    resizeCvs();
+
+    // ── ひびパス生成 ──
+    function genPath(x, y, angle, totalLen) {
+      var pts = [{x:x, y:y}];
+      var cx = x, cy = y, a = angle;
+      var seg = 13 + Math.random() * 8;
+      var steps = Math.ceil(totalLen / seg);
+      for (var i = 0; i < steps; i++) {
+        a += (Math.random() - 0.5) * 0.65;
+        cx += Math.cos(a) * seg;
+        cy += Math.sin(a) * seg;
+        pts.push({x:cx, y:cy});
+      }
+      return pts;
+    }
+
+    function genCrackSet(x, y, count, len) {
+      var set = [];
+      for (var i = 0; i < count; i++) {
+        var baseAngle = (Math.PI * 2 / count) * i + (Math.random() - 0.5) * 0.75;
+        var main = genPath(x, y, baseAngle, len);
+        set.push(main);
+        // 枝ひび
+        if (main.length > 3) {
+          var bi = 1 + Math.floor(Math.random() * (main.length - 2));
+          var bp = main[bi];
+          var ba = baseAngle + (Math.random() > 0.5 ? 1 : -1) * (0.45 + Math.random() * 0.5);
+          set.push(genPath(bp.x, bp.y, ba, len * (0.28 + Math.random() * 0.28)));
+        }
+      }
+      return set;
+    }
+
+    // ── テーマ取得 ──
+    function currentTheme() {
+      return document.documentElement.getAttribute('data-theme') || 'katsujii';
+    }
+    function nextTheme() {
+      var idx = THEMES.indexOf(currentTheme());
+      return THEMES[(idx + 1) % THEMES.length];
+    }
+
+    // ── 描画 ──
+    function strokePath(ctx, pts, lw, color, glow, blur) {
+      if (pts.length < 2) return;
+      ctx.beginPath();
+      ctx.moveTo(pts[0].x, pts[0].y);
+      for (var i = 1; i < pts.length; i++) ctx.lineTo(pts[i].x, pts[i].y);
+      ctx.lineWidth = lw;
+      ctx.strokeStyle = color;
+      if (glow) { ctx.shadowColor = glow; ctx.shadowBlur = blur; }
+      ctx.stroke();
+      ctx.shadowBlur = 0;
+      ctx.shadowColor = 'transparent';
+    }
+
+    function drawAll() {
+      var ctx = cvs.getContext('2d');
+      ctx.clearRect(0, 0, cvs.width, cvs.height);
+      ctx.lineCap = 'round';
+      ctx.lineJoin = 'round';
+
+      var nt = nextTheme();
+      var ac = THEME_ACCENTS[nt];
+      var glowStr = 'rgba(' + ac.r + ',' + ac.g + ',' + ac.b + ',';
+
+      allCracks.forEach(function(pts) {
+        if (phase >= 2) {
+          // 次テーマの光が漏れる
+          strokePath(ctx, pts, 10, glowStr + '0.08)', glowStr + '1)', 22);
+          strokePath(ctx, pts, 5,  glowStr + '0.25)', glowStr + '1)', 12);
+        }
+        // ガラスひびのダーク輪郭
+        strokePath(ctx, pts, phase >= 2 ? 3.5 : 2.5, 'rgba(0,0,0,0.55)', null, 0);
+        // 光沢ハイライト
+        strokePath(ctx, pts, phase >= 2 ? 1.6 : 1.2, 'rgba(255,255,255,0.88)', null, 0);
+      });
+
+      // 衝撃点
+      if (phase > 0) {
+        var r = phase >= 2 ? 6 : 3.5;
+        ctx.beginPath();
+        ctx.arc(origin.x, origin.y, r, 0, Math.PI * 2);
+        ctx.fillStyle = phase >= 2
+          ? glowStr + '0.7)'
+          : 'rgba(255,255,255,0.7)';
+        ctx.shadowColor = phase >= 2 ? glowStr + '1)' : 'transparent';
+        ctx.shadowBlur  = phase >= 2 ? 14 : 0;
+        ctx.fill();
+        ctx.shadowBlur = 0;
+      }
+    }
+
+    // ── シェイク ──
+    function shake(level) {
+      var dur = level === 3 ? '0.65s' : '0.42s';
+      document.body.style.animation = 'none';
+      requestAnimationFrame(function() {
+        requestAnimationFrame(function() {
+          document.body.style.animation = 'cShake' + level + ' ' + dur + ' ease';
+        });
+      });
+      document.body.addEventListener('animationend', function() {
+        document.body.style.animation = '';
+      }, {once: true});
+    }
+
+    // ── フラッシュ→テーマ切り替え ──
+    function doFlashSwitch() {
+      phase = 3;
+      var nt = nextTheme();
+      var flash = document.createElement('div');
+      Object.assign(flash.style, {
+        position:'fixed', inset:'0',
+        background: THEME_FLASH[nt],
+        zIndex:'9998', pointerEvents:'none',
+        opacity:'0', transition:'opacity 0.18s ease'
+      });
+      document.body.appendChild(flash);
+
+      requestAnimationFrame(function() {
+        flash.style.opacity = '1';
+        setTimeout(function() {
+          switchTheme(nt);
+          var ctx = cvs.getContext('2d');
+          ctx.clearRect(0, 0, cvs.width, cvs.height);
+          allCracks = [];
+          phase = 0;
+          flash.style.transition = 'opacity 0.28s ease';
+          flash.style.opacity = '0';
+          setTimeout(function() { flash.remove(); }, 350);
+        }, 200);
+      });
+    }
+
+    // ── クリックハンドラ ──
+    document.addEventListener('click', function(e) {
+      if (phase === 3) return;
+
+      // インタラクティブ要素・UIバーはスキップ
+      var tag = e.target.tagName.toLowerCase();
+      if (['a','button','input','select','textarea'].indexOf(tag) !== -1) return;
+      if (e.target.closest) {
+        if (e.target.closest('.theme-bar') || e.target.closest('nav')) return;
+      }
+
+      var x = e.clientX, y = e.clientY;
+      var shortSide = Math.min(cvs.width, cvs.height);
+
+      if (phase === 0) {
+        // 1回目：軽いひび
+        origin = {x:x, y:y};
+        allCracks = genCrackSet(x, y, 7, shortSide * 0.38);
+        phase = 1;
+        shake(1);
+        drawAll();
+
+      } else if (phase === 1) {
+        // 2回目：ひびが広がり次テーマが滲む
+        allCracks = allCracks
+          .concat(genCrackSet(origin.x, origin.y, 6, shortSide * 0.58))
+          .concat(genCrackSet(x, y, 4, shortSide * 0.22));
+        phase = 2;
+        shake(2);
+        drawAll();
+
+      } else if (phase === 2) {
+        // 3回目：粉砕→テーマ切り替え
+        shake(3);
+        setTimeout(doFlashSwitch, 120);
+      }
+    });
+  })();
+  </script>
 </body>
 </html>
