@@ -530,13 +530,13 @@
         <span class="theme-dot" style="background:#F0F0F0;border:1px solid #AAAAAA;"></span>
         格子
       </button>
-      <button class="theme-btn" data-theme-target="hakushi" onclick="switchTheme('hakushi')">
-        <span class="theme-dot" style="background:#FFFFFF;border:1px solid #CCCCCC;"></span>
-        白紙
-      </button>
       <button class="theme-btn" data-theme-target="terminal" onclick="switchTheme('terminal')">
         <span class="theme-dot" style="background:#39D353;"></span>
         Terminal
+      </button>
+      <button class="theme-btn" data-theme-target="hakushi" onclick="switchTheme('hakushi')">
+        <span class="theme-dot" style="background:#FFFFFF;border:1px solid #CCCCCC;"></span>
+        白紙
       </button>
     </div>
   </div>
@@ -671,17 +671,17 @@
           <div class="tsc-sub" style="color:#555555;">Grid · Clean</div>
           <div class="tsc-bar" style="background:#1A1A1A;"></div>
         </div>
-        <div class="theme-showcase-card" onclick="switchTheme('hakushi')"
-          style="background:#FFFFFF;border-color:#EEEEEE;">
-          <div class="tsc-name" style="color:#111111;">白紙</div>
-          <div class="tsc-sub" style="color:#666666;">Pure · Minimal</div>
-          <div class="tsc-bar" style="background:#111111;"></div>
-        </div>
         <div class="theme-showcase-card" onclick="switchTheme('terminal')"
           style="background:#111111;border-color:#1E1E1E;">
           <div class="tsc-name" style="color:#39D353;font-family:'JetBrains Mono',monospace;">Terminal</div>
           <div class="tsc-sub" style="color:#666666;">Dark · Code</div>
           <div class="tsc-bar" style="background:#39D353;"></div>
+        </div>
+        <div class="theme-showcase-card" onclick="switchTheme('hakushi')"
+          style="background:#FFFFFF;border-color:#EEEEEE;">
+          <div class="tsc-name" style="color:#111111;">白紙</div>
+          <div class="tsc-sub" style="color:#666666;">Pure · Minimal</div>
+          <div class="tsc-bar" style="background:#111111;"></div>
         </div>
       </div>
     </div>
@@ -759,7 +759,7 @@
   <!-- ── Crack Gimmick ── -->
   <script>
   (function() {
-    var THEMES = ['katsujii', 'sumi', 'koushi', 'hakushi', 'terminal'];
+    var THEMES = ['katsujii', 'sumi', 'koushi', 'terminal', 'hakushi'];
     var THEME_ACCENTS = {
       katsujii: {r:10,  g:10,  b:10},
       sumi:     {r:255, g:255, b:255},
