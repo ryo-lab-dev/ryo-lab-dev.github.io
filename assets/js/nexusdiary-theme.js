@@ -38,9 +38,11 @@ document.querySelectorAll('.reveal').forEach(function(el) { observer.observe(el)
 
 // Theme Swipe Gauge
 (function() {
-  var TH = ['katsujii','sumi','koushi','terminal','hakushi'];
-  var TN = {katsujii:'活字', sumi:'墨', koushi:'格子', terminal:'Terminal', hakushi:'白紙'};
-  var DC = {katsujii:'#C4B8AE', sumi:'#555', koushi:'#C8C8C8', terminal:'#39D353', hakushi:'#D5D5D5'};
+  var TH = ['hakushi','koushi','sumi','katsujii','stellar','oldfilm','mist','dreamy','blueprint','terminal'];
+  var TN = {katsujii:'活字', sumi:'墨', koushi:'格子', terminal:'Terminal', hakushi:'白紙',
+            stellar:'星霜', oldfilm:'銀幕', mist:'薄霧', dreamy:'夢想', blueprint:'青写真'};
+  var DC = {katsujii:'#C4B8AE', sumi:'#555', koushi:'#C8C8C8', terminal:'#39D353', hakushi:'#D5D5D5',
+            stellar:'#FFFFFF', oldfilm:'#D9D4CC', mist:'#0EA5E9', dreamy:'#FF99AA', blueprint:'#38BDF8'};
 
   // CSS変数補間用カラーデータ [bg, surface, border, border-mid, text1, text2, text3, accent, nav-bg-rgb, nav-bg-alpha, surface-bar]
   var TC = {
@@ -48,7 +50,12 @@ document.querySelectorAll('.reveal').forEach(function(el) { observer.observe(el)
     sumi:     {bg:[12,12,12],   sf:[20,20,20],   bd:[30,30,30],   bm:[46,46,46],   t1:[224,224,224], t2:[136,136,136], t3:[68,68,68],   ac:[255,255,255], nb:[12,12,12],   na:.92, sb:[16,16,16]},
     koushi:   {bg:[255,255,255], sf:[250,250,250], bd:[220,220,220], bm:[204,204,204], t1:[26,26,26],  t2:[85,85,85],   t3:[170,170,170], ac:[26,26,26],  nb:[255,255,255], na:.92, sb:[245,245,245]},
     terminal: {bg:[13,13,13],   sf:[17,17,17],   bd:[30,30,30],   bm:[46,74,46],   t1:[200,200,200], t2:[102,102,102], t3:[51,51,51],   ac:[57,211,83], nb:[13,13,13],   na:.94, sb:[10,10,10]},
-    hakushi:  {bg:[255,255,255], sf:[255,255,255], bd:[238,238,238], bm:[204,204,204], t1:[17,17,17],  t2:[102,102,102], t3:[187,187,187], ac:[17,17,17],  nb:[255,255,255], na:.96, sb:[249,249,249]}
+    hakushi:  {bg:[255,255,255], sf:[255,255,255], bd:[238,238,238], bm:[204,204,204], t1:[17,17,17],  t2:[102,102,102], t3:[187,187,187], ac:[17,17,17],  nb:[255,255,255], na:.96, sb:[249,249,249]},
+    stellar:   {bg:[0,0,0],       sf:[10,10,10],    bd:[34,34,34],    bm:[51,51,51],    t1:[255,255,255], t2:[136,136,136], t3:[68,68,68],    ac:[255,255,255], nb:[0,0,0],        na:.94, sb:[5,5,5]},
+    oldfilm:   {bg:[26,25,24],    sf:[34,33,32],    bd:[58,56,53],    bm:[74,72,69],    t1:[240,240,232], t2:[181,176,168], t3:[122,117,112], ac:[217,212,204], nb:[26,25,24],     na:.94, sb:[23,22,21]},
+    mist:      {bg:[240,249,255], sf:[255,255,255], bd:[224,242,254], bm:[186,230,253], t1:[51,65,85],    t2:[100,116,139], t3:[147,197,253], ac:[14,165,233],  nb:[240,249,255],  na:.92, sb:[224,242,254]},
+    dreamy:    {bg:[255,245,247], sf:[255,255,255], bd:[255,209,220], bm:[255,183,197], t1:[93,64,55],    t2:[141,110,99],  t3:[212,160,168], ac:[255,153,170], nb:[255,245,247],  na:.92, sb:[255,228,236]},
+    blueprint: {bg:[15,23,42],    sf:[30,41,59],    bd:[56,68,89],    bm:[71,85,105],   t1:[248,250,252], t2:[148,163,184], t3:[100,116,139], ac:[56,189,248],  nb:[15,23,42],     na:.94, sb:[10,22,40]}
   };
 
   // ── ゲージDOM構築 ──
