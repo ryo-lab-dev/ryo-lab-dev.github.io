@@ -1,2 +1,8 @@
-# デザイン提案ファイル（ローカル保持・非公開）
-_proposals/
+.local/
+GEMINI.md
+CLAUDE.md
+.env
+.firebase/
+/logs/
+*.log
+.worktrees/
