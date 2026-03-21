@@ -73,25 +73,35 @@
   <div class="theme-bar">
     <div class="theme-bar-inner">
       <span class="theme-label">THEME :</span>
-      <button class="theme-btn" data-theme-target="katsujii" onclick="switchTheme('katsujii')">
-        <span class="theme-dot" style="background:#B8A99A;"></span>
-        活字
-      </button>
-      <button class="theme-btn" data-theme-target="sumi" onclick="switchTheme('sumi')">
-        <span class="theme-dot" style="background:#444444;"></span>
-        墨
+      <button class="theme-btn" data-theme-target="hakushi" onclick="switchTheme('hakushi')">
+        <span class="theme-dot" style="background:#FFFFFF;border:1px solid #CCCCCC;"></span>白紙
       </button>
       <button class="theme-btn" data-theme-target="koushi" onclick="switchTheme('koushi')">
-        <span class="theme-dot" style="background:#F0F0F0;border:1px solid #AAAAAA;"></span>
-        格子
+        <span class="theme-dot" style="background:#F0F0F0;border:1px solid #AAAAAA;"></span>格子
+      </button>
+      <button class="theme-btn" data-theme-target="sumi" onclick="switchTheme('sumi')">
+        <span class="theme-dot" style="background:#444444;"></span>墨
+      </button>
+      <button class="theme-btn" data-theme-target="katsujii" onclick="switchTheme('katsujii')">
+        <span class="theme-dot" style="background:#B8A99A;"></span>活字
+      </button>
+      <button class="theme-btn" data-theme-target="stellar" onclick="switchTheme('stellar')">
+        <span class="theme-dot" style="background:#FFFFFF;border:1px solid #333333;"></span>星霜
+      </button>
+      <button class="theme-btn" data-theme-target="oldfilm" onclick="switchTheme('oldfilm')">
+        <span class="theme-dot" style="background:#D9D4CC;"></span>銀幕
+      </button>
+      <button class="theme-btn" data-theme-target="mist" onclick="switchTheme('mist')">
+        <span class="theme-dot" style="background:#0EA5E9;"></span>薄霧
+      </button>
+      <button class="theme-btn" data-theme-target="dreamy" onclick="switchTheme('dreamy')">
+        <span class="theme-dot" style="background:#FF99AA;"></span>夢想
+      </button>
+      <button class="theme-btn" data-theme-target="blueprint" onclick="switchTheme('blueprint')">
+        <span class="theme-dot" style="background:#38BDF8;"></span>青写真
       </button>
       <button class="theme-btn" data-theme-target="terminal" onclick="switchTheme('terminal')">
-        <span class="theme-dot" style="background:#39D353;"></span>
-        Terminal
-      </button>
-      <button class="theme-btn" data-theme-target="hakushi" onclick="switchTheme('hakushi')">
-        <span class="theme-dot" style="background:#FFFFFF;border:1px solid #CCCCCC;"></span>
-        白紙
+        <span class="theme-dot" style="background:#39D353;"></span>Terminal
       </button>
     </div>
   </div>
@@ -161,8 +171,8 @@
         </div>
         <div class="feature-card reveal" style="transition-delay:0.16s;">
           <div class="feature-icon">🎨</div>
-          <h3>5種類のテーマ</h3>
-          <p>活字・墨・格子・白紙・Terminal。このページで体験しているように、好みの世界観でアプリを彩れます。</p>
+          <h3>10種類のテーマ</h3>
+          <p>白紙・格子・墨・活字・星霜・銀幕・薄霧・夢想・青写真・Terminal。このページで体験しているように、好みの世界観でアプリを彩れます。</p>
         </div>
         <div class="feature-card reveal" style="transition-delay:0.24s;">
           <div class="feature-icon">🔒</div>
@@ -170,6 +180,596 @@
           <p>日記データはあなただけがアクセス可能。Firestoreセキュリティルールで他ユーザーからの閲覧を完全遮断します。</p>
         </div>
       </div>
+    </div>
+  </section>
+
+  <div class="glow-line"></div>
+
+  <!-- Live Preview -->
+  <section>
+    <div class="section-inner">
+      <div class="reveal" style="margin-bottom:2rem;">
+        <p class="section-label">Live Preview</p>
+        <h2 class="section-title">テーマで変わる、世界観</h2>
+        <p style="color:var(--text-2);font-size:0.9rem;line-height:1.8;transition:color 0.4s;">
+          テーマを選んで、アプリの世界を体験する
+        </p>
+      </div>
+
+      <div class="nd-carousel reveal" id="ndCarousel">
+        <div class="nd-stage">
+
+          <!-- ── Slide 1: 白紙 Hakushi ── -->
+          <div class="nd-slide nd-slide--hakushi nd-active"
+            style="--nd-bg:#FFFFFF;--nd-surface:#FFFFFF;--nd-border:#EEEEEE;--nd-text:#111111;--nd-text-mid:#666666;--nd-accent:#111111;--nd-frame:#CCCCCC;">
+            <div class="nd-phones">
+              <div class="nd-phone">
+                <div class="nd-screen">
+                  <div class="nd-appbar">
+                    <span class="nd-appbar-title">Nexus Diary</span>
+                    <div class="nd-appbar-icons">
+                      <div class="nd-icon"><svg width="13" height="13" viewBox="0 0 13 13" fill="none"><path d="M6.5 1L7.8 4.8H11.8L8.5 7L9.8 10.8L6.5 8.5L3.2 10.8L4.5 7L1.2 4.8H5.2Z" stroke="currentColor" stroke-width="0.9" stroke-linejoin="round"/></svg></div>
+                      <div class="nd-icon"><svg width="13" height="13" viewBox="0 0 13 13" fill="none"><circle cx="6" cy="6" r="3.5" stroke="currentColor" stroke-width="0.9"/><line x1="8.5" y1="8.5" x2="11" y2="11" stroke="currentColor" stroke-width="0.9" stroke-linecap="round"/></svg></div>
+                    </div>
+                  </div>
+                  <div class="nd-timeline">
+                    <div class="nd-card">
+                      <span class="nd-card-date">3/18  09:04</span>
+                      <div class="nd-card-body">情報断食を3日試した。SNSを見ない日のほうが、アイデアが湧く気がする</div>
+                      <div class="nd-card-tags"><span class="nd-tag">#集中</span><span class="nd-tag">#ライフスタイル</span></div>
+                    </div>
+                    <div class="nd-card">
+                      <span class="nd-card-date">3/17  21:32</span>
+                      <div class="nd-card-body">紙のノートに戻してみた。検索できない、でも頭に残る。この矛盾を解決したい</div>
+                      <div class="nd-card-tags"><span class="nd-tag">#メモ</span><span class="nd-tag">#アナログ</span></div>
+                    </div>
+                    <div class="nd-card">
+                      <span class="nd-card-date">3/16  14:10</span>
+                      <div class="nd-card-body">持ち物を減らしたら思考もクリアになった。ミニマルな生活記録アプリが欲しい</div>
+                      <div class="nd-card-tags"><span class="nd-tag">#ミニマリズム</span></div>
+                    </div>
+                  </div>
+                  <div class="nd-fab">+</div>
+                </div>
+              </div>
+              <div class="nd-phone">
+                <div class="nd-screen">
+                  <div class="nd-appbar"><span class="nd-appbar-title">AI アプリ開発提案</span></div>
+                  <div class="nd-tabbar">
+                    <div class="nd-tab nd-tab-active">提案を生成</div>
+                    <div class="nd-tab">お気に入り</div>
+                    <div class="nd-tab">履歴</div>
+                  </div>
+                  <div class="nd-aicontent">
+                    <div class="nd-proposal">
+                      <div class="nd-proposal-title">📝 アナログ×デジタル融合メモアプリ</div>
+                      <div class="nd-proposal-summary">手書き風UIで書き、AIが自動整理・検索可能にするアプリ。「シンプルさへの渇望」と「記憶の質への関心」を検出しました。</div>
+                      <div class="nd-meta-label">検出されたキーワード</div>
+                      <div class="nd-kw-chips"><span class="nd-kw">紙に戻した</span><span class="nd-kw">断食</span><span class="nd-kw">持ち物を減らした</span></div>
+                      <div class="nd-meta-label">解決するペイン</div>
+                      <div class="nd-pain">アナログの記憶定着 × デジタルの検索性を両立する</div>
+                    </div>
+                    <button class="nd-gen-btn">✨ 提案を生成する</button>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <!-- ── Slide 2: 格子 Koushi ── -->
+          <div class="nd-slide nd-slide--koushi"
+            style="--nd-bg:#FAFAFA;--nd-surface:#FAFAFA;--nd-border:#DCDCDC;--nd-text:#1A1A1A;--nd-text-mid:#555555;--nd-accent:#1A1A1A;--nd-frame:#CCCCCC;">
+            <div class="nd-phones">
+              <div class="nd-phone">
+                <div class="nd-screen">
+                  <div class="nd-appbar">
+                    <span class="nd-appbar-title">Nexus Diary</span>
+                    <div class="nd-appbar-icons">
+                      <div class="nd-icon"><svg width="13" height="13" viewBox="0 0 13 13" fill="none"><path d="M6.5 1L7.8 4.8H11.8L8.5 7L9.8 10.8L6.5 8.5L3.2 10.8L4.5 7L1.2 4.8H5.2Z" stroke="currentColor" stroke-width="0.9" stroke-linejoin="round"/></svg></div>
+                      <div class="nd-icon"><svg width="13" height="13" viewBox="0 0 13 13" fill="none"><circle cx="6" cy="6" r="3.5" stroke="currentColor" stroke-width="0.9"/><line x1="8.5" y1="8.5" x2="11" y2="11" stroke="currentColor" stroke-width="0.9" stroke-linecap="round"/></svg></div>
+                    </div>
+                  </div>
+                  <div class="nd-timeline">
+                    <div class="nd-card">
+                      <span class="nd-card-date">3/16  19:20</span>
+                      <div class="nd-card-body">スーパーで何を買うか忘れる。メモしても見返すのが面倒くさい</div>
+                      <div class="nd-card-tags"><span class="nd-tag">#買い物</span><span class="nd-tag">#ズボラ</span></div>
+                    </div>
+                    <div class="nd-card">
+                      <span class="nd-card-date">3/15  20:45</span>
+                      <div class="nd-card-body">冷蔵庫の中身を把握できなくて二重買いしてしまった。食費の無駄…</div>
+                      <div class="nd-card-tags"><span class="nd-tag">#節約</span></div>
+                    </div>
+                    <div class="nd-card">
+                      <span class="nd-card-date">3/14  18:30</span>
+                      <div class="nd-card-body">賞味期限切れを今日また発見。食品ロス、なんとかしたい</div>
+                      <div class="nd-card-tags"><span class="nd-tag">#開発アイデア</span></div>
+                    </div>
+                  </div>
+                  <div class="nd-fab">+</div>
+                </div>
+              </div>
+              <div class="nd-phone">
+                <div class="nd-screen">
+                  <div class="nd-appbar"><span class="nd-appbar-title">AI アプリ開発提案</span></div>
+                  <div class="nd-tabbar">
+                    <div class="nd-tab nd-tab-active">提案を生成</div>
+                    <div class="nd-tab">お気に入り</div>
+                    <div class="nd-tab">履歴</div>
+                  </div>
+                  <div class="nd-aicontent">
+                    <div class="nd-proposal">
+                      <div class="nd-proposal-title">📸 冷蔵庫在庫AIアシスタント</div>
+                      <div class="nd-proposal-summary">撮影するだけで在庫管理・賞味期限アラート・献立提案まで自動化するアプリ。「記憶より視覚」「管理より予防」というニーズを検出しました。</div>
+                      <div class="nd-meta-label">検出されたキーワード</div>
+                      <div class="nd-kw-chips"><span class="nd-kw">忘れる</span><span class="nd-kw">二重買い</span><span class="nd-kw">食品ロス</span></div>
+                      <div class="nd-meta-label">解決するペイン</div>
+                      <div class="nd-pain">買い物・食材管理の認知負荷を丸ごとオフロードする</div>
+                    </div>
+                    <button class="nd-gen-btn">✨ 提案を生成する</button>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <!-- ── Slide 3: 墨 Sumi ── -->
+          <div class="nd-slide nd-slide--sumi"
+            style="--nd-bg:#0C0C0C;--nd-surface:#141414;--nd-border:#1E1E1E;--nd-text:#E0E0E0;--nd-text-mid:#888888;--nd-accent:#FFFFFF;--nd-frame:#1A1A1A;">
+            <div class="nd-phones">
+              <div class="nd-phone">
+                <div class="nd-screen">
+                  <div class="nd-appbar">
+                    <span class="nd-appbar-title">Nexus Diary</span>
+                    <div class="nd-appbar-icons">
+                      <div class="nd-icon"><svg width="13" height="13" viewBox="0 0 13 13" fill="none"><path d="M6.5 1L7.8 4.8H11.8L8.5 7L9.8 10.8L6.5 8.5L3.2 10.8L4.5 7L1.2 4.8H5.2Z" stroke="currentColor" stroke-width="0.9" stroke-linejoin="round"/></svg></div>
+                      <div class="nd-icon"><svg width="13" height="13" viewBox="0 0 13 13" fill="none"><circle cx="6" cy="6" r="3.5" stroke="currentColor" stroke-width="0.9"/><line x1="8.5" y1="8.5" x2="11" y2="11" stroke="currentColor" stroke-width="0.9" stroke-linecap="round"/></svg></div>
+                    </div>
+                  </div>
+                  <div class="nd-timeline">
+                    <div class="nd-card">
+                      <span class="nd-card-date">3/17  02:14</span>
+                      <div class="nd-card-body">深夜2時に限っていいアイデアが出る。朝には忘れてる</div>
+                      <div class="nd-card-tags"><span class="nd-tag">#深夜</span><span class="nd-tag">#アイデア</span></div>
+                    </div>
+                    <div class="nd-card">
+                      <span class="nd-card-date">3/16  23:50</span>
+                      <div class="nd-card-body">制作中のBGMプレイリストが増えすぎた。気分別に管理したい</div>
+                      <div class="nd-card-tags"><span class="nd-tag">#音楽</span><span class="nd-tag">#制作</span></div>
+                    </div>
+                    <div class="nd-card">
+                      <span class="nd-card-date">3/15  22:30</span>
+                      <div class="nd-card-body">フォントの使い方と印象を記録しておきたい。あとで必ず役立つはず</div>
+                      <div class="nd-card-tags"><span class="nd-tag">#デザイン</span></div>
+                    </div>
+                  </div>
+                  <div class="nd-fab">+</div>
+                </div>
+              </div>
+              <div class="nd-phone">
+                <div class="nd-screen">
+                  <div class="nd-appbar"><span class="nd-appbar-title">AI アプリ開発提案</span></div>
+                  <div class="nd-tabbar">
+                    <div class="nd-tab nd-tab-active">提案を生成</div>
+                    <div class="nd-tab">お気に入り</div>
+                    <div class="nd-tab">履歴</div>
+                  </div>
+                  <div class="nd-aicontent">
+                    <div class="nd-proposal">
+                      <div class="nd-proposal-title">🎨 クリエイター作業ログアプリ</div>
+                      <div class="nd-proposal-summary">制作時間・BGM・フォント選択を記録してAIが創作パターンを分析するアプリ。「深夜の集中」「感覚の揮発性」という課題を検出しました。</div>
+                      <div class="nd-meta-label">検出されたキーワード</div>
+                      <div class="nd-kw-chips"><span class="nd-kw">深夜アイデア</span><span class="nd-kw">BGM管理</span><span class="nd-kw">フォント記録</span></div>
+                      <div class="nd-meta-label">解決するペイン</div>
+                      <div class="nd-pain">瞬間の感覚を逃さず記録し、自分だけのクリエイター辞書を育てる</div>
+                    </div>
+                    <button class="nd-gen-btn">✨ 提案を生成する</button>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <!-- ── Slide 4: 活字 Katsujii ── -->
+          <div class="nd-slide nd-slide--katsujii"
+            style="--nd-bg:#F8F6F1;--nd-surface:#FDFCF9;--nd-border:#E0DDDA;--nd-text:#0A0A0A;--nd-text-mid:#555555;--nd-accent:#0A0A0A;--nd-frame:#BFBCB8;">
+            <div class="nd-phones">
+              <div class="nd-phone">
+                <div class="nd-screen">
+                  <div class="nd-appbar">
+                    <span class="nd-appbar-title">Nexus Diary</span>
+                    <div class="nd-appbar-icons">
+                      <div class="nd-icon"><svg width="13" height="13" viewBox="0 0 13 13" fill="none"><path d="M6.5 1L7.8 4.8H11.8L8.5 7L9.8 10.8L6.5 8.5L3.2 10.8L4.5 7L1.2 4.8H5.2Z" stroke="currentColor" stroke-width="0.9" stroke-linejoin="round"/></svg></div>
+                      <div class="nd-icon"><svg width="13" height="13" viewBox="0 0 13 13" fill="none"><circle cx="6" cy="6" r="3.5" stroke="currentColor" stroke-width="0.9"/><line x1="8.5" y1="8.5" x2="11" y2="11" stroke="currentColor" stroke-width="0.9" stroke-linecap="round"/></svg></div>
+                    </div>
+                  </div>
+                  <div class="nd-timeline">
+                    <div class="nd-card">
+                      <span class="nd-card-date">3/16  21:05</span>
+                      <div class="nd-card-body">読書メモが3つのアプリに散らばってる。後から探せない</div>
+                      <div class="nd-card-tags"><span class="nd-tag">#読書</span><span class="nd-tag">#メモ</span></div>
+                    </div>
+                    <div class="nd-card">
+                      <span class="nd-card-date">3/15  20:10</span>
+                      <div class="nd-card-body">名言をメモしても、文脈を忘れると意味が薄れる</div>
+                      <div class="nd-card-tags"><span class="nd-tag">#思考</span></div>
+                    </div>
+                    <div class="nd-card">
+                      <span class="nd-card-date">3/14  19:45</span>
+                      <div class="nd-card-body">本から実生活に繋げる「気づきメモ術」を体系化したい</div>
+                      <div class="nd-card-tags"><span class="nd-tag">#アイデア</span><span class="nd-tag">#開発</span></div>
+                    </div>
+                  </div>
+                  <div class="nd-fab">+</div>
+                </div>
+              </div>
+              <div class="nd-phone">
+                <div class="nd-screen">
+                  <div class="nd-appbar"><span class="nd-appbar-title">AI アプリ開発提案</span></div>
+                  <div class="nd-tabbar">
+                    <div class="nd-tab nd-tab-active">提案を生成</div>
+                    <div class="nd-tab">お気に入り</div>
+                    <div class="nd-tab">履歴</div>
+                  </div>
+                  <div class="nd-aicontent">
+                    <div class="nd-proposal">
+                      <div class="nd-proposal-title">📚 読書インサイト整理アプリ</div>
+                      <div class="nd-proposal-summary">本ごとのメモを横断検索し、AIが読書傾向と行動変容ポイントを抽出するアプリ。「情報の分散」と「文脈の消失」を検出しました。</div>
+                      <div class="nd-meta-label">検出されたキーワード</div>
+                      <div class="nd-kw-chips"><span class="nd-kw">散らばる</span><span class="nd-kw">文脈を忘れる</span><span class="nd-kw">繋げたい</span></div>
+                      <div class="nd-meta-label">解決するペイン</div>
+                      <div class="nd-pain">読んで終わりにしない。メモを行動と繋ぐ知識管理システム</div>
+                    </div>
+                    <button class="nd-gen-btn">✨ 提案を生成する</button>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <!-- ── Slide 5: 星霜 Stellar ── -->
+          <div class="nd-slide nd-slide--stellar"
+            style="--nd-bg:#000000;--nd-surface:#0A0A0A;--nd-border:#222222;--nd-text:#FFFFFF;--nd-text-mid:#888888;--nd-accent:#FFFFFF;--nd-frame:#111111;">
+            <div class="nd-phones">
+              <div class="nd-phone">
+                <div class="nd-screen">
+                  <div class="nd-appbar">
+                    <span class="nd-appbar-title" style="letter-spacing:0.3em;font-size:9px;text-transform:uppercase;">NEXUS DIARY</span>
+                  </div>
+                  <div class="nd-timeline">
+                    <div class="nd-card">
+                      <span class="nd-card-date">3/17  21:30</span>
+                      <div class="nd-card-body">宇宙のスケールで考えると、今日の悩みが消えた</div>
+                      <div class="nd-card-tags"><span class="nd-tag">#哲学</span><span class="nd-tag">#宇宙</span></div>
+                    </div>
+                    <div class="nd-card">
+                      <span class="nd-card-date">3/16  20:15</span>
+                      <div class="nd-card-body">今夜も木星が見えた。肉眼でもわかる明るさ</div>
+                      <div class="nd-card-tags"><span class="nd-tag">#天体観測</span></div>
+                    </div>
+                    <div class="nd-card">
+                      <span class="nd-card-date">3/15  22:00</span>
+                      <div class="nd-card-body">観測記録をつけたい。日付・天気・見えた天体をシンプルに</div>
+                      <div class="nd-card-tags"><span class="nd-tag">#記録</span><span class="nd-tag">#開発</span></div>
+                    </div>
+                  </div>
+                  <div class="nd-fab">+</div>
+                </div>
+              </div>
+              <div class="nd-phone">
+                <div class="nd-screen">
+                  <div class="nd-appbar"><span class="nd-appbar-title" style="letter-spacing:0.2em;font-size:9px;text-transform:uppercase;">AI PROPOSAL</span></div>
+                  <div class="nd-tabbar">
+                    <div class="nd-tab nd-tab-active">提案を生成</div>
+                    <div class="nd-tab">お気に入り</div>
+                    <div class="nd-tab">履歴</div>
+                  </div>
+                  <div class="nd-aicontent">
+                    <div class="nd-proposal">
+                      <div class="nd-proposal-title">🌌 天体観測ログ＋AI考察アプリ</div>
+                      <div class="nd-proposal-summary">観測記録を蓄積するとAIが天体パターンを分析、次の観測タイミングを提案するアプリ。「記録したい欲求」と「再現性のある観測」というニーズを検出しました。</div>
+                      <div class="nd-meta-label">検出されたキーワード</div>
+                      <div class="nd-kw-chips"><span class="nd-kw">観測記録</span><span class="nd-kw">天気</span><span class="nd-kw">また見たい</span></div>
+                      <div class="nd-meta-label">解決するペイン</div>
+                      <div class="nd-pain">夜空との出会いを記録し、次の「あの瞬間」を逃さない</div>
+                    </div>
+                    <button class="nd-gen-btn">✨ 提案を生成する</button>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <!-- ── Slide 6: 銀幕 OldFilm ── -->
+          <div class="nd-slide nd-slide--oldfilm"
+            style="--nd-bg:#1A1918;--nd-surface:#222120;--nd-border:#3A3835;--nd-text:#F0F0E8;--nd-text-mid:#B5B0A8;--nd-accent:#D9D4CC;--nd-frame:#2D2C2A;">
+            <div class="nd-phones">
+              <div class="nd-phone">
+                <div class="nd-screen">
+                  <div class="nd-appbar" style="text-align:center;justify-content:center;">
+                    <span class="nd-appbar-title" style="font-style:italic;letter-spacing:0.1em;">Nexus Diary</span>
+                  </div>
+                  <div class="nd-timeline">
+                    <div class="nd-card">
+                      <span class="nd-card-date" style="font-style:italic;">3/16  23:10</span>
+                      <div class="nd-card-body">Kurosawa の作品を改めて観た。構図が全部計算されてる</div>
+                      <div class="nd-card-tags"><span class="nd-tag">#映画</span><span class="nd-tag">#クラシック</span></div>
+                    </div>
+                    <div class="nd-card">
+                      <span class="nd-card-date" style="font-style:italic;">3/15  22:00</span>
+                      <div class="nd-card-body">観た映画が増えて、繋がりが見えなくなってきた</div>
+                      <div class="nd-card-tags"><span class="nd-tag">#記録</span></div>
+                    </div>
+                    <div class="nd-card">
+                      <span class="nd-card-date" style="font-style:italic;">3/14  21:45</span>
+                      <div class="nd-card-body">監督ごとの傾向をグラフで可視化できたら面白そう</div>
+                      <div class="nd-card-tags"><span class="nd-tag">#開発アイデア</span></div>
+                    </div>
+                  </div>
+                  <div class="nd-fab">+</div>
+                </div>
+              </div>
+              <div class="nd-phone">
+                <div class="nd-screen">
+                  <div class="nd-appbar" style="text-align:center;justify-content:center;"><span class="nd-appbar-title" style="font-style:italic;">AI アプリ開発提案</span></div>
+                  <div class="nd-tabbar">
+                    <div class="nd-tab nd-tab-active">提案を生成</div>
+                    <div class="nd-tab">お気に入り</div>
+                    <div class="nd-tab">履歴</div>
+                  </div>
+                  <div class="nd-aicontent">
+                    <div class="nd-proposal">
+                      <div class="nd-proposal-title">🎬 映画鑑賞グラフ生成アプリ</div>
+                      <div class="nd-proposal-summary">鑑賞記録から監督・ジャンル・年代の傾向をAIがマップ化し、次の1本を提案するアプリ。「鑑賞量の増大による迷子感」を検出しました。</div>
+                      <div class="nd-meta-label">検出されたキーワード</div>
+                      <div class="nd-kw-chips"><span class="nd-kw">繋がりが見えない</span><span class="nd-kw">傾向を分析</span><span class="nd-kw">次の1本</span></div>
+                      <div class="nd-meta-label">解決するペイン</div>
+                      <div class="nd-pain">観てきた映画が「点」から「地図」になる</div>
+                    </div>
+                    <button class="nd-gen-btn">✨ 提案を生成する</button>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <!-- ── Slide 7: 薄霧 Mist ── -->
+          <div class="nd-slide nd-slide--mist"
+            style="--nd-bg:#F0F9FF;--nd-surface:#FFFFFF;--nd-border:#E0F2FE;--nd-text:#334155;--nd-text-mid:#64748B;--nd-accent:#0EA5E9;--nd-frame:#BAE6FD;">
+            <div class="nd-phones">
+              <div class="nd-phone">
+                <div class="nd-screen">
+                  <div class="nd-appbar" style="text-align:center;justify-content:center;border-bottom:2px dashed var(--nd-border);">
+                    <span class="nd-appbar-title" style="color:#0EA5E9;font-weight:bold;">Nexus Diary</span>
+                  </div>
+                  <div class="nd-timeline">
+                    <div class="nd-card">
+                      <span class="nd-card-date" style="color:#0EA5E9;font-weight:bold;">3/17  20:30</span>
+                      <div class="nd-card-body">子供が何に興味持ってるか記録したい。成長が早すぎて追いつけない</div>
+                      <div class="nd-card-tags"><span class="nd-tag">#育児</span><span class="nd-tag">#記録</span></div>
+                    </div>
+                    <div class="nd-card">
+                      <span class="nd-card-date" style="color:#0EA5E9;font-weight:bold;">3/16  19:15</span>
+                      <div class="nd-card-body">保育園で何を作ったか先生に聞いても忘れちゃう</div>
+                      <div class="nd-card-tags"><span class="nd-tag">#子育て</span></div>
+                    </div>
+                    <div class="nd-card">
+                      <span class="nd-card-date" style="color:#0EA5E9;font-weight:bold;">3/15  21:00</span>
+                      <div class="nd-card-body">将来子供に「こんな子だったよ」って見せられるものを作りたいな</div>
+                      <div class="nd-card-tags"><span class="nd-tag">#思い出</span></div>
+                    </div>
+                  </div>
+                  <div class="nd-fab" style="border-radius:50%;">+</div>
+                </div>
+              </div>
+              <div class="nd-phone">
+                <div class="nd-screen">
+                  <div class="nd-appbar" style="text-align:center;justify-content:center;border-bottom:2px dashed var(--nd-border);"><span class="nd-appbar-title" style="color:#0EA5E9;font-weight:bold;">AI アプリ開発提案</span></div>
+                  <div class="nd-tabbar">
+                    <div class="nd-tab nd-tab-active">提案を生成</div>
+                    <div class="nd-tab">お気に入り</div>
+                    <div class="nd-tab">履歴</div>
+                  </div>
+                  <div class="nd-aicontent">
+                    <div class="nd-proposal">
+                      <div class="nd-proposal-title">🌱 子供の成長ストーリーメーカー</div>
+                      <div class="nd-proposal-summary">写真・ひとこと・場所を記録すると年齢別タイムラインと成長レポートを自動生成するアプリ。「記録の手軽さ」と「未来への価値」を検出しました。</div>
+                      <div class="nd-meta-label">検出されたキーワード</div>
+                      <div class="nd-kw-chips"><span class="nd-kw">記録したい</span><span class="nd-kw">忘れちゃう</span><span class="nd-kw">将来見せたい</span></div>
+                      <div class="nd-meta-label">解決するペイン</div>
+                      <div class="nd-pain">流れ去る日常の一コマを、子供への贈り物として残す</div>
+                    </div>
+                    <button class="nd-gen-btn">✨ 提案を生成する</button>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <!-- ── Slide 8: 夢想 Dreamy ── -->
+          <div class="nd-slide nd-slide--dreamy"
+            style="--nd-bg:#FFF5F7;--nd-surface:#FFFFFF;--nd-border:#FFD1DC;--nd-text:#5D4037;--nd-text-mid:#8D6E63;--nd-accent:#FF99AA;--nd-frame:#FFB7C5;">
+            <div class="nd-phones">
+              <div class="nd-phone">
+                <div class="nd-screen">
+                  <div class="nd-appbar" style="text-align:center;justify-content:center;border-bottom:2px dashed var(--nd-border);">
+                    <span class="nd-appbar-title" style="color:#FF99AA;font-weight:bold;">Nexus Diary</span>
+                  </div>
+                  <div class="nd-timeline">
+                    <div class="nd-card">
+                      <span class="nd-card-date" style="color:#FF99AA;font-weight:bold;">3/17  16:20</span>
+                      <div class="nd-card-body">新作のピアスを作った。制作過程を記録しておけばよかった</div>
+                      <div class="nd-card-tags"><span class="nd-tag">#ハンドメイド</span><span class="nd-tag">#制作</span></div>
+                    </div>
+                    <div class="nd-card">
+                      <span class="nd-card-date" style="color:#FF99AA;font-weight:bold;">3/16  14:30</span>
+                      <div class="nd-card-body">材料の在庫が把握できなくて同じビーズを3袋買ってた</div>
+                      <div class="nd-card-tags"><span class="nd-tag">#在庫管理</span></div>
+                    </div>
+                    <div class="nd-card">
+                      <span class="nd-card-date" style="color:#FF99AA;font-weight:bold;">3/15  18:00</span>
+                      <div class="nd-card-body">お客様の「かわいい」という反応を全部メモしてる。これが一番の宝物</div>
+                      <div class="nd-card-tags"><span class="nd-tag">#販売</span><span class="nd-tag">#反応</span></div>
+                    </div>
+                  </div>
+                  <div class="nd-fab" style="border-radius:50%;">+</div>
+                </div>
+              </div>
+              <div class="nd-phone">
+                <div class="nd-screen">
+                  <div class="nd-appbar" style="text-align:center;justify-content:center;border-bottom:2px dashed var(--nd-border);"><span class="nd-appbar-title" style="color:#FF99AA;font-weight:bold;">AI アプリ開発提案</span></div>
+                  <div class="nd-tabbar">
+                    <div class="nd-tab nd-tab-active">提案を生成</div>
+                    <div class="nd-tab">お気に入り</div>
+                    <div class="nd-tab">履歴</div>
+                  </div>
+                  <div class="nd-aicontent">
+                    <div class="nd-proposal">
+                      <div class="nd-proposal-title">🎀 ハンドメイド制作管理アプリ</div>
+                      <div class="nd-proposal-summary">作品・材料・顧客反応を記録するとAIが人気作品の傾向と在庫補充タイミングを提案するアプリ。「制作ログの欠如」と「在庫の曖昧さ」を検出しました。</div>
+                      <div class="nd-meta-label">検出されたキーワード</div>
+                      <div class="nd-kw-chips"><span class="nd-kw">制作過程</span><span class="nd-kw">在庫</span><span class="nd-kw">お客様の反応</span></div>
+                      <div class="nd-meta-label">解決するペイン</div>
+                      <div class="nd-pain">作品づくりの全プロセスを記録し、次のヒット作への道を可視化する</div>
+                    </div>
+                    <button class="nd-gen-btn">✨ 提案を生成する</button>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <!-- ── Slide 9: 青写真 Blueprint ── -->
+          <div class="nd-slide nd-slide--blueprint"
+            style="--nd-bg:#0F172A;--nd-surface:#1E293B;--nd-border:#384459;--nd-text:#F8FAFC;--nd-text-mid:#94A3B8;--nd-accent:#38BDF8;--nd-frame:#2D3A4F;">
+            <div class="nd-phones">
+              <div class="nd-phone">
+                <div class="nd-screen">
+                  <div class="nd-appbar">
+                    <span class="nd-appbar-title">Nexus Diary</span>
+                    <div class="nd-appbar-icons">
+                      <div class="nd-icon"><svg width="13" height="13" viewBox="0 0 13 13" fill="none"><path d="M6.5 1L7.8 4.8H11.8L8.5 7L9.8 10.8L6.5 8.5L3.2 10.8L4.5 7L1.2 4.8H5.2Z" stroke="currentColor" stroke-width="0.9" stroke-linejoin="round"/></svg></div>
+                      <div class="nd-icon"><svg width="13" height="13" viewBox="0 0 13 13" fill="none"><circle cx="6" cy="6" r="3.5" stroke="currentColor" stroke-width="0.9"/><line x1="8.5" y1="8.5" x2="11" y2="11" stroke="currentColor" stroke-width="0.9" stroke-linecap="round"/></svg></div>
+                    </div>
+                  </div>
+                  <div class="nd-timeline">
+                    <div class="nd-card">
+                      <span class="nd-card-date">3/17  22:00</span>
+                      <div class="nd-card-body">今日は何時間働いたんだろう。気づいたら夜だった</div>
+                      <div class="nd-card-tags"><span class="nd-tag">#在宅</span><span class="nd-tag">#時間管理</span></div>
+                    </div>
+                    <div class="nd-card">
+                      <span class="nd-card-date">3/16  21:10</span>
+                      <div class="nd-card-body">集中してたのか怠けてたのか、振り返ると全然わからない</div>
+                      <div class="nd-card-tags"><span class="nd-tag">#生産性</span></div>
+                    </div>
+                    <div class="nd-card">
+                      <span class="nd-card-date">3/15  20:30</span>
+                      <div class="nd-card-body">ポモドーロやってみたけど続かない。自分に合ったリズムってどうやって見つけるんだろう</div>
+                      <div class="nd-card-tags"><span class="nd-tag">#開発</span></div>
+                    </div>
+                  </div>
+                  <div class="nd-fab">+</div>
+                </div>
+              </div>
+              <div class="nd-phone">
+                <div class="nd-screen">
+                  <div class="nd-appbar"><span class="nd-appbar-title">AI アプリ開発提案</span></div>
+                  <div class="nd-tabbar">
+                    <div class="nd-tab nd-tab-active">提案を生成</div>
+                    <div class="nd-tab">お気に入り</div>
+                    <div class="nd-tab">履歴</div>
+                  </div>
+                  <div class="nd-aicontent">
+                    <div class="nd-proposal">
+                      <div class="nd-proposal-title">⏱ バイオリズム学習タイムトラッカー</div>
+                      <div class="nd-proposal-summary">タスク記録を続けると自分の集中パターンをAIが学習し、最適な作業リズムを提案するアプリ。「自己認識の欠如」と「自分専用の方法論を求める心理」を検出しました。</div>
+                      <div class="nd-meta-label">検出されたキーワード</div>
+                      <div class="nd-kw-chips"><span class="nd-kw">時間の感覚</span><span class="nd-kw">振り返れない</span><span class="nd-kw">自分に合った</span></div>
+                      <div class="nd-meta-label">解決するペイン</div>
+                      <div class="nd-pain">「なんとなく働いた1日」を可視化・最適化する</div>
+                    </div>
+                    <button class="nd-gen-btn">✨ 提案を生成する</button>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <!-- ── Slide 10: Terminal ── -->
+          <div class="nd-slide nd-slide--terminal"
+            style="--nd-bg:#0D0D0D;--nd-surface:#111111;--nd-border:#1E1E1E;--nd-text:#C8C8C8;--nd-text-mid:#666666;--nd-accent:#39D353;--nd-frame:#0A0A0A;">
+            <div class="nd-phones">
+              <div class="nd-phone">
+                <div class="nd-screen">
+                  <div class="nd-appbar">
+                    <span class="nd-appbar-title" style="color:#39D353;letter-spacing:0.1em;">$ nexus_diary</span>
+                  </div>
+                  <div class="nd-timeline">
+                    <div class="nd-card">
+                      <span class="nd-card-date" style="color:#39D353;">3/16  20:10</span>
+                      <div class="nd-card-body">ボードゲームカフェ行ったけど、ルール説明が長すぎて疲れる</div>
+                      <div class="nd-card-tags"><span class="nd-tag" style="border-color:#39D353;color:#39D353;">#ゲーム</span></div>
+                    </div>
+                    <div class="nd-card">
+                      <span class="nd-card-date" style="color:#39D353;">3/15  19:30</span>
+                      <div class="nd-card-body">ルールブックPDFと動画がバラバラで、プレイ前に30分溶けた</div>
+                      <div class="nd-card-tags"><span class="nd-tag" style="border-color:#39D353;color:#39D353;">#UX</span></div>
+                    </div>
+                    <div class="nd-card">
+                      <span class="nd-card-date" style="color:#39D353;">3/14  22:00</span>
+                      <div class="nd-card-body">「このゲーム好き！」って記録したい。BGGは英語だし使いにくい</div>
+                      <div class="nd-card-tags"><span class="nd-tag" style="border-color:#39D353;color:#39D353;">#開発</span><span class="nd-tag" style="border-color:#39D353;color:#39D353;">#Flutter</span></div>
+                    </div>
+                  </div>
+                  <div class="nd-fab" style="background:#39D353;color:#000;">+</div>
+                </div>
+              </div>
+              <div class="nd-phone">
+                <div class="nd-screen">
+                  <div class="nd-appbar"><span class="nd-appbar-title" style="color:#39D353;letter-spacing:0.1em;">$ ai_proposal</span></div>
+                  <div class="nd-tabbar">
+                    <div class="nd-tab nd-tab-active" style="border-bottom-color:#39D353;color:#39D353;">提案を生成</div>
+                    <div class="nd-tab">お気に入り</div>
+                    <div class="nd-tab">履歴</div>
+                  </div>
+                  <div class="nd-aicontent">
+                    <div class="nd-proposal">
+                      <div class="nd-proposal-title" style="color:#39D353;">🎲 ボードゲーム攻略ログアプリ</div>
+                      <div class="nd-proposal-summary">スキャンしてルールをAI要約・プレイ記録・コレクション管理を一体化したアプリ。「情報の分散」「言語の壁」「記録したい欲求」を検出しました。</div>
+                      <div class="nd-meta-label">検出されたキーワード</div>
+                      <div class="nd-kw-chips"><span class="nd-kw">ルール説明</span><span class="nd-kw">情報がバラバラ</span><span class="nd-kw">記録したい</span></div>
+                      <div class="nd-meta-label">解決するペイン</div>
+                      <div class="nd-pain">ボードゲームの「はじめの壁」を取り除き、楽しむ時間を最大化する</div>
+                    </div>
+                    <button class="nd-gen-btn" style="border-color:#39D353;color:#39D353;">$ generate --new-proposal</button>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+
+        </div><!-- /.nd-stage -->
+
+        <div class="nd-nav-row">
+          <button class="nd-prev" id="ndPrev" aria-label="前のテーマ">&#8249;</button>
+          <div class="nd-dots" id="ndDots" role="tablist">
+            <button class="nd-dot nd-dot-active" aria-label="白紙" role="tab"></button>
+            <button class="nd-dot" aria-label="格子" role="tab"></button>
+            <button class="nd-dot" aria-label="墨" role="tab"></button>
+            <button class="nd-dot" aria-label="活字" role="tab"></button>
+            <button class="nd-dot" aria-label="星霜" role="tab"></button>
+            <button class="nd-dot" aria-label="銀幕" role="tab"></button>
+            <button class="nd-dot" aria-label="薄霧" role="tab"></button>
+            <button class="nd-dot" aria-label="夢想" role="tab"></button>
+            <button class="nd-dot" aria-label="青写真" role="tab"></button>
+            <button class="nd-dot" aria-label="Terminal" role="tab"></button>
+          </div>
+          <button class="nd-next" id="ndNext" aria-label="次のテーマ">&#8250;</button>
+        </div>
+        <p class="nd-label" id="ndLabel" aria-live="polite">白紙 Hakushi</p>
+
+      </div><!-- /.nd-carousel -->
     </div>
   </section>
 
@@ -238,6 +838,36 @@
           <div class="tsc-sub" style="color:#666666;">Pure · Minimal</div>
           <div class="tsc-bar" style="background:#111111;"></div>
         </div>
+        <div class="theme-showcase-card" onclick="switchTheme('stellar')"
+          style="background:#000000;border-color:#222222;">
+          <div class="tsc-name" style="color:#FFFFFF;font-family:'Syne',sans-serif;">星霜</div>
+          <div class="tsc-sub" style="color:#888888;">Dark · Star</div>
+          <div class="tsc-bar" style="background:#FFFFFF;"></div>
+        </div>
+        <div class="theme-showcase-card" onclick="switchTheme('oldfilm')"
+          style="background:#1A1918;border-color:#3A3835;">
+          <div class="tsc-name" style="color:#F0F0E8;font-family:'Noto Serif JP',serif;">銀幕</div>
+          <div class="tsc-sub" style="color:#7A7570;">Sepia · Film</div>
+          <div class="tsc-bar" style="background:#D9D4CC;"></div>
+        </div>
+        <div class="theme-showcase-card" onclick="switchTheme('mist')"
+          style="background:#F0F9FF;border-color:#E0F2FE;">
+          <div class="tsc-name" style="color:#334155;">薄霧</div>
+          <div class="tsc-sub" style="color:#64748B;">Sky · Soft</div>
+          <div class="tsc-bar" style="background:#0EA5E9;"></div>
+        </div>
+        <div class="theme-showcase-card" onclick="switchTheme('dreamy')"
+          style="background:#FFF5F7;border-color:#FFD1DC;">
+          <div class="tsc-name" style="color:#5D4037;">夢想</div>
+          <div class="tsc-sub" style="color:#8D6E63;">Pink · Dream</div>
+          <div class="tsc-bar" style="background:#FF99AA;"></div>
+        </div>
+        <div class="theme-showcase-card" onclick="switchTheme('blueprint')"
+          style="background:#0F172A;border-color:#384459;">
+          <div class="tsc-name" style="color:#F8FAFC;font-family:'JetBrains Mono',monospace;">青写真</div>
+          <div class="tsc-sub" style="color:#94A3B8;">Navy · Tech</div>
+          <div class="tsc-bar" style="background:#38BDF8;"></div>
+        </div>
       </div>
     </div>
   </section>
@@ -277,5 +907,6 @@
   </div>
 
   <script src="../assets/js/nexusdiary-theme.js"></script>
+  <script src="../assets/js/nexusdiary-carousel.js"></script>
 </body>
 </html>
