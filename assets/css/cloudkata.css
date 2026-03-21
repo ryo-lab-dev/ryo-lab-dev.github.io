@@ -1,0 +1,9 @@
+/* CloudKata — Color Variables */
+:root {
+  --bg:            #07080f;
+  --primary:       #38bdf8;
+  --primary-light: #7dd3fc;
+  --glow:          rgba(56, 189, 248, 0.2);
+  --glass-bg:      rgba(255, 255, 255, 0.04);
+  --glass-border:  rgba(255, 255, 255, 0.08);
+}

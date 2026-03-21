@@ -1,0 +1,9 @@
+/* ScoreVault — Color Variables */
+:root {
+  --bg:            #07080f;
+  --primary:       #10b981;
+  --primary-light: #34d399;
+  --glow:          rgba(16, 185, 129, 0.2);
+  --glass-bg:      rgba(255, 255, 255, 0.04);
+  --glass-border:  rgba(255, 255, 255, 0.08);
+}
