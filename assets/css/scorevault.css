@@ -7,3 +7,165 @@
   --glass-bg:      rgba(255, 255, 255, 0.04);
   --glass-border:  rgba(255, 255, 255, 0.08);
 }
+
+/* ── Page layout (faq / update-history) ── */
+.page-container {
+  max-width: 820px;
+  margin: 0 auto;
+  padding: 4rem 1.5rem 6rem;
+}
+.page-header {
+  margin-bottom: 3.5rem;
+  text-align: center;
+}
+.page-tag {
+  font-family: 'JetBrains Mono', monospace;
+  font-size: 0.75rem;
+  color: var(--primary);
+  letter-spacing: 0.15em;
+  text-transform: uppercase;
+  margin-bottom: 0.75rem;
+}
+.page-title {
+  font-family: 'Syne', sans-serif;
+  font-size: clamp(2rem, 5vw, 2.8rem);
+  font-weight: 800;
+  background: linear-gradient(135deg, var(--primary), var(--primary-light));
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+  margin-bottom: 0.75rem;
+}
+.page-sub {
+  color: #64748b;
+  font-size: 0.9rem;
+}
+
+/* ── FAQ accordion ── */
+.faq-item {
+  background: var(--glass-bg);
+  border: 1px solid var(--glass-border);
+  border-radius: 12px;
+  margin-bottom: 1rem;
+  overflow: hidden;
+  transition: border-color 0.3s;
+}
+.faq-item:hover { border-color: rgba(16,185,129,0.2); }
+.faq-item.open { border-color: rgba(16,185,129,0.3); }
+.faq-question {
+  display: flex;
+  align-items: flex-start;
+  justify-content: space-between;
+  gap: 1rem;
+  padding: 1.25rem 1.5rem;
+  cursor: pointer;
+  user-select: none;
+}
+.faq-q-label {
+  font-family: 'JetBrains Mono', monospace;
+  font-size: 0.75rem;
+  color: var(--primary);
+  font-weight: 600;
+  margin-right: 0.5rem;
+  flex-shrink: 0;
+  margin-top: 0.1rem;
+}
+.faq-q-text {
+  font-weight: 600;
+  font-size: 0.97rem;
+  color: #f1f5f9;
+  flex: 1;
+  line-height: 1.5;
+}
+.faq-chevron {
+  color: var(--primary);
+  flex-shrink: 0;
+  transition: transform 0.3s;
+  font-size: 1.1rem;
+  margin-top: 0.1rem;
+}
+.faq-item.open .faq-chevron { transform: rotate(180deg); }
+.faq-answer {
+  max-height: 0;
+  overflow: hidden;
+  transition: max-height 0.4s ease;
+}
+.faq-item.open .faq-answer { max-height: 600px; }
+.faq-answer-inner {
+  padding: 0 1.5rem 1.5rem 1.5rem;
+  padding-left: calc(1.5rem + 2rem);
+  color: #94a3b8;
+  font-size: 0.93rem;
+  line-height: 1.8;
+}
+.faq-answer-inner ul { list-style: none; padding: 0; margin: 0.5rem 0; }
+.faq-answer-inner ul li { padding: 0.3rem 0 0.3rem 1.25rem; position: relative; }
+.faq-answer-inner ul li::before {
+  content: '·';
+  position: absolute;
+  left: 0.3rem;
+  color: var(--primary);
+  font-size: 1.2rem;
+  line-height: 1.4;
+}
+.faq-answer-inner a { color: var(--primary-light); text-decoration: none; }
+.faq-answer-inner a:hover { text-decoration: underline; }
+
+/* ── Update history timeline ── */
+.timeline { position: relative; padding-left: 2rem; }
+.timeline::before {
+  content: '';
+  position: absolute;
+  left: 0.4rem;
+  top: 0.5rem;
+  bottom: 0.5rem;
+  width: 2px;
+  background: linear-gradient(180deg, var(--primary), rgba(16,185,129,0.1));
+}
+.timeline-item {
+  position: relative;
+  margin-bottom: 1.75rem;
+  background: var(--glass-bg);
+  border: 1px solid var(--glass-border);
+  border-radius: 12px;
+  padding: 1.25rem 1.5rem;
+  transition: border-color 0.3s, box-shadow 0.3s;
+}
+.timeline-item:hover {
+  border-color: rgba(16,185,129,0.25);
+  box-shadow: 0 4px 20px rgba(16,185,129,0.07);
+}
+.timeline-item::before {
+  content: '';
+  position: absolute;
+  left: -1.65rem;
+  top: 1.4rem;
+  width: 10px; height: 10px;
+  border-radius: 50%;
+  background: var(--primary);
+  box-shadow: 0 0 8px var(--glow);
+}
+.timeline-item.latest::before {
+  background: linear-gradient(135deg, var(--primary), var(--primary-light));
+  box-shadow: 0 0 12px rgba(16,185,129,0.6);
+}
+.version-badge {
+  display: inline-block;
+  font-family: 'JetBrains Mono', monospace;
+  font-size: 0.78rem;
+  color: var(--primary-light);
+  background: rgba(16,185,129,0.1);
+  border: 1px solid rgba(16,185,129,0.2);
+  border-radius: 6px;
+  padding: 0.2rem 0.6rem;
+  margin-bottom: 0.6rem;
+}
+.version-badge.latest {
+  background: rgba(16,185,129,0.15);
+  border-color: rgba(16,185,129,0.4);
+}
+.timeline-text {
+  color: #94a3b8;
+  font-size: 0.93rem;
+  line-height: 1.7;
+}
