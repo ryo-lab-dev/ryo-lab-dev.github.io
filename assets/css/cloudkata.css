@@ -7,3 +7,70 @@
   --glass-bg:      rgba(255, 255, 255, 0.04);
   --glass-border:  rgba(255, 255, 255, 0.08);
 }
+
+/* index.html 固有 — Hero */
+.hero-origin {
+  font-size: 0.85rem;
+  color: #475569;
+  font-style: italic;
+  margin-bottom: 1.5rem;
+  max-width: 520px;
+}
+
+/* index.html 固有 — Mini FAQ */
+.mini-faq-item {
+  border-bottom: 1px solid var(--glass-border);
+  padding: 1.1rem 0;
+  display: grid;
+  grid-template-columns: 1fr 2fr;
+  gap: 1rem;
+}
+
+.mini-faq-item:last-child {
+  border-bottom: none;
+}
+
+.mini-faq-q {
+  color: #f1f5f9;
+  font-weight: 600;
+  font-size: 0.93rem;
+}
+
+.mini-faq-a {
+  color: #94a3b8;
+  font-size: 0.93rem;
+  line-height: 1.6;
+}
+
+@media (max-width: 768px) {
+  .mini-faq-item {
+    grid-template-columns: 1fr;
+  }
+}
+
+/* disclaimer.html 固有 — Notice */
+.notice {
+  background: rgba(56, 189, 248, 0.06);
+  border: 1px solid rgba(56, 189, 248, 0.15);
+  border-radius: 10px;
+  padding: 1rem 1.25rem;
+  margin: 1rem 0;
+  color: #7dd3fc;
+  font-size: 0.88rem;
+  line-height: 1.6;
+}
+
+/* terms.html 固有 — Article chip */
+.article-chip {
+  display: inline-block;
+  font-family: 'JetBrains Mono', monospace;
+  font-size: 0.7rem;
+  color: var(--primary);
+  background: rgba(56, 189, 248, 0.08);
+  border: 1px solid rgba(56, 189, 248, 0.2);
+  border-radius: 4px;
+  padding: 0.15rem 0.5rem;
+  margin-bottom: 0.4rem;
+  vertical-align: middle;
+  margin-right: 0.4rem;
+}
