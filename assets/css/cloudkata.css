@@ -50,12 +50,12 @@
 
 /* disclaimer.html 固有 — Notice */
 .notice {
-  background: rgba(56, 189, 248, 0.06);
-  border: 1px solid rgba(56, 189, 248, 0.15);
+  background: color-mix(in srgb, var(--primary) 6%, transparent);
+  border: 1px solid color-mix(in srgb, var(--primary) 15%, transparent);
   border-radius: 10px;
   padding: 1rem 1.25rem;
   margin: 1rem 0;
-  color: #7dd3fc;
+  color: var(--primary-light);
   font-size: 0.88rem;
   line-height: 1.6;
 }
@@ -66,8 +66,8 @@
   font-family: 'JetBrains Mono', monospace;
   font-size: 0.7rem;
   color: var(--primary);
-  background: rgba(56, 189, 248, 0.08);
-  border: 1px solid rgba(56, 189, 248, 0.2);
+  background: color-mix(in srgb, var(--primary) 8%, transparent);
+  border: 1px solid var(--glow);
   border-radius: 4px;
   padding: 0.15rem 0.5rem;
   margin-bottom: 0.4rem;
