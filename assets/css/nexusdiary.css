@@ -595,7 +595,13 @@ nav.open .nav-hamburger span:nth-child(3) { transform: translateY(-7px) rotate(-
   transition: color .25s;
 }
 .tsg-lbl.on { color: var(--text-1); }
-.tsg-conn { width: 12px; height: 1px; background: var(--border); flex-shrink: 0; transition: background .4s; }
+.tsg-conn { width: 12px; height: 1px; background: var(--border); flex-shrink: 0; transition: background .4s, width .2s; }
+/* 狭い画面: 現在±1以外のアイテムを省略表示 */
+@media (max-width: 540px) {
+  .tsg-far .tsg-lbl { display: none; }
+  .tsg-far .tsg-dot { width: 5px; height: 5px; }
+  .tsg-conn-far { width: 5px; }
+}
 @media (max-width: 400px) {
   .tsg-lbl { font-size: .5rem; } .tsg-conn { width: 7px; }
 }
@@ -987,6 +993,7 @@ nav.open .nav-hamburger span:nth-child(3) { transform: translateY(-7px) rotate(-
   .nd-phones { gap: 10px; }
 }
 @media (max-width: 380px) {
-  .nd-phone:last-child { display: none; }
-  .nd-carousel { max-width: 200px; }
+  .nd-stage { height: 310px; }
+  .nd-phone { width: 120px; height: 260px; border-radius: 24px; border-width: 4px; }
+  .nd-phones { gap: 8px; }
 }

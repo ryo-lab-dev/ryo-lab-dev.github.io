@@ -63,21 +63,35 @@ document.querySelectorAll('.reveal').forEach(function(el) { observer.observe(el)
   var fill = document.getElementById('tsg-fill');
   var hint = document.getElementById('tsg-hint');
 
+  var tsgItems = [], tsgConns = [];
   TH.forEach(function(t, i) {
-    if (i > 0) { var c = document.createElement('div'); c.className = 'tsg-conn'; bar.appendChild(c); }
+    if (i > 0) {
+      var c = document.createElement('div'); c.className = 'tsg-conn';
+      tsgConns.push(c); bar.appendChild(c);
+    }
     var item = document.createElement('div'); item.className = 'tsg-item'; item.dataset.i = i;
     var dot  = document.createElement('div'); dot.className = 'tsg-dot'; dot.style.setProperty('--tsg-dc', DC[t]);
     var lbl  = document.createElement('div'); lbl.className = 'tsg-lbl'; lbl.textContent = TN[t];
-    item.appendChild(dot); item.appendChild(lbl); bar.appendChild(item);
+    item.appendChild(dot); item.appendChild(lbl); tsgItems.push(item); bar.appendChild(item);
   });
 
   var ci = Math.max(0, TH.indexOf(document.documentElement.getAttribute('data-theme') || 'katsujii'));
 
+  function setFar(idx) {
+    tsgItems.forEach(function(el, i) {
+      el.classList.toggle('tsg-far', Math.abs(i - idx) > 1);
+    });
+    tsgConns.forEach(function(c, j) {
+      c.classList.toggle('tsg-conn-far', Math.abs(j - idx) > 1 && Math.abs(j + 1 - idx) > 1);
+    });
+  }
+
   function setOn(idx) {
-    bar.querySelectorAll('.tsg-item').forEach(function(el, i) {
+    tsgItems.forEach(function(el, i) {
       el.querySelector('.tsg-dot').classList.toggle('on', i === idx);
       el.querySelector('.tsg-lbl').classList.toggle('on', i === idx);
     });
+    setFar(idx);
   }
   setOn(ci);
 
@@ -134,11 +148,13 @@ document.querySelectorAll('.reveal').forEach(function(el) { observer.observe(el)
     fill.style.transform = 'scaleX(' + p + ')';
     hint.textContent = (dir < 0 ? '← ' : '') + TN[TH[ti]] + (dir > 0 ? ' →' : '');
     // 50%でドット先行ハイライト
-    bar.querySelectorAll('.tsg-item').forEach(function(el, i) {
+    var center = p >= .5 ? ti : ci;
+    tsgItems.forEach(function(el, i) {
       var on = (i === ci) || (i === ti && p >= .5);
       el.querySelector('.tsg-dot').classList.toggle('on', on);
       el.querySelector('.tsg-lbl').classList.toggle('on', on);
     });
+    setFar(center);
   }
 
   function onUp() {
