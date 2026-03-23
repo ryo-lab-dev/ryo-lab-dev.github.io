@@ -64,8 +64,14 @@
     <h2>第2条 第三者提供・外部送信</h2>
     <p>本アプリは以下の外部サービスにデータを送信することがあります。各サービスのプライバシーポリシーを必ずご確認ください。</p>
     <ul>
-      <li>Google Firebase（Auth / Firestore / Analytics）— 認証・データ同期・利用統計</li>
-      <li>Google AdMob — 広告配信</li>
+      <li>
+        <strong>Google Firebase（Auth / Firestore / Analytics）</strong> — 認証・データ同期・利用統計<br>
+        <a href="https://policies.google.com/privacy" target="_blank" rel="noopener" style="font-size:0.875rem;">Google プライバシーポリシー</a>
+      </li>
+      <li>
+        <strong>Google AdMob</strong> — 広告配信（広告識別子 IDFA / AAID を使用）<br>
+        <a href="https://policies.google.com/privacy" target="_blank" rel="noopener" style="font-size:0.875rem;">Google プライバシーポリシー</a>
+      </li>
     </ul>
     <p style="margin-top:0.75rem;">上記以外の第三者への個人情報の提供・販売は行いません。</p>
   </div>
@@ -73,7 +79,18 @@
   <div class="divider"></div>
 
   <div class="doc-section reveal">
-    <h2>第3条 データの管理と削除</h2>
+    <h2>第3条 データの保護</h2>
+    <ul>
+      <li>学習データは Firestore セキュリティルールにより、ユーザー自身のみがアクセス可能です。</li>
+      <li>通信はすべて HTTPS により暗号化されます。</li>
+      <li>本アプリは端末内への機密情報（APIキー等）の永続保存を行いません。</li>
+    </ul>
+  </div>
+
+  <div class="divider"></div>
+
+  <div class="doc-section reveal">
+    <h2>第4条 データの管理と削除</h2>
     <ul>
       <li>アプリ設定画面から「学習データの初期化」が可能です。</li>
       <li>アカウントの削除・完全なデータ消去は、アプリ内の設定画面から実行できます。削除操作を行うと、アカウント情報および関連するすべてのデータが完全に消去されます。</li>
@@ -83,14 +100,14 @@
   <div class="divider"></div>
 
   <div class="doc-section reveal">
-    <h2>第4条 プライバシーポリシーの変更</h2>
+    <h2>第5条 プライバシーポリシーの変更</h2>
     <p>法令の変更やアプリのアップデートに伴い、本ポリシーを随時改定することがあります。改定後のポリシーは本ページに掲載した時点から効力を発します。</p>
   </div>
 
   <div class="divider"></div>
 
   <div class="doc-section reveal">
-    <h2>第5条 お問い合わせ</h2>
+    <h2>第6条 お問い合わせ</h2>
     <p>本ポリシーに関するご質問・データ削除のご依頼は、以下からお問い合わせください。</p>
     <ul>
       <li>開発者: Ryo-Lab（個人開発）</li>
