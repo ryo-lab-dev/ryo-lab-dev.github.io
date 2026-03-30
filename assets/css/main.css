@@ -257,6 +257,25 @@ section {
   gap: 1.25rem;
 }
 
+.group-label {
+  grid-column: 1 / -1;
+  display: flex;
+  align-items: center;
+  gap: 0.75rem;
+  margin-top: 0.5rem;
+  font-size: 0.72rem;
+  font-family: 'JetBrains Mono', monospace;
+  color: var(--text-muted);
+  letter-spacing: 0.1em;
+}
+.group-label:first-child { margin-top: 0; }
+.group-label::after {
+  content: '';
+  flex: 1;
+  height: 1px;
+  background: var(--border);
+}
+
 /* カード */
 .card {
   background: var(--bg-card);
