@@ -1,0 +1,117 @@
+<!-- 案9 ブラッシュアップ: 同心円スケール × 円周テープ計測 -->
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1024 1024" width="1024" height="1024">
+  <defs>
+    <linearGradient id="bg09" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#E8F9FC"/>
+      <stop offset="100%" stop-color="#CAF0F8"/>
+    </linearGradient>
+    <linearGradient id="badge09" x1="0%" y1="0%" x2="100%" y2="0%">
+      <stop offset="0%" stop-color="#0096C7"/>
+      <stop offset="100%" stop-color="#48CAE4"/>
+    </linearGradient>
+    <marker id="arrE9" markerWidth="10" markerHeight="7" refX="9" refY="3.5" orient="auto">
+      <polygon points="0 0, 10 3.5, 0 7" fill="#0077B6"/>
+    </marker>
+    <marker id="arrW9" markerWidth="10" markerHeight="7" refX="1" refY="3.5" orient="auto">
+      <polygon points="10 0, 0 3.5, 10 7" fill="#0077B6"/>
+    </marker>
+  </defs>
+
+  <!-- 背景 -->
+  <rect width="1024" height="1024" rx="220" fill="url(#bg09)"/>
+
+  <!-- ━━ 同心円（内側3本） ━━ -->
+  <circle cx="512" cy="512" r="260" fill="none" stroke="#48CAE4" stroke-width="10" opacity="0.6"/>
+  <circle cx="512" cy="512" r="185" fill="none" stroke="#0096C7" stroke-width="10" opacity="0.7"/>
+  <circle cx="512" cy="512" r="110" fill="none" stroke="#0077B6" stroke-width="10" opacity="0.8"/>
+
+  <!-- ━━ 最外円テープ（目盛り付きリング） ━━ -->
+  <circle cx="512" cy="512" r="348" fill="none" stroke="#00B4D8" stroke-width="36"/>
+
+  <!-- 大目盛り 30°刻み -->
+  <!-- 0° (右) -->
+  <line x1="860" y1="512" x2="896" y2="512" stroke="#023E8A" stroke-width="8"/>
+  <!-- 30° -->
+  <line x1="813" y1="686" x2="844" y2="704" stroke="#023E8A" stroke-width="8"/>
+  <!-- 60° -->
+  <line x1="686" y1="813" x2="704" y2="844" stroke="#023E8A" stroke-width="8"/>
+  <!-- 90° (下) -->
+  <line x1="512" y1="860" x2="512" y2="896" stroke="#023E8A" stroke-width="8"/>
+  <!-- 120° -->
+  <line x1="338" y1="813" x2="320" y2="844" stroke="#023E8A" stroke-width="8"/>
+  <!-- 150° -->
+  <line x1="211" y1="686" x2="180" y2="704" stroke="#023E8A" stroke-width="8"/>
+  <!-- 180° (左) -->
+  <line x1="164" y1="512" x2="128" y2="512" stroke="#023E8A" stroke-width="8"/>
+  <!-- 210° -->
+  <line x1="211" y1="338" x2="180" y2="320" stroke="#023E8A" stroke-width="8"/>
+  <!-- 240° -->
+  <line x1="338" y1="211" x2="320" y2="180" stroke="#023E8A" stroke-width="8"/>
+  <!-- 270° (上) -->
+  <line x1="512" y1="164" x2="512" y2="128" stroke="#023E8A" stroke-width="8"/>
+  <!-- 300° -->
+  <line x1="686" y1="211" x2="704" y2="180" stroke="#023E8A" stroke-width="8"/>
+  <!-- 330° -->
+  <line x1="813" y1="338" x2="844" y2="320" stroke="#023E8A" stroke-width="8"/>
+
+  <!-- 中目盛り 10°刻み -->
+  <line x1="854" y1="572" x2="869" y2="581" stroke="#0077B6" stroke-width="5" opacity="0.7"/>
+  <line x1="835" y1="631" x2="847" y2="645" stroke="#0077B6" stroke-width="5" opacity="0.7"/>
+  <line x1="752" y1="756" x2="762" y2="771" stroke="#0077B6" stroke-width="5" opacity="0.7"/>
+  <line x1="694" y1="801" x2="701" y2="817" stroke="#0077B6" stroke-width="5" opacity="0.7"/>
+  <line x1="572" y1="854" x2="581" y2="869" stroke="#0077B6" stroke-width="5" opacity="0.7"/>
+  <line x1="452" y1="857" x2="443" y2="872" stroke="#0077B6" stroke-width="5" opacity="0.7"/>
+  <line x1="330" y1="801" x2="323" y2="817" stroke="#0077B6" stroke-width="5" opacity="0.7"/>
+  <line x1="272" y1="756" x2="262" y2="771" stroke="#0077B6" stroke-width="5" opacity="0.7"/>
+  <line x1="189" y1="631" x2="177" y2="645" stroke="#0077B6" stroke-width="5" opacity="0.7"/>
+  <line x1="170" y1="572" x2="155" y2="581" stroke="#0077B6" stroke-width="5" opacity="0.7"/>
+
+  <!-- ━━ 計測中の円周弧ハイライト（右上1/4を強調） ━━ -->
+  <circle cx="512" cy="512" r="348"
+          fill="none"
+          stroke="#ADE8F4" stroke-width="36"
+          stroke-dasharray="548 1638"
+          stroke-dashoffset="-0"
+          opacity="0.7"/>
+
+  <!-- ━━ 水平・垂直 補助線 ━━ -->
+  <line x1="140" y1="512" x2="884" y2="512"
+        stroke="#0096C7" stroke-width="4"
+        stroke-dasharray="14 8" opacity="0.3"/>
+  <line x1="512" y1="140" x2="512" y2="884"
+        stroke="#0096C7" stroke-width="4"
+        stroke-dasharray="14 8" opacity="0.3"/>
+
+  <!-- ━━ 寸法線（水平・直径） ━━ -->
+  <line x1="168" y1="456" x2="856" y2="456"
+        stroke="#0077B6" stroke-width="6"
+        marker-start="url(#arrW9)" marker-end="url(#arrE9)"/>
+  <line x1="168" y1="444" x2="168" y2="470" stroke="#0077B6" stroke-width="6"/>
+  <line x1="856" y1="444" x2="856" y2="470" stroke="#0077B6" stroke-width="6"/>
+  <!-- 寸法バッジ -->
+  <rect x="444" y="428" width="136" height="56" rx="12" fill="url(#badge09)"/>
+  <rect x="448" y="432" width="128" height="48" rx="10" fill="#E8F9FC"/>
+  <!-- バッジ内の数値ライン -->
+  <line x1="468" y1="456" x2="474" y2="456" stroke="#0077B6" stroke-width="5"/>
+  <line x1="480" y1="456" x2="508" y2="456" stroke="#0077B6" stroke-width="5"/>
+  <line x1="514" y1="456" x2="516" y2="456" stroke="#0077B6" stroke-width="5"/>
+  <line x1="524" y1="456" x2="556" y2="456" stroke="#0077B6" stroke-width="5"/>
+
+  <!-- ━━ 半径ライン（右方向） ━━ -->
+  <line x1="512" y1="512" x2="856" y2="512"
+        stroke="#0096C7" stroke-width="6"/>
+  <circle cx="690" cy="512" r="26" fill="#0096C7"/>
+  <circle cx="690" cy="512" r="18" fill="#E8F9FC"/>
+  <circle cx="690" cy="512" r="8"  fill="#0096C7"/>
+
+  <!-- ━━ 中心 ━━ -->
+  <circle cx="512" cy="512" r="40" fill="#0077B6"/>
+  <circle cx="512" cy="512" r="26" fill="#E8F9FC"/>
+  <circle cx="512" cy="512" r="12" fill="#0096C7"/>
+
+  <!-- ━━ テープクリップ（右端） ━━ -->
+  <rect x="856" y="494" width="56" height="36" rx="8" fill="#0096C7"/>
+  <line x1="870" y1="505" x2="870" y2="519" stroke="#CAF0F8" stroke-width="5"/>
+  <line x1="884" y1="505" x2="884" y2="519" stroke="#CAF0F8" stroke-width="5"/>
+  <line x1="898" y1="505" x2="898" y2="519" stroke="#CAF0F8" stroke-width="5"/>
+</svg>

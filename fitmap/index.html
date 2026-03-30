@@ -1,0 +1,343 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>FitMap — あなたのサイズを、いつでも手元に。</title>
+  <link rel="icon" href="../assets/icons/fitmap_icon.svg" type="image/svg+xml" />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Syne:wght@400;600;700;800&family=Noto+Sans+JP:wght@300;400;500;700&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet" />
+  <!-- SEO -->
+  <meta name="description" content="FitMap — 人体シルエットで部位を選択して、首周り・袖丈・靴サイズ・指輪の号数など全身のサイズを記録するパーソナルサイズ管理アプリ。完全オフライン・Android / iOS対応。">
+  <!-- OGP -->
+  <meta property="og:type"        content="website">
+  <meta property="og:title"       content="FitMap — あなたのサイズを、いつでも手元に。">
+  <meta property="og:description" content="人体シルエットで部位を選択して全身のサイズを記録。指輪の号数まで管理できるパーソナルサイズ管理アプリ。完全オフライン。">
+  <meta property="og:site_name"   content="Ryo-Lab">
+  <meta property="og:locale"      content="ja_JP">
+  <style>
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+    html { scroll-behavior: smooth; }
+    :root {
+      --bg: #f5f9fc;
+      --surface: #ffffff;
+      --blue: #0077B6;
+      --blue-mid: #0096C7;
+      --blue-light: #00B4D8;
+      --blue-pale: #ADE8F4;
+      --text: #0a1628;
+      --text-mid: #3d5a73;
+      --text-muted: #7090a0;
+      --border: #d4e8f0;
+    }
+    body {
+      background: var(--bg);
+      color: var(--text);
+      font-family: 'Noto Sans JP', sans-serif;
+      min-height: 100vh;
+      overflow-x: hidden;
+    }
+
+    /* ── Nav ── */
+    nav {
+      position: sticky; top: 0; z-index: 100;
+      background: rgba(245,249,252,0.92);
+      backdrop-filter: blur(12px);
+      -webkit-backdrop-filter: blur(12px);
+      border-bottom: 1px solid var(--border);
+    }
+    .nav-inner {
+      max-width: 1100px; margin: 0 auto;
+      padding: 0 2rem; height: 64px;
+      display: flex; align-items: center; justify-content: space-between; gap: 1rem;
+    }
+    .nav-logo { display: flex; align-items: center; gap: 0.6rem; text-decoration: none; flex-shrink: 0; }
+    .nav-logo img { width: 30px; height: 30px; }
+    .nav-logo-text {
+      font-family: 'Syne', sans-serif; font-weight: 800; font-size: 1.1rem;
+      color: var(--blue);
+    }
+    .nav-links { display: flex; align-items: center; gap: 0.1rem; }
+    .nav-links a {
+      color: var(--text-muted); text-decoration: none; font-size: 0.83rem;
+      padding: 0.4rem 0.75rem; border-radius: 6px;
+      transition: color 0.2s, background 0.2s; white-space: nowrap;
+    }
+    .nav-links a:hover, .nav-links a.active { color: var(--blue); background: rgba(0,119,182,0.06); }
+    .nav-hamburger {
+      display: none; flex-direction: column; justify-content: center;
+      gap: 5px; cursor: pointer; padding: 8px;
+      background: none; border: none; flex-shrink: 0;
+    }
+    .nav-hamburger span {
+      display: block; width: 22px; height: 2px;
+      background: var(--text-muted); border-radius: 2px;
+      transition: transform 0.25s, opacity 0.25s;
+    }
+    nav.open .nav-hamburger span:nth-child(1) { transform: translateY(7px) rotate(45deg); }
+    nav.open .nav-hamburger span:nth-child(2) { opacity: 0; }
+    nav.open .nav-hamburger span:nth-child(3) { transform: translateY(-7px) rotate(-45deg); }
+
+    /* ── Hero ── */
+    .hero {
+      max-width: 1100px; margin: 0 auto;
+      padding: 6rem 2rem 5rem;
+      display: grid; grid-template-columns: 1fr 1fr;
+      gap: 4rem; align-items: center;
+    }
+    .hero-badge {
+      display: inline-flex; align-items: center; gap: 0.5rem;
+      background: rgba(0,180,216,0.08);
+      border: 1px solid rgba(0,180,216,0.25);
+      border-radius: 999px; padding: 0.35rem 0.9rem;
+      font-family: 'JetBrains Mono', monospace; font-size: 0.72rem;
+      color: var(--blue-light); margin-bottom: 1.75rem;
+    }
+    .pulse-dot {
+      width: 6px; height: 6px; border-radius: 50%;
+      background: #f59e0b; animation: blink 1.8s ease-in-out infinite;
+    }
+    @keyframes blink { 0%,100%{ opacity:1; } 50%{ opacity:0.3; } }
+    .hero-title {
+      font-family: 'Syne', sans-serif; font-weight: 800;
+      font-size: clamp(3rem, 6vw, 5rem); line-height: 1;
+      color: var(--blue); margin-bottom: 1rem; letter-spacing: -0.02em;
+    }
+    .hero-sub {
+      font-size: 1.1rem; color: var(--text-mid); line-height: 1.75;
+      margin-bottom: 0.75rem; font-weight: 400;
+    }
+    .hero-tagline {
+      font-family: 'JetBrains Mono', monospace; font-size: 0.78rem;
+      color: var(--text-muted); margin-bottom: 2rem;
+    }
+    .btn-coming {
+      display: inline-flex; align-items: center; gap: 0.5rem;
+      background: var(--blue); color: white;
+      font-family: 'Syne', sans-serif; font-weight: 700;
+      padding: 0.85rem 2rem; border-radius: 10px; font-size: 0.92rem;
+      opacity: 0.55; cursor: default;
+    }
+    .hero-right {
+      display: flex; align-items: center; justify-content: center;
+    }
+    .icon-wrap { position: relative; width: 280px; height: 280px; }
+    .icon-wrap svg.icon-ring {
+      position: absolute; top: 0; left: 0; width: 100%; height: 100%;
+    }
+    .icon-wrap img.main-icon {
+      width: 180px; height: 180px;
+      position: absolute; top: 50%; left: 50%;
+      transform: translate(-50%,-50%);
+      filter: drop-shadow(0 8px 32px rgba(0,180,216,0.25));
+    }
+
+    /* ── Divider ── */
+    .divider {
+      max-width: 1100px; margin: 0 auto;
+      height: 1px; background: var(--border);
+    }
+
+    /* ── Sections ── */
+    section { padding: 5rem 2rem; }
+    .section-inner { max-width: 1100px; margin: 0 auto; }
+    .section-label {
+      font-family: 'JetBrains Mono', monospace; font-size: 0.72rem;
+      color: var(--blue-mid); letter-spacing: 0.18em; text-transform: uppercase;
+      margin-bottom: 0.6rem;
+    }
+    .section-title {
+      font-family: 'Syne', sans-serif; font-size: clamp(1.6rem, 3.5vw, 2.2rem);
+      font-weight: 700; color: var(--text); margin-bottom: 0.5rem;
+    }
+    .section-sub { color: var(--text-muted); font-size: 0.9rem; margin-bottom: 3rem; }
+
+    /* ── Feature cards ── */
+    .features-grid {
+      display: grid; grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+      gap: 1px; border: 1px solid var(--border);
+      border-radius: 16px; overflow: hidden; background: var(--border);
+    }
+    .feature-card {
+      background: var(--surface); padding: 2rem 1.75rem;
+      transition: background 0.2s;
+    }
+    .feature-card:hover { background: rgba(0,119,182,0.02); }
+    .feature-num {
+      font-family: 'JetBrains Mono', monospace; font-size: 0.65rem;
+      color: var(--blue-pale); margin-bottom: 0.75rem; letter-spacing: 0.1em;
+    }
+    .feature-title {
+      font-family: 'Syne', sans-serif; font-size: 1rem; font-weight: 700;
+      color: var(--blue); margin-bottom: 0.6rem;
+    }
+    .feature-desc { color: var(--text-muted); font-size: 0.85rem; line-height: 1.8; }
+
+    /* ── Privacy box ── */
+    .privacy-box {
+      background: var(--blue); border-radius: 20px;
+      padding: 3.5rem 3rem; color: white;
+      position: relative; overflow: hidden;
+    }
+    .privacy-box::before {
+      content: ''; position: absolute; right: -60px; top: -60px;
+      width: 240px; height: 240px; border-radius: 50%;
+      background: rgba(255,255,255,0.07);
+    }
+    .privacy-box::after {
+      content: ''; position: absolute; right: 60px; bottom: -80px;
+      width: 180px; height: 180px; border-radius: 50%;
+      background: rgba(255,255,255,0.05);
+    }
+    .privacy-box .section-label { color: var(--blue-pale); }
+    .privacy-box h2 {
+      font-family: 'Syne', sans-serif; font-size: clamp(1.5rem, 3vw, 2rem);
+      font-weight: 700; margin-bottom: 0.75rem;
+    }
+    .privacy-box p { color: rgba(255,255,255,0.75); line-height: 1.8; max-width: 540px; font-size: 0.95rem; }
+    .btn-white {
+      display: inline-block; margin-top: 1.5rem;
+      background: white; color: var(--blue);
+      font-family: 'Syne', sans-serif; font-weight: 700;
+      padding: 0.75rem 1.75rem; border-radius: 8px; font-size: 0.88rem;
+      text-decoration: none; transition: opacity 0.2s;
+    }
+    .btn-white:hover { opacity: 0.9; }
+
+    /* ── Scroll reveal ── */
+    .reveal {
+      opacity: 0; transform: translateY(24px);
+      transition: opacity 0.6s ease, transform 0.6s ease;
+    }
+    .reveal.visible { opacity: 1; transform: translateY(0); }
+
+    /* ── Footer ── */
+    footer {
+      border-top: 1px solid var(--border); padding: 2rem;
+      text-align: center; color: var(--text-muted); font-size: 0.85rem;
+    }
+
+    /* ── Responsive ── */
+    @media (max-width: 768px) {
+      .nav-links { display: none; }
+      .nav-hamburger { display: flex; }
+      nav.open .nav-links {
+        display: flex; flex-direction: column;
+        position: absolute; top: 64px; left: 0; right: 0;
+        background: rgba(245,249,252,0.97);
+        backdrop-filter: blur(12px);
+        border-bottom: 1px solid var(--border);
+        padding: 1rem 1.5rem; gap: 0.25rem; z-index: 99;
+      }
+      nav.open .nav-links a { padding: 0.6rem 0.5rem; font-size: 0.9rem; }
+      .hero {
+        grid-template-columns: 1fr; gap: 2.5rem;
+        text-align: center; padding: 4rem 1.5rem 3rem;
+      }
+      .hero-right { justify-content: center; }
+      .icon-wrap { width: 200px; height: 200px; }
+      .icon-wrap img.main-icon { width: 130px; height: 130px; }
+      .hero-badge { margin: 0 auto 1.75rem; }
+      .btn-coming { margin: 0 auto; }
+      section { padding: 4rem 1.5rem; }
+      .privacy-box { padding: 2.5rem 1.75rem; }
+    }
+  </style>
+</head>
+<body>
+
+<!-- Nav -->
+<nav>
+  <div class="nav-inner">
+    <a href="./" class="nav-logo">
+      <img src="../assets/icons/fitmap_icon.svg" alt="FitMap" />
+      <span class="nav-logo-text">FitMap</span>
+    </a>
+    <div class="nav-links">
+      <a href="./" class="active">Home</a>
+      <a href="./privacy-policy.html">Privacy Policy</a>
+    </div>
+    <button class="nav-hamburger" id="navToggle" aria-label="メニューを開く">
+      <span></span><span></span><span></span>
+    </button>
+  </div>
+</nav>
+
+<!-- Hero -->
+<div class="hero">
+  <div class="hero-left">
+    <div class="hero-badge"><span class="pulse-dot"></span>In Development</div>
+    <h1 class="hero-title">FitMap</h1>
+    <p class="hero-sub">あなたのサイズを、いつでも手元に。</p>
+    <p class="hero-tagline">// personal size management · fully offline</p>
+    <div class="btn-coming">🔔 Coming Soon</div>
+  </div>
+  <div class="hero-right">
+    <div class="icon-wrap">
+      <svg class="icon-ring" viewBox="0 0 280 280" fill="none" xmlns="http://www.w3.org/2000/svg">
+        <circle cx="140" cy="140" r="130" stroke="#00B4D8" stroke-width="1" stroke-dasharray="6 6" opacity="0.25"/>
+        <circle cx="140" cy="140" r="110" stroke="#0096C7" stroke-width="1" opacity="0.12"/>
+      </svg>
+      <img class="main-icon" src="../assets/icons/fitmap_icon.svg" alt="FitMap icon" />
+    </div>
+  </div>
+</div>
+
+<div class="divider"></div>
+
+<!-- Features -->
+<section>
+  <div class="section-inner">
+    <div class="reveal">
+      <p class="section-label">Features</p>
+      <h2 class="section-title">サイズ管理を、もっとシンプルに。</h2>
+      <p class="section-sub">服選びの迷いをなくす。試着室での確認をなくす。あなたのサイズを、いつでも正確に。</p>
+    </div>
+    <div class="features-grid">
+      <div class="feature-card reveal">
+        <div class="feature-num">01</div>
+        <div class="feature-title">シルエットUIで選ぶ</div>
+        <p class="feature-desc">人体シルエットを見ながら部位を選択。首周り・肩幅・袖丈・胸囲・靴サイズはもちろん、指輪の号数まで記録できます。cm / mm / 号 / kg など単位も柔軟に設定可能。</p>
+      </div>
+      <div class="feature-card reveal" style="transition-delay:0.08s;">
+        <div class="feature-num">02</div>
+        <div class="feature-title">変化を記録・追跡</div>
+        <p class="feature-desc">各部位の計測値と更新履歴を自動保存。前回値付近のプリセットで入力もスムーズ。体の変化をいつでも振り返れます。</p>
+      </div>
+      <div class="feature-card reveal" style="transition-delay:0.16s;">
+        <div class="feature-num">03</div>
+        <div class="feature-title">完全オフライン＆PIN保護</div>
+        <p class="feature-desc">クラウド不要。全データは端末内のみに保存。4桁PINで起動時にロックし、体型データを外部に一切送信しません。</p>
+      </div>
+      <div class="feature-card reveal" style="transition-delay:0.24s;">
+        <div class="feature-num">04</div>
+        <div class="feature-title">自由にカスタマイズ</div>
+        <p class="feature-desc">標準部位に加え、カスタム項目を自由に追加してセクション別に整理。家族分のプロフィールも管理できます（1人目は無料）。</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<div class="divider"></div>
+
+<!-- Privacy -->
+<section>
+  <div class="section-inner">
+    <div class="privacy-box reveal">
+      <p class="section-label">Privacy First</p>
+      <h2>データはあなたの端末の中だけ。</h2>
+      <p>体型データは一切外部に送信されません。FitMapは完全オフラインで動作し、個人情報を収集しないことを設計方針としています。</p>
+      <a href="./privacy-policy.html" class="btn-white">プライバシーポリシー →</a>
+    </div>
+  </div>
+</section>
+
+<!-- Footer -->
+<footer>
+  <p>© 2026 Ryo-Lab. FitMap Project</p>
+</footer>
+
+<script src="../assets/js/subsite.js"></script>
+</body>
+</html>
