@@ -294,6 +294,21 @@ section {
   box-shadow: 0 0 20px rgba(0, 255, 136, 0.08), 0 0 40px rgba(0, 255, 136, 0.04);
 }
 
+/* リリース済みカード */
+.card.released {
+  border-color: rgba(0, 255, 136, 0.35);
+  box-shadow: 0 0 0 1px rgba(0, 255, 136, 0.06) inset;
+}
+.card.released::before,
+.card.released::after {
+  width: 14px;
+  height: 14px;
+}
+.card.released:hover {
+  border-color: rgba(0, 255, 136, 0.7);
+  box-shadow: 0 0 24px rgba(0, 255, 136, 0.12), 0 0 48px rgba(0, 255, 136, 0.06);
+}
+
 /* グリッチエフェクト */
 .card:hover .card-title {
   animation: glitch 0.3s ease-in-out;
