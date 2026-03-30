@@ -296,8 +296,8 @@ section {
 
 /* リリース済みカード */
 .card.released {
-  border-color: rgba(0, 255, 136, 0.35);
-  box-shadow: 0 0 0 1px rgba(0, 255, 136, 0.06) inset;
+  border-color: rgba(0, 255, 136, 0.45);
+  background: linear-gradient(160deg, rgba(0, 255, 136, 0.05) 0%, var(--bg-card) 55%);
 }
 .card.released::before,
 .card.released::after {
@@ -305,8 +305,23 @@ section {
   height: 14px;
 }
 .card.released:hover {
-  border-color: rgba(0, 255, 136, 0.7);
-  box-shadow: 0 0 24px rgba(0, 255, 136, 0.12), 0 0 48px rgba(0, 255, 136, 0.06);
+  border-color: rgba(0, 255, 136, 0.75);
+  box-shadow: 0 0 24px rgba(0, 255, 136, 0.14), 0 0 48px rgba(0, 255, 136, 0.06);
+}
+
+/* Personal Use カード */
+.card.personal {
+  border-color: rgba(0, 255, 136, 0.08);
+  opacity: 0.5;
+}
+.card.personal::before,
+.card.personal::after {
+  border-color: rgba(0, 255, 136, 0.2);
+}
+.card.personal:hover {
+  opacity: 0.7;
+  border-color: rgba(0, 255, 136, 0.2);
+  box-shadow: none;
 }
 
 /* グリッチエフェクト */
