@@ -4,7 +4,7 @@
   <!-- Portfolio Top -->
   <url>
     <loc>https://ryo-lab.dev/</loc>
-    <lastmod>2026-03-20</lastmod>
+    <lastmod>2026-04-07</lastmod>
     <changefreq>monthly</changefreq>
     <priority>1.0</priority>
   </url>
@@ -77,6 +77,20 @@
   <url>
     <loc>https://ryo-lab.dev/nexusdiary/privacy-policy.html</loc>
     <lastmod>2026-03-20</lastmod>
+    <changefreq>yearly</changefreq>
+    <priority>0.4</priority>
+  </url>
+
+  <!-- GiftLog -->
+  <url>
+    <loc>https://ryo-lab.dev/giftlog/</loc>
+    <lastmod>2026-04-07</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.9</priority>
+  </url>
+  <url>
+    <loc>https://ryo-lab.dev/giftlog/privacy-policy.html</loc>
+    <lastmod>2026-04-07</lastmod>
     <changefreq>yearly</changefreq>
     <priority>0.4</priority>
   </url>

@@ -1,0 +1,283 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>GiftLog | A thoughtful gift journal for remembering people better.</title>
+  <link rel="icon" href="../assets/giftlog/app_icon.png" type="image/png" />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Syne:wght@500;700;800&family=JetBrains+Mono:wght@400;500&family=Noto+Sans+JP:wght@400;500;700&display=swap" rel="stylesheet" />
+  <meta name="description" content="GiftLog は、贈り物、相手の好み、記念日、メモを一つにまとめて記録できるギフトジャーナルアプリです。ストア公開は準備中です。" />
+  <link rel="canonical" href="https://ryo-lab.dev/giftlog/" />
+  <meta property="og:type" content="website" />
+  <meta property="og:url" content="https://ryo-lab.dev/giftlog/" />
+  <meta property="og:title" content="GiftLog | A thoughtful gift journal for remembering people better." />
+  <meta property="og:description" content="贈り物と人との関係をまとめて記録できる、温かいトーンのギフトジャーナルアプリ。" />
+  <meta property="og:site_name" content="Ryo-Lab" />
+  <meta property="og:locale" content="ja_JP" />
+  <meta name="twitter:card" content="summary_large_image" />
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "SoftwareApplication",
+    "name": "GiftLog",
+    "operatingSystem": "Android, iOS",
+    "applicationCategory": "LifestyleApplication",
+    "description": "A thoughtful gift journal app for tracking gifts, preferences, and important dates around the people you care about.",
+    "url": "https://ryo-lab.dev/giftlog/",
+    "offers": {
+      "@type": "Offer",
+      "price": "0",
+      "priceCurrency": "JPY"
+    },
+    "author": {
+      "@type": "Person",
+      "name": "Ryo",
+      "url": "https://ryo-lab.dev/"
+    }
+  }
+  </script>
+  <link rel="stylesheet" href="../assets/css/subsite.css" />
+  <link rel="stylesheet" href="../assets/css/giftlog.css" />
+</head>
+<body>
+  <nav>
+    <div class="nav-inner">
+      <a href="./" class="nav-logo">
+        <div class="giftlog-nav-mark">
+          <img src="../assets/giftlog/app_icon.png" alt="GiftLog" />
+        </div>
+        <span class="nav-logo-text">GiftLog</span>
+      </a>
+      <div class="nav-links">
+        <a href="./" class="active">Home</a>
+        <a href="./privacy-policy.html">Privacy Policy</a>
+      </div>
+      <button class="nav-hamburger" id="navToggle" aria-label="Open menu">
+        <span></span><span></span><span></span>
+      </button>
+    </div>
+  </nav>
+
+  <section class="hero giftlog-hero">
+    <div class="hero-shell">
+      <div class="hero-copy reveal">
+        <span class="status-badge">
+          <span class="pulse-dot"></span>
+          Store release in preparation
+        </span>
+        <h1 class="hero-title">GiftLog</h1>
+        <p class="hero-sub">A thoughtful gift journal for remembering people better.</p>
+        <p class="hero-tagline">
+          もらったもの、贈ったもの、その人の好み、記念日、メモまでを一つの流れで記録するためのアプリです。
+          ギフトそのものだけではなく、その人との関係や会話の文脈まで扱えるように設計しています。
+        </p>
+        <div class="hero-actions">
+          <a class="btn-secondary" href="./privacy-policy.html">Privacy Policy</a>
+        </div>
+        <p class="store-note">App Store / Google Play は現在準備中です。公開後にこのページから案内します。</p>
+      </div>
+
+      <div class="hero-preview reveal">
+        <div class="phone-stage">
+          <article class="phone-card gifts">
+            <div class="phone-header">
+              <span>ギフト記録</span>
+              <span>今日</span>
+            </div>
+            <div class="gift-entry coral">
+              <strong>母の日のブーケ</strong>
+              <span>贈ったもの ・ 2026/05/12</span>
+              <p>好み: 落ち着いた色。香りは強すぎない方がよい。</p>
+            </div>
+            <div class="gift-entry rose">
+              <strong>大阪みやげのコーヒー豆</strong>
+              <span>もらったもの ・ 2026/03/29</span>
+              <p>メモ: 深煎りが好き。次は器のギフトも候補。</p>
+            </div>
+          </article>
+
+          <article class="phone-card profile">
+            <div class="person-block">
+              <div class="avatar">A</div>
+              <div>
+                <strong>彩花</strong>
+                <span>友人 ・ 4月18日が誕生日</span>
+              </div>
+            </div>
+            <ul class="profile-pills">
+              <li>紅茶</li>
+              <li>文房具</li>
+              <li>青みカラー</li>
+            </ul>
+            <div class="timeline-row">
+              <span>次のリマインド</span>
+              <strong>7日前</strong>
+            </div>
+            <div class="timeline-row">
+              <span>AI 提案</span>
+              <strong>紅茶セット + メッセージカード</strong>
+            </div>
+          </article>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <div class="glow-line"></div>
+
+  <section>
+    <div class="section-inner overview-grid">
+      <div class="reveal">
+        <p class="section-label">Overview</p>
+        <h2 class="section-title">ギフトの記録を、人の記憶に近づける</h2>
+        <p class="body-copy">
+          GiftLog は、単なる「贈答履歴」ではなく、誰に、どんな関係で、何が好きで、いつ思い出したいかまでを一緒に扱います。
+          次のプレゼントを選ぶときに必要になる情報が、別々のメモや写真フォルダに散らばらないことを重視しています。
+        </p>
+      </div>
+      <div class="overview-panel reveal">
+        <div class="metric">
+          <span class="metric-label">Focus</span>
+          <strong>Gifts + people + dates + context</strong>
+        </div>
+        <div class="metric">
+          <span class="metric-label">Design motif</span>
+          <strong>Warm &amp; Soft</strong>
+        </div>
+        <div class="metric">
+          <span class="metric-label">Current stage</span>
+          <strong>Implementation finished / store prep pending</strong>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <div class="glow-line"></div>
+
+  <section>
+    <div class="section-inner">
+      <div class="reveal" style="margin-bottom:2rem;">
+        <p class="section-label">Features</p>
+        <h2 class="section-title">必要な情報を、あとで使える形で残す</h2>
+      </div>
+      <div class="giftlog-feature-grid">
+        <article class="feature-card reveal">
+          <div class="feature-icon">01</div>
+          <h3>Gift tracking</h3>
+          <p>もらった / 贈ったギフトを、日付、相手、金額、メモ、画像付きで整理できます。</p>
+        </article>
+        <article class="feature-card reveal">
+          <div class="feature-icon">02</div>
+          <h3>Preference memory</h3>
+          <p>好きなもの、苦手なもの、会話で出たヒントを人ごとに蓄積できます。</p>
+        </article>
+        <article class="feature-card reveal">
+          <div class="feature-icon">03</div>
+          <h3>Dates and reminders</h3>
+          <p>誕生日や記念日を登録し、忘れたくないタイミングで思い出せるようにします。</p>
+        </article>
+        <article class="feature-card reveal">
+          <div class="feature-icon">04</div>
+          <h3>Event timeline</h3>
+          <p>贈り物、イベント、メモをつながりのある履歴として見返せます。</p>
+        </article>
+        <article class="feature-card reveal">
+          <div class="feature-icon">05</div>
+          <h3>AI gift suggestions</h3>
+          <p>保存された好みや過去の履歴をもとに、ギフト候補の方向性を提案します。</p>
+        </article>
+        <article class="feature-card reveal">
+          <div class="feature-icon">06</div>
+          <h3>Image support</h3>
+          <p>画像の保存やデータ連携を前提に、記録を視覚的にも振り返れる構成にしています。</p>
+        </article>
+      </div>
+    </div>
+  </section>
+
+  <div class="glow-line"></div>
+
+  <section>
+    <div class="section-inner design-grid">
+      <div class="reveal">
+        <p class="section-label">Design</p>
+        <h2 class="section-title">Warm &amp; Soft</h2>
+        <p class="body-copy">
+          コーラルとローズを中心にした、少しやわらかい UI を採用しています。
+          情報量は多くても威圧感を出さず、贈り物や人との関係に向き合いやすい空気感を優先しました。
+        </p>
+      </div>
+      <div class="design-swatch-panel reveal">
+        <div class="swatch coral">#F07050</div>
+        <div class="swatch coral-light">#F8B89A</div>
+        <div class="swatch rose">#C04080</div>
+        <div class="swatch paper">#FDF6F0</div>
+      </div>
+    </div>
+  </section>
+
+  <div class="glow-line"></div>
+
+  <section>
+    <div class="section-inner">
+      <div class="reveal" style="margin-bottom:2rem;">
+        <p class="section-label">Technology</p>
+        <h2 class="section-title">Tech stack</h2>
+      </div>
+      <div class="tech-tags reveal">
+        <span class="tech-tag">Flutter</span>
+        <span class="tech-tag">Riverpod</span>
+        <span class="tech-tag">Isar</span>
+        <span class="tech-tag">Firebase Authentication</span>
+        <span class="tech-tag">Cloud Firestore</span>
+        <span class="tech-tag">Firebase Storage</span>
+        <span class="tech-tag">Firebase Functions</span>
+        <span class="tech-tag">Google Mobile Ads</span>
+      </div>
+    </div>
+  </section>
+
+  <div class="glow-line"></div>
+
+  <section>
+    <div class="section-inner">
+      <div class="privacy-panel reveal">
+        <p class="section-label">Privacy</p>
+        <h2 class="section-title">扱う情報と AI 利用の前提</h2>
+        <p class="body-copy">
+          GiftLog はギフト記録、人物プロフィール、好み、日付、任意画像などを扱います。
+          AI 提案機能では、選択されたプロフィール情報と過去のギフト履歴のみを候補生成のために利用する想定です。
+          詳細はプライバシーポリシーに整理しています。
+        </p>
+        <a class="btn-primary" href="./privacy-policy.html">Read Privacy Policy</a>
+      </div>
+    </div>
+  </section>
+
+  <div class="glow-line"></div>
+
+  <section>
+    <div class="section-inner" style="text-align:center;">
+      <div class="reveal glass" style="padding:3rem 2rem;max-width:640px;margin:0 auto;">
+        <p class="section-label" style="text-align:center;">Feedback</p>
+        <h2 class="section-title" style="font-size:1.8rem;">GiftLog へのご意見をお待ちしています</h2>
+        <p class="body-copy" style="margin:1rem 0 2rem;">
+          バグ報告、機能要望、使い勝手に関する感想は Google フォームから受け付けています。
+        </p>
+        <a href="https://forms.gle/9mggctSB4oFzvsjeA" target="_blank" rel="noopener" class="btn-primary">
+          フィードバックフォームへ →
+        </a>
+      </div>
+    </div>
+  </section>
+
+  <footer>
+    <p>© 2026 Ryo-Lab. GiftLog</p>
+    <p><a href="./privacy-policy.html">Privacy Policy</a></p>
+  </footer>
+
+  <script src="../assets/js/subsite.js"></script>
+</body>
+</html>

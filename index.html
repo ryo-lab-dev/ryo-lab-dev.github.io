@@ -7,23 +7,19 @@
   <link rel="icon" href="assets/logo_light.png" type="image/png">
   <meta name="google-site-verification" content="kbYhm2iiGfFNOT9dd12nDTCx62bCiumEVF55YxdoHr8" />
   <link href="https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@300;400;500;700&family=Syne:wght@700;800&display=swap" rel="stylesheet">
-  <!-- SEO -->
-  <meta name="description" content="個人開発アプリ（ScoreVault・CloudKata・NexusDiary）を公開する個人開発者のポートフォリオ。Flutter・Firebase を中心に Clean Architecture と洗練された UI で実用的なアプリを開発しています。">
+  <meta name="description" content="個人開発アプリ（GiftLog・ScoreVault・CloudKata・NexusDiary）を公開する個人開発者のポートフォリオ。Flutter・Firebase を中心に Clean Architecture と洗練された UI で実用的なアプリを開発しています。">
   <link rel="canonical" href="https://ryo-lab.dev/">
-  <!-- OGP -->
-  <meta property="og:type"        content="website">
-  <meta property="og:url"         content="https://ryo-lab.dev/">
-  <meta property="og:title"       content="Ryo-Lab — Product Showcase">
-  <meta property="og:description" content="個人開発アプリ（ScoreVault・CloudKata・NexusDiary）を公開する個人開発者のポートフォリオ。Flutter・Firebase を中心に Clean Architecture と洗練された UI で実用的なアプリを開発しています。">
-  <meta property="og:image"       content="https://ryo-lab.dev/assets/ogp/ogp_main.png">
-  <meta property="og:site_name"   content="Ryo-Lab">
-  <meta property="og:locale"      content="ja_JP">
-  <!-- Twitter Card -->
-  <meta name="twitter:card"        content="summary_large_image">
-  <meta name="twitter:title"       content="Ryo-Lab — Product Showcase">
-  <meta name="twitter:description" content="個人開発アプリ（ScoreVault・CloudKata・NexusDiary）を公開する個人開発者のポートフォリオ。Flutter・Firebase を中心に Clean Architecture と洗練された UI で実用的なアプリを開発しています。">
-  <meta name="twitter:image"       content="https://ryo-lab.dev/assets/ogp/ogp_main.png">
-  <!-- 構造化データ -->
+  <meta property="og:type" content="website">
+  <meta property="og:url" content="https://ryo-lab.dev/">
+  <meta property="og:title" content="Ryo-Lab — Product Showcase">
+  <meta property="og:description" content="個人開発アプリ（GiftLog・ScoreVault・CloudKata・NexusDiary）を公開する個人開発者のポートフォリオ。Flutter・Firebase を中心に Clean Architecture と洗練された UI で実用的なアプリを開発しています。">
+  <meta property="og:image" content="https://ryo-lab.dev/assets/ogp/ogp_main.png">
+  <meta property="og:site_name" content="Ryo-Lab">
+  <meta property="og:locale" content="ja_JP">
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:title" content="Ryo-Lab — Product Showcase">
+  <meta name="twitter:description" content="個人開発アプリ（GiftLog・ScoreVault・CloudKata・NexusDiary）を公開する個人開発者のポートフォリオ。Flutter・Firebase を中心に Clean Architecture と洗練された UI で実用的なアプリを開発しています。">
+  <meta name="twitter:image" content="https://ryo-lab.dev/assets/ogp/ogp_main.png">
   <script type="application/ld+json">
   {
     "@context": "https://schema.org",
@@ -41,7 +37,6 @@
 </head>
 <body>
 
-  <!-- ======== NAV ======== -->
   <nav>
     <a href="#" class="nav-logo">[Ryo-Lab]</a>
     <ul class="nav-links">
@@ -50,7 +45,6 @@
     </ul>
   </nav>
 
-  <!-- ======== HERO ======== -->
   <div class="hero">
     <div class="hero-inner">
       <p class="hero-eyebrow">// SOLO DEVELOPER</p>
@@ -64,13 +58,12 @@
         <span class="hero-cursor"></span>
       </div>
       <div class="hero-stats">
-        <div class="stat-pill"><span class="pill-label">total</span>8 Projects</div>
-<div class="stat-pill"><span class="pill-label">stack</span>Flutter · Python</div>
+        <div class="stat-pill"><span class="pill-label">total</span>9 Projects</div>
+        <div class="stat-pill"><span class="pill-label">stack</span>Flutter · Python</div>
       </div>
     </div>
   </div>
 
-  <!-- ======== PRODUCTS ======== -->
   <section id="products">
     <div class="section-header fade-in">
       <p class="section-cmd">$ ls ./products/</p>
@@ -78,8 +71,6 @@
     </div>
 
     <div class="products-grid">
-
-      <!-- ── Released ── -->
       <div class="group-label fade-in">// Released</div>
 
       <div class="card released fade-in">
@@ -173,8 +164,30 @@
         </div>
       </div>
 
-      <!-- ── Closed Beta / In Development ── -->
       <div class="group-label fade-in">// Closed Beta &amp; In Development</div>
+
+      <div class="card fade-in">
+        <div class="card-number">// 09</div>
+        <div class="card-header">
+          <img src="assets/icons/giftlog_icon.svg" alt="GiftLog" class="card-icon" onerror="this.style.display='none';this.nextElementSibling.style.display='flex'">
+          <div class="card-icon-placeholder" style="display:none;">🎁</div>
+          <div class="card-title">GiftLog</div>
+        </div>
+        <div class="card-status">
+          <span class="status-dot dev"></span>Closed Beta / Store Release Coming Soon
+        </div>
+        <p class="card-desc">もらったもの・贈ったもの、相手の好み、記念日、メモを一つにまとめて記録できるギフトジャーナル。</p>
+        <div class="card-tags">
+          <span class="tag">Flutter</span>
+          <span class="tag">Riverpod</span>
+          <span class="tag">Isar</span>
+          <span class="tag">Firebase</span>
+          <span class="tag">AI Suggestion</span>
+        </div>
+        <div class="card-links">
+          <a href="./giftlog/" class="btn-link">[ Detail ]</a>
+        </div>
+      </div>
 
       <div class="card fade-in">
         <div class="card-number">// 08</div>
@@ -213,7 +226,6 @@
         </div>
       </div>
 
-      <!-- ── Personal Use ── -->
       <div class="group-label fade-in">// Personal Use</div>
 
       <div class="card personal fade-in">
@@ -249,11 +261,9 @@
           <span class="tag">pHash</span>
         </div>
       </div>
-
     </div>
   </section>
 
-  <!-- ======== STACK ======== -->
   <section id="stack" style="max-width:100%; padding:6rem 2rem;">
     <div style="max-width:1200px; margin:0 auto;">
       <div class="section-header fade-in">
@@ -277,7 +287,6 @@
             # total 9 items — primary technologies
           </div>
           <div class="stack-grid" id="stackGrid">
-            <!-- JS で挿入 -->
           </div>
           <div class="terminal-line" style="margin-top:1rem;">
             <span class="t-prompt">ryo@lab:~$</span>
@@ -288,7 +297,6 @@
     </div>
   </section>
 
-  <!-- ======== FOOTER ======== -->
   <footer>
     <p class="footer-text">
       <span class="accent">©</span> 2026 <span class="accent">Ryo-Lab.</span>
