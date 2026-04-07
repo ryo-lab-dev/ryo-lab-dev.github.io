@@ -35,6 +35,10 @@ stacks.forEach(s => {
   grid.appendChild(el);
 });
 
+document.querySelectorAll('.products-grid > .fade-in').forEach((item, index) => {
+  item.style.transitionDelay = `${index * 0.08}s`;
+});
+
 // --- スクロール フェードイン ---
 const observer = new IntersectionObserver((entries) => {
   entries.forEach(entry => {
