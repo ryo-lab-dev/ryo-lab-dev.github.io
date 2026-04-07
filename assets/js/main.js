@@ -1,6 +1,6 @@
 // --- タイプライター ---
 const typewriterEl = document.getElementById('typewriter');
-const text = '個人開発者として、アイデアをプロダクトに変え続けています。実用性と美しさを両立させたアプリを、FlutterとPythonで作り続けています。';
+const text = 'プロダクト運営チームとして、アイデアを継続的に形にしています。実用性と美しさを両立したアプリを、FlutterとPythonを軸に磨き続けています。';
 let i = 0;
 
 function typeNext() {
