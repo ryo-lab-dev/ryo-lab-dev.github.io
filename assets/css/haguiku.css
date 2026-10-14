@@ -1,13 +1,61 @@
-/* はぐ育 — Color Variables（アイコンの紫〜桃色に合わせたトーン） */
+/* はぐ育 — アプリのテーマ（オレンジ × クリーム × ブラウン）に合わせたライトテーマ
+   参照: Haguiku/lib/core/theme/app_theme.dart
+   アプリ: primary #FFA726 / primaryLight #FFCC80 / background #FDFCFB / accent #EF5350 / text #4E342E, #795548 */
 :root {
-  --bg:            #0c0a14;
-  --primary:       #a78bfa;
-  --primary-light: #fdba9a;
-  --glow:          rgba(167, 139, 250, 0.22);
-  --glass-bg:      rgba(255, 255, 255, 0.04);
-  --glass-border:  rgba(255, 255, 255, 0.08);
+  --bg:            #fdfcfb;
+  --primary:       #f57c00;   /* アプリの primary を文字・線で読めるよう少し濃く */
+  --primary-light: #ffa726;
+  --primary-soft:  #ffcc80;
+  --accent:        #ef5350;
+  --text-main:     #4e342e;
+  --text-sub:      #795548;
+  --text-faint:    #a1887f;
+  --link:          #e65100;
+  --glow:          rgba(255, 167, 38, 0.28);
+  --glass-bg:      rgba(255, 255, 255, 0.85);
+  --glass-border:  rgba(121, 85, 72, 0.14);
 }
 
+body { color: var(--text-main); }
+
+/* ── subsite.css のダーク前提の色を上書き ── */
+nav { background: color-mix(in srgb, var(--bg) 88%, transparent); }
+.nav-links a { color: var(--text-sub); }
+.nav-links a:hover, .nav-links a.active { color: var(--link); background: rgba(255, 167, 38, 0.14); }
+.nav-hamburger span { background: var(--text-sub); }
+nav.open .nav-links { background: var(--bg); }
+
+.glass { box-shadow: 0 4px 24px rgba(121, 85, 72, 0.08); }
+.hero::before {
+  background: radial-gradient(circle, rgba(255, 204, 128, 0.45) 0%, transparent 70%);
+}
+.hero-sub { color: var(--text-sub); }
+.section-title { color: var(--text-main); }
+.section-label { color: var(--link); }
+
+.status-badge { color: var(--link); background: rgba(255, 167, 38, 0.14); border-color: rgba(245, 124, 0, 0.35); }
+.pulse-dot { background: var(--primary-light); }
+
+.btn-primary { color: #fff; background: linear-gradient(135deg, #fb8c00, #ffa726); box-shadow: 0 4px 16px rgba(251, 140, 0, 0.3); }
+.btn-secondary { background: #fff; color: var(--link); border-color: rgba(245, 124, 0, 0.4); }
+.btn-secondary:hover { background: rgba(255, 167, 38, 0.14); }
+
+.feature-card { background: #fff; border-color: var(--glass-border); box-shadow: 0 4px 20px rgba(121, 85, 72, 0.07); }
+.feature-card:hover { border-color: var(--primary-soft); }
+
+footer { color: var(--text-sub); }
+footer p + p { color: var(--text-faint); }
+
+/* ── ドキュメントページ ── */
+.doc-updated { color: var(--text-faint); }
+.doc-section h2 { color: var(--text-main); background: rgba(255, 167, 38, 0.14); border-left-color: var(--primary-light); }
+.doc-section h3 { font-size: 1rem; color: var(--text-main); margin: 1.25rem 0 0.4rem; }
+.doc-section p, .doc-section ul li { color: var(--text-sub); }
+.doc-section strong { color: var(--text-main); }
+.doc-section ul li::before { color: var(--primary); }
+.doc-section a { color: var(--link); text-decoration: underline; text-underline-offset: 2px; }
+
+/* ── ホーム固有 ── */
 .hero-icon {
   width: 96px;
   height: 96px;
@@ -15,28 +63,10 @@
   margin-bottom: 1.25rem;
   box-shadow: 0 8px 32px var(--glow);
 }
+.hero-origin { font-size: 0.9rem; color: var(--text-faint); margin-bottom: 1.5rem; max-width: 520px; }
+.feature-card h3 { font-size: 1.15rem; font-weight: 700; margin-bottom: 0.75rem; color: var(--text-main); }
+.feature-card p { color: var(--text-sub); line-height: 1.7; font-size: 0.92rem; }
 
-.hero-origin {
-  font-size: 0.85rem;
-  color: #6b6580;
-  margin-bottom: 1.5rem;
-  max-width: 520px;
-}
-
-.feature-card h3 {
-  font-size: 1.15rem;
-  font-weight: 700;
-  margin-bottom: 0.75rem;
-  color: #f1f5f9;
-}
-
-.feature-card p {
-  color: #a39bb8;
-  line-height: 1.7;
-  font-size: 0.92rem;
-}
-
-/* Mini FAQ */
 .mini-faq-item {
   border-bottom: 1px solid var(--glass-border);
   padding: 1.1rem 0;
@@ -45,33 +75,32 @@
   gap: 1rem;
 }
 .mini-faq-item:last-child { border-bottom: none; }
-.mini-faq-q { color: #f1f5f9; font-weight: 600; font-size: 0.93rem; }
-.mini-faq-a { color: #a39bb8; font-size: 0.93rem; line-height: 1.6; }
+.mini-faq-q { color: var(--text-main); font-weight: 600; font-size: 0.93rem; }
+.mini-faq-a { color: var(--text-sub); font-size: 0.93rem; line-height: 1.6; }
+.mini-faq-a a { color: var(--link); }
+@media (max-width: 768px) { .mini-faq-item { grid-template-columns: 1fr; } }
 
-@media (max-width: 768px) {
-  .mini-faq-item { grid-template-columns: 1fr; }
-}
+.contact-text { color: var(--text-sub); line-height: 1.7; margin: 1rem 0 2rem; }
 
 /* Notice */
 .notice {
-  background: color-mix(in srgb, var(--primary) 6%, transparent);
-  border: 1px solid color-mix(in srgb, var(--primary) 15%, transparent);
+  background: rgba(239, 83, 80, 0.07);
+  border: 1px solid rgba(239, 83, 80, 0.25);
   border-radius: 10px;
   padding: 1rem 1.25rem;
   margin: 1rem 0;
-  color: var(--primary-light);
+  color: #b71c1c;
   font-size: 0.88rem;
   line-height: 1.6;
 }
 
-/* Article chip */
 .article-chip {
   display: inline-block;
   font-family: 'JetBrains Mono', monospace;
   font-size: 0.7rem;
-  color: var(--primary);
-  background: color-mix(in srgb, var(--primary) 8%, transparent);
-  border: 1px solid var(--glow);
+  color: var(--link);
+  background: rgba(255, 167, 38, 0.16);
+  border: 1px solid var(--primary-soft);
   border-radius: 4px;
   padding: 0.15rem 0.5rem;
   margin-bottom: 0.4rem;
@@ -81,22 +110,7 @@
 
 /* Data table (privacy policy) */
 .table-wrap { overflow-x: auto; margin: 0.75rem 0 1rem; }
-.data-table {
-  width: 100%;
-  border-collapse: collapse;
-  font-size: 0.88rem;
-  line-height: 1.6;
-}
-.data-table th, .data-table td {
-  border: 1px solid var(--glass-border);
-  padding: 0.6rem 0.8rem;
-  text-align: left;
-  vertical-align: top;
-}
-.data-table th { background: var(--glass-bg); color: #f1f5f9; white-space: nowrap; }
-.data-table td { color: #cbd5e1; }
-.doc-section h3 {
-  font-size: 1rem;
-  color: #f1f5f9;
-  margin: 1.25rem 0 0.4rem;
-}
+.data-table { width: 100%; border-collapse: collapse; font-size: 0.88rem; line-height: 1.6; background: #fff; }
+.data-table th, .data-table td { border: 1px solid var(--glass-border); padding: 0.6rem 0.8rem; text-align: left; vertical-align: top; }
+.data-table th { background: rgba(255, 204, 128, 0.35); color: var(--text-main); white-space: nowrap; }
+.data-table td { color: var(--text-sub); }
