@@ -1,0 +1,194 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>はぐ育 — 夫婦で使う育児記録と出産準備アプリ</title>
+  <script src="https://cdn.tailwindcss.com"></script>
+  <link rel="icon" href="../assets/haguiku/icon.png" type="image/png" />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Syne:wght@400;600;700;800&family=Noto+Sans+JP:wght@300;400;500;700&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="../assets/css/haguiku.css" />
+  <link rel="stylesheet" href="../assets/css/subsite.css" />
+  <!-- SEO -->
+  <meta name="description" content="夫婦でリアルタイム共有。授乳・睡眠・おむつの記録、出産準備の ToDo、名前の候補づくりまで。育児支援アプリ「はぐ育」。">
+  <link rel="canonical" href="https://ryo-lab.dev/haguiku/">
+  <meta property="og:type" content="website">
+  <meta property="og:url" content="https://ryo-lab.dev/haguiku/">
+  <meta property="og:title" content="はぐ育 — 夫婦で使う育児記録と出産準備アプリ">
+  <meta property="og:description" content="夫婦でリアルタイム共有。授乳・睡眠・おむつの記録、出産準備の ToDo、名前の候補づくりまで。育児支援アプリ「はぐ育」。">
+  <meta property="og:image" content="https://ryo-lab.dev/assets/haguiku/feature-graphic.png">
+  <meta property="og:site_name" content="Ryo-Lab">
+  <meta property="og:locale" content="ja_JP">
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:title" content="はぐ育 — 夫婦で使う育児記録と出産準備アプリ">
+  <meta name="twitter:description" content="夫婦でリアルタイム共有。授乳・睡眠・おむつの記録、出産準備の ToDo、名前の候補づくりまで。育児支援アプリ「はぐ育」。">
+  <meta name="twitter:image" content="https://ryo-lab.dev/assets/haguiku/feature-graphic.png">
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "SoftwareApplication",
+    "name": "はぐ育",
+    "operatingSystem": "Android",
+    "applicationCategory": "LifestyleApplication",
+    "description": "夫婦でリアルタイム共有。授乳・睡眠・おむつの記録、出産準備の ToDo、名前の候補づくりまで。育児支援アプリ「はぐ育」。",
+    "url": "https://ryo-lab.dev/haguiku/",
+    "author": {
+      "@type": "Organization",
+      "name": "Ryo-Lab Team",
+      "url": "https://ryo-lab.dev/"
+    }
+  }
+  </script>
+</head>
+<body>
+<nav>
+  <div class="nav-inner">
+    <a href="./" class="nav-logo">
+      <div class="nav-logo-dot"></div>
+      <span class="nav-logo-text">はぐ育</span>
+    </a>
+    <div class="nav-links">
+      <a href="./" class="active">Home</a>
+      <a href="./privacy-policy.html">Privacy Policy</a>
+      <a href="./disclaimer.html">免責事項</a>
+      <a href="./terms.html">利用規約</a>
+    </div>
+    <button class="nav-hamburger" id="navToggle" aria-label="メニューを開く">
+      <span></span><span></span><span></span>
+    </button>
+  </div>
+</nav>
+
+  <!-- Hero -->
+  <section class="hero">
+    <img src="../assets/haguiku/icon.png" alt="はぐ育 アプリアイコン" class="hero-icon" width="96" height="96" />
+    <div style="margin-bottom:1.5rem;">
+      <span class="status-badge">
+        <span class="pulse-dot"></span>
+        Google Play 近日公開
+      </span>
+    </div>
+    <h1 class="hero-title gradient-text">はぐ育</h1>
+    <p class="hero-sub">パパとママがいっしょに使う、出産準備から育児までのサポートアプリ</p>
+    <p class="hero-origin">夫婦でリアルタイム共有。授乳・睡眠・おむつの記録、出産準備の ToDo、名前の候補づくりまで。</p>
+    <div style="display:flex;gap:1rem;flex-wrap:wrap;justify-content:center;">
+      <a href="https://docs.google.com/forms/d/e/1FAIpQLSdh_gI7e0ZawnEM62MNRGtC0ADOOy4_v6luidV2QWpLXSkJVw/viewform?usp=dialog" target="_blank" rel="noopener" class="btn-secondary">
+        お問い合わせ・フィードバック
+      </a>
+    </div>
+  </section>
+
+  <div class="glow-line" style="max-width:800px;margin:0 auto;"></div>
+
+  <!-- Features -->
+  <section>
+    <div class="section-inner">
+      <div class="reveal" style="margin-bottom:3rem;">
+        <p class="section-label">Features</p>
+        <h2 class="section-title">ふたりで、育てる。</h2>
+      </div>
+      <div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(280px,1fr));gap:1.5rem;">
+        <div class="feature-card reveal">
+          <div class="feature-icon">📝</div>
+          <h3>育児記録</h3>
+          <p>授乳（母乳・ミルク・搾母乳）、睡眠、おしっこ・うんち、体温、体重・身長、お風呂、お薬、メモをワンタップで記録。夜中でも使いやすいナイトモード、1 日のまとめと直近 7 日のグラフ、CSV の書き出しに対応。</p>
+        </div>
+        <div class="feature-card reveal" style="transition-delay:0.1s;">
+          <div class="feature-icon">👨‍👩‍👧</div>
+          <h3>夫婦でリアルタイム共有</h3>
+          <p>招待コードでパートナーと家族になれば、記録や ToDo が 2 人の間で共有されます。どちらが記録したかは色分けで分かります。</p>
+        </div>
+        <div class="feature-card reveal" style="transition-delay:0.2s;">
+          <div class="feature-icon">✅</div>
+          <h3>スケジュール・ToDo</h3>
+          <p>出産予定日や出産日にあわせて、手続き・健診・準備など、やることをご案内。期限や担当（自分 / パートナー）を決めた ToDo も追加できます。</p>
+        </div>
+        <div class="feature-card reveal">
+          <div class="feature-icon">🛍️</div>
+          <h3>グッズ探し</h3>
+          <p>出産・育児の準備品をチェックリストで管理。必須のものから、あると便利なものまで、時期に合わせてご案内。購入済み・お気に入りの管理もできます。</p>
+        </div>
+        <div class="feature-card reveal" style="transition-delay:0.1s;">
+          <div class="feature-icon">✨</div>
+          <h3>名前候補</h3>
+          <p>響きや込めたい願いから、AI が名前の候補を提案。お気に入りの保存、避けたい名前の除外リスト、同姓同名のリスクの確認もできます。</p>
+        </div>
+        <div class="feature-card reveal" style="transition-delay:0.2s;">
+          <div class="feature-icon">🔒</div>
+          <h3>プライバシー配慮</h3>
+          <p>必要な情報だけを取得し、家族として招待した人とだけデータを共有。アカウントの削除はアプリの中からいつでもできます。</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <div class="glow-line" style="max-width:800px;margin:0 auto;"></div>
+
+  <!-- FAQ -->
+  <section>
+    <div class="section-inner">
+      <div class="reveal" style="margin-bottom:2.5rem;">
+        <p class="section-label">FAQ</p>
+        <h2 class="section-title">よくある質問</h2>
+      </div>
+      <div class="reveal glass" style="padding:1.5rem 2rem;">
+        <div class="mini-faq-item">
+          <span class="mini-faq-q">費用</span>
+          <span class="mini-faq-a">無料でご利用いただけます。アプリ内に広告が表示されます。</span>
+        </div>
+        <div class="mini-faq-item">
+          <span class="mini-faq-q">対応端末</span>
+          <span class="mini-faq-a">Android に対応しています。</span>
+        </div>
+        <div class="mini-faq-item">
+          <span class="mini-faq-q">ログイン</span>
+          <span class="mini-faq-a">Google アカウントでログインします。</span>
+        </div>
+        <div class="mini-faq-item">
+          <span class="mini-faq-q">家族との共有</span>
+          <span class="mini-faq-a">招待コード（有効期限 7 日）でパートナーを家族に招待できます。共有されたメンバーは記録を閲覧・編集できます。</span>
+        </div>
+        <div class="mini-faq-item">
+          <span class="mini-faq-q">AI について</span>
+          <span class="mini-faq-a">名前の提案には AI（Google の Gemini）を使用しています。内容が不正確な場合があるため、参考情報としてご利用ください。1 日の利用回数に上限があります。</span>
+        </div>
+        <div class="mini-faq-item">
+          <span class="mini-faq-q">医療の助言ですか？</span>
+          <span class="mini-faq-a">いいえ。表示する情報は一般的な目安であり、専門家の診断・助言の代わりにはなりません。詳しくは<a href="./disclaimer.html" style="color:var(--primary-light);">免責事項</a>をご確認ください。</span>
+        </div>
+        <div class="mini-faq-item">
+          <span class="mini-faq-q">データの削除</span>
+          <span class="mini-faq-a">アプリの「アカウント・家族」画面から、家族からの脱退とアカウントの削除ができます。</span>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <div class="glow-line" style="max-width:800px;margin:0 auto;"></div>
+
+  <!-- Contact -->
+  <section>
+    <div class="section-inner" style="text-align:center;">
+      <div class="reveal glass" style="padding:3rem 2rem;max-width:640px;margin:0 auto;">
+        <p class="section-label" style="text-align:center;">Contact</p>
+        <h2 class="section-title" style="font-size:1.8rem;">お問い合わせ</h2>
+        <p style="color:#a39bb8;line-height:1.7;margin:1rem 0 2rem;">
+          不具合の報告、機能のご要望、データ削除のご依頼は Google フォームから受け付けています。
+        </p>
+        <a href="https://docs.google.com/forms/d/e/1FAIpQLSdh_gI7e0ZawnEM62MNRGtC0ADOOy4_v6luidV2QWpLXSkJVw/viewform?usp=dialog" target="_blank" rel="noopener" class="btn-primary">
+          お問い合わせフォームへ →
+        </a>
+      </div>
+    </div>
+  </section>
+
+  <footer>
+    <p>© 2026 Ryo-Lab. はぐ育 開発チーム</p>
+    <p>本アプリの情報は一般的な目安であり、医療・法律・各種制度に関する専門家の助言に代わるものではありません。</p>
+  </footer>
+
+<script src="../assets/js/subsite.js"></script>
+</body>
+</html>

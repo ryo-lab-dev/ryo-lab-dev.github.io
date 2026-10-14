@@ -1,0 +1,102 @@
+/* はぐ育 — Color Variables（アイコンの紫〜桃色に合わせたトーン） */
+:root {
+  --bg:            #0c0a14;
+  --primary:       #a78bfa;
+  --primary-light: #fdba9a;
+  --glow:          rgba(167, 139, 250, 0.22);
+  --glass-bg:      rgba(255, 255, 255, 0.04);
+  --glass-border:  rgba(255, 255, 255, 0.08);
+}
+
+.hero-icon {
+  width: 96px;
+  height: 96px;
+  border-radius: 22px;
+  margin-bottom: 1.25rem;
+  box-shadow: 0 8px 32px var(--glow);
+}
+
+.hero-origin {
+  font-size: 0.85rem;
+  color: #6b6580;
+  margin-bottom: 1.5rem;
+  max-width: 520px;
+}
+
+.feature-card h3 {
+  font-size: 1.15rem;
+  font-weight: 700;
+  margin-bottom: 0.75rem;
+  color: #f1f5f9;
+}
+
+.feature-card p {
+  color: #a39bb8;
+  line-height: 1.7;
+  font-size: 0.92rem;
+}
+
+/* Mini FAQ */
+.mini-faq-item {
+  border-bottom: 1px solid var(--glass-border);
+  padding: 1.1rem 0;
+  display: grid;
+  grid-template-columns: 1fr 2fr;
+  gap: 1rem;
+}
+.mini-faq-item:last-child { border-bottom: none; }
+.mini-faq-q { color: #f1f5f9; font-weight: 600; font-size: 0.93rem; }
+.mini-faq-a { color: #a39bb8; font-size: 0.93rem; line-height: 1.6; }
+
+@media (max-width: 768px) {
+  .mini-faq-item { grid-template-columns: 1fr; }
+}
+
+/* Notice */
+.notice {
+  background: color-mix(in srgb, var(--primary) 6%, transparent);
+  border: 1px solid color-mix(in srgb, var(--primary) 15%, transparent);
+  border-radius: 10px;
+  padding: 1rem 1.25rem;
+  margin: 1rem 0;
+  color: var(--primary-light);
+  font-size: 0.88rem;
+  line-height: 1.6;
+}
+
+/* Article chip */
+.article-chip {
+  display: inline-block;
+  font-family: 'JetBrains Mono', monospace;
+  font-size: 0.7rem;
+  color: var(--primary);
+  background: color-mix(in srgb, var(--primary) 8%, transparent);
+  border: 1px solid var(--glow);
+  border-radius: 4px;
+  padding: 0.15rem 0.5rem;
+  margin-bottom: 0.4rem;
+  vertical-align: middle;
+  margin-right: 0.4rem;
+}
+
+/* Data table (privacy policy) */
+.table-wrap { overflow-x: auto; margin: 0.75rem 0 1rem; }
+.data-table {
+  width: 100%;
+  border-collapse: collapse;
+  font-size: 0.88rem;
+  line-height: 1.6;
+}
+.data-table th, .data-table td {
+  border: 1px solid var(--glass-border);
+  padding: 0.6rem 0.8rem;
+  text-align: left;
+  vertical-align: top;
+}
+.data-table th { background: var(--glass-bg); color: #f1f5f9; white-space: nowrap; }
+.data-table td { color: #cbd5e1; }
+.doc-section h3 {
+  font-size: 1rem;
+  color: #f1f5f9;
+  margin: 1.25rem 0 0.4rem;
+}

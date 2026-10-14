@@ -1,0 +1,188 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>プライバシーポリシー — はぐ育</title>
+  <script src="https://cdn.tailwindcss.com"></script>
+  <link rel="icon" href="../assets/haguiku/icon.png" type="image/png" />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Syne:wght@400;600;700;800&family=Noto+Sans+JP:wght@300;400;500;700&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="../assets/css/haguiku.css" />
+  <link rel="stylesheet" href="../assets/css/subsite.css" />
+  <!-- SEO -->
+  <meta name="description" content="育児支援アプリ「はぐ育」のプライバシーポリシー。取得する情報・外部サービス（Firebase / AdMob / Gemini）・保存と削除について記載しています。">
+  <link rel="canonical" href="https://ryo-lab.dev/haguiku/privacy-policy.html">
+  <meta property="og:type" content="website">
+  <meta property="og:url" content="https://ryo-lab.dev/haguiku/privacy-policy.html">
+  <meta property="og:title" content="プライバシーポリシー — はぐ育">
+  <meta property="og:description" content="育児支援アプリ「はぐ育」のプライバシーポリシー。取得する情報・外部サービス（Firebase / AdMob / Gemini）・保存と削除について記載しています。">
+  <meta property="og:image" content="https://ryo-lab.dev/assets/haguiku/feature-graphic.png">
+  <meta property="og:site_name" content="Ryo-Lab">
+  <meta property="og:locale" content="ja_JP">
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:title" content="プライバシーポリシー — はぐ育">
+  <meta name="twitter:description" content="育児支援アプリ「はぐ育」のプライバシーポリシー。取得する情報・外部サービス（Firebase / AdMob / Gemini）・保存と削除について記載しています。">
+  <meta name="twitter:image" content="https://ryo-lab.dev/assets/haguiku/feature-graphic.png">
+</head>
+<body>
+<nav>
+  <div class="nav-inner">
+    <a href="./" class="nav-logo">
+      <div class="nav-logo-dot"></div>
+      <span class="nav-logo-text">はぐ育</span>
+    </a>
+    <div class="nav-links">
+      <a href="./">Home</a>
+      <a href="./privacy-policy.html" class="active">Privacy Policy</a>
+      <a href="./disclaimer.html">免責事項</a>
+      <a href="./terms.html">利用規約</a>
+    </div>
+    <button class="nav-hamburger" id="navToggle" aria-label="メニューを開く">
+      <span></span><span></span><span></span>
+    </button>
+  </div>
+</nav>
+
+<div class="doc-container">
+  <div class="doc-header reveal">
+    <p class="doc-tag">Legal</p>
+    <h1 class="doc-title">プライバシーポリシー</h1>
+    <p class="doc-updated">最終更新日: 2026年10月14日</p>
+  </div>
+
+  <p style="color:#6b6580;font-size:0.9rem;margin-bottom:2.5rem;" class="reveal">
+    Ryo-Lab チーム（以下「運営者」）は、育児支援アプリ「はぐ育」（以下「本アプリ」）における、利用者の情報の取り扱いについて、以下のとおり定めます。
+  </p>
+
+  <div class="doc-section reveal">
+    <h2><span class="article-chip">第1条</span> 取得する情報</h2>
+    <p>本アプリは、機能の提供に必要な範囲で、次の情報を取得します。</p>
+    <h3>利用者が入力する情報</h3>
+    <div class="table-wrap"><table class="data-table">
+        <thead><tr><th>情報</th><th>内容・目的</th></tr></thead>
+        <tbody>
+        <tr><td>ニックネーム</td><td>家族内で「誰が記録したか」を表示するため</td></tr>
+        <tr><td>状況・日付</td><td>妊娠中・育児中などの状況、出産予定日、最終生理開始日、出産日（お子さんの誕生日）。妊娠週数・月齢に合った情報を表示するため</td></tr>
+        <tr><td>育児の記録</td><td>授乳・ミルク・睡眠・おむつ・体温・体重・身長・お風呂・お薬・メモなど。<strong>乳幼児の健康に関する情報を含みます</strong>。家族で共有して記録・確認するため</td></tr>
+        <tr><td>ToDo・グッズ</td><td>登録したタスク、担当者、期限、メモ、購入状況など</td></tr>
+        <tr><td>名前候補</td><td>保存した名前、読み、意味、除外リストなど</td></tr>
+        <tr><td>招待コード</td><td>パートナーを家族に招待するため（有効期限 7 日）</td></tr>
+        </tbody>
+      </table></div>
+    <h3>Google アカウントから取得する情報</h3>
+    <p>Google でログインする際に、<strong>氏名（表示名）とメールアドレス</strong>を取得します（ログインと本人確認のため）。パスワードは取得しません。</p>
+    <h3>自動的に取得される情報</h3>
+    <ul>
+      <li><strong>利用状況</strong>: アプリの主要な操作（ログイン、記録の追加、名前提案の実行など）の種類と件数。内容（名前・日付・メモの本文など）は含みません（Firebase Analytics）。</li>
+      <li><strong>クラッシュ情報</strong>: アプリが異常終了したときの端末・OS の情報とエラーの内容（Firebase Crashlytics）。</li>
+      <li><strong>広告に関する情報</strong>: 広告の配信のため、端末の広告 ID などが広告事業者に送信されます（Google AdMob）。</li>
+    </ul>
+  </div>
+
+  <div class="divider"></div>
+
+  <div class="doc-section reveal">
+    <h2><span class="article-chip">第2条</span> 利用目的</h2>
+    <ul>
+      <li>本アプリの機能の提供・維持・改善</li>
+      <li>ログイン、家族内でのデータの共有</li>
+      <li>不具合の調査、安全性の確保</li>
+      <li>利用状況の把握と、機能の改善</li>
+      <li>広告の表示（本アプリの運営費用に充てるため）</li>
+    </ul>
+  </div>
+
+  <div class="divider"></div>
+
+  <div class="doc-section reveal">
+    <h2><span class="article-chip">第3条</span> 外部サービスへの送信（委託・第三者提供）</h2>
+    <p>本アプリは、次の外部サービスを利用しており、必要な情報がこれらの事業者に送信・保存されます。</p>
+    <div class="table-wrap"><table class="data-table">
+        <thead><tr><th>サービス</th><th>提供者</th><th>送信・保存される情報</th><th>目的</th></tr></thead>
+        <tbody>
+        <tr><td>Firebase Authentication / Cloud Firestore</td><td>Google LLC</td><td>アカウント情報、入力した情報すべて</td><td>ログイン、データの保存・共有</td></tr>
+        <tr><td>Firebase Analytics / Crashlytics</td><td>Google LLC</td><td>利用状況、クラッシュ情報</td><td>改善、不具合の調査</td></tr>
+        <tr><td>Firebase AI Logic（Gemini）</td><td>Google LLC</td><td>名前提案・同姓同名検索の際に入力した内容（苗字・雰囲気・願い・条件、すでにある候補の名前など）</td><td>AI による名前の提案</td></tr>
+        <tr><td>Google AdMob</td><td>Google LLC</td><td>広告 ID、端末情報 など</td><td>広告の配信</td></tr>
+        </tbody>
+      </table></div>
+    <ul>
+      <li><strong>AI（Gemini）には、名前提案・同姓同名検索を実行したときの入力内容だけを送ります。</strong>育児の記録や、ニックネーム・メールアドレスなどは送りません。苗字は、実行のたびに入力していただき、本アプリには保存しません。</li>
+      <li>AI 機能に送信された入力内容は、Google の提供条件に基づき、サービスの改善などに利用される場合があります。AI 機能には、他人に知られたくない情報を入力しないでください。</li>
+      <li>法令に基づく場合を除き、上記以外の第三者に、利用者の情報を提供しません。</li>
+      <li>入力したデータは、主に Google の日本（東京）のサーバーに保存されます。ログイン情報や AI の処理などは、日本国外のサーバーで処理される場合があります。</li>
+    </ul>
+  </div>
+
+  <div class="divider"></div>
+
+  <div class="doc-section reveal">
+    <h2><span class="article-chip">第4条</span> 家族内での共有</h2>
+    <p>家族（招待コードで参加したメンバー）の間では、育児の記録・ToDo・グッズ・名前候補・出産予定日などの情報が<strong>共有され、すべてのメンバーが閲覧・編集できます</strong>。招待コードは、信頼できる相手にだけ共有してください。</p>
+  </div>
+
+  <div class="divider"></div>
+
+  <div class="doc-section reveal">
+    <h2><span class="article-chip">第5条</span> 保存期間と削除</h2>
+    <ul>
+      <li>入力した情報は、利用者が削除するか、アカウントを削除するまで保存されます。</li>
+      <li>アプリの「アカウント・家族」画面から、<strong>家族からの脱退</strong>と<strong>アカウントの削除</strong>ができます。</li>
+      <li>最後の 1 人が脱退・削除した場合は、その家族のデータ（記録・ToDo・グッズ・名前など）をすべて削除します。</li>
+      <li>ほかのメンバーが残っている場合、家族のデータは残りのメンバーに引き継がれます。</li>
+      <li>削除の依頼は、下記のお問い合わせ先でも受け付けます。</li>
+    </ul>
+  </div>
+
+  <div class="divider"></div>
+
+  <div class="doc-section reveal">
+    <h2><span class="article-chip">第6条</span> 安全管理</h2>
+    <p>通信は暗号化されます。データへのアクセスは、ログインしたユーザーかつ該当する家族のメンバーにのみ許可されるよう制限しています。ただし、インターネット上の通信・保存について、完全な安全性を保証するものではありません。</p>
+  </div>
+
+  <div class="divider"></div>
+
+  <div class="doc-section reveal">
+    <h2><span class="article-chip">第7条</span> 子どもの情報について</h2>
+    <p>本アプリは<strong>保護者が利用する</strong>ものです。お子さん自身が利用することは想定していません。お子さんの情報（誕生日・健康に関する記録など）は、保護者が入力したものを、上記の目的の範囲で取り扱います。</p>
+  </div>
+
+  <div class="divider"></div>
+
+  <div class="doc-section reveal">
+    <h2><span class="article-chip">第8条</span> 広告について</h2>
+    <p>本アプリには広告が表示されます。広告の配信に使われる情報や、広告のパーソナライズの設定は、端末の設定（Google 設定 → 広告）から変更できます。</p>
+  </div>
+
+  <div class="divider"></div>
+
+  <div class="doc-section reveal">
+    <h2><span class="article-chip">第9条</span> 本ポリシーの変更</h2>
+    <p>内容を変更する場合は、本アプリまたは本ページでお知らせします。重要な変更があるときは、わかりやすい方法でお知らせします。</p>
+  </div>
+
+  <div class="divider"></div>
+
+  <div class="doc-section reveal">
+    <h2><span class="article-chip">第10条</span> お問い合わせ</h2>
+    <p>本ポリシーに関するご質問・データ削除のご依頼は、以下からお問い合わせください。</p>
+    <ul>
+      <li>運営: Ryo-Lab チーム</li>
+      <li>お問い合わせフォーム:
+        <a href="https://docs.google.com/forms/d/e/1FAIpQLSdh_gI7e0ZawnEM62MNRGtC0ADOOy4_v6luidV2QWpLXSkJVw/viewform?usp=dialog" target="_blank" rel="noopener">こちらから送信</a>
+      </li>
+    </ul>
+  </div>
+</div>
+
+<footer>
+  <p>© 2026 Ryo-Lab. はぐ育 開発チーム</p>
+  <p>本アプリの情報は一般的な目安であり、医療・法律・各種制度に関する専門家の助言に代わるものではありません。</p>
+</footer>
+
+<script src="../assets/js/subsite.js"></script>
+</body>
+</html>
