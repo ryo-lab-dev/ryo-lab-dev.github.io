@@ -114,3 +114,11 @@ footer p + p { color: var(--text-faint); }
 .data-table th, .data-table td { border: 1px solid var(--glass-border); padding: 0.6rem 0.8rem; text-align: left; vertical-align: top; }
 .data-table th { background: rgba(255, 204, 128, 0.35); color: var(--text-main); white-space: nowrap; }
 .data-table td { color: var(--text-sub); }
+
+/* Screenshots / Story */
+.screenshot-strip img { height: 520px; max-height: 520px; background: #fff; }
+.story-text { color: var(--text-sub); line-height: 1.9; font-size: 0.95rem; margin-bottom: 1rem; }
+.story-list { list-style: none; padding: 0; margin: 0; }
+.story-list li { color: var(--text-sub); font-size: 0.95rem; padding: 0.35rem 0 0.35rem 1.25rem; position: relative; }
+.story-list li::before { content: '·'; position: absolute; left: 0.3rem; color: var(--primary); font-size: 1.2rem; line-height: 1.4; }
+@media (max-width: 768px) { .screenshot-strip img { height: 420px; max-height: 420px; } }
