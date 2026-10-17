@@ -9,13 +9,35 @@
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
   <link href="https://fonts.googleapis.com/css2?family=Syne:wght@400;600;700;800&family=Noto+Sans+JP:wght@300;400;500;700&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet" />
   <!-- SEO -->
-  <meta name="description" content="FitMap — 人体シルエットで部位を選択して、首周り・袖丈・靴サイズ・指輪の号数など全身のサイズを記録するパーソナルサイズ管理アプリ。完全オフライン・Android / iOS対応。">
+  <meta name="description" content="FitMap — 人体シルエットで全身のサイズを記録できる無料のパーソナルサイズ管理アプリ。首周り・袖丈・靴サイズ・指輪の号数まで、カスタム項目や家族分のプロフィールにも対応。完全オフライン。Android版 Google Play 公開中（iOS版は準備中）。">
+  <link rel="canonical" href="https://ryo-lab.dev/fitmap/">
   <!-- OGP -->
   <meta property="og:type"        content="website">
+  <meta property="og:url"         content="https://ryo-lab.dev/fitmap/">
   <meta property="og:title"       content="FitMap — あなたのサイズを、いつでも手元に。">
-  <meta property="og:description" content="人体シルエットで部位を選択して全身のサイズを記録。指輪の号数まで管理できるパーソナルサイズ管理アプリ。完全オフライン。">
+  <meta property="og:description" content="FitMap — 人体シルエットで全身のサイズを記録できる無料のパーソナルサイズ管理アプリ。首周り・袖丈・靴サイズ・指輪の号数まで、カスタム項目や家族分のプロフィールにも対応。完全オフライン。Android版 Google Play 公開中（iOS版は準備中）。">
+  <meta property="og:image"       content="https://ryo-lab.dev/assets/ogp/ogp_fitmap.jpg">
   <meta property="og:site_name"   content="Ryo-Lab">
   <meta property="og:locale"      content="ja_JP">
+  <!-- Twitter Card -->
+  <meta name="twitter:card"        content="summary_large_image">
+  <meta name="twitter:title"       content="FitMap — あなたのサイズを、いつでも手元に。">
+  <meta name="twitter:description" content="FitMap — 人体シルエットで全身のサイズを記録できる無料のパーソナルサイズ管理アプリ。首周り・袖丈・靴サイズ・指輪の号数まで、カスタム項目や家族分のプロフィールにも対応。完全オフライン。Android版 Google Play 公開中（iOS版は準備中）。">
+  <meta name="twitter:image"       content="https://ryo-lab.dev/assets/ogp/ogp_fitmap.jpg">
+  <!-- 構造化データ -->
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "SoftwareApplication",
+    "name": "FitMap",
+    "operatingSystem": "Android",
+    "applicationCategory": "LifestyleApplication",
+    "description": "人体シルエットで全身のサイズを記録できるパーソナルサイズ管理アプリ。完全オフライン。",
+    "url": "https://ryo-lab.dev/fitmap/",
+    "offers": { "@type": "Offer", "price": "0", "priceCurrency": "JPY" },
+    "author": { "@type": "Organization", "name": "Ryo-Lab Team", "url": "https://ryo-lab.dev/" }
+  }
+  </script>
   <style>
     *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
     html { scroll-behavior: smooth; }
@@ -96,7 +118,7 @@
     }
     .pulse-dot {
       width: 6px; height: 6px; border-radius: 50%;
-      background: #f59e0b; animation: blink 1.8s ease-in-out infinite;
+      background: #22c55e; animation: blink 1.8s ease-in-out infinite;
     }
     @keyframes blink { 0%,100%{ opacity:1; } 50%{ opacity:0.3; } }
     .hero-title {
@@ -112,13 +134,17 @@
       font-family: 'JetBrains Mono', monospace; font-size: 0.78rem;
       color: var(--text-muted); margin-bottom: 2rem;
     }
-    .btn-coming {
+    .hero-actions { display: flex; gap: 0.75rem; flex-wrap: wrap; }
+    .btn-primary, .btn-secondary {
       display: inline-flex; align-items: center; gap: 0.5rem;
-      background: var(--blue); color: white;
-      font-family: 'Syne', sans-serif; font-weight: 700;
-      padding: 0.85rem 2rem; border-radius: 10px; font-size: 0.92rem;
-      opacity: 0.55; cursor: default;
+      font-family: 'Syne', 'Noto Sans JP', sans-serif; font-weight: 700;
+      padding: 0.85rem 1.75rem; border-radius: 10px; font-size: 0.92rem;
+      text-decoration: none; transition: opacity 0.2s, transform 0.2s;
     }
+    .btn-primary { background: var(--blue); color: white; }
+    .btn-secondary { background: transparent; color: var(--blue); border: 1px solid var(--blue-light); }
+    .btn-primary:hover, .btn-secondary:hover { opacity: 0.88; transform: translateY(-2px); }
+    .hero-note { margin-top: 1rem; font-size: 0.8rem; color: var(--text-muted); }
     .hero-right {
       display: flex; align-items: center; justify-content: center;
     }
@@ -155,7 +181,7 @@
 
     /* ── Feature cards ── */
     .features-grid {
-      display: grid; grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+      display: grid; grid-template-columns: repeat(3, 1fr);
       gap: 1px; border: 1px solid var(--border);
       border-radius: 16px; overflow: hidden; background: var(--border);
     }
@@ -173,6 +199,31 @@
       color: var(--blue); margin-bottom: 0.6rem;
     }
     .feature-desc { color: var(--text-muted); font-size: 0.85rem; line-height: 1.8; }
+
+    /* ── Screenshots ── */
+    .screenshot-strip {
+      display: flex; gap: 1rem; overflow-x: auto;
+      padding: 1rem 0.5rem 1.5rem; scroll-snap-type: x mandatory;
+      -webkit-overflow-scrolling: touch; scrollbar-width: thin;
+      scrollbar-color: rgba(0,180,216,0.35) transparent;
+    }
+    .screenshot-strip img {
+      height: 480px; width: auto; flex-shrink: 0;
+      border-radius: 12px; border: 1px solid var(--border);
+      scroll-snap-align: start; object-fit: contain; background: var(--surface);
+      transition: transform 0.3s, box-shadow 0.3s;
+    }
+    .screenshot-strip img:hover { transform: translateY(-4px); box-shadow: 0 16px 40px rgba(0,180,216,0.18); }
+
+    /* ── Promo images ── */
+    .promo-grid {
+      display: grid; grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+      gap: 1.25rem; margin-top: 2.5rem;
+    }
+    .promo-grid img {
+      width: 100%; height: auto; display: block;
+      border-radius: 16px; border: 1px solid var(--border);
+    }
 
     /* ── Privacy box ── */
     .privacy-box {
@@ -219,6 +270,8 @@
     }
 
     /* ── Responsive ── */
+    @media (max-width: 900px) { .features-grid { grid-template-columns: repeat(2, 1fr); } }
+    @media (max-width: 560px) { .features-grid { grid-template-columns: 1fr; } }
     @media (max-width: 768px) {
       .nav-links { display: none; }
       .nav-hamburger { display: flex; }
@@ -239,7 +292,8 @@
       .icon-wrap { width: 200px; height: 200px; }
       .icon-wrap img.main-icon { width: 130px; height: 130px; }
       .hero-badge { margin: 0 auto 1.75rem; }
-      .btn-coming { margin: 0 auto; }
+      .hero-actions { justify-content: center; }
+      .screenshot-strip img { height: 340px; }
       section { padding: 4rem 1.5rem; }
       .privacy-box { padding: 2.5rem 1.75rem; }
     }
@@ -267,11 +321,15 @@
 <!-- Hero -->
 <div class="hero">
   <div class="hero-left">
-    <div class="hero-badge"><span class="pulse-dot"></span>In Development</div>
+    <div class="hero-badge"><span class="pulse-dot"></span>Google Play 公開中</div>
     <h1 class="hero-title">FitMap</h1>
     <p class="hero-sub">あなたのサイズを、いつでも手元に。</p>
     <p class="hero-tagline">// personal size management · fully offline</p>
-    <div class="btn-coming">🔔 Coming Soon</div>
+    <div class="hero-actions">
+      <a href="https://play.google.com/store/apps/details?id=com.ryolab.fit_map" target="_blank" rel="noopener" class="btn-primary">Google Play でダウンロード</a>
+      <a href="https://forms.gle/MAo8NxcQutAeNrRa9" target="_blank" rel="noopener" class="btn-secondary">フィードバックを送る</a>
+    </div>
+    <p class="hero-note">完全無料（広告表示あり・課金なし） ／ iOS版は準備中です</p>
   </div>
   <div class="hero-right">
     <div class="icon-wrap">
@@ -297,24 +355,58 @@
     <div class="features-grid">
       <div class="feature-card reveal">
         <div class="feature-num">01</div>
-        <div class="feature-title">シルエットUIで選ぶ</div>
-        <p class="feature-desc">人体シルエットを見ながら部位を選択。首周り・肩幅・袖丈・胸囲・靴サイズはもちろん、指輪の号数まで記録できます。cm / mm / 号 / kg など単位も柔軟に設定可能。</p>
+        <div class="feature-title">シルエットUIで全身を記録</div>
+        <p class="feature-desc">人体シルエットを見ながら、身長・体重・首周り・胸囲・ウエスト・肩幅・袖丈・靴サイズなど標準21部位を記録。左右10種の指輪サイズ（号）にも対応。ホームでは「5 / 11 項目完了」のように登録状況が一目でわかります。</p>
       </div>
       <div class="feature-card reveal" style="transition-delay:0.08s;">
         <div class="feature-num">02</div>
         <div class="feature-title">変化を記録・追跡</div>
-        <p class="feature-desc">各部位の計測値と更新履歴を自動保存。前回値付近のプリセットで入力もスムーズ。体の変化をいつでも振り返れます。</p>
+        <p class="feature-desc">cm / mm / kg / g / 号 / inch の単位切り替えとメモに対応。前回値付近の「よく使う値」ワンタップ入力で更新もスムーズ。部位ごとの更新履歴（直近3件）で、体の変化をいつでも振り返れます。</p>
       </div>
       <div class="feature-card reveal" style="transition-delay:0.16s;">
         <div class="feature-num">03</div>
-        <div class="feature-title">完全オフライン＆PIN保護</div>
-        <p class="feature-desc">クラウド不要。全データは端末内のみに保存。4桁PINで起動時にロックし、体型データを外部に一切送信しません。</p>
+        <div class="feature-title">完全オフライン＆ロック</div>
+        <p class="feature-desc">クラウド不要。体型・計測データは端末内のみに保存し、外部へは送信しません。4桁パスコードに加え、生体認証（Face ID / 指紋）でのロック解除も設定で選べます（任意）。「全データ削除」も設定から。</p>
       </div>
       <div class="feature-card reveal" style="transition-delay:0.24s;">
         <div class="feature-num">04</div>
-        <div class="feature-title">自由にカスタマイズ</div>
-        <p class="feature-desc">標準部位に加え、カスタム項目を自由に追加してセクション別に整理。家族分のプロフィールも管理できます（1人目は無料）。</p>
+        <div class="feature-title">なんでも項目にできる</div>
+        <p class="feature-desc">視力・血圧・平熱・コンタクト度数・タイヤサイズなど、標準にない情報も項目名・値・単位・メモで追加。各セクションの「＋」から追加・削除・並び替えができます。</p>
       </div>
+      <div class="feature-card reveal">
+        <div class="feature-num">05</div>
+        <div class="feature-title">家族分のプロフィール</div>
+        <p class="feature-desc">名前・誕生日・血液型・アレルギーを登録でき、年齢や「次の誕生日まであと◯日」も表示。複数人を登録してタップで切り替え、ドラッグで並び替えもできます。</p>
+      </div>
+      <div class="feature-card reveal" style="transition-delay:0.08s;">
+        <div class="feature-num">06</div>
+        <div class="feature-title">完全無料・広告のみ</div>
+        <p class="feature-desc">1人目のプロフィールはそのまま使えます。2人目以降は動画広告を1回視聴すると追加でき（上限なし）、課金はありません。</p>
+      </div>
+    </div>
+    <div class="promo-grid reveal">
+      <img src="../assets/fitmap/screenshots/promo_01_home.jpg" alt="からだのサイズを、まるごと記録。" width="540" height="960" loading="lazy" />
+      <img src="../assets/fitmap/screenshots/promo_02_custom.jpg" alt="記録したいものは、なんでも項目に。" width="540" height="960" loading="lazy" />
+      <img src="../assets/fitmap/screenshots/promo_03_profiles.jpg" alt="家族全員のサイズを、ひとつのアプリで。" width="540" height="960" loading="lazy" />
+      <img src="../assets/fitmap/screenshots/promo_04_offline.jpg" alt="完全オフライン。だから安心。" width="540" height="960" loading="lazy" />
+    </div>
+  </div>
+</section>
+
+<div class="divider"></div>
+
+<!-- Screenshots -->
+<section>
+  <div class="section-inner">
+    <div class="reveal">
+      <p class="section-label">Screenshots</p>
+      <h2 class="section-title">実際の画面を見てみる</h2>
+      <p class="section-sub">← スワイプまたはスクロールで確認できます</p>
+    </div>
+    <div class="screenshot-strip reveal">
+      <img src="../assets/fitmap/screenshots/01_Home.jpg" alt="ホーム画面（登録状況・部位一覧）" loading="lazy" />
+      <img src="../assets/fitmap/screenshots/02_Custom_Item.jpg" alt="カスタム項目の追加" loading="lazy" />
+      <img src="../assets/fitmap/screenshots/03_Profiles.jpg" alt="プロフィール一覧" loading="lazy" />
     </div>
   </div>
 </section>
@@ -327,7 +419,7 @@
     <div class="privacy-box reveal">
       <p class="section-label">Privacy First</p>
       <h2>データはあなたの端末の中だけ。</h2>
-      <p>体型データは一切外部に送信されません。FitMapは完全オフラインで動作し、個人情報を収集しないことを設計方針としています。</p>
+      <p>体型データは一切外部に送信されません。FitMapは完全オフラインで動作し、入力した体型・プロフィールデータを収集しないことを設計方針としています。</p>
       <a href="./privacy-policy.html" class="btn-white">プライバシーポリシー →</a>
     </div>
   </div>
