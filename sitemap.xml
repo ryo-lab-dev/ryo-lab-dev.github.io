@@ -4,7 +4,7 @@
   <!-- Portfolio Top -->
   <url>
     <loc>https://ryo-lab.dev/</loc>
-    <lastmod>2026-04-07</lastmod>
+    <lastmod>2026-10-17</lastmod>
     <changefreq>monthly</changefreq>
     <priority>1.0</priority>
   </url>
@@ -12,31 +12,31 @@
   <!-- ScoreVault -->
   <url>
     <loc>https://ryo-lab.dev/scorevault/</loc>
-    <lastmod>2026-03-20</lastmod>
+    <lastmod>2026-04-07</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
   </url>
   <url>
     <loc>https://ryo-lab.dev/scorevault/privacy-policy.html</loc>
-    <lastmod>2026-03-20</lastmod>
+    <lastmod>2026-04-07</lastmod>
     <changefreq>yearly</changefreq>
     <priority>0.4</priority>
   </url>
   <url>
     <loc>https://ryo-lab.dev/scorevault/privacy-policy-en.html</loc>
-    <lastmod>2026-03-20</lastmod>
+    <lastmod>2026-04-07</lastmod>
     <changefreq>yearly</changefreq>
     <priority>0.4</priority>
   </url>
   <url>
     <loc>https://ryo-lab.dev/scorevault/faq.html</loc>
-    <lastmod>2026-03-20</lastmod>
+    <lastmod>2026-03-23</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.6</priority>
   </url>
   <url>
     <loc>https://ryo-lab.dev/scorevault/update-history.html</loc>
-    <lastmod>2026-03-20</lastmod>
+    <lastmod>2026-03-23</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.5</priority>
   </url>
@@ -44,25 +44,25 @@
   <!-- CloudKata -->
   <url>
     <loc>https://ryo-lab.dev/cloudkata/</loc>
-    <lastmod>2026-03-20</lastmod>
+    <lastmod>2026-10-17</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
   </url>
   <url>
     <loc>https://ryo-lab.dev/cloudkata/privacy-policy.html</loc>
-    <lastmod>2026-03-20</lastmod>
+    <lastmod>2026-04-07</lastmod>
     <changefreq>yearly</changefreq>
     <priority>0.4</priority>
   </url>
   <url>
     <loc>https://ryo-lab.dev/cloudkata/disclaimer.html</loc>
-    <lastmod>2026-03-20</lastmod>
+    <lastmod>2026-04-07</lastmod>
     <changefreq>yearly</changefreq>
     <priority>0.4</priority>
   </url>
   <url>
     <loc>https://ryo-lab.dev/cloudkata/terms.html</loc>
-    <lastmod>2026-03-20</lastmod>
+    <lastmod>2026-04-07</lastmod>
     <changefreq>yearly</changefreq>
     <priority>0.4</priority>
   </url>
@@ -70,13 +70,13 @@
   <!-- NexusDiary -->
   <url>
     <loc>https://ryo-lab.dev/nexusdiary/</loc>
-    <lastmod>2026-03-20</lastmod>
+    <lastmod>2026-04-07</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
   </url>
   <url>
     <loc>https://ryo-lab.dev/nexusdiary/privacy-policy.html</loc>
-    <lastmod>2026-03-20</lastmod>
+    <lastmod>2026-04-07</lastmod>
     <changefreq>yearly</changefreq>
     <priority>0.4</priority>
   </url>
@@ -84,7 +84,7 @@
   <!-- GiftLog -->
   <url>
     <loc>https://ryo-lab.dev/giftlog/</loc>
-    <lastmod>2026-04-07</lastmod>
+    <lastmod>2026-10-17</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.9</priority>
   </url>
@@ -95,16 +95,30 @@
     <priority>0.4</priority>
   </url>
 
+  <!-- FitMap -->
+  <url>
+    <loc>https://ryo-lab.dev/fitmap/</loc>
+    <lastmod>2026-10-17</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://ryo-lab.dev/fitmap/privacy-policy.html</loc>
+    <lastmod>2026-10-17</lastmod>
+    <changefreq>yearly</changefreq>
+    <priority>0.4</priority>
+  </url>
+
   <!-- はぐ育 -->
   <url>
     <loc>https://ryo-lab.dev/haguiku/</loc>
-    <lastmod>2026-10-15</lastmod>
+    <lastmod>2026-10-17</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
   </url>
   <url>
     <loc>https://ryo-lab.dev/haguiku/privacy-policy.html</loc>
-    <lastmod>2026-10-15</lastmod>
+    <lastmod>2026-10-17</lastmod>
     <changefreq>yearly</changefreq>
     <priority>0.4</priority>
   </url>
