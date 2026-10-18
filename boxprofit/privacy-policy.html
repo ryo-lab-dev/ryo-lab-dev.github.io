@@ -1,0 +1,207 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>プライバシーポリシー — BoxProfit</title>
+  <script src="https://cdn.tailwindcss.com"></script>
+  <link rel="icon" href="../assets/boxprofit/icon.png" type="image/png" />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Syne:wght@400;600;700;800&family=Noto+Sans+JP:wght@300;400;500;700&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="../assets/css/boxprofit.css" />
+  <link rel="stylesheet" href="../assets/css/subsite.css" />
+  <!-- SEO -->
+  <meta name="description" content="BoxProfit のプライバシーポリシーページ。取得する情報、利用目的、第三者提供、アカウントとデータの削除方法について記載しています。">
+  <link rel="canonical" href="https://ryo-lab.dev/boxprofit/privacy-policy.html">
+</head>
+<body>
+
+<nav>
+  <div class="nav-inner">
+    <a href="./" class="nav-logo">
+      <div class="nav-logo-dot"></div>
+      <span class="nav-logo-text">BoxProfit</span>
+    </a>
+    <div class="nav-links">
+      <a href="./">Home</a>
+      <a href="./privacy-policy.html" class="active">Privacy Policy</a>
+      <a href="./terms.html">利用規約</a>
+    </div>
+    <button class="nav-hamburger" id="navToggle" aria-label="メニューを開く">
+      <span></span><span></span><span></span>
+    </button>
+  </div>
+</nav>
+
+<div class="doc-container">
+  <div class="doc-header reveal">
+    <p class="doc-tag">Legal</p>
+    <h1 class="doc-title">プライバシーポリシー</h1>
+    <p class="doc-updated">制定日: <span class="placeholder">【制定日】</span> ／ 最終更新日: <span class="placeholder">【最終更新日】</span></p>
+  </div>
+
+  <p style="color:#64748b;font-size:0.9rem;margin-bottom:2.5rem;" class="reveal">
+    Ryo-Lab チーム（以下「運営者」）は、フリマ向け利益管理アプリ「BoxProfit」（以下「本アプリ」）における、ユーザーの情報の取り扱いについて、以下のとおり定めます。
+  </p>
+
+  <div class="doc-section reveal">
+    <h2>第1条 取得する情報</h2>
+    <p>本アプリは、次の情報を取得・保存します。</p>
+    <div class="doc-table-wrap">
+      <table class="doc-table">
+        <thead>
+          <tr><th>種別</th><th>内容</th><th>取得手段・保存先</th></tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td>アカウント情報</td>
+            <td>Google アカウントのメールアドレス・表示名・ユーザー ID（uid）</td>
+            <td>Firebase Authentication（Google ログイン）。本アプリの利用にはログインが必要です</td>
+          </tr>
+          <tr>
+            <td>ユーザーが入力したデータ</td>
+            <td>商品名・仕入れ価格・仕入れ日・仕入れ先・メモ、梱包資材・送料・取引手段（手数料率など）の設定、販売履歴（販売価格・手数料・利益など）、各種の設定値</td>
+            <td>Cloud Firestore（保存リージョン: 東京）。セキュリティルールにより、本人のアカウントでのみ読み書きできます</td>
+          </tr>
+          <tr>
+            <td>利用状況</td>
+            <td>画面の遷移と主な操作（商品の登録、販売の登録、CSV 出力など）の種類。<strong>金額・商品名・取引手段名・メモは送信しません</strong>。ほかに、Firebase が自動で収集する情報（アプリのインスタンス ID、端末・OS の情報など）</td>
+            <td>Firebase Analytics</td>
+          </tr>
+          <tr>
+            <td>クラッシュ情報</td>
+            <td>異常終了時のスタックトレース、端末・OS・アプリのバージョン</td>
+            <td>Firebase Crashlytics</td>
+          </tr>
+          <tr>
+            <td>広告関連</td>
+            <td>広告 ID、IP アドレス、端末情報など（広告の配信・計測のため）</td>
+            <td>Google AdMob（バナー広告のみ）</td>
+          </tr>
+          <tr>
+            <td>端末内の保存</td>
+            <td>「はじめかた」カードを閉じたかどうかの設定のみ</td>
+            <td>端末のローカル領域</td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+    <ul>
+      <li>位置情報、連絡先、カメラ・マイク、写真、電話番号、決済情報は取得しません。</li>
+      <li>ログイン方法は Google ログインのみです。メールアドレス・パスワードによる登録はありません。</li>
+    </ul>
+  </div>
+
+  <div class="divider"></div>
+
+  <div class="doc-section reveal">
+    <h2>第2条 利用目的</h2>
+    <ul>
+      <li>アカウントの認証とデータの同期</li>
+      <li>機能の提供（販売価格の逆算、在庫・販売の管理、CSV 出力）</li>
+      <li>アプリの改善と不具合の把握（Analytics・Crashlytics）</li>
+      <li>広告の表示（AdMob）</li>
+    </ul>
+  </div>
+
+  <div class="divider"></div>
+
+  <div class="doc-section reveal">
+    <h2>第3条 第三者提供・外部サービス</h2>
+    <p>本アプリは、次の Google LLC のサービスを利用しており、情報の処理を委託しています。データは各サービスの利用規約・プライバシーポリシーに従って処理されます。</p>
+    <ul>
+      <li>
+        <strong>Firebase（Authentication / Cloud Firestore / Analytics / Crashlytics）</strong> — 認証・データ保存・利用状況の把握・クラッシュ情報の収集<br>
+        <a href="https://policies.google.com/privacy" target="_blank" rel="noopener" style="font-size:0.875rem;">Google プライバシーポリシー</a>
+        ／
+        <a href="https://firebase.google.com/support/privacy" target="_blank" rel="noopener" style="font-size:0.875rem;">Firebase のプライバシーと情報セキュリティ</a>
+      </li>
+      <li>
+        <strong>Google AdMob</strong> — バナー広告の配信・計測<br>
+        <a href="https://policies.google.com/technologies/ads" target="_blank" rel="noopener" style="font-size:0.875rem;">Google の広告に関するポリシー</a>
+      </li>
+    </ul>
+    <p style="margin-top:0.75rem;">上記の Google の各サービスによる処理を除き、ユーザーのデータを販売・広告目的で第三者に提供することはありません。</p>
+    <p>広告のパーソナライズは、端末の設定（広告 ID のリセット・オプトアウト）で制限できます。</p>
+  </div>
+
+  <div class="divider"></div>
+
+  <div class="doc-section reveal" id="delete-account">
+    <h2>第4条 アカウントとデータの削除</h2>
+
+    <h3>（1）アプリ内での削除</h3>
+    <p>ユーザー自身で、次の手順によりアカウントとデータを削除できます。</p>
+    <ol>
+      <li>本アプリを開き、「設定」を選択します。</li>
+      <li>「アカウントとデータを削除」を選択します。</li>
+      <li>画面の案内に従い、Google アカウントによる本人確認を行います。</li>
+    </ol>
+    <ul>
+      <li>本人確認の後、Cloud Firestore 上のすべてのデータ（商品・梱包資材・取引手段・送料・販売履歴・設定）を削除し、続けて認証アカウントを削除します。</li>
+      <li>この操作は元に戻せません。</li>
+      <li>完了するとログイン画面に戻ります。同じ Google アカウントで再度ログインしても、新しいアカウントとして扱われ、データは空の状態になります。</li>
+    </ul>
+
+    <h3>（2）運営者への削除依頼</h3>
+    <p>アプリを使用できない場合は、下記のお問い合わせ先に、<strong>本アプリに登録した Google アカウントのメールアドレス</strong>を添えて削除をご依頼ください。運営者が確認のうえ、対応します。</p>
+    <p>
+      お問い合わせフォーム:
+      <a href="https://docs.google.com/forms/d/e/1FAIpQLSdwONRkRyqKy2ayAsTMRWpMwh2CDXa8AR9fXIp9_guXJxnt_A/viewform?usp=header" target="_blank" rel="noopener">こちらから送信</a>
+    </p>
+
+    <h3>（3）ご注意</h3>
+    <ul>
+      <li><strong>アプリを削除（アンインストール）しただけでは、クラウド上のデータは削除されません。</strong>データの削除をご希望の場合は、上記（1）または（2）の手順を行ってください。</li>
+      <li>Firebase Analytics・Crashlytics の集計データは、Google のポリシーに従って保持され、一定期間後に削除されます。</li>
+    </ul>
+  </div>
+
+  <div class="divider"></div>
+
+  <div class="doc-section reveal">
+    <h2>第5条 安全管理</h2>
+    <ul>
+      <li>通信は HTTPS により暗号化されます。</li>
+      <li>Cloud Firestore のセキュリティルールにより、本人以外のアクセスを制限しています。</li>
+      <li>ただし、インターネット上での絶対の安全性を保証するものではありません。</li>
+    </ul>
+  </div>
+
+  <div class="divider"></div>
+
+  <div class="doc-section reveal">
+    <h2>第6条 子どもの利用</h2>
+    <p>本アプリは広告を含むため、13歳未満の方を対象としていません。</p>
+  </div>
+
+  <div class="divider"></div>
+
+  <div class="doc-section reveal">
+    <h2>第7条 プライバシーポリシーの変更</h2>
+    <p>法令の変更やアプリのアップデートに伴い、本ポリシーを改定することがあります。改定後のポリシーは本ページに掲載した時点から効力を発し、改定時にはアプリまたは本サイトでお知らせします。</p>
+  </div>
+
+  <div class="divider"></div>
+
+  <div class="doc-section reveal">
+    <h2>第8条 お問い合わせ</h2>
+    <p>本ポリシーに関するご質問・データ削除のご依頼は、以下からお問い合わせください。</p>
+    <ul>
+      <li>運営: Ryo-Lab チーム</li>
+      <li>お問い合わせフォーム:
+        <a href="https://docs.google.com/forms/d/e/1FAIpQLSdwONRkRyqKy2ayAsTMRWpMwh2CDXa8AR9fXIp9_guXJxnt_A/viewform?usp=header" target="_blank" rel="noopener">こちらから送信</a>
+      </li>
+    </ul>
+  </div>
+</div>
+
+<footer>
+  <p>© 2026 Ryo-Lab. BoxProfit 開発チーム</p>
+  <p>メルカリ、PayPayフリマ、ラクマ、ヤフオク! などの名称は各社の商標です。本アプリは各社と提携・承認関係にありません。</p>
+</footer>
+
+<script src="../assets/js/subsite.js"></script>
+</body>
+</html>

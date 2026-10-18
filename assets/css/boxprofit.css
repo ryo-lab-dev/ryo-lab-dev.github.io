@@ -1,0 +1,192 @@
+/* BoxProfit — Color Variables */
+:root {
+  --bg:            #07100a;
+  --primary:       #4caf50;
+  --primary-light: #81c784;
+  --accent:        #ffd54f;
+  --glow:          rgba(76, 175, 80, 0.2);
+  --glass-bg:      rgba(255, 255, 255, 0.04);
+  --glass-border:  rgba(255, 255, 255, 0.08);
+}
+
+/* index.html 固有 — Hero */
+.hero-icon {
+  width: 96px;
+  height: 96px;
+  border-radius: 22px;
+  margin-bottom: 1.5rem;
+  box-shadow: 0 8px 32px var(--glow);
+  border: 1px solid var(--glass-border);
+}
+
+.hero-copy {
+  font-size: 0.85rem;
+  color: #6b8f70;
+  margin-bottom: 1.5rem;
+  max-width: 560px;
+}
+
+.btn-disabled {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.5rem;
+  background: var(--glass-bg);
+  border: 1px dashed color-mix(in srgb, var(--accent) 45%, transparent);
+  color: var(--accent);
+  font-weight: 600;
+  padding: 0.75rem 1.75rem;
+  border-radius: 10px;
+  font-size: 0.95rem;
+  cursor: default;
+}
+
+/* index.html 固有 — Steps */
+.step-list {
+  list-style: none;
+  counter-reset: step;
+  display: grid;
+  gap: 1rem;
+}
+
+.step-list li {
+  counter-increment: step;
+  display: grid;
+  grid-template-columns: 2.5rem 1fr;
+  gap: 1rem;
+  align-items: start;
+  padding: 1.1rem 1.5rem;
+}
+
+.step-list li::before {
+  content: counter(step);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 2.5rem;
+  height: 2.5rem;
+  border-radius: 50%;
+  font-family: 'JetBrains Mono', monospace;
+  font-weight: 500;
+  color: var(--primary-light);
+  background: color-mix(in srgb, var(--primary) 12%, transparent);
+  border: 1px solid color-mix(in srgb, var(--primary) 30%, transparent);
+}
+
+.step-title {
+  color: #f1f5f9;
+  font-weight: 600;
+  font-size: 0.97rem;
+}
+
+.step-desc {
+  color: #94a3b8;
+  font-size: 0.9rem;
+  line-height: 1.6;
+  margin-top: 0.2rem;
+}
+
+/* index.html 固有 — Mini FAQ */
+.mini-faq-item {
+  border-bottom: 1px solid var(--glass-border);
+  padding: 1.1rem 0;
+  display: grid;
+  grid-template-columns: 1fr 2fr;
+  gap: 1rem;
+}
+
+.mini-faq-item:last-child {
+  border-bottom: none;
+}
+
+.mini-faq-q {
+  color: #f1f5f9;
+  font-weight: 600;
+  font-size: 0.93rem;
+}
+
+.mini-faq-a {
+  color: #94a3b8;
+  font-size: 0.93rem;
+  line-height: 1.6;
+}
+
+@media (max-width: 768px) {
+  .mini-faq-item {
+    grid-template-columns: 1fr;
+  }
+}
+
+/* 法務ページ共通 — Notice */
+.notice {
+  background: color-mix(in srgb, var(--primary) 6%, transparent);
+  border: 1px solid color-mix(in srgb, var(--primary) 15%, transparent);
+  border-radius: 10px;
+  padding: 1rem 1.25rem;
+  margin: 1rem 0;
+  color: var(--primary-light);
+  font-size: 0.88rem;
+  line-height: 1.6;
+}
+
+/* 未確定項目のプレースホルダー（公開前に必ず置換する） */
+.placeholder {
+  background: #ffd54f;
+  color: #1b1b1b;
+  font-weight: 700;
+  padding: 0.05rem 0.4rem;
+  border-radius: 4px;
+}
+
+/* privacy-policy.html 固有 — 情報の表 */
+.doc-table {
+  width: 100%;
+  border-collapse: collapse;
+  margin: 0.75rem 0 1rem;
+  font-size: 0.88rem;
+}
+
+.doc-table th,
+.doc-table td {
+  text-align: left;
+  vertical-align: top;
+  padding: 0.6rem 0.75rem;
+  border: 1px solid var(--glass-border);
+  color: #94a3b8;
+  line-height: 1.55;
+}
+
+.doc-table th {
+  color: #f1f5f9;
+  background: color-mix(in srgb, var(--primary) 7%, transparent);
+  white-space: nowrap;
+}
+
+.doc-table-wrap {
+  overflow-x: auto;
+}
+
+.doc-section ol {
+  color: #94a3b8;
+  font-size: 0.95rem;
+  padding-left: 1.5rem;
+  margin: 0.5rem 0 0.75rem;
+}
+
+.doc-section ol li {
+  padding: 0.25rem 0;
+}
+
+/* terms.html 固有 — Article chip */
+.article-chip {
+  display: inline-block;
+  font-family: 'JetBrains Mono', monospace;
+  font-size: 0.7rem;
+  color: var(--primary);
+  background: color-mix(in srgb, var(--primary) 8%, transparent);
+  border: 1px solid var(--glow);
+  border-radius: 4px;
+  padding: 0.15rem 0.5rem;
+  margin-bottom: 0.4rem;
+  vertical-align: middle;
+  margin-right: 0.4rem;
+}

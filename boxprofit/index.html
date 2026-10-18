@@ -1,0 +1,283 @@
+<!DOCTYPE html>
+<html lang="ja">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>BoxProfit — 梱包資材込みの原価から売値を逆算するフリマ利益管理アプリ</title>
+  <script src="https://cdn.tailwindcss.com"></script>
+  <link rel="icon" href="../assets/boxprofit/icon.png" type="image/png" />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link
+    href="https://fonts.googleapis.com/css2?family=Syne:wght@400;600;700;800&family=Noto+Sans+JP:wght@300;400;500;700&family=JetBrains+Mono:wght@400;500&display=swap"
+    rel="stylesheet" />
+  <!-- SEO -->
+  <meta name="description" content="梱包資材込みの原価から、目標利益に必要な販売価格を逆算。フリマの仕入れ・在庫・売上を管理できる無料アプリ BoxProfit。">
+  <link rel="canonical" href="https://ryo-lab.dev/boxprofit/">
+  <!-- OGP -->
+  <meta property="og:type"        content="website">
+  <meta property="og:url"         content="https://ryo-lab.dev/boxprofit/">
+  <meta property="og:title"       content="BoxProfit — 梱包資材込みの原価から売値を逆算するフリマ利益管理アプリ">
+  <meta property="og:description" content="梱包資材込みの原価から、目標利益に必要な販売価格を逆算。フリマの仕入れ・在庫・売上を管理できる無料アプリ BoxProfit。">
+  <meta property="og:image"       content="https://ryo-lab.dev/assets/ogp/ogp_boxprofit.png">
+  <meta property="og:site_name"   content="Ryo-Lab">
+  <meta property="og:locale"      content="ja_JP">
+  <!-- Twitter Card -->
+  <meta name="twitter:card"        content="summary_large_image">
+  <meta name="twitter:title"       content="BoxProfit — 梱包資材込みの原価から売値を逆算するフリマ利益管理アプリ">
+  <meta name="twitter:description" content="梱包資材込みの原価から、目標利益に必要な販売価格を逆算。フリマの仕入れ・在庫・売上を管理できる無料アプリ BoxProfit。">
+  <meta name="twitter:image"       content="https://ryo-lab.dev/assets/ogp/ogp_boxprofit.png">
+  <!-- 構造化データ -->
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "SoftwareApplication",
+    "name": "BoxProfit",
+    "operatingSystem": "Android",
+    "applicationCategory": "BusinessApplication",
+    "description": "梱包資材込みの原価から、目標利益に必要な販売価格を逆算。フリマの仕入れ・在庫・売上を管理できる無料アプリ。",
+    "url": "https://ryo-lab.dev/boxprofit/",
+    "offers": {
+      "@type": "Offer",
+      "price": "0",
+      "priceCurrency": "JPY"
+    },
+    "author": {
+      "@type": "Organization",
+      "name": "Ryo-Lab Team",
+      "url": "https://ryo-lab.dev/"
+    }
+  }
+  </script>
+  <link rel="stylesheet" href="../assets/css/boxprofit.css" />
+  <link rel="stylesheet" href="../assets/css/subsite.css" />
+</head>
+
+<body>
+
+  <!-- Navigation -->
+  <nav>
+    <div class="nav-inner">
+      <a href="./" class="nav-logo">
+        <div class="nav-logo-dot"></div>
+        <span class="nav-logo-text">BoxProfit</span>
+      </a>
+      <div class="nav-links">
+        <a href="./" class="active">Home</a>
+        <a href="./privacy-policy.html">Privacy Policy</a>
+        <a href="./terms.html">利用規約</a>
+      </div>
+      <button class="nav-hamburger" id="navToggle" aria-label="メニューを開く">
+        <span></span><span></span><span></span>
+      </button>
+    </div>
+  </nav>
+
+  <!-- Hero -->
+  <section class="hero">
+    <img src="../assets/boxprofit/icon.png" alt="BoxProfit アイコン" class="hero-icon" width="96" height="96" />
+    <div style="margin-bottom:1.5rem;">
+      <span class="status-badge">
+        <span class="pulse-dot"></span>
+        Google Play 公開準備中（Android）
+      </span>
+    </div>
+    <h1 class="hero-title gradient-text">BoxProfit</h1>
+    <p class="hero-sub">梱包資材込みの原価から、売値を逆算。</p>
+    <p class="hero-copy">梱包資材込みの原価から、目標利益に必要な販売価格を逆算。フリマの仕入れ・在庫・売上を管理できる無料アプリ。</p>
+    <div style="display:flex;gap:1rem;flex-wrap:wrap;justify-content:center;">
+      <span class="btn-disabled" aria-disabled="true">Google Play 公開準備中</span>
+      <a href="https://docs.google.com/forms/d/e/1FAIpQLSdwONRkRyqKy2ayAsTMRWpMwh2CDXa8AR9fXIp9_guXJxnt_A/viewform?usp=header" target="_blank" rel="noopener" class="btn-secondary">
+        お問い合わせ・フィードバック
+      </a>
+    </div>
+  </section>
+
+  <div class="glow-line" style="max-width:800px;margin:0 auto;"></div>
+
+  <!-- Features -->
+  <section>
+    <div class="section-inner">
+      <div class="reveal" style="margin-bottom:3rem;">
+        <p class="section-label">Features</p>
+        <h2 class="section-title">そのフリマ、本当に儲かってる？</h2>
+      </div>
+      <div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(280px,1fr));gap:1.5rem;">
+        <div class="feature-card reveal">
+          <div class="feature-icon">🧮</div>
+          <h3
+            style="font-family:'Syne',sans-serif;font-size:1.15rem;font-weight:700;margin-bottom:0.75rem;color:#f1f5f9;">
+            販売価格の逆算
+          </h3>
+          <p style="color:#94a3b8;line-height:1.7;font-size:0.92rem;">
+            目標利益（額または率）を入力すると、仕入れ・梱包資材・送料・手数料を含めた原価から、目標を満たす最小の販売価格を提案。損益分岐価格も表示します。
+          </p>
+        </div>
+        <div class="feature-card reveal" style="transition-delay:0.1s;">
+          <div class="feature-icon">⚖️</div>
+          <h3
+            style="font-family:'Syne',sans-serif;font-size:1.15rem;font-weight:700;margin-bottom:0.75rem;color:#f1f5f9;">
+            取引手段の比較
+          </h3>
+          <p style="color:#94a3b8;line-height:1.7;font-size:0.92rem;">
+            登録したフリマ（取引手段）を同じ条件で並べて、目標利益を満たす価格や、同じ価格で売ったときの利益を比較。取引手段と料率は自分で登録・編集できます。
+          </p>
+        </div>
+        <div class="feature-card reveal" style="transition-delay:0.2s;">
+          <div class="feature-icon">📦</div>
+          <h3
+            style="font-family:'Syne',sans-serif;font-size:1.15rem;font-weight:700;margin-bottom:0.75rem;color:#f1f5f9;">
+            梱包資材の管理
+          </h3>
+          <p style="color:#94a3b8;line-height:1.7;font-size:0.92rem;">
+            「30枚入り600円 → 1枚20円」のように単価を自動計算。販売を登録すると残量が減り、残りわずかになると知らせます。
+          </p>
+        </div>
+        <div class="feature-card reveal">
+          <div class="feature-icon">🗂️</div>
+          <h3
+            style="font-family:'Syne',sans-serif;font-size:1.15rem;font-weight:700;margin-bottom:0.75rem;color:#f1f5f9;">
+            在庫管理
+          </h3>
+          <p style="color:#94a3b8;line-height:1.7;font-size:0.92rem;">
+            在庫点数・在庫評価額、保有日数による色分けで滞留を見える化。損益分岐と値下げ余地も確認できます。
+          </p>
+        </div>
+        <div class="feature-card reveal" style="transition-delay:0.1s;">
+          <div class="feature-icon">📊</div>
+          <h3
+            style="font-family:'Syne',sans-serif;font-size:1.15rem;font-weight:700;margin-bottom:0.75rem;color:#f1f5f9;">
+            販売管理・ダッシュボード
+          </h3>
+          <p style="color:#94a3b8;line-height:1.7;font-size:0.92rem;">
+            販売登録時に利益をプレビュー。総利益・売上・利益率、月別グラフ、取引手段別の利益を、期間（今月・先月・今年・全期間・任意）で絞り込んで確認できます。
+          </p>
+        </div>
+        <div class="feature-card reveal" style="transition-delay:0.2s;">
+          <div class="feature-icon">☁️</div>
+          <h3
+            style="font-family:'Syne',sans-serif;font-size:1.15rem;font-weight:700;margin-bottom:0.75rem;color:#f1f5f9;">
+            データ同期・CSV 出力
+          </h3>
+          <p style="color:#94a3b8;line-height:1.7;font-size:0.92rem;">
+            Google アカウントでログインすると、データをクラウドに保存して複数端末で利用できます。オフラインでも入力でき、復帰後に同期。確定申告の準備に使える CSV（参考値）も出力できます。
+          </p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <div class="glow-line" style="max-width:800px;margin:0 auto;"></div>
+
+  <!-- Screenshots -->
+  <section>
+    <div class="section-inner">
+      <div class="reveal" style="margin-bottom:2rem;">
+        <p class="section-label">Screenshots</p>
+        <h2 class="section-title">アプリの画面</h2>
+        <p style="color:#64748b;font-size:0.85rem;margin-top:0.5rem;">← スワイプまたはスクロールで確認できます</p>
+      </div>
+      <div class="screenshot-strip reveal">
+        <img src="../assets/boxprofit/screenshots/01_calculator.png" alt="利益計算：梱包資材込みの原価から売値を逆算" loading="lazy" />
+        <img src="../assets/boxprofit/screenshots/02_compare.png" alt="取引手段の比較：複数のフリマを同じ条件で比較" loading="lazy" />
+        <img src="../assets/boxprofit/screenshots/03_dashboard.png" alt="販売ダッシュボード：利益と売上の推移" loading="lazy" />
+        <img src="../assets/boxprofit/screenshots/04_inventory.png" alt="在庫一覧：在庫の評価額と滞留日数を管理" loading="lazy" />
+        <img src="../assets/boxprofit/screenshots/05_item_detail.png" alt="商品詳細：値下げしても赤字にならない下限を表示" loading="lazy" />
+        <img src="../assets/boxprofit/screenshots/06_materials.png" alt="梱包資材：単価と残量を自動で管理" loading="lazy" />
+      </div>
+    </div>
+  </section>
+
+  <div class="glow-line" style="max-width:800px;margin:0 auto;"></div>
+
+  <!-- Flow -->
+  <section>
+    <div class="section-inner">
+      <div class="reveal" style="margin-bottom:2.5rem;">
+        <p class="section-label">How it works</p>
+        <h2 class="section-title">使い方の流れ</h2>
+      </div>
+      <ol class="step-list">
+        <li class="reveal glass">
+          <div>
+            <div class="step-title">梱包資材を登録する</div>
+            <div class="step-desc">袋・ダンボールなどの入り数と購入額を入れると、1枚あたりの単価が決まります。</div>
+          </div>
+        </li>
+        <li class="reveal glass">
+          <div>
+            <div class="step-title">商品を登録する</div>
+            <div class="step-desc">仕入れ価格・仕入れ日・仕入れ先などを入れて、在庫として管理します。</div>
+          </div>
+        </li>
+        <li class="reveal glass">
+          <div>
+            <div class="step-title">価格を逆算する</div>
+            <div class="step-desc">目標利益を入れると、原価と手数料を含めた販売価格の目安が出ます。取引手段ごとに比べることもできます。</div>
+          </div>
+        </li>
+        <li class="reveal glass">
+          <div>
+            <div class="step-title">出品する</div>
+            <div class="step-desc">提案された価格を参考に、利用するフリマで出品します。</div>
+          </div>
+        </li>
+        <li class="reveal glass">
+          <div>
+            <div class="step-title">売れたら販売を登録する</div>
+            <div class="step-desc">利益が記録され、梱包資材の残量も減ります。ダッシュボードで推移を確認できます。</div>
+          </div>
+        </li>
+      </ol>
+    </div>
+  </section>
+
+  <div class="glow-line" style="max-width:800px;margin:0 auto;"></div>
+
+  <!-- Mini FAQ -->
+  <section>
+    <div class="section-inner">
+      <div class="reveal" style="margin-bottom:2.5rem;">
+        <p class="section-label">FAQ</p>
+        <h2 class="section-title">よくある質問</h2>
+      </div>
+      <div class="reveal glass" style="padding:1.5rem 2rem;">
+        <div class="mini-faq-item">
+          <span class="mini-faq-q">費用</span>
+          <span class="mini-faq-a">完全無料でご利用いただけます（バナー広告が表示されます）。課金要素はありません。</span>
+        </div>
+        <div class="mini-faq-item">
+          <span class="mini-faq-q">対応 OS</span>
+          <span class="mini-faq-a">Android 向けに先行して公開する予定です。iOS 版は、Android 版が安定してから対応する予定で、現在は準備中です。</span>
+        </div>
+        <div class="mini-faq-item">
+          <span class="mini-faq-q">データの保存先</span>
+          <span class="mini-faq-a">Google アカウントでログインし、データは Firebase（Cloud Firestore）に保存されます。オフラインでも入力でき、通信が復帰すると同期されます。</span>
+        </div>
+        <div class="mini-faq-item">
+          <span class="mini-faq-q">手数料率は変えられる？</span>
+          <span class="mini-faq-a">はい。取引手段（フリマ）の手数料率、梱包資材、送料などは自分で編集できるので、各サイトの改定に合わせて更新できます。</span>
+        </div>
+        <div class="mini-faq-item">
+          <span class="mini-faq-q">計算結果・CSV は正確？</span>
+          <span class="mini-faq-a">参考値です。実際の取引額と異なる場合があります。税務上の判断・申告はご自身の責任で行ってください。</span>
+        </div>
+        <div class="mini-faq-item">
+          <span class="mini-faq-q">データを削除したい</span>
+          <span class="mini-faq-a">アプリの「設定」→「アカウントとデータを削除」で削除できます。詳しくは<a href="./privacy-policy.html#delete-account" style="color:var(--primary-light);">プライバシーポリシー</a>をご覧ください。</span>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Footer -->
+  <footer>
+    <p>© 2026 Ryo-Lab. BoxProfit 開発チーム</p>
+    <p>メルカリ、PayPayフリマ、ラクマ、ヤフオク! などの名称は各社の商標です。本アプリは各社と提携・承認関係にありません。</p>
+  </footer>
+
+<script src="../assets/js/subsite.js"></script>
+</body>
+
+</html>
