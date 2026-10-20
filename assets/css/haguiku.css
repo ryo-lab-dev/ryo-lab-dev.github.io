@@ -122,3 +122,7 @@ footer p + p { color: var(--text-faint); }
 .story-list li { color: var(--text-sub); font-size: 0.95rem; padding: 0.35rem 0 0.35rem 1.25rem; position: relative; }
 .story-list li::before { content: '·'; position: absolute; left: 0.3rem; color: var(--primary); font-size: 1.2rem; line-height: 1.4; }
 @media (max-width: 768px) { .screenshot-strip img { height: 420px; max-height: 420px; } }
+
+/* 準備中のストアボタン（リンクなし） */
+.btn-disabled { opacity: 0.55; cursor: not-allowed; pointer-events: none; }
+.btn-disabled:hover { transform: none; background: #fff; }

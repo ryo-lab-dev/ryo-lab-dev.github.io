@@ -49,7 +49,7 @@
   <div class="doc-header reveal">
     <p class="doc-tag">Legal</p>
     <h1 class="doc-title">プライバシーポリシー</h1>
-    <p class="doc-updated">最終更新日: 2026年10月17日</p>
+    <p class="doc-updated">最終更新日: 2026年10月20日</p>
   </div>
 
   <p style="color:#6b6580;font-size:0.9rem;margin-bottom:2.5rem;" class="reveal">
@@ -72,13 +72,14 @@
         <tr><td>招待コード</td><td>パートナーを家族に招待するため（有効期限 7 日）</td></tr>
         </tbody>
       </table></div>
-    <h3>Google アカウントから取得する情報</h3>
+    <h3>Google・Apple アカウントから取得する情報</h3>
     <p>Google でログインする際に、<strong>氏名（表示名）とメールアドレス</strong>を取得します（ログインと本人確認のため）。パスワードは取得しません。</p>
+    <p>iOS では、Apple でログインすることもできます。Apple が提供する<strong>氏名</strong>（初回のログイン時のみ）と<strong>メールアドレス</strong>を取得します。メールアドレスを非公開にした場合は、Apple が発行する中継用のアドレスになります（本アプリの画面には、Apple アカウントのメールアドレスを表示しません）。パスワードは取得しません。</p>
     <h3>自動的に取得される情報</h3>
     <ul>
       <li><strong>利用状況</strong>: アプリの主要な操作（ログイン、記録の追加など）の種類と件数。内容（名前・日付・メモの本文など）は含みません（Firebase Analytics）。</li>
       <li><strong>クラッシュ情報</strong>: アプリが異常終了したときの端末・OS の情報とエラーの内容（Firebase Crashlytics）。</li>
-      <li><strong>広告に関する情報</strong>: 広告の配信のため、端末の広告 ID などが広告事業者に送信されます（Google AdMob）。</li>
+      <li><strong>広告に関する情報</strong>: 広告の配信のため、端末の広告 ID などが広告事業者に送信されます（Google AdMob）。iOS では、広告 ID（IDFA）を使うために、起動時にトラッキングの許可（App Tracking Transparency）をお願いします。<strong>許可しなくても、本アプリのすべての機能を使えます</strong>（許可しない場合は、広告 ID は使われず、広告の関連性が下がることがあります）。許可の設定は、端末の「設定」から、いつでも変えられます。</li>
     </ul>
   </div>
 
@@ -104,6 +105,7 @@
         <thead><tr><th>サービス</th><th>提供者</th><th>送信・保存される情報</th><th>目的</th></tr></thead>
         <tbody>
         <tr><td>Firebase Authentication / Cloud Firestore</td><td>Google LLC</td><td>アカウント情報、入力した情報すべて</td><td>ログイン、データの保存・共有</td></tr>
+        <tr><td>Sign in with Apple（iOS）</td><td>Apple Inc.</td><td>ログイン時の認証情報（氏名・メールアドレス）。アカウントを削除するときは、Apple 側のログインの許可（トークン）の取り消しの依頼</td><td>Apple でのログイン、アカウント削除時の連携の解除</td></tr>
         <tr><td>Firebase Analytics / Crashlytics</td><td>Google LLC</td><td>利用状況、クラッシュ情報</td><td>改善、不具合の調査</td></tr>
         <tr><td>Google AdMob</td><td>Google LLC</td><td>広告 ID、端末情報 など</td><td>広告の配信</td></tr>
         </tbody>
@@ -111,6 +113,7 @@
     <ul>
       <li>法令に基づく場合を除き、上記以外の第三者に、利用者の情報を提供しません。</li>
       <li>授乳・ミルクのリマインダーは、お使いの端末の中で通知されます。通知のための情報を、外部のサービスに送信しません。</li>
+      <li>Firebase App Check により、正規のアプリからの通信かどうかを確認するため、端末の認証情報（iOS は App Attest／DeviceCheck、Android は Play Integrity）が Google に送信されます。個人を特定する情報は含みません。</li>
       <li>入力したデータは、主に Google の日本（東京）のサーバーに保存されます。ログイン情報などの処理は、日本国外のサーバーで行われる場合があります。</li>
     </ul>
   </div>
@@ -140,9 +143,10 @@
     <p>アカウントと、あなたの情報の削除は、次のいずれかの方法でリクエストできます。</p>
     <ul>
       <li><strong>アプリ内から</strong>: メニュー →「アカウント」→「アカウントを削除」。アカウントと、あなたの情報が削除されます。</li>
+      <li>Apple でログインしているアカウントを削除すると、Apple 側のログインの許可（トークン）も取り消されます。</li>
       <li>最後の家族メンバーが削除した場合は、家族のデータ（記録・ToDo・グッズ・名前など）もすべて削除されます。ほかのメンバーが残っている場合、家族のデータは残りのメンバーに引き継がれます。</li>
       <li>お子さん単位の削除（呼び名・誕生日と、そのお子さんの記録）も、アプリの「お子さん」画面から行えます。</li>
-      <li><strong>アプリを削除した・ログインできない場合</strong>: 下記のお問い合わせフォームから、登録した Google アカウントのメールアドレスと「削除希望」の旨をお送りください。本人確認のうえ、削除します。</li>
+      <li><strong>アプリを削除した・ログインできない場合</strong>: 下記のお問い合わせフォームから、登録した Google または Apple アカウントのメールアドレスと「削除希望」の旨をお送りください（Apple のメールアドレスを非公開にしている場合は、中継用のアドレスではなく、分かる範囲の情報をお送りください）。本人確認のうえ、削除します。</li>
     </ul>
     <p>お問い合わせフォーム: <a href="https://docs.google.com/forms/d/e/1FAIpQLSdh_gI7e0ZawnEM62MNRGtC0ADOOy4_v6luidV2QWpLXSkJVw/viewform?usp=dialog" target="_blank" rel="noopener">こちらから送信</a></p>
   </div>
@@ -166,7 +170,7 @@
 
   <div class="doc-section reveal">
     <h2><span class="article-chip">第9条</span> 広告について</h2>
-    <p>本アプリには広告が表示されます。広告の配信に使われる情報や、広告のパーソナライズの設定は、端末の設定（Google 設定 → 広告）から変更できます。</p>
+    <p>本アプリには広告が表示されます。広告の配信に使われる情報や、広告のパーソナライズの設定は、Android は端末の設定（Google 設定 → 広告）、iOS は端末の設定（プライバシーとセキュリティ → トラッキング、Apple 広告）から変更できます。</p>
   </div>
 
   <div class="divider"></div>
