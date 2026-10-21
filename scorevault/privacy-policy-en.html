@@ -40,7 +40,7 @@
   <div class="doc-header reveal">
     <p class="doc-tag">Legal</p>
     <h1 class="doc-title">Privacy Policy</h1>
-    <p class="doc-updated">Last Updated: March 24, 2026</p>
+    <p class="doc-updated">Last Updated: October 21, 2026</p>
   </div>
 
   <div class="doc-section reveal">
@@ -48,11 +48,16 @@
     <p>ScoreVault collects the following data to provide its services:</p>
     <ul>
       <li>Game logs (title, rating, review, playtime, cover image URL, etc.)</li>
-      <li>Authentication data: minimal identifiers (email address, name, profile picture URL) via Google Sign-In</li>
-      <li>Cloud sync: your game log data, encrypted and synced to Firebase Firestore when the sync feature is enabled</li>
-      <li>Steam integration: public game library and achievement data fetched via the Steam API</li>
-      <li>Advertising ID (IDFA / AAID) — collected by AdMob for personalized advertising</li>
+      <li>Information we receive when you sign in with Google: your email address, name, and profile picture URL</li>
+      <li>Information we receive when you use Sign in with Apple: your name and email address. If you choose to hide your email, we receive the private relay address issued by Apple (@privaterelay.appleid.com). The app does not display Apple users' email addresses on screen.</li>
+      <li>A Firebase user ID (UID) issued by Firebase Authentication</li>
+      <li>Cloud sync data stored in Firebase Firestore (only if you sign in and use sync)</li>
+      <li>Steam / IGDB integration: public game library and achievement data fetched via the Steam API, and game information fetched from IGDB when you search by game title</li>
+      <li>Advertising ID (IDFA on iOS, AAID on Android) — used by AdMob to serve ads. On iOS, we show the App Tracking Transparency (ATT) permission prompt on first launch, and use the IDFA for ad delivery only if you allow it. If you decline, no app features are restricted. You can change this permission at any time in your device's Settings app.</li>
+      <li>Usage data (such as screen views) — collected by Firebase Analytics. It is not linked to your user ID.</li>
+      <li>Crash reports and device information — collected by Firebase Crashlytics</li>
     </ul>
+    <p>Signing in is optional. All recording features work without signing in; signing in lets you use cloud sync. You can sign in with Google or Apple.</p>
   </div>
 
   <div class="divider"></div>
@@ -62,8 +67,10 @@
     <p>Collected data is used solely for the following purposes:</p>
     <ul>
       <li>Display and manage your game play records within the app</li>
-      <li>Sync data across multiple devices (when sync is enabled)</li>
+      <li>Sync data across multiple devices (when you sign in and use sync)</li>
       <li>Auto-complete game information using Steam and IGDB APIs</li>
+      <li>Serve advertising</li>
+      <li>Investigate bugs and improve the app</li>
     </ul>
   </div>
 
@@ -73,8 +80,8 @@
     <h2>3. Data Storage</h2>
     <ul>
       <li>Primary data is stored locally in an Isar Database on your device.</li>
-      <li>Cloud storage only occurs when the sync feature is explicitly enabled.</li>
-      <li>Your personal information will not be provided or sold to third parties without your consent.</li>
+      <li>Data is stored in the cloud (Firebase Firestore) only if you sign in and use sync.</li>
+      <li>We do not provide or sell your personal information to third parties.</li>
     </ul>
   </div>
 
@@ -84,7 +91,9 @@
     <h2>4. Third-Party Services</h2>
     <p>This app uses the following third-party services. Please review their respective privacy policies as well.</p>
     <ul>
-      <li>Firebase (Authentication &amp; Cloud Sync) — provided by Google LLC</li>
+      <li>Firebase (Authentication, Firestore cloud sync, Analytics, and Crashlytics) — provided by Google LLC</li>
+      <li>Google Sign-In — provided by Google LLC</li>
+      <li>Sign in with Apple — provided by Apple Inc.</li>
       <li>Steam API (Game data) — provided by Valve Corporation</li>
       <li>IGDB API (Game data) — provided by Twitch Interactive, Inc.</li>
       <li>AdMob (Advertising) — provided by Google LLC</li>
@@ -96,8 +105,10 @@
   <div class="doc-section reveal">
     <h2>5. Your Rights</h2>
     <ul>
-      <li>You can delete your cloud data or account at any time via the app settings.</li>
-      <li>Local data is automatically removed when the app is uninstalled from your device.</li>
+      <li>You can delete your account within the app: go to Settings, find the ACCOUNT section, and tap "Delete account".</li>
+      <li>Deleting your account removes the account and the data synced to the cloud.</li>
+      <li>Data stored locally on your device is not removed when you delete your account. It is removed when you uninstall the app.</li>
+      <li>If you haven't signed in recently, the app will ask you to sign in again before deleting. Please sign in again and then retry.</li>
     </ul>
   </div>
 

@@ -40,7 +40,7 @@
   <div class="doc-header reveal">
     <p class="doc-tag">Legal</p>
     <h1 class="doc-title">プライバシーポリシー</h1>
-    <p class="doc-updated">最終更新日: 2026年3月24日</p>
+    <p class="doc-updated">最終更新日: 2026年10月21日</p>
   </div>
 
   <div class="doc-section reveal">
@@ -54,11 +54,16 @@
     <p>ScoreVaultは、以下の情報を収集・利用します。</p>
     <ul>
       <li>ゲームログ（タイトル・評価・レビュー・プレイ時間・画像URL等）</li>
-      <li>GoogleまたはメールによるGoogle Sign-In 等の認証データ（最小限の識別子：メールアドレス・氏名・プロフィール画像URL）</li>
-      <li>Firebase Firestoreによるクラウド同期データ（同期機能を有効にした場合のみ）</li>
+      <li>Google ログインで取得する情報（メールアドレス・氏名・プロフィール画像URL）</li>
+      <li>Sign in with Apple で取得する情報（氏名・メールアドレス）。メールアドレスを非公開にした場合は、Apple が発行する転送用のメールアドレス（@privaterelay.appleid.com）となります。アプリの画面には、Apple アカウントのメールアドレスを表示しません。</li>
+      <li>Firebase Authentication が発行するユーザー ID（UID）</li>
+      <li>Firebase Firestoreによるクラウド同期データ（サインインして同期機能を使用した場合のみ）</li>
       <li>Steam / IGDB 連携情報（公開ゲーム情報・実績情報）</li>
-      <li>広告識別子（IDFA / AAID）— AdMob によるパーソナライズ広告配信のために取得します</li>
+      <li>広告識別子（iOS では IDFA、Android では AAID）— AdMob による広告配信のために使用します。iOS では、初回起動時に表示される App Tracking Transparency（ATT）の許可ダイアログで許可いただいた場合のみ、IDFA を広告配信に使用します。許可しない場合でも、アプリの機能は制限されません。許可の設定は、端末の「設定」アプリからいつでも変更できます。</li>
+      <li>利用状況（画面遷移など）— Firebase Analytics により収集します。ユーザー ID とは紐づけていません。</li>
+      <li>クラッシュ情報・端末情報 — Firebase Crashlytics により収集します。</li>
     </ul>
+    <p>サインインは任意です。サインインしなくても、すべての記録機能をご利用いただけます。サインインすると、クラウド同期をご利用いただけます。サインイン方法は Google と Apple です。</p>
   </div>
 
   <div class="divider"></div>
@@ -70,6 +75,8 @@
       <li>アプリ内でのゲームプレイ記録の表示・管理</li>
       <li>複数デバイス間でのデータ同期</li>
       <li>ゲーム情報の自動補完（Steam / IGDB API 連携）</li>
+      <li>広告の配信</li>
+      <li>不具合の調査とアプリの改善</li>
     </ul>
   </div>
 
@@ -90,7 +97,9 @@
     <h2>第4条 外部サービス</h2>
     <p>本アプリは以下の外部サービスを利用しています。各サービスのプライバシーポリシーも併せてご確認ください。</p>
     <ul>
-      <li>Firebase（認証・クラウド同期）— Google LLC 提供</li>
+      <li>Firebase（Authentication・Firestore によるクラウド同期、Analytics、Crashlytics）— Google LLC 提供</li>
+      <li>Google ログイン — Google LLC 提供</li>
+      <li>Sign in with Apple — Apple Inc. 提供</li>
       <li>Steam API（ゲーム情報取得）— Valve Corporation 提供</li>
       <li>IGDB API（ゲーム情報取得）— Twitch Interactive, Inc. 提供</li>
       <li>AdMob（広告配信）— Google LLC 提供</li>
@@ -102,8 +111,10 @@
   <div class="doc-section reveal">
     <h2>第5条 ユーザーの権利</h2>
     <ul>
-      <li>アプリ設定からクラウドデータおよびアカウントの削除が可能です。</li>
-      <li>ローカルデータはアプリを削除することで消去されます。</li>
+      <li>アプリ内でアカウントを削除できます。アプリの「設定」画面の「ACCOUNT」にある「アカウントを削除」から行ってください。</li>
+      <li>削除されるのは、アカウントと、クラウドに同期されたデータです。</li>
+      <li>端末内のローカルデータは、アカウントを削除しても残ります。ローカルデータはアプリをアンインストールすることで消去されます。</li>
+      <li>直近にログインしていない場合は、「再度ログインしてから削除してください」と表示されます。その場合は、再度ログインしてから削除してください。</li>
     </ul>
   </div>
 
