@@ -44,8 +44,8 @@
     <div class="doc-header reveal">
       <span class="doc-tag">Legal</span>
       <h1 class="doc-title">プライバシーポリシー</h1>
-      <p class="doc-updated">最終更新日: 2026年3月16日</p>
-      <p class="doc-app">NexusDiary — AI日記アプリ（Android）</p>
+      <p class="doc-updated">最終更新日: 2026年10月22日</p>
+      <p class="doc-app">NexusDiary — AI日記アプリ（Android / iOS）</p>
     </div>
 
     <!-- Notice -->
@@ -58,8 +58,8 @@
     <div class="doc-section reveal">
       <h2>第1条 収集する情報</h2>
 
-      <h3>（1）Googleアカウント情報（Google Sign-In 時のみ）</h3>
-      <div class="info-row"><span class="info-label">取得項目</span><span class="info-value">氏名・メールアドレス・プロフィール画像</span>
+      <h3>（1）アカウント情報（Google または Apple でのサインイン時のみ）</h3>
+      <div class="info-row"><span class="info-label">取得項目</span><span class="info-value">氏名・メールアドレス・プロフィール画像（Apple でサインインした場合は、Apple から提供される氏名とメールアドレス。メールアドレスを非公開にした場合は、Apple の中継用アドレス）</span>
       </div>
       <div class="info-row"><span class="info-label">利用目的</span><span class="info-value">ユーザー識別・日記データのクラウド同期</span>
       </div>
@@ -80,13 +80,19 @@
       <div class="info-row"><span class="info-label">処理方式</span><span class="info-value">Firebase Functions
           サーバー上でのみ処理。APIキーはクライアントに保存されません。</span></div>
 
-      <h3>（4）広告識別子（Android）</h3>
-      <div class="info-row"><span class="info-label">取得項目</span><span class="info-value">広告識別子（Google Advertising
-          ID）</span></div>
+      <h3>（4）広告識別子</h3>
+      <div class="info-row"><span class="info-label">取得項目</span><span class="info-value">広告識別子（Android: Google Advertising
+          ID、iOS: IDFA。iOS では App Tracking Transparency で許可された場合のみ使用します）</span></div>
       <div class="info-row"><span class="info-label">利用目的</span><span class="info-value">Google AdMob
           によるパーソナライズ広告配信</span></div>
       <div class="info-row"><span class="info-label">オプトアウト</span><span class="info-value">Android
-          設定「広告」→「広告のパーソナライズを無効化」から変更できます</span></div>
+          設定「広告」→「広告のパーソナライズを無効化」、iOS 設定「プライバシーとセキュリティ」→「トラッキング」から変更できます</span></div>
+
+      <h3>（5）利用状況・クラッシュ情報</h3>
+      <div class="info-row"><span class="info-label">取得項目</span><span class="info-value">画面の利用状況などの操作ログ・端末情報・クラッシュ時の動作記録（日記の本文は含みません）</span></div>
+      <div class="info-row"><span class="info-label">利用目的</span><span class="info-value">アプリの品質向上、不具合の調査と修正</span></div>
+      <div class="info-row"><span class="info-label">保存先</span><span class="info-value">Firebase Analytics / Firebase Crashlytics（Google
+          LLC）</span></div>
     </div>
 
     <div class="divider"></div>
@@ -100,6 +106,16 @@
           <strong style="color:#cbd5e1;">Firebase Authentication / Firestore（Google LLC）</strong><br>
           認証・データ保存に使用します。
           <a href="https://policies.google.com/privacy" target="_blank" rel="noopener">Google プライバシーポリシー</a>
+        </li>
+        <li>
+          <strong style="color:#cbd5e1;">Firebase Analytics / Crashlytics（Google LLC）</strong><br>
+          利用状況の分析と、クラッシュの調査に使用します。
+          <a href="https://policies.google.com/privacy" target="_blank" rel="noopener">Google プライバシーポリシー</a>
+        </li>
+        <li>
+          <strong style="color:#cbd5e1;">Sign in with Apple（Apple Inc.）</strong><br>
+          iOS でのサインインに使用します。
+          <a href="https://www.apple.com/jp/legal/privacy/" target="_blank" rel="noopener">Apple プライバシーポリシー</a>
         </li>
         <li>
           <strong style="color:#cbd5e1;">Firebase Functions（Google LLC）</strong><br>
