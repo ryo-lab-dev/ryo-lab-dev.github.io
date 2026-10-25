@@ -45,7 +45,7 @@
     <div class="doc-header reveal">
       <span class="doc-tag">Legal</span>
       <h1 class="doc-title">プライバシーポリシー</h1>
-      <p class="doc-updated">最終更新日: 2026年10月22日</p>
+      <p class="doc-updated">最終更新日: 2026年10月25日</p>
       <p class="doc-app">NexusDiary — AI日記アプリ（Android / iOS）</p>
     </div>
 
@@ -76,7 +76,7 @@
 
       <h3>（3）AI 分析用テキスト</h3>
       <div class="info-row"><span class="info-label">取得項目</span><span class="info-value">日記テキストの一部</span></div>
-      <div class="info-row"><span class="info-label">利用目的</span><span class="info-value">タグ・感情・開発アイデアの自動生成（Gemini API
+      <div class="info-row"><span class="info-label">利用目的</span><span class="info-value">タグ・感情・開発アイデアの自動生成（Anthropic の Claude API
           使用）</span></div>
       <div class="info-row"><span class="info-label">処理方式</span><span class="info-value">Firebase Functions
           サーバー上でのみ処理。APIキーはクライアントに保存されません。</span></div>
@@ -120,12 +120,12 @@
         </li>
         <li>
           <strong style="color:#cbd5e1;">Firebase Functions（Google LLC）</strong><br>
-          Gemini API 呼び出しをサーバーサイドで処理します。クライアントから直接 AI API へは接続しません。
+          Claude API 呼び出しをサーバーサイドで処理します。クライアントから直接 AI API へは接続しません。
         </li>
         <li>
-          <strong style="color:#cbd5e1;">Gemini API（Google LLC）</strong><br>
-          日記テキストを AI 分析するために Firebase Functions 経由で利用します。
-          <a href="https://ai.google.dev/terms" target="_blank" rel="noopener">Gemini API 利用規約</a>
+          <strong style="color:#cbd5e1;">Claude API（Anthropic PBC）</strong><br>
+          日記テキストを AI 分析するために Firebase Functions 経由で利用します。送信した内容が AI の学習に使われることはありません。
+          <a href="https://www.anthropic.com/legal/privacy" target="_blank" rel="noopener">Anthropic プライバシーポリシー</a>
         </li>
         <li>
           <strong style="color:#cbd5e1;">Google AdMob（Google LLC）</strong><br>
@@ -136,7 +136,7 @@
       <p style="margin-top:1rem;">
         上記以外の第三者への情報提供、および法令に基づく開示要請への対応以外で、ユーザー情報を第三者に販売・共有することはありません。
       </p>
-      <p><strong>外国にある第三者への提供について</strong>: 上記の外部サービスの提供事業者（Google LLC・Apple Inc.）は米国の事業者で、利用者の情報は、米国など日本国外のサーバーで保存・処理される場合があります。AI の分析・提案のために、日記の本文が Google の Gemini API に送信されます。米国の個人情報の保護に関する制度は、個人情報保護委員会の「<a href="https://www.ppc.go.jp/enforcement/infoprovision/laws/offshore_report_america/" target="_blank" rel="noopener">外国制度（アメリカ合衆国）</a>」で確認できます。各事業者は、それぞれのプライバシーポリシーやデータの取り扱いに関する規約に基づいて、情報を安全に管理するための措置を講じています。</p>
+      <p><strong>外国にある第三者への提供について</strong>: 上記の外部サービスの提供事業者（Google LLC・Anthropic PBC・Apple Inc.）は米国の事業者で、利用者の情報は、米国など日本国外のサーバーで保存・処理される場合があります。AI の分析・提案のために、日記の本文が Anthropic の Claude API に送信されます。米国の個人情報の保護に関する制度は、個人情報保護委員会の「<a href="https://www.ppc.go.jp/enforcement/infoprovision/laws/offshore_report_america/" target="_blank" rel="noopener">外国制度（アメリカ合衆国）</a>」で確認できます。各事業者は、それぞれのプライバシーポリシーやデータの取り扱いに関する規約に基づいて、情報を安全に管理するための措置を講じています。</p>
     </div>
 
     <div class="divider"></div>
@@ -148,7 +148,7 @@
         <li>日記データは Firestore セキュリティルールにより、ユーザー自身のみがアクセス可能です（<code
             style="font-family:'JetBrains Mono',monospace;font-size:0.85em;color:#a78bfa;">request.auth.uid == userId</code>
           を検証）。</li>
-        <li>Gemini API との通信は Firebase Functions サーバーを経由します。APIキーはクライアントアプリに保存されません。</li>
+        <li>Claude API との通信は Firebase Functions サーバーを経由します。APIキーはクライアントアプリに保存されません。</li>
         <li>通信はすべて HTTPS により暗号化されます。</li>
         <li>本アプリは端末内への機密情報（APIキー等）の永続保存を行いません。</li>
       </ul>
