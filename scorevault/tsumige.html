@@ -1,0 +1,155 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>積みゲーを管理する方法 — 一覧にして、1 本ずつ崩す | ScoreVault</title>
+  <script src="https://cdn.tailwindcss.com"></script>
+  <link rel="icon" href="../assets/icons/scorevault_icon.svg" type="image/svg+xml" />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Syne:wght@400;600;700;800&family=Noto+Sans+JP:wght@300;400;500;700&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="../assets/css/scorevault.css" />
+  <link rel="stylesheet" href="../assets/css/subsite.css" />
+  <!-- SEO -->
+  <meta name="description" content="セールで買ったまま遊んでいない「積みゲー」を管理する方法。持っているゲームを一覧にし、ステータスで分け、次に遊ぶ 1 本を決めるまでの手順を、ゲーム記録アプリ ScoreVault の使い方とあわせて紹介します。">
+  <link rel="canonical" href="https://ryo-lab.dev/scorevault/tsumige.html">
+  <meta property="og:type" content="article" />
+  <meta property="og:title" content="積みゲーを管理する方法 — 一覧にして、1 本ずつ崩す" />
+  <meta property="og:description" content="持っているゲームを一覧にし、ステータスで分け、次に遊ぶ 1 本を決めるまでの手順。" />
+  <meta property="og:url" content="https://ryo-lab.dev/scorevault/tsumige.html" />
+  <meta property="og:image" content="https://ryo-lab.dev/assets/ogp/ogp_scorevault.png" />
+  <meta name="apple-itunes-app" content="app-id=6760386306" />
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "Article",
+    "headline": "積みゲーを管理する方法 — 一覧にして、1 本ずつ崩す",
+    "description": "持っているゲームを一覧にし、ステータスで分け、次に遊ぶ 1 本を決めるまでの手順。",
+    "inLanguage": "ja",
+    "datePublished": "2026-10-26",
+    "dateModified": "2026-10-26",
+    "mainEntityOfPage": "https://ryo-lab.dev/scorevault/tsumige.html",
+    "image": "https://ryo-lab.dev/assets/ogp/ogp_scorevault.png",
+    "author": { "@type": "Organization", "name": "Ryo-Lab.", "url": "https://ryo-lab.dev/" },
+    "publisher": { "@type": "Organization", "name": "Ryo-Lab.", "url": "https://ryo-lab.dev/" },
+    "about": { "@type": "SoftwareApplication", "name": "ScoreVault", "url": "https://ryo-lab.dev/scorevault/" }
+  }
+  </script>
+</head>
+<body>
+
+<nav>
+  <div class="nav-inner">
+    <a href="./" class="nav-logo">
+      <div class="nav-logo-dot"></div>
+      <span class="nav-logo-text">ScoreVault</span>
+    </a>
+    <div class="nav-links">
+      <a href="./">Home</a>
+      <a href="./privacy-policy.html">Privacy Policy</a>
+      <a href="./privacy-policy-en.html">Privacy Policy (EN)</a>
+      <a href="./terms.html">Terms</a>
+      <a href="./tsumige.html" class="active">積みゲー管理</a>
+      <a href="./faq.html">FAQ</a>
+      <a href="./update-history.html">Update History</a>
+    </div>
+    <button class="nav-hamburger" id="navToggle" aria-label="メニューを開く">
+      <span></span><span></span><span></span>
+    </button>
+  </div>
+</nav>
+
+<div class="doc-container">
+  <div class="doc-header reveal">
+    <p class="doc-tag">Guide</p>
+    <h1 class="doc-title">積みゲーを管理する方法</h1>
+    <p class="doc-updated">一覧にして、分けて、1 本ずつ崩す（2026年10月26日）</p>
+  </div>
+
+    <div class="doc-section reveal">
+      <p>セールでつい買ってしまい、遊ばないまま増えていくゲーム。いわゆる「積みゲー」は、数が増えるほど「何を持っているか」「次に何を遊ぶか」が分からなくなり、さらに崩しにくくなります。</p>
+      <p>このページでは、積みゲーを減らすための管理の手順を 4 つに分けて紹介します。紙やスプレッドシートでもできますが、後半ではゲーム記録アプリ ScoreVault での具体的なやり方も書いています。</p>
+    </div>
+
+    <div class="divider"></div>
+
+    <div class="doc-section reveal">
+      <h2>1. 持っているゲームを、まず全部書き出す</h2>
+      <p>積みゲーが崩れない一番の理由は、全体が見えていないことです。Steam・Switch・PlayStation など、ストアが分かれていると、自分が何本持っているかすら把握しにくくなります。</p>
+      <ul>
+        <li>買ったけれど一度も起動していないもの</li>
+        <li>序盤で止まっているもの</li>
+        <li>いつか遊びたいと思って、まだ買っていないもの（メモとして）</li>
+      </ul>
+      <p>まずはプラットフォームを問わず、1 か所に並べることから始めます。</p>
+      <p><strong>ScoreVault では</strong>: Steam のライブラリを一括で取り込めます（Steam のプロフィールを公開にする必要があります）。取り込んだゲームのステータスは、はじめは「積みゲー」になります。Switch や PlayStation のゲームは、タイトル検索（IGDB のデータ）か手入力で追加します。</p>
+    </div>
+
+    <div class="divider"></div>
+
+    <div class="doc-section reveal">
+      <h2>2. ステータスで 4 つに分ける</h2>
+      <p>書き出したゲームを、いまの状態で分けます。分け方は細かすぎないほうが続きます。</p>
+      <ul>
+        <li><strong>積みゲー</strong>: まだ遊んでいない</li>
+        <li><strong>プレイ中</strong>: いま進めている</li>
+        <li><strong>中断</strong>: 途中で止めた（再開するかは後で決める）</li>
+        <li><strong>クリア済み</strong>: 遊び終えた</li>
+      </ul>
+      <p>「中断」を分けておくのがポイントです。止まったゲームが積みゲーに混ざると、本当に手を付けていないゲームが見えにくくなります。</p>
+      <p><strong>ScoreVault では</strong>: この 4 つのステータスがそのまま用意されていて、一覧をステータス・プラットフォーム・スコア・プレイ時間・タグで絞り込めます。</p>
+    </div>
+
+    <div class="divider"></div>
+
+    <div class="doc-section reveal">
+      <h2>3. 「プレイ中」は 1〜2 本に絞る</h2>
+      <p>同時に何本も進めると、どれも終わらないまま積みゲーと同じ状態になりがちです。プレイ中は 1〜2 本までと決めて、1 本終えたら次の 1 本を積みゲーから選びます。</p>
+      <p>次の 1 本は、次のような基準で選ぶと迷いにくくなります。</p>
+      <ul>
+        <li>クリアまでの時間が短いもの（短い作品を終えると、崩す流れができる）</li>
+        <li>続編・関連作が近く出るもの</li>
+        <li>買った理由をまだ覚えているもの</li>
+      </ul>
+      <p>「もう遊ばない」と分かったゲームは、無理に崩さず「中断」にして区切りをつけるのも一つの方法です。</p>
+    </div>
+
+    <div class="divider"></div>
+
+    <div class="doc-section reveal">
+      <h2>4. 遊び終えたら、感想を一言だけ残す</h2>
+      <p>クリアしたら、スコアと一言の感想を残しておきます。あとで見返すと、自分がどんなゲームを楽しめたかが分かり、次に買うゲームの判断にも役立ちます。崩した本数が目に見えると、続ける励みにもなります。</p>
+      <p><strong>ScoreVault では</strong>: スコア・感想・プレイ時間を記録でき、記録は自分だけのもので、他の人には公開されません。クリアした本数（1・5・10・20・50・100 本）で解除される実績や、1 年に遊んだ本数・クリアした本数・プレイ時間をまとめた画像の共有（感想・メモは載りません）もあります。</p>
+    </div>
+
+    <div class="divider"></div>
+
+    <div class="doc-section reveal">
+      <h2>ScoreVault について</h2>
+      <p>ScoreVault は、遊んだゲームのスコア・感想・プレイ時間を、自分だけのものとして記録するアプリです。Android・iOS で無料で使えます（広告あり）。</p>
+      <ul>
+        <li>Steam ライブラリの一括取り込み（取り込んだゲームは「積みゲー」として登録）</li>
+        <li>積みゲー・プレイ中・中断・クリア済みのステータス管理と絞り込み</li>
+        <li>感想のネタバレ防止表示</li>
+        <li>プレイ時間や好みの傾向の統計</li>
+      </ul>
+      <div style="display:flex;gap:1rem;flex-wrap:wrap;margin-top:1.5rem;">
+        <a href="https://play.google.com/store/apps/details?id=com.scorevault.score_vault" target="_blank" rel="noopener" class="btn-primary">Google Play でダウンロード</a>
+        <a href="https://apps.apple.com/jp/app/id6760386306" target="_blank" rel="noopener" class="btn-secondary">App Store でダウンロード</a>
+      </div>
+      <p style="margin-top:1.5rem;"><a href="./">ScoreVault のトップへ</a> ・ <a href="./faq.html">よくある質問</a></p>
+    </div>
+
+    <div class="doc-section reveal">
+      <p style="font-size:0.85rem;">Steam は Valve Corporation の、Nintendo Switch は任天堂の、PlayStation はソニー・インタラクティブエンタテインメントの商標または登録商標です。ScoreVault は各社とは関係がありません。</p>
+    </div>
+</div>
+
+<footer>
+  <p>© 2026 Ryo-Lab. ScoreVault Project</p>
+</footer>
+
+<script src="../assets/js/subsite.js"></script>
+</body>
+</html>
