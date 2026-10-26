@@ -1,0 +1,139 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>GCP ACE（Associate Cloud Engineer）の勉強法 — 練習問題で苦手をつぶす | CloudKata</title>
+  <script src="https://cdn.tailwindcss.com"></script>
+  <link rel="icon" href="../assets/cloudkata/icon_01_zen.png" type="image/png" />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Syne:wght@400;600;700;800&family=Noto+Sans+JP:wght@300;400;500;700&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="../assets/css/cloudkata.css" />
+  <link rel="stylesheet" href="../assets/css/subsite.css" />
+  <!-- SEO -->
+  <meta name="description" content="Google Cloud の資格 Associate Cloud Engineer（ACE）の勉強の進め方。公式の試験ガイドで範囲をつかみ、カテゴリ別の練習問題で苦手を見つけ、コンソールで手を動かして定着させる手順を、学習アプリ CloudKata の使い方とあわせて紹介します。">
+  <link rel="canonical" href="https://ryo-lab.dev/cloudkata/ace-study.html">
+  <meta property="og:type" content="article" />
+  <meta property="og:title" content="GCP ACE（Associate Cloud Engineer）の勉強法 — 公式の試験ガイドを軸に、練習問題で苦手をつぶす" />
+  <meta property="og:description" content="Google Cloud の資格 Associate Cloud Engineer（ACE）の勉強の進め方。公式の試験ガイドで範囲をつかみ、カテゴリ別の練習問題で苦手を見つけ、コンソールで手を動かして定着させる手順を、学習アプリ CloudKata の使い方とあわせて紹介します。" />
+  <meta property="og:url" content="https://ryo-lab.dev/cloudkata/ace-study.html" />
+  <meta property="og:image" content="https://ryo-lab.dev/assets/ogp/ogp_cloudkata.png" />
+  <meta name="apple-itunes-app" content="app-id=6760472647" />
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "Article",
+    "headline": "GCP ACE（Associate Cloud Engineer）の勉強法 — 公式の試験ガイドを軸に、練習問題で苦手をつぶす",
+    "description": "Google Cloud の資格 Associate Cloud Engineer（ACE）の勉強の進め方。公式の試験ガイドで範囲をつかみ、カテゴリ別の練習問題で苦手を見つけ、コンソールで手を動かして定着させる手順を、学習アプリ CloudKata の使い方とあわせて紹介します。",
+    "inLanguage": "ja",
+    "datePublished": "2026-10-26",
+    "dateModified": "2026-10-26",
+    "mainEntityOfPage": "https://ryo-lab.dev/cloudkata/ace-study.html",
+    "image": "https://ryo-lab.dev/assets/ogp/ogp_cloudkata.png",
+    "author": {
+      "@type": "Organization",
+      "name": "Ryo-Lab.",
+      "url": "https://ryo-lab.dev/"
+    },
+    "publisher": {
+      "@type": "Organization",
+      "name": "Ryo-Lab.",
+      "url": "https://ryo-lab.dev/"
+    },
+    "about": {
+      "@type": "SoftwareApplication",
+      "name": "CloudKata",
+      "url": "https://ryo-lab.dev/cloudkata/"
+    }
+  }
+  </script>
+</head>
+<body>
+
+<nav>
+  <div class="nav-inner">
+    <a href="./" class="nav-logo">
+      <div class="nav-logo-dot"></div>
+      <span class="nav-logo-text">CloudKata</span>
+    </a>
+    <div class="nav-links">
+      <a href="./">Home</a>
+      <a href="./privacy-policy.html">Privacy Policy</a>
+      <a href="./disclaimer.html">免責事項</a>
+      <a href="./terms.html">利用規約</a>
+      <a href="./ace-study.html" class="active">ACE の勉強法</a>
+    </div>
+    <button class="nav-hamburger" id="navToggle" aria-label="メニューを開く">
+      <span></span><span></span><span></span>
+    </button>
+  </div>
+</nav>
+
+<div class="doc-container">
+  <div class="doc-header reveal">
+    <p class="doc-tag">Guide</p>
+    <h1 class="doc-title">GCP ACE（Associate Cloud Engineer）の勉強法</h1>
+    <p class="doc-updated">公式の試験ガイドを軸に、練習問題で苦手をつぶす（2026年10月26日）</p>
+  </div>
+
+  <div class="doc-section reveal">
+    <p>Google Cloud の資格「Associate Cloud Engineer（ACE）」は、Compute Engine・IAM・VPC・Cloud Storage など、幅広いサービスの知識が問われます。範囲が広いぶん、「どこから手を付けるか」「どこが苦手か」が見えないまま進めると、時間がかかりがちです。</p>
+    <p>このページでは、ACE の勉強を 4 つの手順に分けて紹介します。各手順で、学習アプリ CloudKata での進め方も書いています。</p>
+  </div>
+
+  <div class="divider"></div>
+
+  <div class="doc-section reveal">
+    <h2>1. 公式の試験ガイドで、範囲をつかむ</h2>
+    <p>最初に、Google Cloud が公開している ACE の試験ガイドで、出題の分野と比重を確かめます。試験の形式・時間・料金などは変わることがあるため、受験前には必ず公式の情報を確認してください。</p>
+    <p>範囲を眺めたら、「仕事で触ったことがある」「名前だけ知っている」「まったく知らない」に分けておくと、次の手順で優先順位を付けやすくなります。</p>
+  </div>
+
+  <div class="divider"></div>
+
+  <div class="doc-section reveal">
+    <h2>2. カテゴリ別の練習問題で、苦手を見つける</h2>
+    <p>範囲をつかんだら、カテゴリごとに練習問題を解いて、自分の苦手を数字で確かめます。最初から高得点を狙う必要はありません。どのカテゴリで間違えるかが分かれば十分です。</p>
+    <p><strong>CloudKata では</strong>: Compute Engine・IAM・VPC・Cloud Storage など、主要なカテゴリの 4 択問題を、出題数・カテゴリ・難易度を選んで解けます。カテゴリ別の正答率はレーダーチャートで確認できます。収録している問題はすべて独自に作成した練習問題で、実際の試験問題とは関係ありません。</p>
+  </div>
+
+  <div class="divider"></div>
+
+  <div class="doc-section reveal">
+    <h2>3. 間違えた問題は、解説とコンソールで確かめる</h2>
+    <p>ACE は「どのサービスを、どう設定するか」を問う問題が中心です。間違えた問題は、答えを覚えるだけでなく、公式ドキュメントで仕組みを読み、無料枠の範囲でコンソールを実際に操作してみると定着します。</p>
+    <p><strong>CloudKata では</strong>: 各問題の解説に、コンソールでの操作手順と公式ドキュメントへのリンクが付いています。</p>
+  </div>
+
+  <div class="divider"></div>
+
+  <div class="doc-section reveal">
+    <h2>4. 苦手だけを繰り返し、毎日少しずつ続ける</h2>
+    <p>全範囲を何周もするより、正答率の低い問題だけを繰り返すほうが効率的です。1 日 10 分でも、毎日続けるほうが記憶に残ります。</p>
+    <p><strong>CloudKata では</strong>: 正答率の低い問題を自動で集めて解き直す「苦手克服モード」があります。連続学習日数（ストリーク）・バッジ・デイリーチャレンジで、続ける習慣づくりも後押しします。一度読み込んだ問題は、オフラインでも解けます。</p>
+  </div>
+
+  <div class="divider"></div>
+
+  <div class="doc-section reveal">
+    <h2>CloudKata について</h2>
+    <p>CloudKata（クラウドカタ）は、Google Cloud の資格 Associate Cloud Engineer の学習を支える、4 択形式の問題集アプリです。サインインなしでも 30 問まで無料で試せます（広告あり）。</p>
+    <ul><li>カテゴリ・難易度を選べる問題演習</li><li>正答率の低い問題を集める苦手克服モード</li><li>カテゴリ別正答率のレーダーチャートと学習の推移</li><li>解説にコンソールの操作手順と公式ドキュメントへのリンク</li><li>オフラインでの演習</li></ul>
+    <div style="display:flex;gap:1rem;flex-wrap:wrap;margin-top:1.5rem;"><a href="https://play.google.com/store/apps/details?id=com.originalapp.cloud_kata" target="_blank" rel="noopener" class="btn-primary">Google Play でダウンロード</a><a href="https://apps.apple.com/jp/app/id6760472647" target="_blank" rel="noopener" class="btn-secondary">App Store でダウンロード</a></div>
+    <p style="margin-top:1.5rem;"><a href="./">CloudKata のトップへ</a></p>
+  </div>
+
+  <div class="doc-section reveal">
+    <p style="font-size:0.85rem;">CloudKata は個人が開発した非公式の学習支援ツールで、Google LLC の公式認定品ではありません。収録している問題はすべて独自に作成した練習問題です。「Google Cloud」「GCP」は Google LLC の商標です。</p>
+  </div>
+</div>
+
+<footer>
+  <p>© 2026 Ryo-Lab. CloudKata 開発チーム</p>
+  <p>Google Cloud, GCP は Google LLC の商標です。本アプリは Google LLC の公式認定品ではありません。</p>
+</footer>
+
+<script src="../assets/js/subsite.js"></script>
+</body>
+</html>

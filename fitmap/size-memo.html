@@ -1,0 +1,305 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>服・靴のサイズを記録して、通販で迷わない方法 | FitMap</title>
+  <link rel="icon" href="../assets/icons/fitmap_icon.svg" type="image/svg+xml" />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Syne:wght@400;600;700;800&family=Noto+Sans+JP:wght@300;400;500;700&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet" />
+  <meta name="description" content="ネット通販で服や靴のサイズに迷わないための、からだのサイズの測り方と記録の仕方。首周り・ウエスト・股下・靴・指輪のサイズを記録し、ブランドごとのサイズをメモする方法を、サイズ管理アプリ FitMap の使い方とあわせて紹介します。">
+  <link rel="canonical" href="https://ryo-lab.dev/fitmap/size-memo.html">
+  <meta property="og:type" content="article" />
+  <meta property="og:title" content="服・靴のサイズを記録して、通販で迷わない方法 — 測る・記録する・ブランドごとにメモする" />
+  <meta property="og:description" content="ネット通販で服や靴のサイズに迷わないための、からだのサイズの測り方と記録の仕方。首周り・ウエスト・股下・靴・指輪のサイズを記録し、ブランドごとのサイズをメモする方法を、サイズ管理アプリ FitMap の使い方とあわせて紹介します。" />
+  <meta property="og:url" content="https://ryo-lab.dev/fitmap/size-memo.html" />
+  <meta property="og:image" content="https://ryo-lab.dev/assets/ogp/ogp_fitmap.jpg" />
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "Article",
+    "headline": "服・靴のサイズを記録して、通販で迷わない方法 — 測る・記録する・ブランドごとにメモする",
+    "description": "ネット通販で服や靴のサイズに迷わないための、からだのサイズの測り方と記録の仕方。首周り・ウエスト・股下・靴・指輪のサイズを記録し、ブランドごとのサイズをメモする方法を、サイズ管理アプリ FitMap の使い方とあわせて紹介します。",
+    "inLanguage": "ja",
+    "datePublished": "2026-10-26",
+    "dateModified": "2026-10-26",
+    "mainEntityOfPage": "https://ryo-lab.dev/fitmap/size-memo.html",
+    "image": "https://ryo-lab.dev/assets/ogp/ogp_fitmap.jpg",
+    "author": {
+      "@type": "Organization",
+      "name": "Ryo-Lab.",
+      "url": "https://ryo-lab.dev/"
+    },
+    "publisher": {
+      "@type": "Organization",
+      "name": "Ryo-Lab.",
+      "url": "https://ryo-lab.dev/"
+    },
+    "about": {
+      "@type": "SoftwareApplication",
+      "name": "FitMap",
+      "url": "https://ryo-lab.dev/fitmap/"
+    }
+  }
+  </script>
+  <style>
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+    html { scroll-behavior: smooth; }
+    :root {
+      --bg: #f5f9fc;
+      --surface: #ffffff;
+      --blue: #0077B6;
+      --blue-mid: #0096C7;
+      --blue-light: #00B4D8;
+      --blue-pale: #ADE8F4;
+      --text: #0a1628;
+      --text-mid: #3d5a73;
+      --text-muted: #7090a0;
+      --border: #d4e8f0;
+    }
+    body {
+      background: var(--bg);
+      color: var(--text);
+      font-family: 'Noto Sans JP', sans-serif;
+      min-height: 100vh;
+      overflow-x: hidden;
+    }
+
+    /* ── Nav ── */
+    nav {
+      position: sticky; top: 0; z-index: 100;
+      background: rgba(245,249,252,0.92);
+      backdrop-filter: blur(12px);
+      -webkit-backdrop-filter: blur(12px);
+      border-bottom: 1px solid var(--border);
+    }
+    .nav-inner {
+      max-width: 1100px; margin: 0 auto;
+      padding: 0 2rem; height: 64px;
+      display: flex; align-items: center; justify-content: space-between; gap: 1rem;
+    }
+    .nav-logo { display: flex; align-items: center; gap: 0.6rem; text-decoration: none; flex-shrink: 0; }
+    .nav-logo img { width: 30px; height: 30px; }
+    .nav-logo-text {
+      font-family: 'Syne', sans-serif; font-weight: 800; font-size: 1.1rem;
+      color: var(--blue);
+    }
+    .nav-links { display: flex; align-items: center; gap: 0.1rem; }
+    .nav-links a {
+      color: var(--text-muted); text-decoration: none; font-size: 0.83rem;
+      padding: 0.4rem 0.75rem; border-radius: 6px;
+      transition: color 0.2s, background 0.2s; white-space: nowrap;
+    }
+    .nav-links a:hover, .nav-links a.active { color: var(--blue); background: rgba(0,119,182,0.06); }
+    .nav-hamburger {
+      display: none; flex-direction: column; justify-content: center;
+      gap: 5px; cursor: pointer; padding: 8px;
+      background: none; border: none; flex-shrink: 0;
+    }
+    .nav-hamburger span {
+      display: block; width: 22px; height: 2px;
+      background: var(--text-muted); border-radius: 2px;
+      transition: transform 0.25s, opacity 0.25s;
+    }
+    nav.open .nav-hamburger span:nth-child(1) { transform: translateY(7px) rotate(45deg); }
+    nav.open .nav-hamburger span:nth-child(2) { opacity: 0; }
+    nav.open .nav-hamburger span:nth-child(3) { transform: translateY(-7px) rotate(-45deg); }
+
+    /* ── Document ── */
+    .doc-container {
+      max-width: 780px; margin: 0 auto;
+      padding: 4rem 2rem 6rem;
+    }
+    .doc-header {
+      margin-bottom: 2.5rem;
+      padding-bottom: 2rem;
+      border-bottom: 1px solid var(--border);
+    }
+    .doc-tag {
+      font-family: 'JetBrains Mono', monospace; font-size: 0.72rem;
+      color: var(--blue-mid); letter-spacing: 0.18em; text-transform: uppercase;
+      margin-bottom: 0.75rem;
+    }
+    .doc-title {
+      font-family: 'Syne', sans-serif; font-size: clamp(1.8rem, 4vw, 2.4rem);
+      font-weight: 700; color: var(--blue);
+      margin-bottom: 0.75rem;
+    }
+    .doc-meta { color: var(--text-muted); font-size: 0.83rem; line-height: 1.8; }
+
+    /* ── Notice ── */
+    .notice {
+      background: rgba(0,180,216,0.06);
+      border-left: 3px solid var(--blue-light);
+      border-radius: 0 10px 10px 0;
+      padding: 1rem 1.25rem;
+      color: var(--text-mid); font-size: 0.9rem; line-height: 1.8;
+      margin-bottom: 2.5rem;
+    }
+
+    /* ── Sections ── */
+    .doc-section { margin-bottom: 2.5rem; }
+    .doc-section h2 {
+      font-family: 'Syne', sans-serif; font-size: 1.05rem; font-weight: 700;
+      color: var(--text);
+      padding: 0.55rem 1rem;
+      background: rgba(0,119,182,0.05);
+      border-left: 3px solid var(--blue);
+      border-radius: 0 8px 8px 0;
+      margin-bottom: 1rem;
+    }
+    .doc-section p {
+      color: var(--text-muted); font-size: 0.92rem;
+      margin-bottom: 0.75rem; line-height: 1.85;
+    }
+    .doc-section ul {
+      list-style: none; padding: 0; margin: 0.5rem 0 0.75rem;
+    }
+    .doc-section ul li {
+      color: var(--text-muted); font-size: 0.92rem;
+      padding: 0.35rem 0 0.35rem 1.25rem;
+      position: relative; line-height: 1.75;
+    }
+    .doc-section ul li::before {
+      content: '·'; position: absolute; left: 0.3rem;
+      color: var(--blue-mid); font-size: 1.2rem; line-height: 1.4;
+    }
+    .doc-section a { color: var(--blue-mid); text-decoration: none; }
+    .doc-section a:hover { text-decoration: underline; }
+
+    .info-table {
+      width: 100%; border-collapse: collapse;
+      font-size: 0.88rem; margin: 0.75rem 0;
+    }
+    .info-table th, .info-table td {
+      padding: 0.65rem 0.9rem; text-align: left;
+      border: 1px solid var(--border);
+    }
+    .info-table th {
+      background: rgba(0,119,182,0.05);
+      color: var(--blue); font-family: 'Syne', sans-serif;
+      font-size: 0.8rem; font-weight: 700; white-space: nowrap;
+    }
+    .info-table td { color: var(--text-muted); line-height: 1.7; }
+
+    .divider { height: 1px; background: var(--border); margin: 2rem 0; }
+
+    /* ── Reveal ── */
+    .reveal {
+      opacity: 0; transform: translateY(20px);
+      transition: opacity 0.5s ease, transform 0.5s ease;
+    }
+    .reveal.visible { opacity: 1; transform: translateY(0); }
+
+    /* ── Footer ── */
+    footer {
+      border-top: 1px solid var(--border); padding: 2rem;
+      text-align: center; color: var(--text-muted); font-size: 0.85rem;
+    }
+
+    /* ── Responsive ── */
+    @media (max-width: 768px) {
+      .nav-links { display: none; }
+      .nav-hamburger { display: flex; }
+      nav.open .nav-links {
+        display: flex; flex-direction: column;
+        position: absolute; top: 64px; left: 0; right: 0;
+        background: rgba(245,249,252,0.97);
+        backdrop-filter: blur(12px);
+        border-bottom: 1px solid var(--border);
+        padding: 1rem 1.5rem; gap: 0.25rem; z-index: 99;
+      }
+      nav.open .nav-links a { padding: 0.6rem 0.5rem; font-size: 0.9rem; }
+      .doc-container { padding: 2.5rem 1.25rem 4rem; }
+      .info-table { font-size: 0.8rem; }
+      .info-table th, .info-table td { padding: 0.5rem 0.65rem; }
+    }
+  </style>
+</head>
+<body>
+
+<!-- Nav -->
+<nav>
+  <div class="nav-inner">
+    <a href="./" class="nav-logo">
+      <img src="../assets/icons/fitmap_icon.svg" alt="FitMap" />
+      <span class="nav-logo-text">FitMap</span>
+    </a>
+    <div class="nav-links">
+      <a href="./">Home</a>
+      <a href="./privacy-policy.html">Privacy Policy</a>
+      <a href="./terms.html">Terms</a>
+      <a href="./size-memo.html" class="active">サイズの記録</a>
+    </div>
+    <button class="nav-hamburger" id="navToggle" aria-label="メニューを開く">
+      <span></span><span></span><span></span>
+    </button>
+  </div>
+</nav>
+
+<div class="doc-container">
+
+  <div class="doc-header reveal">
+    <p class="doc-tag">Guide</p>
+    <h1 class="doc-title">服・靴のサイズを記録して、通販で迷わない方法</h1>
+    <p class="doc-meta">測る・記録する・ブランドごとにメモする（2026年10月26日）</p>
+  </div>
+
+  <div class="doc-section reveal">
+    <p>ネットで服や靴を買うとき、「M と L のどちらか」「前に買った靴は何センチだったか」で迷うことがあります。そのたびにメジャーで測り直したり、届いてから返品したりするのは手間です。</p>
+    <p>このページでは、通販でサイズに迷わないための記録の仕方を 4 つの手順で紹介します。各手順で、サイズ管理アプリ FitMap でのやり方も書いています。</p>
+  </div>
+
+  <div class="divider"></div>
+
+  <div class="doc-section reveal">
+    <h2>1. 服選びに使うサイズを、一度まとめて測る</h2>
+    <p>サイズ表でよく使われるのは、次のような項目です。メジャーで一度まとめて測っておくと、通販のサイズ表と見比べられます。</p>
+    <ul><li>トップス: 首周り・胸囲・肩幅・袖丈</li><li>ボトムス: ウエスト・ヒップ・股下</li><li>小物: 靴のサイズ・指輪のサイズ・頭囲</li></ul>
+    <p><strong>FitMap では</strong>: 人体のシルエットの部位をタップして、首周り・胸囲・ウエスト・ヒップ・股下・袖丈・靴・指輪（左右・各指）などを記録できます。視力や腕時計のベルト幅など、自分で項目を足すこともできます。</p>
+  </div>
+
+  <div class="divider"></div>
+
+  <div class="doc-section reveal">
+    <h2>2. 買い物のときは、サイズを 1 画面で見られるようにする</h2>
+    <p>測った数字は、お店や通販の画面を見ながらすぐ確認できる場所に置いておきます。服・靴・指輪のサイズが 1 か所にまとまっていると、迷う時間が減ります。</p>
+    <p><strong>FitMap では</strong>: 「サイズ早見カード」で、トップス・ボトムス・靴・帽子・指輪のサイズを 1 画面にまとめて表示します。S/M/L やウエスト（W）、靴の UK/EU の目安も表示されます（目安なので、購入前に各ブランドのサイズ表も確認してください）。画像として共有もできます。</p>
+  </div>
+
+  <div class="divider"></div>
+
+  <div class="doc-section reveal">
+    <h2>3. ブランドごとに「合ったサイズ」をメモする</h2>
+    <p>同じ M でも、ブランドやモデルによって大きさは違います。買って合ったサイズを、ブランドごとに書き残しておくと、次に同じブランドで買うときに迷いません。</p>
+    <p><strong>FitMap では</strong>: 「このブランドのシャツは M」「この靴は 26.5」のように、ブランドごとのサイズをメモできます。</p>
+  </div>
+
+  <div class="divider"></div>
+
+  <div class="doc-section reveal">
+    <h2>4. 家族のサイズや、変化も残しておく</h2>
+    <p>家族の服やプレゼントを買うときにも、サイズの記録は役に立ちます。子どもの身長や靴のサイズ、自分の体重やウエストの変化も、時々測り直して残しておくと便利です。</p>
+    <p><strong>FitMap では</strong>: プロフィールを切り替えて、家族のサイズも管理できます（1 人目は無料、2 人目からは動画広告の視聴で追加）。体重・ウエスト・身長などの変化はグラフで確認でき、18 歳未満のプロフィールには測り直しの目安が表示されます。データは端末の中だけに保存され、外部に送られません。</p>
+  </div>
+
+  <div class="divider"></div>
+
+  <div class="doc-section reveal">
+    <h2>FitMap について</h2>
+    <p>FitMap（フィットマップ）は、からだのサイズをまとめて記録できるサイズ管理アプリです。完全オフラインで動き、無料で使えます（広告あり）。</p>
+    <ul><li>人体シルエットをタップしてサイズを記録</li><li>サイズ早見カード（S/M/L・W・UK/EU の目安つき）</li><li>ブランドごとのサイズメモ</li><li>家族のプロフィールと、体重・ウエストなどの推移グラフ</li><li>パスワードで暗号化したバックアップと、パスコードロック</li></ul>
+    <div style="display:flex;gap:1rem;flex-wrap:wrap;margin-top:1.5rem;"><a href="https://play.google.com/store/apps/details?id=com.ryolab.fit_map" target="_blank" rel="noopener" style="display:inline-block;padding:0.75rem 1.5rem;border-radius:999px;font-weight:600;text-decoration:none;background:#0077B6;color:#fff;">Google Play でダウンロード</a></div>
+    <p style="margin-top:1.5rem;"><a href="./">FitMap のトップへ</a></p>
+  </div>
+</div>
+
+<!-- Footer -->
+<footer>
+  <p>© 2026 Ryo-Lab. FitMap Project</p>
+</footer>
+
+<script src="../assets/js/subsite.js"></script>
+</body>
+</html>
