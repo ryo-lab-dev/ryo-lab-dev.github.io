@@ -377,6 +377,9 @@ footer p + p {
 }
 .doc-section a { color: var(--primary-light); text-decoration: none; }
 .doc-section a:hover { text-decoration: underline; }
+/* 本文中に置いたボタンは、本文のリンク色にしない */
+.doc-section a.btn-primary { color: #fff; text-decoration: none; }
+.doc-section a.btn-secondary { color: var(--primary-light); text-decoration: none; }
 .divider { height: 1px; background: var(--glass-border); margin: 2rem 0; }
 
 /* ── Hamburger / mobile nav ── */

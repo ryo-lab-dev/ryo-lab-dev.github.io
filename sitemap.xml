@@ -17,6 +17,12 @@
     <priority>0.8</priority>
   </url>
   <url>
+    <loc>https://ryo-lab.dev/scorevault/tsumige.html</loc>
+    <lastmod>2026-10-26</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  <url>
     <loc>https://ryo-lab.dev/scorevault/privacy-policy.html</loc>
     <lastmod>2026-04-07</lastmod>
     <changefreq>yearly</changefreq>
