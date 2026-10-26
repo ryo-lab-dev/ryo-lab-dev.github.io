@@ -61,6 +61,12 @@
     <priority>0.8</priority>
   </url>
   <url>
+    <loc>https://ryo-lab.dev/cloudkata/ace-study.html</loc>
+    <lastmod>2026-10-26</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  <url>
     <loc>https://ryo-lab.dev/cloudkata/privacy-policy.html</loc>
     <lastmod>2026-10-22</lastmod>
     <changefreq>yearly</changefreq>
@@ -87,6 +93,12 @@
     <priority>0.8</priority>
   </url>
   <url>
+    <loc>https://ryo-lab.dev/nexusdiary/idea.html</loc>
+    <lastmod>2026-10-26</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  <url>
     <loc>https://ryo-lab.dev/nexusdiary/privacy-policy.html</loc>
     <lastmod>2026-10-25</lastmod>
     <changefreq>yearly</changefreq>
@@ -105,6 +117,12 @@
     <lastmod>2026-10-23</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.9</priority>
+  </url>
+  <url>
+    <loc>https://ryo-lab.dev/giftlog/okaeshi.html</loc>
+    <lastmod>2026-10-26</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
   </url>
   <url>
     <loc>https://ryo-lab.dev/giftlog/privacy-policy.html</loc>
@@ -127,6 +145,12 @@
     <priority>0.8</priority>
   </url>
   <url>
+    <loc>https://ryo-lab.dev/fitmap/size-memo.html</loc>
+    <lastmod>2026-10-26</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  <url>
     <loc>https://ryo-lab.dev/fitmap/privacy-policy.html</loc>
     <lastmod>2026-10-17</lastmod>
     <changefreq>yearly</changefreq>
@@ -145,6 +169,12 @@
     <lastmod>2026-10-23</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://ryo-lab.dev/haguiku/share.html</loc>
+    <lastmod>2026-10-26</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
   </url>
   <url>
     <loc>https://ryo-lab.dev/haguiku/privacy-policy.html</loc>
@@ -171,6 +201,12 @@
     <lastmod>2026-10-23</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://ryo-lab.dev/boxprofit/profit.html</loc>
+    <lastmod>2026-10-26</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
   </url>
   <url>
     <loc>https://ryo-lab.dev/boxprofit/privacy-policy.html</loc>

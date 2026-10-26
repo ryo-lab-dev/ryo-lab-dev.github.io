@@ -1,0 +1,138 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>フリマの利益計算 — 梱包資材・送料・手数料まで含めて出す方法 | BoxProfit</title>
+  <script src="https://cdn.tailwindcss.com"></script>
+  <link rel="icon" href="../assets/boxprofit/icon.png" type="image/png" />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Syne:wght@400;600;700;800&family=Noto+Sans+JP:wght@300;400;500;700&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="../assets/css/boxprofit.css" />
+  <link rel="stylesheet" href="../assets/css/subsite.css" />
+  <!-- SEO -->
+  <meta name="description" content="フリマで売ったときに手元に残る利益の計算方法。販売手数料・送料に加えて、見落としがちな梱包資材の費用まで含めて計算し、目標の利益から出品価格を逆算する手順を、フリマ利益管理アプリ BoxProfit の使い方とあわせて紹介します。">
+  <link rel="canonical" href="https://ryo-lab.dev/boxprofit/profit.html">
+  <meta property="og:type" content="article" />
+  <meta property="og:title" content="フリマの利益計算のやり方 — 梱包資材・送料・手数料まで含めて、本当の利益を出す" />
+  <meta property="og:description" content="フリマで売ったときに手元に残る利益の計算方法。販売手数料・送料に加えて、見落としがちな梱包資材の費用まで含めて計算し、目標の利益から出品価格を逆算する手順を、フリマ利益管理アプリ BoxProfit の使い方とあわせて紹介します。" />
+  <meta property="og:url" content="https://ryo-lab.dev/boxprofit/profit.html" />
+  <meta property="og:image" content="https://ryo-lab.dev/assets/ogp/ogp_boxprofit.png" />
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "Article",
+    "headline": "フリマの利益計算のやり方 — 梱包資材・送料・手数料まで含めて、本当の利益を出す",
+    "description": "フリマで売ったときに手元に残る利益の計算方法。販売手数料・送料に加えて、見落としがちな梱包資材の費用まで含めて計算し、目標の利益から出品価格を逆算する手順を、フリマ利益管理アプリ BoxProfit の使い方とあわせて紹介します。",
+    "inLanguage": "ja",
+    "datePublished": "2026-10-26",
+    "dateModified": "2026-10-26",
+    "mainEntityOfPage": "https://ryo-lab.dev/boxprofit/profit.html",
+    "image": "https://ryo-lab.dev/assets/ogp/ogp_boxprofit.png",
+    "author": {
+      "@type": "Organization",
+      "name": "Ryo-Lab.",
+      "url": "https://ryo-lab.dev/"
+    },
+    "publisher": {
+      "@type": "Organization",
+      "name": "Ryo-Lab.",
+      "url": "https://ryo-lab.dev/"
+    },
+    "about": {
+      "@type": "SoftwareApplication",
+      "name": "BoxProfit",
+      "url": "https://ryo-lab.dev/boxprofit/"
+    }
+  }
+  </script>
+</head>
+<body>
+
+<nav>
+  <div class="nav-inner">
+    <a href="./" class="nav-logo">
+      <div class="nav-logo-dot"></div>
+      <span class="nav-logo-text">BoxProfit</span>
+    </a>
+    <div class="nav-links">
+      <a href="./">Home</a>
+      <a href="./privacy-policy.html">Privacy Policy</a>
+      <a href="./terms.html">利用規約</a>
+      <a href="./profit.html" class="active">フリマの利益計算</a>
+    </div>
+    <button class="nav-hamburger" id="navToggle" aria-label="メニューを開く">
+      <span></span><span></span><span></span>
+    </button>
+  </div>
+</nav>
+
+<div class="doc-container">
+  <div class="doc-header reveal">
+    <p class="doc-tag">Guide</p>
+    <h1 class="doc-title">フリマの利益計算のやり方</h1>
+    <p class="doc-updated">梱包資材・送料・手数料まで含めて、本当の利益を出す（2026年10月26日）</p>
+  </div>
+
+  <div class="doc-section reveal">
+    <p>メルカリなどのフリマで売ったとき、「売れた金額」と「手元に残るお金」は違います。販売手数料や送料はもちろん、ダンボール・緩衝材・テープといった梱包資材の費用も、積み重なると利益を小さくします。</p>
+    <p>このページでは、フリマの利益を正しく出すための計算の手順を 4 つに分けて紹介します。各手順で、フリマ利益管理アプリ BoxProfit でのやり方も書いています。</p>
+  </div>
+
+  <div class="divider"></div>
+
+  <div class="doc-section reveal">
+    <h2>1. 利益の式を、梱包資材まで含めて考える</h2>
+    <p>1 品あたりの利益は、次の式で考えます。</p>
+    <p style="font-family:monospace;padding:0.75rem 1rem;border-radius:8px;background:rgba(127,127,127,0.12);">利益 ＝ 販売価格 − 販売手数料 − 送料 − 仕入れ価格 − 梱包資材の費用</p>
+    <p>販売手数料は販売価格に手数料率をかけた金額で、手数料率や送料はサービスや配送方法ごとに違い、変わることもあります。計算の前に、使うサービスの最新の料金を確認してください。</p>
+  </div>
+
+  <div class="divider"></div>
+
+  <div class="doc-section reveal">
+    <h2>2. 梱包資材は「1 個あたりの単価」にしておく</h2>
+    <p>梱包資材は、まとめ買いしたものを少しずつ使うので、1 回あたりの費用が見えにくくなります。「100 枚で ◯ 円のダンボールなら 1 枚あたり ◯ 円」のように、1 個あたりの単価にしておくと、1 品ごとの原価に足せます。</p>
+    <p><strong>BoxProfit では</strong>: ダンボール・緩衝材・テープなどの資材を、購入価格と入数で登録すると、1 個あたりの単価を自動で計算します。商品ごとに使う資材をまとめて設定できます。</p>
+  </div>
+
+  <div class="divider"></div>
+
+  <div class="doc-section reveal">
+    <h2>3. 目標の利益から、出品価格を逆算する</h2>
+    <p>出品価格を決めるときは、「いくらで売れるか」だけでなく、「いくら残したいか」から逆に計算すると、売れても赤字になるのを防げます。手数料は販売価格にかかるので、単純な足し算ではなく、手数料率で割り戻して求めます。</p>
+    <p><strong>BoxProfit では</strong>: 仕入れ価格・梱包資材・送料・販売手数料を選ぶだけで、損益分岐の価格を表示し、「利益を ◯ 円残したい」から出品価格を逆算できます。取引するサービスを切り替えて、手数料の違いを同じ条件で比べることもできます。</p>
+  </div>
+
+  <div class="divider"></div>
+
+  <div class="doc-section reveal">
+    <h2>4. 売れたら記録して、月ごとに振り返る</h2>
+    <p>1 品ごとの計算だけでなく、売れた記録を残して月ごとの売上と利益を見ると、どの商品が利益を出しているかが分かります。記録は確定申告の資料づくりにも使えます。</p>
+    <p><strong>BoxProfit では</strong>: 売れた商品の販売価格・送料・手数料を記録し、期間ごとの売上と利益を集計します。販売時点の手数料率と資材の単価を保存するので、後から設定を変えても過去の利益は変わりません。CSV での書き出しにも対応しています（計算結果は参考値です。税務の判断は、ご自身または専門家にご相談ください）。</p>
+  </div>
+
+  <div class="divider"></div>
+
+  <div class="doc-section reveal">
+    <h2>BoxProfit について</h2>
+    <p>BoxProfit（ボックスプロフィット）は、フリマで売る人のための、仕入れ・梱包・送料・利益の管理アプリです。無料で使えます（画面下に広告あり）。</p>
+    <ul><li>目標の利益から出品価格を逆算</li><li>梱包資材の 1 個あたりの単価を自動計算</li><li>在庫と仕入れの管理</li><li>売上・利益の集計と CSV の書き出し</li><li>手数料率・送料を自分で登録</li></ul>
+    <div style="display:flex;gap:1rem;flex-wrap:wrap;margin-top:1.5rem;"><a href="https://play.google.com/store/apps/details?id=dev.ryolab.box_profit" target="_blank" rel="noopener" class="btn-primary">Google Play でダウンロード</a></div>
+    <p style="margin-top:1.5rem;"><a href="./">BoxProfit のトップへ</a></p>
+  </div>
+
+  <div class="doc-section reveal">
+    <p style="font-size:0.85rem;">BoxProfit は、各フリマサービスの運営会社とは関係のない個人が開発した非公式のアプリです。メルカリは株式会社メルカリの商標または登録商標です。</p>
+  </div>
+</div>
+
+<footer>
+  <p>© 2026 Ryo-Lab. BoxProfit 開発チーム</p>
+  <p>メルカリ、PayPayフリマ、ラクマ、ヤフオク! などの名称は各社の商標です。本アプリは各社と提携・承認関係にありません。</p>
+</footer>
+
+<script src="../assets/js/subsite.js"></script>
+</body>
+</html>
