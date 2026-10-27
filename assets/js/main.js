@@ -51,7 +51,7 @@ const observer = new IntersectionObserver((entries) => {
 
 document.querySelectorAll('.fade-in').forEach(el => observer.observe(el));
 
- // GA4 共通計測を読み込む
+// GA4 共通計測を読み込む
 (function () {
   var currentScript = document.currentScript;
   if (!currentScript || window.__ryoLabAnalyticsLoaderAdded) return;
