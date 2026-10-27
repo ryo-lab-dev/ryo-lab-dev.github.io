@@ -208,3 +208,14 @@ document.querySelectorAll('.reveal').forEach(function(el) { observer.observe(el)
     if (!window._tsgSw) { var i = TH.indexOf(t); if (i >= 0) { ci = i; setOn(ci); } }
   };
 })();
+
+ // GA4 共通計測を読み込む
+(function () {
+  var currentScript = document.currentScript;
+  if (!currentScript || window.__ryoLabAnalyticsLoaderAdded) return;
+  window.__ryoLabAnalyticsLoaderAdded = true;
+  var analyticsScript = document.createElement('script');
+  analyticsScript.src = new URL('analytics.js', currentScript.src).href;
+  analyticsScript.async = true;
+  document.head.appendChild(analyticsScript);
+})();
