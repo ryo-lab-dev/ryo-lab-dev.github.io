@@ -21,7 +21,7 @@ document.querySelectorAll('.reveal').forEach(function (el) { observer.observe(el
   }
 })();
 
- // GA4 共通計測を読み込む
+// GA4 共通計測を読み込む
 (function () {
   var currentScript = document.currentScript;
   if (!currentScript || window.__ryoLabAnalyticsLoaderAdded) return;
@@ -30,4 +30,19 @@ document.querySelectorAll('.reveal').forEach(function (el) { observer.observe(el
   analyticsScript.src = new URL('analytics.js', currentScript.src).href;
   analyticsScript.async = true;
   document.head.appendChild(analyticsScript);
+})();
+
+// サイト共通プライバシーポリシーへのリンク
+(function () {
+  var footer = document.querySelector('footer');
+  if (!footer || footer.querySelector('a[href="/privacy-policy.html"]')) return;
+
+  var paragraph = document.createElement('p');
+  var link = document.createElement('a');
+  link.href = '/privacy-policy.html';
+  link.textContent = 'サイト共通プライバシーポリシー';
+  link.style.color = 'inherit';
+  link.style.textDecoration = 'underline';
+  paragraph.appendChild(link);
+  footer.appendChild(paragraph);
 })();
