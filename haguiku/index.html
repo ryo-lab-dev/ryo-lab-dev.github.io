@@ -3,6 +3,8 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <!-- iPhone の Safari で App Store へのバナーを出す -->
+  <meta name="apple-itunes-app" content="app-id=6824930356" />
   <title>はぐ育 — 夫婦で使う育児記録と出産準備アプリ</title>
   <script src="https://cdn.tailwindcss.com"></script>
   <link rel="icon" href="../assets/haguiku/icon.png" type="image/png" />
@@ -30,7 +32,7 @@
     "@context": "https://schema.org",
     "@type": "SoftwareApplication",
     "name": "はぐ育",
-    "operatingSystem": "Android",
+    "operatingSystem": "Android, iOS",
     "applicationCategory": "LifestyleApplication",
     "description": "夫婦でリアルタイム共有。授乳・睡眠・おむつの記録、出産準備の ToDo、名前の候補づくりまで。育児支援アプリ「はぐ育」。",
     "url": "https://ryo-lab.dev/haguiku/",
@@ -68,7 +70,7 @@
     <div style="margin-bottom:1.5rem;">
       <span class="status-badge">
         <span class="pulse-dot"></span>
-        Google Play で公開中
+        Google Play &amp; App Store 公開中
       </span>
     </div>
     <h1 class="hero-title gradient-text">はぐ育</h1>
@@ -76,7 +78,7 @@
     <p class="hero-origin">出産準備から産後の記録まで、夫婦ふたりで 1 つのアプリで続けられることを目指しています。</p>
     <div style="display:flex;gap:1rem;flex-wrap:wrap;justify-content:center;">
       <a href="https://play.google.com/store/apps/details?id=dev.ryolab.haguiku" target="_blank" rel="noopener" class="btn-secondary">Google Play で入手</a>
-      <span class="btn-secondary btn-disabled" role="link" aria-disabled="true">App Store 審査中</span>
+      <a href="https://apps.apple.com/jp/app/id6824930356" target="_blank" rel="noopener" class="btn-secondary">App Store で入手</a>
       <a href="https://docs.google.com/forms/d/e/1FAIpQLSdh_gI7e0ZawnEM62MNRGtC0ADOOy4_v6luidV2QWpLXSkJVw/viewform?usp=dialog" target="_blank" rel="noopener" class="btn-secondary">
         お問い合わせ・フィードバック
       </a>
@@ -126,7 +128,7 @@
         <div class="feature-card reveal" style="transition-delay:0.2s;">
           <div class="feature-icon">⏰</div>
           <h3>授乳・ミルクのリマインダー</h3>
-          <p>母乳・ミルクを記録するときに、次のリマインドを選べます（30 分〜6 時間後を 15 分刻みで、または「通知しない」）。次のリマインドの時刻は、育児記録の画面に表示されます。通知音は、Android では、眠っている赤ちゃんを起こしにくい「やさしいハープ」か、端末の標準の通知音から選べます（iOS 版（審査中）は、端末の標準の音です）。通知はこの端末だけに届き、お子さんが複数のときは、お子さんごとに届きます。</p>
+          <p>母乳・ミルクを記録するときに、次のリマインドを選べます（30 分〜6 時間後を 15 分刻みで、または「通知しない」）。次のリマインドの時刻は、育児記録の画面に表示されます。通知音は、Android では、眠っている赤ちゃんを起こしにくい「やさしいハープ」か、端末の標準の通知音から選べます（iOS 版は、端末の標準の音です）。通知はこの端末だけに届き、お子さんが複数のときは、お子さんごとに届きます。</p>
         </div>
         <div class="feature-card reveal">
           <div class="feature-icon">🥣</div>
@@ -208,11 +210,11 @@
         </div>
         <div class="mini-faq-item">
           <span class="mini-faq-q">対応端末</span>
-          <span class="mini-faq-a">Android に対応しています。iOS（iPhone）版は App Store で審査中です。</span>
+          <span class="mini-faq-a">Android と iOS（iPhone）に対応しています。Google Play と App Store から入手できます。</span>
         </div>
         <div class="mini-faq-item">
           <span class="mini-faq-q">ログイン</span>
-          <span class="mini-faq-a">Google アカウントでログインします（iOS 版（審査中）では Apple アカウントでもログインできます）。機種変更は、ログインするだけです。</span>
+          <span class="mini-faq-a">Google アカウントでログインします（iOS 版では Apple アカウントでもログインできます）。機種変更は、ログインするだけです。</span>
         </div>
         <div class="mini-faq-item">
           <span class="mini-faq-q">家族との共有</span>
@@ -228,7 +230,7 @@
         </div>
         <div class="mini-faq-item">
           <span class="mini-faq-q">通知</span>
-          <span class="mini-faq-a">授乳・ミルクのリマインダーは、この端末にだけ通知されます。通知の許可が必要です。時刻を正確にするには、Android の「アラームとリマインダー」の許可をオンにしてください（オフでも、数分ずれて届きます）。iOS 版（審査中）でも、通知の許可が必要です。指定した時刻に通知が届きます。</span>
+          <span class="mini-faq-a">授乳・ミルクのリマインダーは、この端末にだけ通知されます。通知の許可が必要です。時刻を正確にするには、Android の「アラームとリマインダー」の許可をオンにしてください（オフでも、数分ずれて届きます）。iOS 版でも、通知の許可が必要です。指定した時刻に通知が届きます。</span>
         </div>
         <div class="mini-faq-item">
           <span class="mini-faq-q">医療の助言ですか？</span>

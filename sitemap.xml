@@ -19,7 +19,7 @@
   <!-- ScoreVault -->
   <url>
     <loc>https://ryo-lab.dev/scorevault/</loc>
-    <lastmod>2026-10-23</lastmod>
+    <lastmod>2026-10-27</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
   </url>
@@ -49,7 +49,7 @@
   </url>
   <url>
     <loc>https://ryo-lab.dev/scorevault/faq.html</loc>
-    <lastmod>2026-03-23</lastmod>
+    <lastmod>2026-10-27</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.6</priority>
   </url>
@@ -121,7 +121,7 @@
   <!-- GiftLog -->
   <url>
     <loc>https://ryo-lab.dev/giftlog/</loc>
-    <lastmod>2026-10-23</lastmod>
+    <lastmod>2026-10-27</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.9</priority>
   </url>
@@ -133,7 +133,7 @@
   </url>
   <url>
     <loc>https://ryo-lab.dev/giftlog/privacy-policy.html</loc>
-    <lastmod>2026-04-07</lastmod>
+    <lastmod>2026-10-28</lastmod>
     <changefreq>yearly</changefreq>
     <priority>0.4</priority>
   </url>
@@ -142,6 +142,12 @@
     <lastmod>2026-10-22</lastmod>
     <changefreq>yearly</changefreq>
     <priority>0.4</priority>
+  </url>
+  <url>
+    <loc>https://ryo-lab.dev/giftlog/support.html</loc>
+    <lastmod>2026-10-28</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.6</priority>
   </url>
 
   <!-- FitMap -->
@@ -173,13 +179,13 @@
   <!-- はぐ育 -->
   <url>
     <loc>https://ryo-lab.dev/haguiku/</loc>
-    <lastmod>2026-10-23</lastmod>
+    <lastmod>2026-10-30</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
   </url>
   <url>
     <loc>https://ryo-lab.dev/haguiku/share.html</loc>
-    <lastmod>2026-10-26</lastmod>
+    <lastmod>2026-10-30</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.7</priority>
   </url>
@@ -217,7 +223,7 @@
   </url>
   <url>
     <loc>https://ryo-lab.dev/boxprofit/privacy-policy.html</loc>
-    <lastmod>2026-10-18</lastmod>
+    <lastmod>2026-10-22</lastmod>
     <changefreq>yearly</changefreq>
     <priority>0.4</priority>
   </url>
