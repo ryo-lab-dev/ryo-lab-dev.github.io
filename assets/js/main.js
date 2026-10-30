@@ -50,3 +50,14 @@ const observer = new IntersectionObserver((entries) => {
 }, { threshold: 0.1, rootMargin: '0px 0px -40px 0px' });
 
 document.querySelectorAll('.fade-in').forEach(el => observer.observe(el));
+
+// GA4 共通計測を読み込む
+(function () {
+  var currentScript = document.currentScript;
+  if (!currentScript || window.__ryoLabAnalyticsLoaderAdded) return;
+  window.__ryoLabAnalyticsLoaderAdded = true;
+  var analyticsScript = document.createElement('script');
+  analyticsScript.src = new URL('analytics.js', currentScript.src).href;
+  analyticsScript.async = true;
+  document.head.appendChild(analyticsScript);
+})();
