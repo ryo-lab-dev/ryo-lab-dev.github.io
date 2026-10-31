@@ -1,0 +1,258 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>StarPuzzle — 推理だけで解ける★パズル</title>
+  <script src="https://cdn.tailwindcss.com"></script>
+  <link rel="icon" href="../assets/icons/starpuzzle_icon.svg" type="image/svg+xml" />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Syne:wght@400;600;700;800&family=Noto+Sans+JP:wght@300;400;500;700&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="../assets/css/starpuzzle.css" />
+  <link rel="stylesheet" href="../assets/css/subsite.css" />
+  <!-- SEO -->
+  <meta name="description" content="各行・各列・各色の領域に★を 1 つずつ置くロジックパズル「StarPuzzle」。当て推量は不要で、推理だけで解けます。6×6・8×8・10×10 の 3 サイズ、No.1 から順に少しずつ難しくなります。無料・1 日 3 問から。">
+  <link rel="canonical" href="https://ryo-lab.dev/starpuzzle/">
+  <meta property="og:type" content="website">
+  <meta property="og:url" content="https://ryo-lab.dev/starpuzzle/">
+  <meta property="og:title" content="StarPuzzle — 推理だけで解ける★パズル">
+  <meta property="og:description" content="各行・各列・各色の領域に★を 1 つずつ置くロジックパズル「StarPuzzle」。当て推量は不要で、推理だけで解けます。6×6・8×8・10×10 の 3 サイズ、No.1 から順に少しずつ難しくなります。無料・1 日 3 問から。">
+  <meta property="og:image" content="https://ryo-lab.dev/assets/ogp/ogp_starpuzzle.png">
+  <meta property="og:site_name" content="Ryo-Lab">
+  <meta property="og:locale" content="ja_JP">
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:title" content="StarPuzzle — 推理だけで解ける★パズル">
+  <meta name="twitter:description" content="各行・各列・各色の領域に★を 1 つずつ置くロジックパズル「StarPuzzle」。当て推量は不要で、推理だけで解けます。6×6・8×8・10×10 の 3 サイズ、No.1 から順に少しずつ難しくなります。無料・1 日 3 問から。">
+  <meta name="twitter:image" content="https://ryo-lab.dev/assets/ogp/ogp_starpuzzle.png">
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "SoftwareApplication",
+    "name": "StarPuzzle",
+    "operatingSystem": "Android, iOS",
+    "applicationCategory": "GameApplication",
+    "description": "各行・各列・各色の領域に★を 1 つずつ置くロジックパズル。推理だけで解ける問題を、易しい順に遊べます。",
+    "url": "https://ryo-lab.dev/starpuzzle/",
+    "offers": { "@type": "Offer", "price": "0", "priceCurrency": "JPY" },
+    "author": {
+      "@type": "Organization",
+      "name": "Ryo-Lab Team",
+      "url": "https://ryo-lab.dev/"
+    }
+  }
+  </script>
+</head>
+<body>
+<nav>
+  <div class="nav-inner">
+    <a href="./" class="nav-logo">
+      <div class="nav-logo-dot"></div>
+      <span class="nav-logo-text">StarPuzzle</span>
+    </a>
+    <div class="nav-links">
+      <a href="./" class="active">Home</a>
+      <a href="./privacy-policy.html">Privacy Policy</a>
+      <a href="./terms.html">利用規約</a>
+    </div>
+    <button class="nav-hamburger" id="navToggle" aria-label="メニューを開く">
+      <span></span><span></span><span></span>
+    </button>
+  </div>
+</nav>
+
+  <!-- Hero -->
+  <section class="hero">
+    <img src="../assets/starpuzzle/icon.png" alt="StarPuzzle アプリアイコン" class="hero-icon" width="96" height="96" />
+    <div style="margin-bottom:1.5rem;">
+      <span class="status-badge">
+        <span class="pulse-dot"></span>
+        近日公開
+      </span>
+    </div>
+    <h1 class="hero-title gradient-text">StarPuzzle</h1>
+    <p class="hero-sub">推理だけで解ける★パズル</p>
+    <p class="hero-origin">各行・各列・各色の領域に★を 1 つずつ。No.1 から順に、1 日 3 問から気軽に遊べる一人用のロジックパズルです。</p>
+    <div style="display:flex;gap:1rem;flex-wrap:wrap;justify-content:center;">
+      <span class="btn-secondary btn-disabled" aria-disabled="true">Google Play（準備中）</span>
+      <span class="btn-secondary btn-disabled" aria-disabled="true">App Store（準備中）</span>
+      <a href="https://docs.google.com/forms/d/e/1FAIpQLSdPIUD1ZktD_75lvjQEZ_OJO58AOp5aRH8a5MwNyOeDSM1sSQ/viewform" target="_blank" rel="noopener" class="btn-secondary">お問い合わせ・フィードバック</a>
+    </div>
+  </section>
+
+  <div class="glow-line" style="max-width:800px;margin:0 auto;"></div>
+
+  <!-- Rules -->
+  <section>
+    <div class="section-inner" style="max-width:760px;">
+      <div class="reveal" style="margin-bottom:2rem;">
+        <p class="section-label">Rules</p>
+        <h2 class="section-title">遊び方</h2>
+      </div>
+      <div class="reveal glass" style="padding:2rem;">
+        <p class="story-text">盤面は、色分けされた N 個の領域に分かれています。次の条件をすべて満たすように、★を N 個置きます。</p>
+        <ol class="rule-list">
+          <li>各行に、★はちょうど 1 つ。</li>
+          <li>各列に、★はちょうど 1 つ。</li>
+          <li>各色の領域に、★はちょうど 1 つ。</li>
+          <li>★どうしは、縦・横・斜めのどれでも隣り合わない。</li>
+        </ol>
+        <p class="story-text">マスをタップすると「空 → × → ★ → 空」と切り替わります。★が置けない場所に × を付けて絞り込んでいくのがコツです。ルールに反する★は赤く表示されます。</p>
+      </div>
+    </div>
+  </section>
+
+  <div class="glow-line" style="max-width:800px;margin:0 auto;"></div>
+
+  <!-- Features -->
+  <section>
+    <div class="section-inner">
+      <div class="reveal" style="margin-bottom:3rem;">
+        <p class="section-label">Features</p>
+        <h2 class="section-title">少しずつ、解ける楽しさへ。</h2>
+      </div>
+      <div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(280px,1fr));gap:1.5rem;">
+        <div class="feature-card reveal">
+          <div class="feature-icon">⭐</div>
+          <h3>推理だけで解ける</h3>
+          <p>答えは必ず 1 通りで、当て推量が要らない問題だけを収録しています。「ここしか置けない」を積み重ねていけば、最後まで解けます。</p>
+        </div>
+        <div class="feature-card reveal" style="transition-delay:0.1s;">
+          <div class="feature-icon">🧩</div>
+          <h3>3 つのサイズ、各 100 問</h3>
+          <p>6×6・8×8・10×10 の 3 サイズに、各 100 問（合計 300 問）を収録。どのサイズも No.1 から順に、少しずつ難しくなります。</p>
+        </div>
+        <div class="feature-card reveal" style="transition-delay:0.2s;">
+          <div class="feature-icon">📅</div>
+          <h3>1 日 3 問から、気軽に続く</h3>
+          <p>無料で遊べるのは 1 日 3 問まで（日本時間の 0 時に戻ります）。使い切っても、広告を最後まで見ると 3 問ずつ追加できます。途中のもの・クリア済みの問題は、枠を使わずに遊べます。</p>
+        </div>
+        <div class="feature-card reveal">
+          <div class="feature-icon">💡</div>
+          <h3>ヒントと、やり直し</h3>
+          <p>詰まったときは、広告を見るとヒントを 1 回使えます（正しい★を 1 つ置きます。見なくても問題は解けます）。元に戻す・全消去・途中で閉じても続きから再開できます。</p>
+        </div>
+        <div class="feature-card reveal" style="transition-delay:0.1s;">
+          <div class="feature-icon">🎨</div>
+          <h3>色に頼らない盤面</h3>
+          <p>領域は色分けに加えて、境目を太線で表示。色の区別がつきにくい方でも見分けやすくしています。★を置いたら自動で × を付ける設定や、振動のオン・オフもできます。</p>
+        </div>
+        <div class="feature-card reveal" style="transition-delay:0.2s;">
+          <div class="feature-icon">🔥</div>
+          <h3>連続日数とシェア</h3>
+          <p>クリアした日が続いた日数を表示します。クリア画面から、タイムや連続日数を文字で共有できます。</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <div class="glow-line" style="max-width:800px;margin:0 auto;"></div>
+
+  <!-- Screenshots -->
+  <section>
+    <div class="section-inner">
+      <div class="reveal" style="margin-bottom:2rem;">
+        <p class="section-label">Screenshots</p>
+        <h2 class="section-title">アプリの画面</h2>
+        <p style="color:var(--text-sub);font-size:0.85rem;margin-top:0.5rem;">← スワイプまたはスクロールで確認できます</p>
+      </div>
+      <div class="screenshot-strip reveal">
+        <img src="../assets/starpuzzle/screenshots/01.jpg" alt="StarPuzzle の画面 1: 推理だけで解ける★パズル" width="540" height="1080" loading="lazy" />
+        <img src="../assets/starpuzzle/screenshots/02.jpg" alt="StarPuzzle の画面 2: 答えは、いつもひとつだけ" width="540" height="1080" loading="lazy" />
+        <img src="../assets/starpuzzle/screenshots/03.jpg" alt="StarPuzzle の画面 3: 3 つのサイズで腕試し" width="540" height="1080" loading="lazy" />
+        <img src="../assets/starpuzzle/screenshots/04.jpg" alt="StarPuzzle の画面 4: 1 日 3 問から、気軽に続く" width="540" height="1080" loading="lazy" />
+        <img src="../assets/starpuzzle/screenshots/05.jpg" alt="StarPuzzle の画面 5: 解けたら、次の問題へ" width="540" height="1080" loading="lazy" />
+        <img src="../assets/starpuzzle/screenshots/06.jpg" alt="StarPuzzle の画面 6: No.1 から順に、少しずつ難しくなる" width="540" height="1080" loading="lazy" />
+      </div>
+    </div>
+  </section>
+
+  <div class="glow-line" style="max-width:800px;margin:0 auto;"></div>
+
+  <!-- Story -->
+  <section>
+    <div class="section-inner" style="max-width:760px;">
+      <div class="reveal" style="margin-bottom:2rem;">
+        <p class="section-label">Story</p>
+        <h2 class="section-title">作った理由</h2>
+      </div>
+      <div class="reveal glass" style="padding:2rem;">
+        <p class="story-text">個人で開発しています。ロジックパズルは好きでも、「最後は勘で試すしかない問題」に当たると、がっかりします。そこで、すべての問題を「推理だけで最後まで解けること」を確かめたうえで収録しました。</p>
+        <p class="story-text">アカウントの登録は要りません。記録は端末の中にだけ保存し、サーバーには送りません（利用状況・クラッシュ情報・広告のための通信を除きます。詳しくは<a href="./privacy-policy.html" style="color:var(--primary);text-decoration:underline;">プライバシーポリシー</a>をご覧ください）。</p>
+        <p class="story-text">こんな方に使っていただけたら嬉しいです。</p>
+        <ul class="story-list">
+          <li>すきま時間に、頭を使うパズルを少しだけ遊びたい方</li>
+          <li>数独やお絵かきロジックのような、推理で解くパズルが好きな方</li>
+          <li>毎日の習慣として、無理なく続けたい方</li>
+        </ul>
+      </div>
+    </div>
+  </section>
+
+  <div class="glow-line" style="max-width:800px;margin:0 auto;"></div>
+
+  <!-- FAQ -->
+  <section>
+    <div class="section-inner">
+      <div class="reveal" style="margin-bottom:2.5rem;">
+        <p class="section-label">FAQ</p>
+        <h2 class="section-title">よくある質問</h2>
+      </div>
+      <div class="reveal glass" style="padding:1.5rem 2rem;">
+        <div class="mini-faq-item">
+          <span class="mini-faq-q">費用</span>
+          <span class="mini-faq-a">無料でご利用いただけます。広告が表示されます（画面下のバナー、クリア後の全画面広告、ヒントや無料枠の追加のための動画広告）。</span>
+        </div>
+        <div class="mini-faq-item">
+          <span class="mini-faq-q">対応端末</span>
+          <span class="mini-faq-a">Android と iOS（iPhone）向けに準備中です。公開日・配信ストアが決まりしだい、このページでお知らせします。配信は日本国内のみの予定です。</span>
+        </div>
+        <div class="mini-faq-item">
+          <span class="mini-faq-q">ログイン・登録</span>
+          <span class="mini-faq-a">不要です。アカウントの登録なしで遊べます。記録（クリアした問題・途中の盤面など）は、お使いの端末の中にだけ保存されます。</span>
+        </div>
+        <div class="mini-faq-item">
+          <span class="mini-faq-q">オフラインで遊べますか？</span>
+          <span class="mini-faq-a">問題はアプリに同梱されているので、通信なしでも遊べます（広告の表示と、利用状況・クラッシュ情報の送信には通信が必要です）。</span>
+        </div>
+        <div class="mini-faq-item">
+          <span class="mini-faq-q">1 日 3 問を使い切ったら？</span>
+          <span class="mini-faq-a">リワード広告を最後まで見ると、3 問追加できます（回数の上限はありません）。広告が表示できない状況では、そのまま追加されます。始めたことのある問題の再開と、クリア済みの問題の遊び直しは、枠を使いません。</span>
+        </div>
+        <div class="mini-faq-item">
+          <span class="mini-faq-q">機種変更・アンインストール</span>
+          <span class="mini-faq-a">記録は端末の中にだけあり、バックアップや引き継ぎの機能はありません。アプリを削除したり端末を替えたりすると、記録は消えます。</span>
+        </div>
+        <div class="mini-faq-item">
+          <span class="mini-faq-q">ご意見・不具合の報告</span>
+          <span class="mini-faq-a">このページの「お問い合わせフォーム」から送れます。</span>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <div class="glow-line" style="max-width:800px;margin:0 auto;"></div>
+
+  <!-- Contact -->
+  <section>
+    <div class="section-inner" style="text-align:center;">
+      <div class="reveal glass" style="padding:3rem 2rem;max-width:640px;margin:0 auto;">
+        <p class="section-label" style="text-align:center;">Contact</p>
+        <h2 class="section-title" style="font-size:1.8rem;">お問い合わせ</h2>
+        <p class="contact-text">
+          不具合の報告、機能のご要望、ご質問は Google フォームから受け付けています。
+        </p>
+        <a href="https://docs.google.com/forms/d/e/1FAIpQLSdPIUD1ZktD_75lvjQEZ_OJO58AOp5aRH8a5MwNyOeDSM1sSQ/viewform" target="_blank" rel="noopener" class="btn-primary">
+          お問い合わせフォームへ →
+        </a>
+      </div>
+    </div>
+  </section>
+
+  <footer>
+    <p>© 2026 Ryo-Lab. StarPuzzle 開発チーム</p>
+  </footer>
+
+<script src="../assets/js/subsite.js"></script>
+</body>
+</html>

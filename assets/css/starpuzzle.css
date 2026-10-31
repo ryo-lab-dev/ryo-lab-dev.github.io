@@ -1,0 +1,85 @@
+/* StarPuzzle — 夜空の紺 × 金の★（アプリのテーマに合わせたダークテーマ）
+   参照: StarPuzzle/lib/ui/theme.dart（bg #0F1530 / card #1F2756 / gold #FFCF4A / text #F2F4FF / sub #A9B2E0） */
+:root {
+  --bg:            #0f1530;
+  --primary:       #ffcf4a;
+  --primary-light: #ffe08a;
+  --glow:          rgba(255, 207, 74, 0.22);
+  --glass-bg:      rgba(31, 39, 86, 0.6);
+  --glass-border:  rgba(169, 178, 224, 0.2);
+  --text-main:     #f2f4ff;
+  --text-sub:      #a9b2e0;
+}
+
+body { color: var(--text-main); }
+.btn-primary { color: #2a2000; }
+
+.hero-icon {
+  width: 96px;
+  height: 96px;
+  border-radius: 22px;
+  margin-bottom: 1.25rem;
+  box-shadow: 0 8px 32px var(--glow);
+}
+.hero-origin { font-size: 0.9rem; color: var(--text-sub); margin-bottom: 1.5rem; max-width: 520px; }
+.feature-card h3 { font-size: 1.15rem; font-weight: 700; margin-bottom: 0.75rem; color: var(--text-main); }
+.feature-card p { color: var(--text-sub); line-height: 1.7; font-size: 0.92rem; }
+
+.mini-faq-item {
+  border-bottom: 1px solid var(--glass-border);
+  padding: 1.1rem 0;
+  display: grid;
+  grid-template-columns: 1fr 2fr;
+  gap: 1rem;
+}
+.mini-faq-item:last-child { border-bottom: none; }
+.mini-faq-q { color: var(--text-main); font-weight: 600; font-size: 0.93rem; }
+.mini-faq-a { color: var(--text-sub); font-size: 0.93rem; line-height: 1.6; }
+.mini-faq-a a { color: var(--primary); }
+@media (max-width: 768px) { .mini-faq-item { grid-template-columns: 1fr; } }
+
+.contact-text { color: var(--text-sub); line-height: 1.7; margin: 1rem 0 2rem; }
+
+.rule-list { list-style: none; padding: 0; margin: 0 0 1rem; counter-reset: rule; }
+.rule-list li { counter-increment: rule; color: var(--text-sub); font-size: 0.95rem; line-height: 1.8; padding: 0.4rem 0 0.4rem 2.2rem; position: relative; }
+.rule-list li::before {
+  content: counter(rule);
+  position: absolute; left: 0; top: 0.5rem;
+  width: 1.5rem; height: 1.5rem; border-radius: 50%;
+  background: var(--glow); color: var(--primary);
+  font-family: 'JetBrains Mono', monospace; font-size: 0.78rem;
+  display: flex; align-items: center; justify-content: center;
+}
+
+.screenshot-strip img { height: 520px; max-height: 520px; }
+.story-text { color: var(--text-sub); line-height: 1.9; font-size: 0.95rem; margin-bottom: 1rem; }
+.story-list { list-style: none; padding: 0; margin: 0; }
+.story-list li { color: var(--text-sub); font-size: 0.95rem; padding: 0.35rem 0 0.35rem 1.25rem; position: relative; }
+.story-list li::before { content: '·'; position: absolute; left: 0.3rem; color: var(--primary); font-size: 1.2rem; line-height: 1.4; }
+@media (max-width: 768px) { .screenshot-strip img { height: 420px; max-height: 420px; } }
+
+/* 準備中のストアボタン（リンクなし） */
+.btn-disabled { opacity: 0.55; cursor: not-allowed; pointer-events: none; }
+
+/* ドキュメントページ */
+.doc-section h3 { font-size: 1rem; color: var(--text-main); margin: 1.25rem 0 0.4rem; }
+.doc-section strong { color: var(--text-main); }
+.doc-section a { color: var(--primary); text-decoration: underline; text-underline-offset: 2px; }
+.article-chip {
+  display: inline-block;
+  font-family: 'JetBrains Mono', monospace;
+  font-size: 0.7rem;
+  color: var(--primary);
+  background: rgba(255, 207, 74, 0.1);
+  border: 1px solid var(--glow);
+  border-radius: 4px;
+  padding: 0.15rem 0.5rem;
+  margin-bottom: 0.4rem;
+  vertical-align: middle;
+  margin-right: 0.4rem;
+}
+.table-wrap { overflow-x: auto; margin: 0.75rem 0 1rem; }
+.data-table { width: 100%; border-collapse: collapse; font-size: 0.88rem; line-height: 1.6; }
+.data-table th, .data-table td { border: 1px solid var(--glass-border); padding: 0.6rem 0.8rem; text-align: left; vertical-align: top; }
+.data-table th { background: rgba(255, 207, 74, 0.1); color: var(--text-main); white-space: nowrap; }
+.data-table td { color: var(--text-sub); }

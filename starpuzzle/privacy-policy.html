@@ -1,0 +1,169 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>プライバシーポリシー — StarPuzzle</title>
+  <script src="https://cdn.tailwindcss.com"></script>
+  <link rel="icon" href="../assets/icons/starpuzzle_icon.svg" type="image/svg+xml" />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Syne:wght@400;600;700;800&family=Noto+Sans+JP:wght@300;400;500;700&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="../assets/css/starpuzzle.css" />
+  <link rel="stylesheet" href="../assets/css/subsite.css" />
+  <!-- SEO -->
+  <meta name="description" content="ロジックパズル「StarPuzzle」のプライバシーポリシー。取得する情報・外部サービス（Firebase / AdMob）・保存と削除について記載しています。">
+  <link rel="canonical" href="https://ryo-lab.dev/starpuzzle/privacy-policy.html">
+  <meta property="og:type" content="website">
+  <meta property="og:url" content="https://ryo-lab.dev/starpuzzle/privacy-policy.html">
+  <meta property="og:title" content="プライバシーポリシー — StarPuzzle">
+  <meta property="og:description" content="ロジックパズル「StarPuzzle」のプライバシーポリシー。取得する情報・外部サービス（Firebase / AdMob）・保存と削除について記載しています。">
+  <meta property="og:image" content="https://ryo-lab.dev/assets/ogp/ogp_starpuzzle.png">
+  <meta property="og:site_name" content="Ryo-Lab">
+  <meta property="og:locale" content="ja_JP">
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:title" content="プライバシーポリシー — StarPuzzle">
+  <meta name="twitter:description" content="ロジックパズル「StarPuzzle」のプライバシーポリシー。取得する情報・外部サービス（Firebase / AdMob）・保存と削除について記載しています。">
+  <meta name="twitter:image" content="https://ryo-lab.dev/assets/ogp/ogp_starpuzzle.png">
+</head>
+<body>
+<nav>
+  <div class="nav-inner">
+    <a href="./" class="nav-logo">
+      <div class="nav-logo-dot"></div>
+      <span class="nav-logo-text">StarPuzzle</span>
+    </a>
+    <div class="nav-links">
+      <a href="./">Home</a>
+      <a href="./privacy-policy.html" class="active">Privacy Policy</a>
+      <a href="./terms.html">利用規約</a>
+    </div>
+    <button class="nav-hamburger" id="navToggle" aria-label="メニューを開く">
+      <span></span><span></span><span></span>
+    </button>
+  </div>
+</nav>
+
+<div class="doc-container">
+  <div class="doc-header reveal">
+    <p class="doc-tag">Legal</p>
+    <h1 class="doc-title">プライバシーポリシー</h1>
+    <p class="doc-updated">最終更新日: 2026年10月31日</p>
+  </div>
+
+  <p style="color:var(--text-sub);font-size:0.9rem;margin-bottom:2.5rem;" class="reveal">
+    Ryo-Lab チーム（以下「運営者」）は、ロジックパズルアプリ「StarPuzzle」（以下「本アプリ」）における、利用者の情報の取り扱いについて、以下のとおり定めます。
+  </p>
+
+  <div class="doc-section reveal">
+    <h2><span class="article-chip">第1条</span> 取得する情報</h2>
+    <p>本アプリは、アカウント登録やログインを必要としません。氏名・メールアドレス・位置情報・連絡先などの個人情報は取得しません（広告配信のための IP アドレス・広告 ID などを除きます）。機能の提供に必要な範囲で、次の情報を取り扱います。</p>
+    <h3>端末の中にだけ保存する情報（外部へ送信しません）</h3>
+    <div class="table-wrap"><table class="data-table">
+        <thead><tr><th>情報</th><th>内容・目的</th></tr></thead>
+        <tbody>
+        <tr><td>遊んだ記録</td><td>問題ごとのクリアの有無・クリアまでのタイム・使ったヒントの数。連続日数の表示のため</td></tr>
+        <tr><td>途中の盤面</td><td>各マスの状態（空・×・★）、経過時間、操作の履歴。途中で閉じても続きから再開するため</td></tr>
+        <tr><td>1 日の無料枠</td><td>その日（日本時間）の日付・使った数・広告で追加した数</td></tr>
+        <tr><td>設定</td><td>「★を置いたら自動で ×」・振動のオン・オフ</td></tr>
+        <tr><td>広告の表示頻度</td><td>前回の全画面広告を表示した時刻、その日のクリア回数。広告を出しすぎないため</td></tr>
+        </tbody>
+      </table></div>
+    <h3>自動的に取得される情報</h3>
+    <ul>
+      <li><strong>利用状況</strong>: 問題を始めた・クリアした・ヒントを使った・結果を共有した・問題一覧を開いた・広告で無料枠を追加した、といった操作の種類と、盤面のサイズ・クリアまでの秒数・ヒントの数。個人を特定する情報は含みません（Firebase Analytics）。端末・OS・おおよその地域などの一般的な情報と、Firebase のインストール ID（アプリを入れた端末を区別するための ID）も、SDK が自動で取得します。</li>
+      <li><strong>クラッシュ情報</strong>: アプリが異常終了したときの端末・OS の情報とエラーの内容（Firebase Crashlytics）。</li>
+      <li><strong>広告に関する情報</strong>: 広告の配信のため、端末の広告 ID・IP アドレス・端末情報・広告の表示と操作の情報などが広告事業者に送信されます（Google AdMob）。iOS では、広告 ID（IDFA）を使うために、起動時にトラッキングの許可（App Tracking Transparency）をお願いする場合があります。<strong>許可しなくても、本アプリのすべての機能を使えます</strong>（許可しない場合は、広告 ID は使われず、広告の関連性が下がることがあります）。許可の設定は、端末の「設定」から、いつでも変えられます。</li>
+    </ul>
+  </div>
+
+  <div class="divider"></div>
+
+  <div class="doc-section reveal">
+    <h2><span class="article-chip">第2条</span> 利用目的</h2>
+    <ul>
+      <li>本アプリの機能の提供・維持・改善</li>
+      <li>不具合の調査、安全性の確保</li>
+      <li>利用状況の把握と、機能・問題の改善</li>
+      <li>広告の表示（本アプリの運営費用に充てるため）</li>
+    </ul>
+  </div>
+
+  <div class="divider"></div>
+
+  <div class="doc-section reveal">
+    <h2><span class="article-chip">第3条</span> 外部サービスへの送信（委託・第三者提供）</h2>
+    <p>本アプリは、次の外部サービスを利用しており、必要な情報がこれらの事業者に送信・保存されます。</p>
+    <div class="table-wrap"><table class="data-table">
+        <thead><tr><th>サービス</th><th>提供者</th><th>送信・保存される情報</th><th>目的</th></tr></thead>
+        <tbody>
+        <tr><td>Firebase Analytics</td><td>Google LLC</td><td>利用状況（操作の種類、盤面のサイズ・秒数・ヒントの数）、インストール ID</td><td>改善</td></tr>
+        <tr><td>Firebase Crashlytics</td><td>Google LLC</td><td>クラッシュ情報（端末・OS の情報、エラーの内容）</td><td>不具合の調査</td></tr>
+        <tr><td>Google AdMob</td><td>Google LLC</td><td>広告 ID・IP アドレス・端末情報・広告の表示と操作の情報 など</td><td>広告の配信</td></tr>
+        <tr><td>Google の同意の確認（UMP）</td><td>Google LLC</td><td>同意の状態</td><td>広告の同意の管理</td></tr>
+        </tbody>
+      </table></div>
+    <ul>
+      <li>収集しない情報: 氏名・メールアドレス・住所・電話番号・ユーザー ID・位置情報（広告配信のための IP アドレスを除く）・連絡先・写真・健康情報・決済情報。</li>
+      <li>法令に基づく場合を除き、上記以外の第三者に、利用者の情報を提供しません。</li>
+      <li>新しい致命的なクラッシュが起きたときは、運営者の不具合管理のため、Crashlytics が検知したクラッシュのタイトル・発生箇所・アプリのバージョンだけが、運営者の GitHub の Issue として記録されます（利用者のデータは含みません）。</li>
+      <li>「結果を共有」は、利用者が操作したときだけ、タイム・ヒントの数・連続日数を文字にして、端末の共有機能（ほかのアプリ）へ渡すものです。運営者のサーバーには送信されません。</li>
+      <li>広告の配信にあたり、必要に応じて同意の確認画面（Google の User Messaging Platform）が表示されることがあります。表示された場合は、アプリの「設定」の「プライバシーの設定」から、あとで変更できます。</li>
+      <li>上記の事業者（Google LLC）は米国の事業者で、利用者の情報は、米国など日本国外のサーバーで保存・処理される場合があります。米国の個人情報の保護に関する制度は、個人情報保護委員会の「<a href="https://www.ppc.go.jp/enforcement/infoprovision/laws/offshore_report_america/" target="_blank" rel="noopener">外国制度（アメリカ合衆国）</a>」で確認できます。各事業者は、それぞれのプライバシーポリシーやデータの取り扱いに関する規約に基づいて、情報を安全に管理するための措置を講じています。</li>
+      <li>各サービスのプライバシーポリシー: <a href="https://policies.google.com/privacy" target="_blank" rel="noopener">Google プライバシーポリシー</a>、<a href="https://firebase.google.com/support/privacy" target="_blank" rel="noopener">Firebase のプライバシーに関する情報</a></li>
+    </ul>
+  </div>
+
+  <div class="divider"></div>
+
+  <div class="doc-section reveal" id="delete">
+    <h2><span class="article-chip">第4条</span> 保存期間と削除</h2>
+    <p>本アプリにはアカウントがなく、運営者は、個人を特定できるデータを保有していません。</p>
+    <ul>
+      <li>端末の中の記録は、アプリを削除するまで端末に残ります。アプリを削除すると、記録もすべて削除され、元に戻せません。運営者のサーバーには記録がないため、運営者が復元・削除することはできません。</li>
+      <li>Firebase Analytics・Crashlytics・AdMob が取得した情報の取り扱いは、各事業者のプライバシーポリシーに従います。</li>
+    </ul>
+  </div>
+
+  <div class="divider"></div>
+
+  <div class="doc-section reveal">
+    <h2><span class="article-chip">第5条</span> 広告について</h2>
+    <p>本アプリには広告が表示されます（画面下のバナー、クリア後の全画面広告、ヒントや無料枠の追加のための動画広告）。広告の配信に使われる情報や、広告のパーソナライズの設定は、Android は端末の設定（Google 設定 → 広告）、iOS は端末の設定（プライバシーとセキュリティ → トラッキング、Apple 広告）から変更できます。</p>
+  </div>
+
+  <div class="divider"></div>
+
+  <div class="doc-section reveal">
+    <h2><span class="article-chip">第6条</span> 子どもの情報について</h2>
+    <p>本アプリは子ども向けではなく、13 歳以上の方を対象としています。13 歳未満の方の個人情報を、意図して取得することはありません。</p>
+  </div>
+
+  <div class="divider"></div>
+
+  <div class="doc-section reveal">
+    <h2><span class="article-chip">第7条</span> 本ポリシーの変更</h2>
+    <p>内容を変更する場合は、本アプリまたは本ページでお知らせします。重要な変更があるときは、わかりやすい方法でお知らせします。</p>
+  </div>
+
+  <div class="divider"></div>
+
+  <div class="doc-section reveal">
+    <h2><span class="article-chip">第8条</span> お問い合わせ</h2>
+    <p>本ポリシーに関するご質問は、以下からお問い合わせください。</p>
+    <ul>
+      <li>運営: Ryo-Lab チーム</li>
+      <li>お問い合わせフォーム:
+        <a href="https://docs.google.com/forms/d/e/1FAIpQLSdPIUD1ZktD_75lvjQEZ_OJO58AOp5aRH8a5MwNyOeDSM1sSQ/viewform" target="_blank" rel="noopener">こちらから送信</a>
+      </li>
+    </ul>
+  </div>
+</div>
+
+<footer>
+  <p>© 2026 Ryo-Lab. StarPuzzle 開発チーム</p>
+</footer>
+
+<script src="../assets/js/subsite.js"></script>
+</body>
+</html>
