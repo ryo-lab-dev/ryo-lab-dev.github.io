@@ -208,6 +208,26 @@
     <priority>0.4</priority>
   </url>
 
+  <!-- StarPuzzle -->
+  <url>
+    <loc>https://ryo-lab.dev/starpuzzle/</loc>
+    <lastmod>2026-10-31</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://ryo-lab.dev/starpuzzle/privacy-policy.html</loc>
+    <lastmod>2026-10-31</lastmod>
+    <changefreq>yearly</changefreq>
+    <priority>0.4</priority>
+  </url>
+  <url>
+    <loc>https://ryo-lab.dev/starpuzzle/terms.html</loc>
+    <lastmod>2026-10-31</lastmod>
+    <changefreq>yearly</changefreq>
+    <priority>0.4</priority>
+  </url>
+
   <!-- BoxProfit -->
   <url>
     <loc>https://ryo-lab.dev/boxprofit/</loc>
