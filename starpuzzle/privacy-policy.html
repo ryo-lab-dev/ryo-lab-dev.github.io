@@ -71,7 +71,7 @@
       </table></div>
     <h3>自動的に取得される情報</h3>
     <ul>
-      <li><strong>利用状況</strong>: 問題を始めた・クリアした・ヒントを使った・結果を共有した・問題一覧を開いた・広告で無料枠を追加した、といった操作の種類と、盤面のサイズ・クリアまでの秒数・ヒントの数。個人を特定する情報は含みません（Firebase Analytics）。端末・OS・おおよその地域などの一般的な情報も、SDK が自動で取得します。</li>
+      <li><strong>利用状況</strong>: 問題を始めた・クリアした・ヒントを使った・結果を共有した・問題一覧を開いた・広告で無料枠を追加した、といった操作の種類と、盤面のサイズ・クリアまでの秒数・ヒントの数。個人を特定する情報は含みません（Firebase Analytics）。端末・OS・おおよその地域などの一般的な情報と、Firebase のインストール ID（アプリを入れた端末を区別するための ID）も、SDK が自動で取得します。</li>
       <li><strong>クラッシュ情報</strong>: アプリが異常終了したときの端末・OS の情報とエラーの内容（Firebase Crashlytics）。</li>
       <li><strong>広告に関する情報</strong>: 広告の配信のため、端末の広告 ID・IP アドレス・端末情報・広告の表示と操作の情報などが広告事業者に送信されます（Google AdMob）。iOS では、広告 ID（IDFA）を使うために、起動時にトラッキングの許可（App Tracking Transparency）をお願いする場合があります。<strong>許可しなくても、本アプリのすべての機能を使えます</strong>（許可しない場合は、広告 ID は使われず、広告の関連性が下がることがあります）。許可の設定は、端末の「設定」から、いつでも変えられます。</li>
     </ul>
@@ -97,7 +97,7 @@
     <div class="table-wrap"><table class="data-table">
         <thead><tr><th>サービス</th><th>提供者</th><th>送信・保存される情報</th><th>目的</th></tr></thead>
         <tbody>
-        <tr><td>Firebase Analytics</td><td>Google LLC</td><td>利用状況（操作の種類、盤面のサイズ・秒数・ヒントの数）</td><td>改善</td></tr>
+        <tr><td>Firebase Analytics</td><td>Google LLC</td><td>利用状況（操作の種類、盤面のサイズ・秒数・ヒントの数）、インストール ID</td><td>改善</td></tr>
         <tr><td>Firebase Crashlytics</td><td>Google LLC</td><td>クラッシュ情報（端末・OS の情報、エラーの内容）</td><td>不具合の調査</td></tr>
         <tr><td>Google AdMob</td><td>Google LLC</td><td>広告 ID・IP アドレス・端末情報・広告の表示と操作の情報 など</td><td>広告の配信</td></tr>
         <tr><td>Google の同意の確認（UMP）</td><td>Google LLC</td><td>同意の状態</td><td>広告の同意の管理</td></tr>
