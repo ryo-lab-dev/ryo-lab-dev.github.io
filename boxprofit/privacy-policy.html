@@ -39,7 +39,7 @@
   <div class="doc-header reveal">
     <p class="doc-tag">Legal</p>
     <h1 class="doc-title">プライバシーポリシー</h1>
-    <p class="doc-updated">制定日: <time datetime="2026-10-18">2026年10月18日</time> ／ 最終更新日: <time datetime="2026-10-22">2026年10月22日</time></p>
+    <p class="doc-updated">制定日: <time datetime="2026-10-18">2026年10月18日</time> ／ 最終更新日: <time datetime="2026-11-01">2026年11月1日</time></p>
   </div>
 
   <p style="color:#64748b;font-size:0.9rem;margin-bottom:2.5rem;" class="reveal">
@@ -57,8 +57,8 @@
         <tbody>
           <tr>
             <td>アカウント情報</td>
-            <td>Google アカウントのメールアドレス・表示名・ユーザー ID（uid）</td>
-            <td>Firebase Authentication（Google ログイン）。本アプリの利用にはログインが必要です</td>
+            <td>Google ログイン: メールアドレス・表示名・ユーザー ID（uid）<br>Apple でサインイン（iOS）: 名前・メールアドレス・ユーザー ID（uid）。「メールを非公開」を選んだ場合、メールアドレスは Apple が発行する中継用のアドレスになります</td>
+            <td>Firebase Authentication。データの保存・同期にはログインが必要です。ログインなしで使える「かんたん計算」では、入力した内容を保存せず、送信もしません</td>
           </tr>
           <tr>
             <td>ユーザーが入力したデータ</td>
@@ -77,20 +77,22 @@
           </tr>
           <tr>
             <td>広告関連</td>
-            <td>広告 ID、IP アドレス、端末情報など（広告の配信・計測のため）</td>
-            <td>Google AdMob（バナー広告のみ）</td>
+            <td>広告 ID（Android の広告 ID／iOS の IDFA）、IP アドレス、端末情報など（広告の配信・計測のため）</td>
+            <td>Google AdMob（バナー広告のみ）。iOS では、App Tracking Transparency（ATT）で許可した場合にのみ IDFA を利用します</td>
           </tr>
           <tr>
             <td>端末内の保存</td>
-            <td>「はじめかた」カードを閉じたかどうかの設定のみ</td>
+            <td>「はじめかた」カードを閉じたかどうか、売れ残りのお知らせのオン・オフなどの設定のみ</td>
             <td>端末のローカル領域</td>
           </tr>
         </tbody>
       </table>
     </div>
     <ul>
-      <li>位置情報、連絡先、カメラ・マイク、写真、電話番号、決済情報は取得しません。</li>
-      <li>ログイン方法は Google ログインのみです。メールアドレス・パスワードによる登録はありません。</li>
+      <li>位置情報、連絡先、マイク、写真ライブラリ、電話番号、決済情報は取得しません。</li>
+      <li><strong>カメラ</strong>: 商品の JAN バーコードを読み取るときにだけ、端末のカメラを使います（初回に許可を求めます）。読み取りは端末の中で処理し、<strong>画像は保存も送信もしません</strong>。許可しなくても、JAN コードを手入力できます。</li>
+      <li><strong>通知</strong>: 「売れ残りのお知らせ」は、端末内で表示するローカル通知です（初期設定はオフ。オンにしたときに許可を求めます）。内容に商品名・金額は含めず、サーバーには送信しません。</li>
+      <li>ログイン方法は Google ログインと、Apple でサインイン（iOS のみ）です。メールアドレス・パスワードによる登録はありません。</li>
     </ul>
   </div>
 
@@ -100,6 +102,7 @@
     <h2>第2条 利用目的</h2>
     <ul>
       <li>アカウントの認証とデータの同期</li>
+      <li>バーコードの読み取りと、売れ残りのお知らせの表示（端末内）</li>
       <li>機能の提供（販売価格の逆算、在庫・販売の管理、CSV 出力）</li>
       <li>アプリの改善と不具合の把握（Analytics・Crashlytics）</li>
       <li>広告の表示（AdMob）</li>
@@ -110,7 +113,7 @@
 
   <div class="doc-section reveal">
     <h2>第3条 第三者提供・外部サービス</h2>
-    <p>本アプリは、次の Google LLC のサービスを利用しており、情報の処理を委託しています。データは各サービスの利用規約・プライバシーポリシーに従って処理されます。</p>
+    <p>本アプリは、次の Google LLC・Apple Inc. のサービスを利用しており、情報の処理を委託しています。データは各サービスの利用規約・プライバシーポリシーに従って処理されます。</p>
     <ul>
       <li>
         <strong>Firebase（Authentication / Cloud Firestore / Analytics / Crashlytics）</strong> — 認証・データ保存・利用状況の把握・クラッシュ情報の収集<br>
@@ -122,10 +125,24 @@
         <strong>Google AdMob</strong> — バナー広告の配信・計測<br>
         <a href="https://policies.google.com/technologies/ads" target="_blank" rel="noopener" style="font-size:0.875rem;">Google の広告に関するポリシー</a>
       </li>
+      <li>
+        <strong>Sign in with Apple（Apple Inc.）</strong> — iOS でのログイン。アカウントの削除時には、Apple 側のトークンの失効にも利用します<br>
+        <a href="https://www.apple.com/legal/privacy/jp/" target="_blank" rel="noopener" style="font-size:0.875rem;">Apple プライバシーポリシー</a>
+      </li>
     </ul>
-    <p style="margin-top:0.75rem;">上記の Google の各サービスによる処理を除き、ユーザーのデータを販売・広告目的で第三者に提供することはありません。</p>
-    <p>広告のパーソナライズは、端末の設定（広告 ID のリセット・オプトアウト）で制限できます。</p>
-    <p><strong>外国にある第三者への提供について</strong>: 上記の外部サービスの提供事業者（Google LLC）は米国の事業者で、利用者の情報は、米国など日本国外のサーバーで保存・処理される場合があります。米国の個人情報の保護に関する制度は、個人情報保護委員会の「<a href="https://www.ppc.go.jp/enforcement/infoprovision/laws/offshore_report_america/" target="_blank" rel="noopener">外国制度（アメリカ合衆国）</a>」で確認できます。各事業者は、それぞれのプライバシーポリシーやデータの取り扱いに関する規約に基づいて、情報を安全に管理するための措置を講じています。</p>
+    <p style="margin-top:0.75rem;">上記の Google・Apple の各サービスによる処理を除き、ユーザーのデータを販売・広告目的で第三者に提供することはありません。</p>
+    <p>
+      <strong>広告と広告 ID について:</strong>
+      AdMob は、広告の配信や効果測定のために、広告 ID（iOS では IDFA、Android では広告 ID）や端末情報などを利用することがあります。
+      一部の地域（EEA など）では、初回起動時に同意確認のメッセージが表示されます。
+    </p>
+    <p>
+      iOS では、初回起動時の App Tracking Transparency（ATT）の確認で、広告 ID の利用を許可するかどうかを選択できます。
+      許可しない場合、広告 ID は利用されず、関連性の低い広告が表示されることがありますが、本アプリのすべての機能を同じように使えます。
+      許可の設定は、端末の「設定」→「プライバシーとセキュリティ」→「トラッキング」からいつでも変更できます。
+      Android では、端末の設定から広告 ID のリセットやパーソナライズ広告のオプトアウトができます。
+    </p>
+    <p><strong>外国にある第三者への提供について</strong>: 上記の外部サービスの提供事業者（Google LLC・Apple Inc.）は米国の事業者で、利用者の情報は、米国など日本国外のサーバーで保存・処理される場合があります。米国の個人情報の保護に関する制度は、個人情報保護委員会の「<a href="https://www.ppc.go.jp/enforcement/infoprovision/laws/offshore_report_america/" target="_blank" rel="noopener">外国制度（アメリカ合衆国）</a>」で確認できます。各事業者は、それぞれのプライバシーポリシーやデータの取り扱いに関する規約に基づいて、情報を安全に管理するための措置を講じています。</p>
   </div>
 
   <div class="divider"></div>
@@ -138,16 +155,16 @@
     <ol>
       <li>本アプリを開き、「設定」を選択します。</li>
       <li>「アカウントとデータを削除」を選択します。</li>
-      <li>画面の案内に従い、Google アカウントによる本人確認を行います。</li>
+      <li>画面の案内に従い、ログインしている方法（Google または Apple）で本人確認を行います。</li>
     </ol>
     <ul>
-      <li>本人確認の後、Cloud Firestore 上のすべてのデータ（商品・梱包資材・取引手段・送料・販売履歴・設定）を削除し、続けて認証アカウントを削除します。</li>
+      <li>本人確認の後、Cloud Firestore 上のすべてのデータ（商品・梱包資材・取引手段・送料・販売履歴・設定）を削除し、続けて認証アカウントを削除します。Apple でサインインしている場合は、Apple 側のトークンも失効させます。</li>
       <li>この操作は元に戻せません。</li>
-      <li>完了するとログイン画面に戻ります。同じ Google アカウントで再度ログインしても、新しいアカウントとして扱われ、データは空の状態になります。</li>
+      <li>完了するとログイン画面に戻ります。同じ Google／Apple アカウントで再度ログインしても、新しいアカウントとして扱われ、データは空の状態になります。</li>
     </ul>
 
     <h3>（2）運営者への削除依頼</h3>
-    <p>アプリを使用できない場合は、下記のお問い合わせ先に、<strong>本アプリに登録した Google アカウントのメールアドレス</strong>を添えて削除をご依頼ください。運営者が確認のうえ、対応します。</p>
+    <p>アプリを使用できない場合は、下記のお問い合わせ先に、<strong>本アプリに登録したメールアドレス（Apple の「メールを非公開」を使っている場合は、その旨）</strong>を添えて削除をご依頼ください。運営者が確認のうえ、対応します。</p>
     <p>
       お問い合わせフォーム:
       <a href="https://docs.google.com/forms/d/e/1FAIpQLSdwONRkRyqKy2ayAsTMRWpMwh2CDXa8AR9fXIp9_guXJxnt_A/viewform?usp=header" target="_blank" rel="noopener">こちらから送信</a>
