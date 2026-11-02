@@ -68,8 +68,8 @@
           </tr>
           <tr>
             <td>アカウント情報（ログインしたときだけ）</td>
-            <td>Google アカウントのメールアドレス・ユーザー ID（uid）。ほかに、Google アカウントの表示名・プロフィール画像の URL を、Firebase Authentication がアカウントの情報として保持します（本アプリの画面では使いません）</td>
-            <td>Firebase Authentication（Google ログイン）</td>
+            <td>Google アカウントのメールアドレス・ユーザー ID（uid）。ほかに、Google アカウントの表示名・プロフィール画像の URL を、Firebase Authentication がアカウントの情報として保持します（本アプリの画面では使いません）。iOS で Apple ログインを使った場合は、Apple が提供する氏名（初回のログイン時のみ）とメールアドレス（非公開にした場合は、Apple が発行する中継用のアドレス）を取得します。本アプリの画面には、Apple アカウントのメールアドレスを表示しません</td>
+            <td>Firebase Authentication（Google ログイン、iOS では Apple ログインも）</td>
           </tr>
           <tr>
             <td>クラウドに保存した記録（ログインしたときだけ）</td>
@@ -88,7 +88,7 @@
           </tr>
           <tr>
             <td>広告関連</td>
-            <td>広告 ID、IP アドレス、端末情報など（広告の配信・計測のため）</td>
+            <td>広告 ID（iOS では IDFA）、IP アドレス、端末情報など（広告の配信・計測のため）。iOS では、広告 ID を使うために起動時にトラッキングの許可（App Tracking Transparency）をお願いします。<strong>許可しなくても、本アプリのすべての機能を使えます</strong></td>
             <td>Google AdMob（バナー広告・リワード広告）</td>
           </tr>
         </tbody>
@@ -96,7 +96,7 @@
     </div>
     <ul>
       <li>位置情報、連絡先、カメラ・マイク、写真、電話番号、決済情報は取得しません。</li>
-      <li>ログイン方法は Google ログインのみです。メールアドレス・パスワードによる登録はありません。</li>
+      <li>ログイン方法は、Google ログインと、iOS の Apple ログインです。メールアドレス・パスワードによる登録はありません。</li>
       <li>本アプリには、お金を払ってランダムな報酬を引く仕組み（ガチャ）や、アプリ内の課金はありません。</li>
     </ul>
   </div>
@@ -117,7 +117,7 @@
 
   <div class="doc-section reveal">
     <h2>第3条 第三者提供・外部サービス</h2>
-    <p>本アプリは、次の Google LLC のサービスを利用しており、情報の処理を委託しています。データは各サービスの利用規約・プライバシーポリシーに従って処理されます。</p>
+    <p>本アプリは、次の Google LLC・Apple Inc. のサービスを利用しており、情報の処理を委託しています。データは各サービスの利用規約・プライバシーポリシーに従って処理されます。</p>
     <ul>
       <li>
         <strong>Firebase（Authentication / Cloud Firestore / Analytics / Crashlytics）</strong> — 認証・記録の保存・利用状況の把握・クラッシュ情報の収集<br>
@@ -129,10 +129,14 @@
         <strong>Google AdMob</strong> — バナー広告・リワード広告の配信・計測<br>
         <a href="https://policies.google.com/technologies/ads" target="_blank" rel="noopener" style="font-size:0.875rem;">Google の広告に関するポリシー</a>
       </li>
+      <li>
+        <strong>Sign in with Apple（iOS）</strong>（Apple Inc.）— Apple でのログインと、アカウント削除時の Apple 側のログインの許可（トークン）の取り消し<br>
+        <a href="https://www.apple.com/legal/privacy/jp/" target="_blank" rel="noopener" style="font-size:0.875rem;">Apple のプライバシーポリシー</a>
+      </li>
     </ul>
-    <p style="margin-top:0.75rem;">上記の Google の各サービスによる処理を除き、ユーザーのデータを販売・広告目的で第三者に提供することはありません。</p>
-    <p>広告のパーソナライズは、端末の設定（広告 ID のリセット・オプトアウト）で制限できます。欧州経済領域（EEA）・英国・スイスにいる場合は、広告の表示前に、Google の同意管理ツールで同意の確認を行い、あとから同意の設定を変更できます。</p>
-    <p><strong>外国にある第三者への提供について</strong>: 上記の外部サービスの提供事業者（Google LLC）は米国の事業者で、利用者の情報は、米国など日本国外のサーバーで保存・処理される場合があります。米国の個人情報の保護に関する制度は、個人情報保護委員会の「<a href="https://www.ppc.go.jp/enforcement/infoprovision/laws/offshore_report_america/" target="_blank" rel="noopener">外国制度（アメリカ合衆国）</a>」で確認できます。各事業者は、それぞれのプライバシーポリシーやデータの取り扱いに関する規約に基づいて、情報を安全に管理するための措置を講じています。</p>
+    <p style="margin-top:0.75rem;">上記の Google・Apple の各サービスによる処理を除き、ユーザーのデータを販売・広告目的で第三者に提供することはありません。</p>
+    <p>広告のパーソナライズは、端末の設定（Android は Google 設定 → 広告、iOS は プライバシーとセキュリティ → トラッキング、Apple 広告）で制限できます。欧州経済領域（EEA）・英国・スイスにいる場合は、広告の表示前に、Google の同意管理ツールで同意の確認を行い、あとから同意の設定を変更できます。</p>
+    <p><strong>外国にある第三者への提供について</strong>: 上記の外部サービスの提供事業者（Google LLC・Apple Inc.）は米国の事業者で、利用者の情報は、米国など日本国外のサーバーで保存・処理される場合があります。米国の個人情報の保護に関する制度は、個人情報保護委員会の「<a href="https://www.ppc.go.jp/enforcement/infoprovision/laws/offshore_report_america/" target="_blank" rel="noopener">外国制度（アメリカ合衆国）</a>」で確認できます。各事業者は、それぞれのプライバシーポリシーやデータの取り扱いに関する規約に基づいて、情報を安全に管理するための措置を講じています。</p>
   </div>
 
   <div class="divider"></div>
@@ -145,10 +149,11 @@
     <ol>
       <li>本アプリを開き、「設定」を選択します。</li>
       <li>「アカウント」の「アカウントを削除」を選択します。</li>
-      <li>確認の画面で「削除する」を選択し、画面の案内に従って Google アカウントによる本人確認を行います（最後のログインから時間がたっている場合）。</li>
+      <li>確認の画面で「削除する」を選択し、画面の案内に従って Google または Apple アカウントによる本人確認を行います（最後のログインから時間がたっている場合）。</li>
     </ol>
     <ul>
       <li>本人確認の後、Cloud Firestore 上のクラウドに保存した記録をすべて削除し、続けてアカウント（Firebase Authentication）を削除します。</li>
+      <li>Apple でログインしているアカウントを削除すると、Apple 側のログインの許可（トークン）も取り消されます。</li>
       <li>この操作は元に戻せません。</li>
       <li><strong>お使いの端末の中の記録は、削除されずに残ります。</strong>端末の記録も消したい場合は、アプリを削除（アンインストール）してください。</li>
     </ul>
@@ -157,7 +162,7 @@
     <p>ログインしていない間の記録は、お使いの端末の中にだけあります。運営者のサーバーには保存されていないため、アプリを削除（アンインストール）すると、記録はすべて消えます。</p>
 
     <h3>（3）運営者への削除依頼</h3>
-    <p>アプリを使用できない場合は、下記のお問い合わせ先に、<strong>本アプリでログインした Google アカウントのメールアドレス</strong>を添えて削除をご依頼ください。運営者が確認のうえ、対応します。</p>
+    <p>アプリを使用できない場合は、下記のお問い合わせ先に、<strong>本アプリでログインした Google または Apple アカウントのメールアドレス</strong>を添えて削除をご依頼ください。運営者が確認のうえ、対応します。</p>
     <p>
       お問い合わせフォーム:
       <a href="https://docs.google.com/forms/d/e/1FAIpQLSd-I0fOCmG2kwZgcsJfCT3CpJScYg6ohKbbR3pBSwkQClkKAw/viewform" target="_blank" rel="noopener">こちらから送信</a>
