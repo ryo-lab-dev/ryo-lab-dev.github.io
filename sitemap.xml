@@ -228,7 +228,13 @@
     <priority>0.4</priority>
   </url>
 
-  <!-- タワクライム（ホームはリリース時に追加する） -->
+  <!-- タワクライム -->
+  <url>
+    <loc>https://ryo-lab.dev/towerclimb/</loc>
+    <lastmod>2026-11-02</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>
   <url>
     <loc>https://ryo-lab.dev/towerclimb/privacy-policy.html</loc>
     <lastmod>2026-11-02</lastmod>
