@@ -83,3 +83,59 @@ body { color: var(--text-main); }
 .data-table th, .data-table td { border: 1px solid var(--glass-border); padding: 0.6rem 0.8rem; text-align: left; vertical-align: top; }
 .data-table th { background: rgba(255, 207, 74, 0.1); color: var(--text-main); white-space: nowrap; }
 .data-table td { color: var(--text-sub); }
+
+/* ── 1問あそぶ ── */
+.sp-try-wrap { max-width: 420px; margin: 0 auto; }
+.sp-board {
+  display: grid; grid-template-columns: repeat(5, 1fr); width: min(100%, 360px); margin: 0 auto;
+  border-radius: 12px; overflow: hidden; box-shadow: 0 8px 32px var(--glow);
+}
+.sp-cell {
+  aspect-ratio: 1; padding: 0; margin: 0; border: 0; border-radius: 0; cursor: pointer;
+  font-size: clamp(1.4rem, 7vw, 2rem); line-height: 1; color: #0f1530; font-family: inherit;
+  -webkit-tap-highlight-color: transparent;
+}
+.sp-cell:focus-visible { outline: 3px solid #fff; outline-offset: -3px; position: relative; z-index: 1; }
+.sp-cell.star { color: #0f1530; }
+.sp-cell.cross { color: rgba(15, 21, 48, .55); font-size: clamp(1.1rem, 5vw, 1.5rem); }
+.sp-cell.bad { color: var(--red, #ff5d6c); background-image: repeating-linear-gradient(45deg, rgba(255,255,255,.55) 0 4px, transparent 4px 8px); }
+.sp-cell.bad.star { color: #b00020; }
+.sp-board.solved .sp-cell.star { animation: sp-pop .5s ease-out 1; }
+@keyframes sp-pop { 40% { transform: scale(1.25); } }
+.sp-ctl { display: flex; gap: .5rem; justify-content: center; flex-wrap: wrap; margin-top: 1rem; }
+.sp-ctl button {
+  background: var(--glass-bg); color: var(--text-main); border: 1px solid var(--glass-border);
+  border-radius: 999px; padding: .5rem 1.1rem; font-size: .85rem; cursor: pointer; font-family: inherit; min-height: 44px;
+}
+.sp-ctl button:hover, .sp-ctl button:focus-visible { border-color: var(--primary); }
+.sp-meta { display: flex; justify-content: space-between; width: min(100%, 360px); margin: 0 auto .75rem; color: var(--text-sub); font-size: .85rem; }
+.sp-status { min-height: 3.2em; text-align: center; color: var(--text-sub); font-size: .88rem; line-height: 1.6; margin-top: .75rem; }
+.sp-board.solved + .sp-ctl + .sp-status  { color: var(--primary); }
+
+/* ヒーローの吹き出し（追従せず、ヒーロー内に置く） */
+.sp-bubble {
+  display: inline-block; position: relative; margin-top: 1.5rem; padding: .6rem 1.1rem;
+  background: var(--glass-bg); border: 1px solid var(--primary); border-radius: 16px;
+  color: var(--primary-light); text-decoration: none; font-size: .9rem;
+  animation: sp-float 3s ease-in-out infinite;
+}
+.sp-bubble::before {
+  content: ''; position: absolute; top: -7px; left: 50%; width: 12px; height: 12px; margin-left: -6px;
+  background: var(--glass-bg); border-left: 1px solid var(--primary); border-top: 1px solid var(--primary); transform: rotate(45deg);
+}
+.sp-bubble:hover, .sp-bubble:focus-visible { background: var(--glow); animation-play-state: paused; }
+@keyframes sp-float { 50% { transform: translateY(-4px); } }
+
+/* ヒーローの星のまたたき */
+.sp-stars { position: absolute; inset: 0; pointer-events: none; overflow: hidden; }
+.sp-stars i {
+  position: absolute; width: 3px; height: 3px; border-radius: 50%; background: var(--primary-light);
+  animation: sp-twinkle 3s ease-in-out infinite;
+}
+@keyframes sp-twinkle { 0%, 100% { opacity: .15; } 50% { opacity: .9; } }
+.hero { position: relative; }
+.hero > *:not(.sp-stars) { position: relative; }
+@media (prefers-reduced-motion: reduce) {
+  .sp-bubble, .sp-stars i, .sp-board.solved .sp-cell.star { animation: none !important; }
+  .sp-stars i { opacity: .5; }
+}

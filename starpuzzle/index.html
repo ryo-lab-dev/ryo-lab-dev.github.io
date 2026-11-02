@@ -63,6 +63,7 @@
 
   <!-- Hero -->
   <section class="hero">
+    <div class="sp-stars" aria-hidden="true"><i style="left:44%;top:23%;animation-delay:-1.2s"></i><i style="left:9%;top:13%;animation-delay:-2.5s"></i><i style="left:15%;top:50%;animation-delay:-1.7s"></i><i style="left:67%;top:31%;animation-delay:-0.1s"></i><i style="left:58%;top:57%;animation-delay:-0.2s"></i><i style="left:14%;top:74%;animation-delay:-1.3s"></i><i style="left:75%;top:19%;animation-delay:-2.8s"></i><i style="left:83%;top:84%;animation-delay:-1.7s"></i><i style="left:10%;top:77%;animation-delay:-1.8s"></i><i style="left:9%;top:32%;animation-delay:-0.1s"></i><i style="left:20%;top:41%;animation-delay:-1.3s"></i><i style="left:72%;top:19%;animation-delay:-1.7s"></i><i style="left:74%;top:91%;animation-delay:-0.5s"></i><i style="left:77%;top:77%;animation-delay:-1.9s"></i><i style="left:50%;top:16%;animation-delay:-1.6s"></i><i style="left:11%;top:76%;animation-delay:-0.2s"></i><i style="left:29%;top:67%;animation-delay:-2.0s"></i><i style="left:57%;top:44%;animation-delay:-1.4s"></i></div>
     <img src="../assets/starpuzzle/icon.png" alt="StarPuzzle アプリアイコン" class="hero-icon" width="96" height="96" />
     <div style="margin-bottom:1.5rem;">
       <span class="status-badge">
@@ -78,6 +79,7 @@
       <span class="btn-secondary btn-disabled" aria-disabled="true">App Store（準備中）</span>
       <a href="https://docs.google.com/forms/d/e/1FAIpQLSdPIUD1ZktD_75lvjQEZ_OJO58AOp5aRH8a5MwNyOeDSM1sSQ/viewform" target="_blank" rel="noopener" class="btn-secondary">お問い合わせ・フィードバック</a>
     </div>
+    <a href="#try" class="sp-bubble">★ 1 問、あそんでみる？</a>
   </section>
 
   <div class="glow-line" style="max-width:800px;margin:0 auto;"></div>
@@ -98,6 +100,29 @@
           <li>★どうしは、縦・横・斜めのどれでも隣り合わない。</li>
         </ol>
         <p class="story-text">マスをタップすると「空 → × → ★ → 空」と切り替わります。★が置けない場所に × を付けて絞り込んでいくのがコツです。ルールに反する★は赤く表示されます。</p>
+      </div>
+    </div>
+  </section>
+
+  <div class="glow-line" style="max-width:800px;margin:0 auto;"></div>
+
+  <!-- Try -->
+  <section id="try">
+    <div class="section-inner" style="max-width:760px;">
+      <div class="reveal" style="margin-bottom:2rem;">
+        <p class="section-label">Try</p>
+        <h2 class="section-title">ためしに、1 問。</h2>
+      </div>
+      <div class="reveal sp-try-wrap" id="spTry">
+        <div class="sp-meta"><span class="sp-puzzle-no"></span><span>5×5・★は 5 つ</span></div>
+        <div class="sp-board" role="group" aria-label="5×5 のお試し盤面。矢印キーでマスを移動し、Enter かスペースで切り替えます"></div>
+        <div class="sp-ctl">
+          <button type="button" data-act="hint">ヒント</button>
+          <button type="button" data-act="reset">やり直す</button>
+          <button type="button" data-act="next">別の問題</button>
+        </div>
+        <p class="sp-status" role="status" aria-live="polite"></p>
+        <p class="story-text" style="font-size:.8rem;text-align:center;">お試し用の小さな盤面です。アプリの問題とは別のものです。</p>
       </div>
     </div>
   </section>
@@ -254,5 +279,6 @@
   </footer>
 
 <script src="../assets/js/subsite.js"></script>
+<script src="../assets/js/starpuzzle-try.js"></script>
 </body>
 </html>
