@@ -1,0 +1,15 @@
+/* TowerClimb — 暗い石の塔 × 金（アプリのテーマに合わせたダークテーマ）
+   参照: TowerClimb/lib/ui/theme.dart（bg #14101C / panel #1E1830 / gold #E8B84A / text #EDE7DA / muted #9A93A8） */
+:root {
+  --bg:            #14101c;
+  --primary:       #e8b84a;
+  --primary-light: #f3d27d;
+  --glow:          rgba(232, 184, 74, 0.22);
+  --glass-bg:      rgba(42, 34, 64, 0.6);
+  --glass-border:  rgba(154, 147, 168, 0.2);
+  --text-main:     #ede7da;
+  --text-sub:      #9a93a8;
+}
+
+body { color: var(--text-main); }
+.btn-primary { color: #2a2000; }
