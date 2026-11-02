@@ -82,6 +82,37 @@
 
   <div class="glow-line" style="max-width:800px;margin:0 auto;"></div>
 
+  <!-- 戦闘シーン -->
+  <section>
+    <div class="section-inner">
+      <div class="reveal" style="margin-bottom:2rem;">
+        <p class="section-label">Preview</p>
+        <h2 class="section-title">こんなふうに、登ります。</h2>
+      </div>
+      <div class="tc-scene-wrap reveal">
+        <div class="tc-scene" id="tcScene" role="img" aria-label="勇者がスライムなどの敵を倒しながら塔を登っていく、ドット絵のイメージ映像">
+          <div class="tc-floor-bg"></div>
+          <div class="tc-hud" aria-hidden="true"><span><b id="tcFloor">1F</b></span><span>金貨 <b id="tcGold">0</b></span></div>
+          <div class="tc-hero" aria-hidden="true">
+            <div class="tc-body">
+              <img src="../assets/towerclimb/sprites/hero_base.png" alt="" width="32" height="32" />
+              <img class="tc-armor" src="../assets/towerclimb/sprites/armor_0_common.png" alt="" width="32" height="32" />
+              <img class="tc-charm" src="../assets/towerclimb/sprites/charm_0_common.png" alt="" width="32" height="32" />
+            </div>
+            <img class="tc-weapon" src="../assets/towerclimb/sprites/weapon_0_idle_common.png" alt="" width="32" height="32" />
+          </div>
+          <div class="tc-enemy" aria-hidden="true"><img src="../assets/towerclimb/sprites/mob_slime_green.png" alt="" width="32" height="32" /></div>
+        </div>
+        <div class="tc-scene-ctl">
+          <p class="tc-scene-note">アプリのドット絵を使ったイメージです（実際の画面とは異なります）。</p>
+          <button type="button" class="tc-toggle" id="tcToggle" aria-pressed="false">とめる</button>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <div class="glow-line" style="max-width:800px;margin:0 auto;"></div>
+
   <!-- Features -->
   <section>
     <div class="section-inner">
@@ -233,5 +264,6 @@
   </footer>
 
 <script src="../assets/js/subsite.js"></script>
+<script src="../assets/js/towerclimb-scene.js"></script>
 </body>
 </html>
