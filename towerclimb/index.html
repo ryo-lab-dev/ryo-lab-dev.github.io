@@ -1,0 +1,214 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>タワクライム — 放置して登る、ドット絵の塔</title>
+  <script src="https://cdn.tailwindcss.com"></script>
+  <link rel="icon" href="../assets/towerclimb/icon.png" type="image/png" />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Syne:wght@400;600;700;800&family=Noto+Sans+JP:wght@300;400;500;700&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="../assets/css/towerclimb.css" />
+  <link rel="stylesheet" href="../assets/css/subsite.css" />
+  <!-- SEO -->
+  <meta name="description" content="放置して登る、ドット絵の放置 RPG「タワクライム」。勇者が無限の塔を自動で登り、拾った装備で見た目が変わります。毎日全員が同じ塔に挑む「今日の塔」、転生、実績、複数端末の同期（任意のログイン）に対応。無料・近日公開。">
+  <link rel="canonical" href="https://ryo-lab.dev/towerclimb/">
+  <meta property="og:type" content="website">
+  <meta property="og:url" content="https://ryo-lab.dev/towerclimb/">
+  <meta property="og:title" content="タワクライム — 放置して登る、ドット絵の塔">
+  <meta property="og:description" content="放置して登る、ドット絵の放置 RPG「タワクライム」。勇者が無限の塔を自動で登り、拾った装備で見た目が変わります。毎日全員が同じ塔に挑む「今日の塔」、転生、実績、複数端末の同期（任意のログイン）に対応。無料・近日公開。">
+  <meta property="og:image" content="https://ryo-lab.dev/assets/ogp/ogp_towerclimb.png">
+  <meta property="og:site_name" content="Ryo-Lab">
+  <meta property="og:locale" content="ja_JP">
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:title" content="タワクライム — 放置して登る、ドット絵の塔">
+  <meta name="twitter:description" content="放置して登る、ドット絵の放置 RPG「タワクライム」。勇者が無限の塔を自動で登り、拾った装備で見た目が変わります。毎日全員が同じ塔に挑む「今日の塔」、転生、実績、複数端末の同期（任意のログイン）に対応。無料・近日公開。">
+  <meta name="twitter:image" content="https://ryo-lab.dev/assets/ogp/ogp_towerclimb.png">
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "SoftwareApplication",
+    "name": "タワクライム",
+    "operatingSystem": "Android, iOS",
+    "applicationCategory": "GameApplication",
+    "description": "勇者が無限の塔を自動で登る、ドット絵の放置 RPG。装備で見た目が変わり、毎日全員が同じ塔に挑めます。",
+    "url": "https://ryo-lab.dev/towerclimb/",
+    "offers": { "@type": "Offer", "price": "0", "priceCurrency": "JPY" },
+    "author": {
+      "@type": "Organization",
+      "name": "Ryo-Lab Team",
+      "url": "https://ryo-lab.dev/"
+    }
+  }
+  </script>
+</head>
+<body>
+<nav>
+  <div class="nav-inner">
+    <a href="./" class="nav-logo">
+      <div class="nav-logo-dot"></div>
+      <span class="nav-logo-text">タワクライム</span>
+    </a>
+    <div class="nav-links">
+      <a href="./" class="active">Home</a>
+      <a href="./privacy-policy.html">Privacy Policy</a>
+      <a href="./terms.html">利用規約</a>
+    </div>
+    <button class="nav-hamburger" id="navToggle" aria-label="メニューを開く">
+      <span></span><span></span><span></span>
+    </button>
+  </div>
+</nav>
+
+  <!-- Hero -->
+  <section class="hero">
+    <img src="../assets/towerclimb/icon.png" alt="タワクライム アプリアイコン" class="hero-icon" width="96" height="96" />
+    <div style="margin-bottom:1.5rem;">
+      <span class="status-badge">
+        <span class="pulse-dot"></span>
+        近日公開
+      </span>
+    </div>
+    <h1 class="hero-title gradient-text">タワクライム</h1>
+    <p class="hero-sub">放っておいても、塔は登れる。</p>
+    <p class="hero-origin">勇者が無限の塔を自動で登っていく、ドット絵の放置 RPG。拾った装備で、勇者の見た目が変わります。</p>
+    <div style="display:flex;gap:1rem;flex-wrap:wrap;justify-content:center;">
+      <span class="btn-secondary btn-disabled" aria-disabled="true">Google Play（準備中）</span>
+      <span class="btn-secondary btn-disabled" aria-disabled="true">App Store（準備中）</span>
+    </div>
+  </section>
+
+  <div class="glow-line" style="max-width:800px;margin:0 auto;"></div>
+
+  <!-- Features -->
+  <section>
+    <div class="section-inner">
+      <div class="reveal" style="margin-bottom:3rem;">
+        <p class="section-label">Features</p>
+        <h2 class="section-title">眺めて、育てて、また登る。</h2>
+      </div>
+      <div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(280px,1fr));gap:1.5rem;">
+        <div class="feature-card reveal">
+          <div class="feature-icon">🗼</div>
+          <h3>勇者が自動で登る</h3>
+          <p>敵を倒して階を進み、10 階ごとにボスが待っています。操作は、金貨で攻撃力を強化するだけ。アプリを閉じている間も、金貨はたまります（最大 8 時間ぶん）。</p>
+        </div>
+        <div class="feature-card reveal" style="transition-delay:0.1s;">
+          <div class="feature-icon">⚔️</div>
+          <h3>装備で、姿が変わる</h3>
+          <p>武器・鎧・お守りの 3 枠。階が進むほど装備の段階が上がり、見た目も変わります。32×32 のドット絵を重ね描きしています。</p>
+        </div>
+        <div class="feature-card reveal" style="transition-delay:0.2s;">
+          <div class="feature-icon">📅</div>
+          <h3>毎日、全員が同じ塔へ</h3>
+          <p>「今日の塔」は、日本時間の 0 時に切り替わる 30 階の塔。3 つの加護を選んで挑み、結果は文字で共有できます。</p>
+        </div>
+        <div class="feature-card reveal">
+          <div class="feature-icon">🔁</div>
+          <h3>転生で、さらに高みへ</h3>
+          <p>行き詰まったら転生して、魂をもらいます。魂は 1 つにつき、攻撃力と金貨が +10%。回を重ねるほど、深くまで登れます。</p>
+        </div>
+        <div class="feature-card reveal" style="transition-delay:0.1s;">
+          <div class="feature-icon">🏆</div>
+          <h3>実績と、記録</h3>
+          <p>実績を達成すると、装備や能力の恒久アップが手に入ります。転生ごとの到達階や、レジェンドの入手回数などの記録も確認できます。</p>
+        </div>
+        <div class="feature-card reveal" style="transition-delay:0.2s;">
+          <div class="feature-icon">☁️</div>
+          <h3>ログインは、あとから</h3>
+          <p>登録なしですぐ遊べます。設定から Google でログインすると、データをクラウドに保存し、複数の端末で続きを遊べます。ガチャはありません。</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <div class="glow-line" style="max-width:800px;margin:0 auto;"></div>
+
+  <!-- Screenshots -->
+  <section>
+    <div class="section-inner">
+      <div class="reveal" style="margin-bottom:2rem;">
+        <p class="section-label">Screenshots</p>
+        <h2 class="section-title">アプリの画面</h2>
+        <p style="color:var(--text-sub);font-size:0.85rem;margin-top:0.5rem;">← スワイプまたはスクロールで確認できます</p>
+      </div>
+      <div class="screenshot-strip reveal">
+        <img src="../assets/towerclimb/screenshots/01.jpg" alt="タワクライムの画面 1: 放っておいても、塔は登れる" width="540" height="1080" loading="lazy" />
+        <img src="../assets/towerclimb/screenshots/02.jpg" alt="タワクライムの画面 2: 閉じている間も、金貨はたまる" width="540" height="1080" loading="lazy" />
+        <img src="../assets/towerclimb/screenshots/03.jpg" alt="タワクライムの画面 3: 拾うたび、勇者の姿が変わる" width="540" height="1080" loading="lazy" />
+        <img src="../assets/towerclimb/screenshots/04.jpg" alt="タワクライムの画面 4: 毎日、全員同じ塔に挑む" width="540" height="1080" loading="lazy" />
+        <img src="../assets/towerclimb/screenshots/05.jpg" alt="タワクライムの画面 5: 転生して、さらに高みへ" width="540" height="1080" loading="lazy" />
+        <img src="../assets/towerclimb/screenshots/06.jpg" alt="タワクライムの画面 6: やりこみが、力になる" width="540" height="1080" loading="lazy" />
+        <img src="../assets/towerclimb/screenshots/07.jpg" alt="タワクライムの画面 7: 歩みは、数字で残る" width="540" height="1080" loading="lazy" />
+      </div>
+    </div>
+  </section>
+
+  <div class="glow-line" style="max-width:800px;margin:0 auto;"></div>
+
+  <!-- Story -->
+  <section>
+    <div class="section-inner" style="max-width:760px;">
+      <div class="reveal" style="margin-bottom:2rem;">
+        <p class="section-label">Story</p>
+        <h2 class="section-title">作った理由</h2>
+      </div>
+      <div class="reveal glass" style="padding:2rem;">
+        <p class="story-text">個人で開発しています。忙しい日でも、すきま時間にのぞくだけで少し進んでいる。そんな放置ゲームを、ドット絵の見た目にこだわって作りました。</p>
+        <p class="story-text">ガチャも、画面いっぱいの全画面広告もありません。広告は、画面下のバナーと、自分で選んで見る動画広告だけです。詳しくは<a href="./privacy-policy.html" style="color:var(--primary);text-decoration:underline;">プライバシーポリシー</a>をご覧ください。</p>
+        <p class="story-text">こんな方に使っていただけたら嬉しいです。</p>
+        <ul class="story-list">
+          <li>仕事や家事のあいまに、気軽に進められるゲームが好きな方</li>
+          <li>装備を集めて、見た目が変わっていくドット絵が好きな方</li>
+          <li>毎日の「ひと勝負」を、習慣にしたい方</li>
+        </ul>
+      </div>
+    </div>
+  </section>
+
+  <div class="glow-line" style="max-width:800px;margin:0 auto;"></div>
+
+  <!-- FAQ -->
+  <section>
+    <div class="section-inner">
+      <div class="reveal" style="margin-bottom:2.5rem;">
+        <p class="section-label">FAQ</p>
+        <h2 class="section-title">よくある質問</h2>
+      </div>
+      <div class="reveal glass" style="padding:1.5rem 2rem;">
+        <div class="mini-faq-item">
+          <span class="mini-faq-q">費用</span>
+          <span class="mini-faq-a">無料でご利用いただけます。広告が表示されます（画面下のバナー、自分で選んで見る動画広告）。</span>
+        </div>
+        <div class="mini-faq-item">
+          <span class="mini-faq-q">対応端末</span>
+          <span class="mini-faq-a">まず Android で公開し、iOS（iPhone）はあとから対応する予定です。公開日・配信ストアが決まりしだい、このページでお知らせします。配信は日本国内のみの予定です。</span>
+        </div>
+        <div class="mini-faq-item">
+          <span class="mini-faq-q">ログイン・登録</span>
+          <span class="mini-faq-a">登録なしで遊べます。設定から Google でログインすると、データをクラウドに保存して、複数の端末で同期できます。ログインしない場合、記録は端末の中にだけ保存されます。</span>
+        </div>
+        <div class="mini-faq-item">
+          <span class="mini-faq-q">機種変更・アンインストール</span>
+          <span class="mini-faq-a">ログインしていない場合、アプリを削除したり端末を替えたりすると記録は消えます。引き継ぎたい方は、先にログインしてください。</span>
+        </div>
+        <div class="mini-faq-item">
+          <span class="mini-faq-q">課金はありますか？</span>
+          <span class="mini-faq-a">ガチャや課金アイテムはありません。</span>
+        </div>
+        <div class="mini-faq-item">
+          <span class="mini-faq-q">アカウントとデータの削除</span>
+          <span class="mini-faq-a">アプリの設定から、アカウントとクラウド上のデータを削除できます。詳しくは<a href="./privacy-policy.html">プライバシーポリシー</a>をご覧ください。</span>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <footer>
+    <p>© 2026 Ryo-Lab. タワクライム 開発チーム</p>
+  </footer>
+
+<script src="../assets/js/subsite.js"></script>
+</body>
+</html>
