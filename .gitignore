@@ -1,6 +1,7 @@
 .local/
 GEMINI.md
 CLAUDE.md
+AGENTS.md
 .env
 .firebase/
 /logs/
