@@ -1,0 +1,165 @@
+/* ツルハシとツルギ — 暗い坑道 × 橙の火花（アプリのテーマに合わせたダークテーマ）
+   参照: PickAndBlade/lib/ui/theme.dart（bg #14111C / panel #221D2E / accent #F39A3D / fg #F1ECFA / muted #A79FBD） */
+:root {
+  --bg:            #14111c;
+  --primary:       #f39a3d;
+  --primary-light: #ffd08a;
+  --glow:          rgba(243, 154, 61, 0.24);
+  --glass-bg:      rgba(45, 38, 64, 0.6);
+  --glass-border:  rgba(167, 159, 189, 0.22);
+  --text-main:     #f1ecfa;
+  --text-sub:      #a79fbd;
+  --ore:           #e0a35a;
+  --part:          #d77be0;
+}
+
+body { color: var(--text-main); }
+.btn-primary { color: #2a1600; }
+
+.hero-icon {
+  width: 96px;
+  height: 96px;
+  border-radius: 22px;
+  margin-bottom: 1.25rem;
+  box-shadow: 0 8px 32px var(--glow);
+}
+.hero-origin { font-size: 0.9rem; color: var(--text-sub); margin-bottom: 1.5rem; max-width: 520px; }
+.feature-card h3 { font-size: 1.15rem; font-weight: 700; margin-bottom: 0.75rem; color: var(--text-main); }
+.feature-card p { color: var(--text-sub); line-height: 1.7; font-size: 0.92rem; }
+
+.mini-faq-item {
+  border-bottom: 1px solid var(--glass-border);
+  padding: 1.1rem 0;
+  display: grid;
+  grid-template-columns: 1fr 2fr;
+  gap: 1rem;
+}
+.mini-faq-item:last-child { border-bottom: none; }
+.mini-faq-q { color: var(--text-main); font-weight: 600; font-size: 0.93rem; }
+.mini-faq-a { color: var(--text-sub); font-size: 0.93rem; line-height: 1.6; }
+.mini-faq-a a { color: var(--primary); }
+@media (max-width: 768px) { .mini-faq-item { grid-template-columns: 1fr; } }
+
+.contact-text { color: var(--text-sub); line-height: 1.7; margin: 1rem 0 2rem; }
+
+.rule-list { list-style: none; padding: 0; margin: 0 0 1rem; counter-reset: rule; }
+.rule-list li { counter-increment: rule; color: var(--text-sub); font-size: 0.95rem; line-height: 1.8; padding: 0.4rem 0 0.4rem 2.2rem; position: relative; }
+.rule-list li::before {
+  content: counter(rule);
+  position: absolute; left: 0; top: 0.5rem;
+  width: 1.5rem; height: 1.5rem; border-radius: 50%;
+  background: var(--glow); color: var(--primary);
+  font-family: 'JetBrains Mono', monospace; font-size: 0.78rem;
+  display: flex; align-items: center; justify-content: center;
+}
+
+.screenshot-strip img { height: 520px; max-height: 520px; }
+.story-text { color: var(--text-sub); line-height: 1.9; font-size: 0.95rem; margin-bottom: 1rem; }
+.story-list { list-style: none; padding: 0; margin: 0; }
+.story-list li { color: var(--text-sub); font-size: 0.95rem; padding: 0.35rem 0 0.35rem 1.25rem; position: relative; }
+.story-list li::before { content: '·'; position: absolute; left: 0.3rem; color: var(--primary); font-size: 1.2rem; line-height: 1.4; }
+@media (max-width: 768px) { .screenshot-strip img { height: 420px; max-height: 420px; } }
+
+/* 準備中のストアボタン（リンクなし） */
+.btn-disabled { opacity: 0.55; cursor: not-allowed; pointer-events: none; }
+
+/* ドキュメントページ */
+.doc-section h3 { font-size: 1rem; color: var(--text-main); margin: 1.25rem 0 0.4rem; }
+.doc-section strong { color: var(--text-main); }
+.doc-section a { color: var(--primary); text-decoration: underline; text-underline-offset: 2px; }
+.article-chip {
+  display: inline-block;
+  font-family: 'JetBrains Mono', monospace;
+  font-size: 0.7rem;
+  color: var(--primary);
+  background: rgba(243, 154, 61, 0.12);
+  border: 1px solid var(--glow);
+  border-radius: 4px;
+  padding: 0.15rem 0.5rem;
+  margin-bottom: 0.4rem;
+  vertical-align: middle;
+  margin-right: 0.4rem;
+}
+.table-wrap { overflow-x: auto; margin: 0.75rem 0 1rem; }
+.data-table { width: 100%; border-collapse: collapse; font-size: 0.88rem; line-height: 1.6; }
+.data-table th, .data-table td { border: 1px solid var(--glass-border); padding: 0.6rem 0.8rem; text-align: left; vertical-align: top; }
+.data-table th { background: rgba(243, 154, 61, 0.12); color: var(--text-main); white-space: nowrap; }
+.data-table td { color: var(--text-sub); }
+
+/* ── 2人のミニ鍛冶屋（ドット絵の素材を整数に近い倍率で表示） ── */
+.pb-game { max-width: 960px; margin: 0 auto; }
+.pb-stagebar { display: flex; justify-content: space-between; align-items: baseline; gap: 1rem; flex-wrap: wrap; margin-bottom: .75rem; font-family: 'JetBrains Mono', monospace; font-size: .8rem; color: var(--text-sub); }
+.pb-stagebar b { color: var(--primary); font-weight: 700; }
+.pb-places { display: grid; grid-template-columns: 1fr 1fr; gap: 1rem; }
+@media (max-width: 700px) { .pb-places { grid-template-columns: 1fr; } }
+.pb-card { container-type: inline-size; position: relative; overflow: hidden; aspect-ratio: 16 / 9; border: 1px solid var(--glass-border); border-radius: 16px; background: #0d0b12 center / cover no-repeat; image-rendering: pixelated; }
+.pb-card img, .pb-card button img { image-rendering: pixelated; display: block; }
+.pb-label { position: absolute; top: 8px; left: 10px; z-index: 3; padding: 2px 8px; border-radius: 6px; background: rgba(13, 11, 18, .72); font-size: .72rem; color: var(--text-main); }
+.pb-hero { position: absolute; left: 6cqw; bottom: 6cqw; width: 24cqw; height: 24cqw; z-index: 2; }
+.pb-hero img { width: 100%; height: 100%; }
+.pb-hero.bob { animation: pb-bob .6s steps(2) infinite; }
+.pb-hero.act { transform: translateX(2cqw); }
+@keyframes pb-bob { 50% { transform: translateY(-1cqw); } }
+.pb-tool { position: absolute; left: 28cqw; bottom: 4cqw; width: 10cqw; height: 10cqw; z-index: 3; }
+.pb-target { position: absolute; right: 7cqw; bottom: 6cqw; width: 22cqw; height: 22cqw; z-index: 2; padding: 0; border: 0; background: none; cursor: pointer; transition: transform .25s ease, opacity .3s ease; -webkit-tap-highlight-color: transparent; }
+.pb-target img { width: 100%; height: 100%; }
+.pb-target.enemy img { transform: scaleX(-1); }
+.pb-target.gate { width: 34cqw; height: 34cqw; right: 3cqw; bottom: 4cqw; }
+.pb-target:focus-visible { outline: 2px solid var(--primary); outline-offset: 2px; border-radius: 8px; }
+.pb-target.hit img { animation: pb-hit .16s steps(2) 1; }
+.pb-target.enemy.hit img { animation-name: pb-hit-flip; }
+.pb-target.gone { opacity: 0; transform: translateY(2cqw) scale(.7); pointer-events: none; }
+@keyframes pb-hit { 50% { filter: brightness(2.2); transform: translateX(1cqw); } }
+@keyframes pb-hit-flip { 50% { filter: brightness(2.2); transform: scaleX(-1) translateX(1cqw); } }
+.pb-hpbar { position: absolute; right: 8cqw; bottom: 3cqw; width: 20cqw; height: 1.4cqw; background: rgba(0, 0, 0, .55); border-radius: 2px; z-index: 3; overflow: hidden; }
+.pb-hpbar i { display: block; height: 100%; width: 100%; background: #e8505b; transition: width .15s; }
+.pb-float { position: absolute; z-index: 4; display: flex; align-items: center; gap: 2px; font-family: 'DotGothic16', 'JetBrains Mono', monospace; font-size: 1rem; color: #fff; text-shadow: 0 1px 0 #000; pointer-events: none; animation: pb-float .9s ease-out forwards; }
+.pb-float img { width: 20px; height: 20px; }
+@keyframes pb-float { from { opacity: 1; transform: translateY(0); } to { opacity: 0; transform: translateY(-32px); } }
+.pb-fx { position: absolute; z-index: 4; width: 12cqw; height: 12cqw; pointer-events: none; animation: pb-fx .35s steps(3) forwards; }
+@keyframes pb-fx { from { opacity: 1; } to { opacity: 0; transform: scale(1.3); } }
+
+.pb-forge { margin: 1rem 0 0; padding: 1rem 1.25rem; border: 1px solid var(--glass-border); border-radius: 16px; background: var(--glass-bg); }
+.pb-stock { display: flex; gap: 1.5rem; flex-wrap: wrap; align-items: center; justify-content: center; font-family: 'JetBrains Mono', monospace; font-size: .85rem; color: var(--text-sub); margin-bottom: .9rem; }
+.pb-stock span { display: inline-flex; align-items: center; gap: .35rem; }
+.pb-stock img { width: 28px; height: 28px; image-rendering: pixelated; }
+.pb-stock b { color: var(--text-main); font-size: 1rem; }
+.pb-crafts { display: grid; grid-template-columns: 1fr 1fr; gap: .75rem; }
+@media (max-width: 480px) { .pb-crafts { grid-template-columns: 1fr; } }
+.pb-craft { display: flex; align-items: center; gap: .75rem; text-align: left; padding: .65rem .9rem; border: 1px solid var(--glass-border); border-radius: 12px; background: rgba(20, 17, 28, .6); color: var(--text-main); font-family: inherit; cursor: pointer; }
+.pb-craft img { width: 40px; height: 40px; image-rendering: pixelated; flex: none; }
+.pb-craft .t { display: block; font-weight: 700; font-size: .95rem; }
+.pb-craft .c { display: block; font-size: .78rem; color: var(--text-sub); margin-top: .1rem; }
+.pb-craft:disabled { opacity: .55; cursor: not-allowed; }
+.pb-craft:not(:disabled) { border-color: var(--primary); box-shadow: 0 0 14px var(--glow); }
+.pb-craft:not(:disabled):hover, .pb-craft:focus-visible { background: rgba(243, 154, 61, .14); }
+.pb-craft.done { opacity: 1; border-color: var(--glass-border); box-shadow: none; }
+.pb-msg { min-height: 1.6em; margin-top: .9rem; text-align: center; font-size: .9rem; color: var(--primary-light); }
+.pb-ctl { display: flex; justify-content: space-between; align-items: center; gap: 1rem; margin-top: .75rem; flex-wrap: wrap; }
+.pb-note { color: var(--text-sub); font-size: .8rem; }
+.pb-btn { background: none; border: 1px solid var(--glass-border); color: var(--text-main); border-radius: 999px; padding: .35rem 1rem; font-size: .8rem; cursor: pointer; font-family: inherit; }
+.pb-btn:hover, .pb-btn:focus-visible { border-color: var(--primary); }
+.pb-btns { display: flex; gap: .5rem; }
+
+/* ゲームの流れの図（ツルギ ⇄ ツルハシ） */
+.pb-loop { display: grid; grid-template-columns: 1fr auto 1fr; gap: 1rem; align-items: center; max-width: 720px; margin: 0 auto; }
+.pb-loop .node { text-align: center; padding: 1rem; border: 1px solid var(--glass-border); border-radius: 14px; background: var(--glass-bg); }
+.pb-loop .node img { width: 56px; height: 56px; image-rendering: pixelated; }
+.pb-loop .node b { display: block; margin-top: .25rem; }
+.pb-loop .node small { color: var(--text-sub); font-size: .8rem; }
+.pb-loop .arrows { text-align: center; color: var(--primary); font-family: 'JetBrains Mono', monospace; font-size: .75rem; line-height: 1.9; }
+@media (max-width: 600px) { .pb-loop { grid-template-columns: 1fr; } .pb-loop .arrows { transform: rotate(90deg); height: 3rem; display: flex; align-items: center; justify-content: center; } }
+
+@media (prefers-reduced-motion: reduce) {
+  .pb-hero.bob, .pb-float, .pb-fx, .pb-target.hit img { animation: none !important; }
+  .pb-target { transition: none; }
+}
+
+/* privacy-policy.html — 情報の表（枠線つき）と手順の番号つきリスト */
+.doc-table-wrap { overflow-x: auto; margin: 0.75rem 0 1rem; }
+.doc-table { width: 100%; border-collapse: collapse; font-size: 0.88rem; line-height: 1.6; }
+.doc-table th, .doc-table td { border: 1px solid var(--glass-border); padding: 0.6rem 0.8rem; text-align: left; vertical-align: top; }
+.doc-table th { background: rgba(243,154,61, 0.12); color: var(--text-main); white-space: nowrap; }
+.doc-table td { color: var(--text-sub); }
+.doc-table td strong { color: var(--text-main); }
+.doc-section ol { list-style: decimal; color: var(--text-sub); font-size: 0.95rem; line-height: 1.8; padding-left: 1.5rem; margin: 0.5rem 0 0.75rem; }
