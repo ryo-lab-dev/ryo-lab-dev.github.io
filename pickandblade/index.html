@@ -1,0 +1,298 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>ツルハシとツルギ — 掘る人と、潜る人。ドット絵の放置 RPG</title>
+  <script src="https://cdn.tailwindcss.com"></script>
+  <link rel="icon" href="../assets/pickandblade/icon.png" type="image/png" />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Syne:wght@400;600;700;800&family=Noto+Sans+JP:wght@300;400;500;700&family=JetBrains+Mono:wght@400;500&family=DotGothic16&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="../assets/css/pickandblade.css" />
+  <link rel="stylesheet" href="../assets/css/subsite.css" />
+  <!-- SEO -->
+  <meta name="description" content="炭鉱を掘る採掘キャラと、ダンジョンを潜る探索キャラ。ふたりの素材を鍛冶屋で装備に変えて、互いを強くするドット絵の放置 RPG「ツルハシとツルギ」。ガチャなし、ログインは任意。近日公開予定。">
+  <link rel="canonical" href="https://ryo-lab.dev/pickandblade/">
+  <meta property="og:type" content="website">
+  <meta property="og:url" content="https://ryo-lab.dev/pickandblade/">
+  <meta property="og:title" content="ツルハシとツルギ — 掘る人と、潜る人。ドット絵の放置 RPG">
+  <meta property="og:description" content="炭鉱を掘る採掘キャラと、ダンジョンを潜る探索キャラ。ふたりの素材を鍛冶屋で装備に変えて、互いを強くするドット絵の放置 RPG。ガチャなし、ログインは任意。近日公開予定。">
+  <meta property="og:image" content="https://ryo-lab.dev/assets/ogp/ogp_pickandblade.png">
+  <meta property="og:site_name" content="Ryo-Lab">
+  <meta property="og:locale" content="ja_JP">
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:title" content="ツルハシとツルギ — 掘る人と、潜る人。ドット絵の放置 RPG">
+  <meta name="twitter:description" content="炭鉱を掘る採掘キャラと、ダンジョンを潜る探索キャラ。ふたりの素材を鍛冶屋で装備に変えて、互いを強くするドット絵の放置 RPG。">
+  <meta name="twitter:image" content="https://ryo-lab.dev/assets/ogp/ogp_pickandblade.png">
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "SoftwareApplication",
+    "name": "ツルハシとツルギ",
+    "operatingSystem": "Android",
+    "applicationCategory": "GameApplication",
+    "description": "炭鉱を掘る採掘キャラと、ダンジョンを潜る探索キャラが、鍛冶屋で互いの装備を作って強くなる、ドット絵の放置 RPG。",
+    "url": "https://ryo-lab.dev/pickandblade/",
+    "offers": { "@type": "Offer", "price": "0", "priceCurrency": "JPY" },
+    "author": {
+      "@type": "Organization",
+      "name": "Ryo-Lab Team",
+      "url": "https://ryo-lab.dev/"
+    }
+  }
+  </script>
+</head>
+<body>
+<nav>
+  <div class="nav-inner">
+    <a href="./" class="nav-logo">
+      <div class="nav-logo-dot"></div>
+      <span class="nav-logo-text">ツルハシとツルギ</span>
+    </a>
+    <div class="nav-links">
+      <a href="./" class="active">Home</a>
+      <a href="./privacy-policy.html">Privacy Policy</a>
+      <a href="./terms.html">利用規約</a>
+    </div>
+    <button class="nav-hamburger" id="navToggle" aria-label="メニューを開く">
+      <span></span><span></span><span></span>
+    </button>
+  </div>
+</nav>
+
+  <!-- Hero -->
+  <section class="hero">
+    <img src="../assets/pickandblade/icon.png" alt="ツルハシとツルギ アプリアイコン" class="hero-icon" width="96" height="96" />
+    <div style="margin-bottom:1.5rem;">
+      <span class="status-badge">
+        <span class="pulse-dot"></span>
+        Coming Soon — 近日公開
+      </span>
+    </div>
+    <h1 class="hero-title gradient-text">ツルハシとツルギ</h1>
+    <p class="hero-sub">掘る人と、潜る人。ふたりで、強くなる。</p>
+    <p class="hero-origin">炭鉱を掘る採掘キャラと、ダンジョンを潜る探索キャラ。ふたりの素材を鍛冶屋で装備に変えて、互いを強くする、ドット絵の放置 RPG。</p>
+    <div style="display:flex;gap:1rem;flex-wrap:wrap;justify-content:center;">
+      <span class="btn-primary btn-disabled" aria-disabled="true">Google Play（近日公開）</span>
+      <span class="btn-secondary btn-disabled" aria-disabled="true">App Store（準備中）</span>
+      <a href="#contact" class="btn-secondary">お問い合わせ・フィードバック</a>
+    </div>
+  </section>
+
+  <div class="glow-line" style="max-width:800px;margin:0 auto;"></div>
+
+  <!-- ミニ鍛冶屋 -->
+  <section>
+    <div class="section-inner">
+      <div class="reveal" style="margin-bottom:2rem;">
+        <p class="section-label">Try it</p>
+        <h2 class="section-title">ちょっとだけ、鍛冶屋になってみる。</h2>
+      </div>
+      <div class="pb-game reveal" id="pbGame">
+        <div class="pb-stagebar"><span>段階 <b id="pbStage">1 / 5</b></span><span>門の前では、ふたりの道具がそろっていないと先へ進めません</span></div>
+        <div class="pb-places">
+          <div class="pb-card" id="pbMine" role="group" aria-label="炭鉱。採掘キャラが岩を掘っています">
+            <span class="pb-label" id="pbMineLabel">炭鉱</span>
+            <div class="pb-hero" id="pbMiner"><img src="../assets/pickandblade/sprites/miner-idle.png" alt="" width="48" height="48" /></div>
+            <img class="pb-tool" id="pbPickTool" src="../assets/pickandblade/sprites/pickaxe-1.png" alt="" width="32" height="32" />
+            <button type="button" class="pb-target" id="pbRock" aria-label="岩をたたく"><img src="../assets/pickandblade/sprites/rock-1-1.png" alt="" width="32" height="32" /></button>
+            <div class="pb-hpbar" id="pbRockHp"><i></i></div>
+          </div>
+          <div class="pb-card" id="pbDungeon" role="group" aria-label="ダンジョン。探索キャラが敵と戦っています">
+            <span class="pb-label" id="pbDunLabel">ダンジョン</span>
+            <div class="pb-hero" id="pbExplorer"><img src="../assets/pickandblade/sprites/explorer-idle.png" alt="" width="48" height="48" /></div>
+            <img class="pb-tool" id="pbSwordTool" src="../assets/pickandblade/sprites/weapon-1.png" alt="" width="32" height="32" />
+            <button type="button" class="pb-target enemy" id="pbFoe" aria-label="敵をたたく"><img src="../assets/pickandblade/sprites/enemy-slime.png" alt="" width="48" height="48" /></button>
+            <div class="pb-hpbar" id="pbFoeHp"><i></i></div>
+          </div>
+        </div>
+        <div class="pb-forge">
+          <div class="pb-stock" aria-live="polite">
+            <span><img id="pbOreIcon" src="../assets/pickandblade/sprites/ore-1.png" alt="鉱石" /> 鉱石 <b id="pbOre">0</b></span>
+            <span><img id="pbPartIcon" src="../assets/pickandblade/sprites/part-1.png" alt="魔物素材" /> 魔物素材 <b id="pbPart">0</b></span>
+          </div>
+          <div class="pb-crafts">
+            <button type="button" class="pb-craft" id="pbCraftSword" disabled><img src="../assets/pickandblade/sprites/weapon-1.png" alt="" /><span><span class="t">ツルギを鍛える</span><span class="c"></span></span></button>
+            <button type="button" class="pb-craft" id="pbCraftPick" disabled><img src="../assets/pickandblade/sprites/pickaxe-1.png" alt="" /><span><span class="t">ツルハシを鍛える</span><span class="c"></span></span></button>
+          </div>
+          <p class="pb-msg" id="pbMsg" role="status"></p>
+        </div>
+        <div class="pb-ctl">
+          <p class="pb-note">アプリのドット絵を使ったイメージです（実際のゲームとは数値も流れも異なります）。</p>
+          <div class="pb-btns">
+            <button type="button" class="pb-btn" id="pbReset" hidden>もう一度</button>
+            <button type="button" class="pb-btn" id="pbToggle" aria-pressed="false">とめる</button>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <div class="glow-line" style="max-width:800px;margin:0 auto;"></div>
+
+  <!-- 2人の関係 -->
+  <section>
+    <div class="section-inner">
+      <div class="reveal" style="margin-bottom:2rem;">
+        <p class="section-label">Concept</p>
+        <h2 class="section-title">互いの素材で、互いを強くする。</h2>
+      </div>
+      <div class="pb-loop reveal">
+        <div class="node"><img src="../assets/pickandblade/sprites/explorer-idle.png" alt="" /><b>探索キャラ</b><small>ダンジョンで魔物素材を集める</small></div>
+        <div class="arrows">鉱石 → ツルギ<br>魔物素材 → ツルハシ</div>
+        <div class="node"><img src="../assets/pickandblade/sprites/miner-idle.png" alt="" /><b>採掘キャラ</b><small>炭鉱で鉱石を掘る</small></div>
+      </div>
+    </div>
+  </section>
+
+  <div class="glow-line" style="max-width:800px;margin:0 auto;"></div>
+
+  <!-- Features -->
+  <section>
+    <div class="section-inner">
+      <div class="reveal" style="margin-bottom:3rem;">
+        <p class="section-label">Features</p>
+        <h2 class="section-title">掘って、潜って、鍛えて、また進む。</h2>
+      </div>
+      <div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(280px,1fr));gap:1.5rem;">
+        <div class="feature-card reveal">
+          <div class="feature-icon">⛏️</div>
+          <h3>ふたりが、同時に進む</h3>
+          <p>上ではダンジョンの探索キャラが敵と戦い、下では炭鉱の採掘キャラが岩を掘っています。操作は、金貨でレベルを上げるだけ。タブを切り替えても、ふたりは止まりません。</p>
+        </div>
+        <div class="feature-card reveal" style="transition-delay:0.1s;">
+          <div class="feature-icon">🚪</div>
+          <h3>「門」で、ふたりが噛み合う</h3>
+          <p>各段階の最後には門があり、その段階のツルギ・ツルハシがないと挑めません。片方だけ先へ進んでも、もう片方の素材がいる。それがこのゲームの中心です。</p>
+        </div>
+        <div class="feature-card reveal" style="transition-delay:0.2s;">
+          <div class="feature-icon">🔨</div>
+          <h3>鍛冶屋で、装備をつくる</h3>
+          <p>剣・鎧・盾・つるはし・作業着・ヘルメットを、素材だけで作れます（作るのは無料）。コモンからレジェンドまでの希少度と、ランダムな強さがつきます。分解や、精錬もできます。</p>
+        </div>
+        <div class="feature-card reveal">
+          <div class="feature-icon">🏪</div>
+          <h3>店と、今日の注文</h3>
+          <p>作った装備は店に並べて売れます。毎日日本時間の 0 時に切り替わる「今日の注文」に届けると、宝石などの報酬がもらえます。</p>
+        </div>
+        <div class="feature-card reveal" style="transition-delay:0.1s;">
+          <div class="feature-icon">📖</div>
+          <h3>図鑑と、集めるたのしみ</h3>
+          <p>装備図鑑や実績、ボスや岩盤が落とす「アクセサリー」を集められます。行き詰まったら、好きな階・深さをくり返して素材を狙えます。</p>
+        </div>
+        <div class="feature-card reveal" style="transition-delay:0.2s;">
+          <div class="feature-icon">☁️</div>
+          <h3>ログインは、あとから</h3>
+          <p>登録なしですぐ遊べます。設定から Google でログインすると、データをクラウドに保存し、機種変更や複数の端末でも続きから遊べます。ガチャはありません。</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <div class="glow-line" style="max-width:800px;margin:0 auto;"></div>
+
+  <!-- Screenshots -->
+  <section>
+    <div class="section-inner">
+      <div class="reveal" style="margin-bottom:2rem;">
+        <p class="section-label">Screenshots</p>
+        <h2 class="section-title">アプリの画面</h2>
+        <p style="color:var(--text-sub);font-size:0.85rem;margin-top:0.5rem;">← スワイプまたはスクロールで確認できます（開発中の画面です）</p>
+      </div>
+      <div class="screenshot-strip reveal">
+        <img src="../assets/pickandblade/screenshots/01.jpg" alt="ツルハシとツルギの画面 1: 掘る人と、潜る人。2 人が同時に進む" width="540" height="960" loading="lazy" />
+        <img src="../assets/pickandblade/screenshots/02.jpg" alt="ツルハシとツルギの画面 2: 素材を装備に鍛える。互いを強くする" width="540" height="960" loading="lazy" />
+        <img src="../assets/pickandblade/screenshots/03.jpg" alt="ツルハシとツルギの画面 3: 装備を整えて、さらに深い場所へ" width="540" height="960" loading="lazy" />
+      </div>
+    </div>
+  </section>
+
+  <div class="glow-line" style="max-width:800px;margin:0 auto;"></div>
+
+  <!-- Story -->
+  <section>
+    <div class="section-inner" style="max-width:760px;">
+      <div class="reveal" style="margin-bottom:2rem;">
+        <p class="section-label">Story</p>
+        <h2 class="section-title">作った理由</h2>
+      </div>
+      <div class="reveal glass" style="padding:2rem;">
+        <p class="story-text">個人で開発しています。「掘る人」と「潜る人」が別々に頑張って、その成果で互いを強くする。ひとりで遊んでいるのに、ふたりぶんの放置が噛み合っていく。そんな放置ゲームを、ドット絵の見た目にこだわって作りました。</p>
+        <p class="story-text">ガチャも、画面いっぱいの全画面広告もありません。広告は、画面上部のバナーと、自分で選んで見る動画広告だけです。詳しくは<a href="./privacy-policy.html" style="color:var(--primary);text-decoration:underline;">プライバシーポリシー</a>をご覧ください。</p>
+        <p class="story-text">こんな方に使っていただけたら嬉しいです。</p>
+        <ul class="story-list">
+          <li>仕事や家事のあいまに、気軽に進められるゲームが好きな方</li>
+          <li>装備を作って集めるのが好きな方</li>
+          <li>ドット絵のかわいい世界で、のんびり遊びたい方</li>
+        </ul>
+      </div>
+    </div>
+  </section>
+
+  <div class="glow-line" style="max-width:800px;margin:0 auto;"></div>
+
+  <!-- FAQ -->
+  <section>
+    <div class="section-inner">
+      <div class="reveal" style="margin-bottom:2.5rem;">
+        <p class="section-label">FAQ</p>
+        <h2 class="section-title">よくある質問</h2>
+      </div>
+      <div class="reveal glass" style="padding:1.5rem 2rem;">
+        <div class="mini-faq-item">
+          <span class="mini-faq-q">いつ遊べますか？</span>
+          <span class="mini-faq-a">現在、公開の準備中です。Google Play で配信を始めたら、このページでお知らせします。</span>
+        </div>
+        <div class="mini-faq-item">
+          <span class="mini-faq-q">費用</span>
+          <span class="mini-faq-a">無料でご利用いただけます。広告が表示されます（画面上部のバナー、自分で選んで見る動画広告）。</span>
+        </div>
+        <div class="mini-faq-item">
+          <span class="mini-faq-q">対応端末</span>
+          <span class="mini-faq-a">まず Android 版を Google Play で公開し、安定してから iOS（iPhone）版を出す予定です。配信は日本国内のみの予定です。</span>
+        </div>
+        <div class="mini-faq-item">
+          <span class="mini-faq-q">ログイン・登録</span>
+          <span class="mini-faq-a">登録なしで遊べます。設定から Google でログインすると、データをクラウドに保存して、複数の端末で同期できます。ログインしない場合、記録は端末の中にだけ保存されます。</span>
+        </div>
+        <div class="mini-faq-item">
+          <span class="mini-faq-q">機種変更・アンインストール</span>
+          <span class="mini-faq-a">ログインしていない場合、アプリを削除したり端末を替えたりすると記録は消えます。引き継ぎたい方は、先にログインしてください。</span>
+        </div>
+        <div class="mini-faq-item">
+          <span class="mini-faq-q">課金はありますか？</span>
+          <span class="mini-faq-a">ガチャや課金アイテムはありません。</span>
+        </div>
+        <div class="mini-faq-item">
+          <span class="mini-faq-q">アカウントとデータの削除</span>
+          <span class="mini-faq-a">アプリの設定から、アカウントとクラウド上のデータを削除できます。詳しくは<a href="./privacy-policy.html#delete-account">プライバシーポリシー</a>をご覧ください。</span>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <div class="glow-line" style="max-width:800px;margin:0 auto;"></div>
+
+  <!-- Contact -->
+  <section id="contact">
+    <div class="section-inner" style="text-align:center;">
+      <div class="reveal glass" style="padding:3rem 2rem;max-width:640px;margin:0 auto;">
+        <p class="section-label" style="text-align:center;">Contact</p>
+        <h2 class="section-title" style="font-size:1.8rem;">お問い合わせ</h2>
+        <p class="contact-text">
+          不具合の報告、機能のご要望、ご質問は Google フォームから受け付ける予定です（公開までにご用意します）。
+        </p>
+        <span class="btn-primary btn-disabled" aria-disabled="true">お問い合わせフォーム（準備中）</span>
+      </div>
+    </div>
+  </section>
+
+  <footer>
+    <p>© 2026 Ryo-Lab. ツルハシとツルギ 開発チーム</p>
+  </footer>
+
+<script src="../assets/js/subsite.js"></script>
+<script src="../assets/js/pickandblade-forge.js"></script>
+</body>
+</html>
