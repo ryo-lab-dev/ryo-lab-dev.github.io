@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>更新履歴 — CloudKata</title>
+  <script src="https://cdn.tailwindcss.com"></script>
+  <link rel="icon" href="../assets/cloudkata/icon_01_zen.png" type="image/png" />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Syne:wght@400;600;700;800&family=Noto+Sans+JP:wght@300;400;500;700&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="../assets/css/cloudkata.css" />
+  <link rel="stylesheet" href="../assets/css/subsite.css" />
+  <!-- SEO -->
+  <meta name="description" content="CloudKata の更新履歴ページ。各バージョンで追加・変更・修正した内容を確認できます。">
+  <link rel="canonical" href="https://ryo-lab.dev/cloudkata/update-history.html">
+  <style>:root{--uh-text:#e2e8f0;--uh-sub:#94a3b8;}</style>
+  <link rel="stylesheet" href="../assets/css/update-history.css" />
+</head>
+<body>
+
+<nav>
+  <div class="nav-inner">
+    <a href="./" class="nav-logo">
+      <div class="nav-logo-dot"></div>
+      <span class="nav-logo-text">CloudKata</span>
+    </a>
+    <div class="nav-links">
+      <a href="./">Home</a>
+      <a href="./privacy-policy.html">Privacy Policy</a>
+      <a href="./disclaimer.html">免責事項</a>
+      <a href="./terms.html">利用規約</a>
+      <a href="./ace-study.html">ACE の勉強法</a>
+      <a href="./update-history.html" class="active">更新履歴</a>
+    </div>
+    <button class="nav-hamburger" id="navToggle" aria-label="メニューを開く">
+      <span></span><span></span><span></span>
+    </button>
+  </div>
+</nav>
+
+  <div class="uh-wrap">
+    <div class="uh-header reveal">
+      <p class="uh-tag">Changelog</p>
+      <h1 class="uh-title">更新履歴</h1>
+      <p class="uh-sub">CloudKata の変更内容を、最新バージョンから順に表示しています。</p>
+    </div>
+
+    <div class="uh-timeline reveal">
+      <div class="uh-item latest">
+        <span class="uh-badge">v1.1.19 — Latest</span>
+        <p class="uh-summary">iPhone での入力まわりの使いやすさを改善しました。</p>
+        <ul class="uh-list">
+          <li><span class="uh-kind uh-kind-imp">改善</span>iPhone で、入力欄の外をタップするとキーボードが閉じるようになりました。</li>
+          <li><span class="uh-kind uh-kind-imp">改善</span>広告表示の準備処理を見直し、動作の安定性を向上しました。</li>
+        </ul>
+      </div>
+      <div class="uh-item">
+        <span class="uh-badge">v1.1.17</span>
+        <ul class="uh-list">
+          <li><span class="uh-kind uh-kind-imp">改善</span>学習データを保存する際の安全性を高めました。</li>
+        </ul>
+      </div>
+      <div class="uh-item">
+        <span class="uh-badge">v1.1.16</span>
+        <p class="uh-summary">問題の内容を見直し、最新の情報に合わせて修正しました。</p>
+        <ul class="uh-list">
+          <li><span class="uh-kind uh-kind-imp">改善</span>問題・解説の内容を最新の Google Cloud の情報に合わせて見直しました（サービス名の変更や、提供終了したサービスに関する記述を更新）。</li>
+          <li><span class="uh-kind uh-kind-imp">改善</span>正解の選択肢が特定の位置に偏らないよう、並びを調整しました。</li>
+          <li><span class="uh-kind uh-kind-imp">改善</span>動作の軽量化・安定性を向上しました。</li>
+          <li><span class="uh-kind uh-kind-fix">修正</span>一部の問題にあった誤った解説・正解を修正しました。</li>
+          <li><span class="uh-kind uh-kind-fix">修正</span>学習分析のクリア率が、表示されない問題の影響で100％にならないことがある不具合を修正しました。</li>
+        </ul>
+      </div>
+    </div>
+
+    <p class="uh-note">これより前の更新は省略しています。</p>
+
+    <p class="uh-feedback">機能のご要望・不具合のご報告は、<a href="https://docs.google.com/forms/d/e/1FAIpQLSeW-2tZ9hh2iZBNz5ey7hOnE25kG6H54r8kWb8A48csVV_YaQ/viewform?usp=pp_url&amp;entry.69074212=CloudKata" target="_blank" rel="noopener">フィードバックフォーム</a>からお寄せください。</p>
+  </div>
+
+<footer>
+  <p>© 2026 Ryo-Lab. CloudKata 開発チーム</p>
+  <p>Google Cloud, GCP は Google LLC の商標です。本アプリは Google LLC の公式認定品ではありません。</p>
+</footer>
+
+<script src="../assets/js/subsite.js"></script>
+</body>
+</html>

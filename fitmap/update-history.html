@@ -1,0 +1,267 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>更新履歴 — FitMap</title>
+  <link rel="icon" href="../assets/icons/fitmap_icon.svg" type="image/svg+xml" />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Syne:wght@400;600;700;800&family=Noto+Sans+JP:wght@300;400;500;700&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet" />
+  <meta name="description" content="FitMap の更新履歴ページ。各バージョンで追加・変更・修正した内容を確認できます。">
+  <link rel="canonical" href="https://ryo-lab.dev/fitmap/update-history.html">
+  <style>
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+    html { scroll-behavior: smooth; }
+    :root {
+      --bg: #f5f9fc;
+      --surface: #ffffff;
+      --blue: #0077B6;
+      --blue-mid: #0096C7;
+      --blue-light: #00B4D8;
+      --blue-pale: #ADE8F4;
+      --text: #0a1628;
+      --text-mid: #3d5a73;
+      --text-muted: #7090a0;
+      --border: #d4e8f0;
+    }
+    body {
+      background: var(--bg);
+      color: var(--text);
+      font-family: 'Noto Sans JP', sans-serif;
+      min-height: 100vh;
+      overflow-x: hidden;
+    }
+
+    /* ── Nav ── */
+    nav {
+      position: sticky; top: 0; z-index: 100;
+      background: rgba(245,249,252,0.92);
+      backdrop-filter: blur(12px);
+      -webkit-backdrop-filter: blur(12px);
+      border-bottom: 1px solid var(--border);
+    }
+    .nav-inner {
+      max-width: 1100px; margin: 0 auto;
+      padding: 0 2rem; height: 64px;
+      display: flex; align-items: center; justify-content: space-between; gap: 1rem;
+    }
+    .nav-logo { display: flex; align-items: center; gap: 0.6rem; text-decoration: none; flex-shrink: 0; }
+    .nav-logo img { width: 30px; height: 30px; }
+    .nav-logo-text {
+      font-family: 'Syne', sans-serif; font-weight: 800; font-size: 1.1rem;
+      color: var(--blue);
+    }
+    .nav-links { display: flex; align-items: center; gap: 0.1rem; }
+    .nav-links a {
+      color: var(--text-muted); text-decoration: none; font-size: 0.83rem;
+      padding: 0.4rem 0.75rem; border-radius: 6px;
+      transition: color 0.2s, background 0.2s; white-space: nowrap;
+    }
+    .nav-links a:hover, .nav-links a.active { color: var(--blue); background: rgba(0,119,182,0.06); }
+    .nav-hamburger {
+      display: none; flex-direction: column; justify-content: center;
+      gap: 5px; cursor: pointer; padding: 8px;
+      background: none; border: none; flex-shrink: 0;
+    }
+    .nav-hamburger span {
+      display: block; width: 22px; height: 2px;
+      background: var(--text-muted); border-radius: 2px;
+      transition: transform 0.25s, opacity 0.25s;
+    }
+    nav.open .nav-hamburger span:nth-child(1) { transform: translateY(7px) rotate(45deg); }
+    nav.open .nav-hamburger span:nth-child(2) { opacity: 0; }
+    nav.open .nav-hamburger span:nth-child(3) { transform: translateY(-7px) rotate(-45deg); }
+
+    /* ── Document ── */
+    .doc-container {
+      max-width: 780px; margin: 0 auto;
+      padding: 4rem 2rem 6rem;
+    }
+    .doc-header {
+      margin-bottom: 2.5rem;
+      padding-bottom: 2rem;
+      border-bottom: 1px solid var(--border);
+    }
+    .doc-tag {
+      font-family: 'JetBrains Mono', monospace; font-size: 0.72rem;
+      color: var(--blue-mid); letter-spacing: 0.18em; text-transform: uppercase;
+      margin-bottom: 0.75rem;
+    }
+    .doc-title {
+      font-family: 'Syne', sans-serif; font-size: clamp(1.8rem, 4vw, 2.4rem);
+      font-weight: 700; color: var(--blue);
+      margin-bottom: 0.75rem;
+    }
+    .doc-meta { color: var(--text-muted); font-size: 0.83rem; line-height: 1.8; }
+
+    /* ── Notice ── */
+    .notice {
+      background: rgba(0,180,216,0.06);
+      border-left: 3px solid var(--blue-light);
+      border-radius: 0 10px 10px 0;
+      padding: 1rem 1.25rem;
+      color: var(--text-mid); font-size: 0.9rem; line-height: 1.8;
+      margin-bottom: 2.5rem;
+    }
+
+    /* ── Sections ── */
+    .doc-section { margin-bottom: 2.5rem; }
+    .doc-section h2 {
+      font-family: 'Syne', sans-serif; font-size: 1.05rem; font-weight: 700;
+      color: var(--text);
+      padding: 0.55rem 1rem;
+      background: rgba(0,119,182,0.05);
+      border-left: 3px solid var(--blue);
+      border-radius: 0 8px 8px 0;
+      margin-bottom: 1rem;
+    }
+    .doc-section p {
+      color: var(--text-muted); font-size: 0.92rem;
+      margin-bottom: 0.75rem; line-height: 1.85;
+    }
+    .doc-section ul {
+      list-style: none; padding: 0; margin: 0.5rem 0 0.75rem;
+    }
+    .doc-section ul li {
+      color: var(--text-muted); font-size: 0.92rem;
+      padding: 0.35rem 0 0.35rem 1.25rem;
+      position: relative; line-height: 1.75;
+    }
+    .doc-section ul li::before {
+      content: '·'; position: absolute; left: 0.3rem;
+      color: var(--blue-mid); font-size: 1.2rem; line-height: 1.4;
+    }
+    .doc-section a { color: var(--blue-mid); text-decoration: none; }
+    .doc-section a:hover { text-decoration: underline; }
+
+    .info-table {
+      width: 100%; border-collapse: collapse;
+      font-size: 0.88rem; margin: 0.75rem 0;
+    }
+    .info-table th, .info-table td {
+      padding: 0.65rem 0.9rem; text-align: left;
+      border: 1px solid var(--border);
+    }
+    .info-table th {
+      background: rgba(0,119,182,0.05);
+      color: var(--blue); font-family: 'Syne', sans-serif;
+      font-size: 0.8rem; font-weight: 700; white-space: nowrap;
+    }
+    .info-table td { color: var(--text-muted); line-height: 1.7; }
+
+    .divider { height: 1px; background: var(--border); margin: 2rem 0; }
+
+    /* ── Reveal ── */
+    .reveal {
+      opacity: 0; transform: translateY(20px);
+      transition: opacity 0.5s ease, transform 0.5s ease;
+    }
+    .reveal.visible { opacity: 1; transform: translateY(0); }
+
+    /* ── Footer ── */
+    footer {
+      border-top: 1px solid var(--border); padding: 2rem;
+      text-align: center; color: var(--text-muted); font-size: 0.85rem;
+    }
+
+    /* ── Responsive ── */
+    @media (max-width: 768px) {
+      .nav-links { display: none; }
+      .nav-hamburger { display: flex; }
+      nav.open .nav-links {
+        display: flex; flex-direction: column;
+        position: absolute; top: 64px; left: 0; right: 0;
+        background: rgba(245,249,252,0.97);
+        backdrop-filter: blur(12px);
+        border-bottom: 1px solid var(--border);
+        padding: 1rem 1.5rem; gap: 0.25rem; z-index: 99;
+      }
+      nav.open .nav-links a { padding: 0.6rem 0.5rem; font-size: 0.9rem; }
+      .doc-container { padding: 2.5rem 1.25rem 4rem; }
+      .info-table { font-size: 0.8rem; }
+      .info-table th, .info-table td { padding: 0.5rem 0.65rem; }
+    }
+  </style>
+  <style>:root{--uh-text:#0a1628;--uh-sub:#3d5a73;--primary:var(--blue);--primary-light:var(--blue-light);--glow:rgba(0,119,182,.2);--glass-bg:#fff;--glass-border:var(--border);}</style>
+  <link rel="stylesheet" href="../assets/css/update-history.css" />
+</head>
+<body>
+
+<!-- Nav -->
+<nav>
+  <div class="nav-inner">
+    <a href="./" class="nav-logo">
+      <img src="../assets/icons/fitmap_icon.svg" alt="FitMap" />
+      <span class="nav-logo-text">FitMap</span>
+    </a>
+    <div class="nav-links">
+      <a href="./">Home</a>
+      <a href="./privacy-policy.html">Privacy Policy</a>
+      <a href="./terms.html">Terms</a>
+      <a href="./size-memo.html">サイズの記録</a>
+      <a href="./update-history.html" class="active">更新履歴</a>
+    </div>
+    <button class="nav-hamburger" id="navToggle" aria-label="メニューを開く">
+      <span></span><span></span><span></span>
+    </button>
+  </div>
+</nav>
+
+  <div class="uh-wrap">
+    <div class="uh-header reveal">
+      <p class="uh-tag">Changelog</p>
+      <h1 class="uh-title">更新履歴</h1>
+      <p class="uh-sub">FitMap の変更内容を、最新バージョンから順に表示しています。</p>
+    </div>
+
+    <div class="uh-timeline reveal">
+      <div class="uh-item latest">
+        <span class="uh-badge">v1.2.0 — Latest</span>
+        <p class="uh-summary">手持ちの服の実寸を記録して、通販の実寸表と見比べられるようになりました。</p>
+        <ul class="uh-list">
+          <li><span class="uh-kind uh-kind-add">追加</span>服の実寸メモ：手持ちの服の実寸（着丈・身幅など）を記録し、通販の実寸表と比較できます。</li>
+          <li><span class="uh-kind uh-kind-add">追加</span>測り方ガイド：各部位の正しい測り方を画面で確認できます。</li>
+          <li><span class="uh-kind uh-kind-imp">改善</span>サイズ早見カードを、渡す用に項目を選んで共有できるようになりました。</li>
+          <li><span class="uh-kind uh-kind-imp">改善</span>ホーム上部のボタンに短いラベルを添えて、機能がわかりやすくなりました。</li>
+          <li><span class="uh-kind uh-kind-fix">修正</span>月末に測った記録の、測り直しお知らせの日付を修正しました。</li>
+          <li><span class="uh-kind uh-kind-fix">修正</span>不正なバックアップファイルを読み込んだときの安全性を高めました。</li>
+        </ul>
+      </div>
+      <div class="uh-item">
+        <span class="uh-badge">v1.1.1</span>
+        <p class="uh-summary">サイズの測り直しを、通知でお知らせできるようになりました。</p>
+        <ul class="uh-list">
+          <li><span class="uh-kind uh-kind-add">追加</span>測り直しのお知らせ：設定の「お知らせ」から、お子さんだけ／大人も含めて選べます（初期値はお知らせなし）。通知はスマホの中だけで予約され、名前やサイズは表示されません。</li>
+          <li><span class="uh-kind uh-kind-imp">改善</span>使い心地に合わせて、アプリの評価をお願いするダイアログを表示することがあります。</li>
+        </ul>
+      </div>
+      <div class="uh-item">
+        <span class="uh-badge">v1.1.0</span>
+        <p class="uh-summary">サイズを「記録する」だけでなく、買い物にも使えるようになりました。</p>
+        <ul class="uh-list">
+          <li><span class="uh-kind uh-kind-add">追加</span>サイズ早見カード：登録したサイズを1画面にまとめ、画像として共有できます。</li>
+          <li><span class="uh-kind uh-kind-add">追加</span>推移グラフ：体重やウエストの変化がひと目でわかります。</li>
+          <li><span class="uh-kind uh-kind-add">追加</span>子どもの成長記録：測り直しの目安と、靴サイズが上がる時期の予測を表示します。</li>
+          <li><span class="uh-kind uh-kind-add">追加</span>ブランド別サイズメモ：「ユニクロはM」などをメモできます。</li>
+          <li><span class="uh-kind uh-kind-add">追加</span>暗号化バックアップ：機種変更のときもデータを引き継げます。</li>
+          <li><span class="uh-kind uh-kind-imp">改善</span>カレンダーなどの表示を日本語に統一しました。</li>
+          <li><span class="uh-kind uh-kind-fix">修正</span>カスタム項目の数値が丸めて表示される問題を修正しました。</li>
+          <li><span class="uh-kind uh-kind-fix">修正</span>指輪サイズ欄の枠線が角で欠ける問題を修正しました。</li>
+          <li><span class="uh-kind uh-kind-fix">修正</span>プロフィール削除後に「未設定」と表示される問題を修正しました。</li>
+        </ul>
+      </div>
+    </div>
+
+    <p class="uh-note">これより前の更新は省略しています。</p>
+
+    <p class="uh-feedback">機能のご要望・不具合のご報告は、<a href="https://docs.google.com/forms/d/e/1FAIpQLSeW-2tZ9hh2iZBNz5ey7hOnE25kG6H54r8kWb8A48csVV_YaQ/viewform?usp=pp_url&amp;entry.69074212=FitMap" target="_blank" rel="noopener">フィードバックフォーム</a>からお寄せください。</p>
+  </div>
+
+<footer>
+  <p>© 2026 Ryo-Lab. FitMap Project</p>
+</footer>
+
+<script src="../assets/js/subsite.js"></script>
+</body>
+</html>

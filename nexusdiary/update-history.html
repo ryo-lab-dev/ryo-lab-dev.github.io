@@ -1,0 +1,111 @@
+<!DOCTYPE html>
+<html lang="ja">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>更新履歴 — NexusDiary</title>
+  <link rel="icon" href="../assets/nexusdiary/icon.png" type="image/png" />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link
+    href="https://fonts.googleapis.com/css2?family=Syne:wght@400;600;700;800&family=Noto+Sans+JP:wght@300;400;500;700&family=JetBrains+Mono:wght@400;500&display=swap"
+    rel="stylesheet" />
+  <link rel="stylesheet" href="../assets/css/nexusdiary-pp.css" />
+  <!-- SEO -->
+  <meta name="description" content="NexusDiary の更新履歴ページ。各バージョンで追加・変更・修正した内容を確認できます。">
+  <link rel="canonical" href="https://ryo-lab.dev/nexusdiary/update-history.html">
+  <style>:root{--uh-text:#e2e8f0;--uh-sub:#94a3b8;}</style>
+  <link rel="stylesheet" href="../assets/css/update-history.css" />
+</head>
+
+<body>
+
+  <!-- Navigation -->
+  <nav id="mainNav">
+    <div class="nav-inner">
+      <a href="./" class="nav-logo">
+        <div class="nav-logo-mark">
+          <img src="../assets/nexusdiary/icon.png" alt="NexusDiary" />
+        </div>
+        <span class="nav-logo-text">NexusDiary</span>
+      </a>
+      <div class="nav-links">
+        <a href="./">Home</a>
+        <a href="./privacy-policy.html">プライバシーポリシー</a>
+        <a href="./terms.html">利用規約</a>
+        <a href="./idea.html">アイデアの見つけ方</a>
+        <a href="./update-history.html" class="active">更新履歴</a>
+      </div>
+      <button class="nav-hamburger" id="navToggle" aria-label="メニューを開く">
+        <span></span><span></span><span></span>
+      </button>
+    </div>
+  </nav>
+
+  <div class="uh-wrap">
+    <div class="uh-header reveal">
+      <p class="uh-tag">Changelog</p>
+      <h1 class="uh-title">更新履歴</h1>
+      <p class="uh-sub">NexusDiary の変更内容を、最新バージョンから順に表示しています。</p>
+    </div>
+
+    <div class="uh-timeline reveal">
+      <div class="uh-item latest">
+        <span class="uh-badge">v1.0.15 — Latest</span>
+        <p class="uh-summary">1年のふりかえりと、アイデアの育成を楽しめるようになりました。</p>
+        <ul class="uh-list">
+          <li><span class="uh-kind uh-kind-add">追加</span>設定から「年間まとめ」を画像で共有できます（日記の本文は載りません）。</li>
+          <li><span class="uh-kind uh-kind-add">追加</span>提案を Markdown でコピー、日記をまとめて書き出せます。</li>
+          <li><span class="uh-kind uh-kind-add">追加</span>提案に「気になる・作っている・公開した」の進み具合を付け、日記を紐づけられます。</li>
+          <li><span class="uh-kind uh-kind-add">追加</span>運営からのお知らせをホームに表示します。</li>
+          <li><span class="uh-kind uh-kind-imp">改善</span>iPhone で、入力欄の外をタップするとキーボードが閉じるようになりました。</li>
+          <li><span class="uh-kind uh-kind-imp">改善</span>日記入力画面のスクロールとタグ追加時の操作を改善しました。</li>
+          <li><span class="uh-kind uh-kind-fix">修正</span>未来の日付の日記が連続記録に数えられる問題を直しました。</li>
+          <li><span class="uh-kind uh-kind-fix">修正</span>動画広告を見たのに回数が増えないことがある問題を改善しました。</li>
+        </ul>
+      </div>
+      <div class="uh-item">
+        <span class="uh-badge">v1.0.14</span>
+        <p class="uh-summary">AI 機能を、より長く安定してお使いいただけるようにしました。</p>
+        <ul class="uh-list">
+          <li><span class="uh-kind uh-kind-chg">変更</span>AI 機能が使える回数を、1日の無料分と、動画広告を見て増やせる分に分けました。無料の回数を使い切っても、動画広告を最後まで見ると、その日の分を追加できます。</li>
+          <li><span class="uh-kind uh-kind-add">追加</span>日記の分析・アイデア提案のボタンの下に、本日の残り回数を表示しました。</li>
+          <li><span class="uh-kind uh-kind-imp">改善</span>AI が日記を分析し、アイデアを考える仕組みを新しくしました。</li>
+        </ul>
+      </div>
+      <div class="uh-item">
+        <span class="uh-badge">v1.0.13</span>
+        <p class="uh-summary">AI 機能の安定した提供と、広告まわりの安定性を改善しました。</p>
+        <ul class="uh-list">
+          <li><span class="uh-kind uh-kind-chg">変更</span>AI 機能に、1日あたりの利用回数の上限を設けました。日記の分析・アイデア提案を、安定してご利用いただくためです。</li>
+          <li><span class="uh-kind uh-kind-imp">改善</span>広告の表示を安定させました。</li>
+          <li><span class="uh-kind uh-kind-imp">改善</span>日記データを、より安全に保存できるようにしました。</li>
+        </ul>
+      </div>
+      <div class="uh-item">
+        <span class="uh-badge">v1.0.11 / v1.0.12</span>
+        <p class="uh-summary">日記を続けやすくする機能を追加しました。</p>
+        <ul class="uh-list">
+          <li><span class="uh-kind uh-kind-add">追加</span>毎日のリマインド通知を追加しました。設定画面で時刻を決めると、日記を書く時間にお知らせします。今日すでに書いた日は通知されません。</li>
+          <li><span class="uh-kind uh-kind-add">追加</span>日記の連続記録を、ホーム画面に表示するようにしました。</li>
+          <li><span class="uh-kind uh-kind-imp">改善</span>AI 機能の安定性を改善しました。</li>
+          <li><span class="uh-kind uh-kind-imp">改善</span>広告バナーを画面幅に合わせて表示するようにしました。</li>
+        </ul>
+      </div>
+    </div>
+
+    <p class="uh-note">これより前の更新は省略しています。</p>
+
+    <p class="uh-feedback">機能のご要望・不具合のご報告は、<a href="https://docs.google.com/forms/d/e/1FAIpQLSeW-2tZ9hh2iZBNz5ey7hOnE25kG6H54r8kWb8A48csVV_YaQ/viewform?usp=pp_url&amp;entry.69074212=NexusDiary" target="_blank" rel="noopener">フィードバックフォーム</a>からお寄せください。</p>
+  </div>
+
+  <footer>
+    <p>© 2026 Ryo-Lab. NexusDiary</p>
+    <p><a href="./" style="color:#64748b;text-decoration:none;">← NexusDiary Home</a></p>
+  </footer>
+
+  <script src="../assets/js/nexusdiary-pp.js"></script>
+</body>
+
+</html>
