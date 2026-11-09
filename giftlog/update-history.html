@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>更新履歴 — GiftLog</title>
+  <link rel="icon" href="../assets/giftlog/app_icon.png" type="image/png" />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Syne:wght@500;700;800&family=JetBrains+Mono:wght@400;500&family=Noto+Sans+JP:wght@400;500;700&display=swap" rel="stylesheet" />
+  <meta name="description" content="GiftLog の更新履歴ページ。各バージョンで追加・変更・修正した内容を確認できます。" />
+  <link rel="canonical" href="https://ryo-lab.dev/giftlog/update-history.html" />
+  <link rel="stylesheet" href="../assets/css/subsite.css" />
+  <link rel="stylesheet" href="../assets/css/giftlog.css" />
+  <style>:root{--uh-text:#2a1808;--uh-sub:#6b5040;}</style>
+  <link rel="stylesheet" href="../assets/css/update-history.css" />
+</head>
+<body>
+  <nav>
+    <div class="nav-inner">
+      <a href="./" class="nav-logo">
+        <div class="giftlog-nav-mark">
+          <img src="../assets/giftlog/app_icon.png" alt="GiftLog" />
+        </div>
+        <span class="nav-logo-text">GiftLog</span>
+      </a>
+      <div class="nav-links">
+        <a href="./">Home</a>
+        <a href="./support.html">Support</a>
+        <a href="./privacy-policy.html">Privacy Policy</a>
+        <a href="./terms.html">Terms</a>
+        <a href="./okaeshi.html">お返しの記録</a>
+        <a href="./update-history.html" class="active">更新履歴</a>
+      </div>
+      <button class="nav-hamburger" id="navToggle" aria-label="Open menu">
+        <span></span><span></span><span></span>
+      </button>
+    </div>
+  </nav>
+
+  <div class="uh-wrap">
+    <div class="uh-header reveal">
+      <p class="uh-tag">Changelog</p>
+      <h1 class="uh-title">更新履歴</h1>
+      <p class="uh-sub">GiftLog の変更内容を、最新バージョンから順に表示しています。</p>
+    </div>
+
+    <div class="uh-timeline reveal">
+      <div class="uh-item latest">
+        <span class="uh-badge">v1.2.1 — Latest</span>
+        <p class="uh-summary">入力まわりの使いやすさと、AI 提案の追加枠の安全性を改善しました。</p>
+        <ul class="uh-list">
+          <li><span class="uh-kind uh-kind-imp">改善</span>入力欄の外をタップしたり、画面をスクロールしたりすると、キーボードが閉じるようになりました（iPhone）。</li>
+          <li><span class="uh-kind uh-kind-imp">改善</span>動画広告を見て AI 提案の回数を増やすとき、視聴の確認をより確実に行うようになりました。</li>
+          <li><span class="uh-kind uh-kind-imp">改善</span>広告の表示前に、同意の確認を行う仕組みを整えました。</li>
+          <li><span class="uh-kind uh-kind-fix">修正</span>登録したギフトの画像を削除しても、保存先に残ってしまう場合がある問題を修正しました。</li>
+          <li><span class="uh-kind uh-kind-fix">修正</span>AI 提案で、極端に長い文字を入力したときの動作を安定させました。</li>
+        </ul>
+      </div>
+      <div class="uh-item">
+        <span class="uh-badge">v1.2.0</span>
+        <p class="uh-summary">もらったギフトのお返しを管理できるようになり、AI 提案も見つけやすくなりました。</p>
+        <ul class="uh-list">
+          <li><span class="uh-kind uh-kind-add">追加</span>もらったギフトに「お返し」の状態（決めていない／お返しがまだ／お返し済み）と期限を設定できるようになりました。金額があるときは、お返しの目安額を表示します。</li>
+          <li><span class="uh-kind uh-kind-add">追加</span>「お返し済み」にするとき、同じ相手に贈ったギフトを選んでつなげられます。「お返しを記録する」から新しく贈ったギフトを登録することもできます。</li>
+          <li><span class="uh-kind uh-kind-add">追加</span>ギフト一覧の上に「お返しがまだ」の件数と近い期限を表示し、タップでお返し待ちだけに絞り込めます。</li>
+          <li><span class="uh-kind uh-kind-add">追加</span>ギフト画面の上部に「AI でギフトを提案」のボタンを追加し、初回だけ使い方を案内します（設定からもう一度見られます）。</li>
+          <li><span class="uh-kind uh-kind-add">追加</span>運営からのお知らせを、ギフト一覧の上に表示するようになりました。</li>
+        </ul>
+      </div>
+      <div class="uh-item">
+        <span class="uh-badge">v1.1.1</span>
+        <p class="uh-summary">AI 提案が使いやすくなり、贈り物の時期を逃しにくくなりました。</p>
+        <ul class="uh-list">
+          <li><span class="uh-kind uh-kind-add">追加</span>AI 提案の結果を自動で保存し、あとから「過去の提案を見る」で見返せるようになりました。</li>
+          <li><span class="uh-kind uh-kind-add">追加</span>AI 提案のイベントで「その他」を選ぶと、「娘さんの誕生日」のような目的を自由に入力できるようになりました。</li>
+          <li><span class="uh-kind uh-kind-add">追加</span>お歳暮・クリスマス・母の日・父の日などの時期が近づくと通知でお知らせします（設定画面でオン・オフできます）。</li>
+          <li><span class="uh-kind uh-kind-add">追加</span>記念日ごとに「何日前に通知するか」を選べるようになりました。</li>
+        </ul>
+      </div>
+    </div>
+
+    <p class="uh-note">これより前の更新は省略しています。</p>
+
+    <p class="uh-feedback">機能のご要望・不具合のご報告は、<a href="https://docs.google.com/forms/d/e/1FAIpQLSeW-2tZ9hh2iZBNz5ey7hOnE25kG6H54r8kWb8A48csVV_YaQ/viewform?usp=pp_url&amp;entry.69074212=GiftLog" target="_blank" rel="noopener">フィードバックフォーム</a>からお寄せください。</p>
+  </div>
+
+  <footer>
+    <p>© 2026 Ryo-Lab. GiftLog</p>
+    <p><a href="./">GiftLog トップへ</a></p>
+  </footer>
+
+  <script src="../assets/js/subsite.js"></script>
+</body>
+</html>

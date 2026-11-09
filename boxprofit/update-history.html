@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>更新履歴 — BoxProfit</title>
+  <script src="https://cdn.tailwindcss.com"></script>
+  <link rel="icon" href="../assets/boxprofit/icon.png" type="image/png" />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Syne:wght@400;600;700;800&family=Noto+Sans+JP:wght@300;400;500;700&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="../assets/css/boxprofit.css" />
+  <link rel="stylesheet" href="../assets/css/subsite.css" />
+  <!-- SEO -->
+  <meta name="description" content="BoxProfit の更新履歴ページ。各バージョンで追加・変更・修正した内容を確認できます。">
+  <link rel="canonical" href="https://ryo-lab.dev/boxprofit/update-history.html">
+  <style>:root{--uh-text:#e2e8f0;--uh-sub:#94a3b8;}</style>
+  <link rel="stylesheet" href="../assets/css/update-history.css" />
+</head>
+<body>
+
+<nav>
+  <div class="nav-inner">
+    <a href="./" class="nav-logo">
+      <div class="nav-logo-dot"></div>
+      <span class="nav-logo-text">BoxProfit</span>
+    </a>
+    <div class="nav-links">
+      <a href="./">Home</a>
+      <a href="./privacy-policy.html">Privacy Policy</a>
+      <a href="./terms.html">利用規約</a>
+      <a href="./profit.html">フリマの利益計算</a>
+      <a href="./update-history.html" class="active">更新履歴</a>
+    </div>
+    <button class="nav-hamburger" id="navToggle" aria-label="メニューを開く">
+      <span></span><span></span><span></span>
+    </button>
+  </div>
+</nav>
+
+  <div class="uh-wrap">
+    <div class="uh-header reveal">
+      <p class="uh-tag">Changelog</p>
+      <h1 class="uh-title">更新履歴</h1>
+      <p class="uh-sub">BoxProfit の変更内容を、最新バージョンから順に表示しています。</p>
+    </div>
+
+    <div class="uh-timeline reveal">
+      <div class="uh-item latest">
+        <span class="uh-badge">v1.1.0 — Latest</span>
+        <p class="uh-summary">ログインなしで試せる計算機と、確定申告の目安、バーコード登録を追加しました。</p>
+        <ul class="uh-list">
+          <li><span class="uh-kind uh-kind-add">追加</span>ログインしなくても使える「かんたん計算」を追加しました。ログイン画面から、仕入れ値や送料を入れて利益をすぐ試せます。</li>
+          <li><span class="uh-kind uh-kind-add">追加</span>「確定申告の目安」画面を追加しました。年間の売上・経費・利益の目安を確認できます（参考値です。税務の判断はご自身でお願いします）。</li>
+          <li><span class="uh-kind uh-kind-add">追加</span>JAN バーコードで商品を登録できるようになりました。読み取ると、同じ商品の過去の仕入れ・販売の記録（価格の幅や1件あたりの利益）を表示します。カメラの画像は保存も送信もしません。</li>
+          <li><span class="uh-kind uh-kind-add">追加</span>運営からのお知らせを、アプリ内で表示できるようにしました。</li>
+          <li><span class="uh-kind uh-kind-fix">修正</span>販売価格の上限と価格の刻みがずれて、おすすめ価格が正しく出ない場合がある問題を修正しました。</li>
+          <li><span class="uh-kind uh-kind-imp">改善</span>広告の同意確認の表示を改善しました。</li>
+        </ul>
+      </div>
+      <div class="uh-item">
+        <span class="uh-badge">v1.0.2</span>
+        <p class="uh-summary">売れ残りの在庫を見逃さないよう、お知らせ機能を追加しました。</p>
+        <ul class="uh-list">
+          <li><span class="uh-kind uh-kind-add">追加</span>「売れ残りのお知らせ」を追加しました。設定画面でオンにすると、毎週日曜の20時に、仕入れから30日以上たった在庫の件数をお知らせします。</li>
+          <li><span class="uh-kind uh-kind-imp">改善</span>設定画面にアプリのバージョンを表示しました。</li>
+        </ul>
+      </div>
+      <div class="uh-item">
+        <span class="uh-badge">v1.0.0 — 初回リリース</span>
+        <p class="uh-summary">梱包資材まで含めた本当の原価から、目標利益に必要な販売価格を逆算できるアプリを公開しました。</p>
+        <ul class="uh-list">
+          <li><span class="uh-kind uh-kind-add">追加</span>利益計算：仕入れ・梱包資材・送料・手数料から、目標利益に必要な販売価格を逆算します。</li>
+          <li><span class="uh-kind uh-kind-add">追加</span>取引手段の比較：手数料の違いを同じ条件で見比べられます。</li>
+          <li><span class="uh-kind uh-kind-add">追加</span>在庫管理：仕入れ価格や保有日数を記録し、長く残っている商品を色でお知らせします。</li>
+          <li><span class="uh-kind uh-kind-add">追加</span>梱包資材の管理：単価と残量を自動で管理します。</li>
+          <li><span class="uh-kind uh-kind-add">追加</span>販売の記録：販売時点の手数料や資材単価を保存するため、後から設定を変えても過去の利益は変わりません。</li>
+          <li><span class="uh-kind uh-kind-add">追加</span>売上と利益の確認：月別グラフ、CSV 出力（参考値）。</li>
+          <li><span class="uh-kind uh-kind-add">追加</span>Google アカウントでログインして、データをクラウドに保存できます。</li>
+        </ul>
+      </div>
+    </div>
+
+    <p class="uh-note">これより前の更新は省略しています。</p>
+
+    <p class="uh-feedback">機能のご要望・不具合のご報告は、<a href="https://docs.google.com/forms/d/e/1FAIpQLSeW-2tZ9hh2iZBNz5ey7hOnE25kG6H54r8kWb8A48csVV_YaQ/viewform?usp=pp_url&amp;entry.69074212=BoxProfit" target="_blank" rel="noopener">フィードバックフォーム</a>からお寄せください。</p>
+  </div>
+
+<footer>
+  <p>© 2026 Ryo-Lab. BoxProfit 開発チーム</p>
+  <p>メルカリ、PayPayフリマ、ラクマ、ヤフオク! などの名称は各社の商標です。本アプリは各社と提携・承認関係にありません。</p>
+</footer>
+
+<script src="../assets/js/subsite.js"></script>
+</body>
+</html>

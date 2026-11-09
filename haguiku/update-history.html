@@ -1,0 +1,107 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>更新履歴 — はぐ育</title>
+  <script src="https://cdn.tailwindcss.com"></script>
+  <link rel="icon" href="../assets/haguiku/icon.png" type="image/png" />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Syne:wght@400;600;700;800&family=Noto+Sans+JP:wght@300;400;500;700&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="../assets/css/subsite.css" />
+  <link rel="stylesheet" href="../assets/css/haguiku.css" />
+  <!-- SEO -->
+  <meta name="description" content="はぐ育 の更新履歴ページ。各バージョンで追加・変更・修正した内容を確認できます。">
+  <link rel="canonical" href="https://ryo-lab.dev/haguiku/update-history.html">
+  <meta property="og:type" content="website">
+  <meta property="og:url" content="https://ryo-lab.dev/haguiku/update-history.html">
+  <meta property="og:title" content="更新履歴 — はぐ育">
+  <meta property="og:description" content="はぐ育 の更新履歴ページ。各バージョンで追加・変更・修正した内容を確認できます。">
+  <meta property="og:image" content="https://ryo-lab.dev/assets/haguiku/feature-graphic.png">
+  <meta property="og:site_name" content="Ryo-Lab">
+  <meta property="og:locale" content="ja_JP">
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:title" content="利用規約 — はぐ育">
+  <meta name="twitter:description" content="育児支援アプリ「はぐ育」の利用規約。医療・制度に関する注意、家族での共有、禁止事項などのご利用条件を記載しています。">
+  <meta name="twitter:image" content="https://ryo-lab.dev/assets/haguiku/feature-graphic.png">
+  <style>:root{--uh-text:#4e342e;--uh-sub:#795548;}</style>
+  <link rel="stylesheet" href="../assets/css/update-history.css" />
+</head>
+<body>
+<nav>
+  <div class="nav-inner">
+    <a href="./" class="nav-logo">
+      <div class="nav-logo-dot"></div>
+      <span class="nav-logo-text">はぐ育</span>
+    </a>
+    <div class="nav-links">
+      <a href="./">Home</a>
+      <a href="./privacy-policy.html">Privacy Policy</a>
+      <a href="./disclaimer.html">免責事項</a>
+      <a href="./terms.html">利用規約</a>
+      <a href="./share.html">夫婦で記録を共有</a>
+      <a href="./update-history.html" class="active">更新履歴</a>
+    </div>
+    <button class="nav-hamburger" id="navToggle" aria-label="メニューを開く">
+      <span></span><span></span><span></span>
+    </button>
+  </div>
+</nav>
+
+  <div class="uh-wrap">
+    <div class="uh-header reveal">
+      <p class="uh-tag">Changelog</p>
+      <h1 class="uh-title">更新履歴</h1>
+      <p class="uh-sub">はぐ育 の変更内容を、最新バージョンから順に表示しています。</p>
+    </div>
+
+    <div class="uh-timeline reveal">
+      <div class="uh-item latest">
+        <span class="uh-badge">v1.4.4 — Latest</span>
+        <p class="uh-summary">広告の表示位置を見直し、家族データの保護を強化しました。</p>
+        <ul class="uh-list">
+          <li><span class="uh-kind uh-kind-chg">変更</span>バナー広告を画面の上部に移動しました。下のメニューや記録ボタンの近くで、広告を誤ってタップしにくくなります。</li>
+          <li><span class="uh-kind uh-kind-imp">改善</span>広告の読み込み前から表示場所を確保し、読み込み完了時に画面がずれないようにしました。</li>
+          <li><span class="uh-kind uh-kind-imp">改善</span>家族への参加や家族データの保存まわりの安全性を強化しました。</li>
+          <li><span class="uh-kind uh-kind-fix">修正</span>広告のプライバシー設定を変更したあとに、広告の表示可否が反映されない場合がある問題を修正しました。</li>
+        </ul>
+      </div>
+      <div class="uh-item">
+        <span class="uh-badge">v1.4.3</span>
+        <p class="uh-summary">iPhone での操作と初回設定を改善しました。</p>
+        <ul class="uh-list">
+          <li><span class="uh-kind uh-kind-imp">改善</span>初回の設定画面で、招待コードで参加する案内を上に表示しました。パートナーが先に始めている場合に、間違えて新しい家族を作りにくくなります。</li>
+          <li><span class="uh-kind uh-kind-fix">修正</span>入力欄の外をタップするとキーボードが閉じるようになりました（iPhone で下のメニューが隠れたままになる問題）。</li>
+          <li><span class="uh-kind uh-kind-fix">修正</span>下から出る画面の右上に「閉じる」ボタンを追加しました（iPhone で戻れなくなる問題）。</li>
+        </ul>
+      </div>
+      <div class="uh-item">
+        <span class="uh-badge">v1.4.2 （1.4.0〜1.4.2 のまとめ）</span>
+        <p class="uh-summary">家族チャットと日記、受診用のまとめ、育児記録の操作改善をお届けします。</p>
+        <ul class="uh-list">
+          <li><span class="uh-kind uh-kind-add">追加</span>家族チャット：テキストで連絡できます。新着はフッターの点でお知らせします。</li>
+          <li><span class="uh-kind uh-kind-add">追加</span>日記：家族で1日1ページ。一覧とカレンダーで見返せて、その日の授乳・おむつ・ねんねの回数も一緒に表示します。誰かが編集中のあいだは他の人は編集できず、上書きの心配がありません。「できたこと」と月のカレンダーは日記に移りました。</li>
+          <li><span class="uh-kind uh-kind-add">追加</span>受診用の経過まとめ・連絡帳の朝のまとめを作成し、コピーや LINE などで共有できます（育児記録の右上の共有ボタン）。</li>
+          <li><span class="uh-kind uh-kind-imp">改善</span>隠したボタンも「ほかの記録」から記録できるようになりました。ボタンの並べ方（4列・6列・1行）を選べます。</li>
+          <li><span class="uh-kind uh-kind-imp">改善</span>記録の日時を、時・分のホイールで1画面から選べるようになりました。</li>
+          <li><span class="uh-kind uh-kind-chg">変更</span>フッターをホーム中央の5つ並びにしました。ダークモードはアプリ全体に対応しました。</li>
+          <li><span class="uh-kind uh-kind-imp">改善</span>設定を整理し、アカウント・家族の画面を新しくしました。招待コードは期限前でも無効にできます。</li>
+          <li><span class="uh-kind uh-kind-fix">修正</span>育児記録の「この7日間」の表示や、タブ切り替え時にまれにエラーになる問題を修正しました。</li>
+        </ul>
+      </div>
+    </div>
+
+    <p class="uh-note">これより前の更新は省略しています。</p>
+
+    <p class="uh-feedback">機能のご要望・不具合のご報告は、<a href="https://docs.google.com/forms/d/e/1FAIpQLSeW-2tZ9hh2iZBNz5ey7hOnE25kG6H54r8kWb8A48csVV_YaQ/viewform?usp=pp_url&amp;entry.69074212=%E3%81%AF%E3%81%90%E8%82%B2" target="_blank" rel="noopener">フィードバックフォーム</a>からお寄せください。</p>
+  </div>
+
+<footer>
+  <p>© 2026 Ryo-Lab. はぐ育 開発チーム</p>
+  <p>本アプリの情報は一般的な目安であり、医療・法律・各種制度に関する専門家の助言に代わるものではありません。</p>
+</footer>
+
+<script src="../assets/js/subsite.js"></script>
+</body>
+</html>

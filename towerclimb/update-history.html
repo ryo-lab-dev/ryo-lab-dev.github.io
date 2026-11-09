@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>更新履歴 — タワクライム</title>
+  <script src="https://cdn.tailwindcss.com"></script>
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Syne:wght@400;600;700;800&family=Noto+Sans+JP:wght@300;400;500;700&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="../assets/css/towerclimb.css" />
+  <link rel="stylesheet" href="../assets/css/subsite.css" />
+
+  <!-- SEO -->
+  <meta name="description" content="タワクライム の更新履歴ページ。各バージョンで追加・変更・修正した内容を確認できます。">
+  <link rel="canonical" href="https://ryo-lab.dev/towerclimb/update-history.html">
+  <meta property="og:type" content="website">
+  <meta property="og:url" content="https://ryo-lab.dev/towerclimb/update-history.html">
+  <meta property="og:title" content="更新履歴 — タワクライム">
+  <meta property="og:description" content="タワクライム の更新履歴ページ。各バージョンで追加・変更・修正した内容を確認できます。">
+  <meta property="og:site_name" content="Ryo-Lab">
+  <meta property="og:locale" content="ja_JP">
+  <style>:root{--uh-text:#ede7da;--uh-sub:#9a93a8;}</style>
+  <link rel="stylesheet" href="../assets/css/update-history.css" />
+</head>
+<body>
+
+<nav>
+  <div class="nav-inner">
+    <a href="./" class="nav-logo">
+      <div class="nav-logo-dot"></div>
+      <span class="nav-logo-text">タワクライム</span>
+    </a>
+    <div class="nav-links">
+      <a href="./">Home</a>
+      <a href="./privacy-policy.html">Privacy Policy</a>
+      <a href="./terms.html">利用規約</a>
+      <a href="./update-history.html" class="active">更新履歴</a>
+    </div>
+    <button class="nav-hamburger" id="navToggle" aria-label="メニューを開く">
+      <span></span><span></span><span></span>
+    </button>
+  </div>
+</nav>
+
+  <div class="uh-wrap">
+    <div class="uh-header reveal">
+      <p class="uh-tag">Changelog</p>
+      <h1 class="uh-title">更新履歴</h1>
+      <p class="uh-sub">タワクライム の変更内容を、最新バージョンから順に表示しています。</p>
+    </div>
+
+    <div class="uh-timeline reveal">
+      <div class="uh-item latest">
+        <span class="uh-badge">v1.1.1 — Latest</span>
+        <p class="uh-summary">守護精霊やデイリー報酬など、遊びの幅を大きく広げました。</p>
+        <ul class="uh-list">
+          <li><span class="uh-kind uh-kind-add">追加</span>守護精霊：7種類を集めて能力アップ。転生の魂で召喚もできます。</li>
+          <li><span class="uh-kind uh-kind-add">追加</span>デイリー宝箱：毎日、守護精霊がもらえます。</li>
+          <li><span class="uh-kind uh-kind-add">追加</span>装備に系統が付き、そろえると組み合わせ効果が発動します。効果とステータスの内訳も確認できます。</li>
+          <li><span class="uh-kind uh-kind-add">追加</span>攻撃速度・連撃、ボスへの再挑戦に対応しました。</li>
+          <li><span class="uh-kind uh-kind-add">追加</span>塔の実績を1000階まで追加。大きな数は見やすい表記になりました。</li>
+          <li><span class="uh-kind uh-kind-add">追加</span>装備の絞り込み・並べ替え、レア以下の自動分解に対応しました。</li>
+          <li><span class="uh-kind uh-kind-chg">変更</span>バナー広告を画面上部へ移し、誤タップを軽減しました。</li>
+          <li><span class="uh-kind uh-kind-chg">変更</span>転生の魂の増え方と、深い階の敵の強さを調整しました。</li>
+          <li><span class="uh-kind uh-kind-imp">改善</span>アプリが裏に回ったら、戦闘と効果音を止めるようにしました。</li>
+          <li><span class="uh-kind uh-kind-fix">修正</span>装備の分解中に、一覧がずれる問題などを修正しました。</li>
+        </ul>
+      </div>
+      <div class="uh-item">
+        <span class="uh-badge">v1.0.3 — 初回リリース</span>
+        <p class="uh-summary">勇者が無限の塔を自動で登る、ドット絵の放置RPGを公開しました。</p>
+        <ul class="uh-list">
+          <li><span class="uh-kind uh-kind-add">追加</span>放置で進行：アプリを閉じている間も金貨がたまります（最大8時間ぶん）。</li>
+          <li><span class="uh-kind uh-kind-add">追加</span>装備で姿が変わる：武器・鎧・お守りの3枠。拾った装備で勇者の見た目が変わります。</li>
+          <li><span class="uh-kind uh-kind-add">追加</span>今日の塔：毎日、全員が同じ条件で30階の塔に挑戦。結果は共有できます。</li>
+          <li><span class="uh-kind uh-kind-add">追加</span>転生：魂を集めて、さらに深くまで登れます。</li>
+          <li><span class="uh-kind uh-kind-add">追加</span>実績と記録：達成すると装備や強化がもらえ、これまでの歩みも見返せます。</li>
+          <li><span class="uh-kind uh-kind-add">追加</span>ログインは任意：ログインすると、複数の端末で続きから遊べます。</li>
+        </ul>
+      </div>
+    </div>
+
+    <p class="uh-note">これより前の更新は省略しています。</p>
+
+    <p class="uh-feedback">機能のご要望・不具合のご報告は、<a href="https://docs.google.com/forms/d/e/1FAIpQLSeW-2tZ9hh2iZBNz5ey7hOnE25kG6H54r8kWb8A48csVV_YaQ/viewform?usp=pp_url&amp;entry.69074212=%E3%82%BF%E3%83%AF%E3%82%AF%E3%83%A9%E3%82%A4%E3%83%A0" target="_blank" rel="noopener">フィードバックフォーム</a>からお寄せください。</p>
+  </div>
+
+<footer>
+  <p>© 2026 Ryo-Lab. タワクライム 開発チーム</p>
+</footer>
+
+<script src="../assets/js/subsite.js"></script>
+</body>
+</html>
