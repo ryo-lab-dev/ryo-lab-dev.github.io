@@ -1,6 +1,6 @@
 # お問い合わせ受付 Worker（ryo-lab-contact）
 
-ryo-lab.dev のお問い合わせフォーム（`/contact.html`、`/<app>/contact.html`）から送られた内容を受け取り、運営者宛てにメールで転送する Cloudflare Worker です。
+ryo-lab.dev のお問い合わせフォーム（`/contact.html`、`/<app>/contact.html`）と、CloudKata の問題報告フォーム（`/cloudkata/report.html`）から送られた内容を受け取り、運営者宛てにメールで転送する Cloudflare Worker です。
 
 - 受付 URL：`https://api.ryo-lab.dev/contact`
 - 送信の流れ：Origin の確認 → サイズと形式のチェック → ハニーポット → 入力の検証 → Turnstile のサーバー側検証 → Email Routing の確認済み宛先へ送信
@@ -89,3 +89,11 @@ npm test        # node --test（追加のパッケージは不要）
 - メールアドレスを必須にする種別を変えるときは、`src/validate.js` の `EMAIL_REQUIRED_CATEGORIES` と `assets/js/contact-form.js` の同名の定数を揃える
 - アプリを追加するときは、`src/validate.js` の `APPS` と、そのアプリの `contact.html`（`data-app`）の両方に追加する
 - アプリ内からフォームを開くときは、`contact.html?os=Android&version=1.2.3` のように渡すと、端末情報が事前に入る。データ削除の依頼では `&category=deletion` も付けられる
+
+### CloudKata の問題報告（`form: 'problem'`）
+
+- ページ：`/cloudkata/report.html`（アプリの回答画面から開く前提のため `noindex`）
+- アプリからは `report.html?qid=<問題ID>&os=Android&version=1.2.3` で開く。正しい形式の `qid` は自動で入り、書き換えできない表示になる
+- 送る項目：`form`（`problem`）、`app`（`cloudkata` のみ）、`problemId`（必須・英数字と `-` `_`、64 文字まで）、`issue`（必須）、`detail`（任意）、`source`（任意・1 行）、`email`（任意）、`environment`（任意）、`website`、`token`
+- 件名は `[CloudKata] 問題の指摘 <問題ID>：<指摘の種類>`。Gmail のフィルタは「問題の指摘」で絞り込める
+- 指摘の種類を変えるときは、`src/validate.js` の `PROBLEM_ISSUES` と `assets/js/contact-form.js` の同名の定数を揃える

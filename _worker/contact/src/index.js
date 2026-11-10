@@ -1,7 +1,7 @@
-// ryo-lab.dev のお問い合わせフォームを受け付ける Cloudflare Worker
+// ryo-lab.dev のお問い合わせフォーム（通常の問い合わせ・CloudKata の問題報告）を受け付ける Cloudflare Worker
 // 流れ: Origin 確認 → サイズ・形式チェック → ハニーポット → 入力検証 → Turnstile 検証 → 自分宛てにメール送信
 
-import { validateSubmission, isHoneypotFilled, buildMail } from './validate.js';
+import { validateForm, isHoneypotFilled, buildFormMail } from './validate.js';
 
 export const SITEVERIFY_URL = 'https://challenges.cloudflare.com/turnstile/v0/siteverify';
 export const TURNSTILE_ACTION = 'contact';
@@ -117,7 +117,7 @@ export async function handleRequest(request, env, deps) {
   // bot には成功に見せて、何もしない
   if (isHoneypotFilled(input)) return json(200, { ok: true }, allowedOrigin);
 
-  const result = validateSubmission(input);
+  const result = validateForm(input);
   if (!result.ok) return json(400, { ok: false, error: result.error }, allowedOrigin);
 
   const verified = await verifyTurnstile({
@@ -129,7 +129,7 @@ export async function handleRequest(request, env, deps) {
   });
   if (!verified) return json(403, { ok: false, error: 'verification_failed' }, allowedOrigin);
 
-  const { subject, text } = buildMail(result.value, {
+  const { subject, text } = buildFormMail(result.kind, result.value, {
     receivedAt: deps.now(),
     userAgent: request.headers.get('User-Agent'),
   });

@@ -117,3 +117,10 @@
 @media (max-width: 600px) {
   .contact-submit { justify-self: stretch; }
 }
+
+/* アプリから渡された値（問題 ID など）は読み取り専用で表示する */
+.contact-form input[readonly] {
+  opacity: 0.75;
+  cursor: default;
+  font-family: 'JetBrains Mono', ui-monospace, monospace;
+}
