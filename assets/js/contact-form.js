@@ -7,7 +7,7 @@
 
   var ENDPOINT = 'https://api.ryo-lab.dev/contact';
   // Turnstile のサイトキー（公開前提の値）。空のあいだはフォームを「準備中」として送信させない
-  var TURNSTILE_SITE_KEY = '';
+  var TURNSTILE_SITE_KEY = '0x4AAAAAAF7VXWSBaB5m02Iq';
   var TURNSTILE_SCRIPT = 'https://challenges.cloudflare.com/turnstile/v0/api.js?render=explicit&onload=__ryoLabTurnstileReady';
 
   var CATEGORIES = [
