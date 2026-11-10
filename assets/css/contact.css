@@ -91,7 +91,8 @@
   border: 0;
   border-radius: 999px;
   background: linear-gradient(135deg, var(--primary, #5b5ce2), var(--primary-light, #9366e8));
-  color: #fff;
+  /* ボタン色が明るいアプリ（黄色系など）は、ページ側で --contact-on-primary を濃い色にする */
+  color: var(--contact-on-primary, #fff);
   font: inherit;
   font-weight: 700;
   cursor: pointer;
