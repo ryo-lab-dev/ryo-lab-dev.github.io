@@ -11,17 +11,21 @@
   var TURNSTILE_SCRIPT = 'https://challenges.cloudflare.com/turnstile/v0/api.js?render=explicit&onload=__ryoLabTurnstileReady';
 
   var CATEGORIES = [
-    ['bug', '不具合の報告'],
+    ['feedback', 'アプリの感想・応援'],
     ['request', '機能のご要望'],
+    ['bug', '不具合の報告'],
     ['question', '使い方のご質問'],
     ['deletion', 'データ削除のご依頼'],
     ['other', 'その他'],
   ];
   var LIMITS = { email: 254, environment: 200, message: 4000 };
+  // メールアドレスが必須になる種別（Worker の EMAIL_REQUIRED_CATEGORIES と揃える）
+  var EMAIL_REQUIRED_CATEGORIES = ['deletion'];
 
   var ERROR_MESSAGES = {
     invalid_category: 'お問い合わせの種類を選んでください。',
-    invalid_email: 'メールアドレスを正しく入力してください。',
+    invalid_email: 'メールアドレスの形式が正しくありません。返信が不要な場合は空欄のままで送れます。',
+    email_required: 'データ削除のご依頼には、アプリでログインしたアカウントのメールアドレスが必要です。',
     invalid_message: '内容を入力してください（' + LIMITS.message + '文字まで）。',
     invalid_environment: '端末・バージョンは1行・' + LIMITS.environment + '文字までで入力してください。',
     missing_token: '下の確認が終わるまでお待ちください。',
@@ -59,7 +63,7 @@
   CATEGORIES.forEach(function (c) { category.appendChild(el('option', { value: c[0], text: c[1] })); });
   if (CATEGORIES.some(function (c) { return c[0] === params.get('category'); })) category.value = params.get('category');
 
-  var email = el('input', { id: 'cf-email', name: 'email', type: 'email', required: '', maxlength: String(LIMITS.email), autocomplete: 'email', inputmode: 'email', placeholder: 'example@example.com' });
+  var email = el('input', { id: 'cf-email', name: 'email', type: 'email', maxlength: String(LIMITS.email), autocomplete: 'email', inputmode: 'email', placeholder: 'example@example.com' });
 
   var environment = el('input', { id: 'cf-environment', name: 'environment', type: 'text', maxlength: String(LIMITS.environment), autocomplete: 'off', placeholder: '例：Android 15 / バージョン 1.2.3' });
   var prefill = [params.get('os'), params.get('version') ? 'バージョン ' + params.get('version') : '']
@@ -73,9 +77,33 @@
   var honeypot = el('input', { name: 'website', type: 'text', tabindex: '-1', autocomplete: 'off' });
   var honeypotWrap = el('div', { class: 'contact-hp', 'aria-hidden': 'true' }, [el('label', { text: 'Website' }, [honeypot])]);
 
+  // メールアドレス欄は種別によって必須・任意が切り替わるため、個別に組み立てる
+  var EMAIL_HINT_OPTIONAL = '個別に回答が必要な場合のみご記入ください。通常は開発の参考にさせていただき、返信はいたしません。';
+  var EMAIL_HINT_REQUIRED = 'データ削除のご依頼では、アプリでログインしたアカウントのメールアドレスをご記入ください。本人確認のうえ対応します。';
+  var emailBadge = el('span', { class: 'contact-badge', text: '任意' });
+  var emailHint = el('p', { class: 'contact-hint', text: EMAIL_HINT_OPTIONAL });
+  var emailField = el('div', { class: 'contact-field' }, [
+    el('label', { for: 'cf-email' }, [document.createTextNode('返信用のメールアドレス'), emailBadge]),
+    email,
+    emailHint,
+  ]);
+
+  function isEmailRequired() {
+    return EMAIL_REQUIRED_CATEGORIES.indexOf(category.value) !== -1;
+  }
+  function syncEmailRequirement() {
+    var required = isEmailRequired();
+    email.required = required;
+    emailBadge.textContent = required ? '必須' : '任意';
+    emailBadge.classList.toggle('is-required', required);
+    emailHint.textContent = required ? EMAIL_HINT_REQUIRED : EMAIL_HINT_OPTIONAL;
+  }
+  category.addEventListener('change', syncEmailRequirement);
+  syncEmailRequirement();
+
   var turnstileBox = el('div', { class: 'contact-turnstile' });
   var note = el('p', { class: 'contact-note' }, [
-    document.createTextNode('いただいた内容とメールアドレスは、返信と対応のためだけに使います。詳しくは'),
+    document.createTextNode('いただいた内容とメールアドレスは、アプリの改善と返信・対応のためだけに使います。詳しくは'),
     el('a', { href: privacyHref, text: 'プライバシーポリシー' }),
     document.createTextNode('をご確認ください。'),
   ]);
@@ -84,7 +112,7 @@
 
   var form = el('form', { class: 'contact-form', novalidate: '' }, [
     field('cf-category', 'お問い合わせの種類', true, category),
-    field('cf-email', 'メールアドレス', true, email, '返信はこのアドレスにお送りします。'),
+    emailField,
     field('cf-environment', '端末・アプリのバージョン', false, environment, '不具合のときは書いていただけると、調査が早くなります。'),
     field('cf-message', '内容', true, message),
     counter,
@@ -95,9 +123,10 @@
     status,
   ]);
 
+  var doneText = el('p');
   var done = el('div', { class: 'contact-done', hidden: '' }, [
     el('p', { class: 'contact-done-title', text: '送信しました' }),
-    el('p', { text: 'お問い合わせありがとうございます。内容を確認のうえ、必要に応じてご入力のメールアドレスに返信します。返信まで数日かかる場合があります。迷惑メールフォルダもあわせてご確認ください。' }),
+    doneText,
   ]);
 
   root.textContent = '';
@@ -151,7 +180,9 @@
     if (submit.disabled) return;
 
     if (!category.value) return setStatus(ERROR_MESSAGES.invalid_category, true), category.focus();
-    if (!email.checkValidity() || !email.value.trim()) return setStatus(ERROR_MESSAGES.invalid_email, true), email.focus();
+    var emailValue = email.value.trim();
+    if (!emailValue && isEmailRequired()) return setStatus(ERROR_MESSAGES.email_required, true), email.focus();
+    if (emailValue && !email.checkValidity()) return setStatus(ERROR_MESSAGES.invalid_email, true), email.focus();
     if (!message.value.trim()) return setStatus(ERROR_MESSAGES.invalid_message, true), message.focus();
     if (!token) return setStatus(ERROR_MESSAGES.missing_token, true);
 
@@ -167,7 +198,7 @@
       body: JSON.stringify({
         app: app,
         category: category.value,
-        email: email.value.trim(),
+        email: emailValue,
         environment: environment.value.trim(),
         message: message.value,
         website: honeypot.value,
@@ -179,6 +210,9 @@
       })
       .then(function (result) {
         if (result.ok && result.body.ok) {
+          doneText.textContent = emailValue
+            ? 'お問い合わせありがとうございます。内容を確認のうえ、必要に応じてご入力のメールアドレスに返信します。返信まで数日かかる場合があります。迷惑メールフォルダもあわせてご確認ください。'
+            : 'お問い合わせありがとうございます。いただいた内容は、今後の開発の参考にさせていただきます。';
           form.hidden = true;
           done.hidden = false;
           done.scrollIntoView({ behavior: 'smooth', block: 'center' });

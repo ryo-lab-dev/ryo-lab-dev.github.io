@@ -138,7 +138,8 @@ export async function handleRequest(request, env, deps) {
     await env.EMAIL.send({
       to: env.CONTACT_TO,
       from: { email: env.CONTACT_FROM, name: SENDER_NAME },
-      replyTo: result.value.email,
+      // メールアドレスが未記入のときは Reply-To を付けない（返信すると自分宛てになるだけ）
+      ...(result.value.email ? { replyTo: result.value.email } : {}),
       subject,
       text,
     });

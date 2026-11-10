@@ -17,12 +17,16 @@ export const APPS = Object.freeze({
 
 /** 問い合わせの種別 */
 export const CATEGORIES = Object.freeze({
-  bug: '不具合の報告',
+  feedback: 'アプリの感想・応援',
   request: '機能のご要望',
+  bug: '不具合の報告',
   question: '使い方のご質問',
   deletion: 'データ削除のご依頼',
   other: 'その他',
 });
+
+/** メールアドレスが必須の種別（本人確認と返信が必要なもの） */
+export const EMAIL_REQUIRED_CATEGORIES = Object.freeze(['deletion']);
 
 export const LIMITS = Object.freeze({
   message: 4000,
@@ -58,9 +62,20 @@ export function validateSubmission(input) {
   const category = asTrimmedString(input.category);
   if (!category || !Object.hasOwn(CATEGORIES, category)) return { ok: false, error: 'invalid_category' };
 
-  const email = asTrimmedString(input.email);
-  if (!email || email.length > LIMITS.email || LINE_BREAKS.test(email) || !EMAIL_PATTERN.test(email)) {
-    return { ok: false, error: 'invalid_email' };
+  // メールアドレスは任意。ただし入力された場合は形式を検証し、削除依頼では必須にする
+  let email = '';
+  if (input.email !== undefined && input.email !== null && input.email !== '') {
+    const rawEmail = asTrimmedString(input.email);
+    if (rawEmail === null) return { ok: false, error: 'invalid_email' };
+    if (rawEmail !== '') {
+      if (rawEmail.length > LIMITS.email || LINE_BREAKS.test(rawEmail) || !EMAIL_PATTERN.test(rawEmail)) {
+        return { ok: false, error: 'invalid_email' };
+      }
+      email = rawEmail;
+    }
+  }
+  if (!email && EMAIL_REQUIRED_CATEGORIES.includes(category)) {
+    return { ok: false, error: 'email_required' };
   }
 
   const rawMessage = typeof input.message === 'string' ? input.message : null;
@@ -107,7 +122,7 @@ export function buildMail(value, meta) {
   const text = [
     `アプリ: ${appName}`,
     `種別: ${categoryName}`,
-    `返信先: ${value.email}`,
+    `返信先: ${value.email || '（未記入・返信不要）'}`,
     `端末・バージョン: ${value.environment || '（未記入）'}`,
     `受付日時: ${formatJst(meta.receivedAt)}`,
     `ブラウザ: ${userAgent || '（不明）'}`,
@@ -117,7 +132,7 @@ export function buildMail(value, meta) {
     '',
     '---',
     'このメールは ryo-lab.dev のお問い合わせフォームから自動送信されました。',
-    '返信すると、上記の返信先に届きます。',
+    value.email ? '返信すると、上記の返信先に届きます。' : 'メールアドレスの記入がないため、返信はできません。',
   ].join('\n');
 
   return { subject, text };

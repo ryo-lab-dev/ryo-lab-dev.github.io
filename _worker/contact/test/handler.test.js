@@ -171,3 +171,22 @@ test('送信失敗は 502 を返し、本文をログに出さない', async () 
   assert.match(logs[0], /E_SENDER_NOT_VERIFIED/);
   assert.doesNotMatch(logs[0], /user@example.com|使い方/);
 });
+
+test('メール未記入なら Reply-To を付けずに送信する', async () => {
+  const { env, sent } = makeEnv();
+  const { fetchFn } = siteverify(okVerify);
+  const res = await handleRequest(post({ ...validBody, email: '' }), env, deps(fetchFn));
+  assert.equal(res.status, 200);
+  assert.equal(sent.length, 1);
+  assert.equal('replyTo' in sent[0], false);
+});
+
+test('削除依頼でメール未記入なら 400 を返し、Turnstile を呼ばない', async () => {
+  const { env, sent } = makeEnv();
+  const { calls, fetchFn } = siteverify(okVerify);
+  const res = await handleRequest(post({ ...validBody, category: 'deletion', email: '' }), env, deps(fetchFn));
+  assert.equal(res.status, 400);
+  assert.equal((await res.json()).error, 'email_required');
+  assert.equal(calls.length, 0);
+  assert.equal(sent.length, 0);
+});
