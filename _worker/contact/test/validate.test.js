@@ -24,7 +24,7 @@ test('未知のアプリ・種別は拒否する', () => {
 });
 
 test('メールアドレスの改行や不正形式は拒否する', () => {
-  for (const email of ['a@b.com\nBcc: x@y.com', 'no-at-mark', 'a@b', '', 'a b@c.com']) {
+  for (const email of ['a@b.com\nBcc: x@y.com', 'no-at-mark', 'a@b', 'a b@c.com', 123]) {
     assert.equal(validateSubmission({ ...valid(), email }).error, 'invalid_email', email);
   }
   assert.equal(validateSubmission({ ...valid(), email: `${'a'.repeat(250)}@b.co` }).error, 'invalid_email');
@@ -68,4 +68,28 @@ test('メールの件名と本文を組み立てる', () => {
   assert.match(mail.text, /受付日時: 2026-11-10 21:00 \(JST\)/);
   assert.match(mail.text, /ブラウザ: UA  X/);
   assert.match(mail.text, /--- 本文 ---\n保存できません/);
+});
+
+test('メールアドレスは任意（未記入・空白・null は空文字に正規化）', () => {
+  for (const email of [undefined, null, '', '   ']) {
+    const result = validateSubmission({ ...valid(), email });
+    assert.equal(result.ok, true, String(email));
+    assert.equal(result.value.email, '');
+  }
+});
+
+test('データ削除の依頼ではメールアドレスを必須にする', () => {
+  assert.equal(validateSubmission({ ...valid(), category: 'deletion', email: '' }).error, 'email_required');
+  assert.equal(validateSubmission({ ...valid(), category: 'deletion' }).ok, true);
+});
+
+test('感想・応援の種別を受け付ける', () => {
+  assert.equal(validateSubmission({ ...valid(), category: 'feedback', email: '' }).ok, true);
+});
+
+test('メール未記入時は本文に返信不可と書く', () => {
+  const { value } = validateSubmission({ ...valid(), email: '' });
+  const mail = buildMail(value, { receivedAt: new Date('2026-11-10T12:00:00Z') });
+  assert.match(mail.text, /返信先: （未記入・返信不要）/);
+  assert.match(mail.text, /返信はできません/);
 });
