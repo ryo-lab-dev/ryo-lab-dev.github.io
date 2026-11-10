@@ -1,0 +1,119 @@
+/* ============================================================
+   contact.css — お問い合わせフォーム（全アプリ共通）
+   各アプリの CSS の後に読み込む。--primary / --primary-light / --glass-bg / --glass-border を使い、
+   未定義のページ（ルートなど）でも崩れないよう既定値を持たせる。
+   ============================================================ */
+
+.contact-wrap {
+  width: min(100%, 680px);
+  margin: 0 auto 4rem;
+}
+
+.contact-form {
+  display: grid;
+  gap: 1.25rem;
+  padding: clamp(1.25rem, 4vw, 2rem);
+  border: 1px solid var(--glass-border, rgba(120, 120, 140, 0.25));
+  border-radius: 16px;
+  background: var(--glass-bg, rgba(255, 255, 255, 0.7));
+}
+
+.contact-field { display: grid; gap: 0.45rem; }
+
+.contact-field label {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  font-size: 0.9rem;
+  font-weight: 600;
+  color: inherit;
+}
+
+.contact-badge {
+  padding: 0.05rem 0.45rem;
+  border-radius: 999px;
+  border: 1px solid currentColor;
+  font-size: 0.68rem;
+  font-weight: 500;
+  opacity: 0.6;
+}
+.contact-badge.is-required {
+  border-color: var(--primary, #5b5ce2);
+  color: var(--primary-light, var(--primary, #5b5ce2));
+  opacity: 1;
+}
+
+.contact-form input,
+.contact-form select,
+.contact-form textarea {
+  width: 100%;
+  padding: 0.75rem 0.9rem;
+  border: 1px solid var(--glass-border, rgba(120, 120, 140, 0.35));
+  border-radius: 10px;
+  background: color-mix(in srgb, currentColor 4%, transparent);
+  color: inherit;
+  font: inherit;
+  font-size: 1rem; /* 16px 未満だと iOS Safari が入力時に拡大する */
+  line-height: 1.6;
+}
+.contact-form select option { color: #16182b; background: #fff; }
+.contact-form textarea { resize: vertical; min-height: 10rem; }
+
+.contact-form input:focus-visible,
+.contact-form select:focus-visible,
+.contact-form textarea:focus-visible {
+  outline: 2px solid var(--primary, #5b5ce2);
+  outline-offset: 2px;
+  border-color: transparent;
+}
+
+.contact-hint { margin: 0; font-size: 0.78rem; opacity: 0.7; }
+.contact-counter { margin-top: -0.9rem; text-align: right; }
+
+/* ハニーポット：画面外に置き、支援技術からも隠す */
+.contact-hp {
+  position: absolute !important;
+  left: -10000px !important;
+  width: 1px;
+  height: 1px;
+  overflow: hidden;
+}
+
+.contact-turnstile { min-height: 65px; }
+
+.contact-note { margin: 0; font-size: 0.8rem; line-height: 1.8; opacity: 0.8; }
+.contact-note a { color: inherit; text-decoration: underline; }
+
+.contact-submit {
+  justify-self: start;
+  min-width: 10rem;
+  padding: 0.8rem 1.6rem;
+  border: 0;
+  border-radius: 999px;
+  background: linear-gradient(135deg, var(--primary, #5b5ce2), var(--primary-light, #9366e8));
+  color: #fff;
+  font: inherit;
+  font-weight: 700;
+  cursor: pointer;
+  transition: opacity 0.2s, transform 0.2s;
+}
+.contact-submit:hover:not(:disabled) { transform: translateY(-1px); }
+.contact-submit:disabled { opacity: 0.5; cursor: not-allowed; }
+
+.contact-status { margin: 0; min-height: 1.4em; font-size: 0.85rem; }
+.contact-status.is-error { color: #e5484d; font-weight: 600; }
+
+.contact-done {
+  padding: 2rem;
+  border: 1px solid var(--glass-border, rgba(120, 120, 140, 0.25));
+  border-radius: 16px;
+  background: var(--glass-bg, rgba(255, 255, 255, 0.7));
+  line-height: 1.9;
+}
+.contact-done-title { margin: 0 0 0.5rem; font-size: 1.2rem; font-weight: 700; }
+
+.contact-noscript { padding: 1rem; border-radius: 10px; border: 1px solid currentColor; }
+
+@media (max-width: 600px) {
+  .contact-submit { justify-self: stretch; }
+}

@@ -8,3 +8,8 @@ AGENTS.md
 *.log
 .worktrees/
 docs/superpowers/
+
+# お問い合わせ Worker
+_worker/**/node_modules/
+_worker/**/.wrangler/
+_worker/**/.dev.vars
