@@ -1,0 +1,10 @@
+{
+  "name": "ryo-lab-contact",
+  "private": true,
+  "type": "module",
+  "description": "ryo-lab.dev のお問い合わせフォームを受け付ける Cloudflare Worker",
+  "scripts": {
+    "test": "node --test",
+    "deploy": "npx wrangler deploy"
+  }
+}

@@ -1,0 +1,22 @@
+// お問い合わせ受付 Worker の設定
+// 秘密値（TURNSTILE_SECRET・CONTACT_TO）はここに書かず、`npx wrangler secret put` で登録する
+{
+  "$schema": "./node_modules/wrangler/config-schema.json",
+  "name": "ryo-lab-contact",
+  "main": "src/index.js",
+  "compatibility_date": "2026-10-01",
+
+  // api.ryo-lab.dev を Worker のカスタムドメインとして使う（DNS レコードは Cloudflare が自動作成）
+  "routes": [{ "pattern": "api.ryo-lab.dev", "custom_domain": true }],
+  // *.workers.dev の URL は使わない（受付口を 1 つに絞る）
+  "workers_dev": false,
+
+  // Email Routing の確認済み宛先にだけ送る。送信元は noreply@ryo-lab.dev に固定
+  "send_email": [{ "name": "EMAIL", "allowed_sender_addresses": ["noreply@ryo-lab.dev"] }],
+
+  "vars": {
+    "ALLOWED_ORIGINS": "https://ryo-lab.dev",
+    "TURNSTILE_HOSTNAMES": "ryo-lab.dev",
+    "CONTACT_FROM": "noreply@ryo-lab.dev"
+  }
+}
