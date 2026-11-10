@@ -84,6 +84,8 @@ cd _worker/contact
 npm test        # node --test（追加のパッケージは不要）
 ```
 
-- フォームが送る項目：`app`（固定）、`category`、`email`、`environment`（任意）、`message`、`website`（ハニーポット）、`token`（Turnstile）
+- フォームが送る項目：`app`（固定）、`category`、`email`（任意。データ削除の依頼 `deletion` のときだけ必須）、`environment`（任意）、`message`、`website`（ハニーポット）、`token`（Turnstile）
+- メールアドレスが未記入のときは Reply-To を付けずに送り、本文に「返信できない」旨を書く
+- メールアドレスを必須にする種別を変えるときは、`src/validate.js` の `EMAIL_REQUIRED_CATEGORIES` と `assets/js/contact-form.js` の同名の定数を揃える
 - アプリを追加するときは、`src/validate.js` の `APPS` と、そのアプリの `contact.html`（`data-app`）の両方に追加する
 - アプリ内からフォームを開くときは、`contact.html?os=Android&version=1.2.3` のように渡すと、端末情報が事前に入る。データ削除の依頼では `&category=deletion` も付けられる
