@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>お問い合わせ — タワクライム</title>
+  <script src="https://cdn.tailwindcss.com"></script>
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Syne:wght@400;600;700;800&family=Noto+Sans+JP:wght@300;400;500;700&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="../assets/css/towerclimb.css" />
+  <link rel="stylesheet" href="../assets/css/subsite.css" />
+
+  <!-- SEO -->
+  <meta name="description" content="タワクライム へのお問い合わせページ。ご意見・ご要望、不具合の報告、使い方のご質問、データ削除のご依頼などを受け付けています。">
+  <link rel="canonical" href="https://ryo-lab.dev/towerclimb/contact.html">
+  <meta property="og:type" content="website">
+  <meta property="og:url" content="https://ryo-lab.dev/towerclimb/contact.html">
+  <meta property="og:title" content="お問い合わせ — タワクライム">
+  <meta property="og:description" content="タワクライム へのお問い合わせページ。ご意見・ご要望、不具合の報告、使い方のご質問、データ削除のご依頼などを受け付けています。">
+  <meta property="og:site_name" content="Ryo-Lab">
+  <meta property="og:locale" content="ja_JP">
+  <style>:root{--uh-text:#ede7da;--uh-sub:#9a93a8;}</style>
+  <link rel="stylesheet" href="../assets/css/update-history.css" />
+  <link rel="stylesheet" href="../assets/css/contact.css" />
+  <style>:root{--contact-on-primary:#1a1a2e;}</style>
+</head>
+<body>
+
+<nav>
+  <div class="nav-inner">
+    <a href="./" class="nav-logo">
+      <div class="nav-logo-dot"></div>
+      <span class="nav-logo-text">タワクライム</span>
+    </a>
+    <div class="nav-links">
+      <a href="./">Home</a>
+      <a href="./privacy-policy.html">Privacy Policy</a>
+      <a href="./terms.html">利用規約</a>
+      <a href="./update-history.html">更新履歴</a>
+      <a href="./contact.html" class="active">お問い合わせ</a>
+    </div>
+    <button class="nav-hamburger" id="navToggle" aria-label="メニューを開く">
+      <span></span><span></span><span></span>
+    </button>
+  </div>
+</nav>
+
+  <div class="uh-wrap">
+    <div class="uh-header reveal">
+      <p class="uh-tag">Contact</p>
+      <h1 class="uh-title">お問い合わせ</h1>
+      <p class="uh-sub">タワクライム へのご意見・ご要望、不具合のご報告はこちらから。</p>
+    </div>
+
+    <div class="contact-wrap">
+      <div id="contact-root" data-app="towerclimb" data-privacy="./privacy-policy.html">
+        <noscript><p class="contact-noscript">お問い合わせフォームの送信には JavaScript を有効にしてください。</p></noscript>
+      </div>
+    </div>
+  </div>
+
+<footer>
+  <p>© 2026 Ryo-Lab. タワクライム 開発チーム</p>
+</footer>
+
+<script src="../assets/js/subsite.js"></script>
+<script src="../assets/js/contact-form.js"></script>
+</body>
+</html>
