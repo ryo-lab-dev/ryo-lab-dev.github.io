@@ -52,7 +52,7 @@
   <div class="doc-header reveal">
     <p class="doc-tag">Legal</p>
     <h1 class="doc-title">プライバシーポリシー</h1>
-    <p class="doc-updated">最終更新日: 2026年11月10日</p>
+    <p class="doc-updated">最終更新日: 2026年11月15日</p>
   </div>
 
   <p style="color:#6b6580;font-size:0.9rem;margin-bottom:2.5rem;" class="reveal">
@@ -113,14 +113,16 @@
         <tr><td>Sign in with Apple（iOS）</td><td>Apple Inc.</td><td>ログイン時の認証情報（氏名・メールアドレス）。アカウントを削除するときは、Apple 側のログインの許可（トークン）の取り消しの依頼</td><td>Apple でのログイン、アカウント削除時の連携の解除</td></tr>
         <tr><td>Firebase Analytics / Crashlytics</td><td>Google LLC</td><td>利用状況、クラッシュ情報</td><td>改善、不具合の調査</td></tr>
         <tr><td>Google AdMob</td><td>Google LLC</td><td>広告 ID、端末情報 など</td><td>広告の配信</td></tr>
+        <tr><td>名前の AI 提案（Claude API）</td><td>Anthropic, PBC（米国）</td><td>名前の提案を使うときに入力した条件（性別・苗字・込めたい願い・使いたい漢字・オプションの選択）、すでにある名前候補と「避けたい名前」の名前の一覧。ニックネーム・メールアドレス・ユーザー ID は送りません</td><td>名前の提案の作成</td></tr>
         </tbody>
       </table></div>
     <ul>
       <li>法令に基づく場合を除き、上記以外の第三者に、利用者の情報を提供しません。</li>
       <li>授乳・ミルクのリマインダーは、お使いの端末の中で通知されます。通知のための情報を、外部のサービスに送信しません。</li>
+      <li>名前の AI 提案は、利用者が「提案してもらう」を押したときだけ、上記の情報が Cloud Functions を通じて Anthropic に送信されます。<strong>苗字は保存せず、その 1 回の提案にだけ使います</strong>。Anthropic は、API 経由で送られた入力を、既定ではモデルの学習に使いません。送信された情報は、日本国外（米国など）で処理される場合があります。AI の提案は、有名人や事件の関係者と同じ名前にならないよう頼んでいますが、完全には判別できません。提案した名前を使うかどうかは、利用者ご自身で確認のうえ決めてください。1 日の利用回数を数えるため、ユーザー ID と日ごとの利用回数を保存します（7 日で自動的に削除されます）。</li>
       <li>Firebase App Check により、正規のアプリからの通信かどうかを確認するため、端末の認証情報（iOS は App Attest／DeviceCheck、Android は Play Integrity）が Google に送信されます。個人を特定する情報は含みません。</li>
       <li>入力したデータは、主に Google の日本（東京）のサーバーに保存されます。ログイン情報などの処理は、日本国外のサーバーで行われる場合があります。</li>
-      <li>上記の事業者（Google LLC・Apple Inc.）は米国の事業者です。米国の個人情報の保護に関する制度は、個人情報保護委員会の「<a href="https://www.ppc.go.jp/enforcement/infoprovision/laws/offshore_report_america/" target="_blank" rel="noopener">外国制度（アメリカ合衆国）</a>」で確認できます。各事業者は、それぞれのプライバシーポリシーやデータの取り扱いに関する規約に基づいて、情報を安全に管理するための措置を講じています。</li>
+      <li>上記の事業者（Google LLC・Apple Inc.・Anthropic, PBC）は米国の事業者です。米国の個人情報の保護に関する制度は、個人情報保護委員会の「<a href="https://www.ppc.go.jp/enforcement/infoprovision/laws/offshore_report_america/" target="_blank" rel="noopener">外国制度（アメリカ合衆国）</a>」で確認できます。各事業者は、それぞれのプライバシーポリシーやデータの取り扱いに関する規約に基づいて、情報を安全に管理するための措置を講じています。</li>
     </ul>
   </div>
 
