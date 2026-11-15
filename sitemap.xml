@@ -414,4 +414,41 @@
     <changefreq>yearly</changefreq>
     <priority>0.4</priority>
   </url>
+  <!-- 鉱山町の工房 -->
+  <url>
+    <loc>https://ryo-lab.dev/minetownworks/</loc>
+    <lastmod>2026-11-15</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://ryo-lab.dev/minetownworks/privacy-policy.html</loc>
+    <lastmod>2026-11-15</lastmod>
+    <changefreq>yearly</changefreq>
+    <priority>0.4</priority>
+  </url>
+  <url>
+    <loc>https://ryo-lab.dev/minetownworks/terms.html</loc>
+    <lastmod>2026-11-15</lastmod>
+    <changefreq>yearly</changefreq>
+    <priority>0.4</priority>
+  </url>
+  <url>
+    <loc>https://ryo-lab.dev/minetownworks/tokushoho.html</loc>
+    <lastmod>2026-11-15</lastmod>
+    <changefreq>yearly</changefreq>
+    <priority>0.4</priority>
+  </url>
+  <url>
+    <loc>https://ryo-lab.dev/minetownworks/update-history.html</loc>
+    <lastmod>2026-11-15</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.5</priority>
+  </url>
+  <url>
+    <loc>https://ryo-lab.dev/minetownworks/contact.html</loc>
+    <lastmod>2026-11-15</lastmod>
+    <changefreq>yearly</changefreq>
+    <priority>0.4</priority>
+  </url>
 </urlset>

@@ -1,0 +1,297 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>鉱山町の工房 — 掘って作って強くなる、ドット絵の鉱山町</title>
+  <script src="https://cdn.tailwindcss.com"></script>
+  <link rel="icon" href="../assets/minetownworks/icon.png" type="image/png" />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Syne:wght@400;600;700;800&family=Noto+Sans+JP:wght@300;400;500;700&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="../assets/css/minetownworks.css" />
+  <link rel="stylesheet" href="../assets/css/subsite.css" />
+  <!-- SEO -->
+  <meta name="description" content="鉱夫が鉱山を掘り、街で加工してツルハシを作る、ドット絵の放置ゲーム「鉱山町の工房」。閉じている間も鉱夫と街が働きます。">
+  <link rel="canonical" href="https://ryo-lab.dev/minetownworks/">
+  <meta property="og:type" content="website">
+  <meta property="og:url" content="https://ryo-lab.dev/minetownworks/">
+  <meta property="og:title" content="鉱山町の工房 — 掘って作って強くなる、ドット絵の鉱山町">
+  <meta property="og:description" content="鉱夫が鉱山を掘り、街で加工してツルハシを作る、ドット絵の放置ゲーム「鉱山町の工房」。閉じている間も鉱夫と街が働きます。">
+  <meta property="og:image" content="https://ryo-lab.dev/assets/ogp/ogp_minetownworks.png">
+  <meta property="og:site_name" content="Ryo-Lab">
+  <meta property="og:locale" content="ja_JP">
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:title" content="鉱山町の工房 — 掘って作って強くなる、ドット絵の鉱山町">
+  <meta name="twitter:description" content="鉱夫が鉱山を掘り、街で加工してツルハシを作る、ドット絵の放置ゲーム「鉱山町の工房」。閉じている間も鉱夫と街が働きます。">
+  <meta name="twitter:image" content="https://ryo-lab.dev/assets/ogp/ogp_minetownworks.png">
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "SoftwareApplication",
+    "name": "鉱山町の工房",
+    "alternateName": "Mine Town Works",
+    "operatingSystem": "Android",
+    "applicationCategory": "GameApplication",
+    "description": "鉱夫が鉱山を掘り、街の製錬所・鍛造所で加工してツルハシを作る、ドット絵の放置ゲーム。",
+    "url": "https://ryo-lab.dev/minetownworks/",
+    "offers": { "@type": "Offer", "price": "0", "priceCurrency": "JPY" },
+    "author": {
+      "@type": "Organization",
+      "name": "Ryo-Lab Team",
+      "url": "https://ryo-lab.dev/"
+    }
+  }
+  </script>
+</head>
+<body>
+<nav>
+  <div class="nav-inner">
+    <a href="./" class="nav-logo">
+      <div class="nav-logo-dot"></div>
+      <span class="nav-logo-text">鉱山町の工房</span>
+    </a>
+    <div class="nav-links">
+      <a href="./" class="active">Home</a>
+      <a href="./privacy-policy.html">Privacy Policy</a>
+      <a href="./terms.html">利用規約</a>
+      <a href="./contact.html">お問い合わせ</a>
+    </div>
+    <button class="nav-hamburger" id="navToggle" aria-label="メニューを開く">
+      <span></span><span></span><span></span>
+    </button>
+  </div>
+</nav>
+
+  <!-- Hero -->
+  <section class="hero">
+    <img src="../assets/minetownworks/icon.png" alt="鉱山町の工房 アプリアイコン" class="hero-icon" width="96" height="96" />
+    <div style="margin-bottom:1.5rem;">
+      <span class="status-badge">
+        <span class="pulse-dot"></span>
+        近日公開（Android）
+      </span>
+    </div>
+    <h1 class="hero-title gradient-text">鉱山町の工房</h1>
+    <p class="hero-en">MINE TOWN WORKS</p>
+    <p class="hero-sub">掘って、作って、強くなる。ドット絵の鉱山町</p>
+    <p class="hero-origin">鉱夫が鉱山を掘り、街の製錬所・鍛造所で加工して、ツルハシを作って鉱夫を強くする放置ゲームです。</p>
+    <img src="../assets/minetownworks/feature-graphic.png" alt="鉱山町の工房のフィーチャーグラフィック。ドット絵の鉱山と街" class="hero-art" width="1024" height="500" />
+    <div style="display:flex;gap:1rem;flex-wrap:wrap;justify-content:center;">
+      <span class="btn-primary btn-disabled" aria-disabled="true">Google Play（近日公開）</span>
+      <a href="./contact.html" class="btn-secondary">お問い合わせ・フィードバック</a>
+    </div>
+  </section>
+
+  <div class="glow-line" style="max-width:800px;margin:0 auto;"></div>
+
+  <!-- あそびかた -->
+  <section>
+    <div class="section-inner">
+      <div class="reveal" style="margin-bottom:2.5rem;">
+        <p class="section-label">How to play</p>
+        <h2 class="section-title">あそびかたは、3 ステップ。</h2>
+      </div>
+      <div class="steps">
+        <div class="step-card glass reveal">
+          <div class="step-flow" aria-hidden="true">
+            <img src="../assets/minetownworks/sprites/ore-copper.png" alt="" width="45" height="36" />
+            <img src="../assets/minetownworks/sprites/ore-iron.png" alt="" width="45" height="36" />
+            <img src="../assets/minetownworks/sprites/ore-gold.png" alt="" width="45" height="36" />
+          </div>
+          <h3>掘る</h3>
+          <p>画面の土をタップして掘れます。仲間の鉱夫は、自分で掘って、掘ったものを昇降機まで運んでくれます。</p>
+          <img class="step-shot" src="../assets/minetownworks/screenshots/02.png" alt="鉱夫が鉱山を掘っている採掘画面" width="540" height="1167" loading="lazy" />
+        </div>
+        <div class="step-card glass reveal" style="transition-delay:0.1s;">
+          <div class="step-flow" aria-hidden="true">
+            <img src="../assets/minetownworks/sprites/ore-iron.png" alt="" width="45" height="36" />
+            <img src="../assets/minetownworks/sprites/ingot-iron.png" alt="" width="48" height="33" />
+            <img src="../assets/minetownworks/sprites/pickaxe-iron.png" alt="" width="38" height="38" />
+          </div>
+          <h3>加工する</h3>
+          <p>掘った鉱石は、街の製錬所でインゴットに、鍛造所でツルハシに作り変えます。</p>
+          <img class="step-shot" src="../assets/minetownworks/screenshots/03.png" alt="製錬所で鉱石を加工する画面" width="540" height="1167" loading="lazy" />
+        </div>
+        <div class="step-card glass reveal" style="transition-delay:0.2s;">
+          <div class="step-flow" aria-hidden="true">
+            <img src="../assets/minetownworks/sprites/face-miner-01.png" alt="" width="48" height="48" />
+            <img src="../assets/minetownworks/sprites/pickaxe-gold.png" alt="" width="38" height="38" />
+          </div>
+          <h3>強くなる</h3>
+          <p>作ったツルハシを鉱夫に持たせると、掘る力と速さが上がります。深く掘るほど、新しい鉱石に出会えます。</p>
+          <img class="step-shot" src="../assets/minetownworks/screenshots/04.png" alt="鉱夫にツルハシを持たせる画面" width="540" height="1167" loading="lazy" />
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <div class="glow-line" style="max-width:800px;margin:0 auto;"></div>
+
+  <!-- Features -->
+  <section>
+    <div class="section-inner">
+      <div class="reveal" style="margin-bottom:3rem;">
+        <p class="section-label">Features</p>
+        <h2 class="section-title">眺めて、育てて、また掘る。</h2>
+      </div>
+      <div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(280px,1fr));gap:1.5rem;">
+        <div class="feature-card reveal">
+          <div class="feature-sprite" aria-hidden="true">
+            <img src="../assets/minetownworks/sprites/face-miner-02.png" alt="" width="48" height="48" />
+            <img src="../assets/minetownworks/sprites/face-smelter-01.png" alt="" width="48" height="48" />
+            <img src="../assets/minetownworks/sprites/face-forge-01.png" alt="" width="48" height="48" />
+          </div>
+          <h3>個性ゆたかな鉱夫と職人</h3>
+          <p>鉱山で掘る鉱夫と、街で働く職人たち。一人ひとりに固有の能力があります。</p>
+        </div>
+        <div class="feature-card reveal" style="transition-delay:0.1s;">
+          <div class="feature-sprite" aria-hidden="true">
+            <img src="../assets/minetownworks/sprites/pickaxe-wood.png" alt="" width="38" height="38" />
+            <img src="../assets/minetownworks/sprites/pickaxe-copper.png" alt="" width="38" height="38" />
+            <img src="../assets/minetownworks/sprites/pickaxe-gold.png" alt="" width="38" height="38" />
+            <img src="../assets/minetownworks/sprites/pickaxe-rainbow.png" alt="" width="38" height="38" />
+          </div>
+          <h3>銅から虹晶まで</h3>
+          <p>鉱石もツルハシも、たくさんの種類があります。段階ごとにツルハシがぐんと強くなります。</p>
+        </div>
+        <div class="feature-card reveal" style="transition-delay:0.2s;">
+          <div class="feature-sprite" aria-hidden="true">
+            <img src="../assets/minetownworks/sprites/coin.png" alt="" width="34" height="34" />
+            <img src="../assets/minetownworks/sprites/coal.png" alt="" width="45" height="36" />
+          </div>
+          <h3>閉じていても、働き続ける</h3>
+          <p>アプリを閉じているあいだも、鉱夫と街は働き続けます。次に開いたときの報酬が楽しみに。</p>
+        </div>
+        <div class="feature-card reveal">
+          <div class="feature-sprite" aria-hidden="true">
+            <img src="../assets/minetownworks/sprites/ore-star.png" alt="" width="45" height="36" />
+            <img src="../assets/minetownworks/sprites/ore-crimson.png" alt="" width="51" height="42" />
+          </div>
+          <h3>深く掘ったら「再開拓」</h3>
+          <p>仲間と装備は残したまま、永続の強化を得て、もう一度掘り直せます。</p>
+        </div>
+        <div class="feature-card reveal" style="transition-delay:0.1s;">
+          <div class="feature-sprite" aria-hidden="true">
+            <img src="../assets/minetownworks/sprites/bag-1.png" alt="" width="42" height="45" />
+          </div>
+          <h3>はじめてでも、迷わない</h3>
+          <p>機能は少しずつ開いていき、そのたびに案内が出ます。</p>
+        </div>
+        <div class="feature-card reveal" style="transition-delay:0.2s;">
+          <div class="feature-sprite" aria-hidden="true">
+            <img src="../assets/minetownworks/sprites/gem.png" alt="" width="36" height="34" />
+          </div>
+          <h3>ごほうびも、いろいろ</h3>
+          <p>デイリー、ログインスタンプ、実績、ときどき届く差し入れの木箱。ガチャ（確率で出るもの）はありません。</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <div class="glow-line" style="max-width:800px;margin:0 auto;"></div>
+
+  <!-- Screenshots -->
+  <section>
+    <div class="section-inner">
+      <div class="reveal" style="margin-bottom:2rem;">
+        <p class="section-label">Screenshots</p>
+        <h2 class="section-title">アプリの画面</h2>
+        <p style="color:var(--text-sub);font-size:0.85rem;margin-top:0.5rem;">← スワイプまたはスクロールで確認できます</p>
+      </div>
+      <div class="screenshot-strip reveal">
+        <img src="../assets/minetownworks/screenshots/01.png" alt="鉱山町の工房の画面 1: 街" width="540" height="1167" loading="lazy" />
+        <img src="../assets/minetownworks/screenshots/02.png" alt="鉱山町の工房の画面 2: 採掘" width="540" height="1167" loading="lazy" />
+        <img src="../assets/minetownworks/screenshots/03.png" alt="鉱山町の工房の画面 3: 製錬所" width="540" height="1167" loading="lazy" />
+        <img src="../assets/minetownworks/screenshots/04.png" alt="鉱山町の工房の画面 4: 鉱夫" width="540" height="1167" loading="lazy" />
+        <img src="../assets/minetownworks/screenshots/05.png" alt="鉱山町の工房の画面 5: クエスト" width="540" height="1167" loading="lazy" />
+      </div>
+    </div>
+  </section>
+
+  <div class="glow-line" style="max-width:800px;margin:0 auto;"></div>
+
+  <!-- Story -->
+  <section>
+    <div class="section-inner" style="max-width:760px;">
+      <div class="reveal" style="margin-bottom:2rem;">
+        <p class="section-label">Story</p>
+        <h2 class="section-title">作った理由</h2>
+      </div>
+      <div class="reveal glass" style="padding:2rem;">
+        <p class="story-text">個人で開発しています。コツコツ育てて、ものづくりの成長を眺める。そんな放置ゲームを、ドット絵の見た目にこだわって作りました。</p>
+        <p class="story-text">広告は、自分で選んで見る動画広告だけです。見なくても遊べます。詳しくは<a href="./privacy-policy.html" style="color:var(--primary);text-decoration:underline;">プライバシーポリシー</a>をご覧ください。</p>
+        <p class="story-text">こんな方に使っていただけたら嬉しいです。</p>
+        <ul class="story-list">
+          <li>放置ゲーム、インクリメンタルゲームが好きな方</li>
+          <li>ドット絵の世界を眺めるのが好きな方</li>
+          <li>コツコツ育てて、ものづくりの成長を楽しみたい方</li>
+        </ul>
+      </div>
+    </div>
+  </section>
+
+  <div class="glow-line" style="max-width:800px;margin:0 auto;"></div>
+
+  <!-- FAQ -->
+  <section>
+    <div class="section-inner">
+      <div class="reveal" style="margin-bottom:2.5rem;">
+        <p class="section-label">FAQ</p>
+        <h2 class="section-title">よくある質問</h2>
+      </div>
+      <div class="reveal glass" style="padding:1.5rem 2rem;">
+        <div class="mini-faq-item">
+          <span class="mini-faq-q">無料で遊べますか？</span>
+          <span class="mini-faq-a">はい。広告（動画）を見ると、加速や、留守中の報酬の 2 倍などの特典があります（見なくても遊べます）。ジェムをアプリ内課金で購入することもできます（任意）。</span>
+        </div>
+        <div class="mini-faq-item">
+          <span class="mini-faq-q">課金しないと進めませんか？</span>
+          <span class="mini-faq-a">いいえ。ジェムは、やることメモ・デイリー・実績などでも手に入ります。課金は、選択肢と時間を早めるためのものです。ガチャ（確率で出るもの）はありません。</span>
+        </div>
+        <div class="mini-faq-item">
+          <span class="mini-faq-q">閉じていても進みますか？</span>
+          <span class="mini-faq-a">はい。閉じている間も、鉱夫と街は働き続けます（上限と効率があります）。広告を見ると、留守中の報酬が増えます。</span>
+        </div>
+        <div class="mini-faq-item">
+          <span class="mini-faq-q">データはどこに保存されますか？</span>
+          <span class="mini-faq-a">お使いの端末の中です。任意で Google ログインをすると、クラウドにも保存され、別の端末へ引き継げます。</span>
+        </div>
+        <div class="mini-faq-item">
+          <span class="mini-faq-q">iPhone で遊べますか？</span>
+          <span class="mini-faq-a">いまは Android のみです。配信は日本国内のみです。</span>
+        </div>
+        <div class="mini-faq-item">
+          <span class="mini-faq-q">不具合・要望は？</span>
+          <span class="mini-faq-a"><a href="./contact.html">お問い合わせフォーム</a>から送れます。</span>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <div class="glow-line" style="max-width:800px;margin:0 auto;"></div>
+
+  <!-- Contact -->
+  <section>
+    <div class="section-inner" style="text-align:center;">
+      <div class="reveal glass" style="padding:3rem 2rem;max-width:640px;margin:0 auto;">
+        <p class="section-label" style="text-align:center;">Contact</p>
+        <h2 class="section-title" style="font-size:1.8rem;">お問い合わせ</h2>
+        <p class="contact-text">
+          不具合の報告、機能のご要望、ご質問はお問い合わせフォームから受け付けています。
+        </p>
+        <a href="./contact.html" class="btn-primary">
+          お問い合わせフォームへ →
+        </a>
+      </div>
+    </div>
+  </section>
+
+  <footer>
+    <p>© 2026 Ryo-Lab. 鉱山町の工房 開発チーム</p>
+    <p style="margin-top:0.5rem;font-size:0.8rem;"><a href="./privacy-policy.html">Privacy Policy</a> ・ <a href="./terms.html">利用規約</a> ・ <a href="./tokushoho.html">特定商取引法に基づく表記</a> ・ <a href="./update-history.html">更新履歴</a> ・ <a href="./contact.html">お問い合わせ</a></p>
+  </footer>
+
+<script src="../assets/js/subsite.js"></script>
+</body>
+</html>

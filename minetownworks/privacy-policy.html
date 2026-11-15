@@ -1,0 +1,185 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>プライバシーポリシー — 鉱山町の工房</title>
+  <script src="https://cdn.tailwindcss.com"></script>
+  <link rel="icon" href="../assets/minetownworks/icon.png" type="image/png" />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Syne:wght@400;600;700;800&family=Noto+Sans+JP:wght@300;400;500;700&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="../assets/css/minetownworks.css" />
+  <link rel="stylesheet" href="../assets/css/subsite.css" />
+
+  <!-- SEO -->
+  <meta name="description" content="放置ゲーム「鉱山町の工房」のプライバシーポリシー。取得する情報・外部サービス（Firebase / AdMob / Google Play）・購入の記録・アカウントとデータの削除方法について記載しています。">
+  <link rel="canonical" href="https://ryo-lab.dev/minetownworks/privacy-policy.html">
+  <meta property="og:type" content="website">
+  <meta property="og:url" content="https://ryo-lab.dev/minetownworks/privacy-policy.html">
+  <meta property="og:title" content="プライバシーポリシー — 鉱山町の工房">
+  <meta property="og:description" content="放置ゲーム「鉱山町の工房」のプライバシーポリシー。取得する情報・外部サービス（Firebase / AdMob / Google Play）・購入の記録・アカウントとデータの削除方法について記載しています。">
+  <meta property="og:image" content="https://ryo-lab.dev/assets/ogp/ogp_minetownworks.png">
+  <meta property="og:site_name" content="Ryo-Lab">
+  <meta property="og:locale" content="ja_JP">
+</head>
+<body>
+
+<nav>
+  <div class="nav-inner">
+    <a href="./" class="nav-logo">
+      <div class="nav-logo-dot"></div>
+      <span class="nav-logo-text">鉱山町の工房</span>
+    </a>
+    <div class="nav-links">
+      <a href="./">Home</a>
+      <a href="./privacy-policy.html" class="active">Privacy Policy</a>
+      <a href="./terms.html">利用規約</a>
+      <a href="./contact.html">お問い合わせ</a>
+    </div>
+    <button class="nav-hamburger" id="navToggle" aria-label="メニューを開く">
+      <span></span><span></span><span></span>
+    </button>
+  </div>
+</nav>
+
+<div class="doc-container">
+
+  <div class="doc-header reveal">
+    <p class="doc-tag">Legal</p>
+    <h1 class="doc-title">プライバシーポリシー</h1>
+    <p class="doc-updated">最終更新日: ［公開日］</p>
+  </div>
+
+  <p style="color:var(--text-sub);font-size:0.9rem;margin-bottom:2.5rem;" class="reveal">
+    Ryo-Lab チーム（以下「運営者」）は、ゲームアプリ「鉱山町の工房」（以下「本アプリ」）における、利用者の情報の取り扱いを、次のとおり定めます。
+  </p>
+  <div class="doc-section reveal">
+    <h2><span class="article-chip">第1条</span> 取得する情報</h2>
+    <h3>利用者が入力する情報</h3>
+    <ul>
+      <li>本アプリは、<strong>氏名・電話番号などの入力を求めません</strong>。</li>
+      <li><strong>任意で、Google アカウントでログインできます</strong>。ログインすると、アカウントの識別子（ユーザー ID）とメールアドレスを、ログインの認証のために、Firebase Authentication が取得します。</li>
+    </ul>
+    <h3>ログインしなくても作られる情報（匿名の ID・サポート ID・購入の記録）</h3>
+    <p>ログインしない場合も、サポートと購入の確認のために、次の情報が、運営者の Firebase（Cloud Firestore・日本のリージョン）に保存されます。</p>
+    <ul>
+      <li><strong>匿名の ID</strong>: アプリを開くと、Firebase Authentication の匿名認証で、氏名やメールアドレスと結びつかない ID が作られます。あとから Google でログインすると、この ID に、ログインの情報が結びつきます。</li>
+      <li><strong>サポート ID</strong>: 最初の起動で、このゲームのデータに付く ID（「p-」から始まる文字列）です。設定画面に表示され、お問い合わせのときに、運営者が購入の記録などを調べるために使います。サポート ID と匿名の ID の対応も保存されます。</li>
+      <li><strong>購入の記録</strong>: 購入の操作のたびに、段階ごと（購入の開始・Google Play の結果・ジェムの付与・保存・完了、失敗したときはエラーの内容）に、匿名の ID・サポート ID・商品 ID・注文 ID・結果・アプリのバージョン・端末の種類（OS）・時刻を保存します。目的は、購入したのにジェムが入らない、などの問い合わせの調査と、二重付与の防止です。</li>
+      <li><strong>メールボックス</strong>: 運営者からの贈り物・お知らせです。運営者が作り、アプリが読み、受け取ると「受け取り済み」の印が付きます。</li>
+    </ul>
+    <h3>ゲームのデータ</h3>
+    <ul>
+      <li>ゲームの進み具合（深さ・コイン・ジェム・鉱夫・装備・購入の記録など）は、<strong>お使いの端末の中に保存</strong>されます。</li>
+      <li><strong>Google でログインしたときだけ</strong>、同じゲームのデータを、Google の Firebase（Cloud Firestore。日本のリージョン）にも保存します。目的は、機種変更や別の端末への引き継ぎです。ログインしなければ、ゲームの進み具合そのものは、クラウドに保存されません（上の「ログインしなくても作られる情報」は、ログインしなくても保存されます）。</li>
+    </ul>
+    <h3>自動的に取得される情報</h3>
+    <ul>
+      <li><strong>広告 ID・端末の情報・おおよその地域</strong>: 広告の配信と計測のために、Google AdMob が取得します。</li>
+      <li><strong>クラッシュの情報</strong>: アプリが異常終了したときの、端末の機種・OS・ログ（Firebase Crashlytics）。</li>
+      <li><strong>利用状況</strong>: 画面の閲覧・ゲームの進み具合などの、個人を特定しない統計（Firebase Analytics）。</li>
+      <li><strong>購入の情報</strong>: アプリ内課金は、Google Play が処理します。運営者は、氏名・住所・カード番号などの支払いの情報を受け取りません。アプリは、購入の確認のために、購入の識別子（注文 ID・購入トークン）を、端末内（ログイン中はクラウドにも）に保存し、調査のための購入の記録（上記）を、運営者の Firebase に保存します。</li>
+    </ul>
+  </div>
+
+  <div class="divider"></div>
+
+  <div class="doc-section reveal">
+    <h2><span class="article-chip">第2条</span> 利用目的</h2>
+    <ul>
+      <li>ゲームの機能の提供（進み具合の保存・購入した商品の反映）。</li>
+      <li>購入に関する問い合わせの調査（ジェムが入らない等）、二重付与の防止、補填の送付（メールボックス）。</li>
+      <li>広告の配信。</li>
+      <li>不具合の調査と、アプリの改善（クラッシュ・利用状況）。</li>
+      <li>お問い合わせへの対応。</li>
+    </ul>
+  </div>
+
+  <div class="divider"></div>
+
+  <div class="doc-section reveal">
+    <h2><span class="article-chip">第3条</span> 外部サービスへの送信（委託・第三者提供）</h2>
+    <p>本アプリは、次の外部サービスに情報を送信します。これらのサービスの提供元（Google LLC）は<strong>外国にある第三者</strong>で、情報は日本以外の国のサーバーで処理されることがあります。</p>
+    <div class="doc-table-wrap">
+      <table class="doc-table">
+        <thead>
+          <tr><th>送信先</th><th>内容</th><th>目的</th><th>プライバシーポリシー</th></tr>
+        </thead>
+        <tbody>
+          <tr><td>Google AdMob</td><td>広告 ID・端末の情報</td><td>広告の配信・計測</td><td><a href="https://policies.google.com/privacy" target="_blank" rel="noopener">policies.google.com/privacy</a></td></tr>
+          <tr><td>Google Play（課金）</td><td>購入の情報</td><td>課金の処理</td><td><a href="https://policies.google.com/privacy" target="_blank" rel="noopener">policies.google.com/privacy</a></td></tr>
+          <tr><td>Firebase Authentication（Google LLC）</td><td>匿名の ID（全員）、ユーザー ID・メールアドレス（ログイン時のみ）</td><td>匿名の ID の発行・ログインの認証</td><td><a href="https://firebase.google.com/support/privacy" target="_blank" rel="noopener">firebase.google.com/support/privacy</a></td></tr>
+          <tr><td>Cloud Firestore（Google LLC）</td><td>サポート ID・購入の記録・メールボックス（全員）、ゲームのデータ（ログイン時のみ）</td><td>購入の調査・補填・引き継ぎ（クラウド保存）</td><td><a href="https://firebase.google.com/support/privacy" target="_blank" rel="noopener">firebase.google.com/support/privacy</a></td></tr>
+          <tr><td>Firebase Crashlytics（Google LLC）</td><td>クラッシュの情報</td><td>不具合の調査</td><td><a href="https://firebase.google.com/support/privacy" target="_blank" rel="noopener">firebase.google.com/support/privacy</a></td></tr>
+          <tr><td>Firebase Analytics（Google LLC）</td><td>利用状況の統計</td><td>アプリの改善</td><td><a href="https://firebase.google.com/support/privacy" target="_blank" rel="noopener">firebase.google.com/support/privacy</a></td></tr>
+        </tbody>
+      </table>
+    </div>
+    <p>法令に基づく場合を除き、利用者の同意なく、上記以外の第三者に、情報を提供しません。</p>
+  </div>
+
+  <div class="divider"></div>
+
+  <div class="doc-section reveal">
+    <h2><span class="article-chip">第4条</span> 広告について</h2>
+    <ul>
+      <li>本アプリは、広告（リワード広告）を表示します。広告の配信には、Google AdMob を使います。</li>
+      <li>必要に応じて、<strong>同意の確認（UMP）</strong>を表示します。広告 ID は、端末の設定から、リセット・パーソナライズの無効化ができます（Android の設定 → Google → 広告）。</li>
+    </ul>
+  </div>
+
+  <div class="divider"></div>
+
+  <div class="doc-section reveal" id="delete-account">
+    <h2><span class="article-chip">第5条</span> 保存期間とアカウント・データの削除</h2>
+    <ul>
+      <li>ゲームのデータ（端末内）は、<strong>アプリを削除すると、端末から消えます</strong>。</li>
+      <li><strong>クラウドのデータ（ログインした場合）は、アプリの設定の「アカウントを削除」から、アプリの中で削除できます</strong>。削除すると、Authentication のユーザーとクラウドのゲームデータが削除され、<strong>有償ジェムを含めて、元に戻せません</strong>。アプリを使えない場合は、<a href="./contact.html">お問い合わせ</a>の「データ削除のご依頼」から、削除を依頼できます。</li>
+      <li>ログアウトしても、クラウドのデータは残ります。</li>
+      <li><strong>購入の記録（第1条）は、利用者ご本人が削除することはできません。</strong>調査と不正の防止に必要なため、<strong>［要決定］</strong>（保存期間。案: 3 年）を過ぎたものを、運営者が削除します。アカウントを削除しても、購入の記録・サポート ID と匿名の ID の対応・メールボックスは、すぐには消えません（保存期間のあと、運営者が削除します）。削除をご希望の場合は、お問い合わせの「データ削除のご依頼」から、サポート ID をお知らせください。</li>
+      <li>AdMob・Google Play・Firebase が保持する情報は、それぞれのサービスの方針に従います。</li>
+    </ul>
+  </div>
+
+  <div class="divider"></div>
+
+  <div class="doc-section reveal">
+    <h2><span class="article-chip">第6条</span> 安全管理</h2>
+    <p>取得した情報は、漏えい・紛失・改ざんを防ぐよう、適切に管理します。ゲームのデータは、端末内に保存されるため、端末の管理は、利用者ご自身でお願いします。</p>
+  </div>
+
+  <div class="divider"></div>
+
+  <div class="doc-section reveal">
+    <h2><span class="article-chip">第7条</span> 子どもの利用について</h2>
+    <p>本アプリは、13 歳未満の子どもを主な対象としていません。未成年の利用者の課金は、保護者の同意を得たうえで行ってください。</p>
+  </div>
+
+  <div class="divider"></div>
+
+  <div class="doc-section reveal">
+    <h2><span class="article-chip">第8条</span> プライバシーポリシーの変更</h2>
+    <p>必要に応じて、本ポリシーを変更します。重要な変更は、アプリ内または公式サイトでお知らせします。</p>
+  </div>
+
+  <div class="divider"></div>
+
+  <div class="doc-section reveal">
+    <h2><span class="article-chip">第9条</span> お問い合わせ</h2>
+    <p>本ポリシーに関するお問い合わせは、以下からお送りください。</p>
+    <ul>
+      <li>運営: Ryo-Lab チーム</li>
+      <li>お問い合わせフォーム: <a href="./contact.html">こちらから送信</a></li>
+    </ul>
+  </div>
+
+</div>
+
+<footer>
+  <p>© 2026 Ryo-Lab. 鉱山町の工房 開発チーム</p>
+</footer>
+
+<script src="../assets/js/subsite.js"></script>
+</body>
+</html>

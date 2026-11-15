@@ -14,6 +14,7 @@ export const APPS = Object.freeze({
   pickandblade: 'ツルハシとツルギ',
   towerclimb: 'タワクライム',
   starpuzzle: '星取りパズル',
+  minetownworks: '鉱山町の工房',
 });
 
 /** 問い合わせの種別 */
