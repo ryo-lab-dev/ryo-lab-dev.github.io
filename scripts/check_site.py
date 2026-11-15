@@ -1,9 +1,10 @@
 #!/usr/bin/env python3
-"""静的サイトの sitemap と HTML ファイルの整合性を検査する。"""
+"""静的サイトの sitemap と HTML ファイルの整合性を検査する（sitemap の URL の実在、title、lastmod の形式、載せ忘れ）。"""
 
 from __future__ import annotations
 
 import argparse
+from datetime import date
 from html.parser import HTMLParser
 from pathlib import Path
 import sys
@@ -13,6 +14,8 @@ import xml.etree.ElementTree as ET
 
 SITE_HOST = "ryo-lab.dev"
 SITEMAP_NAMESPACE = "{http://www.sitemaps.org/schemas/sitemap/0.9}"
+# sitemap に載せない HTML（検索に出さないもの、所有権確認用のファイル）
+SITEMAP_EXEMPT_PREFIXES = ("google",)
 
 
 class TitleParser(HTMLParser):
@@ -38,6 +41,21 @@ class TitleParser(HTMLParser):
     @property
     def title(self) -> str:
         return " ".join(" ".join(self.title_parts).split())
+
+
+class RobotsParser(HTMLParser):
+    """HTML の robots メタタグに noindex があるかを調べる。"""
+
+    def __init__(self) -> None:
+        super().__init__(convert_charrefs=True)
+        self.noindex = False
+
+    def handle_starttag(self, tag: str, attrs: list[tuple[str, str | None]]) -> None:
+        if tag.lower() != "meta":
+            return
+        values = {name.lower(): (value or "") for name, value in attrs}
+        if values.get("name", "").lower() == "robots" and "noindex" in values.get("content", "").lower():
+            self.noindex = True
 
 
 def resolve_site_path(root: Path, url_path: str) -> Path:
@@ -94,6 +112,15 @@ def check_site(root: Path) -> list[str]:
         if parsed.query or parsed.fragment:
             errors.append(f"{label}: loc に query または fragment が含まれています: {url}")
 
+        lastmod_element = url_element.find(f"{SITEMAP_NAMESPACE}lastmod")
+        lastmod = (lastmod_element.text or "").strip() if lastmod_element is not None else ""
+        if lastmod:
+            try:
+                if date.fromisoformat(lastmod) > date.today():
+                    errors.append(f"{label}: lastmod が未来の日付です: {url} ({lastmod})")
+            except ValueError:
+                errors.append(f"{label}: lastmod が YYYY-MM-DD 形式ではありません: {url} ({lastmod})")
+
         if url in seen_urls:
             errors.append(f"sitemap.xml に URL が重複しています: {url}")
             continue
@@ -121,6 +148,35 @@ def check_site(root: Path) -> list[str]:
             if not parser.title:
                 errors.append(f"title が空、または存在しません: {target.relative_to(root)}")
 
+    errors.extend(find_pages_missing_from_sitemap(root, seen_urls))
+    return errors
+
+
+def find_pages_missing_from_sitemap(root: Path, sitemap_urls: set[str]) -> list[str]:
+    """公開している HTML のうち、sitemap に載っていないものを返す。"""
+    errors: list[str] = []
+    for path in sorted(root.rglob("*.html")):
+        relative = path.relative_to(root)
+        if any(part.startswith(".") or part == "node_modules" for part in relative.parts):
+            continue
+        if path.name.startswith(SITEMAP_EXEMPT_PREFIXES):
+            continue
+
+        url_path = relative.as_posix()
+        if url_path.endswith("index.html"):
+            url_path = url_path[: -len("index.html")]
+        if f"https://{SITE_HOST}/{url_path}" in sitemap_urls:
+            continue
+
+        try:
+            parser = RobotsParser()
+            parser.feed(path.read_text(encoding="utf-8"))
+            parser.close()
+        except (OSError, UnicodeError) as exc:
+            errors.append(f"HTML を読み取れません: {relative}: {exc}")
+            continue
+        if not parser.noindex:
+            errors.append(f"sitemap に載っていない HTML があります（載せないなら noindex を付けてください）: {relative}")
     return errors
 
 
@@ -138,7 +194,7 @@ def main() -> int:
             print(f"- {error}")
         return 1
 
-    print("検査成功: sitemap の URL、参照先ファイル、HTML title に問題はありません")
+    print("検査成功: sitemap の URL、参照先ファイル、HTML title、登録漏れに問題はありません")
     return 0
 
 
