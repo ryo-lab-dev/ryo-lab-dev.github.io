@@ -1,0 +1,24 @@
+name: check-site
+
+# サイトの HTML・sitemap・検査スクリプトを変える PR のときだけ動かす（Actions の無料枠を節約するため）
+on:
+  pull_request:
+    paths:
+      - "**/*.html"
+      - "sitemap.xml"
+      - "scripts/**"
+      - ".github/workflows/check-site.yml"
+
+permissions:
+  contents: read
+
+jobs:
+  check-site:
+    runs-on: ubuntu-latest
+    timeout-minutes: 3
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.12"
+      - run: python3 scripts/check_site.py
