@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="ja">
+<html lang="ja" data-title-en="Terms of Service — Mine Town Works">
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
@@ -11,9 +11,11 @@
   <link href="https://fonts.googleapis.com/css2?family=Syne:wght@400;600;700;800&family=Noto+Sans+JP:wght@300;400;500;700&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet" />
   <link rel="stylesheet" href="../assets/css/minetownworks.css" />
   <link rel="stylesheet" href="../assets/css/subsite.css" />
+  <link rel="stylesheet" href="../assets/css/lang.css" />
+  <script src="../assets/js/lang.js"></script>
 
   <!-- SEO -->
-  <meta name="description" content="放置ゲーム「鉱山町の工房」の利用規約。ジェムとアプリ内課金・ログインとデータの保存・禁止事項・免責などの利用条件を定めています。">
+  <meta name="description" content="放置ゲーム「鉱山町の工房」の利用規約。ジェムとアプリ内課金・ログインとデータの保存・禁止事項・免責などの利用条件を定めています。" data-en="Terms of Service for the idle game &quot;Mine Town Works&quot;, including in-game currency (Gems), in-app purchases, accounts and prohibited acts.">
   <link rel="canonical" href="https://ryo-lab.dev/minetownworks/terms.html">
   <meta property="og:type" content="website">
   <meta property="og:url" content="https://ryo-lab.dev/minetownworks/terms.html">
@@ -29,13 +31,15 @@
   <div class="nav-inner">
     <a href="./" class="nav-logo">
       <div class="nav-logo-dot"></div>
-      <span class="nav-logo-text">鉱山町の工房</span>
+      <span class="nav-logo-text"><span data-l="ja">鉱山町の工房</span><span data-l="en">Mine Town Works</span></span>
     </a>
     <div class="nav-links">
       <a href="./">Home</a>
       <a href="./privacy-policy.html">Privacy Policy</a>
-      <a href="./terms.html" class="active">利用規約</a>
-      <a href="./contact.html">お問い合わせ</a>
+      <a href="./terms.html" class="active"><span data-l="ja">利用規約</span><span data-l="en">Terms</span></a>
+      <a href="./contact.html"><span data-l="ja">お問い合わせ</span><span data-l="en">Contact</span></a>
+      <a href="?lang=en" class="lang-switch" data-lang-switch="en" data-l="ja" lang="en">English</a>
+      <a href="?lang=ja" class="lang-switch" data-lang-switch="ja" data-l="en" lang="ja">日本語</a>
     </div>
     <button class="nav-hamburger" id="navToggle" aria-label="メニューを開く">
       <span></span><span></span><span></span>
@@ -45,6 +49,7 @@
 
 <div class="doc-container">
 
+<div data-l="ja">
   <div class="doc-header reveal">
     <p class="doc-tag">Legal</p>
     <h1 class="doc-title">利用規約</h1>
@@ -165,11 +170,136 @@
       <li>お問い合わせフォーム: <a href="./contact.html">こちらから送信</a></li>
     </ul>
   </div>
+</div>
+
+<div data-l="en" lang="en">
+  <div class="doc-header reveal">
+    <p class="doc-tag">Legal</p>
+    <h1 class="doc-title">Terms of Service</h1>
+    <p class="doc-updated">Last updated: November 20, 2026</p>
+  </div>
+
+  <p style="color:var(--text-sub);font-size:0.9rem;margin-bottom:2.5rem;" class="reveal">
+    These Terms set out the conditions for using the game app "Mine Town Works" (the "App") provided by the Ryo-Lab Team ("we", "us"). By using the App, you are deemed to have agreed to these Terms.
+  </p>
+  <div class="doc-section reveal">
+    <h2><span class="article-chip">Article 1</span> About the App</h2>
+    <p>The App is an idle game in which miners dig a mine and the town turns what they dig into pickaxes and more. In-game currency and items can be used only inside the game. They cannot be exchanged for real money or goods.</p>
+  </div>
+
+  <div class="divider"></div>
+
+  <div class="doc-section reveal">
+    <h2><span class="article-chip">Article 2</span> Requirements</h2>
+    <p>The App is available for Android devices from Google Play. Data charges are your responsibility. The App may not work on some devices or OS versions.</p>
+  </div>
+
+  <div class="divider"></div>
+
+  <div class="doc-section reveal">
+    <h2><span class="article-chip">Article 3</span> In-game currency "Gems" and in-app purchases</h2>
+    <ol>
+      <li>There are two kinds of Gems: <strong>paid Gems</strong> (purchased on Google Play) and <strong>free Gems</strong> (earned as in-game rewards or given out by us). In the game, <strong>free Gems are spent first</strong>.</li>
+      <li>Paid Gems and other items are purchased through <strong>Google Play's billing system</strong>. Prices, payment methods and receipts follow what Google Play displays and its terms. Always check the price and contents before you buy.</li>
+      <li>Purchased items, such as Gems, are applied in the game right away. <strong>Because they are digital goods, cancellations and refunds after purchase follow applicable law and Google Play's refund policy.</strong> We cannot issue refunds individually. See the <a href="./tokushoho.html">Notice under the Act on Specified Commercial Transactions</a> for details.</li>
+      <li>Gems <strong>do not expire</strong>. However, if the App's service ends, they can no longer be used from that point (Article 7).</li>
+      <li>Gems <strong>cannot be transferred to other users, sold, or exchanged for cash or for points of other services</strong>.</li>
+      <li><strong>The App has no gacha (random-reward mechanics).</strong> Everything you can buy with Gems is shown at a fixed price with its contents visible.</li>
+      <li><strong>Game data is stored on your device.</strong> If you log in with a Google account (optional), your data is also saved to the cloud, so you can carry it over to a new phone or another device. Even if you do not log in, <strong>an anonymous ID, a Support ID and purchase records are stored on our server (Firebase) for purchase investigation</strong> (see the <a href="./privacy-policy.html">Privacy Policy</a>). <strong>If you change phones, delete the App or reset your device without logging in, your data (including paid Gems) is lost and we cannot restore it.</strong> We recommend logging in before you make a purchase. One-time products such as the "Starter Pack" may be restorable through Google Play.</li>
+      <li><strong>If, after you log in, the data on two devices differs, you choose which one to use. The data you do not choose (including paid Gems) is lost.</strong> Please read the selection screen carefully.</li>
+      <li><strong>If you delete your account, your cloud data (including paid Gems) is deleted and cannot be restored.</strong></li>
+      <li>Users who are minors should make purchases only with a parent or guardian's consent.</li>
+    </ol>
+  </div>
+
+  <div class="divider"></div>
+
+  <div class="doc-section reveal">
+    <h2><span class="article-chip">Article 4</span> Accounts (optional login)</h2>
+    <ol>
+      <li>You log in with a <strong>Google account</strong>. You can play every feature without logging in.</li>
+      <li>You are responsible for managing your login credentials. Do not let anyone else use them.</li>
+      <li>You can delete your account at any time from Settings (it is completed inside the App).</li>
+    </ol>
+  </div>
+
+  <div class="divider"></div>
+
+  <div class="doc-section reveal">
+    <h2><span class="article-chip">Article 5</span> Notices (Mailbox)</h2>
+    <p>We may deliver compensation or celebratory gifts (Gems, Coins, items) and notices through the in-app "Mailbox". Once claimed, a gift is applied in the game and cannot be undone. Gifts with an expiry date cannot be claimed after it passes.</p>
+    <p><strong>If you have a problem with a purchase, please send us the Support ID shown in Settings via the <a href="./contact.html">contact form</a>.</strong> We will check your purchase records and make it right.</p>
+  </div>
+
+  <div class="divider"></div>
+
+  <div class="doc-section reveal">
+    <h2><span class="article-chip">Article 6</span> Prohibited acts and ads</h2>
+    <ul>
+      <li>Do not tamper with the App or its communications (modification, reverse engineering, automation tools, rewriting data on your device, etc.).</li>
+      <li>Do not obtain, sell or transfer Gems or similar items improperly.</li>
+      <li>Do not infringe the rights of us, other users or third parties, or act against the law or public order and morals.</li>
+      <li>Do not interfere with the operation of the App.</li>
+      <li>If you break these rules, we may restrict your use of the App or take other measures without notice.</li>
+      <li>The App shows ads (rewarded ads). When you choose to watch a rewarded ad, you receive a perk such as a Boost. Ads are delivered through Google AdMob and use your advertising ID and similar data.</li>
+    </ul>
+  </div>
+
+  <div class="divider"></div>
+
+  <div class="doc-section reveal">
+    <h2><span class="article-chip">Article 7</span> Intellectual property; changes, suspension and end of the service</h2>
+    <ul>
+      <li>Rights to the App's images, sounds, text and so on belong to us or their rightful owners. You may not copy, republish or distribute them beyond personal use.</li>
+      <li>We may change, suspend or end the App without notice. If we end it, we will announce it in the App or on our official site as far in advance as possible. After it ends, in-game data, including Gems, can no longer be used.</li>
+    </ul>
+  </div>
+
+  <div class="divider"></div>
+
+  <div class="doc-section reveal">
+    <h2><span class="article-chip">Article 8</span> Disclaimer</h2>
+    <ul>
+      <li>The App's contents (numbers, screens, perks, etc.) may change without notice.</li>
+      <li>To the extent permitted by law, we are not liable if data is lost or the App does not work because of problems with communications, your device or the OS.</li>
+      <li>Except in cases of our willful misconduct or gross negligence, our liability for damages is limited to <strong>the amount you paid for the App in the most recent 12 months</strong>.</li>
+    </ul>
+  </div>
+
+  <div class="divider"></div>
+
+  <div class="doc-section reveal">
+    <h2><span class="article-chip">Article 9</span> Personal information; changes to these Terms</h2>
+    <ul>
+      <li>How we handle your information is set out in the <a href="./privacy-policy.html">Privacy Policy</a>.</li>
+      <li>We may change these Terms as needed. We will announce important changes in the App or on our official site. If you use the App after a change, you are deemed to have agreed to it.</li>
+    </ul>
+  </div>
+
+  <div class="divider"></div>
+
+  <div class="doc-section reveal">
+    <h2><span class="article-chip">Article 10</span> Governing law and jurisdiction</h2>
+    <p>These Terms are governed by the laws of Japan. Any dispute concerning the App shall be subject to the exclusive jurisdiction, in the first instance, of the district court with jurisdiction over the operator's address.</p>
+  </div>
+
+  <div class="divider"></div>
+
+  <div class="doc-section reveal">
+    <h2><span class="article-chip">Article 11</span> Contact</h2>
+    <p>For questions about these Terms, please contact us below.</p>
+    <ul>
+      <li>Operator: Ryo-Lab Team</li>
+      <li>Contact form: <a href="./contact.html">send a message</a></li>
+    </ul>
+    <p class="doc-note">This English version is a translation for convenience. If it differs from the Japanese version, the Japanese version prevails.</p>
+  </div>
+</div>
 
 </div>
 
 <footer>
-  <p>© 2026 Ryo-Lab. 鉱山町の工房 開発チーム</p>
+  <p>© 2026 Ryo-Lab. <span data-l="ja">鉱山町の工房 開発チーム</span><span data-l="en">Mine Town Works Team</span></p>
 </footer>
 
 <script src="../assets/js/subsite.js"></script>

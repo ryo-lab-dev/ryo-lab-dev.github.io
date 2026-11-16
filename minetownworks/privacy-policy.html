@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="ja">
+<html lang="ja" data-title-en="Privacy Policy — Mine Town Works">
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
@@ -11,9 +11,11 @@
   <link href="https://fonts.googleapis.com/css2?family=Syne:wght@400;600;700;800&family=Noto+Sans+JP:wght@300;400;500;700&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet" />
   <link rel="stylesheet" href="../assets/css/minetownworks.css" />
   <link rel="stylesheet" href="../assets/css/subsite.css" />
+  <link rel="stylesheet" href="../assets/css/lang.css" />
+  <script src="../assets/js/lang.js"></script>
 
   <!-- SEO -->
-  <meta name="description" content="放置ゲーム「鉱山町の工房」のプライバシーポリシー。取得する情報・外部サービス（Firebase / AdMob / Google Play）・購入の記録・アカウントとデータの削除方法について記載しています。">
+  <meta name="description" content="放置ゲーム「鉱山町の工房」のプライバシーポリシー。取得する情報・外部サービス（Firebase / AdMob / Google Play）・購入の記録・アカウントとデータの削除方法について記載しています。" data-en="Privacy Policy for the idle game &quot;Mine Town Works&quot;: the information we collect, external services (Firebase / AdMob / Google Play), purchase records, and how to delete your account and data.">
   <link rel="canonical" href="https://ryo-lab.dev/minetownworks/privacy-policy.html">
   <meta property="og:type" content="website">
   <meta property="og:url" content="https://ryo-lab.dev/minetownworks/privacy-policy.html">
@@ -29,13 +31,15 @@
   <div class="nav-inner">
     <a href="./" class="nav-logo">
       <div class="nav-logo-dot"></div>
-      <span class="nav-logo-text">鉱山町の工房</span>
+      <span class="nav-logo-text"><span data-l="ja">鉱山町の工房</span><span data-l="en">Mine Town Works</span></span>
     </a>
     <div class="nav-links">
       <a href="./">Home</a>
       <a href="./privacy-policy.html" class="active">Privacy Policy</a>
-      <a href="./terms.html">利用規約</a>
-      <a href="./contact.html">お問い合わせ</a>
+      <a href="./terms.html"><span data-l="ja">利用規約</span><span data-l="en">Terms</span></a>
+      <a href="./contact.html"><span data-l="ja">お問い合わせ</span><span data-l="en">Contact</span></a>
+      <a href="?lang=en" class="lang-switch" data-lang-switch="en" data-l="ja" lang="en">English</a>
+      <a href="?lang=ja" class="lang-switch" data-lang-switch="ja" data-l="en" lang="ja">日本語</a>
     </div>
     <button class="nav-hamburger" id="navToggle" aria-label="メニューを開く">
       <span></span><span></span><span></span>
@@ -45,6 +49,7 @@
 
 <div class="doc-container">
 
+<div data-l="ja">
   <div class="doc-header reveal">
     <p class="doc-tag">Legal</p>
     <h1 class="doc-title">プライバシーポリシー</h1>
@@ -135,7 +140,7 @@
     <h2><span class="article-chip">第5条</span> 保存期間とアカウント・データの削除</h2>
     <ul>
       <li>ゲームのデータ（端末内）は、<strong>アプリを削除すると、端末から消えます</strong>。</li>
-      <li><strong>クラウドのデータ（ログインした場合）は、アプリの設定の「アカウントを削除」から、アプリの中で削除できます</strong>。削除すると、Authentication のユーザーとクラウドのゲームデータが削除され、<strong>有償ジェムを含めて、元に戻せません</strong>。アプリを使えない場合は、<a href="./contact.html">お問い合わせ</a>の「データ削除のご依頼」から、削除を依頼できます。</li>
+      <li><strong>クラウドのデータ（ログインした場合）は、アプリの設定の「アカウントを削除」から、アプリの中で削除できます</strong>。削除すると、Authentication のユーザーとクラウドのゲームデータが削除され、<strong>有償ジェムを含めて、元に戻せません</strong>。アプリを使えない場合は、<a href="./contact.html"><span data-l="ja">お問い合わせ</span><span data-l="en">Contact</span></a>の「データ削除のご依頼」から、削除を依頼できます。</li>
       <li>ログアウトしても、クラウドのデータは残ります。</li>
       <li><strong>購入の記録（第1条）は、利用者ご本人が削除することはできません。</strong>調査と不正の防止に必要なため、<strong>3 年間</strong>を過ぎたものを、運営者が削除します。アカウントを削除しても、購入の記録・サポート ID と匿名の ID の対応・メールボックスは、すぐには消えません（保存期間のあと、運営者が削除します）。削除をご希望の場合は、お問い合わせの「データ削除のご依頼」から、サポート ID をお知らせください。</li>
       <li>AdMob・Google Play・Firebase が保持する情報は、それぞれのサービスの方針に従います。</li>
@@ -173,11 +178,144 @@
       <li>お問い合わせフォーム: <a href="./contact.html">こちらから送信</a></li>
     </ul>
   </div>
+</div>
+
+<div data-l="en" lang="en">
+  <div class="doc-header reveal">
+    <p class="doc-tag">Legal</p>
+    <h1 class="doc-title">Privacy Policy</h1>
+    <p class="doc-updated">Last updated: November 20, 2026</p>
+  </div>
+
+  <p style="color:var(--text-sub);font-size:0.9rem;margin-bottom:2.5rem;" class="reveal">
+    The Ryo-Lab Team ("we", "us") sets out below how we handle users' information in the game app "Mine Town Works" (the "App").
+  </p>
+  <div class="doc-section reveal">
+    <h2><span class="article-chip">Article 1</span> Information we collect</h2>
+    <h3>Information you enter</h3>
+    <ul>
+      <li>The App <strong>does not ask you to enter your name, phone number or similar details</strong>.</li>
+      <li><strong>You can optionally log in with a Google account.</strong> When you do, Firebase Authentication obtains your account identifier (user ID) and email address in order to authenticate you.</li>
+    </ul>
+    <h3>Information created even if you do not log in (anonymous ID, Support ID, purchase records)</h3>
+    <p>Even if you do not log in, the following is stored in our Firebase (Cloud Firestore, Japan region) for support and purchase verification.</p>
+    <ul>
+      <li><strong>Anonymous ID</strong>: When you open the App, Firebase Authentication's anonymous sign-in creates an ID that is not tied to your name or email address. If you later log in with Google, your login information is linked to this ID.</li>
+      <li><strong>Support ID</strong>: An ID attached to your game data at first launch (a string starting with "p-"). It is shown on the Settings screen, and we use it to look up your purchase records when you contact us. The mapping between the Support ID and the anonymous ID is also stored.</li>
+      <li><strong>Purchase records</strong>: For every purchase, at each step (purchase started, Google Play result, Gems granted, saved, completed; and the error details if something fails), we store the anonymous ID, Support ID, product ID, order ID, result, app version, device type (OS) and time. The purpose is to investigate inquiries such as "I bought Gems but didn't receive them" and to prevent duplicate grants.</li>
+      <li><strong>Mailbox</strong>: Gifts and notices from us. We create them, the App reads them, and they are marked as "claimed" once you claim them.</li>
+    </ul>
+    <h3>Game data</h3>
+    <ul>
+      <li>Your game progress (depth, Coins, Gems, miners, gear, purchase records, etc.) is <strong>stored on your device</strong>.</li>
+      <li><strong>Only when you log in with Google</strong>, the same game data is also stored in Google's Firebase (Cloud Firestore, Japan region), so that you can carry your progress over to a new phone or another device. If you do not log in, your game progress itself is not stored in the cloud (the information listed under "Information created even if you do not log in" above is stored regardless).</li>
+    </ul>
+    <h3>Information collected automatically</h3>
+    <ul>
+      <li><strong>Advertising ID, device information, approximate region</strong>: collected by Google AdMob to deliver and measure ads.</li>
+      <li><strong>Crash information</strong>: the device model, OS and logs when the App terminates abnormally (Firebase Crashlytics).</li>
+      <li><strong>Usage information</strong>: statistics that do not identify you, such as screens viewed and game progress (Firebase Analytics).</li>
+      <li><strong>Purchase information</strong>: In-app purchases are processed by Google Play. We do not receive payment information such as your name, address or card number. To verify purchases, the App stores purchase identifiers (order ID, purchase token) on your device (and in the cloud while you are logged in), and stores the purchase records described above in our Firebase.</li>
+    </ul>
+  </div>
+
+  <div class="divider"></div>
+
+  <div class="doc-section reveal">
+    <h2><span class="article-chip">Article 2</span> How we use information</h2>
+    <ul>
+      <li>To provide game features (saving progress, applying purchased items).</li>
+      <li>To investigate purchase-related inquiries (e.g. Gems not received), prevent duplicate grants, and send compensation (via the Mailbox).</li>
+      <li>To deliver ads.</li>
+      <li>To investigate problems and improve the App (crashes, usage).</li>
+      <li>To respond to inquiries.</li>
+    </ul>
+  </div>
+
+  <div class="divider"></div>
+
+  <div class="doc-section reveal">
+    <h2><span class="article-chip">Article 3</span> Sending information to external services (processors and third parties)</h2>
+    <p>The App sends information to the external services below. Their provider (Google LLC) is a <strong>third party located outside Japan</strong>, and your information may be processed on servers in countries other than Japan.</p>
+    <div class="doc-table-wrap">
+      <table class="doc-table">
+        <thead>
+          <tr><th>Recipient</th><th>Data</th><th>Purpose</th><th>Privacy policy</th></tr>
+        </thead>
+        <tbody>
+          <tr><td>Google AdMob</td><td>Advertising ID, device information</td><td>Ad delivery and measurement</td><td><a href="https://policies.google.com/privacy" target="_blank" rel="noopener">policies.google.com/privacy</a></td></tr>
+          <tr><td>Google Play (billing)</td><td>Purchase information</td><td>Payment processing</td><td><a href="https://policies.google.com/privacy" target="_blank" rel="noopener">policies.google.com/privacy</a></td></tr>
+          <tr><td>Firebase Authentication (Google LLC)</td><td>Anonymous ID (everyone); user ID and email address (only when logged in)</td><td>Issuing the anonymous ID; login authentication</td><td><a href="https://firebase.google.com/support/privacy" target="_blank" rel="noopener">firebase.google.com/support/privacy</a></td></tr>
+          <tr><td>Cloud Firestore (Google LLC)</td><td>Support ID, purchase records, Mailbox (everyone); game data (only when logged in)</td><td>Purchase investigation, compensation, carrying progress over (cloud save)</td><td><a href="https://firebase.google.com/support/privacy" target="_blank" rel="noopener">firebase.google.com/support/privacy</a></td></tr>
+          <tr><td>Firebase Crashlytics (Google LLC)</td><td>Crash information</td><td>Investigating problems</td><td><a href="https://firebase.google.com/support/privacy" target="_blank" rel="noopener">firebase.google.com/support/privacy</a></td></tr>
+          <tr><td>Firebase Analytics (Google LLC)</td><td>Usage statistics</td><td>Improving the App</td><td><a href="https://firebase.google.com/support/privacy" target="_blank" rel="noopener">firebase.google.com/support/privacy</a></td></tr>
+        </tbody>
+      </table>
+    </div>
+    <p>Except where required by law, we do not provide your information to any third party other than those above without your consent.</p>
+  </div>
+
+  <div class="divider"></div>
+
+  <div class="doc-section reveal">
+    <h2><span class="article-chip">Article 4</span> About ads</h2>
+    <ul>
+      <li>The App displays ads (rewarded ads). Ads are delivered through Google AdMob.</li>
+      <li>Where required, we show a <strong>consent form (UMP)</strong>. You can reset your advertising ID or turn off ad personalization in your device settings (Android Settings → Google → Ads).</li>
+    </ul>
+  </div>
+
+  <div class="divider"></div>
+
+  <div class="doc-section reveal" id="delete-account-en">
+    <h2><span class="article-chip">Article 5</span> Retention, and deleting your account and data</h2>
+    <ul>
+      <li>Game data on your device <strong>is removed when you uninstall the App</strong>.</li>
+      <li><strong>Cloud data (if you logged in) can be deleted inside the App from Settings → "Delete account".</strong> This deletes your Authentication user and your cloud game data, and <strong>cannot be undone, including paid Gems</strong>. If you cannot use the App, you can request deletion via "Data deletion request" on the <a href="./contact.html">contact form</a>.</li>
+      <li>Logging out does not delete your cloud data.</li>
+      <li><strong>You cannot delete the purchase records (Article 1) yourself.</strong> They are needed for investigation and fraud prevention, so we delete records once they are <strong>more than 3 years old</strong>. Even if you delete your account, the purchase records, the Support ID / anonymous ID mapping and the Mailbox are not removed immediately (we delete them after the retention period). To request deletion, choose "Data deletion request" on the contact form and tell us your Support ID.</li>
+      <li>Information held by AdMob, Google Play and Firebase is handled under each service's own policy.</li>
+    </ul>
+  </div>
+
+  <div class="divider"></div>
+
+  <div class="doc-section reveal">
+    <h2><span class="article-chip">Article 6</span> Security</h2>
+    <p>We manage the information we collect appropriately to prevent leaks, loss and tampering. Game data is stored on your device, so please keep your device secure.</p>
+  </div>
+
+  <div class="divider"></div>
+
+  <div class="doc-section reveal">
+    <h2><span class="article-chip">Article 7</span> Children</h2>
+    <p>The App is not primarily directed at children under 13. Users who are minors should make purchases only with a parent or guardian's consent.</p>
+  </div>
+
+  <div class="divider"></div>
+
+  <div class="doc-section reveal">
+    <h2><span class="article-chip">Article 8</span> Changes to this policy</h2>
+    <p>We may change this policy as needed. We will announce important changes in the App or on our official site.</p>
+  </div>
+
+  <div class="divider"></div>
+
+  <div class="doc-section reveal">
+    <h2><span class="article-chip">Article 9</span> Contact</h2>
+    <p>For questions about this policy, please contact us below.</p>
+    <ul>
+      <li>Operator: Ryo-Lab Team</li>
+      <li>Contact form: <a href="./contact.html">send a message</a></li>
+    </ul>
+    <p class="doc-note">This English version is a translation for convenience. If it differs from the Japanese version, the Japanese version prevails.</p>
+  </div>
+</div>
 
 </div>
 
 <footer>
-  <p>© 2026 Ryo-Lab. 鉱山町の工房 開発チーム</p>
+  <p>© 2026 Ryo-Lab. <span data-l="ja">鉱山町の工房 開発チーム</span><span data-l="en">Mine Town Works Team</span></p>
 </footer>
 
 <script src="../assets/js/subsite.js"></script>
