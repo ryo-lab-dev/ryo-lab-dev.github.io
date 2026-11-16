@@ -27,6 +27,7 @@
 
     document.querySelectorAll('a[data-lang-switch]').forEach(function (a) {
       a.setAttribute('href', withLang(window.location.href, a.getAttribute('data-lang-switch')));
+      if (a.getAttribute('data-lang-switch') === lang) a.setAttribute('aria-current', 'true');
     });
     if (lang !== 'en') return;
     document.querySelectorAll('a[href^="./"]:not([data-lang-switch])').forEach(function (a) {

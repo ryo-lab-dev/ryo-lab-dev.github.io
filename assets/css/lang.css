@@ -2,4 +2,39 @@
    本文は両方の言語を HTML に書き、data-l="ja" / data-l="en" で囲む。既定（JavaScript なし・?lang なし）は日本語。 */
 html:not([data-lang="en"]) [data-l="en"] { display: none !important; }
 html[data-lang="en"] [data-l="ja"] { display: none !important; }
-.lang-switch { opacity: 0.85; }
+
+/* ヘッダーの言語の切替（ページのリンクと見分けがつくよう、地球のアイコンつきの枠にまとめ、いまの言語を塗る）。
+   スマホでもハンバーガーメニューの外に出して、常に見えるようにする。 */
+.lang-toggle {
+  display: inline-flex;
+  align-items: center;
+  gap: 2px;
+  padding: 2px 2px 2px 8px;
+  border: 1px solid var(--glass-border, rgba(255, 255, 255, 0.15));
+  border-radius: 999px;
+  color: #94a3b8;
+  flex-shrink: 0;
+}
+.lang-toggle-icon { margin-right: 2px; opacity: 0.8; }
+.lang-toggle a {
+  font-family: 'JetBrains Mono', monospace;
+  font-size: 0.72rem;
+  font-weight: 500;
+  letter-spacing: 0.05em;
+  color: inherit;
+  text-decoration: none;
+  padding: 0.2rem 0.55rem;
+  border-radius: 999px;
+  line-height: 1.4;
+  transition: color 0.2s, background 0.2s;
+}
+.lang-toggle a:hover { color: var(--primary-light, #fff); }
+html:not([data-lang="en"]) .lang-toggle a[data-lang-switch="ja"],
+html[data-lang="en"] .lang-toggle a[data-lang-switch="en"] {
+  background: var(--primary, #fff);
+  color: var(--bg, #111);
+  pointer-events: none;
+}
+@media (max-width: 768px) {
+  .lang-toggle { margin-left: auto; }
+}
