@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="ja">
+<html lang="ja" data-title-en="Contact — Mine Town Works">
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
@@ -11,9 +11,11 @@
   <link href="https://fonts.googleapis.com/css2?family=Syne:wght@400;600;700;800&family=Noto+Sans+JP:wght@300;400;500;700&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet" />
   <link rel="stylesheet" href="../assets/css/minetownworks.css" />
   <link rel="stylesheet" href="../assets/css/subsite.css" />
+  <link rel="stylesheet" href="../assets/css/lang.css" />
+  <script src="../assets/js/lang.js"></script>
 
   <!-- SEO -->
-  <meta name="description" content="鉱山町の工房へのお問い合わせページ。ご意見・ご要望、不具合の報告、使い方のご質問、データ削除のご依頼などを受け付けています。">
+  <meta name="description" content="鉱山町の工房へのお問い合わせページ。ご意見・ご要望、不具合の報告、使い方のご質問、データ削除のご依頼などを受け付けています。" data-en="Contact page for &quot;Mine Town Works&quot;: feedback, bug reports, questions and data deletion requests.">
   <link rel="canonical" href="https://ryo-lab.dev/minetownworks/contact.html">
   <meta property="og:type" content="website">
   <meta property="og:url" content="https://ryo-lab.dev/minetownworks/contact.html">
@@ -33,13 +35,15 @@
   <div class="nav-inner">
     <a href="./" class="nav-logo">
       <div class="nav-logo-dot"></div>
-      <span class="nav-logo-text">鉱山町の工房</span>
+      <span class="nav-logo-text"><span data-l="ja">鉱山町の工房</span><span data-l="en">Mine Town Works</span></span>
     </a>
     <div class="nav-links">
       <a href="./">Home</a>
       <a href="./privacy-policy.html">Privacy Policy</a>
-      <a href="./terms.html">利用規約</a>
-      <a href="./contact.html" class="active">お問い合わせ</a>
+      <a href="./terms.html"><span data-l="ja">利用規約</span><span data-l="en">Terms</span></a>
+      <a href="./contact.html" class="active"><span data-l="ja">お問い合わせ</span><span data-l="en">Contact</span></a>
+      <a href="?lang=en" class="lang-switch" data-lang-switch="en" data-l="ja" lang="en">English</a>
+      <a href="?lang=ja" class="lang-switch" data-lang-switch="ja" data-l="en" lang="ja">日本語</a>
     </div>
     <button class="nav-hamburger" id="navToggle" aria-label="メニューを開く">
       <span></span><span></span><span></span>
@@ -50,19 +54,19 @@
   <div class="uh-wrap">
     <div class="uh-header reveal">
       <p class="uh-tag">Contact</p>
-      <h1 class="uh-title">お問い合わせ</h1>
-      <p class="uh-sub">鉱山町の工房へのご意見・ご要望、不具合のご報告はこちらから。</p>
+      <h1 class="uh-title"><span data-l="ja">お問い合わせ</span><span data-l="en">Contact</span></h1>
+      <p class="uh-sub"><span data-l="ja">鉱山町の工房へのご意見・ご要望、不具合のご報告はこちらから。</span><span data-l="en" lang="en">Send us feedback, requests or bug reports for Mine Town Works.</span></p>
     </div>
 
     <div class="contact-wrap">
       <div id="contact-root" data-app="minetownworks" data-privacy="./privacy-policy.html">
-        <noscript><p class="contact-noscript">お問い合わせフォームの送信には JavaScript を有効にしてください。</p></noscript>
+        <noscript><p class="contact-noscript">お問い合わせフォームの送信には JavaScript を有効にしてください。 / Please enable JavaScript to use the contact form.</p></noscript>
       </div>
     </div>
   </div>
 
 <footer>
-  <p>© 2026 Ryo-Lab. 鉱山町の工房 開発チーム</p>
+  <p>© 2026 Ryo-Lab. <span data-l="ja">鉱山町の工房 開発チーム</span><span data-l="en">Mine Town Works Team</span></p>
 </footer>
 
 <script src="../assets/js/subsite.js"></script>

@@ -48,7 +48,7 @@
   var paragraph = document.createElement('p');
   var link = document.createElement('a');
   link.href = '/privacy-policy.html';
-  link.textContent = 'サイト共通プライバシーポリシー';
+  link.textContent = document.documentElement.getAttribute('data-lang') === 'en' ? 'Site-wide Privacy Policy' : 'サイト共通プライバシーポリシー';
   link.style.color = 'inherit';
   link.style.textDecoration = 'underline';
   paragraph.appendChild(link);

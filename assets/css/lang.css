@@ -1,0 +1,5 @@
+/* 同じページの中で日本語と英語を切り替える（assets/js/lang.js と組で使う）。
+   本文は両方の言語を HTML に書き、data-l="ja" / data-l="en" で囲む。既定（JavaScript なし・?lang なし）は日本語。 */
+html:not([data-lang="en"]) [data-l="en"] { display: none !important; }
+html[data-lang="en"] [data-l="ja"] { display: none !important; }
+.lang-switch { opacity: 0.85; }
