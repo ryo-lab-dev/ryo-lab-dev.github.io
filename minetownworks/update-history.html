@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="ja">
+<html lang="ja" data-title-en="Update History — Mine Town Works">
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
@@ -11,6 +11,8 @@
   <link href="https://fonts.googleapis.com/css2?family=Syne:wght@400;600;700;800&family=Noto+Sans+JP:wght@300;400;500;700&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet" />
   <link rel="stylesheet" href="../assets/css/minetownworks.css" />
   <link rel="stylesheet" href="../assets/css/subsite.css" />
+  <link rel="stylesheet" href="../assets/css/lang.css" />
+  <script src="../assets/js/lang.js"></script>
 
   <!-- SEO -->
   <meta name="description" content="鉱山町の工房の更新履歴ページ。各バージョンで追加・変更・修正した内容を確認できます。">
@@ -31,13 +33,18 @@
   <div class="nav-inner">
     <a href="./" class="nav-logo">
       <div class="nav-logo-dot"></div>
-      <span class="nav-logo-text">鉱山町の工房</span>
+      <span class="nav-logo-text"><span data-l="ja">鉱山町の工房</span><span data-l="en">Mine Town Works</span></span>
     </a>
     <div class="nav-links">
       <a href="./">Home</a>
       <a href="./privacy-policy.html">Privacy Policy</a>
-      <a href="./terms.html">利用規約</a>
-      <a href="./contact.html">お問い合わせ</a>
+      <a href="./terms.html"><span data-l="ja">利用規約</span><span data-l="en">Terms</span></a>
+      <a href="./contact.html"><span data-l="ja">お問い合わせ</span><span data-l="en">Contact</span></a>
+    </div>
+    <div class="lang-toggle" role="group" aria-label="Language / 言語">
+      <svg class="lang-toggle-icon" viewBox="0 0 24 24" width="14" height="14" aria-hidden="true" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"/><path d="M2 12h20"/><path d="M12 2a15.3 15.3 0 0 1 4 10 15.3 15.3 0 0 1-4 10 15.3 15.3 0 0 1-4-10 15.3 15.3 0 0 1 4-10z"/></svg>
+      <a href="?lang=ja" data-lang-switch="ja" lang="ja" title="日本語">JA</a>
+      <a href="?lang=en" data-lang-switch="en" lang="en" title="English">EN</a>
     </div>
     <button class="nav-hamburger" id="navToggle" aria-label="メニューを開く">
       <span></span><span></span><span></span>
@@ -48,22 +55,50 @@
   <div class="uh-wrap">
     <div class="uh-header reveal">
       <p class="uh-tag">Changelog</p>
-      <h1 class="uh-title">更新履歴</h1>
-      <p class="uh-sub">鉱山町の工房の変更内容を、最新バージョンから順に表示します。</p>
+      <h1 class="uh-title"><span data-l="ja">更新履歴</span><span data-l="en">Update History</span></h1>
+      <p class="uh-sub"><span data-l="ja">鉱山町の工房の変更内容を、最新バージョンから順に表示します。</span><span data-l="en">Changes to Mine Town Works, newest version first.</span></p>
     </div>
 
     <div class="uh-timeline reveal">
-      <div class="uh-item latest">
-        <span class="uh-badge">公開前</span>
-        <p class="uh-summary">まだ公開していません。公開したら、バージョンごとの変更内容をここに載せます。</p>
+      <div class="uh-item latest" data-l="ja" lang="ja">
+        <span class="uh-badge">v1.0.0 — 初回リリース</span>
+        <p class="uh-summary">鉱夫が掘り、街で加工してツルハシを作る、ドット絵の放置ゲームを公開しました。日本語と English に対応しています。</p>
+        <ul class="uh-list">
+          <li><span class="uh-kind uh-kind-add">追加</span>放置で進行：アプリを閉じている間も、鉱夫と街が働き続けます。戻ったときに「留守中の戦果」を受け取れます（最大 8 時間ぶん）。</li>
+          <li><span class="uh-kind uh-kind-add">追加</span>掘る → 製錬 → 鍛造：掘った鉱石を製錬所でインゴットに、鍛造所でツルハシに。ツルハシを持たせると、鉱夫が強くなります。</li>
+          <li><span class="uh-kind uh-kind-add">追加</span>個性ゆたかな鉱夫と職人たち：名前と固有能力があり、チームを最大 6 人まで組めます。待機の仲間が多く・育っているほど強くなる「絆」を持つ鉱夫もいます。</li>
+          <li><span class="uh-kind uh-kind-add">追加</span>強化：コインでの強化（まとめて強化 ×1・×10・×100・MAX）と、再開拓の記録での永続強化。</li>
+          <li><span class="uh-kind uh-kind-add">追加</span>再開拓：深くまで掘り進めたら、仲間と装備を残したまま、永続の強化を得て、もう一度掘り直せます。</li>
+          <li><span class="uh-kind uh-kind-add">追加</span>ショップ・依頼所・ジェム：カバン・シューズ・調査ルーペ・連打グローブ・タップ増幅・広告なしパスなど。ジェムの購入は任意です。</li>
+          <li><span class="uh-kind uh-kind-add">追加</span>デイリー・ログインスタンプ・実績・やることメモ、ときどき届く差し入れの木箱。</li>
+          <li><span class="uh-kind uh-kind-add">追加</span>ログインは任意：Google ログインで、クラウドに保存して、別の端末へ引き継げます。</li>
+          <li><span class="uh-kind uh-kind-add">追加</span>日本語と English に対応。初めて起動したときに、言語を選べます（設定から切り替えられます）。</li>
+          <li><span class="uh-kind uh-kind-imp">改善</span>広告は、見ると報酬がもらえるリワードだけです（見なくても遊べます）。広告なしパスを持っていれば、広告が要る場面を、自動で受け取れます。</li>
+        </ul>
+      </div>
+      <div class="uh-item latest" data-l="en" lang="en">
+        <span class="uh-badge">v1.0.0 — Initial release</span>
+        <p class="uh-summary">A pixel-art idle game where miners dig and the town turns ore into pickaxes. Available in Japanese and English.</p>
+        <ul class="uh-list">
+          <li><span class="uh-kind uh-kind-add">New</span>Idle progress: your miners and the town keep working while the app is closed. Claim your “While You Were Away” rewards when you return (up to 8 hours’ worth).</li>
+          <li><span class="uh-kind uh-kind-add">New</span>Dig, smelt, forge: turn ore into ingots at the Smelter and pickaxes at the Forge. Pickaxes make your miners stronger.</li>
+          <li><span class="uh-kind uh-kind-add">New</span>A cast of unique miners and craftspeople: each has a name and a special ability, and you can build a team of up to 6. Some miners grow stronger the more allies wait on the bench.</li>
+          <li><span class="uh-kind uh-kind-add">New</span>Upgrades: upgrade with Coins (upgrade in bulk: ×1, ×10, ×100, MAX) and with permanent upgrades earned through Prestige.</li>
+          <li><span class="uh-kind uh-kind-add">New</span>Prestige: dig deep, then start over stronger. Keep your crew and gear, and earn permanent upgrades.</li>
+          <li><span class="uh-kind uh-kind-add">New</span>Shop, Requests and Gems: bags, boots, the Scouter, the Rapid-Tap Glove, the Tap Amplifier, the Ad-Free Pass and more. Buying Gems is optional.</li>
+          <li><span class="uh-kind uh-kind-add">New</span>Daily missions, login stamps, achievements and to-do notes, plus Supply Crates that turn up now and then.</li>
+          <li><span class="uh-kind uh-kind-add">New</span>Optional login: sign in with Google to save to the cloud and carry your progress to another device.</li>
+          <li><span class="uh-kind uh-kind-add">New</span>Japanese and English: choose your language the first time you launch the game (you can switch in Settings).</li>
+          <li><span class="uh-kind uh-kind-imp">Improved</span>Ads are rewarded ads only, and you can play without watching any. With the Ad-Free Pass, rewards that would need an ad are claimed automatically.</li>
+        </ul>
       </div>
     </div>
 
-    <p class="uh-feedback">機能のご要望・不具合のご報告は、<a href="./contact.html">フィードバックフォーム</a>からお寄せください。</p>
+    <p class="uh-feedback"><span data-l="ja">機能のご要望・不具合のご報告は、<a href="./contact.html">フィードバックフォーム</a>からお寄せください。</span><span data-l="en">Feature requests and bug reports are welcome through the <a href="./contact.html?lang=en">feedback form</a>.</span></p>
   </div>
 
 <footer>
-  <p>© 2026 Ryo-Lab. 鉱山町の工房 開発チーム</p>
+  <p>© 2026 Ryo-Lab. <span data-l="ja">鉱山町の工房 開発チーム</span><span data-l="en">Mine Town Works Team</span></p>
 </footer>
 
 <script src="../assets/js/subsite.js"></script>
