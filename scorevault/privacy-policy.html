@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="ja">
+<html lang="ja" data-title-en="Privacy Policy — ScoreVault">
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
@@ -11,8 +11,10 @@
   <link href="https://fonts.googleapis.com/css2?family=Syne:wght@400;600;700;800&family=Noto+Sans+JP:wght@300;400;500;700&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet" />
   <link rel="stylesheet" href="../assets/css/scorevault.css" />
   <link rel="stylesheet" href="../assets/css/subsite.css" />
+  <link rel="stylesheet" href="../assets/css/lang.css" />
+  <script src="../assets/js/lang.js"></script>
   <!-- SEO -->
-  <meta name="description" content="ScoreVault のプライバシーポリシーページ。ゲームプレイ記録アプリ ScoreVault における個人情報の取り扱いについて記載しています。">
+  <meta name="description" content="ScoreVault のプライバシーポリシーページ。ゲームプレイ記録アプリ ScoreVault における個人情報の取り扱いについて記載しています。" data-en="Privacy Policy for ScoreVault. This page describes how we handle personal information in ScoreVault, a private game review recording app.">
   <link rel="canonical" href="https://ryo-lab.dev/scorevault/privacy-policy.html">
 </head>
 <body>
@@ -26,11 +28,16 @@
     <div class="nav-links">
       <a href="./">Home</a>
       <a href="./privacy-policy.html" class="active">Privacy Policy</a>
-      <a href="./privacy-policy-en.html">Privacy Policy (EN)</a>
       <a href="./terms.html">Terms</a>
+      <a href="./articles.html"><span data-l="ja">記事</span><span data-l="en">Articles</span></a>
       <a href="./faq.html">FAQ</a>
       <a href="./update-history.html">Update History</a>
       <a href="./contact.html">Contact</a>
+    </div>
+    <div class="lang-toggle" role="group" aria-label="Language / 言語">
+      <svg class="lang-toggle-icon" viewBox="0 0 24 24" width="14" height="14" aria-hidden="true" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"/><path d="M2 12h20"/><path d="M12 2a15.3 15.3 0 0 1 4 10 15.3 15.3 0 0 1-4 10 15.3 15.3 0 0 1-4-10 15.3 15.3 0 0 1 4-10z"/></svg>
+      <a href="?lang=ja" data-lang-switch="ja" lang="ja" title="日本語">JA</a>
+      <a href="?lang=en" data-lang-switch="en" lang="en" title="English">EN</a>
     </div>
     <button class="nav-hamburger" id="navToggle" aria-label="メニューを開く">
       <span></span><span></span><span></span>
@@ -39,6 +46,7 @@
 </nav>
 
 <div class="doc-container">
+<div data-l="ja">
   <div class="doc-header reveal">
     <p class="doc-tag">Legal</p>
     <h1 class="doc-title">プライバシーポリシー</h1>
@@ -142,6 +150,105 @@
     <p>お問い合わせフォームでは、お問い合わせの種類と内容のほか、任意で入力された返信用のメールアドレスと端末・アプリのバージョン、ブラウザの種類（User-Agent）を受け取り、返信・対応と本アプリの改善のためだけに利用します。送信内容は Cloudflare, Inc. のサービス（Cloudflare Workers・Email Routing）を経由して運営者のメールアドレスに届きます。また、自動送信（スパム）を防ぐため Cloudflare Turnstile を利用しており、ボットの判定のために IP アドレスやブラウザに関する情報が Cloudflare に送信されます。詳しくは <a href="https://www.cloudflare.com/turnstile-privacy-policy/" target="_blank" rel="noopener">Turnstile のプライバシーに関する説明</a>をご確認ください。</p>
     <p>お問い合わせの内容とメールアドレスは、対応が完了した後、遅くとも 1 年以内に削除します。ただし、メールアドレスなど個人を特定できる情報を除いたご意見・ご要望の内容は、アプリの改善のために記録する場合があります。</p>
   </div>
+</div>
+
+<div data-l="en">
+  <div class="doc-header reveal">
+    <p class="doc-tag">Legal</p>
+    <h1 class="doc-title">Privacy Policy</h1>
+    <p class="doc-updated">Last Updated: November 10, 2026</p>
+  </div>
+
+  <div class="doc-section reveal">
+    <h2>1. Data We Collect</h2>
+    <p>ScoreVault collects the following data to provide its services:</p>
+    <ul>
+      <li>Game logs (title, rating, review, playtime, cover image URL, etc.)</li>
+      <li>Information we receive when you sign in with Google: your email address, name, and profile picture URL</li>
+      <li>Information we receive when you use Sign in with Apple: your name and email address. If you choose to hide your email, we receive the private relay address issued by Apple (@privaterelay.appleid.com). The app does not display Apple users' email addresses on screen.</li>
+      <li>A Firebase user ID (UID) issued by Firebase Authentication</li>
+      <li>Cloud sync data stored in Firebase Firestore (only if you sign in and use sync)</li>
+      <li>Steam / IGDB integration: public game library and achievement data fetched via the Steam API, and game information fetched from IGDB when you search by game title</li>
+      <li>Advertising ID (IDFA on iOS, AAID on Android) — used by AdMob to serve ads. On iOS, we show the App Tracking Transparency (ATT) permission prompt on first launch, and use the IDFA for ad delivery only if you allow it. If you decline, no app features are restricted. You can change this permission at any time in your device's Settings app.</li>
+      <li>Usage data (such as screen views) — collected by Firebase Analytics. It is not linked to your user ID.</li>
+      <li>Crash reports and device information — collected by Firebase Crashlytics</li>
+    </ul>
+    <p>Signing in is optional. All recording features work without signing in; signing in lets you use cloud sync. You can sign in with Google or Apple.</p>
+  </div>
+
+  <div class="divider"></div>
+
+  <div class="doc-section reveal">
+    <h2>2. How We Use Your Data</h2>
+    <p>Collected data is used solely for the following purposes:</p>
+    <ul>
+      <li>Display and manage your game play records within the app</li>
+      <li>Sync data across multiple devices (when you sign in and use sync)</li>
+      <li>Auto-complete game information using Steam and IGDB APIs</li>
+      <li>Serve advertising</li>
+      <li>Investigate bugs and improve the app</li>
+    </ul>
+  </div>
+
+  <div class="divider"></div>
+
+  <div class="doc-section reveal">
+    <h2>3. Data Storage</h2>
+    <ul>
+      <li>Primary data is stored locally in an Isar Database on your device.</li>
+      <li>Data is stored in the cloud (Firebase Firestore) only if you sign in and use sync.</li>
+      <li>We do not provide or sell your personal information to third parties.</li>
+    </ul>
+  </div>
+
+  <div class="divider"></div>
+
+  <div class="doc-section reveal">
+    <h2>4. Third-Party Services</h2>
+    <p>This app uses the following third-party services. Please review their respective privacy policies as well.</p>
+    <ul>
+      <li>Firebase (Authentication, Firestore cloud sync, Analytics, and Crashlytics) — provided by Google LLC</li>
+      <li>Google Sign-In — provided by Google LLC</li>
+      <li>Sign in with Apple — provided by Apple Inc.</li>
+      <li>Steam API (Game data) — provided by Valve Corporation</li>
+      <li>IGDB API (Game data) — provided by Twitch Interactive, Inc.</li>
+      <li>AdMob (Advertising) — provided by Google LLC</li>
+    </ul>
+    <p><strong>Transfers to third parties outside Japan</strong>: The providers of the services above (Google LLC, Apple Inc., Valve Corporation and Twitch Interactive, Inc.) are based in the United States, and your data may be stored or processed on servers outside Japan, including in the United States. Only search terms are sent to Steam and IGDB; no information that identifies you is sent to them. Information on the personal information protection system of the United States is available from Japan's Personal Information Protection Commission (<a href="https://www.ppc.go.jp/enforcement/infoprovision/laws/offshore_report_america/" target="_blank" rel="noopener">外国制度（アメリカ合衆国）</a>, in Japanese). Each provider protects the data under its own privacy policy and data processing terms.</p>
+  </div>
+
+  <div class="divider"></div>
+
+  <div class="doc-section reveal">
+    <h2>5. Your Rights</h2>
+    <ul>
+      <li>You can delete your account within the app: go to Settings, find the ACCOUNT section, and tap "Delete account".</li>
+      <li>Deleting your account removes the account and the data synced to the cloud.</li>
+      <li>Data stored locally on your device is not removed when you delete your account. It is removed when you uninstall the app.</li>
+      <li>If you haven't signed in recently, the app will ask you to sign in again before deleting. Please sign in again and then retry.</li>
+    </ul>
+  </div>
+
+  <div class="divider"></div>
+
+  <div class="doc-section reveal">
+    <h2>6. Policy Changes</h2>
+    <p>We may update this Privacy Policy from time to time in response to legal changes or app updates. We will make reasonable efforts to notify you of significant changes via in-app notice or this page. The revised policy takes effect as soon as it is posted on this page.</p>
+  </div>
+
+  <div class="divider"></div>
+
+  <div class="doc-section reveal">
+    <h2>7. Contact</h2>
+    <p>For any questions or requests regarding data deletion, please contact us via the form below.</p>
+    <ul>
+      <li>Operator: Ryo-Lab Team</li>
+      <li>Contact Form: <a href="./contact.html">Submit here</a></li>
+    </ul>
+    <p>Through the contact form, we receive the type and content of your inquiry, and optionally your reply email address, device and app version, as well as your browser type (User-Agent). We use this information solely to respond to you and to improve the app. Submissions are delivered to the operator's email address via Cloudflare, Inc. services (Cloudflare Workers and Email Routing). To prevent automated spam, we use Cloudflare Turnstile, which sends information such as your IP address and browser details to Cloudflare to detect bots. For details, see the <a href="https://www.cloudflare.com/turnstile-privacy-policy/" target="_blank" rel="noopener">Turnstile Privacy Addendum</a>.</p>
+    <p>We delete the content of your inquiry and your email address within one year at the latest after we have finished responding to it. However, we may keep a record of your feedback and requests, with personally identifiable information such as your email address removed, to improve the app.</p>
+  </div>
+</div>
 </div>
 
 <footer>
