@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="ja">
+<html lang="ja" data-title-en="Articles on Game Logging — ScoreVault">
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
@@ -12,8 +12,9 @@
   <link rel="stylesheet" href="../assets/css/scorevault.css" />
   <link rel="stylesheet" href="../assets/css/subsite.css" />
   <link rel="stylesheet" href="../assets/css/lang.css" />
+  <script src="../assets/js/lang.js"></script>
   <!-- SEO -->
-  <meta name="description" content="積みゲーの管理方法やゲームの点数の付け方など、ゲームの記録に役立つ記事の一覧です。ゲーム記録アプリ ScoreVault の使い方とあわせて紹介します。">
+  <meta name="description" content="積みゲーの管理方法やゲームの点数の付け方など、ゲームの記録に役立つ記事の一覧です。ゲーム記録アプリ ScoreVault の使い方とあわせて紹介します。" data-en="Articles that help you keep better game records, such as how to manage your backlog and how to score games. Written alongside how to use the ScoreVault game logging app (articles are in Japanese).">
   <link rel="canonical" href="https://ryo-lab.dev/scorevault/articles.html">
   <meta property="og:type" content="website" />
   <meta property="og:title" content="ゲーム記録の記事一覧" />
@@ -39,12 +40,18 @@
       <a href="./update-history.html">Update History</a>
       <a href="./contact.html">Contact</a>
     </div>
+    <div class="lang-toggle" role="group" aria-label="Language / 言語">
+      <svg class="lang-toggle-icon" viewBox="0 0 24 24" width="14" height="14" aria-hidden="true" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"/><path d="M2 12h20"/><path d="M12 2a15.3 15.3 0 0 1 4 10 15.3 15.3 0 0 1-4 10 15.3 15.3 0 0 1-4-10 15.3 15.3 0 0 1 4-10z"/></svg>
+      <a href="?lang=ja" data-lang-switch="ja" lang="ja" title="日本語">JA</a>
+      <a href="?lang=en" data-lang-switch="en" lang="en" title="English">EN</a>
+    </div>
     <button class="nav-hamburger" id="navToggle" aria-label="メニューを開く">
       <span></span><span></span><span></span>
     </button>
   </div>
 </nav>
 
+<div data-l="ja">
 <div class="doc-container">
   <div class="doc-header reveal">
     <p class="doc-tag">Articles</p>
@@ -69,6 +76,35 @@
     <div class="doc-section reveal">
       <p><a href="./">ScoreVault のトップへ</a> ・ <a href="./faq.html">よくある質問</a></p>
     </div>
+</div>
+</div>
+
+<div data-l="en">
+<div class="doc-container">
+  <div class="doc-header reveal">
+    <p class="doc-tag">Articles</p>
+    <h1 class="doc-title">Articles on Game Logging</h1>
+    <p class="doc-updated">Articles that help you keep better game records, alongside how to use ScoreVault. The articles themselves are available in Japanese only.</p>
+  </div>
+
+    <div class="doc-section reveal">
+      <h2><a href="./score-guide.html">How to Score Your Games</a> (Japanese)</h2>
+      <p>Three tips for scoring out of 100 without second-guessing: decide your standards first, split the score into four items, and revisit it after some time.</p>
+    </div>
+
+    <div class="divider"></div>
+
+    <div class="doc-section reveal">
+      <h2><a href="./tsumige.html">How to Manage Your Game Backlog</a> (Japanese)</h2>
+      <p>Steps to list the games you own, sort them by status, and pick the next one to play.</p>
+    </div>
+
+    <div class="divider"></div>
+
+    <div class="doc-section reveal">
+      <p><a href="./">Back to ScoreVault home</a> ・ <a href="./faq.html">FAQ</a></p>
+    </div>
+</div>
 </div>
 
 <footer>

@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="ja">
+<html lang="ja" data-title-en="Contact — ScoreVault">
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
@@ -12,9 +12,10 @@
   <link rel="stylesheet" href="../assets/css/scorevault.css" />
   <link rel="stylesheet" href="../assets/css/subsite.css" />
   <link rel="stylesheet" href="../assets/css/lang.css" />
+  <script src="../assets/js/lang.js"></script>
   <link rel="stylesheet" href="../assets/css/contact.css" />
   <!-- SEO -->
-  <meta name="description" content="ScoreVault のお問い合わせページ。不具合の報告、機能のご要望、使い方のご質問、データ削除のご依頼を受け付けています。">
+  <meta name="description" content="ScoreVault のお問い合わせページ。不具合の報告、機能のご要望、使い方のご質問、データ削除のご依頼を受け付けています。" data-en="Contact page for ScoreVault. Send bug reports, feature requests, questions about using the app, and data deletion requests.">
   <link rel="canonical" href="https://ryo-lab.dev/scorevault/contact.html">
 </head>
 <body>
@@ -34,6 +35,11 @@
       <a href="./update-history.html">Update History</a>
       <a href="./contact.html" class="active">Contact</a>
     </div>
+    <div class="lang-toggle" role="group" aria-label="Language / 言語">
+      <svg class="lang-toggle-icon" viewBox="0 0 24 24" width="14" height="14" aria-hidden="true" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"/><path d="M2 12h20"/><path d="M12 2a15.3 15.3 0 0 1 4 10 15.3 15.3 0 0 1-4 10 15.3 15.3 0 0 1-4-10 15.3 15.3 0 0 1 4-10z"/></svg>
+      <a href="?lang=ja" data-lang-switch="ja" lang="ja" title="日本語">JA</a>
+      <a href="?lang=en" data-lang-switch="en" lang="en" title="English">EN</a>
+    </div>
     <button class="nav-hamburger" id="navToggle" aria-label="メニューを開く">
       <span></span><span></span><span></span>
     </button>
@@ -44,12 +50,12 @@
   <div class="page-header reveal">
     <p class="page-tag">Support</p>
     <h1 class="page-title">Contact</h1>
-    <p class="page-sub">ScoreVault へのお問い合わせ</p>
+    <p class="page-sub"><span data-l="ja">ScoreVault へのお問い合わせ</span><span data-l="en">Contact ScoreVault</span></p>
   </div>
 
   <div class="contact-wrap">
     <div id="contact-root" data-app="scorevault" data-privacy="./privacy-policy.html">
-      <noscript><p class="contact-noscript">お問い合わせフォームの送信には JavaScript を有効にしてください。</p></noscript>
+      <noscript><p class="contact-noscript">お問い合わせフォームの送信には JavaScript を有効にしてください。 / Please enable JavaScript to use the contact form.</p></noscript>
     </div>
   </div>
 </div>
