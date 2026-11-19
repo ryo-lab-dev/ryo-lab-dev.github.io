@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="ja">
+<html lang="ja" data-title-en="ScoreVault — Private Game Review & Backlog Tracker">
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
@@ -12,7 +12,7 @@
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
   <link href="https://fonts.googleapis.com/css2?family=Syne:wght@400;600;700;800&family=Noto+Sans+JP:wght@300;400;500;700&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet" />
   <!-- SEO -->
-  <meta name="description" content="ScoreVault は、遊んだゲームのスコア・感想・プレイ時間を非公開で記録できるゲーム管理アプリです。積みゲーの整理、Steam 連携でのプレイ時間の取り込み、ネタバレ防止に対応。Android・iOS で無料配信中。">
+  <meta name="description" content="ScoreVault は、遊んだゲームのスコア・感想・プレイ時間を非公開で記録できるゲーム管理アプリです。積みゲーの整理、Steam 連携でのプレイ時間の取り込み、ネタバレ防止に対応。Android・iOS で無料配信中。" data-en="ScoreVault is a game management app that lets you record scores, impressions and play time for the games you play, privately. Organize your backlog, import play time from Steam, and avoid spoilers. Free on Android and iOS.">
   <link rel="canonical" href="https://ryo-lab.dev/scorevault/">
   <!-- OGP -->
   <meta property="og:type"        content="website">
@@ -51,6 +51,8 @@
   </script>
   <link rel="stylesheet" href="../assets/css/scorevault.css" />
   <link rel="stylesheet" href="../assets/css/subsite.css" />
+  <link rel="stylesheet" href="../assets/css/lang.css" />
+  <script src="../assets/js/lang.js"></script>
 </head>
 <body>
 
@@ -64,12 +66,16 @@
     <div class="nav-links">
       <a href="./" class="active">Home</a>
       <a href="./privacy-policy.html">Privacy Policy</a>
-      <a href="./privacy-policy-en.html">Privacy Policy (EN)</a>
       <a href="./terms.html">Terms</a>
-      <a href="./articles.html">記事</a>
+      <a href="./articles.html"><span data-l="ja">記事</span><span data-l="en">Articles</span></a>
       <a href="./faq.html">FAQ</a>
       <a href="./update-history.html">Update History</a>
       <a href="./contact.html">Contact</a>
+    </div>
+    <div class="lang-toggle" role="group" aria-label="Language / 言語">
+      <svg class="lang-toggle-icon" viewBox="0 0 24 24" width="14" height="14" aria-hidden="true" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"/><path d="M2 12h20"/><path d="M12 2a15.3 15.3 0 0 1 4 10 15.3 15.3 0 0 1-4 10 15.3 15.3 0 0 1-4-10 15.3 15.3 0 0 1 4-10z"/></svg>
+      <a href="?lang=ja" data-lang-switch="ja" lang="ja" title="日本語">JA</a>
+      <a href="?lang=en" data-lang-switch="en" lang="en" title="English">EN</a>
     </div>
     <button class="nav-hamburger" id="navToggle" aria-label="メニューを開く">
       <span></span><span></span><span></span>
@@ -77,6 +83,7 @@
   </div>
 </nav>
 
+<div data-l="ja">
 <!-- Hero -->
 <section class="hero">
   <div style="margin-bottom:1.5rem;">
@@ -192,6 +199,126 @@
 </section>
 
 <!-- Footer -->
+</div>
+
+<div data-l="en">
+<!-- Hero -->
+<section class="hero">
+  <div style="margin-bottom:1.5rem;">
+    <span class="status-badge">
+      <span class="pulse-dot"></span>
+      Available on Google Play &amp; App Store
+    </span>
+  </div>
+  <h1 class="hero-title gradient-text">ScoreVault</h1>
+  <p class="hero-sub">Build up your own honest game impressions.</p>
+  <p class="hero-tagline">Your private vault for honest game reviews.</p>
+  <div style="display:flex;gap:1rem;flex-wrap:wrap;justify-content:center;">
+    <a href="https://play.google.com/store/apps/details?id=com.scorevault.score_vault" target="_blank" rel="noopener" class="btn-primary">
+      Download on Google Play
+    </a>
+    <a href="https://apps.apple.com/jp/app/id6760386306" target="_blank" rel="noopener" class="btn-primary">
+      Download on the App Store
+    </a>
+    <a href="./contact.html" class="btn-secondary">
+      Send feedback
+    </a>
+  </div>
+</section>
+
+<div class="glow-line" style="max-width:800px;margin:0 auto;"></div>
+
+<!-- Features -->
+<section>
+  <div class="section-inner">
+    <div class="reveal" style="margin-bottom:3rem;">
+      <p class="section-label">Features</p>
+      <h2 class="section-title">Make recording fun.</h2>
+    </div>
+    <div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(280px,1fr));gap:1.5rem;">
+      <div class="feature-card reveal">
+        <div class="feature-icon">✨</div>
+        <h3 style="font-family:'Syne',sans-serif;font-size:1.15rem;font-weight:700;margin-bottom:0.75rem;color:#f1f5f9;">
+          Beautiful Design
+        </h3>
+        <p style="color:#94a3b8;line-height:1.7;font-size:0.92rem;">
+          A Glassmorphism design with an intuitive, rich UI that makes recording itself enjoyable.
+        </p>
+      </div>
+      <div class="feature-card reveal" style="transition-delay:0.1s;">
+        <div class="feature-icon">🎮</div>
+        <h3 style="font-family:'Syne',sans-serif;font-size:1.15rem;font-weight:700;margin-bottom:0.75rem;color:#f1f5f9;">
+          Steam / IGDB Integration
+        </h3>
+        <p style="color:#94a3b8;line-height:1.7;font-size:0.92rem;">
+          API integration auto-fills game information and suggests titles you own, minimizing typing.
+        </p>
+      </div>
+      <div class="feature-card reveal" style="transition-delay:0.2s;">
+        <div class="feature-icon">📊</div>
+        <h3 style="font-family:'Syne',sans-serif;font-size:1.15rem;font-weight:700;margin-bottom:0.75rem;color:#f1f5f9;">
+          Statistics Function
+        </h3>
+        <p style="color:#94a3b8;line-height:1.7;font-size:0.92rem;">
+          Visualize your play time trends and personal tastes, and see your gaming life at a glance.
+        </p>
+      </div>
+      <div class="feature-card reveal" style="transition-delay:0.3s;">
+        <div class="feature-icon">🏆</div>
+        <h3 style="font-family:'Syne',sans-serif;font-size:1.15rem;font-weight:700;margin-bottom:0.75rem;color:#f1f5f9;">
+          Achievement System
+        </h3>
+        <p style="color:#94a3b8;line-height:1.7;font-size:0.92rem;">
+          Steam-style gamification: unlock achievements as you keep recording, so recording itself becomes the fun part.
+        </p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<div class="glow-line" style="max-width:800px;margin:0 auto;"></div>
+
+<!-- Screenshots -->
+<section>
+  <div class="section-inner">
+    <div class="reveal" style="margin-bottom:2rem;">
+      <p class="section-label">Screenshots</p>
+      <h2 class="section-title">Take a look inside the app</h2>
+      <p style="color:#64748b;font-size:0.85rem;margin-top:0.5rem;">← Swipe or scroll to browse</p>
+    </div>
+    <div class="screenshot-strip reveal">
+      <img src="../assets/scorevault/screenshots/01_Vault_List.png" alt="Vault List" loading="lazy" />
+      <img src="../assets/scorevault/screenshots/02_Vault_Thumb.png" alt="Vault Thumbnail" loading="lazy" />
+      <img src="../assets/scorevault/screenshots/03_Vault_Filter_Sort.png" alt="Filter & Sort" loading="lazy" />
+      <img src="../assets/scorevault/screenshots/04_Statistics.png" alt="Statistics" loading="lazy" />
+      <img src="../assets/scorevault/screenshots/05_Statistics2.png" alt="Statistics 2" loading="lazy" />
+      <img src="../assets/scorevault/screenshots/06_Detail.png" alt="Detail" loading="lazy" />
+      <img src="../assets/scorevault/screenshots/07_Detail2.png" alt="Detail 2" loading="lazy" />
+    </div>
+  </div>
+</section>
+
+<div class="glow-line" style="max-width:800px;margin:0 auto;"></div>
+
+<!-- Feedback CTA -->
+<section>
+  <div class="section-inner" style="text-align:center;">
+    <div class="reveal glass" style="padding:3rem 2rem;max-width:640px;margin:0 auto;">
+      <p class="section-label" style="text-align:center;">Feedback</p>
+      <h2 class="section-title" style="font-size:1.8rem;">Your voice helps ScoreVault grow.</h2>
+      <p style="color:#94a3b8;margin:1rem 0 2rem;line-height:1.7;">
+        We welcome bug reports, feature requests and feedback. Feel free to use the contact form.
+      </p>
+      <a href="./contact.html" class="btn-primary">
+        Go to the feedback form →
+      </a>
+    </div>
+  </div>
+</section>
+
+<!-- Footer -->
+</div>
+
 <footer>
   <p>© 2026 Ryo-Lab. ScoreVault Project</p>
 </footer>

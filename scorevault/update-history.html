@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="ja">
+<html lang="ja" data-title-en="Update History — ScoreVault">
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
@@ -11,8 +11,10 @@
   <link href="https://fonts.googleapis.com/css2?family=Syne:wght@400;600;700;800&family=Noto+Sans+JP:wght@300;400;500;700&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet" />
   <link rel="stylesheet" href="../assets/css/scorevault.css" />
   <link rel="stylesheet" href="../assets/css/subsite.css" />
+  <link rel="stylesheet" href="../assets/css/lang.css" />
+  <script src="../assets/js/lang.js"></script>
   <!-- SEO -->
-  <meta name="description" content="ScoreVault のアップデート履歴ページ。ゲームプレイ記録アプリ ScoreVault の各バージョンの変更内容・新機能・修正内容を確認できます。">
+  <meta name="description" content="ScoreVault のアップデート履歴ページ。ゲームプレイ記録アプリ ScoreVault の各バージョンの変更内容・新機能・修正内容を確認できます。" data-en="Update history for ScoreVault, the game logging app. See the changes, new features and fixes in each version.">
   <link rel="canonical" href="https://ryo-lab.dev/scorevault/update-history.html">
 </head>
 <body>
@@ -26,11 +28,16 @@
     <div class="nav-links">
       <a href="./">Home</a>
       <a href="./privacy-policy.html">Privacy Policy</a>
-      <a href="./privacy-policy-en.html">Privacy Policy (EN)</a>
       <a href="./terms.html">Terms</a>
+      <a href="./articles.html"><span data-l="ja">記事</span><span data-l="en">Articles</span></a>
       <a href="./faq.html">FAQ</a>
       <a href="./update-history.html" class="active">Update History</a>
       <a href="./contact.html">Contact</a>
+    </div>
+    <div class="lang-toggle" role="group" aria-label="Language / 言語">
+      <svg class="lang-toggle-icon" viewBox="0 0 24 24" width="14" height="14" aria-hidden="true" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"/><path d="M2 12h20"/><path d="M12 2a15.3 15.3 0 0 1 4 10 15.3 15.3 0 0 1-4 10 15.3 15.3 0 0 1-4-10 15.3 15.3 0 0 1 4-10z"/></svg>
+      <a href="?lang=ja" data-lang-switch="ja" lang="ja" title="日本語">JA</a>
+      <a href="?lang=en" data-lang-switch="en" lang="en" title="English">EN</a>
     </div>
     <button class="nav-hamburger" id="navToggle" aria-label="メニューを開く">
       <span></span><span></span><span></span>
@@ -38,6 +45,7 @@
   </div>
 </nav>
 
+<div data-l="ja">
 <div class="page-container">
   <div class="page-header reveal">
     <p class="page-tag">Changelog</p>
@@ -220,6 +228,193 @@
       フィードバックフォームへ →
     </a>
   </div>
+</div>
+</div>
+
+<div data-l="en">
+<div class="page-container">
+  <div class="page-header reveal">
+    <p class="page-tag">Changelog</p>
+    <h1 class="page-title">Update History</h1>
+    <p class="page-sub">Shown from the latest version</p>
+  </div>
+
+  <div class="timeline reveal">
+    <div class="timeline-item latest">
+      <span class="version-badge latest">v1.6.2 — Latest</span>
+      <p class="timeline-text">The contact form now opens inside the app instead of switching to your browser.</p>
+    </div>
+
+    <div class="timeline-item">
+      <span class="version-badge">v1.6.1</span>
+      <p class="timeline-text">Added a wishlist, tier lists and purchase records. You can now set a "Wishlist" status and a release date, and get notified the day before and on release day. Arrange games in a tier list and share it as an image. Record purchase price, purchase type and purchase date, and check your total spending in the statistics. Added "Next game to play" to the statistics screen. Updated the Firebase SDK to the latest version to improve the security of cloud communication. Renewed the contact form opened from Settings: the app selector is gone, and your device and app version are filled in automatically.</p>
+    </div>
+
+    <div class="timeline-item">
+      <span class="version-badge">v1.6.0</span>
+      <p class="timeline-text">Improved account deletion reliability, statistics and contact. Switched the contact form to the shared form, which fills in details such as the app version automatically. Account deletion now reliably removes all data, even for accounts with many records. Also fixed an issue where statistics showed a monthly view even when you had played recently, if you had an old game in your records.</p>
+    </div>
+
+    <div class="timeline-item">
+      <span class="version-badge">v1.5.2</span>
+      <p class="timeline-text">Improved input usability and the list and statistics views. The keyboard now closes when you tap outside an input field or scroll the game registration screen. Fixed the order of games with the same score or play time changing every time you reopened the app, and games played on a future date being counted in statistics activity.</p>
+    </div>
+
+    <div class="timeline-item">
+      <span class="version-badge">v1.5.1</span>
+      <p class="timeline-text">Added the "Year in Review", which lets you share a year of play as an image, and a notice feature from the operator. Share it from "HIGHLIGHTS" on the statistics screen. Choose which items to include (games played, games cleared, play time, by platform and more) and the score and play time rankings (TOP 3 / 5 / 10). Impressions, notes and tags are never included in the image. Play time in the Year in Review counts only time played during that year (play time recorded before this update cannot be split by year, so yearly records become accurate from play after the update). Steam play time now updates automatically when you open the app or bring it back to the foreground (at most once every 6 hours).</p>
+    </div>
+
+    <div class="timeline-item">
+      <span class="version-badge">v1.4.13</span>
+      <p class="timeline-text">Updated the ad components to the latest version for more stable ad display. On iOS, ads are now shown after the tracking prompt has been completed. Also strengthened the security of data saved by cloud sync.</p>
+    </div>
+
+    <div class="timeline-item">
+      <span class="version-badge">v1.4.12</span>
+      <p class="timeline-text">Improved account deletion on iOS. If you signed in with an Apple account, you are asked to re-authenticate with Apple when deleting, and the link with Apple is reliably removed. Added Sign in with Apple, handling of advertising identifiers, account deletion steps and more to the Privacy Policy.</p>
+    </div>
+
+    <div class="timeline-item">
+      <span class="version-badge">v1.4.11</span>
+      <p class="timeline-text">Improved English labels that were hard to understand in the Japanese display by changing them to Japanese (search field, "Clear Cache", "Delete Data", "Lock on launch", "Hidden games", "Enter passcode" and more). The impressions field now reads "Impressions (private)" to make clear that your records are private.</p>
+    </div>
+
+    <div class="timeline-item">
+      <span class="version-badge">v1.4.10</span>
+      <p class="timeline-text">Added support for the latest Android 16 specifications and improved stability on supported devices.</p>
+    </div>
+
+    <div class="timeline-item">
+      <span class="version-badge">v1.4.9</span>
+      <p class="timeline-text">Optimized badge processing in cloud sync to improve sync speed. Steam achievement sync now skips unnecessary processing when the profile is private.</p>
+    </div>
+
+    <div class="timeline-item">
+      <span class="version-badge">v1.4.8</span>
+      <p class="timeline-text">Improved the usability and stability of data sync. The free runs of cloud sync and Steam sync were relaxed from "once every 30 minutes" to "once a day" (a video ad is required from the second run). Also improved cloud sync speed, and fixed "Sync complete" showing after a video ad even though the sync had not finished.</p>
+    </div>
+
+    <div class="timeline-item">
+      <span class="version-badge">v1.4.7</span>
+      <p class="timeline-text">Removed the "Reviewer" achievement.</p>
+    </div>
+
+    <div class="timeline-item">
+      <span class="version-badge">v1.4.6</span>
+      <p class="timeline-text">Fixed an issue where the app could crash if you closed the settings screen during Steam sync or import.</p>
+    </div>
+
+    <div class="timeline-item">
+      <span class="version-badge">v1.4.5</span>
+      <p class="timeline-text">You can now open the Google Play / App Store review page directly from the settings screen. After a certain amount of use, a dialog asking for a review is shown once.</p>
+    </div>
+
+    <div class="timeline-item">
+      <span class="version-badge">v1.4.4</span>
+      <p class="timeline-text">Fixed cover images not displaying correctly for some games. Also improved the error message when Sign in with Apple fails.</p>
+    </div>
+
+    <div class="timeline-item">
+      <span class="version-badge">v1.4.3</span>
+      <p class="timeline-text">Improved ad display on iOS. Fixed native ads not showing on the settings screen and processing continuing without a video ad playing, and banner ads now appear faster.</p>
+    </div>
+
+    <div class="timeline-item">
+      <span class="version-badge">v1.4.2</span>
+      <p class="timeline-text">Strengthened cloud sync stability and data management. Share images can now show a game's cover art, and the settings screen has a new "Clear Data" option that completely deletes local data. Fixed duplicate games appearing with cloud sync, different games with the same name being merged by mistake, and data being restored unintentionally after uninstalling.</p>
+    </div>
+
+    <div class="timeline-item">
+      <span class="version-badge">v1.4.1</span>
+      <p class="timeline-text">Fixed the "Update History", "FAQ" and "Privacy Policy" links in the settings screen not opening correctly.</p>
+    </div>
+
+    <div class="timeline-item">
+      <span class="version-badge">v1.4.0</span>
+      <p class="timeline-text">First release of the iOS version (App Store). Added cloud sync and data sync with Sign in with Apple, account deletion from the settings screen, and ad display on iOS. Also fixed ads sometimes displaying unstably.</p>
+    </div>
+
+    <div class="timeline-item">
+      <span class="version-badge">v1.3.0</span>
+      <p class="timeline-text">Added the achievement system. Achievements unlock through various goals such as number of records, play time and number of genres. Like Steam trophies, they motivate you to keep recording.</p>
+    </div>
+
+    <div class="timeline-item">
+      <span class="version-badge">v1.2.1</span>
+      <p class="timeline-text">Added color theme switching. Choose from five colors (Midnight, Emerald, Crimson, Amber and Amethyst) in the settings screen. The background, buttons, charts and the rest of the app follow the theme color. The retro style colors were also adjusted to a gentler tone.</p>
+    </div>
+
+    <div class="timeline-item">
+      <span class="version-badge">v1.2.0</span>
+      <p class="timeline-text">Added UI style switching. Switch to the retro (pixel) style from the settings screen to enjoy a nostalgic look with a pixel font and bold borders reminiscent of classic game consoles. Your setting is kept the next time you launch the app.</p>
+    </div>
+
+    <div class="timeline-item">
+      <span class="version-badge">v1.1.2</span>
+      <p class="timeline-text">Improved app stability on newer devices with Android 15 and later (devices with 16 KB page size support).</p>
+    </div>
+
+    <div class="timeline-item">
+      <span class="version-badge">v1.1.1</span>
+      <p class="timeline-text">On Android 15 and later, the status bar and navigation bar are now transparent so you can use more of the screen.</p>
+    </div>
+
+    <div class="timeline-item">
+      <span class="version-badge">v1.1.0</span>
+      <p class="timeline-text">Added multilingual support (Japanese and English). Search suggestions are now optimized for your language setting.</p>
+    </div>
+
+    <div class="timeline-item">
+      <span class="version-badge">v1.0.25</span>
+      <p class="timeline-text">Set the play time input limit to 999,999 hours. Added automatic scrolling to the problem field when a validation error occurs (such as minutes over 60).</p>
+    </div>
+
+    <div class="timeline-item">
+      <span class="version-badge">v1.0.24</span>
+      <p class="timeline-text">Fixed the swipe direction of the highlights section on the statistics screen so it works intuitively.</p>
+    </div>
+
+    <div class="timeline-item">
+      <span class="version-badge">v1.0.23</span>
+      <p class="timeline-text">Enabled filtering by year in statistics highlights, so you can look back at play data spanning multiple years.</p>
+    </div>
+
+    <div class="timeline-item">
+      <span class="version-badge">v1.0.22</span>
+      <p class="timeline-text">Added a chart toggle (daily / monthly) to the activity section. Adjusted the calculation to be based on "the day you played a game".</p>
+    </div>
+
+    <div class="timeline-item">
+      <span class="version-badge">v1.0.21</span>
+      <p class="timeline-text">Added automatic scrolling to input errors when registering a game, and added indicators for required fields.</p>
+    </div>
+
+    <div class="timeline-item">
+      <span class="version-badge">v1.0.20</span>
+      <p class="timeline-text">Improved handling of external links and added open source license information to the app information section.</p>
+    </div>
+
+    <div class="timeline-item">
+      <span class="version-badge">Initial version</span>
+      <p class="timeline-text">Released with the onboarding guide and core features (game log recording, search, statistics and Steam import).</p>
+    </div>
+  </div>
+
+  <!-- Feedback CTA -->
+  <div class="reveal glass" style="padding:3rem 2rem;text-align:center;margin-top:4rem;">
+    <p class="section-label" style="text-align:center;">Feedback</p>
+    <h2 style="font-family:'Syne',sans-serif;font-size:1.6rem;font-weight:700;margin-bottom:0.75rem;">
+      Want to build the next feature with us?
+    </h2>
+    <p style="color:#94a3b8;font-size:0.93rem;margin-bottom:1.75rem;line-height:1.7;">
+      Send feature requests and bug reports through the contact form.
+    </p>
+    <a href="./contact.html" class="btn-primary">
+      Go to the feedback form →
+    </a>
+  </div>
+</div>
 </div>
 
 <footer>

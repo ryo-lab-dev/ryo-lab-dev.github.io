@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="ja">
+<html lang="ja" data-title-en="FAQ & Feedback History — ScoreVault">
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
@@ -11,8 +11,10 @@
   <link href="https://fonts.googleapis.com/css2?family=Syne:wght@400;600;700;800&family=Noto+Sans+JP:wght@300;400;500;700&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet" />
   <link rel="stylesheet" href="../assets/css/scorevault.css" />
   <link rel="stylesheet" href="../assets/css/subsite.css" />
+  <link rel="stylesheet" href="../assets/css/lang.css" />
+  <script src="../assets/js/lang.js"></script>
   <!-- SEO -->
-  <meta name="description" content="ScoreVault の FAQ ページ。ゲームプレイ記録アプリ ScoreVault の使い方・機能に関するよくある質問とフィードバック履歴をまとめています。">
+  <meta name="description" content="ScoreVault の FAQ ページ。ゲームプレイ記録アプリ ScoreVault の使い方・機能に関するよくある質問とフィードバック履歴をまとめています。" data-en="FAQ for ScoreVault, the game logging app: frequently asked questions about how to use it and its features, plus feedback status.">
   <link rel="canonical" href="https://ryo-lab.dev/scorevault/faq.html">
 </head>
 <body>
@@ -26,12 +28,16 @@
     <div class="nav-links">
       <a href="./">Home</a>
       <a href="./privacy-policy.html">Privacy Policy</a>
-      <a href="./privacy-policy-en.html">Privacy Policy (EN)</a>
       <a href="./terms.html">Terms</a>
-      <a href="./articles.html">記事</a>
+      <a href="./articles.html"><span data-l="ja">記事</span><span data-l="en">Articles</span></a>
       <a href="./faq.html" class="active">FAQ</a>
       <a href="./update-history.html">Update History</a>
       <a href="./contact.html">Contact</a>
+    </div>
+    <div class="lang-toggle" role="group" aria-label="Language / 言語">
+      <svg class="lang-toggle-icon" viewBox="0 0 24 24" width="14" height="14" aria-hidden="true" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"/><path d="M2 12h20"/><path d="M12 2a15.3 15.3 0 0 1 4 10 15.3 15.3 0 0 1-4 10 15.3 15.3 0 0 1-4-10 15.3 15.3 0 0 1 4-10z"/></svg>
+      <a href="?lang=ja" data-lang-switch="ja" lang="ja" title="日本語">JA</a>
+      <a href="?lang=en" data-lang-switch="en" lang="en" title="English">EN</a>
     </div>
     <button class="nav-hamburger" id="navToggle" aria-label="メニューを開く">
       <span></span><span></span><span></span>
@@ -39,6 +45,7 @@
   </div>
 </nav>
 
+<div data-l="ja">
 <div class="page-container">
   <div class="page-header reveal">
     <p class="page-tag">Support</p>
@@ -156,6 +163,128 @@
       </a>
     </div>
   </div>
+</div>
+</div>
+
+<div data-l="en">
+<div class="page-container">
+  <div class="page-header reveal">
+    <p class="page-tag">Support</p>
+    <h1 class="page-title">FAQ & Feedback History</h1>
+    <p class="page-sub">Frequently asked questions and feedback status</p>
+  </div>
+
+  <!-- FAQ -->
+  <div class="reveal" style="margin-bottom:4rem;">
+    <p class="section-label">FAQ</p>
+
+    <div class="faq-item" id="faq1e">
+      <div class="faq-question" onclick="toggleFaq('faq1e')">
+        <span class="faq-q-label">Q1</span>
+        <span class="faq-q-text">How do I report a bug or request a feature?</span>
+        <span class="faq-chevron">▾</span>
+      </div>
+      <div class="faq-answer">
+        <div class="faq-answer-inner">
+          We accept them through the contact form. Including steps to reproduce the bug and your device information helps us respond faster.<br/>
+          <a href="./contact.html">→ Go to the feedback form</a>
+        </div>
+      </div>
+    </div>
+
+    <div class="faq-item" id="faq2e">
+      <div class="faq-question" onclick="toggleFaq('faq2e')">
+        <span class="faq-q-label">Q2</span>
+        <span class="faq-q-text">What if a game does not show up in search results?</span>
+        <span class="faq-chevron">▾</span>
+      </div>
+      <div class="faq-answer">
+        <div class="faq-answer-inner">
+          <p style="margin-bottom:0.5rem;">ScoreVault uses the IGDB and Steam API databases. Please try the following.</p>
+          <ul>
+            <li>Try searching with spaces between words</li>
+            <li>Try searching by the English title</li>
+            <li>New releases and niche titles may take time to appear in the databases</li>
+            <li>Some indie games and adult games may not be listed</li>
+            <li>If you cannot find it, you can also add it manually</li>
+          </ul>
+        </div>
+      </div>
+    </div>
+
+    <div class="faq-item" id="faq3e">
+      <div class="faq-question" onclick="toggleFaq('faq3e')">
+        <span class="faq-q-label">Q3</span>
+        <span class="faq-q-text">Do I need the passcode lock and spoiler protection for personal use?</span>
+        <span class="faq-chevron">▾</span>
+      </div>
+      <div class="faq-answer">
+        <div class="faq-answer-inner">
+          They are built for limited situations, such as showing your screen to a friend in person. They are off by default, so you can use the app without thinking about them.
+        </div>
+      </div>
+    </div>
+
+    <div class="faq-item" id="faq4e">
+      <div class="faq-question" onclick="toggleFaq('faq4e')">
+        <span class="faq-q-label">Q4</span>
+        <span class="faq-q-text">What is "M: 80" next to a review?</span>
+        <span class="faq-chevron">▾</span>
+      </div>
+      <div class="faq-answer">
+        <div class="faq-answer-inner">
+          It is the Metacritic score (a review aggregation service rated out of 100). It lets you compare your own subjective score with public and critical opinion. It is currently available only for games imported from Steam.
+        </div>
+      </div>
+    </div>
+
+    <div class="faq-item" id="faq5e">
+      <div class="faq-question" onclick="toggleFaq('faq5e')">
+        <span class="faq-q-label">Q5</span>
+        <span class="faq-q-text">Can I get play time data from Switch or PS5?</span>
+        <span class="faq-chevron">▾</span>
+      </div>
+      <div class="faq-answer">
+        <div class="faq-answer-inner">
+          Sorry, this is not available at the moment. Neither Nintendo nor Sony offers a public official API, and unofficial methods risk penalties for your account, so we have no plans to support it. You can still enter play time manually.
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Feedback CTA -->
+  <div class="reveal glass" style="padding:3rem 2rem;text-align:center;">
+    <p class="section-label" style="text-align:center;">Feedback</p>
+    <h2 style="font-family:'Syne',sans-serif;font-size:1.6rem;font-weight:700;margin-bottom:0.75rem;">
+      Have other questions or requests?
+    </h2>
+    <p style="color:#94a3b8;font-size:0.93rem;margin-bottom:1.75rem;line-height:1.7;">
+      You can send bug reports, feature requests and questions through the contact form.
+    </p>
+    <a href="./contact.html" class="btn-primary">
+      Go to the feedback form →
+    </a>
+  </div>
+
+  <!-- App Download CTA -->
+  <div class="reveal glass" style="padding:3rem 2rem;margin-top:2rem;text-align:center;">
+    <p class="section-label" style="text-align:center;">Get ScoreVault</p>
+    <h2 style="font-family:'Syne',sans-serif;font-size:1.6rem;font-weight:700;margin-bottom:0.75rem;">
+      Keep all your game records in one place
+    </h2>
+    <p style="color:#94a3b8;font-size:0.93rem;margin-bottom:1.75rem;line-height:1.7;">
+      Keep your play time, ratings and impressions as your own private record. Free on Android and iOS.
+    </p>
+    <div style="display:flex;gap:1rem;flex-wrap:wrap;justify-content:center;">
+      <a href="https://play.google.com/store/apps/details?id=com.scorevault.score_vault" target="_blank" rel="noopener" class="btn-primary">
+        Download on Google Play
+      </a>
+      <a href="https://apps.apple.com/jp/app/id6760386306" target="_blank" rel="noopener" class="btn-secondary">
+        Download on the App Store
+      </a>
+    </div>
+  </div>
+</div>
 </div>
 
 <footer>

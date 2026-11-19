@@ -169,3 +169,10 @@
   font-size: 0.93rem;
   line-height: 1.7;
 }
+
+/* ナビ: メニューを常に中央に置く（言語切替のあるページとないページでブレないように） */
+@media (min-width: 769px) {
+  nav .nav-inner { display: grid; grid-template-columns: 1fr auto 1fr; }
+  nav .nav-inner > .nav-logo { justify-self: start; }
+  nav .nav-inner > .lang-toggle { justify-self: end; }
+}
