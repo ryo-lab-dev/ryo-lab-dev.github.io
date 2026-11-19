@@ -107,3 +107,10 @@ body { color: var(--text-main); }
 .doc-section ol { list-style: decimal; color: var(--text-sub); font-size: 0.95rem; line-height: 1.8; padding-left: 1.5rem; margin: 0.5rem 0 0.75rem; }
 .doc-section ol li { padding: 0.15rem 0; }
 .doc-note { color: var(--text-sub); font-size: 0.85rem; line-height: 1.7; }
+
+/* ナビ: メニューを常に中央に置く（ホームには言語切替がなく、space-between だと右に寄るため） */
+@media (min-width: 769px) {
+  nav .nav-inner { display: grid; grid-template-columns: 1fr auto 1fr; }
+  nav .nav-inner > .nav-logo { justify-self: start; }
+  nav .nav-inner > .lang-toggle { justify-self: end; }
+}
