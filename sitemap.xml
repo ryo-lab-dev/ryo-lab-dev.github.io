@@ -4,7 +4,7 @@
   <!-- Portfolio Top -->
   <url>
     <loc>https://ryo-lab.dev/</loc>
-    <lastmod>2026-11-15</lastmod>
+    <lastmod>2026-11-20</lastmod>
     <changefreq>monthly</changefreq>
     <priority>1.0</priority>
   </url>
@@ -213,13 +213,13 @@
   <!-- FitMap -->
   <url>
     <loc>https://ryo-lab.dev/fitmap/</loc>
-    <lastmod>2026-10-23</lastmod>
+    <lastmod>2026-11-20</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
   </url>
   <url>
     <loc>https://ryo-lab.dev/fitmap/size-memo.html</loc>
-    <lastmod>2026-10-26</lastmod>
+    <lastmod>2026-11-20</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.7</priority>
   </url>
