@@ -25,36 +25,37 @@
     return t ? t.textContent.trim() : '';
   }
 
-  var ICON = '<svg viewBox="0 0 24 24" width="16" height="16" aria-hidden="true" focusable="false"><path d="M12 3v12m0 0l-5-5m5 5l5-5M5 20h14" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>';
+  // 公式バッジ（Apple の黒・Google Play の日本語。改変しない）。このスクリプトの位置を基準に解決する
+  var base = document.currentScript ? new URL('../badges/web/', document.currentScript.src).href : '/assets/badges/web/';
 
-  function buttons(long) {
+  function buttons() {
     var h = '';
-    if (play) h += '<a class="store-cta__btn" href="' + play + '" target="_blank" rel="noopener">' + ICON + '<span>' +
-      (en ? 'Google Play' : (long ? 'Google Play でダウンロード' : 'Google Play')) + '</span></a>';
-    if (apple) h += '<a class="store-cta__btn" href="' + apple + '" target="_blank" rel="noopener">' + ICON + '<span>' +
-      (en ? 'App Store' : (long ? 'App Store でダウンロード' : 'App Store')) + '</span></a>';
+    if (play) h += '<a class="store-cta__badge store-cta__badge--play" href="' + play + '" target="_blank" rel="noopener">' +
+      '<img src="' + base + 'google-play-ja.svg" alt="' + (en ? 'Get it on Google Play' : 'Google Play で手に入れよう') + '" width="180" height="53"></a>';
+    if (apple) h += '<a class="store-cta__badge store-cta__badge--apple" href="' + apple + '" target="_blank" rel="noopener">' +
+      '<img src="' + base + 'app-store-ja.svg" alt="' + (en ? 'Download on the App Store' : 'App Store からダウンロード') + '" width="109" height="40"></a>';
     return h;
   }
 
   var name = appName();
   var label = en ? 'Free to download' : '無料でダウンロード';
 
-  function make(cls, long) {
+  function make(cls) {
     var d = document.createElement('div');
     d.className = 'store-cta ' + cls;
     d.innerHTML = '<div class="store-cta__text"><strong>' + (name || '') + '</strong><span>' + label + '</span></div>' +
-      '<div class="store-cta__btns">' + buttons(long) + '</div>';
+      '<div class="store-cta__btns">' + buttons() + '</div>';
     return d;
   }
 
   // 冒頭のカード（見出しの直後）
   var header = document.querySelector('.doc-header');
-  var top = make('store-cta--top', true);
+  var top = make('store-cta--top');
   if (header && header.parentNode) header.parentNode.insertBefore(top, header.nextSibling);
   else return;
 
   // 追従バー（スマホのみ CSS で表示）。冒頭のカードも記事末尾も見えていないときだけ出す
-  var bar = make('store-cta--bar', false);
+  var bar = make('store-cta--bar');
   bar.setAttribute('aria-hidden', 'true');
   document.body.appendChild(bar);
 
