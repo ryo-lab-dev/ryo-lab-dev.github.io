@@ -312,6 +312,18 @@
     <priority>0.7</priority>
   </url>
   <url>
+    <loc>https://ryo-lab.dev/boxprofit/price-guide.html</loc>
+    <lastmod>2026-11-20</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  <url>
+    <loc>https://ryo-lab.dev/boxprofit/articles.html</loc>
+    <lastmod>2026-11-20</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  <url>
     <loc>https://ryo-lab.dev/boxprofit/privacy-policy.html</loc>
     <lastmod>2026-11-10</lastmod>
     <changefreq>yearly</changefreq>
