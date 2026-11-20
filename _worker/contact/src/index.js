@@ -1,11 +1,12 @@
 // ryo-lab.dev のお問い合わせフォーム（通常の問い合わせ・CloudKata の問題報告）を受け付ける Cloudflare Worker
-// 流れ: Origin 確認 → サイズ・形式チェック → ハニーポット → 入力検証 → Turnstile 検証 → 自分宛てにメール送信
+// 流れ: Origin 確認 → サイズ・形式チェック → ハニーポット → 入力検証 → Turnstile 検証 → 自分宛てにメール送信 → Discord に到着のお知らせ（任意）
 
-import { validateForm, isHoneypotFilled, buildFormMail } from './validate.js';
+import { validateForm, isHoneypotFilled, buildFormMail, buildDiscordNotice } from './validate.js';
 
 export const SITEVERIFY_URL = 'https://challenges.cloudflare.com/turnstile/v0/siteverify';
 export const TURNSTILE_ACTION = 'contact';
 const MAX_BODY_BYTES = 16 * 1024;
+const DISCORD_TIMEOUT_MS = 3000;
 const SENDER_NAME = 'Ryo-Lab. お問い合わせ';
 
 export default {
@@ -68,6 +69,27 @@ export async function verifyTurnstile({ token, ip, secret, hostnames, fetchFn })
     return false;
   }
   return data?.success === true && data.action === TURNSTILE_ACTION && hostnames.includes(data.hostname);
+}
+
+/**
+ * Discord に「問い合わせが届いた」ことだけを知らせる（本文・メールアドレスは送らない）。
+ * 失敗してもフォームの応答には影響させない（Webhook 未設定なら何もしない）。
+ */
+export async function notifyDiscord({ webhookUrl, content, fetchFn }) {
+  if (!webhookUrl) return false;
+  try {
+    const response = await fetchFn(webhookUrl, {
+      method: 'POST',
+      headers: { 'Content-Type': 'application/json' },
+      body: JSON.stringify({ content, allowed_mentions: { parse: [] } }),
+      signal: AbortSignal.timeout(DISCORD_TIMEOUT_MS),
+    });
+    if (!response.ok) console.error('contact: Discord 通知に失敗しました', response.status);
+    return response.ok;
+  } catch {
+    console.error('contact: Discord 通知に失敗しました', 'network');
+    return false;
+  }
 }
 
 /**
@@ -134,6 +156,7 @@ export async function handleRequest(request, env, deps) {
     userAgent: request.headers.get('User-Agent'),
   });
 
+  let mailSent = true;
   try {
     await env.EMAIL.send({
       to: env.CONTACT_TO,
@@ -146,8 +169,16 @@ export async function handleRequest(request, env, deps) {
   } catch (error) {
     // 本文や連絡先はログに残さない（エラーコードのみ）
     console.error('contact: メール送信に失敗しました', error?.code || 'unknown');
-    return json(502, { ok: false, error: 'send_failed' }, allowedOrigin);
+    mailSent = false;
   }
+
+  // メールが失敗しても Discord に届いていれば、受け付けたものとして扱う（問い合わせを取りこぼさない）
+  const notified = await notifyDiscord({
+    webhookUrl: env.DISCORD_WEBHOOK_ALERT,
+    content: buildDiscordNotice(result.kind, result.value, { mailSent }),
+    fetchFn: deps.fetchFn,
+  });
+  if (!mailSent && !notified) return json(502, { ok: false, error: 'send_failed' }, allowedOrigin);
 
   return json(200, { ok: true }, allowedOrigin);
 }
