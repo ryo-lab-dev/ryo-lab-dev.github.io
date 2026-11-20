@@ -1,0 +1,141 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>フリマの出品価格の決め方 — 目標利益から逆算する計算の手順 | BoxProfit</title>
+  <script src="https://cdn.tailwindcss.com"></script>
+  <link rel="icon" href="../assets/boxprofit/icon.png" type="image/png" />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Syne:wght@400;600;700;800&family=Noto+Sans+JP:wght@300;400;500;700&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="../assets/css/boxprofit.css" />
+  <link rel="stylesheet" href="../assets/css/subsite.css" />
+  <!-- SEO -->
+  <meta name="description" content="フリマで出品価格をいくらにすればよいか。損益分岐の価格を出し、目標の利益額や利益率から手数料を割り戻して逆算し、売れ残ったときの値下げ余地を考えるまでの手順を、フリマ利益管理アプリ BoxProfit の使い方とあわせて紹介します。">
+  <link rel="canonical" href="https://ryo-lab.dev/boxprofit/price-guide.html">
+  <meta property="og:type" content="article" />
+  <meta property="og:title" content="フリマの出品価格の決め方 — 目標利益から逆算する計算の手順" />
+  <meta property="og:description" content="損益分岐の価格を出し、目標の利益から逆算し、値下げ余地を確かめる。フリマの出品価格の決め方。" />
+  <meta property="og:url" content="https://ryo-lab.dev/boxprofit/price-guide.html" />
+  <meta property="og:image" content="https://ryo-lab.dev/assets/ogp/ogp_boxprofit.png" />
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "Article",
+    "headline": "フリマの出品価格の決め方 — 目標利益から逆算する計算の手順",
+    "description": "損益分岐の価格を出し、目標の利益から逆算し、値下げ余地を確かめる。フリマの出品価格の決め方。",
+    "inLanguage": "ja",
+    "datePublished": "2026-11-20",
+    "dateModified": "2026-11-20",
+    "mainEntityOfPage": "https://ryo-lab.dev/boxprofit/price-guide.html",
+    "image": "https://ryo-lab.dev/assets/ogp/ogp_boxprofit.png",
+    "author": {
+      "@type": "Organization",
+      "name": "Ryo-Lab.",
+      "url": "https://ryo-lab.dev/"
+    },
+    "publisher": {
+      "@type": "Organization",
+      "name": "Ryo-Lab.",
+      "url": "https://ryo-lab.dev/"
+    },
+    "about": {
+      "@type": "SoftwareApplication",
+      "name": "BoxProfit",
+      "url": "https://ryo-lab.dev/boxprofit/"
+    }
+  }
+  </script>
+  <link rel="stylesheet" href="../assets/css/store-cta.css" />
+  <script src="../assets/js/store-cta.js" defer></script>
+</head>
+<body>
+
+<nav>
+  <div class="nav-inner">
+    <a href="./" class="nav-logo">
+      <div class="nav-logo-dot"></div>
+      <span class="nav-logo-text">BoxProfit</span>
+    </a>
+    <div class="nav-links">
+      <a href="./">Home</a>
+      <a href="./privacy-policy.html">Privacy Policy</a>
+      <a href="./terms.html">利用規約</a>
+      <a href="./articles.html" class="active">記事</a>
+      <a href="./update-history.html">更新履歴</a>
+      <a href="./contact.html">お問い合わせ</a>
+    </div>
+    <button class="nav-hamburger" id="navToggle" aria-label="メニューを開く">
+      <span></span><span></span><span></span>
+    </button>
+  </div>
+</nav>
+
+<div class="doc-container">
+  <div class="doc-header reveal">
+    <p class="doc-tag">Guide</p>
+    <h1 class="doc-title">フリマの出品価格の決め方</h1>
+    <p class="doc-updated">目標利益から逆算する計算の手順（2026年11月20日）</p>
+  </div>
+
+  <div class="doc-section reveal">
+    <p>フリマに出品するとき、「いくらにすればいいか」で迷います。安くしすぎると利益が残らず、高くしすぎると売れません。相場を見る前に、まず「この価格を下回ると赤字になる」という下限を知っておくと、判断がしやすくなります。</p>
+    <p>このページでは、出品価格を決めるための計算を 3 つの手順で紹介します。後半では、フリマ利益管理アプリ BoxProfit での進め方も書いています。手数料率や送料はサービスごとに違い、変わることもあるため、実際の数字は各サービスの最新の案内で確認してください。</p>
+  </div>
+
+  <div class="divider"></div>
+
+  <div class="doc-section reveal">
+    <h2>1. まず「損益分岐の価格」を出す</h2>
+    <p>損益分岐の価格とは、利益がちょうど 0 円になる販売価格です。これ未満で売ると赤字になります。原価は、仕入れ価格だけでなく、梱包資材と送料も足します。</p>
+    <p style="font-family:monospace;padding:0.75rem 1rem;border-radius:8px;background:rgba(127,127,127,0.12);">原価 ＝ 仕入れ価格 ＋ 梱包資材の費用 ＋ 送料</p>
+    <p>販売手数料は販売価格にかかる（手数料率 × 販売価格）ので、販売価格から手数料を引いた残りが、原価と同じになる価格が損益分岐です。</p>
+    <p style="font-family:monospace;padding:0.75rem 1rem;border-radius:8px;background:rgba(127,127,127,0.12);">損益分岐の価格 ＝ 原価 ÷ （1 − 手数料率）</p>
+    <p>たとえば、原価が 3,240 円（仕入れ 3,000 円・梱包資材 30 円・送料 210 円）で、手数料率を仮に 10% とすると、3,240 ÷ 0.9 ＝ 3,600 円です。ここが下限になります（手数料率は計算例のための仮の値です）。</p>
+  </div>
+
+  <div class="divider"></div>
+
+  <div class="doc-section reveal">
+    <h2>2. 残したい利益から、出品価格を逆算する</h2>
+    <p>次に、「いくら残したいか」を決めて、出品価格を逆算します。目標は、利益の金額（例: 1,000 円残したい）か、利益率（例: 販売価格の 20% 残したい）で決めます。</p>
+    <p style="font-family:monospace;padding:0.75rem 1rem;border-radius:8px;background:rgba(127,127,127,0.12);">利益額の目標: 価格 ＝ （原価 ＋ 目標の利益額） ÷ （1 − 手数料率）</p>
+    <p style="font-family:monospace;padding:0.75rem 1rem;border-radius:8px;background:rgba(127,127,127,0.12);">利益率の目標: 価格 ＝ 原価 ÷ （1 − 手数料率 − 目標の利益率）</p>
+    <p>先ほどの例で 1,000 円残したい場合は、（3,240 ＋ 1,000） ÷ 0.9 ≒ 4,711 円です。手数料は「足す」のではなく、割り戻して求めるのがポイントです。「原価 ＋ 利益」に手数料分を足しただけでは、手数料も価格にかかるため、利益が目標に届きません。</p>
+    <p>手数料の端数の扱いや、出品価格の刻みによって、実際の金額は数円ずれます。</p>
+    <p><strong>BoxProfit では</strong>: 仕入れ価格・梱包資材・送料・手数料を選ぶと、損益分岐の価格を表示し、目標の利益額または利益率から出品価格を逆算します。利益率の初期値は、設定で決められます。商品を登録せずに試せる簡易計算もあります。</p>
+  </div>
+
+  <div class="divider"></div>
+
+  <div class="doc-section reveal">
+    <h2>3. 売れ残ったときの「値下げ余地」を見ておく</h2>
+    <p>出品してしばらく売れないと、値下げを考えます。そのときに大事なのは、「どこまで下げても赤字にならないか」です。値下げ余地は、現在の出品価格から損益分岐の価格を引いた額で考えられます。</p>
+    <p>余地が小さいなら、値下げより、送料の安い発送方法や梱包の見直しを先に考える手もあります。</p>
+    <p><strong>BoxProfit では</strong>: 出品中の商品の画面で、損益分岐の価格と値下げ余地を確認できます。現在の出品価格が赤字のときは、その旨が表示されます。</p>
+  </div>
+
+  <div class="divider"></div>
+
+  <div class="doc-section reveal">
+    <h2>BoxProfit について</h2>
+    <p>BoxProfit（ボックスプロフィット）は、フリマで売る人のための、仕入れ・梱包・送料・利益の管理アプリです。無料で使えます（画面下に広告あり）。</p>
+    <ul><li>目標の利益から出品価格を逆算</li><li>梱包資材の 1 個あたりの単価を自動計算</li><li>在庫と仕入れの管理</li><li>売上・利益の集計と CSV の書き出し</li><li>手数料率・送料を自分で登録</li></ul>
+    <div style="display:flex;gap:1rem;flex-wrap:wrap;margin-top:1.5rem;"><a href="https://play.google.com/store/apps/details?id=dev.ryolab.box_profit" target="_blank" rel="noopener" class="store-badge" style="display:inline-block;line-height:0;align-self:center;"><img src="../assets/badges/web/google-play-ja.svg" alt="Google Play で手に入れよう" height="40" style="height:40px;width:auto;display:block;"></a></div>
+    <p style="margin-top:1.5rem;"><a href="./">BoxProfit のトップへ</a> ・ <a href="./profit.html">フリマの利益計算のやり方</a></p>
+  </div>
+
+  <div class="doc-section reveal">
+    <p style="font-size:0.85rem;">BoxProfit は、各フリマサービスの運営会社とは関係のない個人が開発した非公式のアプリです。計算結果は参考値で、手数料率・送料は変更されることがあります。</p>
+  </div>
+</div>
+
+<footer>
+  <p>© 2026 Ryo-Lab. BoxProfit 開発チーム</p>
+  <p>メルカリ、PayPayフリマ、ラクマ、ヤフオク! などの名称は各社の商標です。本アプリは各社と提携・承認関係にありません。</p>
+</footer>
+
+<script src="../assets/js/subsite.js"></script>
+</body>
+</html>

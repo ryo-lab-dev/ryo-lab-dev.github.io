@@ -1,0 +1,304 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>子どもの身長・靴のサイズを記録する方法 | FitMap</title>
+  <link rel="icon" href="../assets/icons/fitmap_icon.svg" type="image/svg+xml" />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Syne:wght@400;600;700;800&family=Noto+Sans+JP:wght@300;400;500;700&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet" />
+  <meta name="description" content="子どもの身長や靴のサイズを記録して、サイズアウトの時期を見通す方法。同じ条件で測る、日付つきで残す、年齢に合わせて測り直す、という手順を、サイズ管理アプリ FitMap の使い方とあわせて紹介します。">
+  <link rel="canonical" href="https://ryo-lab.dev/fitmap/kids-size.html">
+  <meta property="og:type" content="article" />
+  <meta property="og:title" content="子どもの身長・靴のサイズを記録する方法" />
+  <meta property="og:description" content="同じ条件で測る、日付つきで残す、年齢に合わせて測り直す。子どもの身長・靴のサイズの記録のしかた。" />
+  <meta property="og:url" content="https://ryo-lab.dev/fitmap/kids-size.html" />
+  <meta property="og:image" content="https://ryo-lab.dev/assets/ogp/ogp_fitmap.jpg" />
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "Article",
+    "headline": "子どもの身長・靴のサイズを記録する方法",
+    "description": "同じ条件で測る、日付つきで残す、年齢に合わせて測り直す。子どもの身長・靴のサイズの記録のしかた。",
+    "inLanguage": "ja",
+    "datePublished": "2026-11-20",
+    "dateModified": "2026-11-20",
+    "mainEntityOfPage": "https://ryo-lab.dev/fitmap/kids-size.html",
+    "image": "https://ryo-lab.dev/assets/ogp/ogp_fitmap.jpg",
+    "author": {
+      "@type": "Organization",
+      "name": "Ryo-Lab.",
+      "url": "https://ryo-lab.dev/"
+    },
+    "publisher": {
+      "@type": "Organization",
+      "name": "Ryo-Lab.",
+      "url": "https://ryo-lab.dev/"
+    },
+    "about": {
+      "@type": "SoftwareApplication",
+      "name": "FitMap",
+      "url": "https://ryo-lab.dev/fitmap/"
+    }
+  }
+  </script>
+  <style>
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+    html { scroll-behavior: smooth; }
+    :root {
+      --bg: #f5f9fc;
+      --surface: #ffffff;
+      --blue: #0077B6;
+      --blue-mid: #0096C7;
+      --blue-light: #00B4D8;
+      --blue-pale: #ADE8F4;
+      --text: #0a1628;
+      --text-mid: #3d5a73;
+      --text-muted: #7090a0;
+      --border: #d4e8f0;
+    }
+    body {
+      background: var(--bg);
+      color: var(--text);
+      font-family: 'Noto Sans JP', sans-serif;
+      min-height: 100vh;
+      overflow-x: hidden;
+    }
+
+    /* ── Nav ── */
+    nav {
+      position: sticky; top: 0; z-index: 100;
+      background: rgba(245,249,252,0.92);
+      backdrop-filter: blur(12px);
+      -webkit-backdrop-filter: blur(12px);
+      border-bottom: 1px solid var(--border);
+    }
+    .nav-inner {
+      max-width: 1100px; margin: 0 auto;
+      padding: 0 2rem; height: 64px;
+      display: flex; align-items: center; justify-content: space-between; gap: 1rem;
+    }
+    .nav-logo { display: flex; align-items: center; gap: 0.6rem; text-decoration: none; flex-shrink: 0; }
+    .nav-logo img { width: 30px; height: 30px; }
+    .nav-logo-text {
+      font-family: 'Syne', sans-serif; font-weight: 800; font-size: 1.1rem;
+      color: var(--blue);
+    }
+    .nav-links { display: flex; align-items: center; gap: 0.1rem; }
+    .nav-links a {
+      color: var(--text-muted); text-decoration: none; font-size: 0.83rem;
+      padding: 0.4rem 0.75rem; border-radius: 6px;
+      transition: color 0.2s, background 0.2s; white-space: nowrap;
+    }
+    .nav-links a:hover, .nav-links a.active { color: var(--blue); background: rgba(0,119,182,0.06); }
+    .nav-hamburger {
+      display: none; flex-direction: column; justify-content: center;
+      gap: 5px; cursor: pointer; padding: 8px;
+      background: none; border: none; flex-shrink: 0;
+    }
+    .nav-hamburger span {
+      display: block; width: 22px; height: 2px;
+      background: var(--text-muted); border-radius: 2px;
+      transition: transform 0.25s, opacity 0.25s;
+    }
+    nav.open .nav-hamburger span:nth-child(1) { transform: translateY(7px) rotate(45deg); }
+    nav.open .nav-hamburger span:nth-child(2) { opacity: 0; }
+    nav.open .nav-hamburger span:nth-child(3) { transform: translateY(-7px) rotate(-45deg); }
+
+    /* ── Document ── */
+    .doc-container {
+      max-width: 780px; margin: 0 auto;
+      padding: 4rem 2rem 6rem;
+    }
+    .doc-header {
+      margin-bottom: 2.5rem;
+      padding-bottom: 2rem;
+      border-bottom: 1px solid var(--border);
+    }
+    .doc-tag {
+      font-family: 'JetBrains Mono', monospace; font-size: 0.72rem;
+      color: var(--blue-mid); letter-spacing: 0.18em; text-transform: uppercase;
+      margin-bottom: 0.75rem;
+    }
+    .doc-title {
+      font-family: 'Syne', sans-serif; font-size: clamp(1.8rem, 4vw, 2.4rem);
+      font-weight: 700; color: var(--blue);
+      margin-bottom: 0.75rem;
+    }
+    .doc-meta { color: var(--text-muted); font-size: 0.83rem; line-height: 1.8; }
+
+    /* ── Notice ── */
+    .notice {
+      background: rgba(0,180,216,0.06);
+      border-left: 3px solid var(--blue-light);
+      border-radius: 0 10px 10px 0;
+      padding: 1rem 1.25rem;
+      color: var(--text-mid); font-size: 0.9rem; line-height: 1.8;
+      margin-bottom: 2.5rem;
+    }
+
+    /* ── Sections ── */
+    .doc-section { margin-bottom: 2.5rem; }
+    .doc-section h2 {
+      font-family: 'Syne', sans-serif; font-size: 1.05rem; font-weight: 700;
+      color: var(--text);
+      padding: 0.55rem 1rem;
+      background: rgba(0,119,182,0.05);
+      border-left: 3px solid var(--blue);
+      border-radius: 0 8px 8px 0;
+      margin-bottom: 1rem;
+    }
+    .doc-section p {
+      color: var(--text-muted); font-size: 0.92rem;
+      margin-bottom: 0.75rem; line-height: 1.85;
+    }
+    .doc-section ul {
+      list-style: none; padding: 0; margin: 0.5rem 0 0.75rem;
+    }
+    .doc-section ul li {
+      color: var(--text-muted); font-size: 0.92rem;
+      padding: 0.35rem 0 0.35rem 1.25rem;
+      position: relative; line-height: 1.75;
+    }
+    .doc-section ul li::before {
+      content: '·'; position: absolute; left: 0.3rem;
+      color: var(--blue-mid); font-size: 1.2rem; line-height: 1.4;
+    }
+    .doc-section a { color: var(--blue-mid); text-decoration: none; }
+    .doc-section a:hover { text-decoration: underline; }
+
+    .info-table {
+      width: 100%; border-collapse: collapse;
+      font-size: 0.88rem; margin: 0.75rem 0;
+    }
+    .info-table th, .info-table td {
+      padding: 0.65rem 0.9rem; text-align: left;
+      border: 1px solid var(--border);
+    }
+    .info-table th {
+      background: rgba(0,119,182,0.05);
+      color: var(--blue); font-family: 'Syne', sans-serif;
+      font-size: 0.8rem; font-weight: 700; white-space: nowrap;
+    }
+    .info-table td { color: var(--text-muted); line-height: 1.7; }
+
+    .divider { height: 1px; background: var(--border); margin: 2rem 0; }
+
+    /* ── Reveal ── */
+    .reveal {
+      opacity: 0; transform: translateY(20px);
+      transition: opacity 0.5s ease, transform 0.5s ease;
+    }
+    .reveal.visible { opacity: 1; transform: translateY(0); }
+
+    /* ── Footer ── */
+    footer {
+      border-top: 1px solid var(--border); padding: 2rem;
+      text-align: center; color: var(--text-muted); font-size: 0.85rem;
+    }
+
+    /* ── Responsive ── */
+    @media (max-width: 768px) {
+      .nav-links { display: none; }
+      .nav-hamburger { display: flex; }
+      nav.open .nav-links {
+        display: flex; flex-direction: column;
+        position: absolute; top: 64px; left: 0; right: 0;
+        background: rgba(245,249,252,0.97);
+        backdrop-filter: blur(12px);
+        border-bottom: 1px solid var(--border);
+        padding: 1rem 1.5rem; gap: 0.25rem; z-index: 99;
+      }
+      nav.open .nav-links a { padding: 0.6rem 0.5rem; font-size: 0.9rem; }
+      .doc-container { padding: 2.5rem 1.25rem 4rem; }
+      .info-table { font-size: 0.8rem; }
+      .info-table th, .info-table td { padding: 0.5rem 0.65rem; }
+    }
+  </style>
+  <link rel="stylesheet" href="../assets/css/store-cta.css" />
+  <script src="../assets/js/store-cta.js" defer></script>
+</head>
+<body>
+
+<!-- Nav -->
+<nav>
+  <div class="nav-inner">
+    <a href="./" class="nav-logo">
+      <img src="../assets/icons/fitmap_icon.svg" alt="FitMap" />
+      <span class="nav-logo-text">FitMap</span>
+    </a>
+    <div class="nav-links">
+      <a href="./">Home</a>
+      <a href="./privacy-policy.html">Privacy Policy</a>
+      <a href="./terms.html">Terms</a>
+      <a href="./articles.html" class="active">記事</a>
+      <a href="./update-history.html">更新履歴</a>
+      <a href="./contact.html">お問い合わせ</a>
+    </div>
+    <button class="nav-hamburger" id="navToggle" aria-label="メニューを開く">
+      <span></span><span></span><span></span>
+    </button>
+  </div>
+</nav>
+
+<div class="doc-container">
+
+  <div class="doc-header reveal">
+    <p class="doc-tag">Guide</p>
+    <h1 class="doc-title">子どもの身長・靴のサイズを記録する方法</h1>
+    <p class="doc-meta">同じ条件で測り、日付つきで残す（2026年11月20日）</p>
+  </div>
+
+  <div class="doc-section reveal">
+    <p>子どもの靴や服は、成長に合わせてすぐ小さくなります。買いに行ったときに「前は何センチだったか」「そろそろ次のサイズか」が分からず、迷った経験はありませんか。</p>
+    <p>このページでは、子どもの身長や靴のサイズを記録して、買い替えの目安にするための方法を 3 つの手順で紹介します。後半では、サイズ管理アプリ FitMap でのやり方も書いています。なお、成長の早い・遅いの判断は、このページでは扱いません。気になるときは、健診や小児科で相談してください。</p>
+  </div>
+
+  <div class="divider"></div>
+
+  <div class="doc-section reveal">
+    <h2>1. 同じ条件で測る</h2>
+    <p>測るたびに条件が違うと、数字の変化が成長なのか測り方の差なのか分かりません。測る時間帯・服装・姿勢をそろえておくと、記録を比べやすくなります。靴のサイズは、足の長さを測るか、実際に履いてみて、つま先に余裕があるかを確かめます。</p>
+    <p>子どもは嫌がって動くことも多いので、完璧を目指さず、気軽に測れる回数を重ねるほうが続きます。</p>
+  </div>
+
+  <div class="divider"></div>
+
+  <div class="doc-section reveal">
+    <h2>2. 日付つきで残し、前回と比べられるようにする</h2>
+    <p>記録は、測った日付とセットで残します。前回の数字と並べて見られると、「3 か月で何センチ変わったか」が分かり、次の買い替えの時期を見通しやすくなります。</p>
+    <p><strong>FitMap では</strong>: 人体のシルエットの部位をタップして、身長・靴のサイズなどを記録できます。記録は日付つきで残り、身長などの変化は折れ線グラフで確認できます。家族ごとにプロフィールを切り替えられるので、子どもごとに分けて残せます。</p>
+  </div>
+
+  <div class="divider"></div>
+
+  <div class="doc-section reveal">
+    <h2>3. 年齢に合わせて、測り直しを忘れない</h2>
+    <p>子どもは、年齢が低いほど短い間隔で体が変わります。測り直しの間隔を決めておき、通知などで思い出せるようにしておくと、記録が途切れません。</p>
+    <p><strong>FitMap では</strong>: 18 歳未満のプロフィールを「成長記録」として扱い、年齢に合わせた測り直しの目安を表示します。靴は、これまでの成長ペースから、次のサイズに上がりそうな時期の目安も表示されます。設定で「測り直しのお知らせ」を選ぶと、年齢に合わせて 3〜12 か月ごとに端末へ通知します（通知には名前やサイズは表示されません）。目安は記録からの推定なので、買う前には実際に履いて確かめてください。</p>
+  </div>
+
+  <div class="divider"></div>
+
+  <div class="doc-section reveal">
+    <h2>FitMap について</h2>
+    <p>FitMap（フィットマップ）は、からだのサイズをまとめて記録できるサイズ管理アプリです。完全オフラインで動き、無料で使えます（広告あり）。</p>
+    <ul><li>人体シルエットをタップしてサイズを記録</li><li>子どもの成長記録（測り直しの目安・靴のサイズアップの目安）</li><li>サイズ早見カード（S/M/L・W・UK/EU の目安つき）</li><li>家族のプロフィールと、身長・体重などの推移グラフ</li></ul>
+    <div style="display:flex;gap:1rem;flex-wrap:wrap;margin-top:1.5rem;"><a href="https://play.google.com/store/apps/details?id=com.ryolab.fit_map" target="_blank" rel="noopener" class="store-badge" style="display:inline-block;line-height:0;align-self:center;"><img src="../assets/badges/web/google-play-ja.svg" alt="Google Play で手に入れよう" height="40" style="height:40px;width:auto;display:block;"></a></div>
+    <p style="margin-top:1.5rem;"><a href="./">FitMap のトップへ</a> ・ <a href="./size-memo.html">服・靴のサイズを記録して、通販で迷わない方法</a></p>
+  </div>
+
+  <div class="doc-section reveal">
+    <p style="font-size:0.85rem;">サイズや成長の目安は記録からの推定で、医療に関する専門家の助言に代わるものではありません。</p>
+  </div>
+</div>
+
+<!-- Footer -->
+<footer>
+  <p>© 2026 Ryo-Lab. FitMap Project</p>
+</footer>
+
+<script src="../assets/js/subsite.js"></script>
+</body>
+</html>
