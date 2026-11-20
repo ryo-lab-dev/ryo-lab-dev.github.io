@@ -136,6 +136,18 @@
     <priority>0.7</priority>
   </url>
   <url>
+    <loc>https://ryo-lab.dev/nexusdiary/diary-habit.html</loc>
+    <lastmod>2026-11-20</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  <url>
+    <loc>https://ryo-lab.dev/nexusdiary/articles.html</loc>
+    <lastmod>2026-11-20</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  <url>
     <loc>https://ryo-lab.dev/nexusdiary/privacy-policy.html</loc>
     <lastmod>2026-11-10</lastmod>
     <changefreq>yearly</changefreq>
