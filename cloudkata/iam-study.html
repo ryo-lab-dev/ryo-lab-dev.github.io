@@ -1,0 +1,158 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Google Cloud IAM の勉強方法 — ACE で問われる考え方を 3 つに絞る | CloudKata</title>
+  <script src="https://cdn.tailwindcss.com"></script>
+  <link rel="icon" href="../assets/cloudkata/icon_01_zen.png" type="image/png" />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Syne:wght@400;600;700;800&family=Noto+Sans+JP:wght@300;400;500;700&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="../assets/css/cloudkata.css" />
+  <link rel="stylesheet" href="../assets/css/subsite.css" />
+  <link rel="stylesheet" href="../assets/css/store-cta.css" />
+  <script src="../assets/js/store-cta.js" defer></script>
+  <!-- SEO -->
+  <meta name="description" content="Google Cloud の IAM を ACE 向けに勉強する方法。「誰が・何を・どこに」の形でロールを考える、ロールの種類を区別する、最小権限で選ぶ、という 3 つの考え方を、学習アプリ CloudKata の使い方とあわせて紹介します。">
+  <link rel="canonical" href="https://ryo-lab.dev/cloudkata/iam-study.html">
+  <meta property="og:type" content="article" />
+  <meta property="og:title" content="Google Cloud IAM の勉強方法 — ACE で問われる考え方を 3 つに絞る" />
+  <meta property="og:description" content="「誰が・何を・どこに」でロールを考える、ロールの種類を区別する、最小権限で選ぶ。IAM の 3 つの考え方。" />
+  <meta property="og:url" content="https://ryo-lab.dev/cloudkata/iam-study.html" />
+  <meta property="og:image" content="https://ryo-lab.dev/assets/ogp/ogp_cloudkata.png" />
+  <meta name="apple-itunes-app" content="app-id=6760472647" />
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "Article",
+    "headline": "Google Cloud IAM の勉強方法 — ACE で問われる考え方を 3 つに絞る",
+    "description": "「誰が・何を・どこに」でロールを考える、ロールの種類を区別する、最小権限で選ぶ。IAM の 3 つの考え方。",
+    "inLanguage": "ja",
+    "datePublished": "2026-11-20",
+    "dateModified": "2026-11-20",
+    "mainEntityOfPage": "https://ryo-lab.dev/cloudkata/iam-study.html",
+    "image": "https://ryo-lab.dev/assets/ogp/ogp_cloudkata.png",
+    "author": {
+      "@type": "Organization",
+      "name": "Ryo-Lab.",
+      "url": "https://ryo-lab.dev/"
+    },
+    "publisher": {
+      "@type": "Organization",
+      "name": "Ryo-Lab.",
+      "url": "https://ryo-lab.dev/"
+    },
+    "about": {
+      "@type": "SoftwareApplication",
+      "name": "CloudKata",
+      "url": "https://ryo-lab.dev/cloudkata/"
+    }
+  }
+  </script>
+</head>
+<body>
+
+<nav>
+  <div class="nav-inner">
+    <a href="./" class="nav-logo">
+      <div class="nav-logo-dot"></div>
+      <span class="nav-logo-text">CloudKata</span>
+    </a>
+    <div class="nav-links">
+      <a href="./">Home</a>
+      <a href="./privacy-policy.html">Privacy Policy</a>
+      <a href="./disclaimer.html">免責事項</a>
+      <a href="./terms.html">利用規約</a>
+      <a href="./articles.html" class="active">記事</a>
+      <a href="./update-history.html">更新履歴</a>
+      <a href="./contact.html">お問い合わせ</a>
+    </div>
+    <button class="nav-hamburger" id="navToggle" aria-label="メニューを開く">
+      <span></span><span></span><span></span>
+    </button>
+  </div>
+</nav>
+
+<div class="doc-container">
+  <div class="doc-header reveal">
+    <p class="doc-tag">Guide</p>
+    <h1 class="doc-title">Google Cloud IAM の勉強方法</h1>
+    <p class="doc-updated">ACE で問われる考え方を 3 つに絞る（2026年11月20日）</p>
+  </div>
+
+  <div class="doc-section reveal">
+    <p>Google Cloud の資格「Associate Cloud Engineer（ACE）」では、IAM（Identity and Access Management）の問題がよく出ます。ロールの名前が多く、「どのロールを付ければよいか」で迷いやすい分野です。</p>
+    <p>ただ、名前を 1 つずつ暗記しようとすると続きません。このページでは、IAM を 3 つの考え方に絞って整理します。後半では、学習アプリ CloudKata での進め方も書いています。ロールの一覧や仕様は更新されるため、細かい点は公式ドキュメントで確認してください。</p>
+  </div>
+
+  <div class="divider"></div>
+
+  <div class="doc-section reveal">
+    <h2>1. 「誰が・何を・どこに」で考える</h2>
+    <p>IAM の設定は、「誰に（プリンシパル）」「どのロールを」「どのリソースに」付けるか、の組み合わせです。問題文を読んだら、まずこの 3 つを書き出します。</p>
+    <ul>
+      <li><strong>誰が</strong>: ユーザー、グループ、サービスアカウントなど</li>
+      <li><strong>何を</strong>: 付けるロール（権限のまとまり）</li>
+      <li><strong>どこに</strong>: 組織・フォルダ・プロジェクト・個別のリソース</li>
+    </ul>
+    <p>権限は、上の階層（組織・フォルダ・プロジェクト）で付けると、その下のリソースにも引き継がれます。「どの階層で付けるか」は、範囲の広さを決める大事な判断です。</p>
+  </div>
+
+  <div class="divider"></div>
+
+  <div class="doc-section reveal">
+    <h2>2. ロールの種類を区別する</h2>
+    <p>ロールは大きく 3 種類に分けられます。</p>
+    <ul>
+      <li><strong>基本ロール</strong>: オーナー・編集者・閲覧者。範囲が広く、本番での常用はすすめられません</li>
+      <li><strong>事前定義ロール</strong>: サービスごとに Google が用意した、用途別のロール</li>
+      <li><strong>カスタムロール</strong>: 必要な権限だけを自分で組み合わせたロール</li>
+    </ul>
+    <p>問題では、「基本ロールでは広すぎる。事前定義ロールで足りないときに、カスタムロールを作る」という順番で考えると、選択肢を絞りやすくなります。</p>
+  </div>
+
+  <div class="divider"></div>
+
+  <div class="doc-section reveal">
+    <h2>3. 迷ったら「最小権限」で選ぶ</h2>
+    <p>最小権限の原則とは、作業に必要な権限だけを付けることです。選択肢が複数あるときは、次の順で考えます。</p>
+    <ul>
+      <li>作業に必要な操作だけを含むロールか（広すぎないか）</li>
+      <li>個人ではなく、グループやサービスアカウントに付けているか</li>
+      <li>アプリが使う権限を、人のアカウントではなくサービスアカウントに付けているか</li>
+    </ul>
+    <p>「全員にオーナーを付ける」のような選択肢は、ほぼ誤りと考えて構いません。</p>
+  </div>
+
+  <div class="divider"></div>
+
+  <div class="doc-section reveal">
+    <h2>4. 練習問題で、考え方を定着させる</h2>
+    <p>考え方を頭に入れたら、問題を解いて確かめます。間違えたときは、答えを覚えるのではなく、上の 3 つのどこでずれたかを確かめると、次の問題にも使えます。</p>
+    <p><strong>CloudKata では</strong>: カテゴリに「IAM &amp; Security」があり、このカテゴリだけを選んで、難易度を指定して解けます。各問題の解説に、公式ドキュメントへのリンクが付いています。正答率の低い問題は、苦手克服モードでまとめて解き直せます。収録している問題はすべて独自に作成した練習問題で、実際の試験問題とは関係ありません。</p>
+  </div>
+
+  <div class="divider"></div>
+
+  <div class="doc-section reveal">
+    <h2>CloudKata について</h2>
+    <p>CloudKata（クラウドカタ）は、Google Cloud の資格 Associate Cloud Engineer の学習を支える、4 択形式の問題集アプリです。サインインなしでも 30 問まで無料で試せます（広告あり）。</p>
+    <ul><li>カテゴリ・難易度を選べる問題演習</li><li>正答率の低い問題を集める苦手克服モード</li><li>カテゴリ別正答率のレーダーチャートと学習の推移</li><li>解説にコンソールの操作手順と公式ドキュメントへのリンク</li><li>オフラインでの演習</li></ul>
+    <div style="display:flex;gap:1rem;flex-wrap:wrap;margin-top:1.5rem;"><a href="https://play.google.com/store/apps/details?id=com.originalapp.cloud_kata" target="_blank" rel="noopener" class="store-badge" style="display:inline-block;line-height:0;align-self:center;"><img src="../assets/badges/web/google-play-ja.svg" alt="Google Play で手に入れよう" height="40" style="height:40px;width:auto;display:block;"></a><a href="https://apps.apple.com/jp/app/id6760472647" target="_blank" rel="noopener" class="store-badge" style="display:inline-block;line-height:0;align-self:center;"><img src="../assets/badges/web/app-store-ja.svg" alt="App Store からダウンロード" height="40" style="height:40px;width:auto;display:block;"></a></div>
+    <p style="margin-top:1.5rem;"><a href="./">CloudKata のトップへ</a> ・ <a href="./ace-study.html">ACE の勉強方法</a></p>
+  </div>
+
+  <div class="doc-section reveal">
+    <p style="font-size:0.85rem;">CloudKata は個人が開発した非公式の学習支援ツールで、Google LLC の公式認定品ではありません。収録している問題はすべて独自に作成した練習問題です。「Google Cloud」「GCP」は Google LLC の商標です。</p>
+  </div>
+</div>
+
+<footer>
+  <p>© 2026 Ryo-Lab. CloudKata 開発チーム</p>
+  <p>Google Cloud, GCP は Google LLC の商標です。本アプリは Google LLC の公式認定品ではありません。</p>
+</footer>
+
+<script src="../assets/js/subsite.js"></script>
+</body>
+</html>
