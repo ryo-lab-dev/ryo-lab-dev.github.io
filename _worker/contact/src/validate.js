@@ -288,6 +288,27 @@ export function buildFormMail(kind, value, meta) {
   return kind === 'problem' ? buildProblemMail(value, meta) : buildMail(value, meta);
 }
 
+/**
+ * Discord に送る到着のお知らせ。個人情報を外部に出さないため、本文・メールアドレス・端末情報は含めない。
+ * 返信用メールアドレスの有無だけ書く（全文は通知メールで確認する）。
+ * @param {'contact' | 'problem'} kind
+ * @param {{ app: string, category?: string, issue?: string, problemId?: string, email: string }} value
+ * @param {{ mailSent: boolean }} meta
+ */
+export function buildDiscordNotice(kind, value, meta) {
+  const appName = APPS[value.app];
+  const title =
+    kind === 'problem'
+      ? `問題の指摘 ${value.problemId}：${PROBLEM_ISSUES[value.issue]}`
+      : CATEGORIES[value.category];
+  const lines = [
+    `📩 **お問い合わせが届きました** [${appName}] ${title}`,
+    value.email ? '返信先の記入あり' : '返信先の記入なし（返信不可）',
+    meta.mailSent ? '全文は通知メールを確認してください。' : '⚠️ メール送信に失敗しました。`npx wrangler tail` で原因を確認してください（本文は Discord には送っていません）。',
+  ];
+  return lines.join('\n');
+}
+
 function formatJst(date) {
   const jst = new Date(date.getTime() + 9 * 60 * 60 * 1000);
   const pad = (n) => String(n).padStart(2, '0');

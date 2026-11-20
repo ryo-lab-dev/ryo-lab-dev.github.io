@@ -190,3 +190,82 @@ test('削除依頼でメール未記入なら 400 を返し、Turnstile を呼�
   assert.equal(calls.length, 0);
   assert.equal(sent.length, 0);
 });
+
+function discordFetch(verify = okVerify, discordStatus = 204) {
+  const discord = [];
+  const fetchFn = async (url, init) => {
+    if (String(url).startsWith('https://discord.test/')) {
+      discord.push({ url, init });
+      return new Response(null, { status: discordStatus });
+    }
+    return new Response(JSON.stringify(verify), { status: 200 });
+  };
+  return { discord, fetchFn };
+}
+
+test('Discord：Webhook があれば、本文・メールアドレスを含まない到着通知を送る', async () => {
+  const { env } = makeEnv({ DISCORD_WEBHOOK_ALERT: 'https://discord.test/hook' });
+  const { discord, fetchFn } = discordFetch();
+  const res = await handleRequest(post(validBody), env, deps(fetchFn));
+  assert.equal(res.status, 200);
+  assert.equal(discord.length, 1);
+  const body = JSON.parse(discord[0].init.body);
+  assert.match(body.content, /\[ScoreVault\] 使い方のご質問/);
+  assert.doesNotMatch(body.content, /user@example\.com|使い方を教えて/);
+  assert.deepEqual(body.allowed_mentions, { parse: [] });
+});
+
+test('Discord：Webhook 未設定なら通知せず、従来どおり動く', async () => {
+  const { env, sent } = makeEnv();
+  const { discord, fetchFn } = discordFetch();
+  const res = await handleRequest(post(validBody), env, deps(fetchFn));
+  assert.equal(res.status, 200);
+  assert.equal(sent.length, 1);
+  assert.equal(discord.length, 0);
+});
+
+test('Discord：通知が失敗しても 200 を返す', async () => {
+  const { env } = makeEnv({ DISCORD_WEBHOOK_ALERT: 'https://discord.test/hook' });
+  const { fetchFn } = discordFetch(okVerify, 500);
+  const original = console.error;
+  console.error = () => {};
+  try {
+    const res = await handleRequest(post(validBody), env, deps(fetchFn));
+    assert.equal(res.status, 200);
+  } finally {
+    console.error = original;
+  }
+});
+
+test('Discord：メール送信が失敗しても Discord に届けば 200、警告を添える', async () => {
+  const { env } = makeEnv({
+    DISCORD_WEBHOOK_ALERT: 'https://discord.test/hook',
+    EMAIL: { send: async () => { throw new Error('x'); } },
+  });
+  const { discord, fetchFn } = discordFetch();
+  const original = console.error;
+  console.error = () => {};
+  try {
+    const res = await handleRequest(post(validBody), env, deps(fetchFn));
+    assert.equal(res.status, 200);
+  } finally {
+    console.error = original;
+  }
+  assert.match(JSON.parse(discord[0].init.body).content, /メール送信に失敗/);
+});
+
+test('Discord：メールも Discord も失敗したら 502', async () => {
+  const { env } = makeEnv({
+    DISCORD_WEBHOOK_ALERT: 'https://discord.test/hook',
+    EMAIL: { send: async () => { throw new Error('x'); } },
+  });
+  const { fetchFn } = discordFetch(okVerify, 500);
+  const original = console.error;
+  console.error = () => {};
+  try {
+    const res = await handleRequest(post(validBody), env, deps(fetchFn));
+    assert.equal(res.status, 502);
+  } finally {
+    console.error = original;
+  }
+});

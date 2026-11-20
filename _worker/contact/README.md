@@ -22,6 +22,7 @@ Workers Paid（月 5 ドル）にはしないでください。Paid にすると
 |---|---|---|
 | `TURNSTILE_SECRET` | 秘密 | `npx wrangler secret put`（リポジトリには入れない） |
 | `CONTACT_TO` | 秘密（運営者のメールアドレス） | `npx wrangler secret put`（リポジトリには入れない） |
+| `DISCORD_WEBHOOK_ALERT` | 秘密（任意。Discord の Webhook URL） | `npx wrangler secret put`（未設定なら Discord には通知しない） |
 | `CONTACT_FROM` | 設定値 | `wrangler.jsonc`（`noreply@ryo-lab.dev`） |
 | `ALLOWED_ORIGINS` / `TURNSTILE_HOSTNAMES` | 設定値 | `wrangler.jsonc` |
 | Turnstile のサイトキー | 公開値 | `assets/js/contact-form.js` の `TURNSTILE_SITE_KEY`（ページのソースに必ず出る値なので公開して問題ない） |
@@ -76,6 +77,21 @@ npx wrangler secret put CONTACT_TO         # プロンプトに受信用の Gmai
 ### 7.（任意）レート制限ルールを追加する
 
 Turnstile があるので必須ではありません。さらに絞りたい場合は、ダッシュボードの「セキュリティ」→「WAF」→「レート制限ルール」で、ホスト名 `api.ryo-lab.dev` を対象に同一 IP からの連続送信を制限します。無料プランはルール数や条件の選択肢が限られるので、画面で選べる範囲で設定してください。
+
+## Discord にも到着を知らせる（任意）
+
+メールに加えて、Discord に「お問い合わせが届きました」と通知します（Workers Free のまま・追加費用なし）。
+
+- 通知するのは **アプリ名・種別（問題報告は問題 ID と指摘の種類）・返信先の記入の有無だけ**。本文・メールアドレス・端末情報は Discord に送りません（プライバシーポリシーの記載範囲を変えないため）。全文はこれまでどおり通知メールで確認します
+- Discord への送信が失敗しても、フォームの応答には影響しません。メール送信が失敗して Discord には届いた場合は、受付を成功として扱い、Discord に警告を添えます（両方失敗したときだけ 502）
+- 登録は、既存の「#要対応」と同じ Webhook URL でかまいません（`tools/discord-notify` の `DISCORD_WEBHOOK_ALERT` と同じ名前）
+
+```bash
+cd _worker/contact
+npx wrangler secret put DISCORD_WEBHOOK_ALERT   # プロンプトに Webhook URL を貼り付け（履歴に残らない）
+```
+
+Secret の追加だけで有効になります（再デプロイは、このコードの変更を反映するときに 1 回だけ必要：`npx wrangler deploy`）。外すときは `npx wrangler secret delete DISCORD_WEBHOOK_ALERT`。
 
 ## 開発
 
