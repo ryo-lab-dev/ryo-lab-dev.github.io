@@ -1,0 +1,287 @@
+<!DOCTYPE html>
+<html lang="ja" data-title-en="TsuriDayori — A pixel-art fishing game to fill your fish encyclopedia">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>釣りだより — 魚図鑑を集める、ドット絵の釣りゲーム</title>
+  <script src="https://cdn.tailwindcss.com"></script>
+  <link rel="icon" href="../assets/tsuridayori/icon.png" type="image/png" />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Syne:wght@400;600;700;800&family=Noto+Sans+JP:wght@300;400;500;700&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="../assets/css/tsuridayori.css" />
+  <link rel="stylesheet" href="../assets/css/subsite.css" />
+  <link rel="stylesheet" href="../assets/css/lang.css" />
+  <script src="../assets/js/lang.js"></script>
+
+  <!-- SEO -->
+  <meta name="description" content="ポロと一緒に、タイミングよく魚を釣って図鑑を埋める、ドット絵の釣りゲーム「釣りだより」。生け簀で育てて、毎日変わる「今日の潮」で出る魚が変わります。" data-en="TsuriDayori is a pixel-art fishing game. Time your taps to reel in fish with Polo, fill your encyclopedia, raise fish in the tank, and see different fish with the daily tide.">
+  <link rel="canonical" href="https://ryo-lab.dev/tsuridayori/">
+  <meta property="og:type" content="website">
+  <meta property="og:url" content="https://ryo-lab.dev/tsuridayori/">
+  <meta property="og:title" content="釣りだより — 魚図鑑を集める、ドット絵の釣りゲーム">
+  <meta property="og:description" content="ポロと一緒に、タイミングよく魚を釣って図鑑を埋める、ドット絵の釣りゲーム「釣りだより」。生け簀で育てて、毎日変わる「今日の潮」で出る魚が変わります。">
+  <meta property="og:image" content="https://ryo-lab.dev/assets/ogp/ogp_tsuridayori.png">
+  <meta property="og:site_name" content="Ryo-Lab">
+  <meta property="og:locale" content="ja_JP">
+  <meta property="og:locale:alternate" content="en_US">
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:title" content="釣りだより — 魚図鑑を集める、ドット絵の釣りゲーム">
+  <meta name="twitter:description" content="ポロと一緒に、タイミングよく魚を釣って図鑑を埋める、ドット絵の釣りゲーム「釣りだより」。生け簀で育てて、毎日変わる「今日の潮」で出る魚が変わります。">
+  <meta name="twitter:image" content="https://ryo-lab.dev/assets/ogp/ogp_tsuridayori.png">
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "SoftwareApplication",
+    "name": "釣りだより",
+    "alternateName": "TsuriDayori",
+    "operatingSystem": "Android",
+    "applicationCategory": "GameApplication",
+    "description": "ポロと一緒に釣り糸を垂らし、魚を釣って図鑑を埋めていく、ドット絵の釣りゲーム。",
+    "url": "https://ryo-lab.dev/tsuridayori/",
+    "inLanguage": ["ja", "en"],
+    "offers": { "@type": "Offer", "price": "0", "priceCurrency": "JPY" },
+    "author": {
+      "@type": "Organization",
+      "name": "Ryo-Lab Team",
+      "url": "https://ryo-lab.dev/"
+    }
+  }
+  </script>
+</head>
+<body>
+
+<nav>
+  <div class="nav-inner">
+    <a href="./" class="nav-logo">
+      <div class="nav-logo-dot"></div>
+      <span class="nav-logo-text"><span data-l="ja">釣りだより</span><span data-l="en" lang="en">TsuriDayori</span></span>
+    </a>
+    <div class="nav-links">
+      <a href="./" class="active">Home</a>
+      <a href="./privacy-policy.html">Privacy Policy</a>
+      <a href="./terms.html"><span data-l="ja">利用規約</span><span data-l="en" lang="en">Terms</span></a>
+      <a href="./contact.html"><span data-l="ja">お問い合わせ</span><span data-l="en" lang="en">Contact</span></a>
+    </div>
+    <div class="lang-toggle" role="group" aria-label="Language / 言語">
+      <svg class="lang-toggle-icon" viewBox="0 0 24 24" width="14" height="14" aria-hidden="true" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"/><path d="M2 12h20"/><path d="M12 2a15.3 15.3 0 0 1 4 10 15.3 15.3 0 0 1-4 10 15.3 15.3 0 0 1-4-10 15.3 15.3 0 0 1 4-10z"/></svg>
+      <a href="?lang=ja" data-lang-switch="ja" lang="ja" title="日本語">JA</a>
+      <a href="?lang=en" data-lang-switch="en" lang="en" title="English">EN</a>
+    </div>
+    <button class="nav-hamburger" id="navToggle" aria-label="メニューを開く">
+      <span></span><span></span><span></span>
+    </button>
+  </div>
+</nav>
+
+  <!-- Hero -->
+  <section class="hero">
+    <img src="../assets/tsuridayori/icon.png" alt="釣りだより アプリアイコン" class="hero-icon" width="96" height="96" />
+    <div style="margin-bottom:1.5rem;">
+      <span class="status-badge">
+        <span class="pulse-dot"></span>
+        <span data-l="ja">近日公開（Android）</span><span data-l="en" lang="en">Coming soon (Android)</span>
+      </span>
+    </div>
+    <h1 class="hero-title gradient-text"><span data-l="ja">釣りだより</span><span data-l="en" lang="en">TsuriDayori</span></h1>
+    <p class="hero-en">TSURIDAYORI</p>
+    <p class="hero-sub"><span data-l="ja">タイミングで釣って、育てて、図鑑を埋めよう。</span><span data-l="en" lang="en">Time it, catch it, raise it — fill your encyclopedia.</span></p>
+    <p class="hero-origin"><span data-l="ja">ポロと一緒に釣り糸を垂らして、魚を釣って図鑑を埋めていく、ドット絵の釣りゲームです。</span><span data-l="en" lang="en">Cast a line with Polo, reel in fish and fill your encyclopedia in this pixel-art fishing game.</span></p>
+    <img src="../assets/tsuridayori/feature-graphic.png" alt="釣りだよりのフィーチャーグラフィック。桟橋で釣り竿を構えるポロ" class="hero-art" width="1024" height="500" />
+    <div style="display:flex;gap:1rem;flex-wrap:wrap;justify-content:center;">
+      <span class="btn-primary btn-disabled" aria-disabled="true"><span data-l="ja">Google Play（近日公開）</span><span data-l="en" lang="en">Google Play (coming soon)</span></span>
+      <a href="./contact.html" class="btn-secondary"><span data-l="ja">お問い合わせ・フィードバック</span><span data-l="en" lang="en">Contact & feedback</span></a>
+    </div>
+  </section>
+
+  <div class="glow-line" style="max-width:800px;margin:0 auto;"></div>
+
+  <!-- あそびかた -->
+  <section>
+    <div class="section-inner">
+      <div class="reveal" style="margin-bottom:2.5rem;">
+        <p class="section-label">How to play</p>
+        <h2 class="section-title"><span data-l="ja">あそびかたは、3 ステップ。</span><span data-l="en" lang="en">How to play, in 3 steps.</span></h2>
+      </div>
+      <div class="steps">
+        <div class="step-card glass reveal">
+          <h3><span data-l="ja">釣る</span><span data-l="en" lang="en">Catch</span></h3>
+          <p><span data-l="ja">画面をタップして竿を投げ、浮きが沈んで「!」が出たらもう一度タップ。ゲージの白い線が緑の枠に入った瞬間にタップすると、魚が釣れます。</span><span data-l="en" lang="en">Tap to cast. When the float sinks and "!" appears, tap again. Tap the moment the white line is inside the green zone to land the fish.</span></p>
+          <img class="step-shot" src="../assets/tsuridayori/screenshots/01.jpg" alt="タイミングを合わせて、魚を釣り上げる画面" width="540" height="960" loading="lazy" />
+        </div>
+        <div class="step-card glass reveal" style="transition-delay:0.1s;">
+          <h3><span data-l="ja">集める</span><span data-l="en" lang="en">Collect</span></h3>
+          <p><span data-l="ja">釣った魚は図鑑にたまります。魚ごとの最大サイズ（魚拓）を更新したり、新種を見つけたりするのが楽しい。</span><span data-l="en" lang="en">Every catch goes into your encyclopedia. Beat each fish’s record size and find new species.</span></p>
+          <img class="step-shot" src="../assets/tsuridayori/screenshots/03.jpg" alt="釣った魚が図鑑にたまっていく画面" width="540" height="960" loading="lazy" />
+        </div>
+        <div class="step-card glass reveal" style="transition-delay:0.2s;">
+          <h3><span data-l="ja">育てて、強くなる</span><span data-l="en" lang="en">Raise & grow</span></h3>
+          <p><span data-l="ja">生け簀で魚を育てて、大きくなってから出荷。売ったコインで、竿・釣り針・ルアー・餌を強くしましょう。</span><span data-l="en" lang="en">Raise fish in the tank and ship them once they have grown. Use the coins to upgrade your rod, hook, lures and bait.</span></p>
+          <img class="step-shot" src="../assets/tsuridayori/screenshots/04.jpg" alt="生け簀で魚を育てる画面" width="540" height="960" loading="lazy" />
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <div class="glow-line" style="max-width:800px;margin:0 auto;"></div>
+
+  <!-- Features -->
+  <section>
+    <div class="section-inner">
+      <div class="reveal" style="margin-bottom:3rem;">
+        <p class="section-label">Features</p>
+        <h2 class="section-title"><span data-l="ja">のどかな海と川で、のんびりと。</span><span data-l="en" lang="en">Take it easy by the sea and river.</span></h2>
+      </div>
+      <div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(280px,1fr));gap:1.5rem;">
+        <div class="feature-card reveal">
+          <div class="feature-icon">🎣</div>
+          <h3><span data-l="ja">気持ちのいい、釣りの操作</span><span data-l="en" lang="en">Satisfying fishing controls</span></h3>
+          <p><span data-l="ja">大きい魚ほど、当たり枠が狭くなり、当てる回数も増えます。釣るほどレベルが上がり、枠が広く、ゲージがゆっくりに。</span><span data-l="en" lang="en">Bigger fish have a narrower zone and need more hits. As you level up, the zone widens and the gauge slows down.</span></p>
+        </div>
+        <div class="feature-card reveal" style="transition-delay:0.1s;">
+          <div class="feature-icon">📖</div>
+          <h3><span data-l="ja">魚図鑑を、ぜんぶ埋める</span><span data-l="en" lang="en">Fill the whole encyclopedia</span></h3>
+          <p><span data-l="ja">のどかな日本の渓流・池・堤防・荒磯・沖へ。各釣り場にひそむ「ぬし」は、めったにかからない大物です。</span><span data-l="en" lang="en">Visit streams, ponds, piers, rocky shores and the open sea. The boss of each spot is a rare giant.</span></p>
+        </div>
+        <div class="feature-card reveal" style="transition-delay:0.2s;">
+          <div class="feature-icon">🐟</div>
+          <h3><span data-l="ja">生け簀で育てる</span><span data-l="en" lang="en">Raise fish in the tank</span></h3>
+          <p><span data-l="ja">アプリを閉じている間も、生け簀の魚は育ちます。大きくなってから出荷しましょう。</span><span data-l="en" lang="en">Fish in the tank keep growing while the app is closed. Ship them once they are big.</span></p>
+        </div>
+        <div class="feature-card reveal">
+          <div class="feature-icon">🌙</div>
+          <h3><span data-l="ja">毎日変わる「今日の潮」</span><span data-l="en" lang="en">A different tide every day</span></h3>
+          <p><span data-l="ja">大潮や小潮の日にだけ現れる魚や、その日の旬の魚がいます。明日の潮は、広告を見ると先取りできます。</span><span data-l="en" lang="en">Some fish appear only on spring or neap tide days, and each day has its in-season fish. Watch an ad to peek at tomorrow’s tide.</span></p>
+        </div>
+        <div class="feature-card reveal" style="transition-delay:0.1s;">
+          <div class="feature-icon">🤖</div>
+          <h3><span data-l="ja">オートモード</span><span data-l="en" lang="en">Auto mode</span></h3>
+          <p><span data-l="ja">離れている間も釣りを続けられます（手動より控えめです）。</span><span data-l="en" lang="en">Keep fishing while you are away (a little less effective than playing by hand).</span></p>
+        </div>
+        <div class="feature-card reveal" style="transition-delay:0.2s;">
+          <div class="feature-icon">🧭</div>
+          <h3><span data-l="ja">はじめてでも、迷わない</span><span data-l="en" lang="en">Easy to start</span></h3>
+          <p><span data-l="ja">場面ごとに案内が出ます。あとから読み直すこともできます。毎日 1 回、その日の餌ももらえます。</span><span data-l="en" lang="en">Tips appear as you go, and you can reread them anytime. You also get the day’s bait once a day.</span></p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <div class="glow-line" style="max-width:800px;margin:0 auto;"></div>
+
+  <!-- Screenshots -->
+  <section>
+    <div class="section-inner">
+      <div class="reveal" style="margin-bottom:2rem;">
+        <p class="section-label">Screenshots</p>
+        <h2 class="section-title"><span data-l="ja">アプリの画面</span><span data-l="en" lang="en">Screenshots</span></h2>
+        <p style="color:var(--text-sub);font-size:0.85rem;margin-top:0.5rem;"><span data-l="ja">← スワイプまたはスクロールで確認できます</span><span data-l="en" lang="en">← Swipe or scroll to see more</span></p>
+      </div>
+      <div class="screenshot-strip reveal">
+        <img src="../assets/tsuridayori/screenshots/01.jpg" alt="釣りだよりの画面 1: タイミングを合わせて、魚を釣り上げよう。" width="540" height="960" loading="lazy" />
+        <img src="../assets/tsuridayori/screenshots/02.jpg" alt="釣りだよりの画面 2: 新種も、模様違いも。釣るたびに発見が。" width="540" height="960" loading="lazy" />
+        <img src="../assets/tsuridayori/screenshots/03.jpg" alt="釣りだよりの画面 3: 釣った魚が、図鑑にたまっていく。" width="540" height="960" loading="lazy" />
+        <img src="../assets/tsuridayori/screenshots/04.jpg" alt="釣りだよりの画面 4: 生け簀で育てて、大物にして出荷。" width="540" height="960" loading="lazy" />
+        <img src="../assets/tsuridayori/screenshots/05.jpg" alt="釣りだよりの画面 5: 毎日変わる潮で、出る魚が変わる。" width="540" height="960" loading="lazy" />
+        <img src="../assets/tsuridayori/screenshots/06.jpg" alt="釣りだよりの画面 6: 竿や餌を強くして、ぬしに挑め。" width="540" height="960" loading="lazy" />
+      </div>
+    </div>
+  </section>
+
+  <div class="glow-line" style="max-width:800px;margin:0 auto;"></div>
+
+  <!-- 今日の潮について -->
+  <section>
+    <div class="section-inner" style="max-width:760px;">
+      <div class="reveal tide-note">
+        <p><span data-l="ja"><strong>「今日の潮」について:</strong> 月の周期から計算した、ゲーム用の目安です。実際の潮汐とは異なり、実際の釣りや海の安全の判断には使えません。実際の釣りは、地域のルールと安全に従ってください。</span><span data-l="en" lang="en"><strong>About "Today’s Tide":</strong> it is a game guideline calculated from the lunar cycle. It differs from real tides and cannot be used to decide about real fishing or safety at sea. When you fish for real, follow local rules and safety practices.</span></p>
+      </div>
+    </div>
+  </section>
+
+  <div class="glow-line" style="max-width:800px;margin:0 auto;"></div>
+
+  <!-- Story -->
+  <section>
+    <div class="section-inner" style="max-width:760px;">
+      <div class="reveal" style="margin-bottom:2rem;">
+        <p class="section-label">Story</p>
+        <h2 class="section-title"><span data-l="ja">作った理由</span><span data-l="en" lang="en">Why we made it</span></h2>
+      </div>
+      <div class="reveal glass" style="padding:2rem;">
+        <p class="story-text"><span data-l="ja">個人で開発しています。タイミングを合わせて釣り上げる気持ちよさと、図鑑が少しずつ埋まっていく楽しさを、ドット絵のやさしい世界で味わえるように作りました。</span><span data-l="en" lang="en">This game is developed by an individual. We wanted to let you enjoy the satisfaction of timing a catch and the joy of slowly filling an encyclopedia, in a gentle pixel-art world.</span></p>
+        <p class="story-text"><span data-l="ja">広告は、画面上部のバナーと、自分で選んで見る動画広告だけです。見なくても遊べます。詳しくは<a href="./privacy-policy.html" style="color:var(--primary);text-decoration:underline;">プライバシーポリシー</a>をご覧ください。</span><span data-l="en" lang="en">Ads are limited to a banner at the top of the screen and rewarded videos you choose to watch — you can play without watching. See the <a href="./privacy-policy.html" style="color:var(--primary);text-decoration:underline;">Privacy Policy</a> for details.</span></p>
+        <p class="story-text"><span data-l="ja">こんな方に使っていただけたら嬉しいです。</span><span data-l="en" lang="en">We hope you will enjoy it if you are:</span></p>
+        <ul class="story-list">
+          <li><span data-l="ja">タイミングを合わせる、気持ちのいい操作が好きな方</span><span data-l="en" lang="en">Someone who likes satisfying timing-based controls</span></li>
+          <li><span data-l="ja">図鑑やコレクションを埋めていくのが好きな方</span><span data-l="en" lang="en">Someone who loves filling encyclopedias and collections</span></li>
+          <li><span data-l="ja">ドット絵のやさしい世界を、少しずつ育てたい方</span><span data-l="en" lang="en">Someone who wants to grow a gentle pixel-art world bit by bit</span></li>
+        </ul>
+      </div>
+    </div>
+  </section>
+
+  <div class="glow-line" style="max-width:800px;margin:0 auto;"></div>
+
+  <!-- FAQ -->
+  <section>
+    <div class="section-inner">
+      <div class="reveal" style="margin-bottom:2.5rem;">
+        <p class="section-label">FAQ</p>
+        <h2 class="section-title"><span data-l="ja">よくある質問</span><span data-l="en" lang="en">FAQ</span></h2>
+      </div>
+      <div class="reveal glass" style="padding:1.5rem 2rem;">
+        <div class="mini-faq-item">
+          <span class="mini-faq-q"><span data-l="ja">無料で遊べますか？</span><span data-l="en" lang="en">Is it free?</span></span>
+          <span class="mini-faq-a"><span data-l="ja">はい。基本無料です。画面の上にバナー広告が出ます。広告（動画）を見ると、毎日の餌が増える、生け簀の出荷額が 2 倍になる、明日の潮が見られるなどの特典があります（見なくても遊べます）。</span><span data-l="en" lang="en">Yes. It is free to play, with a banner ad at the top of the screen. Watching a rewarded video gives perks like extra daily bait, double shipment value from the tank, or a look at tomorrow’s tide (you can play without watching).</span></span>
+        </div>
+        <div class="mini-faq-item">
+          <span class="mini-faq-q"><span data-l="ja">閉じていても進みますか？</span><span data-l="en" lang="en">Does it progress while closed?</span></span>
+          <span class="mini-faq-a"><span data-l="ja">生け簀の魚は、アプリを閉じている間も育ちます。オートモード（レベル 10 で解放）で、離れている間も釣りを続けられます。</span><span data-l="en" lang="en">Fish in the tank keep growing while the app is closed. Auto mode (unlocked at level 10) keeps fishing while you are away.</span></span>
+        </div>
+        <div class="mini-faq-item">
+          <span class="mini-faq-q"><span data-l="ja">データはどこに保存されますか？</span><span data-l="en" lang="en">Where is my data saved?</span></span>
+          <span class="mini-faq-a"><span data-l="ja">お使いの端末の中です。任意で Google ログインをすると、クラウドにも保存され、別の端末へ引き継げます。</span><span data-l="en" lang="en">On your device. If you optionally sign in with Google, it is also saved to the cloud so you can move to another device.</span></span>
+        </div>
+        <div class="mini-faq-item">
+          <span class="mini-faq-q"><span data-l="ja">「今日の潮」は本物の潮ですか？</span><span data-l="en" lang="en">Is "Today’s Tide" the real tide?</span></span>
+          <span class="mini-faq-a"><span data-l="ja">いいえ。月の周期から計算したゲーム用の目安で、実際の潮汐とは異なります。実際の釣りの判断には使えません。</span><span data-l="en" lang="en">No. It is a game guideline calculated from the lunar cycle and differs from real tides. Do not use it to decide about real fishing.</span></span>
+        </div>
+        <div class="mini-faq-item">
+          <span class="mini-faq-q"><span data-l="ja">iPhone で遊べますか？</span><span data-l="en" lang="en">Can I play on iPhone?</span></span>
+          <span class="mini-faq-a"><span data-l="ja">いまは Android のみです。配信は日本国内のみです。</span><span data-l="en" lang="en">Android only for now. It is distributed in Japan only.</span></span>
+        </div>
+        <div class="mini-faq-item">
+          <span class="mini-faq-q"><span data-l="ja">アカウントとデータの削除</span><span data-l="en" lang="en">Deleting my account and data</span></span>
+          <span class="mini-faq-a"><span data-l="ja">アプリの「設定 → アカウント」の「アカウント削除」から削除できます。詳しくは<a href="./privacy-policy.html">プライバシーポリシー</a>をご覧ください。</span><span data-l="en" lang="en">You can delete them from "Settings → Account → Delete account" in the app. See the <a href="./privacy-policy.html">Privacy Policy</a> for details.</span></span>
+        </div>
+        <div class="mini-faq-item">
+          <span class="mini-faq-q"><span data-l="ja">不具合・要望は？</span><span data-l="en" lang="en">Bugs and requests?</span></span>
+          <span class="mini-faq-a"><span data-l="ja"><a href="./contact.html">お問い合わせフォーム</a>から送れます。</span><span data-l="en" lang="en">Send them through the <a href="./contact.html">contact form</a>.</span></span>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <div class="glow-line" style="max-width:800px;margin:0 auto;"></div>
+
+  <!-- Contact -->
+  <section>
+    <div class="section-inner" style="text-align:center;">
+      <div class="reveal glass" style="padding:3rem 2rem;max-width:640px;margin:0 auto;">
+        <p class="section-label" style="text-align:center;">Contact</p>
+        <h2 class="section-title" style="font-size:1.8rem;"><span data-l="ja">お問い合わせ</span><span data-l="en" lang="en">Contact</span></h2>
+        <p class="contact-text"><span data-l="ja">不具合の報告、機能のご要望、ご質問はお問い合わせフォームから受け付けています。</span><span data-l="en" lang="en">Send bug reports, feature requests and questions through the contact form.</span></p>
+        <a href="./contact.html" class="btn-primary"><span data-l="ja">お問い合わせフォームへ →</span><span data-l="en" lang="en">Go to the contact form →</span></a>
+      </div>
+    </div>
+  </section>
+
+  <footer>
+    <p>© 2026 Ryo-Lab. <span data-l="ja">釣りだより 開発チーム</span><span data-l="en" lang="en">TsuriDayori Team</span></p>
+    <p style="margin-top:0.5rem;font-size:0.8rem;"><a href="./privacy-policy.html">Privacy Policy</a> ・ <a href="./terms.html"><span data-l="ja">利用規約</span><span data-l="en" lang="en">Terms</span></a> ・ <a href="./update-history.html"><span data-l="ja">更新履歴</span><span data-l="en" lang="en">Update History</span></a> ・ <a href="./contact.html"><span data-l="ja">お問い合わせ</span><span data-l="en" lang="en">Contact</span></a></p>
+  </footer>
+
+<script src="../assets/js/subsite.js"></script>
+</body>
+</html>
