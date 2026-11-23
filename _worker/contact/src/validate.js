@@ -15,6 +15,7 @@ export const APPS = Object.freeze({
   towerclimb: 'タワクライム',
   starpuzzle: '星取りパズル',
   minetownworks: '鉱山町の工房',
+  tsuridayori: '釣りだより',
 });
 
 /** 問い合わせの種別 */
