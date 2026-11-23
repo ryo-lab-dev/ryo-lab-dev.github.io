@@ -12,18 +12,18 @@
   <link rel="stylesheet" href="../assets/css/towerclimb.css" />
   <link rel="stylesheet" href="../assets/css/subsite.css" />
   <!-- SEO -->
-  <meta name="description" content="放置して登る、ドット絵の放置 RPG「タワクライム」。勇者が無限の塔を自動で登り、拾った装備で見た目が変わります。毎日全員が同じ塔に挑む「今日の塔」、転生、実績、複数端末の同期（任意のログイン）に対応。Google Play で配信中。">
+  <meta name="description" content="放置して登る、ドット絵の放置 RPG「タワクライム」。勇者が無限の塔を自動で登ります。50 階ごとに変わる区画、集める図鑑、強い装備のまま姿を選べる見た目装備、毎日全員が同じ塔に挑む「今日の塔」、転生に対応。Google Play で配信中。">
   <link rel="canonical" href="https://ryo-lab.dev/towerclimb/">
   <meta property="og:type" content="website">
   <meta property="og:url" content="https://ryo-lab.dev/towerclimb/">
   <meta property="og:title" content="タワクライム — 放置して登る、ドット絵の塔">
-  <meta property="og:description" content="放置して登る、ドット絵の放置 RPG「タワクライム」。勇者が無限の塔を自動で登り、拾った装備で見た目が変わります。毎日全員が同じ塔に挑む「今日の塔」、転生、実績、複数端末の同期（任意のログイン）に対応。Google Play で配信中。">
+  <meta property="og:description" content="放置して登る、ドット絵の放置 RPG「タワクライム」。勇者が無限の塔を自動で登ります。50 階ごとに変わる区画、集める図鑑、強い装備のまま姿を選べる見た目装備、毎日全員が同じ塔に挑む「今日の塔」、転生に対応。Google Play で配信中。">
   <meta property="og:image" content="https://ryo-lab.dev/assets/ogp/ogp_towerclimb.png">
   <meta property="og:site_name" content="Ryo-Lab">
   <meta property="og:locale" content="ja_JP">
   <meta name="twitter:card" content="summary_large_image">
   <meta name="twitter:title" content="タワクライム — 放置して登る、ドット絵の塔">
-  <meta name="twitter:description" content="放置して登る、ドット絵の放置 RPG「タワクライム」。勇者が無限の塔を自動で登り、拾った装備で見た目が変わります。毎日全員が同じ塔に挑む「今日の塔」、転生、実績、複数端末の同期（任意のログイン）に対応。Google Play で配信中。">
+  <meta name="twitter:description" content="放置して登る、ドット絵の放置 RPG「タワクライム」。勇者が無限の塔を自動で登ります。50 階ごとに変わる区画、集める図鑑、強い装備のまま姿を選べる見た目装備、毎日全員が同じ塔に挑む「今日の塔」、転生に対応。Google Play で配信中。">
   <meta name="twitter:image" content="https://ryo-lab.dev/assets/ogp/ogp_towerclimb.png">
   <script type="application/ld+json">
   {
@@ -32,7 +32,7 @@
     "name": "タワクライム",
     "operatingSystem": "Android",
     "applicationCategory": "GameApplication",
-    "description": "勇者が無限の塔を自動で登る、ドット絵の放置 RPG。装備で見た目が変わり、毎日全員が同じ塔に挑めます。",
+    "description": "勇者が無限の塔を自動で登る、ドット絵の放置 RPG。50 階ごとに変わる区画、図鑑、見た目装備、毎日全員が同じ塔に挑む「今日の塔」に対応。",
     "url": "https://ryo-lab.dev/towerclimb/",
     "offers": { "@type": "Offer", "price": "0", "priceCurrency": "JPY" },
     "author": {
@@ -74,10 +74,10 @@
     </div>
     <h1 class="hero-title gradient-text">タワクライム</h1>
     <p class="hero-sub">放っておいても、塔は登れる。</p>
-    <p class="hero-origin">勇者が無限の塔を自動で登っていく、ドット絵の放置 RPG。拾った装備で、勇者の見た目が変わります。</p>
+    <p class="hero-origin">ポロ（勇者）が無限の塔を自動で登っていく、ドット絵の放置 RPG。区画ごとに変わる塔、集める図鑑、好きな姿への着せ替えが楽しめます。</p>
     <div style="display:flex;gap:1rem;flex-wrap:wrap;justify-content:center;">
       <a href="https://play.google.com/store/apps/details?id=com.ryolab.towerclimb" target="_blank" rel="noopener" class="store-badge" style="display:inline-block;line-height:0;align-self:center;"><img src="../assets/badges/web/google-play-ja.svg" alt="Google Play で手に入れよう" height="40" style="height:40px;width:auto;display:block;"></a>
-      <span class="btn-secondary btn-disabled" aria-disabled="true">App Store（再審査準備中）</span>
+      <span class="btn-secondary btn-disabled" aria-disabled="true">App Store（審査中）</span>
       <a href="./contact.html" class="btn-secondary">お問い合わせ・フィードバック</a>
     </div>
   </section>
@@ -92,18 +92,9 @@
         <h2 class="section-title">こんなふうに、登ります。</h2>
       </div>
       <div class="tc-scene-wrap reveal">
-        <div class="tc-scene" id="tcScene" role="img" aria-label="勇者がスライムなどの敵を倒しながら塔を登っていく、ドット絵のイメージ映像">
-          <div class="tc-floor-bg"></div>
-          <div class="tc-hud" aria-hidden="true"><span><b id="tcFloor">1F</b></span><span>金貨 <b id="tcGold">0</b></span></div>
-          <div class="tc-hero" aria-hidden="true">
-            <div class="tc-body">
-              <img src="../assets/towerclimb/sprites/hero_base.png" alt="" width="32" height="32" />
-              <img class="tc-armor" src="../assets/towerclimb/sprites/armor_0_common.png" alt="" width="32" height="32" />
-              <img class="tc-charm" src="../assets/towerclimb/sprites/charm_0_common.png" alt="" width="32" height="32" />
-            </div>
-            <img class="tc-weapon" src="../assets/towerclimb/sprites/weapon_0_idle_common.png" alt="" width="32" height="32" />
-          </div>
-          <div class="tc-enemy" aria-hidden="true"><img src="../assets/towerclimb/sprites/mob_slime_green.png" alt="" width="32" height="32" /></div>
+        <div class="tc-hud" aria-hidden="true"><span><b id="tcFloor">5F</b></span><span>金貨 <b id="tcGold">0</b></span></div>
+        <div class="tc-frame">
+          <canvas class="tc-scene" id="tcScene" width="270" height="150" role="img" aria-label="ポロが敵を倒しながら塔を登っていく、ドット絵のイメージ映像。50 階ごとに背景と敵が変わります。"></canvas>
         </div>
         <div class="tc-scene-ctl">
           <p class="tc-scene-note">アプリのドット絵を使ったイメージです（実際の画面とは異なります）。</p>
@@ -126,32 +117,47 @@
         <div class="feature-card reveal">
           <div class="feature-icon">🗼</div>
           <h3>勇者が自動で登る</h3>
-          <p>敵を倒して階を進み、10 階ごとにボスが待っています。操作は、金貨で攻撃力を強化するだけ。アプリを閉じている間も、金貨はたまります（最大 8 時間ぶん）。</p>
+          <p>敵を倒して階を進み、10 階ごとに中ボス、50 階ごとに区画ボスが待っています。操作は、金貨で攻撃力を強化するだけ。アプリを閉じている間も、金貨はたまります（最大 8 時間ぶん）。</p>
         </div>
         <div class="feature-card reveal" style="transition-delay:0.1s;">
-          <div class="feature-icon">⚔️</div>
-          <h3>装備で、姿が変わる</h3>
-          <p>武器・鎧・お守りの 3 枠。階が進むほど装備の段階が上がり、見た目も変わります。32×32 のドット絵を重ね描きしています。</p>
+          <div class="feature-icon">🧱</div>
+          <h3>区画ごとに変わる塔</h3>
+          <p>塔は 50 階ごとの区画（石の回廊・苔むした地下水路・炎の工房・氷の回廊・星空の塔頂）に分かれ、背景・敵・区画ボスが変わります。251 階からは最初の区画に戻って周回します。</p>
         </div>
         <div class="feature-card reveal" style="transition-delay:0.2s;">
+          <div class="feature-icon">⚔️</div>
+          <h3>装備で、姿が変わる</h3>
+          <p>武器・防具・装飾の 3 枠。コモンからレジェンドまでの 5 段階の希少度があり、副能力も付きます。防具の段階（革・鎖・騎士）でポロの姿が変わり、持った武器も絵に重なります。</p>
+        </div>
+        <div class="feature-card reveal">
+          <div class="feature-icon">📖</div>
+          <h3>集めるほど、図鑑が埋まる</h3>
+          <p>出会った敵・ボス、拾った装備（段階・系統・希少度）、集めた守護精霊が、図鑑に記録されます。まだ出会っていないものは、シルエットで表示されます。</p>
+        </div>
+        <div class="feature-card reveal" style="transition-delay:0.1s;">
+          <div class="feature-icon">👗</div>
+          <h3>強い装備のまま、好きな姿に</h3>
+          <p>能力はそのままで、ポロの見た目だけを好きな装備に固定できます。見た目は 3 つのセットに保存できます。</p>
+        </div>
+        <div class="feature-card reveal" style="transition-delay:0.2s;">
+          <div class="feature-icon">🌟</div>
+          <h3>守護精霊と、系統のセット効果</h3>
+          <p>7 種類の守護精霊を集めて、能力を高めます。装備の系統（剣士・狩人・守護者・秘術師）を 2 個・3 個そろえると、セット効果が発動します。</p>
+        </div>
+        <div class="feature-card reveal">
           <div class="feature-icon">📅</div>
           <h3>毎日、全員が同じ塔へ</h3>
           <p>「今日の塔」は、日本時間の 0 時に切り替わる 30 階の塔。3 つの加護を選んで挑み、結果は文字で共有できます。</p>
         </div>
-        <div class="feature-card reveal">
-          <div class="feature-icon">🔁</div>
-          <h3>転生で、さらに高みへ</h3>
-          <p>行き詰まったら転生して、魂をもらいます。魂は 1 つにつき、攻撃力と金貨が +10%。回を重ねるほど、深くまで登れます。</p>
-        </div>
         <div class="feature-card reveal" style="transition-delay:0.1s;">
-          <div class="feature-icon">🏆</div>
-          <h3>実績と、記録</h3>
-          <p>実績を達成すると、装備や能力の恒久アップが手に入ります。転生ごとの到達階や、レジェンドの入手回数などの記録も確認できます。</p>
+          <div class="feature-icon">🔁</div>
+          <h3>転生と実績で、さらに高みへ</h3>
+          <p>行き詰まったら転生して、魂をもらいます。魂は 1 つにつき、攻撃力と金貨が +10%。実績を達成すると、装備や能力の恒久アップが手に入り、これまでの記録も見返せます。</p>
         </div>
         <div class="feature-card reveal" style="transition-delay:0.2s;">
           <div class="feature-icon">☁️</div>
           <h3>ログインは、あとから</h3>
-          <p>登録なしですぐ遊べます。設定から Google でログインすると、データをクラウドに保存し、複数の端末で続きを遊べます。ガチャはありません。</p>
+          <p>登録なしですぐ遊べます。設定から Google（iOS 版では Apple も）でログインすると、データをクラウドに保存し、複数の端末で続きを遊べます。ガチャはありません。</p>
         </div>
       </div>
     </div>
@@ -168,13 +174,13 @@
         <p style="color:var(--text-sub);font-size:0.85rem;margin-top:0.5rem;">← スワイプまたはスクロールで確認できます</p>
       </div>
       <div class="screenshot-strip reveal">
-        <img src="../assets/towerclimb/screenshots/01.jpg" alt="タワクライムの画面 1: 放っておいても、塔は登れる" width="540" height="1080" loading="lazy" />
-        <img src="../assets/towerclimb/screenshots/02.jpg" alt="タワクライムの画面 2: 閉じている間も、金貨はたまる" width="540" height="1080" loading="lazy" />
-        <img src="../assets/towerclimb/screenshots/03.jpg" alt="タワクライムの画面 3: 拾うたび、勇者の姿が変わる" width="540" height="1080" loading="lazy" />
-        <img src="../assets/towerclimb/screenshots/04.jpg" alt="タワクライムの画面 4: 毎日、全員同じ塔に挑む" width="540" height="1080" loading="lazy" />
-        <img src="../assets/towerclimb/screenshots/05.jpg" alt="タワクライムの画面 5: 転生して、さらに高みへ" width="540" height="1080" loading="lazy" />
-        <img src="../assets/towerclimb/screenshots/06.jpg" alt="タワクライムの画面 6: やりこみが、力になる" width="540" height="1080" loading="lazy" />
-        <img src="../assets/towerclimb/screenshots/07.jpg" alt="タワクライムの画面 7: 歩みは、数字で残る" width="540" height="1080" loading="lazy" />
+        <img src="../assets/towerclimb/screenshots/01.jpg" alt="タワクライムの画面 1: 放っておいても、塔は登れる。" width="540" height="1080" loading="lazy" />
+        <img src="../assets/towerclimb/screenshots/02.jpg" alt="タワクライムの画面 2: 集めるほど、図鑑が埋まる。" width="540" height="1080" loading="lazy" />
+        <img src="../assets/towerclimb/screenshots/03.jpg" alt="タワクライムの画面 3: 強い装備のまま、好きな姿に。" width="540" height="1080" loading="lazy" />
+        <img src="../assets/towerclimb/screenshots/04.jpg" alt="タワクライムの画面 4: 拾うたび、ポロの姿が変わる。" width="540" height="1080" loading="lazy" />
+        <img src="../assets/towerclimb/screenshots/05.jpg" alt="タワクライムの画面 5: 毎日、全員 同じ塔に挑む。" width="540" height="1080" loading="lazy" />
+        <img src="../assets/towerclimb/screenshots/06.jpg" alt="タワクライムの画面 6: 転生して、さらに高みへ。" width="540" height="1080" loading="lazy" />
+        <img src="../assets/towerclimb/screenshots/07.jpg" alt="タワクライムの画面 7: 閉じている間も、金貨はたまる。" width="540" height="1080" loading="lazy" />
       </div>
     </div>
   </section>
@@ -190,11 +196,12 @@
       </div>
       <div class="reveal glass" style="padding:2rem;">
         <p class="story-text">個人で開発しています。忙しい日でも、すきま時間にのぞくだけで少し進んでいる。そんな放置ゲームを、ドット絵の見た目にこだわって作りました。</p>
-        <p class="story-text">ガチャも、画面いっぱいの全画面広告もありません。広告は、画面下のバナーと、自分で選んで見る動画広告だけです。詳しくは<a href="./privacy-policy.html" style="color:var(--primary);text-decoration:underline;">プライバシーポリシー</a>をご覧ください。</p>
+        <p class="story-text">ガチャも、画面いっぱいの全画面広告もありません。広告は、画面上部のバナーと、自分で選んで見る動画広告だけです。詳しくは<a href="./privacy-policy.html" style="color:var(--primary);text-decoration:underline;">プライバシーポリシー</a>をご覧ください。</p>
         <p class="story-text">こんな方に使っていただけたら嬉しいです。</p>
         <ul class="story-list">
           <li>仕事や家事のあいまに、気軽に進められるゲームが好きな方</li>
-          <li>装備を集めて、見た目が変わっていくドット絵が好きな方</li>
+          <li>装備や図鑑を集めて、見た目が変わっていくドット絵が好きな方</li>
+          <li>強い装備のまま、好きな姿に着せ替えて遊びたい方</li>
           <li>毎日の「ひと勝負」を、習慣にしたい方</li>
         </ul>
       </div>
@@ -213,11 +220,11 @@
       <div class="reveal glass" style="padding:1.5rem 2rem;">
         <div class="mini-faq-item">
           <span class="mini-faq-q">費用</span>
-          <span class="mini-faq-a">無料でご利用いただけます。広告が表示されます（画面下のバナー、自分で選んで見る動画広告）。</span>
+          <span class="mini-faq-a">無料でご利用いただけます。広告が表示されます（画面上部のバナー、自分で選んで見る動画広告）。</span>
         </div>
         <div class="mini-faq-item">
           <span class="mini-faq-q">対応端末</span>
-          <span class="mini-faq-a">Android 版は Google Play で配信中です。iOS（iPhone）版は再審査の準備中で、公開日が決まりしだい、このページでお知らせします。配信は日本国内のみの予定です。</span>
+          <span class="mini-faq-a">Android 版は Google Play で配信中です。iOS（iPhone）版は審査中で、公開日が決まりしだい、このページでお知らせします。配信は日本国内のみの予定です。</span>
         </div>
         <div class="mini-faq-item">
           <span class="mini-faq-q">ログイン・登録</span>
@@ -230,6 +237,14 @@
         <div class="mini-faq-item">
           <span class="mini-faq-q">課金はありますか？</span>
           <span class="mini-faq-a">ガチャや課金アイテムはありません。</span>
+        </div>
+        <div class="mini-faq-item">
+          <span class="mini-faq-q">見た目装備とは？</span>
+          <span class="mini-faq-a">強い装備のまま、ポロの見た目だけを好きな装備に固定できる機能です。能力は変わりません。3 つのセットに保存できます。</span>
+        </div>
+        <div class="mini-faq-item">
+          <span class="mini-faq-q">図鑑とは？</span>
+          <span class="mini-faq-a">出会った敵・ボス、拾った装備、集めた守護精霊を記録する画面です。まだ出会っていないものは、シルエットで表示されます。</span>
         </div>
         <div class="mini-faq-item">
           <span class="mini-faq-q">ご意見・不具合の報告</span>
