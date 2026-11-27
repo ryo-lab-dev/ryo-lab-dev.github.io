@@ -1,0 +1,107 @@
+<!DOCTYPE html>
+<html lang="ja" data-title-en="Update History — PoloMusubi">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>更新履歴 — ポロとむすびの迷宮</title>
+  <script src="https://cdn.tailwindcss.com"></script>
+  <link rel="icon" href="../assets/polomusubi/icon.png" type="image/png" />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Syne:wght@400;600;700;800&family=Noto+Sans+JP:wght@300;400;500;700&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="../assets/css/polomusubi.css" />
+  <link rel="stylesheet" href="../assets/css/subsite.css" />
+  <link rel="stylesheet" href="../assets/css/lang.css" />
+  <script src="../assets/js/lang.js"></script>
+
+  <!-- SEO -->
+  <meta name="description" content="ポロとむすびの迷宮の更新履歴ページ。各バージョンで追加・変更・修正した内容を確認できます。" data-en="Update history for &quot;PoloMusubi&quot;: what was added, changed and fixed in each version.">
+  <link rel="canonical" href="https://ryo-lab.dev/polomusubi/update-history.html">
+  <meta property="og:type" content="website">
+  <meta property="og:url" content="https://ryo-lab.dev/polomusubi/update-history.html">
+  <meta property="og:title" content="更新履歴 — ポロとむすびの迷宮">
+  <meta property="og:description" content="ポロとむすびの迷宮の更新履歴ページ。各バージョンで追加・変更・修正した内容を確認できます。">
+  <meta property="og:image" content="https://ryo-lab.dev/assets/ogp/ogp_polomusubi.png">
+  <meta property="og:site_name" content="Ryo-Lab">
+  <meta property="og:locale" content="ja_JP">
+  <meta property="og:locale:alternate" content="en_US">
+  <style>:root{--uh-text:#efe9f7;--uh-sub:#aea3c2;}</style>
+  <link rel="stylesheet" href="../assets/css/update-history.css" />
+</head>
+<body>
+
+<nav>
+  <div class="nav-inner">
+    <a href="./" class="nav-logo">
+      <div class="nav-logo-dot"></div>
+      <span class="nav-logo-text"><span data-l="ja">ポロとむすびの迷宮</span><span data-l="en" lang="en">PoloMusubi</span></span>
+    </a>
+    <div class="nav-links">
+      <a href="./">Home</a>
+      <a href="./privacy-policy.html">Privacy Policy</a>
+      <a href="./terms.html"><span data-l="ja">利用規約</span><span data-l="en" lang="en">Terms</span></a>
+      <a href="./contact.html"><span data-l="ja">お問い合わせ</span><span data-l="en" lang="en">Contact</span></a>
+    </div>
+    <div class="lang-toggle" role="group" aria-label="Language / 言語">
+      <svg class="lang-toggle-icon" viewBox="0 0 24 24" width="14" height="14" aria-hidden="true" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"/><path d="M2 12h20"/><path d="M12 2a15.3 15.3 0 0 1 4 10 15.3 15.3 0 0 1-4 10 15.3 15.3 0 0 1-4-10 15.3 15.3 0 0 1 4-10z"/></svg>
+      <a href="?lang=ja" data-lang-switch="ja" lang="ja" title="日本語">JA</a>
+      <a href="?lang=en" data-lang-switch="en" lang="en" title="English">EN</a>
+    </div>
+    <button class="nav-hamburger" id="navToggle" aria-label="メニューを開く">
+      <span></span><span></span><span></span>
+    </button>
+  </div>
+</nav>
+
+  <div class="uh-wrap">
+    <div class="uh-header reveal">
+      <p class="uh-tag">Changelog</p>
+      <h1 class="uh-title"><span data-l="ja">更新履歴</span><span data-l="en" lang="en">Update History</span></h1>
+      <p class="uh-sub"><span data-l="ja">ポロとむすびの迷宮の変更内容を、最新バージョンから順に表示します。</span><span data-l="en" lang="en">Changes to PoloMusubi, newest version first.</span></p>
+    </div>
+
+    <div class="uh-timeline reveal">
+      <div class="uh-item latest" data-l="ja" lang="ja">
+        <span class="uh-badge">v1.0.0 — 初回リリース</span>
+        <p class="uh-summary">ポロと迷宮を進み、魔獣を仲間にして「結び」で強くしていく、ドット絵のコマンド RPG です。</p>
+        <ul class="uh-list">
+          <li><span class="uh-kind uh-kind-add">追加</span>迷宮の探索：迷宮を一歩ずつ進みます。宝箱・たき火・階段、そして魔獣との出会いが待っています。迷宮は 5 つあり、それぞれの奥に「ぬし」がいます。ぬしを倒すと、次の迷宮が開きます。</li>
+          <li><span class="uh-kind uh-kind-add">追加</span>コマンド戦闘：わざを選んでターンを進めます。わざには属性があり、相性のいい属性で攻めると大きなダメージを与えられます。</li>
+          <li><span class="uh-kind uh-kind-add">追加</span>てなづけと仲間：魔獣を弱らせて、えさをあげると仲間にできます。好みの味のえさほど、仲間になりやすくなります。パーティの並び順や、控えとの入れかえもできます。</li>
+          <li><span class="uh-kind uh-kind-add">追加</span>結び：2 体の魔獣から、新しい魔獣を生み出します。結果は運でなく決まっていて、親を選んで、狙った魔獣を作れます。</li>
+          <li><span class="uh-kind uh-kind-add">追加</span>かくせいと「かがやき」：レベル上限に届いた魔獣は「かくせい」で、固有わざが強くなります。まれに現れる、色違いの「かがやき」もいます。</li>
+          <li><span class="uh-kind uh-kind-add">追加</span>ずかんとぬし：集めた魔獣が図鑑に記録され、埋めるとごほうびがもらえます。ぬしとは、「きずなの儀式」で仲間になる道もあります。</li>
+          <li><span class="uh-kind uh-kind-add">追加</span>ワールドマップ：ぬしを倒すと、地図が色づいていきます。</li>
+          <li><span class="uh-kind uh-kind-add">追加</span>ログインは任意：Google ログインで、データをクラウドに保存して、別の端末へ引き継げます。ログインしなくても、すべて遊べます。</li>
+          <li><span class="uh-kind uh-kind-add">追加</span>広告と買い切り課金：広告は、画面上部のバナーと、自分で選んで見る動画などです。買い切りで、広告オフ・ねぐらの拡張・持ち物の拡張・コインを購入できます。ガチャや確率課金はなく、強さは売りません。</li>
+          <li><span class="uh-kind uh-kind-add">追加</span>BGM と効果音：設定で、オン・オフを切り替えられます。縦画面専用です。</li>
+        </ul>
+      </div>
+      <div class="uh-item latest" data-l="en" lang="en">
+        <span class="uh-badge">v1.0.0 — Initial release</span>
+        <p class="uh-summary">A pixel-art command RPG where you explore labyrinths with Polo, befriend monsters, and make them stronger through fusion.</p>
+        <ul class="uh-list">
+          <li><span class="uh-kind uh-kind-add">New</span>Labyrinth exploration: advance step by step and find chests, campfires, stairs and monsters. There are five labyrinths, each with a boss ("nushi") at the end. Defeat it to open the next one.</li>
+          <li><span class="uh-kind uh-kind-add">New</span>Command battles: choose moves and advance turn by turn. Moves have elements, and attacking with a favorable element deals more damage.</li>
+          <li><span class="uh-kind uh-kind-add">New</span>Taming and companions: weaken a monster and give it bait to befriend it. Bait to its taste works better. You can reorder your party and swap with reserves.</li>
+          <li><span class="uh-kind uh-kind-add">New</span>Fusion (musubi): create a new monster from two. The result is fixed, not random, so you can choose parents to aim for the monster you want.</li>
+          <li><span class="uh-kind uh-kind-add">New</span>Awakening and "Kagayaki": a monster at its level cap can awaken to strengthen its signature move. A rare color variant called "Kagayaki" also appears.</li>
+          <li><span class="uh-kind uh-kind-add">New</span>Encyclopedia and bosses: monsters you collect are recorded, and filling it earns rewards. You can also befriend a boss through the "ritual of bonds".</li>
+          <li><span class="uh-kind uh-kind-add">New</span>World map: defeating bosses fills the map with color.</li>
+          <li><span class="uh-kind uh-kind-add">New</span>Optional sign-in: sign in with Google to save your data in the cloud and move to another device. You can play everything without signing in.</li>
+          <li><span class="uh-kind uh-kind-add">New</span>Ads and one-time purchases: ads are a banner at the top and videos you choose to watch. One-time purchases include ad removal, extra housing, extra item capacity and coins. There is no gacha or probability-based payment, and strength is not sold.</li>
+          <li><span class="uh-kind uh-kind-add">New</span>BGM and sound effects: you can turn them on or off in Settings. The App is portrait-only.</li>
+        </ul>
+      </div>
+    </div>
+
+    <p class="uh-feedback"><span data-l="ja">機能のご要望・不具合のご報告は、<a href="./contact.html">フィードバックフォーム</a>からお寄せください。</span><span data-l="en" lang="en">Send feature requests and bug reports through the <a href="./contact.html">feedback form</a>.</span></p>
+  </div>
+
+<footer>
+  <p>© 2026 Ryo-Lab. <span data-l="ja">ポロとむすびの迷宮 開発チーム</span><span data-l="en" lang="en">PoloMusubi Team</span></p>
+</footer>
+
+<script src="../assets/js/subsite.js"></script>
+</body>
+</html>
