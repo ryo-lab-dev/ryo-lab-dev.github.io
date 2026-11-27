@@ -1,0 +1,56 @@
+{
+  "version": 1,
+  "updatedAt": "2026-11-27",
+  "games": [
+    {
+      "id": "towerclimb",
+      "name": "タワクライム",
+      "tagline": "勇者が無限の塔を自動で登る放置 RPG。毎日の「今日の塔」で全員が同じ条件に挑める。",
+      "icon": "https://ryo-lab.dev/assets/towerclimb/icon.png",
+      "android": {
+        "status": "released",
+        "url": "https://play.google.com/store/apps/details?id=com.ryolab.towerclimb"
+      },
+      "ios": {
+        "status": "released",
+        "url": "https://apps.apple.com/jp/app/id6829675556"
+      }
+    },
+    {
+      "id": "pickandblade",
+      "name": "ツルハシとツルギ",
+      "tagline": "炭鉱とダンジョンの 2 人が、鍛冶屋で装備を作って互いを強くする放置 RPG。",
+      "icon": "https://ryo-lab.dev/assets/pickandblade/icon.png",
+      "android": {
+        "status": "released",
+        "url": "https://play.google.com/store/apps/details?id=com.ryolab.pickandblade"
+      },
+      "ios": {
+        "status": "hidden"
+      }
+    },
+    {
+      "id": "tsuridayori",
+      "name": "釣りだより",
+      "tagline": "ポロが釣り糸を垂らし、釣れた魚が図鑑に集まる釣り × RPG。",
+      "icon": "https://ryo-lab.dev/assets/tsuridayori/icon.png",
+      "android": {
+        "status": "hidden"
+      },
+      "ios": {
+        "status": "hidden"
+      }
+    },
+    {
+      "id": "polomusubi",
+      "name": "ポロとむすびの迷宮",
+      "tagline": "魔獣を仲間にして「結び」で強くする、テイミング × コマンド RPG。",
+      "android": {
+        "status": "hidden"
+      },
+      "ios": {
+        "status": "hidden"
+      }
+    }
+  ]
+}
