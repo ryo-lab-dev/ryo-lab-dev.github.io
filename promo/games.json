@@ -1,6 +1,7 @@
 {
   "version": 1,
   "updatedAt": "2026-11-27",
+  "inlineLimit": 5,
   "games": [
     {
       "id": "towerclimb",
