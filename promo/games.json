@@ -31,6 +31,19 @@
       }
     },
     {
+      "id": "minetownworks",
+      "name": "鉱山町の工房",
+      "tagline": "鉱夫が掘り、街で加工してツルハシを作る放置ゲーム。ドット絵の鉱山町を育てよう。",
+      "icon": "https://ryo-lab.dev/assets/minetownworks/icon.png",
+      "android": {
+        "status": "released",
+        "url": "https://play.google.com/store/apps/details?id=com.ryolab.mine_town_works"
+      },
+      "ios": {
+        "status": "hidden"
+      }
+    },
+    {
       "id": "tsuridayori",
       "name": "釣りだより",
       "tagline": "ポロが釣り糸を垂らし、釣れた魚が図鑑に集まる釣り × RPG。",
