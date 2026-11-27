@@ -44,6 +44,19 @@
       }
     },
     {
+      "id": "starpuzzle",
+      "name": "StarPuzzle",
+      "tagline": "各行・各列・各色の領域に★を 1 つずつ置く、推理だけで解けるロジックパズル。",
+      "icon": "https://ryo-lab.dev/assets/starpuzzle/icon.png",
+      "android": {
+        "status": "released",
+        "url": "https://play.google.com/store/apps/details?id=dev.ryolab.star_puzzle"
+      },
+      "ios": {
+        "status": "hidden"
+      }
+    },
+    {
       "id": "tsuridayori",
       "name": "釣りだより",
       "tagline": "ポロが釣り糸を垂らし、釣れた魚が図鑑に集まる釣り × RPG。",
