@@ -1,0 +1,139 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>梱包資材の費用を原価に入れる方法 — 1 個あたりの単価から考える | BoxProfit</title>
+  <script src="https://cdn.tailwindcss.com"></script>
+  <link rel="icon" href="../assets/boxprofit/icon.png" type="image/png" />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Syne:wght@400;600;700;800&family=Noto+Sans+JP:wght@300;400;500;700&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="../assets/css/boxprofit.css" />
+  <link rel="stylesheet" href="../assets/css/subsite.css" />
+  <!-- SEO -->
+  <meta name="description" content="フリマの梱包に使うダンボール・緩衝材・テープなどの費用を、原価に入れる考え方。まとめ買いした資材を 1 個あたりの単価にし、1 回の発送ぶんを足して、使った分だけ残量を減らす手順を、フリマ利益管理アプリ BoxProfit の使い方とあわせて紹介します。">
+  <link rel="canonical" href="https://ryo-lab.dev/boxprofit/material-cost.html">
+  <meta property="og:type" content="article" />
+  <meta property="og:title" content="梱包資材の費用を原価に入れる方法 — 1 個あたりの単価から考える" />
+  <meta property="og:description" content="まとめ買いした梱包資材を 1 個あたりの単価にして、原価に入れる考え方と手順。" />
+  <meta property="og:url" content="https://ryo-lab.dev/boxprofit/material-cost.html" />
+  <meta property="og:image" content="https://ryo-lab.dev/assets/ogp/ogp_boxprofit.png" />
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "Article",
+    "headline": "梱包資材の費用を原価に入れる方法 — 1 個あたりの単価から考える",
+    "description": "まとめ買いした梱包資材を 1 個あたりの単価にして、原価に入れる考え方と手順。",
+    "inLanguage": "ja",
+    "datePublished": "2026-11-27",
+    "dateModified": "2026-11-27",
+    "mainEntityOfPage": "https://ryo-lab.dev/boxprofit/material-cost.html",
+    "image": "https://ryo-lab.dev/assets/ogp/ogp_boxprofit.png",
+    "author": {
+      "@type": "Organization",
+      "name": "Ryo-Lab.",
+      "url": "https://ryo-lab.dev/"
+    },
+    "publisher": {
+      "@type": "Organization",
+      "name": "Ryo-Lab.",
+      "url": "https://ryo-lab.dev/"
+    },
+    "about": {
+      "@type": "SoftwareApplication",
+      "name": "BoxProfit",
+      "url": "https://ryo-lab.dev/boxprofit/"
+    }
+  }
+  </script>
+  <link rel="stylesheet" href="../assets/css/store-cta.css" />
+  <script src="../assets/js/store-cta.js" defer></script>
+</head>
+<body>
+
+<nav>
+  <div class="nav-inner">
+    <a href="./" class="nav-logo">
+      <div class="nav-logo-dot"></div>
+      <span class="nav-logo-text">BoxProfit</span>
+    </a>
+    <div class="nav-links">
+      <a href="./">Home</a>
+      <a href="./privacy-policy.html">Privacy Policy</a>
+      <a href="./terms.html">利用規約</a>
+      <a href="./articles.html" class="active">記事</a>
+      <a href="./update-history.html">更新履歴</a>
+      <a href="./contact.html">お問い合わせ</a>
+    </div>
+    <button class="nav-hamburger" id="navToggle" aria-label="メニューを開く">
+      <span></span><span></span><span></span>
+    </button>
+  </div>
+</nav>
+
+<div class="doc-container">
+  <div class="doc-header reveal">
+    <p class="doc-tag">Guide</p>
+    <h1 class="doc-title">梱包資材の費用を原価に入れる方法</h1>
+    <p class="doc-updated">1 個あたりの単価から考える（2026年11月27日）</p>
+  </div>
+
+  <div class="doc-section reveal">
+    <p>フリマで売るとき、仕入れ価格と送料は意識しても、ダンボール・緩衝材・テープ・ビニール袋といった梱包資材の費用は、つい見落としがちです。1 回ぶんは数十円でも、毎回かかるので、数をこなすほど利益を削ります。</p>
+    <p>このページでは、まとめ買いした梱包資材の費用を、1 品ごとの原価に入れるための考え方を 3 つの手順で紹介します。後半では、フリマ利益管理アプリ BoxProfit での進め方も書いています。数字はすべて計算例のための仮の値で、実際の価格はお店や時期によって変わります。</p>
+  </div>
+
+  <div class="divider"></div>
+
+  <div class="doc-section reveal">
+    <h2>1. まとめ買いの資材は「1 個あたりの単価」にする</h2>
+    <p>梱包資材は、パックや箱でまとめて買って、少しずつ使います。支払ったのは購入時でも、1 品ごとの原価に入れるのは「使った分」です。そこで、購入価格を入数で割って、1 個あたりの単価にします。</p>
+    <p style="font-family:monospace;padding:0.75rem 1rem;border-radius:8px;background:rgba(127,127,127,0.12);">1 個あたりの単価 ＝ 購入価格 ÷ 入数</p>
+    <p>たとえば、600 円で 30 枚入りの袋なら 1 枚 20 円、500 円で 3 個入りの箱なら 1 個 166.7 円です（仮の値）。割り切れない場合は、小数のまま持っておき、1 品ぶんの合計を出してから円に丸めると、端数のずれが小さくなります。</p>
+  </div>
+
+  <div class="divider"></div>
+
+  <div class="doc-section reveal">
+    <h2>2. 1 回の発送で使う資材を、すべて足す</h2>
+    <p>1 品を送るのに使うのは、ダンボール 1 個だけとは限りません。内袋、緩衝材、テープ、送り状のシールなど、使うものを並べて、それぞれの「単価 × 使った数」を足します。</p>
+    <p style="font-family:monospace;padding:0.75rem 1rem;border-radius:8px;background:rgba(127,127,127,0.12);">梱包資材の費用 ＝ Σ（資材の単価 × 使う数）</p>
+    <p>たとえば、ビニール袋 1 枚（20 円）・ダンボール 1 個（166.7 円）・緩衝材 1 枚（10 円）なら、合計はおよそ 197 円です（仮の値）。テープのように使う量が測りにくいものは、「1 回で何回りぶん使うか」を決めて、1 回あたりの目安を入れておく方法もあります。</p>
+    <p>よく送るサイズごとに「いつもの組み合わせ」を決めておくと、毎回数え直さずに済みます。この費用を、仕入れ価格と送料に足したものが、その品の原価です。</p>
+    <p style="font-family:monospace;padding:0.75rem 1rem;border-radius:8px;background:rgba(127,127,127,0.12);">原価 ＝ 仕入れ価格 ＋ 梱包資材の費用 ＋ 送料</p>
+    <p><strong>BoxProfit では</strong>: 資材は、名称・購入価格（パック価格）・入数を登録すると、1 個あたりの単価が画面にそのまま表示されます。商品や販売を登録するときに使う資材と数を選ぶと、1 回ぶんの費用が原価に入ります。</p>
+  </div>
+
+  <div class="divider"></div>
+
+  <div class="doc-section reveal">
+    <h2>3. 使った分だけ残量を減らし、補充のめやすを決める</h2>
+    <p>資材は、気づくと切れていて、発送の直前に買い足すことになりがちです。使った数を記録して、残りを数えておくと、切れる前に補充できます。「この数以下になったら買い足す」というめやすを決めておくと、買い忘れも減ります。</p>
+    <p>買い足したときは、残量にその入数ぶんを足します。まとめ買いの値段が変わったときは、新しい価格で単価を出し直します。</p>
+    <p><strong>BoxProfit では</strong>: 販売を登録すると、使った資材の残量が自動で減ります。資材ごとに「発注目安」の数を決めておくと、その数以下になったときに一覧で「残りわずか」と表示されます。パックを買い足したときは「補充」でパックの数を入れると、残量に加わります。また、販売を登録した時点の資材の単価を一緒に保存するので、あとで資材の値段を直しても、過去の利益は変わりません。</p>
+  </div>
+
+  <div class="divider"></div>
+
+  <div class="doc-section reveal">
+    <h2>BoxProfit について</h2>
+    <p>BoxProfit（ボックスプロフィット）は、フリマで売る人のための、仕入れ・梱包・送料・利益の管理アプリです。無料で使えます（画面下に広告あり）。</p>
+    <ul><li>目標の利益から出品価格を逆算</li><li>梱包資材の 1 個あたりの単価を自動計算</li><li>在庫と仕入れの管理</li><li>売上・利益の集計と CSV の書き出し</li><li>手数料率・送料を自分で登録</li></ul>
+    <div style="display:flex;gap:1rem;flex-wrap:wrap;margin-top:1.5rem;"><a href="https://play.google.com/store/apps/details?id=dev.ryolab.box_profit" target="_blank" rel="noopener" class="store-badge" style="display:inline-block;line-height:0;align-self:center;"><img src="../assets/badges/web/google-play-ja.svg" alt="Google Play で手に入れよう" height="40" style="height:40px;width:auto;display:block;"></a></div>
+    <p style="margin-top:1.5rem;"><a href="./">BoxProfit のトップへ</a> ・ <a href="./profit.html">フリマの利益計算のやり方</a> ・ <a href="./price-guide.html">フリマの出品価格の決め方</a></p>
+  </div>
+
+  <div class="doc-section reveal">
+    <p style="font-size:0.85rem;">BoxProfit は、各フリマサービスの運営会社とは関係のない個人が開発した非公式のアプリです。計算結果は参考値で、資材の価格・手数料率・送料は変更されることがあります。</p>
+  </div>
+</div>
+
+<footer>
+  <p>© 2026 Ryo-Lab. BoxProfit 開発チーム</p>
+  <p>メルカリ、PayPayフリマ、ラクマ、ヤフオク! などの名称は各社の商標です。本アプリは各社と提携・承認関係にありません。</p>
+</footer>
+
+<script src="../assets/js/subsite.js"></script>
+</body>
+</html>
