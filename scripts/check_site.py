@@ -180,6 +180,19 @@ def find_pages_missing_from_sitemap(root: Path, sitemap_urls: set[str]) -> list[
     return errors
 
 
+def check_promo(root: Path) -> list[str]:
+    """promo/games.json（旧版アプリ向け）が promo/apps.json（正本）から作った内容と一致するか確認する。"""
+    script = root / "scripts" / "build_promo_games.py"
+    if not script.exists() or not (root / "promo" / "apps.json").exists():
+        return []
+    import subprocess
+
+    result = subprocess.run([sys.executable, str(script), "--check"], capture_output=True, text=True)
+    if result.returncode != 0:
+        return [result.stdout.strip() or result.stderr.strip() or "promo の整合性検査に失敗しました"]
+    return []
+
+
 def main() -> int:
     parser = argparse.ArgumentParser(description="sitemap と静的 HTML の整合性を検査します")
     parser.add_argument("--root", type=Path, default=Path(__file__).resolve().parents[1],
@@ -188,6 +201,7 @@ def main() -> int:
 
     root = args.root.resolve()
     errors = check_site(root)
+    errors.extend(check_promo(root))
     if errors:
         print(f"検査失敗: {len(errors)} 件")
         for error in errors:

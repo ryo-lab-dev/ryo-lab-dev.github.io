@@ -1,6 +1,6 @@
 {
   "version": 1,
-  "updatedAt": "2026-11-27",
+  "updatedAt": "2026-11-28",
   "inlineLimit": 5,
   "games": [
     {
@@ -38,6 +38,19 @@
       "android": {
         "status": "released",
         "url": "https://play.google.com/store/apps/details?id=com.ryolab.mine_town_works"
+      },
+      "ios": {
+        "status": "hidden"
+      }
+    },
+    {
+      "id": "starpuzzle",
+      "name": "StarPuzzle",
+      "tagline": "推理だけで解ける★パズル。当て推量なしのロジックパズル。",
+      "icon": "https://ryo-lab.dev/assets/starpuzzle/icon.png",
+      "android": {
+        "status": "released",
+        "url": "https://play.google.com/store/apps/details?id=dev.ryolab.star_puzzle"
       },
       "ios": {
         "status": "hidden"

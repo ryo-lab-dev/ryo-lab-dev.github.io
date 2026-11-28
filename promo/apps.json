@@ -1,0 +1,206 @@
+{
+  "version": 2,
+  "updatedAt": "2026-11-28",
+  "inlineLimit": 3,
+  "apps": [
+    {
+      "id": "towerclimb",
+      "name": "タワクライム",
+      "category": "game",
+      "priority": 10,
+      "tagline": "勇者が無限の塔を自動で登る放置 RPG。毎日の「今日の塔」で全員が同じ条件に挑める。",
+      "icon": "https://ryo-lab.dev/assets/towerclimb/icon.png",
+      "android": {
+        "status": "released",
+        "url": "https://play.google.com/store/apps/details?id=com.ryolab.towerclimb"
+      },
+      "ios": {
+        "status": "released",
+        "url": "https://apps.apple.com/jp/app/id6829675556"
+      }
+    },
+    {
+      "id": "pickandblade",
+      "name": "ツルハシとツルギ",
+      "category": "game",
+      "priority": 20,
+      "tagline": "炭鉱とダンジョンの 2 人が、鍛冶屋で装備を作って互いを強くする放置 RPG。",
+      "icon": "https://ryo-lab.dev/assets/pickandblade/icon.png",
+      "android": {
+        "status": "released",
+        "url": "https://play.google.com/store/apps/details?id=com.ryolab.pickandblade"
+      },
+      "ios": {
+        "status": "hidden"
+      }
+    },
+    {
+      "id": "minetownworks",
+      "name": "鉱山町の工房",
+      "category": "game",
+      "priority": 30,
+      "tagline": "鉱夫が掘り、街で加工してツルハシを作る放置ゲーム。ドット絵の鉱山町を育てよう。",
+      "icon": "https://ryo-lab.dev/assets/minetownworks/icon.png",
+      "android": {
+        "status": "released",
+        "url": "https://play.google.com/store/apps/details?id=com.ryolab.mine_town_works"
+      },
+      "ios": {
+        "status": "hidden"
+      }
+    },
+    {
+      "id": "tsuridayori",
+      "name": "釣りだより",
+      "category": "game",
+      "priority": 50,
+      "tagline": "ポロが釣り糸を垂らし、釣れた魚が図鑑に集まる釣り × RPG。",
+      "icon": "https://ryo-lab.dev/assets/tsuridayori/icon.png",
+      "android": {
+        "status": "hidden"
+      },
+      "ios": {
+        "status": "hidden"
+      }
+    },
+    {
+      "id": "polomusubi",
+      "name": "ポロとむすびの迷宮",
+      "category": "game",
+      "priority": 60,
+      "tagline": "魔獣を仲間にして「結び」で強くする、テイミング × コマンド RPG。",
+      "android": {
+        "status": "hidden"
+      },
+      "ios": {
+        "status": "hidden"
+      }
+    },
+    {
+      "id": "starpuzzle",
+      "name": "StarPuzzle",
+      "category": "game",
+      "priority": 40,
+      "tagline": "推理だけで解ける★パズル。当て推量なしのロジックパズル。",
+      "icon": "https://ryo-lab.dev/assets/starpuzzle/icon.png",
+      "android": {
+        "status": "released",
+        "url": "https://play.google.com/store/apps/details?id=dev.ryolab.star_puzzle"
+      },
+      "ios": {
+        "status": "hidden"
+      }
+    },
+    {
+      "id": "haguiku",
+      "name": "はぐ育",
+      "category": "utility",
+      "priority": 10,
+      "tagline": "ふたりで使う、育児記録と出産準備。授乳・睡眠・おむつを家族で共有。",
+      "icon": "https://ryo-lab.dev/assets/haguiku/icon.png",
+      "android": {
+        "status": "released",
+        "url": "https://play.google.com/store/apps/details?id=dev.ryolab.haguiku"
+      },
+      "ios": {
+        "status": "released",
+        "url": "https://apps.apple.com/jp/app/id6824930356"
+      }
+    },
+    {
+      "id": "giftlog",
+      "name": "GiftLog",
+      "category": "utility",
+      "priority": 20,
+      "tagline": "もらった・贈ったギフトや、大切な人の好み・記念日をひとつに記録。",
+      "icon": "https://ryo-lab.dev/assets/giftlog/icon.png",
+      "android": {
+        "status": "released",
+        "url": "https://play.google.com/store/apps/details?id=com.ryolab.gift_log"
+      },
+      "ios": {
+        "status": "released",
+        "url": "https://apps.apple.com/jp/app/id6824789839"
+      }
+    },
+    {
+      "id": "fitmap",
+      "name": "FitMap",
+      "category": "utility",
+      "priority": 30,
+      "tagline": "首周りから靴や指輪まで、全身のサイズを端末だけで記録・管理。",
+      "icon": "https://ryo-lab.dev/assets/fitmap/icon.png",
+      "android": {
+        "status": "released",
+        "url": "https://play.google.com/store/apps/details?id=com.ryolab.fit_map"
+      },
+      "ios": {
+        "status": "released",
+        "url": "https://apps.apple.com/jp/app/id6829385481"
+      }
+    },
+    {
+      "id": "scorevault",
+      "name": "ScoreVault",
+      "category": "utility",
+      "priority": 40,
+      "tagline": "遊んだゲームのスコアや感想を、自分だけの記録として非公開で保存。",
+      "icon": "https://ryo-lab.dev/assets/scorevault/icon.png",
+      "android": {
+        "status": "released",
+        "url": "https://play.google.com/store/apps/details?id=com.scorevault.score_vault"
+      },
+      "ios": {
+        "status": "released",
+        "url": "https://apps.apple.com/jp/app/id6760386306"
+      }
+    },
+    {
+      "id": "nexusdiary",
+      "name": "NexusDiary",
+      "category": "utility",
+      "priority": 50,
+      "tagline": "日常の考えを残し、AIが次のアイデアのヒントを提案する日記アプリ。",
+      "icon": "https://ryo-lab.dev/assets/nexusdiary/icon.png",
+      "android": {
+        "status": "released",
+        "url": "https://play.google.com/store/apps/details?id=com.nexusdiary.nexus_diary"
+      },
+      "ios": {
+        "status": "released",
+        "url": "https://apps.apple.com/jp/app/id6760608268"
+      }
+    },
+    {
+      "id": "cloudkata",
+      "name": "CloudKata",
+      "category": "utility",
+      "priority": 60,
+      "tagline": "GCP ACE の学習を、4択問題とストリークで毎日の習慣に。",
+      "icon": "https://ryo-lab.dev/assets/cloudkata/icon.png",
+      "android": {
+        "status": "released",
+        "url": "https://play.google.com/store/apps/details?id=com.originalapp.cloud_kata"
+      },
+      "ios": {
+        "status": "released",
+        "url": "https://apps.apple.com/jp/app/id6760472647"
+      }
+    },
+    {
+      "id": "boxprofit",
+      "name": "BoxProfit",
+      "category": "utility",
+      "priority": 70,
+      "tagline": "フリマの原価と目標利益から売値を逆算。仕入れ・在庫・売上も管理。",
+      "icon": "https://ryo-lab.dev/assets/boxprofit/icon.png",
+      "android": {
+        "status": "released",
+        "url": "https://play.google.com/store/apps/details?id=dev.ryolab.box_profit"
+      },
+      "ios": {
+        "status": "hidden"
+      }
+    }
+  ]
+}
