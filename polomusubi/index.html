@@ -1,0 +1,298 @@
+<!DOCTYPE html>
+<html lang="ja" data-title-en="PoloMusubi — Lure, fuse, and go deeper into the labyrinth.">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>ポロとむすびの迷宮 — 魔獣を誘って、結んで、迷宮の奥へ。</title>
+  <script src="https://cdn.tailwindcss.com"></script>
+  <link rel="icon" href="../assets/polomusubi/icon.png" type="image/png" />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Syne:wght@400;600;700;800&family=Noto+Sans+JP:wght@300;400;500;700&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="../assets/css/polomusubi.css" />
+  <link rel="stylesheet" href="../assets/css/subsite.css" />
+  <link rel="stylesheet" href="../assets/css/lang.css" />
+  <link rel="stylesheet" href="../assets/css/polomusubi-play.css" />
+  <script src="../assets/js/lang.js"></script>
+
+  <!-- SEO -->
+  <meta name="description" content="ポロと一緒に迷宮を進み、えさで魔獣を仲間にして、「結び」で強くしていく、ドット絵のコマンド RPG「ポロとむすびの迷宮」。結びの結果は運でなく決まっています。ガチャはありません。" data-en="PoloMusubi is a pixel-art command RPG. Explore labyrinths with Polo, befriend monsters with bait, and make them stronger through fusion — whose results are fixed, not random. No gacha.">
+  <link rel="canonical" href="https://ryo-lab.dev/polomusubi/">
+  <meta property="og:type" content="website">
+  <meta property="og:url" content="https://ryo-lab.dev/polomusubi/">
+  <meta property="og:title" content="ポロとむすびの迷宮 — 魔獣を誘って、結んで、迷宮の奥へ。">
+  <meta property="og:description" content="ポロと一緒に迷宮を進み、えさで魔獣を仲間にして、「結び」で強くしていく、ドット絵のコマンド RPG「ポロとむすびの迷宮」。結びの結果は運でなく決まっています。ガチャはありません。">
+  <meta property="og:image" content="https://ryo-lab.dev/assets/ogp/ogp_polomusubi.png">
+  <meta property="og:site_name" content="Ryo-Lab">
+  <meta property="og:locale" content="ja_JP">
+  <meta property="og:locale:alternate" content="en_US">
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:title" content="ポロとむすびの迷宮 — 魔獣を誘って、結んで、迷宮の奥へ。">
+  <meta name="twitter:description" content="ポロと一緒に迷宮を進み、えさで魔獣を仲間にして、「結び」で強くしていく、ドット絵のコマンド RPG「ポロとむすびの迷宮」。結びの結果は運でなく決まっています。ガチャはありません。">
+  <meta name="twitter:image" content="https://ryo-lab.dev/assets/ogp/ogp_polomusubi.png">
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "SoftwareApplication",
+    "name": "ポロとむすびの迷宮",
+    "alternateName": "PoloMusubi",
+    "operatingSystem": "Android",
+    "applicationCategory": "GameApplication",
+    "description": "ポロと一緒に迷宮を進み、えさで魔獣を仲間にして、結びで強くしていく、ドット絵のコマンド RPG。",
+    "url": "https://ryo-lab.dev/polomusubi/",
+    "inLanguage": ["ja", "en"],
+    "offers": { "@type": "Offer", "price": "0", "priceCurrency": "JPY" },
+    "author": {
+      "@type": "Organization",
+      "name": "Ryo-Lab Team",
+      "url": "https://ryo-lab.dev/"
+    }
+  }
+  </script>
+</head>
+<body>
+
+<nav>
+  <div class="nav-inner">
+    <a href="./" class="nav-logo">
+      <div class="nav-logo-dot"></div>
+      <span class="nav-logo-text"><span data-l="ja">ポロとむすびの迷宮</span><span data-l="en" lang="en">PoloMusubi</span></span>
+    </a>
+    <div class="nav-links">
+      <a href="./" class="active">Home</a>
+      <a href="./privacy-policy.html">Privacy Policy</a>
+      <a href="./terms.html"><span data-l="ja">利用規約</span><span data-l="en" lang="en">Terms</span></a>
+      <a href="./contact.html"><span data-l="ja">お問い合わせ</span><span data-l="en" lang="en">Contact</span></a>
+    </div>
+    <div class="lang-toggle" role="group" aria-label="Language / 言語">
+      <svg class="lang-toggle-icon" viewBox="0 0 24 24" width="14" height="14" aria-hidden="true" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"/><path d="M2 12h20"/><path d="M12 2a15.3 15.3 0 0 1 4 10 15.3 15.3 0 0 1-4 10 15.3 15.3 0 0 1-4-10 15.3 15.3 0 0 1 4-10z"/></svg>
+      <a href="?lang=ja" data-lang-switch="ja" lang="ja" title="日本語">JA</a>
+      <a href="?lang=en" data-lang-switch="en" lang="en" title="English">EN</a>
+    </div>
+    <button class="nav-hamburger" id="navToggle" aria-label="メニューを開く">
+      <span></span><span></span><span></span>
+    </button>
+  </div>
+</nav>
+
+  <!-- Hero -->
+  <section class="hero">
+    <img src="../assets/polomusubi/icon.png" alt="ポロとむすびの迷宮 アプリアイコン" class="hero-icon" width="96" height="96" />
+    <div style="margin-bottom:1.5rem;">
+      <span class="status-badge">
+        <span class="pulse-dot"></span>
+        <span data-l="ja">近日公開（Android）</span><span data-l="en" lang="en">Coming soon (Android)</span>
+      </span>
+    </div>
+    <h1 class="hero-title gradient-text"><span data-l="ja">ポロとむすびの迷宮</span><span data-l="en" lang="en">PoloMusubi</span></h1>
+    <p class="hero-en">POLO TO MUSUBI NO MEIKYU</p>
+    <p class="hero-sub"><span data-l="ja">魔獣を誘って、結んで、迷宮の奥へ。</span><span data-l="en" lang="en">Lure, fuse, and go deeper into the labyrinth.</span></p>
+    <p class="hero-origin"><span data-l="ja">ポロと一緒に迷宮を進み、えさで魔獣を仲間にして、「結び」で強くしていく、ドット絵のコマンド RPG です。</span><span data-l="en" lang="en">Explore labyrinths with Polo, befriend monsters with bait, and make them stronger through "fusion" in this pixel-art command RPG.</span></p>
+    <img src="../assets/polomusubi/feature-graphic.png" alt="ポロとむすびの迷宮のフィーチャーグラフィック。ポロと、ふわふわの魔獣たち" class="hero-art" width="1024" height="500" />
+    <div style="display:flex;gap:1rem;flex-wrap:wrap;justify-content:center;">
+      <span class="btn-primary btn-disabled" aria-disabled="true"><span data-l="ja">Google Play（近日公開）</span><span data-l="en" lang="en">Google Play (coming soon)</span></span>
+      <a href="./contact.html" class="btn-secondary"><span data-l="ja">お問い合わせ・フィードバック</span><span data-l="en" lang="en">Contact & feedback</span></a>
+    </div>
+    <div class="pm-today" id="pmToday" hidden></div>
+  </section>
+
+  <div class="glow-line" style="max-width:800px;margin:0 auto;"></div>
+
+  <!-- あそびかた -->
+  <section>
+    <div class="section-inner">
+      <div class="reveal" style="margin-bottom:2.5rem;">
+        <p class="section-label">How to play</p>
+        <h2 class="section-title"><span data-l="ja">あそびかたは、3 ステップ。</span><span data-l="en" lang="en">How to play, in 3 steps.</span></h2>
+      </div>
+      <div class="steps">
+        <div class="step-card glass reveal">
+          <h3><span data-l="ja">仲間にする</span><span data-l="en" lang="en">Befriend</span></h3>
+          <p><span data-l="ja">迷宮で出会った魔獣を弱らせて、「てなづける」。えさをあげると、仲間にできます。好みの味のえさほど、仲間になりやすくなります。</span><span data-l="en" lang="en">Weaken a monster you meet in the labyrinth and "tame" it. Give it bait to make it an ally — bait to its taste works better.</span></p>
+          <img class="step-shot" src="../assets/polomusubi/screenshots/01.jpg" alt="えさで誘って、魔獣を仲間に。" width="540" height="960" loading="lazy" />
+        </div>
+        <div class="step-card glass reveal" style="transition-delay:0.1s;">
+          <h3><span data-l="ja">結ぶ</span><span data-l="en" lang="en">Fuse</span></h3>
+          <p><span data-l="ja">2 体の魔獣から、新しい魔獣を生み出します。結果は運でなく決まっているので、親を選んで、狙った魔獣を作れます。</span><span data-l="en" lang="en">Create a new monster from two. The result is fixed, not random, so you can pick parents to aim for the monster you want.</span></p>
+          <img class="step-shot" src="../assets/polomusubi/screenshots/04.jpg" alt="結びで、強い魔獣を生み出そう。" width="540" height="960" loading="lazy" />
+        </div>
+        <div class="step-card glass reveal" style="transition-delay:0.2s;">
+          <h3><span data-l="ja">迷宮の奥へ</span><span data-l="en" lang="en">Go deeper</span></h3>
+          <p><span data-l="ja">属性の相性を読んで、わざで攻めましょう。迷宮の奥にいる「ぬし」を倒すと、次の迷宮が開きます。</span><span data-l="en" lang="en">Read the elemental matchups and attack with your moves. Defeat the boss at the back of a labyrinth to open the next one.</span></p>
+          <img class="step-shot" src="../assets/polomusubi/screenshots/03.jpg" alt="属性の相性を読んで、わざで攻めよう。" width="540" height="960" loading="lazy" />
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <div class="glow-line" style="max-width:800px;margin:0 auto;"></div>
+
+  <!-- Features -->
+  <section>
+    <div class="section-inner">
+      <div class="reveal" style="margin-bottom:3rem;">
+        <p class="section-label">Features</p>
+        <h2 class="section-title"><span data-l="ja">仲間を集めて、育てて、組み合わせる。</span><span data-l="en" lang="en">Collect, raise and combine your allies.</span></h2>
+      </div>
+      <div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(280px,1fr));gap:1.5rem;">
+        <div class="feature-card reveal">
+          <div class="feature-icon">🧭</div>
+          <h3><span data-l="ja">一歩ずつ進む迷宮</span><span data-l="en" lang="en">A labyrinth, one step at a time</span></h3>
+          <p><span data-l="ja">宝箱やたき火、階段、そして魔獣との出会いが待っています。迷宮は 5 つ。探索は、いつでも切り上げられます。</span><span data-l="en" lang="en">Chests, campfires, stairs and monster encounters await. There are five labyrinths, and you can wrap up an expedition at any time.</span></p>
+        </div>
+        <div class="feature-card reveal" style="transition-delay:0.1s;">
+          <div class="feature-icon">⚔️</div>
+          <h3><span data-l="ja">コマンドで、属性を読む戦い</span><span data-l="en" lang="en">Command battles with elements</span></h3>
+          <p><span data-l="ja">わざには属性があり、相性のいい属性で攻めると大きなダメージを与えられます。</span><span data-l="en" lang="en">Moves have elements, and attacking with a favorable element deals more damage.</span></p>
+        </div>
+        <div class="feature-card reveal" style="transition-delay:0.2s;">
+          <div class="feature-icon">🍖</div>
+          <h3><span data-l="ja">えさで仲間に</span><span data-l="en" lang="en">Befriend with bait</span></h3>
+          <p><span data-l="ja">魔獣を弱らせて「てなづける」と、えさをあげて仲間にできます。パーティの並び順や、控えとの入れかえで、戦い方を変えられます。</span><span data-l="en" lang="en">Weaken and tame a monster, then give it bait to make it an ally. Change how you fight by reordering your party and swapping with reserves.</span></p>
+        </div>
+        <div class="feature-card reveal">
+          <div class="feature-icon">🔗</div>
+          <h3><span data-l="ja">結びは、運でなく決まる</span><span data-l="en" lang="en">Fusion is fixed, not random</span></h3>
+          <p><span data-l="ja">「結び」で生まれる魔獣は決まっているので、親を選んで、狙った魔獣を作れます。強くなったわざは、別の魔獣に引き継げます。</span><span data-l="en" lang="en">The monster a fusion creates is fixed, so you can choose parents to aim for what you want. Strengthened moves can be passed on to another monster.</span></p>
+        </div>
+        <div class="feature-card reveal" style="transition-delay:0.1s;">
+          <div class="feature-icon">✨</div>
+          <h3><span data-l="ja">かくせいと「かがやき」</span><span data-l="en" lang="en">Awakening and "Kagayaki"</span></h3>
+          <p><span data-l="ja">レベル上限に届いた魔獣は「かくせい」で、固有わざが強くなります。まれに現れる、色違いの「かがやき」も探そう。</span><span data-l="en" lang="en">A monster at its level cap can awaken to strengthen its signature move. Look for the rare color variants called "Kagayaki", too.</span></p>
+        </div>
+        <div class="feature-card reveal" style="transition-delay:0.2s;">
+          <div class="feature-icon">📖</div>
+          <h3><span data-l="ja">集めた魔獣が、図鑑に</span><span data-l="en" lang="en">Everything goes in the encyclopedia</span></h3>
+          <p><span data-l="ja">集めた魔獣は図鑑に記録されます。図鑑を埋めると、ごほうびがもらえます。</span><span data-l="en" lang="en">The monsters you collect are recorded in the encyclopedia. Filling it earns you rewards.</span></p>
+        </div>
+        <div class="feature-card reveal">
+          <div class="feature-icon">👑</div>
+          <h3><span data-l="ja">ぬしと、きずなの儀式</span><span data-l="en" lang="en">Bosses and the ritual of bonds</span></h3>
+          <p><span data-l="ja">各迷宮の奥には「ぬし」が待っています。ぬしとは、「きずなの儀式」で、仲間になる道もあります。</span><span data-l="en" lang="en">A boss waits at the back of each labyrinth. You can also befriend a boss through the "ritual of bonds".</span></p>
+        </div>
+        <div class="feature-card reveal" style="transition-delay:0.1s;">
+          <div class="feature-icon">🗺️</div>
+          <h3><span data-l="ja">地図が色づいていく</span><span data-l="en" lang="en">The map fills with color</span></h3>
+          <p><span data-l="ja">ぬしを倒すと、ワールドマップが少しずつ色づいていきます。放置で進むことはなく、遊んだぶんだけ進みます。</span><span data-l="en" lang="en">Defeating bosses fills the world map with color little by little. Nothing progresses on its own — you advance by playing.</span></p>
+        </div>
+        <div class="feature-card reveal" style="transition-delay:0.2s;">
+          <div class="feature-icon">☁️</div>
+          <h3><span data-l="ja">ログインは、あとから</span><span data-l="en" lang="en">Sign in later</span></h3>
+          <p><span data-l="ja">登録なしですぐ遊べます。任意で Google にログインすると、データをクラウドに保存し、別の端末へ引き継げます。</span><span data-l="en" lang="en">You can start playing without registering. If you like, sign in with Google to save your data in the cloud and move it to another device.</span></p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <div class="glow-line" style="max-width:800px;margin:0 auto;"></div>
+
+  <!-- Screenshots -->
+  <section>
+    <div class="section-inner">
+      <div class="reveal" style="margin-bottom:2rem;">
+        <p class="section-label">Screenshots</p>
+        <h2 class="section-title"><span data-l="ja">アプリの画面</span><span data-l="en" lang="en">Screenshots</span></h2>
+        <p style="color:var(--text-sub);font-size:0.85rem;margin-top:0.5rem;"><span data-l="ja">← スワイプまたはスクロールで確認できます</span><span data-l="en" lang="en">← Swipe or scroll to see more</span></p>
+      </div>
+      <div class="screenshot-strip reveal">
+        <img src="../assets/polomusubi/screenshots/01.jpg" alt="ポロとむすびの迷宮の画面 1: えさで誘って、魔獣を仲間に。" width="540" height="960" loading="lazy" />
+        <img src="../assets/polomusubi/screenshots/02.jpg" alt="ポロとむすびの迷宮の画面 2: 迷宮の奥の、ぬしを目指そう。" width="540" height="960" loading="lazy" />
+        <img src="../assets/polomusubi/screenshots/03.jpg" alt="ポロとむすびの迷宮の画面 3: 属性の相性を読んで、わざで攻めよう。" width="540" height="960" loading="lazy" />
+        <img src="../assets/polomusubi/screenshots/04.jpg" alt="ポロとむすびの迷宮の画面 4: 結びで、強い魔獣を生み出そう。" width="540" height="960" loading="lazy" />
+        <img src="../assets/polomusubi/screenshots/05.jpg" alt="ポロとむすびの迷宮の画面 5: 集めた魔獣が、図鑑にたまる。" width="540" height="960" loading="lazy" />
+        <img src="../assets/polomusubi/screenshots/06.jpg" alt="ポロとむすびの迷宮の画面 6: ぬしを倒すと、地図が色づいていく。" width="540" height="960" loading="lazy" />
+      </div>
+    </div>
+  </section>
+
+  <div class="glow-line" style="max-width:800px;margin:0 auto;"></div>
+
+  <!-- Story -->
+  <section>
+    <div class="section-inner" style="max-width:760px;">
+      <div class="reveal" style="margin-bottom:2rem;">
+        <p class="section-label">Story</p>
+        <h2 class="section-title"><span data-l="ja">作った理由</span><span data-l="en" lang="en">Why we made it</span></h2>
+      </div>
+      <div class="reveal glass" style="padding:2rem;">
+        <p class="story-text"><span data-l="ja">個人で開発しています。仲間を集めて、育てて、組み合わせを考える楽しさを、ドット絵のあたたかい世界でじっくり味わえるように作りました。</span><span data-l="en" lang="en">This game is developed by an individual. We wanted you to savor the fun of collecting allies, raising them and working out combinations, in a warm pixel-art world.</span></p>
+        <p class="story-text"><span data-l="ja"><strong>ガチャのような、運に頼る課金要素はありません。強さを売ることもしません。</strong>広告は、画面上部のバナーと、自分で選んで見る動画などです。見なくても遊べます。詳しくは<a href="./privacy-policy.html" style="color:var(--primary);text-decoration:underline;">プライバシーポリシー</a>をご覧ください。</span><span data-l="en" lang="en"><strong>There is no gacha or any luck-based payment, and we do not sell strength.</strong> Ads are limited to a banner at the top and videos you choose to watch — you can play without watching. See the <a href="./privacy-policy.html" style="color:var(--primary);text-decoration:underline;">Privacy Policy</a> for details.</span></p>
+        <p class="story-text"><span data-l="ja">こんな方に使っていただけたら嬉しいです。</span><span data-l="en" lang="en">We hope you will enjoy it if you are:</span></p>
+        <ul class="story-list">
+          <li><span data-l="ja">仲間を集めて、育てて、組み合わせを考えるのが好きな方</span><span data-l="en" lang="en">Someone who likes collecting allies, raising them and thinking about combinations</span></li>
+          <li><span data-l="ja">図鑑やコレクションを埋めていくのが好きな方</span><span data-l="en" lang="en">Someone who loves filling encyclopedias and collections</span></li>
+          <li><span data-l="ja">ドット絵のあたたかい世界で、じっくり遊びたい方</span><span data-l="en" lang="en">Someone who wants to take their time in a warm pixel-art world</span></li>
+        </ul>
+      </div>
+    </div>
+  </section>
+
+  <div class="glow-line" style="max-width:800px;margin:0 auto;"></div>
+
+  <!-- FAQ -->
+  <section>
+    <div class="section-inner">
+      <div class="reveal" style="margin-bottom:2.5rem;">
+        <p class="section-label">FAQ</p>
+        <h2 class="section-title"><span data-l="ja">よくある質問</span><span data-l="en" lang="en">FAQ</span></h2>
+      </div>
+      <div class="reveal glass" style="padding:1.5rem 2rem;">
+        <div class="mini-faq-item">
+          <span class="mini-faq-q"><span data-l="ja">無料で遊べますか？</span><span data-l="en" lang="en">Is it free?</span></span>
+          <span class="mini-faq-a"><span data-l="ja">はい。基本無料です。画面の上にバナー広告が出ます。広告（動画）を見ると、体力の全回復、特別なえさ、結びのヒントなどの特典があります（見なくても遊べます）。</span><span data-l="en" lang="en">Yes. It is free to play, with a banner ad at the top of the screen. Watching a rewarded video gives perks like a full HP recovery, special bait or fusion hints (you can play without watching).</span></span>
+        </div>
+        <div class="mini-faq-item">
+          <span class="mini-faq-q"><span data-l="ja">課金はありますか？</span><span data-l="en" lang="en">Are there in-app purchases?</span></span>
+          <span class="mini-faq-a"><span data-l="ja">買い切りの課金があります（広告オフ・ねぐらの拡張・持ち物の拡張・コインなど。任意です）。ガチャや、確率で課金する要素はありません。強さを売るものもありません。</span><span data-l="en" lang="en">There are one-time purchases (ad removal, extra housing, extra item capacity, coins, etc. — all optional). There is no gacha or probability-based payment, and nothing that sells strength.</span></span>
+        </div>
+        <div class="mini-faq-item">
+          <span class="mini-faq-q"><span data-l="ja">放置で進みますか？</span><span data-l="en" lang="en">Does it progress while idle?</span></span>
+          <span class="mini-faq-a"><span data-l="ja">いいえ。放置で進むことはなく、遊んだぶんだけ進みます。探索は、いつでも切り上げられます。</span><span data-l="en" lang="en">No. Nothing progresses on its own — you advance by playing. You can wrap up an expedition at any time.</span></span>
+        </div>
+        <div class="mini-faq-item">
+          <span class="mini-faq-q"><span data-l="ja">「結び」の結果は運ですか？</span><span data-l="en" lang="en">Is the result of a fusion random?</span></span>
+          <span class="mini-faq-a"><span data-l="ja">いいえ。結果は決まっています。親を選んで、狙った魔獣を作れます。</span><span data-l="en" lang="en">No. The result is fixed. You can choose parents to aim for the monster you want.</span></span>
+        </div>
+        <div class="mini-faq-item">
+          <span class="mini-faq-q"><span data-l="ja">データはどこに保存されますか？</span><span data-l="en" lang="en">Where is my data saved?</span></span>
+          <span class="mini-faq-a"><span data-l="ja">お使いの端末の中です。任意で Google ログインをすると、クラウドにも保存され、別の端末へ引き継げます。ログインしない場合、アンインストールするとデータは消えます。</span><span data-l="en" lang="en">On your device. If you optionally sign in with Google, it is also saved to the cloud so you can move to another device. If you do not sign in, uninstalling the app erases your data.</span></span>
+        </div>
+        <div class="mini-faq-item">
+          <span class="mini-faq-q"><span data-l="ja">対応端末・配信地域は？</span><span data-l="en" lang="en">Supported devices and regions?</span></span>
+          <span class="mini-faq-a"><span data-l="ja">Android 版です（縦画面専用）。配信は日本国内のみで、13 歳以上の方が対象です。</span><span data-l="en" lang="en">It is for Android (portrait only). It is distributed in Japan only, and is intended for users aged 13 and over.</span></span>
+        </div>
+        <div class="mini-faq-item">
+          <span class="mini-faq-q"><span data-l="ja">アカウントとデータの削除</span><span data-l="en" lang="en">Deleting my account and data</span></span>
+          <span class="mini-faq-a"><span data-l="ja">アプリの「せってい」→「アカウント」の「アカウントを削除」から削除できます。詳しくは<a href="./privacy-policy.html#delete-account">プライバシーポリシー</a>をご覧ください。</span><span data-l="en" lang="en">You can delete them from "Settings → Account → Delete account" in the app. See the <a href="./privacy-policy.html#delete-account">Privacy Policy</a> for details.</span></span>
+        </div>
+        <div class="mini-faq-item">
+          <span class="mini-faq-q"><span data-l="ja">不具合・要望は？</span><span data-l="en" lang="en">Bugs and requests?</span></span>
+          <span class="mini-faq-a"><span data-l="ja"><a href="./contact.html">お問い合わせフォーム</a>から送れます。</span><span data-l="en" lang="en">Send them through the <a href="./contact.html">contact form</a>.</span></span>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <div class="glow-line" style="max-width:800px;margin:0 auto;"></div>
+
+  <!-- Contact -->
+  <section>
+    <div class="section-inner" style="text-align:center;">
+      <div class="reveal glass" style="padding:3rem 2rem;max-width:640px;margin:0 auto;">
+        <p class="section-label" style="text-align:center;">Contact</p>
+        <h2 class="section-title" style="font-size:1.8rem;"><span data-l="ja">お問い合わせ</span><span data-l="en" lang="en">Contact</span></h2>
+        <p class="contact-text"><span data-l="ja">不具合の報告、機能のご要望、ご質問はお問い合わせフォームから受け付けています。</span><span data-l="en" lang="en">Send bug reports, feature requests and questions through the contact form.</span></p>
+        <a href="./contact.html" class="btn-primary"><span data-l="ja">お問い合わせフォームへ →</span><span data-l="en" lang="en">Go to the contact form →</span></a>
+      </div>
+    </div>
+  </section>
+
+  <footer>
+    <p>© 2026 Ryo-Lab. <span data-l="ja">ポロとむすびの迷宮 開発チーム</span><span data-l="en" lang="en">PoloMusubi Team</span></p>
+    <p style="margin-top:0.5rem;font-size:0.8rem;"><a href="./privacy-policy.html">Privacy Policy</a> ・ <a href="./terms.html"><span data-l="ja">利用規約</span><span data-l="en" lang="en">Terms</span></a> ・ <a href="./update-history.html"><span data-l="ja">更新履歴</span><span data-l="en" lang="en">Update History</span></a> ・ <a href="./contact.html"><span data-l="ja">お問い合わせ</span><span data-l="en" lang="en">Contact</span></a></p>
+  </footer>
+
+<script src="../assets/js/subsite.js"></script>
+<script src="../assets/js/polomusubi-play.js"></script>
+</body>
+</html>

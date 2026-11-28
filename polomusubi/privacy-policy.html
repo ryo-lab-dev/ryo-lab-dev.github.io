@@ -1,0 +1,342 @@
+<!DOCTYPE html>
+<html lang="ja" data-title-en="Privacy Policy — PoloMusubi">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>プライバシーポリシー — ポロとむすびの迷宮</title>
+  <script src="https://cdn.tailwindcss.com"></script>
+  <link rel="icon" href="../assets/polomusubi/icon.png" type="image/png" />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Syne:wght@400;600;700;800&family=Noto+Sans+JP:wght@300;400;500;700&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="../assets/css/polomusubi.css" />
+  <link rel="stylesheet" href="../assets/css/subsite.css" />
+  <link rel="stylesheet" href="../assets/css/lang.css" />
+  <script src="../assets/js/lang.js"></script>
+
+  <!-- SEO -->
+  <meta name="description" content="ゲーム「ポロとむすびの迷宮」のプライバシーポリシー。取得する情報・外部サービス（Firebase / AdMob / Google Play）・アカウントとデータの削除方法について記載しています。" data-en="Privacy Policy for the game &quot;PoloMusubi&quot;: the information we collect, external services (Firebase / AdMob / Google Play), and how to delete your account and data.">
+  <link rel="canonical" href="https://ryo-lab.dev/polomusubi/privacy-policy.html">
+  <meta property="og:type" content="website">
+  <meta property="og:url" content="https://ryo-lab.dev/polomusubi/privacy-policy.html">
+  <meta property="og:title" content="プライバシーポリシー — ポロとむすびの迷宮">
+  <meta property="og:description" content="ゲーム「ポロとむすびの迷宮」のプライバシーポリシー。取得する情報・外部サービス（Firebase / AdMob / Google Play）・アカウントとデータの削除方法について記載しています。">
+  <meta property="og:image" content="https://ryo-lab.dev/assets/ogp/ogp_polomusubi.png">
+  <meta property="og:site_name" content="Ryo-Lab">
+  <meta property="og:locale" content="ja_JP">
+  <meta property="og:locale:alternate" content="en_US">
+</head>
+<body>
+
+<nav>
+  <div class="nav-inner">
+    <a href="./" class="nav-logo">
+      <div class="nav-logo-dot"></div>
+      <span class="nav-logo-text"><span data-l="ja">ポロとむすびの迷宮</span><span data-l="en" lang="en">PoloMusubi</span></span>
+    </a>
+    <div class="nav-links">
+      <a href="./">Home</a>
+      <a href="./privacy-policy.html" class="active">Privacy Policy</a>
+      <a href="./terms.html"><span data-l="ja">利用規約</span><span data-l="en" lang="en">Terms</span></a>
+      <a href="./contact.html"><span data-l="ja">お問い合わせ</span><span data-l="en" lang="en">Contact</span></a>
+    </div>
+    <div class="lang-toggle" role="group" aria-label="Language / 言語">
+      <svg class="lang-toggle-icon" viewBox="0 0 24 24" width="14" height="14" aria-hidden="true" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"/><path d="M2 12h20"/><path d="M12 2a15.3 15.3 0 0 1 4 10 15.3 15.3 0 0 1-4 10 15.3 15.3 0 0 1-4-10 15.3 15.3 0 0 1 4-10z"/></svg>
+      <a href="?lang=ja" data-lang-switch="ja" lang="ja" title="日本語">JA</a>
+      <a href="?lang=en" data-lang-switch="en" lang="en" title="English">EN</a>
+    </div>
+    <button class="nav-hamburger" id="navToggle" aria-label="メニューを開く">
+      <span></span><span></span><span></span>
+    </button>
+  </div>
+</nav>
+
+<div class="doc-container">
+
+<div data-l="ja">
+  <div class="doc-header reveal">
+    <p class="doc-tag">Legal</p>
+    <h1 class="doc-title">プライバシーポリシー</h1>
+    <p class="doc-updated">最終更新日: 2026年11月28日</p>
+  </div>
+
+  <p style="color:var(--text-sub);font-size:0.9rem;margin-bottom:2.5rem;" class="reveal">
+    Ryo-Lab チーム（以下「運営者」）は、ゲームアプリ「ポロとむすびの迷宮」（以下「本アプリ」）における、利用者の情報の取り扱いを、次のとおり定めます。
+  </p>
+  <div class="doc-section reveal">
+    <h2><span class="article-chip">第1条</span> 取得する情報</h2>
+    <h3>利用者が入力する情報</h3>
+    <ul>
+      <li>本アプリは、<strong>氏名・電話番号などの入力を求めません</strong>。</li>
+      <li><strong>任意で、Google アカウントでログインできます</strong>。ログインすると、アカウントのメールアドレス・表示名・ユーザー ID を、ログインの認証のために、Firebase Authentication が取得します（本アプリの画面に出すのは、メールアドレスだけです）。ログインしなくても、すべての機能を遊べます。</li>
+    </ul>
+    <h3>ゲームのデータ</h3>
+    <ul>
+      <li>ゲームの進み具合（魔獣・図鑑・持ち物・コイン・設定など。<strong>利用者がつけた魔獣の名前を含みます</strong>）は、まず<strong>お使いの端末の中に保存</strong>されます。</li>
+      <li><strong>Google でログインしたときだけ</strong>、同じゲームのデータを、Google の Firebase（Cloud Firestore。日本のリージョン）にも保存します。目的は、機種変更や別の端末への引き継ぎ・端末間の同期です。保存したデータは、本人のアカウントだけが読み書きできます（運営者も読めません）。ログインしなければ、ゲームの進み具合そのものは、クラウドに保存されません。</li>
+    </ul>
+    <h3>購入に関する情報</h3>
+    <ul>
+      <li>アプリ内課金（買い切り）は、Google Play が処理します。<strong>運営者は、氏名・住所・カード番号などの支払いの情報を受け取りません</strong>。</li>
+      <li>アプリは、二重に付与しないために、<strong>購入の注文 ID</strong> を、ゲームのデータに記録します（ログインしているときは、クラウドに保存するデータにも含まれます）。</li>
+    </ul>
+    <h3>自動的に取得される情報</h3>
+    <ul>
+      <li><strong>広告 ID・端末の情報・おおよその地域（IP アドレスから推定）</strong>: 広告の配信と計測のために、Google AdMob が取得します。</li>
+      <li><strong>利用状況</strong>: アプリのインスタンス ID、端末・OS の情報、おおよその地域など Firebase Analytics が自動で集める情報に加えて、画面の表示・戦闘・仲間にしたこと・結び・かくせい・広告・購入などの出来事を、<strong>出来事の種類と、回数や段階だけ</strong>で集計します（Firebase Analytics）。<strong>魔獣の名前・ニックネーム・ユーザー ID・メールアドレスは、送りません</strong>。</li>
+      <li><strong>クラッシュの情報</strong>: 運営者がクラッシュの情報を集めるサービス（Firebase Crashlytics）は、<strong>使っていません</strong>。ただし、AdMob の SDK や Google Play が、診断やクラッシュの情報を集めることがあります。</li>
+    </ul>
+    <p>位置情報（GPS）・連絡先・写真・マイク・カメラの情報は、取得しません。本アプリに、利用者どうしの交流・チャット・投稿の機能はありません。</p>
+  </div>
+
+  <div class="divider"></div>
+
+  <div class="doc-section reveal">
+    <h2><span class="article-chip">第2条</span> 利用目的</h2>
+    <ul>
+      <li>ゲームの機能の提供（進み具合の保存・購入した商品の反映・別の端末への引き継ぎ）。</li>
+      <li>広告の配信。</li>
+      <li>不具合の調査と、アプリの改善（利用状況）。</li>
+      <li>お問い合わせへの対応。</li>
+    </ul>
+  </div>
+
+  <div class="divider"></div>
+
+  <div class="doc-section reveal">
+    <h2><span class="article-chip">第3条</span> 外部サービスへの送信（委託・第三者提供）</h2>
+    <p>本アプリは、次の外部サービスに情報を送信します。これらのサービスの提供元（Google LLC）は<strong>外国にある第三者</strong>です。</p>
+    <div class="doc-table-wrap">
+      <table class="doc-table">
+        <thead>
+          <tr><th>送信先</th><th>内容</th><th>目的</th><th>プライバシーポリシー</th></tr>
+        </thead>
+        <tbody>
+          <tr><td>Google AdMob</td><td>広告 ID・端末の情報・おおよその地域</td><td>広告の配信・計測</td><td><a href="https://policies.google.com/privacy" target="_blank" rel="noopener">policies.google.com/privacy</a></td></tr>
+          <tr><td>Google Play（課金）</td><td>購入の情報</td><td>課金の処理</td><td><a href="https://policies.google.com/privacy" target="_blank" rel="noopener">policies.google.com/privacy</a></td></tr>
+          <tr><td>Firebase Authentication（Google LLC）</td><td>メールアドレス・表示名・ユーザー ID（ログイン時のみ）</td><td>ログインの認証</td><td><a href="https://firebase.google.com/support/privacy" target="_blank" rel="noopener">firebase.google.com/support/privacy</a></td></tr>
+          <tr><td>Cloud Firestore（Google LLC）</td><td>ゲームのデータ・購入の注文 ID（ログイン時のみ。東京のリージョン）</td><td>引き継ぎ・端末間の同期（クラウド保存）</td><td><a href="https://firebase.google.com/support/privacy" target="_blank" rel="noopener">firebase.google.com/support/privacy</a></td></tr>
+          <tr><td>Firebase Analytics（Google LLC）</td><td>利用状況の統計</td><td>アプリの改善</td><td><a href="https://firebase.google.com/support/privacy" target="_blank" rel="noopener">firebase.google.com/support/privacy</a></td></tr>
+        </tbody>
+      </table>
+    </div>
+    <h3>外国にある第三者への提供について</h3>
+    <ul>
+      <li><strong>移転先の国</strong>: 主に米国です（Google がサービスを運用するデータセンターのある国を含みます）。ゲームのデータ（Cloud Firestore）の保存先は、日本（東京）のリージョンです。</li>
+      <li><strong>移転先の個人情報保護制度</strong>: 米国には、日本の個人情報保護法に相当する、包括的な個人情報保護の法律はありません。</li>
+      <li><strong>提供先が講じている措置</strong>: Google は、サービスごとのデータ処理条項（Firebase のデータ処理およびセキュリティに関する条項など）や、公表しているプライバシーポリシーに基づき、情報を管理しています。情報は、通信中・保存中に暗号化されます。</li>
+    </ul>
+    <p>法令に基づく場合を除き、利用者の同意なく、上記以外の第三者に、情報を提供しません。</p>
+  </div>
+
+  <div class="divider"></div>
+
+  <div class="doc-section reveal">
+    <h2><span class="article-chip">第4条</span> 広告について</h2>
+    <ul>
+      <li>本アプリは、画面の上のバナー広告・リワード動画広告・設定画面のネイティブ広告を表示します。広告の配信には、Google AdMob を使います。リワード動画は、利用者が自分で選んで視聴します。</li>
+      <li>必要に応じて、<strong>同意の確認（UMP）</strong>を表示します。広告 ID は、端末の設定から、リセット・パーソナライズの無効化ができます（Android の設定 → Google → 広告）。</li>
+      <li>広告を消す買い切り（広告オフ）を購入すると、広告は表示されなくなります。</li>
+    </ul>
+  </div>
+
+  <div class="divider"></div>
+
+  <div class="doc-section reveal" id="delete-account">
+    <h2><span class="article-chip">第5条</span> アカウントとデータの削除</h2>
+    <p>ログインして、クラウドにデータを保存した場合は、次の手順で、アプリの中から、アカウントとクラウドのデータを削除できます。</p>
+    <ol>
+      <li>アプリの「せってい」を開き、「アカウント」へ進みます。</li>
+      <li>「アカウントを削除」を押します。</li>
+      <li>確認の画面で「削除する」を押します（最後のログインから時間がたっているときは、Google で、もう一度ログインを求めます）。</li>
+    </ol>
+    <p>削除すると、<strong>Firebase Authentication のアカウントと、クラウドに保存したゲームのデータが削除され、元に戻せません</strong>。端末の中のデータは残ります。</p>
+    <ul>
+      <li><strong>ログインしていない場合</strong>、データは端末の中だけにあります。<strong>アプリを削除すると、端末から消えます</strong>。</li>
+      <li>ログアウトしても、クラウドのデータは残ります。</li>
+      <li>アプリを使えない場合は、<a href="./contact.html">お問い合わせ</a>の「データ削除のご依頼」から、削除を依頼できます。</li>
+      <li>AdMob・Firebase・Google Play が保持する情報は、それぞれのサービスの方針に従います。</li>
+    </ul>
+  </div>
+
+  <div class="divider"></div>
+
+  <div class="doc-section reveal">
+    <h2><span class="article-chip">第6条</span> 安全管理</h2>
+    <p>取得した情報は、漏えい・紛失・改ざんを防ぐよう、適切に管理します。ゲームのデータは、まず端末内に保存されるため、端末の管理は、利用者ご自身でお願いします。</p>
+  </div>
+
+  <div class="divider"></div>
+
+  <div class="doc-section reveal">
+    <h2><span class="article-chip">第7条</span> 子どもの利用について</h2>
+    <p>本アプリは、13 歳以上の方を対象としています。13 歳未満の子どもから、意図して情報を取得することはありません。未成年の方の課金は、保護者の同意を得たうえで行ってください。</p>
+  </div>
+
+  <div class="divider"></div>
+
+  <div class="doc-section reveal">
+    <h2><span class="article-chip">第8条</span> プライバシーポリシーの変更</h2>
+    <p>必要に応じて、本ポリシーを変更します。重要な変更は、アプリ内または公式サイトでお知らせします。</p>
+  </div>
+
+  <div class="divider"></div>
+
+  <div class="doc-section reveal">
+    <h2><span class="article-chip">第9条</span> お問い合わせ</h2>
+    <p>本ポリシーに関するお問い合わせは、以下からお送りください。</p>
+    <ul>
+      <li>運営: Ryo-Lab チーム</li>
+      <li>お問い合わせフォーム: <a href="./contact.html">こちらから送信</a></li>
+    </ul>
+  </div>
+</div>
+
+<div data-l="en" lang="en">
+  <div class="doc-header reveal">
+    <p class="doc-tag">Legal</p>
+    <h1 class="doc-title">Privacy Policy</h1>
+    <p class="doc-updated">Last updated: November 28, 2026</p>
+  </div>
+
+  <p style="color:var(--text-sub);font-size:0.9rem;margin-bottom:2.5rem;" class="reveal">
+    The Ryo-Lab Team ("we", "us") sets out below how we handle users' information in the game app "PoloMusubi" (the "App").
+  </p>
+  <div class="doc-section reveal">
+    <h2><span class="article-chip">Article 1</span> Information we collect</h2>
+    <h3>Information you enter</h3>
+    <ul>
+      <li>The App does <strong>not ask you to enter your name, phone number, or similar details</strong>.</li>
+      <li><strong>Signing in with a Google account is optional.</strong> If you sign in, Firebase Authentication receives your account's email address, display name and user ID in order to authenticate you (the App only shows your email address on screen). You can use every feature without signing in.</li>
+    </ul>
+    <h3>Game data</h3>
+    <ul>
+      <li>Your game progress (monsters, the encyclopedia, items, coins, settings, etc., <strong>including the names you give to monsters</strong>) is first <strong>stored on your device</strong>.</li>
+      <li><strong>Only if you sign in with Google</strong>, the same game data is also stored in Google Firebase (Cloud Firestore, Tokyo region) so you can move to a new device and sync between devices. Only your own account can read or write it (we cannot read it either). If you do not sign in, your game progress itself is not stored in the cloud.</li>
+    </ul>
+    <h3>Purchase information</h3>
+    <ul>
+      <li>In-app purchases (one-time purchases) are processed by Google Play. <strong>We do not receive payment information such as your name, address or card number.</strong></li>
+      <li>To prevent granting an item twice, the App records the <strong>order ID</strong> of your purchases in your game data (when you are signed in, it is also included in the data saved to the cloud).</li>
+    </ul>
+    <h3>Information collected automatically</h3>
+    <ul>
+      <li><strong>Advertising ID, device information and approximate region (estimated from your IP address)</strong>: collected by Google AdMob to serve and measure ads.</li>
+      <li><strong>Usage information</strong>: in addition to what Firebase Analytics collects automatically (app instance ID, device and OS information, approximate region, etc.), we count events such as screen views, battles, befriending a monster, fusions, awakenings, ads and purchases, <strong>only as the type of event and a count or stage</strong> (Firebase Analytics). <strong>We do not send monster names, nicknames, user IDs or email addresses.</strong></li>
+      <li><strong>Crash information</strong>: we <strong>do not use</strong> a service that collects crash information for us (Firebase Crashlytics). However, the AdMob SDK and Google Play may collect diagnostic and crash information.</li>
+    </ul>
+    <p>We do not collect your location (GPS), contacts, photos, microphone or camera data. The App has no features for interaction between users, chat or posting.</p>
+  </div>
+
+  <div class="divider"></div>
+
+  <div class="doc-section reveal">
+    <h2><span class="article-chip">Article 2</span> How we use information</h2>
+    <ul>
+      <li>To provide game features (saving your progress, reflecting purchases, and moving to another device).</li>
+      <li>To serve ads.</li>
+      <li>To investigate problems and improve the App (usage).</li>
+      <li>To respond to your inquiries.</li>
+    </ul>
+  </div>
+
+  <div class="divider"></div>
+
+  <div class="doc-section reveal">
+    <h2><span class="article-chip">Article 3</span> Sharing with external services</h2>
+    <p>The App sends information to the services below. The provider of these services (Google LLC) is a <strong>third party located in a foreign country</strong>.</p>
+    <div class="doc-table-wrap">
+      <table class="doc-table">
+        <thead>
+          <tr><th>Service</th><th>Data</th><th>Purpose</th><th>Privacy policy</th></tr>
+        </thead>
+        <tbody>
+          <tr><td>Google AdMob</td><td>Advertising ID, device information, approximate region</td><td>Serving and measuring ads</td><td><a href="https://policies.google.com/privacy" target="_blank" rel="noopener">policies.google.com/privacy</a></td></tr>
+          <tr><td>Google Play (billing)</td><td>Purchase information</td><td>Processing purchases</td><td><a href="https://policies.google.com/privacy" target="_blank" rel="noopener">policies.google.com/privacy</a></td></tr>
+          <tr><td>Firebase Authentication (Google LLC)</td><td>Email address, display name, user ID (only when signed in)</td><td>Authenticating sign-in</td><td><a href="https://firebase.google.com/support/privacy" target="_blank" rel="noopener">firebase.google.com/support/privacy</a></td></tr>
+          <tr><td>Cloud Firestore (Google LLC)</td><td>Game data and purchase order IDs (only when signed in; Tokyo region)</td><td>Transfer and sync between devices (cloud save)</td><td><a href="https://firebase.google.com/support/privacy" target="_blank" rel="noopener">firebase.google.com/support/privacy</a></td></tr>
+          <tr><td>Firebase Analytics (Google LLC)</td><td>Usage statistics</td><td>Improving the App</td><td><a href="https://firebase.google.com/support/privacy" target="_blank" rel="noopener">firebase.google.com/support/privacy</a></td></tr>
+        </tbody>
+      </table>
+    </div>
+    <h3>Transfers to a third party in a foreign country</h3>
+    <ul>
+      <li><strong>Destination country</strong>: mainly the United States (including countries where Google operates the data centers for these services). Your game data (Cloud Firestore) is stored in the Japan (Tokyo) region.</li>
+      <li><strong>Data protection system there</strong>: the United States has no comprehensive personal-information protection law equivalent to Japan's Act on the Protection of Personal Information.</li>
+      <li><strong>Measures taken by the recipient</strong>: Google manages information under its per-service data processing terms (such as the Firebase data processing and security terms) and its published privacy policy. Data is encrypted in transit and at rest.</li>
+    </ul>
+    <p>Except where required by law, we do not provide your information to any other third party without your consent.</p>
+  </div>
+
+  <div class="divider"></div>
+
+  <div class="doc-section reveal">
+    <h2><span class="article-chip">Article 4</span> Advertising</h2>
+    <ul>
+      <li>The App shows a banner ad at the top of the screen, rewarded video ads, and a native ad on the settings screen. Ads are served by Google AdMob. Rewarded videos are shown only when you choose to watch them.</li>
+      <li>Where required, we show a <strong>consent prompt (UMP)</strong>. You can reset your advertising ID or turn off ad personalization in your device settings (Android Settings → Google → Ads).</li>
+      <li>If you buy the one-time "ad-free" purchase, ads are no longer shown.</li>
+    </ul>
+  </div>
+
+  <div class="divider"></div>
+
+  <div class="doc-section reveal" id="delete-account-en">
+    <h2><span class="article-chip">Article 5</span> Deleting your account and data</h2>
+    <p>If you signed in and saved data to the cloud, you can delete your account and cloud data inside the App as follows.</p>
+    <ol>
+      <li>Open "Settings" (せってい) in the App and go to "Account" (アカウント).</li>
+      <li>Tap "Delete account" (アカウントを削除).</li>
+      <li>Tap "Delete" (削除する) on the confirmation screen (if your last sign-in was a while ago, you will be asked to sign in with Google again).</li>
+    </ol>
+    <p>Deleting <strong>removes your Firebase Authentication account and the game data saved in the cloud, and cannot be undone</strong>. Data on your device remains.</p>
+    <ul>
+      <li><strong>If you have not signed in</strong>, your data exists only on your device and <strong>is removed when you uninstall the App</strong>.</li>
+      <li>Signing out does not delete your cloud data.</li>
+      <li>If you cannot use the App, you can request deletion through the <a href="./contact.html">Contact</a> page ("Data deletion request").</li>
+      <li>Information held by AdMob, Firebase and Google Play follows the policies of each service.</li>
+    </ul>
+  </div>
+
+  <div class="divider"></div>
+
+  <div class="doc-section reveal">
+    <h2><span class="article-chip">Article 6</span> Security</h2>
+    <p>We manage the information we collect appropriately to prevent leaks, loss and tampering. Game data is first stored on your device, so please take care of your device.</p>
+  </div>
+
+  <div class="divider"></div>
+
+  <div class="doc-section reveal">
+    <h2><span class="article-chip">Article 7</span> Children's use</h2>
+    <p>The App is intended for users aged 13 and over. We do not knowingly collect information from children under 13. If you are a minor, please make purchases only with a parent's or guardian's consent.</p>
+  </div>
+
+  <div class="divider"></div>
+
+  <div class="doc-section reveal">
+    <h2><span class="article-chip">Article 8</span> Changes to this policy</h2>
+    <p>We may change this policy as needed. We will announce important changes in the App or on our official site.</p>
+  </div>
+
+  <div class="divider"></div>
+
+  <div class="doc-section reveal">
+    <h2><span class="article-chip">Article 9</span> Contact</h2>
+    <p>For questions about this policy, please contact us here.</p>
+    <ul>
+      <li>Operator: Ryo-Lab Team</li>
+      <li>Contact form: <a href="./contact.html">Send a message</a></li>
+    </ul>
+  </div>
+</div>
+
+</div>
+
+<footer>
+  <p>© 2026 Ryo-Lab. <span data-l="ja">ポロとむすびの迷宮 開発チーム</span><span data-l="en" lang="en">PoloMusubi Team</span></p>
+</footer>
+
+<script src="../assets/js/subsite.js"></script>
+</body>
+</html>
