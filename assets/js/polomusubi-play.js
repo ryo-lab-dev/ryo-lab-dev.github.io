@@ -187,10 +187,15 @@
     return ids;
   }
   function pickMonster(avoid) {
-    // 仲間にしていない子を、少し出やすくする
+    // まだ仲間にしていない子が、全体で半分以上の確率で出るようにする（残りが少ないほど、1 体ごとの重みを上げる。
+    // 「最後の 1 体がなかなか出ない」を防ぐ）
+    var cand = ROSTER.filter(function (m) { return avoid.indexOf(m[0]) < 0; });
+    var fresh = cand.filter(function (m) { return !has(m[0]); }).length;
+    var seen = cand.length - fresh;
+    var wFresh = fresh ? Math.max(2, Math.ceil(seen / fresh)) : 0;
     var pool = [];
-    ROSTER.forEach(function (m) { if (avoid.indexOf(m[0]) < 0) { pool.push(m); if (!has(m[0])) pool.push(m); } });
-    return pool[Math.floor(Math.random() * pool.length)];
+    cand.forEach(function (m) { var w = has(m[0]) ? 1 : wFresh; for (var i = 0; i < w; i++) pool.push(m); });
+    return pool.length ? pool[Math.floor(Math.random() * pool.length)] : ROSTER[Math.floor(Math.random() * N)];
   }
   function makeMon(m, cls) {
     var b = el('button', 'pm-mon ' + cls); b.type = 'button'; b.tabIndex = -1; b.setAttribute('aria-hidden', 'true'); b.setAttribute('data-id', m[0]);
