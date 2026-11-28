@@ -1,6 +1,6 @@
 {
   "version": 1,
-  "updatedAt": "2026-11-27",
+  "updatedAt": "2026-11-28",
   "inlineLimit": 5,
   "games": [
     {
@@ -46,7 +46,7 @@
     {
       "id": "starpuzzle",
       "name": "StarPuzzle",
-      "tagline": "各行・各列・各色の領域に★を 1 つずつ置く、推理だけで解けるロジックパズル。",
+      "tagline": "推理だけで解ける★パズル。当て推量なしのロジックパズル。",
       "icon": "https://ryo-lab.dev/assets/starpuzzle/icon.png",
       "android": {
         "status": "released",

@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="ja" data-title-en="Contact — PoloMusubi">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>お問い合わせ — ポロとむすびの迷宮</title>
+  <script src="https://cdn.tailwindcss.com"></script>
+  <link rel="icon" href="../assets/polomusubi/icon.png" type="image/png" />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Syne:wght@400;600;700;800&family=Noto+Sans+JP:wght@300;400;500;700&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="../assets/css/polomusubi.css" />
+  <link rel="stylesheet" href="../assets/css/subsite.css" />
+  <link rel="stylesheet" href="../assets/css/lang.css" />
+  <script src="../assets/js/lang.js"></script>
+
+  <!-- SEO -->
+  <meta name="description" content="ポロとむすびの迷宮へのお問い合わせページ。ご意見・ご要望、不具合の報告、使い方のご質問、データ削除のご依頼などを受け付けています。" data-en="Contact page for &quot;PoloMusubi&quot;: feedback, bug reports, questions and data deletion requests.">
+  <link rel="canonical" href="https://ryo-lab.dev/polomusubi/contact.html">
+  <meta property="og:type" content="website">
+  <meta property="og:url" content="https://ryo-lab.dev/polomusubi/contact.html">
+  <meta property="og:title" content="お問い合わせ — ポロとむすびの迷宮">
+  <meta property="og:description" content="ポロとむすびの迷宮へのお問い合わせページ。ご意見・ご要望、不具合の報告、使い方のご質問、データ削除のご依頼などを受け付けています。">
+  <meta property="og:image" content="https://ryo-lab.dev/assets/ogp/ogp_polomusubi.png">
+  <meta property="og:site_name" content="Ryo-Lab">
+  <meta property="og:locale" content="ja_JP">
+  <meta property="og:locale:alternate" content="en_US">
+  <style>:root{--uh-text:#efe9f7;--uh-sub:#aea3c2;}</style>
+  <link rel="stylesheet" href="../assets/css/update-history.css" />
+  <link rel="stylesheet" href="../assets/css/contact.css" />
+  <style>:root{--contact-on-primary:#2a1c00;}</style>
+</head>
+<body>
+
+<nav>
+  <div class="nav-inner">
+    <a href="./" class="nav-logo">
+      <div class="nav-logo-dot"></div>
+      <span class="nav-logo-text"><span data-l="ja">ポロとむすびの迷宮</span><span data-l="en" lang="en">PoloMusubi</span></span>
+    </a>
+    <div class="nav-links">
+      <a href="./">Home</a>
+      <a href="./privacy-policy.html">Privacy Policy</a>
+      <a href="./terms.html"><span data-l="ja">利用規約</span><span data-l="en" lang="en">Terms</span></a>
+      <a href="./contact.html" class="active"><span data-l="ja">お問い合わせ</span><span data-l="en" lang="en">Contact</span></a>
+    </div>
+    <div class="lang-toggle" role="group" aria-label="Language / 言語">
+      <svg class="lang-toggle-icon" viewBox="0 0 24 24" width="14" height="14" aria-hidden="true" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"/><path d="M2 12h20"/><path d="M12 2a15.3 15.3 0 0 1 4 10 15.3 15.3 0 0 1-4 10 15.3 15.3 0 0 1-4-10 15.3 15.3 0 0 1 4-10z"/></svg>
+      <a href="?lang=ja" data-lang-switch="ja" lang="ja" title="日本語">JA</a>
+      <a href="?lang=en" data-lang-switch="en" lang="en" title="English">EN</a>
+    </div>
+    <button class="nav-hamburger" id="navToggle" aria-label="メニューを開く">
+      <span></span><span></span><span></span>
+    </button>
+  </div>
+</nav>
+
+  <div class="uh-wrap">
+    <div class="uh-header reveal">
+      <p class="uh-tag">Contact</p>
+      <h1 class="uh-title"><span data-l="ja">お問い合わせ</span><span data-l="en" lang="en">Contact</span></h1>
+      <p class="uh-sub"><span data-l="ja">ポロとむすびの迷宮へのご意見・ご要望、不具合のご報告はこちらから。</span><span data-l="en" lang="en">Send us feedback, requests or bug reports for PoloMusubi.</span></p>
+    </div>
+
+    <div class="contact-wrap">
+      <div id="contact-root" data-app="polomusubi" data-privacy="./privacy-policy.html">
+        <noscript><p class="contact-noscript">お問い合わせフォームの送信には JavaScript を有効にしてください。 / Please enable JavaScript to use the contact form.</p></noscript>
+      </div>
+    </div>
+  </div>
+
+<footer>
+  <p>© 2026 Ryo-Lab. <span data-l="ja">ポロとむすびの迷宮 開発チーム</span><span data-l="en" lang="en">PoloMusubi Team</span></p>
+</footer>
+
+<script src="../assets/js/subsite.js"></script>
+<script src="../assets/js/contact-form.js"></script>
+</body>
+</html>
